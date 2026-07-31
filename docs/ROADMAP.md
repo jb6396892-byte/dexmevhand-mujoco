@@ -1,138 +1,138 @@
-# Implementation Roadmap
+# 分阶段实施路线
 
-## Completed Foundation
+## 已完成的基础
 
-- `relocate-mug` training and policy visualization are working locally.
-- DexMV simulation and dexmv-learn DAPG are reused instead of copied.
-- Environment validation, frame extraction, retargeting, visualization,
-  demonstration generation, validation, training, and policy visualization
-  entry points exist in this repository.
+- 本机 `relocate-mug` 训练和策略可视化已经跑通。
+- 复用 DexMV 仿真和 dexmv-learn，不复制大型资源。
+- 已有环境检查、视频抽帧、retarget、可视化、demonstration 生成与检查脚本。
+- 已有 DAPG 训练和策略回放入口。
 
-## Phase 1: Acquire One Real Mug Sequence
+## 阶段 1：获得一条真实杯子轨迹
 
-Tasks:
+需要完成：
 
-- Download one DexYCB subject package, calibration, and YCB models.
-- Select a right-hand `025_mug` trajectory and one fixed camera view.
-- Register the sequence metadata and source license.
+- 下载一个 DexYCB 受试者数据包、标定文件和 YCB 模型。
+- 筛选右手 `025_mug` 轨迹。
+- 选择一个无遮挡的固定相机视角。
+- 记录原始序列名称、相机编号和数据许可。
 
-Acceptance:
+完成标准：
 
-- One real RGB-D sequence can be played from relaxed hand to lifted mug.
-- Intrinsics, extrinsics, depth, hand labels, and object labels are available.
+- 能连续播放“手静止 -> 接近 -> 抓住 -> 举起杯子”的 RGB-D 序列。
+- 能读取内参、外参、深度、手部标签和物体标签。
 
-## Phase 2: Convert Video Labels to World-Space Poses
+## 阶段 2：转换成世界坐标轨迹
 
-Tasks:
+需要完成：
 
-- Add a DexYCB sequence scanner and `025_mug` filter.
-- Convert MANO/3D joints and mug 6D poses into this project's layout.
-- Convert all frames to one metric world coordinate frame.
-- Add 2D overlay and 3D trajectory visualization.
+- 编写 DexYCB 序列扫描和 `025_mug` 筛选程序。
+- 转换 MANO、3D 手关节和杯子 6D 位姿。
+- 将所有数据转换到统一世界坐标，单位统一为米。
+- 增加原图 2D 投影和 3D 轨迹可视化。
 
-Acceptance:
+完成标准：
 
-- Hand and mug projections align with source frames.
-- World-space trajectories are continuous and use meters.
+- 手和杯子投影与视频画面基本重合。
+- 世界坐标轨迹连续，没有镜像、跳变或尺度错误。
 
-## Phase 3: Build a Real-Video MuJoCo Demonstration
+## 阶段 3：生成真实视频 MuJoCo demonstration
 
-Tasks:
+需要完成：
 
-- Feed converted hand poses into DexMV retargeting.
-- Align the mug trajectory with the MuJoCo table and YCB mug model.
-- Generate and validate `relocate-mug-real.pkl`.
-- Replay the trajectory in MuJoCo.
+- 将转换后的手部数据送入 DexMV retarget。
+- 对齐杯子轨迹、MuJoCo 桌面和 YCB mug 模型。
+- 生成并检查 `relocate-mug-real.pkl`。
+- 在 MuJoCo 中回放完整轨迹。
 
-Acceptance:
+完成标准：
 
-- The Adroit hand reaches and moves the mug without major penetration,
-  coordinate flips, or frame jumps.
+- Adroit 手能够接近并带动杯子。
+- 不存在明显穿透、坐标翻转和逐帧跳动。
 
-## Phase 4: Segment Reusable Skills
+## 阶段 4：拆分可复用技能
 
-Tasks:
+需要完成：
 
-- Define the skill annotation schema.
-- Detect and review boundaries for `reach`, `grasp`, `lift`, and `transport`.
-- Export one demonstration set per skill.
-- Define initiation, success, termination, and timeout predicates.
+- 定义技能标注格式。
+- 自动检测并人工检查 `reach`、`grasp`、`lift`、`transport` 边界。
+- 为每个技能导出独立 demonstration。
+- 定义启动、成功、终止和超时条件。
 
-Acceptance:
+完成标准：
 
-- Every segment can be replayed independently.
-- Segment boundaries correspond to observable physical events.
+- 每个片段都可以独立回放。
+- 技能边界对应明确的物理事件。
 
-## Phase 5: Train Low-Level Skill Policies
+## 阶段 5：训练低层技能策略
 
-Tasks:
+需要完成：
 
-- Train behavior-cloning initialization for each skill.
-- Fine-tune with DAPG and randomized initial conditions.
-- Collect rollout success data for an affordance model.
-- Add skill-level evaluation reports.
+- 为每个技能训练行为克隆初始策略。
+- 使用 DAPG 和随机初始状态微调。
+- 收集 rollout 数据并训练技能可行性模型。
+- 生成每个技能的评估报告和失败分类。
 
-Acceptance:
+完成标准：
 
-- Each skill succeeds reliably across held-out initial poses.
-- Failures are classified rather than reported only as total reward.
+- 每个技能能在未见过的初始杯子位姿下稳定完成。
+- 失败可以分类，而不是只记录总 reward。
 
-## Phase 6: Implement the Skill Runtime
+## 阶段 6：实现技能执行框架
 
-Tasks:
+需要完成：
 
-- Add a skill registry and common execution API.
-- Add observation, timeout, retry, recovery, and logging support.
-- Chain `reach -> grasp -> lift -> transport` with feedback between skills.
+- 建立技能注册表和统一调用接口。
+- 增加观测、超时、重试、恢复和日志功能。
+- 通过反馈依次执行 `reach -> grasp -> lift -> transport`。
 
-Acceptance:
+完成标准：
 
-- A fixed symbolic plan completes the mug-relocation workflow.
-- The runtime stops or recovers when a skill fails.
+- 固定的符号计划可以完成杯子搬运。
+- 某个技能失败时，系统会停止、重试或恢复。
 
-## Phase 7: Add the High-Level Planner
+## 阶段 7：增加高层语言规划器
 
-Tasks:
+需要完成：
 
-- Implement a deterministic instruction-to-plan baseline.
-- Define a strict JSON schema for plans.
-- Build instruction, scene, plan, and recovery examples.
-- Fine-tune a pretrained language model after enough plan data exists.
-- Rank proposed skills using both language relevance and affordance scores.
+- 先实现确定性的“指令到计划”规则基线。
+- 定义严格的技能计划 JSON Schema。
+- 收集指令、场景、计划和恢复样本。
+- 数据足够后，对预训练语言模型做 LoRA/SFT。
+- 用语言相关性和可行性分数共同选择技能。
 
-Acceptance:
+完成标准：
 
-- Instruction paraphrases produce valid and physically executable plans.
-- Every executed step and its success score are visible in logs.
+- 同一任务的不同说法都能生成合法计划。
+- 计划只调用当前场景中可执行的技能。
+- 日志能显示每一步技能和成功概率。
 
-## Phase 8: Add Pouring
+## 阶段 8：增加倒水任务
 
-Tasks:
+需要完成：
 
-- Record real `tilt`, `upright`, `place`, and `release` demonstrations.
-- Add a target container and a `pour-mug` MuJoCo environment.
-- Implement geometric pouring success conditions.
-- Train the new low-level skills and extend the planner vocabulary.
+- 录制 `tilt`、`upright`、`place` 和 `release` 真实视频。
+- 增加目标容器和 `pour-mug` MuJoCo 环境。
+- 实现基于杯口位置、倾斜角和保持时间的成功条件。
+- 训练新增低层技能并扩展高层技能词表。
 
-Acceptance:
+完成标准：
 
-- The instruction "pick up the mug and pour into the container" produces and
-  executes a complete skill sequence.
+- 输入“拿起杯子并倒入目标容器”后，系统能规划和执行完整技能序列。
 
-## Phase 9: End-to-End Evaluation
+## 阶段 9：完整评估
 
-Tasks:
+需要完成：
 
-- Test unseen subjects, mug poses, camera views, and language paraphrases.
-- Measure perception, retargeting, skill, planner, and end-to-end failures.
-- Add domain randomization before considering real-robot transfer.
+- 测试未见过的受试者、杯子位姿、相机视角和指令表达。
+- 分别统计感知、retarget、技能、规划和完整任务失败。
+- 在真实机器人迁移前加入仿真域随机化。
 
-Acceptance:
+完成标准：
 
-- Results are reproducible from versioned configs and documented datasets.
-- Each failure can be assigned to perception, planning, or control.
+- 可以从版本化配置和指定数据重新得到结果。
+- 每次失败都能归因到感知、规划或控制层。
 
-## Immediate Next Deliverable
+## 当前立即要做的工作
 
-Implement the DexYCB converter and validate one right-hand `025_mug` trajectory
-through the existing retargeting and demonstration scripts.
+编写 DexYCB 转换程序，并让一条右手 `025_mug` 真实轨迹通过现有 retarget 和
+demonstration 生成脚本。

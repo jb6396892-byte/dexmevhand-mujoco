@@ -1,120 +1,152 @@
-# From Real Hand Video to DexMV Relocate-Mug
+# 从真实人手视频训练 MuJoCo 灵巧手
 
-This project is a lightweight workspace for turning real mug-grasping videos into DexMV demonstrations, then training a MuJoCo Adroit-hand policy with imitation learning and reinforcement learning.
+这个项目用于把真实的人手抓杯视频转换成 DexMV 可用的 demonstration，
+再通过行为克隆和 DAPG 强化学习训练 MuJoCo Adroit 灵巧手策略。
 
-本项目从真实人手抓取视频出发，将手部和杯子运动恢复到统一世界坐标，
-再通过 DexMV retargeting 生成 MuJoCo demonstration，使用行为克隆和 DAPG
-训练灵巧手策略。后续目标是在可靠的低层技能之上增加可解释的层次化控制：
-高层语言规划器输出结构化技能计划，低层策略执行精确动作。
+项目后续会扩展为层次化模仿学习系统：高层控制器理解“抓杯子”“倒水”
+等自然语言任务并生成技能计划，低层控制器负责执行精确的关节动作。
 
-## Project Status
+## 当前状态
 
-Completed:
+已经完成：
 
-- Local `relocate-mug` training and policy visualization.
-- Environment validation and reusable video-to-demonstration scripts.
-- Demonstration validation and DAPG training entry points.
+- `relocate-mug` 完整训练和策略可视化。
+- MuJoCo、DexMV、dexmv-learn 和 DAPG 环境检查。
+- 视频抽帧、目录准备、手部 retarget、轨迹可视化。
+- demonstration 生成、格式检查、DAPG 训练和策略回放入口。
+- 层次化模仿学习的架构与实施路线设计。
 
-Next milestone:
+下一步：
 
-- Convert one real DexYCB right-hand `025_mug` sequence.
-- Replay it through the existing retargeting and demonstration pipeline.
-- Segment it into `reach`, `grasp`, `lift`, and `transport` skills.
+- 下载并筛选一条 DexYCB 右手 `025_mug` 真实轨迹。
+- 转换手部 MANO/3D 关节和杯子 6D 位姿。
+- 通过现有管线生成第一条真实视频 demonstration。
+- 将轨迹拆成 `reach`、`grasp`、`lift` 和 `transport` 技能。
 
-Project documents:
+详细文档：
 
-- [Hierarchical imitation-learning architecture](docs/ARCHITECTURE.md)
-- [Implementation roadmap](docs/ROADMAP.md)
-- [Data and annotation format](docs/DATA_FORMAT.md)
+- [层次化模仿学习架构](docs/ARCHITECTURE.md)
+- [分阶段实施路线](docs/ROADMAP.md)
+- [数据与标注格式](docs/DATA_FORMAT.md)
 
-It reuses the existing local projects:
+## 整体流程
+
+```text
+真实 RGB/RGB-D 视频
+  -> 视频抽帧
+  -> 手部 3D 姿态估计
+  -> 杯子 6D 位姿估计
+  -> 相机坐标转换到世界坐标
+  -> 人手到 Adroit 灵巧手 retarget
+  -> 生成 DexMV demonstration pickle
+  -> 行为克隆 + DAPG/TRPO 训练
+  -> 策略可视化与评估
+```
+
+DexMV 不负责从原始视频估计手部和物体位姿。本项目目前消费外部姿态估计
+结果，并负责后续的坐标转换、retarget、demonstration 生成和策略训练。
+
+## 层次化扩展
+
+```text
+自然语言指令 + 场景状态
+  -> 高层任务规划器
+  -> 经过校验的技能计划
+  -> 技能执行器和可行性检查
+  -> MuJoCo 低层策略
+  -> 状态反馈和重新规划
+```
+
+高层模型只输出结构化技能，不直接输出 30 维关节动作。低层首先包含：
+
+```text
+reach(mug)
+grasp(mug)
+lift(mug, height)
+transport(mug, target_pose)
+```
+
+倒水阶段再增加：
+
+```text
+tilt(mug, angle)
+upright(mug)
+place(mug, target_pose)
+release(mug)
+```
+
+## 复用的本机项目
+
+本项目不复制 DexMV 的大型资源，而是复用：
 
 - `/home/smgbro/dexmv-sim`
 - `/home/smgbro/dexmv-learn`
-- conda env `dexmv`
+- conda 环境 `dexmv`
 
-It does not copy the full DexMV assets or pretrained models.
-
-## Pipeline
+当前项目目录：
 
 ```text
-real video
-  -> frame extraction
-  -> hand 3D pose estimation
-  -> mug 6D pose estimation
-  -> camera/world coordinate transform
-  -> human hand to Adroit hand retargeting
-  -> DexMV demonstration pickle
-  -> BC + DAPG/TRPO training
-  -> policy visualization and rollout evaluation
+/home/smgbro/mujoconew/GITHUB
 ```
 
-DexMV does not estimate hand pose or object pose from raw video. This project expects those estimation results as input.
-
-The planned hierarchical extension is:
-
-```text
-instruction + scene state
-  -> high-level planner
-  -> validated skill plan
-  -> skill executor and affordance checks
-  -> low-level MuJoCo policies
-  -> state feedback and replanning
-```
-
-## Expected Real-Data Layout
-
-Each real trajectory should look like:
+## 单条真实轨迹目录
 
 ```text
 data/real_data/relocate_mug/seq_000/
   rgb/
+  depth/
   calib/
+    camera_matrix.npy
+    dist_coeffs.npy
     camera_to_world.npy
   hand_pose/
     results_global_000.npy
     joints_000.npy
-    results_global_001.npy
-    joints_001.npy
   object_pose/
     000.npy
-    001.npy
+  annotations/
+    skill_segments.json
   meta.json
+  retargeting.pkl
 ```
 
-Minimum required files for demo generation:
+生成 demonstration 最少需要：
 
 - `hand_pose/results_global_*.npy`
 - `hand_pose/joints_*.npy`
 - `object_pose/*.npy`
-- optional `calib/camera_to_world.npy` if object poses are still in camera coordinates
+- 如果物体仍在相机坐标中，还需要 `calib/camera_to_world.npy`
 
-Object pose files may contain either a raw `4x4` pose matrix, or a Python dict saved with NumPy where one entry is the mug pose.
+物体位姿可以是直接保存的 `4x4` 矩阵，也可以是包含杯子位姿的 NumPy 字典。
 
-## Environment
+## 环境检查
 
-The default local paths are in `.env.example`. If needed, create a local `.env` with overrides. The important MuJoCo variables are:
+默认本机路径保存在 `.env.example`。需要覆盖时可以创建本地 `.env`，
+该文件不会提交到 Git。
+
+关键 MuJoCo 环境变量：
 
 ```bash
 LD_LIBRARY_PATH=/home/smgbro/.mujoco/mujoco200/bin:/usr/lib/x86_64-linux-gnu
 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 ```
 
-Check the environment:
+运行检查：
 
 ```bash
+cd /home/smgbro/mujoconew/GITHUB
 bash scripts/00_check_env.sh
 ```
 
-## Basic Usage
+## 基本使用方法
 
-Create a sequence directory template:
+创建一条轨迹的目录模板：
 
 ```bash
 python scripts/02_prepare_pose_dirs.py --seq seq_000
 ```
 
-Extract frames from a video:
+从视频抽帧：
 
 ```bash
 python scripts/01_extract_frames.py \
@@ -122,7 +154,7 @@ python scripts/01_extract_frames.py \
   --output data/real_data/relocate_mug/seq_000/rgb
 ```
 
-After external hand/object pose estimation has filled `hand_pose/` and `object_pose/`, run retargeting:
+外部程序生成手部和物体位姿后，运行 retarget：
 
 ```bash
 /home/smgbro/miniconda3/bin/conda run -n dexmv python scripts/03_retarget_one.py \
@@ -130,7 +162,7 @@ After external hand/object pose estimation has filled `hand_pose/` and `object_p
   --output data/real_data/relocate_mug/seq_000/retargeting.pkl
 ```
 
-Visualize retargeted hand and mug:
+可视化 retarget 后的手和杯子：
 
 ```bash
 /home/smgbro/miniconda3/bin/conda run -n dexmv python scripts/04_visualize_retargeting.py \
@@ -139,7 +171,7 @@ Visualize retargeted hand and mug:
   --camera-to-world data/real_data/relocate_mug/seq_000/calib/camera_to_world.npy
 ```
 
-Generate a DexMV demonstration:
+生成 DexMV demonstration：
 
 ```bash
 /home/smgbro/miniconda3/bin/conda run -n dexmv python scripts/05_generate_demo.py \
@@ -148,40 +180,35 @@ Generate a DexMV demonstration:
   --trajectory-id seq_000
 ```
 
-Validate the demonstration:
+检查 demonstration：
 
 ```bash
 /home/smgbro/miniconda3/bin/conda run -n dexmv python scripts/06_validate_demo.py \
   data/demonstrations/relocate-mug-real.pkl
 ```
 
-Train with DexMV:
+训练和可视化：
 
 ```bash
 bash scripts/07_train_dapg.sh
-```
-
-Visualize a trained policy:
-
-```bash
 bash scripts/08_visualize_policy.sh /path/to/best_policy.pickle
 ```
 
-## What Is Still Missing
+## 仍然缺少的内容
 
-- A downloaded or self-recorded real mug-grasping sequence.
-- Camera intrinsics and `camera_to_world` extrinsics.
-- Hand pose estimation output in DexMV-compatible `.npy` naming.
-- Mug 6D pose estimation output per frame.
-- A decision on whether the real mug can be approximated by the YCB mug.
-- Enough successful trajectories to train robustly; start with 1 for debugging, then collect many.
-- Skill segmentation, skill success predicates, and a common skill executor.
-- A high-level instruction-to-plan model.
-- A separate MuJoCo environment and demonstrations for pouring.
+- 一条已下载或自己录制的真实杯子抓取轨迹。
+- 相机内参和相机到世界坐标的外参。
+- DexMV 命名格式的手部姿态估计结果。
+- 每帧杯子 6D 位姿估计结果。
+- DexYCB 到本项目格式的转换程序。
+- 技能切分、技能成功条件和统一技能执行器。
+- 高层自然语言到技能计划的模型。
+- 倒水任务的真实视频、MuJoCo 环境和低层技能。
 
-## Notes
+## 注意事项
 
-- Start with state-input policy training. Do not train an end-to-end visual policy until state-based training is stable.
-- Keep `object_scale=0.8` for the first real-data experiments because `relocate-mug` has already been verified locally with that scale.
-- Do not manually scale policy actions before calling `YCBRelocate.step()`. DexMV scales normalized actions internally.
-- Raw recordings, datasets, calibration output, policies, and checkpoints are intentionally excluded from Git.
+- 第一阶段只训练状态输入策略，暂不训练端到端图像策略。
+- 第一批实验保持 `object_scale=0.8`，与已经跑通的环境一致。
+- 不要在调用 `YCBRelocate.step()` 前再次缩放 action，环境内部已经处理。
+- 坐标转换和投影验证必须在 retarget 之前完成。
+- 原始视频、数据集、标定结果、策略和 checkpoint 不上传 GitHub。

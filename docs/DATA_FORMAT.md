@@ -1,6 +1,6 @@
-# Data and Annotation Format
+# 数据与标注格式
 
-## Sequence Layout
+## 单条轨迹目录
 
 ```text
 data/real_data/relocate_mug/seq_000/
@@ -21,17 +21,18 @@ data/real_data/relocate_mug/seq_000/
   retargeting.pkl
 ```
 
-All metric translations use meters. `camera_to_world.npy` is a homogeneous
-`4x4` transform:
+所有平移统一使用米。`camera_to_world.npy` 是 `4x4` 齐次变换矩阵：
 
 ```text
 point_world = camera_to_world @ point_camera
 pose_world = camera_to_world @ pose_camera
 ```
 
-## Sequence Metadata
+使用前必须确认矩阵方向。如果标定程序保存的是 `world_to_camera`，需要先求逆。
 
-Suggested `meta.json`:
+## 轨迹元数据
+
+建议的 `meta.json`：
 
 ```json
 {
@@ -49,13 +50,22 @@ Suggested `meta.json`:
 }
 ```
 
-## Skill Segments
+关键字段：
 
-Suggested `annotations/skill_segments.json`:
+- `source_sequence`：可以追溯到原始数据。
+- `camera_id`：确定使用的视角和标定参数。
+- `hand_side`：第一版只筛选右手轨迹。
+- `pose_frame`：防止相机坐标和世界坐标混用。
+- `translation_unit`：防止毫米和米混用。
+
+## 技能片段标注
+
+建议的 `annotations/skill_segments.json`：
 
 ```json
 {
-  "instruction": "pick up the mug",
+  "instruction": "拿起杯子",
+  "reviewed": true,
   "segments": [
     {
       "skill": "reach",
@@ -82,14 +92,47 @@ Suggested `annotations/skill_segments.json`:
 }
 ```
 
-The first dataset version should keep manual review metadata such as annotator,
-review status, and notes. Automatically generated boundaries must not silently
-replace reviewed boundaries.
+第一版需要保留标注人、审核状态和备注。自动生成的边界不能直接覆盖人工审核
+过的边界。
 
-## Demonstration Pickle
+## 手部姿态文件
 
-DexMV training expects a top-level trajectory dictionary. Every trajectory
-contains:
+```text
+hand_pose/results_global_*.npy
+hand_pose/joints_*.npy
+```
+
+文件编号必须与 RGB、深度和物体位姿帧编号一致。缺失或低置信度帧需要明确
+标记，不能静默错位。
+
+## 物体位姿文件
+
+```text
+object_pose/000.npy
+object_pose/001.npy
+...
+```
+
+每个文件可以是：
+
+- 直接保存的 `4x4` 物体位姿矩阵。
+- 包含多个物体位姿的 NumPy 字典，通过 `object_id` 选择 mug。
+
+物体位姿转换遵循：
+
+```text
+pose_world = camera_to_world @ pose_camera
+```
+
+## DexMV demonstration
+
+DexMV 训练文件顶层是轨迹字典：
+
+```text
+dict[trajectory_id] = trajectory_data
+```
+
+每条轨迹至少包含：
 
 - `observations`
 - `actions`
@@ -97,6 +140,20 @@ contains:
 - `sim_data`
 - `model_data`
 
-Large pickle files, raw video, labels, model files, and calibration outputs are
-excluded from Git. Store download instructions and checksums in the repository,
-not the dataset bytes.
+生成后使用：
+
+```bash
+python scripts/06_validate_demo.py data/demonstrations/relocate-mug-real.pkl
+```
+
+## Git 数据规则
+
+GitHub 仓库只保存代码、配置示例和数据格式说明。以下内容不提交：
+
+- 原始视频和抽取帧。
+- DexYCB 等外部数据集。
+- 相机标定输出和 `.npy` 位姿文件。
+- demonstration pickle。
+- 训练日志、策略、模型和 checkpoint。
+
+仓库中只记录数据下载来源、许可、版本和校验值。

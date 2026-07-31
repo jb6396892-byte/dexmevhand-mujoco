@@ -1,59 +1,55 @@
-# Hierarchical Imitation Learning Architecture
+# 层次化模仿学习架构
 
-## Goal
+## 目标
 
-The project learns dexterous manipulation from real human videos while keeping
-language reasoning separate from high-frequency motor control.
+从真实人手视频中学习灵巧操作，同时把自然语言任务理解与高频关节控制分开。
 
 ```text
-natural-language instruction             real RGB/RGB-D video
-             |                                      |
-             v                                      v
-      high-level planner <--------- structured scene state
-             |
-             | validated skill plan
-             v
-  skill executor + affordance scorer + termination checks
-             |
-             v
-  low-level policies: reach / grasp / lift / transport / tilt / place
-             |
-             v
-        MuJoCo Adroit actions
-             |
-             +---------------- state feedback and replanning
+自然语言指令                         真实 RGB/RGB-D 视频
+     |                                      |
+     v                                      v
+高层任务规划器 <------------------- 结构化场景状态
+     |
+     | 经过校验的技能计划
+     v
+技能执行器 + 可行性评分 + 完成检测
+     |
+     v
+低层策略：reach / grasp / lift / transport / tilt / place
+     |
+     v
+MuJoCo Adroit 30 维动作
+     |
+     +------------------------ 状态反馈与重新规划
 ```
 
-The language model never emits joint torques or the 30-dimensional normalized
-Adroit action directly. It emits a plan in a constrained skill language.
+语言模型不直接输出关节力矩或 30 维 Adroit action，而是输出受约束的技能计划。
 
-## Layer 1: Perception and Video Reconstruction
+## 第一层：视频感知与轨迹恢复
 
-Inputs:
+输入：
 
-- RGB or RGB-D frames.
-- Camera intrinsics and camera-to-world extrinsics.
-- A metric mug model or a known YCB mug model.
+- RGB 或 RGB-D 视频帧。
+- 相机内参和 `camera_to_world` 外参。
+- 真实杯子的尺寸/模型，或者已知的 YCB mug 模型。
 
-Outputs for every frame:
+每帧输出：
 
-- 3D hand joints and MANO/global hand pose.
-- Mug 6D pose.
-- A shared world coordinate frame in meters.
-- Confidence and validity flags.
+- 3D 手关节和 MANO/全局手部姿态。
+- 杯子 6D 位姿。
+- 以米为单位的统一世界坐标。
+- 位姿置信度和有效性标记。
 
-Before training, project the reconstructed hand and object back onto the source
-images and inspect the sequence in 3D. Retargeting should not be used to hide
-coordinate, scale, or tracking errors.
+训练前必须把手关节和杯子模型重新投影到原图，并在 3D 中检查轨迹连续性。
+不能用后续 retarget 掩盖坐标轴、尺度和跟踪错误。
 
-## Layer 2: High-Level Planner
+## 第二层：高层任务规划器
 
-The planner maps an instruction and a structured scene description to a skill
-plan:
+高层模型把自然语言指令和结构化场景转换成技能计划：
 
 ```json
 {
-  "instruction": "pick up the mug and pour",
+  "instruction": "拿起杯子并倒水",
   "plan": [
     {"skill": "reach", "object": "mug"},
     {"skill": "grasp", "object": "mug", "grasp": "handle"},
@@ -67,33 +63,38 @@ plan:
 }
 ```
 
-Every plan is schema-validated. Unknown skills, objects, and unsafe parameters
-are rejected before execution.
+执行前必须检查：
 
-For each candidate skill, selection combines:
+- `skill` 是否存在于技能库。
+- 指定物体是否存在于当前场景。
+- 参数类型和数值范围是否合法。
+- 当前状态是否满足技能启动条件。
+- 是否违反安全和碰撞约束。
+
+候选技能的选择分数为：
 
 ```text
-task relevance from the language model
-    x
-predicted probability that the skill can succeed in the current state
+语言模型给出的任务相关性
+  x
+当前状态下技能成功概率
 ```
 
-This prevents semantically plausible but physically impossible calls, such as
-tilting a mug before it is grasped.
+这样即使语言模型认为下一步应该倒水，只要杯子还没有抓稳，可行性模型就会
+阻止直接调用 `tilt`。
 
-Start with a deterministic rule planner. Fine-tune a pretrained language model
-only after the skill interface and execution traces are stable. Training data
-for the planner consists of:
+第一版先使用确定性的规则规划器。技能接口和执行日志稳定后，再使用预训练
+语言模型做 LoRA/SFT，不从头训练语言模型。
 
-- Instruction and scene-state inputs.
-- Valid skill-plan JSON outputs.
-- Paraphrased instructions.
-- Failed plans and recovery plans.
-- Skill success estimates collected from simulation rollouts.
+高层训练数据包括：
 
-## Layer 3: Skill Executor
+- 指令、场景状态和合法技能计划。
+- 同一指令的不同语言表达。
+- 失败计划及其恢复方案。
+- MuJoCo rollout 得到的技能成功概率。
 
-The executor owns the runtime contract:
+## 第三层：技能执行器
+
+统一调用接口：
 
 ```python
 result = executor.run(
@@ -103,89 +104,96 @@ result = executor.run(
 )
 ```
 
-Each skill defines:
+每个技能需要定义：
 
-- Initiation conditions.
-- Goal parameters.
-- A low-level policy.
-- Termination and success predicates.
-- Timeout and recovery behavior.
+- 启动条件。
+- 目标参数。
+- 对应的低层策略。
+- 终止和成功条件。
+- 超时条件。
+- 失败后的重试或恢复方式。
 
-The executor observes the scene again after every skill. It can retry, call a
-recovery skill, or ask the planner to produce a new plan.
+每执行完一个技能都重新观测场景。执行器可以重试、调用恢复技能，或者通知
+高层重新生成计划。
 
-## Layer 4: Low-Level Policies
+## 第四层：低层技能策略
 
-The initial state-input policy is:
+初期使用状态输入策略：
 
 ```text
 pi_low(action | simulation_state, skill_id, skill_goal)
 ```
 
-The simulation state can include hand joint positions and velocities, object
-pose and velocity, target pose, and contacts. Demonstrations come from:
+状态可以包含：
+
+- 手部关节位置和速度。
+- 杯子位置、旋转和速度。
+- 目标位姿。
+- 接触信息。
+- 当前技能和技能目标参数。
+
+demonstration 的来源：
 
 ```text
-video pose reconstruction
-  -> DexMV human-to-Adroit retargeting
-  -> MuJoCo demonstration generation
-  -> skill segmentation
+真实视频位姿恢复
+  -> DexMV 人手到 Adroit retarget
+  -> 生成 MuJoCo demonstration
+  -> 按技能边界拆分
 ```
 
-The first implementation should train one policy per skill:
+第一版分别训练四个策略：
 
 - `reach(mug)`
 - `grasp(mug)`
 - `lift(mug, height)`
 - `transport(mug, target_pose)`
 
-Each policy is initialized with behavior cloning and refined with DAPG in
-MuJoCo. Once the individual policies are reliable, they can share one backbone
-conditioned on `skill_id` and `skill_goal`.
+每个技能先做行为克隆，再通过 DAPG 和随机初始状态进行强化学习微调。各技能
+可靠后，再考虑共享一个网络主干，通过 `skill_id` 和 `skill_goal` 条件化。
 
-## Video Segmentation
-
-A complete trajectory is divided into reusable options:
+## 视频技能切分
 
 ```text
-hand approaches object        -> reach
-fingers close                 -> grasp
-object leaves support         -> lift
-object follows the hand       -> transport
-object rotates over target    -> tilt
-object returns upright        -> upright
-object contacts support       -> place
-fingers open and move away    -> release
+手接近杯子             -> reach
+手指闭合               -> grasp
+杯子离开支撑面         -> lift
+杯子跟随手移动         -> transport
+杯子在目标上方倾斜     -> tilt
+杯子恢复竖直           -> upright
+杯子接触桌面           -> place
+手指打开并离开杯子     -> release
 ```
 
-Automatic boundaries can use hand-object distance, fingertip distance, object
-velocity, height, tilt angle, and support contact. Initial annotations should be
-manually reviewed.
+自动切分可以使用：
 
-## Pouring Environment
+- 手腕到杯子的距离。
+- 指尖到杯子表面的距离。
+- 杯子速度、高度和倾斜角。
+- 手与杯子的相对位姿变化。
+- 杯子与桌面的接触状态。
 
-The existing `relocate-mug` task is sufficient for reach, grasp, lift, and
-transport. Pouring requires a new environment with a target container.
+第一批自动边界必须人工检查，并保留人工审核状态。
 
-The first version should use a geometric success condition:
+## 倒水环境
 
-- Mug rim is above the target container.
-- Mug tilt is within a configured range.
-- The pose is maintained for a minimum duration.
-- The mug is not dropped.
+现有 `relocate-mug` 足够训练接近、抓取、抬起和移动。倒水需要增加目标容器和
+新的 `pour-mug` 环境。
 
-Fluid simulation can be added later. It is not required to validate the
-hierarchical policy architecture.
+第一版使用几何成功条件：
 
-## Evaluation
+- 杯口位于目标容器上方。
+- 杯子倾斜角达到指定范围。
+- 该姿态保持一定时间。
+- 杯子没有掉落。
 
-Evaluate each layer separately:
+先用这些条件验证层次化控制，不需要立即加入真实液体模拟。
 
-- Pose reconstruction: projection error, continuity, and valid-frame ratio.
-- Retargeting: hand-object alignment and contact plausibility.
-- Skills: success rate across randomized initial states.
-- Planning: valid-plan rate and correct skill ordering.
-- End to end: task success, retries, recovery rate, and failure category.
+## 评估方法
 
-Dataset splits should separate subjects, initial mug poses, camera views, and
-instruction paraphrases.
+- 位姿恢复：重投影误差、轨迹连续性、有效帧比例。
+- retarget：手和杯子的对齐程度、接触是否合理。
+- 低层技能：随机初始状态下的成功率。
+- 高层规划：计划合法率、技能顺序正确率。
+- 完整任务：成功率、重试次数、恢复率和失败分类。
+
+训练集和测试集需要按受试者、杯子初始位姿、相机视角和指令表达方式分开。
