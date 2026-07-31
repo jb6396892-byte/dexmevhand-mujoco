@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="从真实视频训练 MuJoCo 灵巧手的分阶段执行看板">
+    <title>真实视频灵巧手执行计划</title>
+    <link rel="stylesheet" href="assets/dashboard.css">
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+    <script src="assets/dashboard.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="阶段导航">
+        <a class="brand" href="#top" aria-label="回到顶部">
+          <span class="brand-mark" aria-hidden="true">RH</span>
+          <span>
+            <strong>真实视频灵巧手</strong>
+            <small>DexMV · MuJoCo</small>
+          </span>
+        </a>
+
+        <nav class="phase-nav" aria-label="按阶段筛选">
+          <button class="phase-button is-active" type="button" data-phase="all">
+            <span class="phase-code">全部</span>
+            <span>完整路线</span>
+          </button>
+          <button class="phase-button" type="button" data-phase="A">
+            <span class="phase-code">A</span>
+            <span>基础框架</span>
+          </button>
+          <button class="phase-button" type="button" data-phase="B">
+            <span class="phase-code">B</span>
+            <span>真实视频</span>
+          </button>
+          <button class="phase-button" type="button" data-phase="C">
+            <span class="phase-code">C</span>
+            <span>低层技能</span>
+          </button>
+          <button class="phase-button" type="button" data-phase="D">
+            <span class="phase-code">D</span>
+            <span>高层规划</span>
+          </button>
+          <button class="phase-button" type="button" data-phase="E">
+            <span class="phase-code">E</span>
+            <span>倒水任务</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-progress" aria-live="polite">
+          <div class="sidebar-progress-row">
+            <span>总进度</span>
+            <strong id="sidebarProgressText">0%</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <span id="sidebarProgressBar"></span>
+          </div>
+          <small id="sidebarTaskCount">正在读取任务</small>
+        </div>
+      </aside>
+
+      <main class="main-content" id="top">
+        <header class="page-header">
+          <div>
+            <p class="eyebrow">执行看板</p>
+            <h1>从真实视频训练 MuJoCo 灵巧手</h1>
+            <p class="header-copy">按验收标准逐步推进，从第一条 DexYCB mug 轨迹到语言规划和倒水任务。</p>
+          </div>
+          <div class="header-actions">
+            <a class="button button-secondary" href="EXECUTION_PLAN.md">
+              <i data-lucide="file-text" aria-hidden="true"></i>
+              <span>完整文档</span>
+            </a>
+            <button class="button button-secondary" id="printPlan" type="button">
+              <i data-lucide="printer" aria-hidden="true"></i>
+              <span>打印</span>
+            </button>
+            <button class="icon-button" id="resetProgress" type="button" title="重置本地进度" aria-label="重置本地进度">
+              <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+            </button>
+          </div>
+        </header>
+
+        <section class="status-band" aria-label="当前状态">
+          <div class="primary-status">
+            <span class="status-label">当前任务</span>
+            <strong id="currentStage">B1 · 准备第一条真实轨迹</strong>
+            <span id="currentStageHint">先完成数据下载和序列筛选</span>
+          </div>
+          <div class="metric">
+            <span>已完成阶段</span>
+            <strong id="completedStages">2 / 14</strong>
+          </div>
+          <div class="metric">
+            <span>任务进度</span>
+            <strong id="completedTasks">0 / 0</strong>
+          </div>
+          <div class="metric">
+            <span>数据源</span>
+            <strong>DexYCB · 025_mug</strong>
+          </div>
+        </section>
+
+        <section class="pipeline-section" aria-labelledby="pipelineTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">系统路径</p>
+              <h2 id="pipelineTitle">视频到层次化策略</h2>
+            </div>
+            <span class="section-note">每一层单独验收</span>
+          </div>
+          <div class="pipeline-flow" aria-label="处理流程">
+            <div class="pipeline-node">
+              <span>01</span>
+              <strong>真实视频</strong>
+              <small>RGB-D + 标定</small>
+            </div>
+            <div class="pipeline-arrow" aria-hidden="true">→</div>
+            <div class="pipeline-node">
+              <span>02</span>
+              <strong>位姿恢复</strong>
+              <small>手 + mug 6D</small>
+            </div>
+            <div class="pipeline-arrow" aria-hidden="true">→</div>
+            <div class="pipeline-node">
+              <span>03</span>
+              <strong>Retarget</strong>
+              <small>人手 → Adroit</small>
+            </div>
+            <div class="pipeline-arrow" aria-hidden="true">→</div>
+            <div class="pipeline-node">
+              <span>04</span>
+              <strong>低层技能</strong>
+              <small>BC + DAPG</small>
+            </div>
+            <div class="pipeline-arrow" aria-hidden="true">→</div>
+            <div class="pipeline-node">
+              <span>05</span>
+              <strong>高层规划</strong>
+              <small>指令 → 技能</small>
+            </div>
+            <div class="pipeline-arrow" aria-hidden="true">→</div>
+            <div class="pipeline-node">
+              <span>06</span>
+              <strong>倒水任务</strong>
+              <small>完整评估</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="controls" aria-label="任务筛选">
+          <label class="search-field">
+            <i data-lucide="search" aria-hidden="true"></i>
+            <span class="sr-only">搜索任务</span>
+            <input id="taskSearch" type="search" placeholder="搜索阶段、任务、产出或命令">
+          </label>
+          <div class="segmented-control" aria-label="按状态筛选">
+            <button type="button" class="is-active" data-status="all">全部</button>
+            <button type="button" data-status="current">当前</button>
+            <button type="button" data-status="pending">待处理</button>
+            <button type="button" data-status="done">已完成</button>
+          </div>
+          <button class="button button-primary" id="expandCurrent" type="button">
+            <i data-lucide="locate-fixed" aria-hidden="true"></i>
+            <span>定位当前任务</span>
+          </button>
+        </section>
+
+        <section class="stage-list" id="stageList" aria-label="执行阶段"></section>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <i data-lucide="search-x" aria-hidden="true"></i>
+          <strong>没有匹配的任务</strong>
+          <span>调整阶段、状态或搜索内容。</span>
+        </div>
+
+        <footer class="page-footer">
+          <span>进度仅保存在当前浏览器中</span>
+          <span>源文档：<a href="EXECUTION_PLAN.md">EXECUTION_PLAN.md</a></span>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
