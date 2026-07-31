@@ -1,0 +1,14 @@
+project_root: /home/smgbro/mujoconew/GITHUB
+dexmv_sim: /home/smgbro/dexmv-sim
+dexmv_learn: /home/smgbro/dexmv-learn
+conda_env: dexmv
+object_name: mug
+object_scale: 0.8
+data:
+  raw_videos: data/raw_videos
+  real_sequences: data/real_data/relocate_mug
+  retargeted: data/retargeted
+  demonstrations: data/demonstrations
+outputs:
+  demo_file: data/demonstrations/relocate-mug-real.pkl
+  training_log: training_log

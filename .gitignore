@@ -1,0 +1,39 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+
+# Real recordings, calibration results, generated demonstrations, and models
+data/**
+!data/**/
+!data/**/.gitkeep
+training_log/
+outputs/
+checkpoints/
+runs/
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.ckpt
+
+# Generated media and logs
+*.mp4
+*.avi
+*.mov
+*.log

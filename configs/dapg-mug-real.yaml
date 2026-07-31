@@ -1,0 +1,20 @@
+BC_INIT: true
+DAPG_LAM0: 0.1
+DAPG_LAM1: 0.99
+DEMO_FILE: /home/smgbro/mujoconew/GITHUB/data/demonstrations/relocate-mug-real.pkl
+ENV_NAME: relocate-mug-0.8
+JOB_DIR: /home/smgbro/mujoconew/GITHUB/training_log
+JOB_NAME: realvideo
+NUM_ITER: 2000
+NUM_TRAJ: 200
+EVAL_RS: 20
+POLICY_INIT_LOG_STD: 0.0
+POLICY_WS:
+- 32
+- 32
+RNG_SEED: 200
+SAVE_FREQ: 100
+USE_DAPG: true
+NUM_CPU: 8
+CHECKPOINT_POLICY: ""
+CHECKPOINT_BASELINE: ""
