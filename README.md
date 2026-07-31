@@ -27,7 +27,9 @@
 
 - [层次化模仿学习架构](docs/ARCHITECTURE.md)
 - [分阶段实施路线](docs/ROADMAP.md)
+- [实际操作执行计划](docs/EXECUTION_PLAN.md)
 - [数据与标注格式](docs/DATA_FORMAT.md)
+- [实验记录模板](docs/WORK_LOG_TEMPLATE.md)
 
 ## 整体流程
 
