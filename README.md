@@ -19,7 +19,7 @@
 下一步：
 
 - 下载并筛选一条 DexYCB 右手 `025_mug` 真实轨迹。
-- 转换手部 MANO/3D 关节和杯子 6D 位姿。
+- 使用已经实现的 DexYCB 扫描、转换和重投影工具处理该轨迹。
 - 通过现有管线生成第一条真实视频 demonstration。
 - 将轨迹拆成 `reach`、`grasp`、`lift` 和 `transport` 技能。
 
@@ -168,6 +168,35 @@ python scripts/01_extract_frames.py \
   --output data/real_data/relocate_mug/seq_000/retargeting.pkl
 ```
 
+扫描 DexYCB 中的右手 `025_mug` 抓取序列：
+
+```bash
+python scripts/09_scan_dexycb.py \
+  --root data/external/dexycb \
+  --object 025_mug \
+  --hand-side right \
+  --output data/processed/dexycb_mug_sequences.json
+```
+
+转换选定序列和相机视角：
+
+```bash
+python scripts/10_convert_dexycb.py \
+  --root data/external/dexycb \
+  --sequence SUBJECT/SEQUENCE \
+  --camera CAMERA_SERIAL \
+  --output data/real_data/relocate_mug/seq_dexycb_001
+```
+
+生成手部重投影、物体坐标轴和轨迹报告：
+
+```bash
+MPLCONFIGDIR=/tmp/fromrealhand-matplotlib \
+python scripts/11_visualize_source_pose.py \
+  --sequence-dir data/real_data/relocate_mug/seq_dexycb_001 \
+  --output data/processed/seq_dexycb_001
+```
+
 可视化 retarget 后的手和杯子：
 
 ```bash
@@ -206,7 +235,7 @@ bash scripts/08_visualize_policy.sh /path/to/best_policy.pickle
 - 相机内参和相机到世界坐标的外参。
 - DexMV 命名格式的手部姿态估计结果。
 - 每帧杯子 6D 位姿估计结果。
-- DexYCB 到本项目格式的转换程序。
+- MANO 官方模型；当前转换器从 3D 关节几何推导 DexMV 手部框架，正式训练前需与 MANO 精确旋转对比。
 - 技能切分、技能成功条件和统一技能执行器。
 - 高层自然语言到技能计划的模型。
 - 倒水任务的真实视频、MuJoCo 环境和低层技能。

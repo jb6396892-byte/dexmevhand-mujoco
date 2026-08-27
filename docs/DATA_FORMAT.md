@@ -105,6 +105,28 @@ hand_pose/joints_*.npy
 文件编号必须与 RGB、深度和物体位姿帧编号一致。缺失或低置信度帧需要明确
 标记，不能静默错位。
 
+DexYCB 的 `joint_3d` 可以直接生成 `joints_*.npy`。`results_global_*.npy`
+需要包含 16 个 `4x4` 关节框架。当前转换器先根据 21 个三维关节的骨骼方向
+推导框架，并在 `meta.json` 中记录：
+
+```json
+{
+  "hand_frame_source": "geometry derived from joint_3d; validate against MANO before full training"
+}
+```
+
+这种结果用于打通格式、重投影和 retarget smoke test。正式长训练前，需要获取
+MANO 官方模型，使用 DexYCB 的 `pose_m` 恢复精确关节旋转并与几何推导结果对比。
+
+转换目录根部还必须包含：
+
+```text
+valid_frames.npy
+frame_mapping.json
+```
+
+`valid_frames.npy` 与原始帧数等长；无效帧不能被静默删除。
+
 ## 物体位姿文件
 
 ```text

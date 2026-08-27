@@ -92,6 +92,10 @@ data/real_data/relocate_mug/seq_dexycb_001/meta.json
 
 ## B2：编写 DexYCB 扫描和转换程序
 
+当前实现状态：`09_scan_dexycb.py`、`10_convert_dexycb.py`、
+`11_visualize_source_pose.py` 和 `src/fromrealhand/dexycb_io.py` 已完成，且已通过
+三帧合成 DexYCB 数据的端到端测试。由于真实数据尚未下载，B2 暂不标记完成。
+
 ### 目标
 
 把 DexYCB 原始格式转换成本项目已经约定的目录和 `.npy` 格式。
@@ -132,6 +136,10 @@ python scripts/09_scan_dexycb.py \
 - 将目标杯子 6D 位姿保存到 `object_pose/*.npy`。
 - 保存源帧编号映射，避免跳帧后标签错位。
 - 对低置信度或无效帧写入 `valid_frames.npy`，不能直接忽略。
+
+当前 `results_global_*.npy` 由 `joint_3d` 骨架几何推导；这可以用于流程测试，
+但精确 MANO 旋转仍需要单独下载 MANO 官方模型。正式训练前必须完成两种结果的
+对比验收。
 
 建议调用：
 
