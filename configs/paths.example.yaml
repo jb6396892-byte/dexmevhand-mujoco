@@ -2,6 +2,10 @@ project_root: /home/smgbro/mujoconew/GITHUB
 dexmv_sim: /home/smgbro/dexmv-sim
 dexmv_learn: /home/smgbro/dexmv-learn
 conda_env: dexmv
+dexycb_root: /media/smgbro/shared/DexYCB/dataset
+dexycb_archives: /media/smgbro/shared/DexYCB/archives
+mano_root: /media/smgbro/shared/DexYCB/mano/models
+manopth_root: /home/smgbro/mujoconew/external/manopth
 object_name: mug
 object_scale: 0.8
 data:

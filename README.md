@@ -144,6 +144,35 @@ cd /home/smgbro/mujoconew/GITHUB
 bash scripts/00_check_env.sh
 ```
 
+## DexYCB 与 MANO 资源
+
+大型数据和受许可约束的 MANO 模型统一保存在 `shared` 固态硬盘：
+
+```text
+/media/smgbro/shared/DexYCB/
+  archives/      # DexYCB tar.gz 和用户从 MANO 官网下载的 mano_v1_2.zip
+  dataset/       # calibration、models 和后续 subject 数据
+  mano/models/   # MANO_RIGHT.pkl、MANO_LEFT.pkl
+  checksums/     # 下载文件 SHA-256
+```
+
+公共 DexYCB 资源下载完成后运行：
+
+```bash
+bash scripts/12_prepare_external_assets.sh --extract
+```
+
+MANO 模型不能匿名下载。登录 `https://mano.is.tue.mpg.de/`、接受研究许可并下载
+`mano_v1_2.zip`，将原始压缩包放入上述 `archives/`，然后再次运行同一命令。
+脚本会校验压缩包、提取左右手模型并放到 `.env.example` 配置的 `MANO_ROOT`。
+
+验证 MANO 左右手模型可以完成前向计算：
+
+```bash
+set -a && source .env && set +a
+/home/smgbro/miniconda3/bin/conda run -n dexmv python scripts/13_validate_mano.py
+```
+
 ## 基本使用方法
 
 创建一条轨迹的目录模板：
