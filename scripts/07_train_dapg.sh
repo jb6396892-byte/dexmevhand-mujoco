@@ -22,6 +22,7 @@ PYTHONPYCACHEPREFIX="${PYTHONPYCACHEPREFIX:-/tmp/fromrealhand-pycache}"
 PYTHONPATH="$ROOT/src:$DEXMV_SIM:$DEXMV_LEARN:$DEXMV_LEARN/mjrl:${PYTHONPATH:-}"
 
 CFG="${1:-$ROOT/configs/dapg-mug-real.yaml}"
+TRAIN_ENTRY="${TRAIN_ENTRY:-$DEXMV_SIM/examples/train.py}"
 if [[ $# -gt 0 ]]; then
   shift
 fi
@@ -31,4 +32,4 @@ LD_PRELOAD="$LD_PRELOAD" \
 LD_LIBRARY_PATH="$LD_LIBRARY_PATH" \
 PYTHONPATH="$PYTHONPATH" \
 PYTHONPYCACHEPREFIX="$PYTHONPYCACHEPREFIX" \
-"$CONDA_BIN" run -n "$CONDA_ENV" python train.py --cfg "$CFG" "$@"
+"$CONDA_BIN" run -n "$CONDA_ENV" python "$TRAIN_ENTRY" --cfg "$CFG" "$@"

@@ -90,7 +90,7 @@ const stages = [
     phase: "B",
     phaseLabel: "真实视频",
     title: "扫描并转换 DexYCB 数据",
-    objective: "扫描、转换和重投影工具已通过合成测试，等待真实 DexYCB 数据完成验收。",
+    objective: "已完成真实 DexYCB 数据转换及 MANO 旋转对比验收。",
     tasks: [
       "在真实数据上验证 src/fromrealhand/dexycb_io.py 的读取结果",
       "运行 09_scan_dexycb.py 并检查 JSON 或 CSV 序列清单",
@@ -122,6 +122,7 @@ const stages = [
         text: "python scripts/10_convert_dexycb.py \\\n  --root data/external/dexycb \\\n  --sequence SUBJECT/SEQUENCE \\\n  --camera CAMERA_SERIAL \\\n  --output data/real_data/relocate_mug/seq_dexycb_001",
       },
     ],
+    defaultDone: true,
   },
   {
     id: "B3",
@@ -169,8 +170,8 @@ const stages = [
       "在 MuJoCo 中回放并检查跳动、穿模和抓取时机",
     ],
     outputs: [
-      "seq_dexycb_001/retargeting.pkl",
-      "data/demonstrations/relocate-mug-real.pkl",
+      "seq_dexycb_001/retargeting_mano.pkl",
+      "data/demonstrations/relocate-mug-mano-real.pkl",
       "第一条可回放的真实视频 demonstration",
     ],
     acceptance: [
@@ -183,19 +184,19 @@ const stages = [
     commands: [
       {
         label: "Retarget",
-        text: "/home/smgbro/miniconda3/bin/conda run -n dexmv \\\n  python scripts/03_retarget_one.py \\\n  --hand-dir data/real_data/relocate_mug/seq_dexycb_001/hand_pose \\\n  --output data/real_data/relocate_mug/seq_dexycb_001/retargeting.pkl",
+        text: "/home/smgbro/miniconda3/bin/conda run -n dexmv \\\n  python scripts/03_retarget_one.py \\\n  --hand-dir data/real_data/relocate_mug/seq_dexycb_001/hand_pose_mano \\\n  --output data/real_data/relocate_mug/seq_dexycb_001/retargeting_mano.pkl --invalid-policy nearest",
       },
       {
         label: "检查手杯对齐",
-        text: "/home/smgbro/miniconda3/bin/conda run -n dexmv \\\n  python scripts/04_visualize_retargeting.py \\\n  --retargeting data/real_data/relocate_mug/seq_dexycb_001/retargeting.pkl \\\n  --object-dir data/real_data/relocate_mug/seq_dexycb_001/object_pose \\\n  --camera-to-world data/real_data/relocate_mug/seq_dexycb_001/calib/camera_to_world.npy",
+        text: "/home/smgbro/miniconda3/bin/conda run -n dexmv \\\n  python scripts/04_visualize_retargeting.py \\\n  --retargeting data/real_data/relocate_mug/seq_dexycb_001/retargeting_mano.pkl \\\n  --object-dir data/real_data/relocate_mug/seq_dexycb_001/object_pose \\\n  --camera-to-world data/real_data/relocate_mug/seq_dexycb_001/calib/camera_to_world.npy --hindsight --output-dir data/processed/seq_dexycb_001/mujoco_mano",
       },
       {
         label: "生成 demonstration",
-        text: "/home/smgbro/miniconda3/bin/conda run -n dexmv \\\n  python scripts/05_generate_demo.py \\\n  --sequence-dir data/real_data/relocate_mug/seq_dexycb_001 \\\n  --output data/demonstrations/relocate-mug-real.pkl \\\n  --trajectory-id seq_dexycb_001",
+        text: "/home/smgbro/miniconda3/bin/conda run -n dexmv \\\n  python scripts/05_generate_demo.py \\\n  --sequence-dir data/real_data/relocate_mug/seq_dexycb_001 \\\n  --retargeting data/real_data/relocate_mug/seq_dexycb_001/retargeting_mano.pkl \\\n  --output data/demonstrations/relocate-mug-mano-real.pkl \\\n  --trajectory-id seq_dexycb_001",
       },
       {
         label: "验证 demonstration",
-        text: "/home/smgbro/miniconda3/bin/conda run -n dexmv \\\n  python scripts/06_validate_demo.py data/demonstrations/relocate-mug-real.pkl",
+        text: "/home/smgbro/miniconda3/bin/conda run -n dexmv \\\n  python scripts/06_validate_demo.py data/demonstrations/relocate-mug-mano-real.pkl",
       },
     ],
     defaultDone: true,
@@ -207,32 +208,33 @@ const stages = [
     title: "使用真实 demonstration 短训练",
     objective: "用 20 次迭代验证真实 demo 能完成行为克隆、采样和策略更新。",
     tasks: [
-      "建立 configs/dapg-mug-real-smoke.yaml",
+      "建立 configs/dapg-mug-mano-smoke.yaml",
       "设置 NUM_ITER=20、较小 NUM_CPU 和独立 JOB_DIR",
       "保持 BC_INIT=true 和 USE_DAPG=true",
       "训练前重新验证 demonstration",
-      "完成 smoke training 并加载策略可视化",
+      "完成 smoke training 并进行离屏策略回放",
       "通过后把正式训练 NUM_ITER 恢复为 2000",
     ],
     outputs: [
-      "training_log/relocate-mug-real-smoke/",
-      "docs/run_logs/<日期>-real-demo-smoke.md",
+      "training_log/dapg_relocate-mug-0.8_relocate-mug-mano-real_0.1_100_mano_smoke20_seed200/",
+      "docs/run_logs/2026-09-24-mano-smoke20.md",
       "可加载的 smoke best_policy.pickle",
     ],
     acceptance: [
       "20 次迭代无 NaN 和 shape 错误",
       "policy、日志和迭代结果正常保存",
       "reward 不会立即异常或全零",
-      "训练后的策略能够加载并可视化",
+      "训练后的策略能够加载并完成离屏回放",
     ],
     commands: [
       {
         label: "再次验证 demo",
-        text: "/home/smgbro/miniconda3/bin/conda run -n dexmv \\\n  python scripts/06_validate_demo.py data/demonstrations/relocate-mug-real.pkl",
+        text: "/home/smgbro/miniconda3/bin/conda run -n dexmv \\\n  python scripts/06_validate_demo.py data/demonstrations/relocate-mug-mano-real.pkl",
       },
-      { label: "运行短训练", text: "bash scripts/07_train_dapg.sh configs/dapg-mug-real-smoke.yaml" },
+      { label: "运行短训练", text: "TRAIN_ENTRY=/home/smgbro/mujoconew/GITHUB/scripts/15_train_dapg_cpu.py bash scripts/07_train_dapg.sh /home/smgbro/mujoconew/GITHUB/configs/dapg-mug-mano-smoke.yaml" },
       { label: "加载训练策略", text: "bash scripts/08_visualize_policy.sh /path/to/best_policy.pickle" },
     ],
+    defaultDone: true,
   },
   {
     id: "C1",
@@ -260,7 +262,7 @@ const stages = [
     commands: [
       {
         label: "追加一条轨迹",
-        text: "python scripts/05_generate_demo.py \\\n  --sequence-dir data/real_data/relocate_mug/SEQ_ID \\\n  --output data/demonstrations/relocate-mug-real.pkl \\\n  --trajectory-id SEQ_ID \\\n  --append",
+        text: "python scripts/05_generate_demo.py \\\n  --sequence-dir data/real_data/relocate_mug/SEQ_ID \\\n  --output data/demonstrations/relocate-mug-mano-real.pkl \\\n  --trajectory-id SEQ_ID \\\n  --append",
       },
     ],
   },
@@ -291,7 +293,7 @@ const stages = [
     commands: [
       {
         label: "切分技能",
-        text: "python scripts/12_segment_skills.py \\\n  --demo data/demonstrations/relocate-mug-real.pkl \\\n  --output annotations/skill_segments.json",
+        text: "python scripts/12_segment_skills.py \\\n  --demo data/demonstrations/relocate-mug-mano-real.pkl \\\n  --output annotations/skill_segments.json",
       },
       {
         label: "导出技能 demo",

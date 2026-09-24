@@ -17,11 +17,11 @@
 - 层次化模仿学习的架构与实施路线设计。
 - DexYCB Subject 01 已在共享盘完成解压和校验，并筛出两条右手 `025_mug` 轨迹。
 - 第一条真实轨迹已完成坐标转换、重投影、retarget、MuJoCo 离屏回放和 demonstration 验证。
+- 已用 MANO 官方模型恢复手部旋转，完成标签对比和 20 次 DAPG 短训练。
 
 下一步：
 
-- 使用 MANO 官方模型恢复精确关节旋转，并与当前几何推导结果对比。
-- 用 `relocate-mug-real.pkl` 进行短周期 DAPG 训练和策略回放。
+- 扩充真实抓杯轨迹，分析当前策略回放没有接触杯子的原因。
 - 将轨迹拆成 `reach`、`grasp`、`lift` 和 `transport` 技能。
 
 详细文档：
@@ -32,6 +32,7 @@
 - [实际操作执行计划](docs/EXECUTION_PLAN.md)
 - [数据与标注格式](docs/DATA_FORMAT.md)
 - [实验记录模板](docs/WORK_LOG_TEMPLATE.md)
+- [MANO 与 20 次短训练记录](docs/run_logs/2026-09-24-mano-smoke20.md)
 
 网页版看板可以直接打开 `docs/index.html`。需要发布到 GitHub Pages 时，在仓库
 `Settings -> Pages` 中选择从 `main` 分支的 `/docs` 目录部署。
@@ -259,9 +260,19 @@ bash scripts/07_train_dapg.sh
 bash scripts/08_visualize_policy.sh /path/to/best_policy.pickle
 ```
 
+MANO 版本的短训练使用已验收的 `hand_pose_mano/` 和
+`data/demonstrations/relocate-mug-mano-real.pkl`。本机无可用 CUDA，运行：
+
+```bash
+TRAIN_ENTRY="$PWD/scripts/15_train_dapg_cpu.py" bash scripts/07_train_dapg.sh \
+  "$PWD/configs/dapg-mug-mano-smoke.yaml"
+```
+
+单轨迹短训练的策略回放没有接触杯子；结果见
+[MANO 与短训练记录](docs/run_logs/2026-09-24-mano-smoke20.md)。
+
 ## 仍然缺少的内容
 
-- 将已经安装的 MANO 官方模型接入转换器；当前转换器从 3D 关节几何推导 DexMV 手部框架，正式训练前需与 MANO 精确旋转对比。
 - 更多受试者和视角的真实抓杯轨迹，用于避免单轨迹过拟合。
 - 技能切分、技能成功条件和统一技能执行器。
 - 高层自然语言到技能计划的模型。

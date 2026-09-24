@@ -115,8 +115,10 @@ DexYCB 的 `joint_3d` 可以直接生成 `joints_*.npy`。`results_global_*.npy`
 }
 ```
 
-这种结果用于打通格式、重投影和 retarget smoke test。正式长训练前，需要获取
-MANO 官方模型，使用 DexYCB 的 `pose_m` 恢复精确关节旋转并与几何推导结果对比。
+这种几何框架保留用于格式验证和对照。已经使用 MANO 官方模型、受试者手形参数及
+DexYCB 的 `pose_m` 生成 `hand_pose_mano/results_global_*.npy`。
+`mano_comparison.json` 记录标签重建误差和与几何框架的旋转差异；训练使用 MANO 版本
+的 `retargeting_mano.pkl` 和 `relocate-mug-mano-real.pkl`。
 
 转换目录根部还必须包含：
 
