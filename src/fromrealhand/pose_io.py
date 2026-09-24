@@ -20,6 +20,16 @@ def sorted_npy_files(directory: str | Path) -> list[Path]:
     return sorted(root.glob("*.npy"), key=natural_key)
 
 
+def nearest_valid_indices(valid_mask: np.ndarray) -> np.ndarray:
+    valid = np.asarray(valid_mask, dtype=bool).reshape(-1)
+    valid_indices = np.flatnonzero(valid)
+    if not len(valid_indices):
+        raise ValueError("sequence has no valid frames")
+    frame_indices = np.arange(len(valid))
+    distances = np.abs(frame_indices[:, None] - valid_indices[None, :])
+    return valid_indices[np.argmin(distances, axis=1)]
+
+
 def load_pickle(path: str | Path) -> Any:
     with Path(path).open("rb") as f:
         return pickle.load(f)

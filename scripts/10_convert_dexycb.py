@@ -132,7 +132,7 @@ def main() -> None:
         "object_scale": 0.8,
         "hand_side": hand_side,
         "pose_frame": "camera",
-        "world_frame": f"DexYCB master camera {world_camera}",
+        "world_frame": f"DexYCB AprilTag table frame via master camera {world_camera}",
         "translation_unit": "meter",
         "camera_to_world_convention": "point_world = camera_to_world @ point_camera",
         "intrinsics_source": str(intrinsics_path),

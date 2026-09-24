@@ -16,10 +16,10 @@
 
 - [x] A0：跑通原始 `relocate-mug` 训练和可视化。
 - [x] A1：建立真实视频到 DexMV 的基础项目框架。
-- [ ] B1：准备一条 DexYCB `025_mug` 真实 RGB-D 轨迹。
+- [x] B1：准备一条 DexYCB `025_mug` 真实 RGB-D 轨迹。
 - [ ] B2：编写 DexYCB 数据扫描和转换程序。
-- [ ] B3：验证手、杯子和相机坐标。
-- [ ] B4：生成并回放第一条真实视频 demonstration。
+- [x] B3：验证手、杯子和相机坐标。
+- [x] B4：生成并回放第一条真实视频 demonstration。
 - [ ] B5：使用真实 demonstration 完成一次短训练。
 - [ ] C1：扩展到多条真实抓杯轨迹。
 - [ ] C2：把完整轨迹拆成低层技能。
@@ -93,8 +93,9 @@ data/real_data/relocate_mug/seq_dexycb_001/meta.json
 ## B2：编写 DexYCB 扫描和转换程序
 
 当前实现状态：`09_scan_dexycb.py`、`10_convert_dexycb.py`、
-`11_visualize_source_pose.py` 和 `src/fromrealhand/dexycb_io.py` 已完成，且已通过
-三帧合成 DexYCB 数据的端到端测试。由于真实数据尚未下载，B2 暂不标记完成。
+`11_visualize_source_pose.py` 和 `src/fromrealhand/dexycb_io.py` 已完成，并已在
+Subject 01 的真实序列上通过扫描、转换和重投影验收。B2 暂不标记完成，因为
+还需用 MANO 官方模型恢复精确关节旋转，并与当前几何推导框架对比。
 
 ### 目标
 
@@ -548,12 +549,10 @@ release(mug)
 
 ## 当前下一步
 
-现在只执行 B1，不同时开始后面的模型训练：
+当前先补齐 B2 的精确姿态验收，再执行 B5：
 
-1. 检查剩余磁盘空间。
-2. 下载一个 DexYCB subject、calibration 和 models。
-3. 找出一条右手 `025_mug` 序列。
-4. 保存序列清单和 `meta.json`。
-5. 确认 RGB、depth、手部和杯子标签都能读取。
-
-B1 验收通过后，再开始编写 `09_scan_dexycb.py` 和 `10_convert_dexycb.py`。
+1. 用已安装的 `MANO_RIGHT.pkl` 和 DexYCB `pose_m` 恢复每帧精确手部旋转。
+2. 与当前由 `joint_3d` 推导的手部框架对比，并检查 retarget 差异。
+3. 重新生成并验证 `relocate-mug-real.pkl`。
+4. 将 `NUM_ITER` 设为 20，完成一次短周期 DAPG 训练。
+5. 回放短训练策略，记录 reward、成功率和失败类型。

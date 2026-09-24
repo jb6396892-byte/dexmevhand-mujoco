@@ -83,6 +83,7 @@ const stages = [
       { label: "检查磁盘", text: "df -h /home/smgbro" },
       { label: "检查环境", text: "bash scripts/00_check_env.sh" },
     ],
+    defaultDone: true,
   },
   {
     id: "B2",
@@ -152,6 +153,7 @@ const stages = [
         text: "python scripts/11_visualize_source_pose.py \\\n  --sequence-dir data/real_data/relocate_mug/seq_dexycb_001 \\\n  --output data/processed/seq_dexycb_001",
       },
     ],
+    defaultDone: true,
   },
   {
     id: "B4",
@@ -196,6 +198,7 @@ const stages = [
         text: "/home/smgbro/miniconda3/bin/conda run -n dexmv \\\n  python scripts/06_validate_demo.py data/demonstrations/relocate-mug-real.pkl",
       },
     ],
+    defaultDone: true,
   },
   {
     id: "B5",

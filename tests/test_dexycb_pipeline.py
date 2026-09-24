@@ -16,7 +16,15 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from fromrealhand.dexycb_io import FINGER_CHAINS, joint_frames_from_positions, project_points, scan_sequences
+from fromrealhand.dexycb_io import (
+    FINGER_CHAINS,
+    joint_frames_from_positions,
+    load_camera_to_world,
+    project_points,
+    read_yaml,
+    scan_sequences,
+)
+from fromrealhand.pose_io import nearest_valid_indices
 
 
 SERIAL = "932122060861"
@@ -94,6 +102,39 @@ def create_fixture(root: Path, frame_count: int = 3) -> Path:
 
 
 class DexYCBPipelineTest(unittest.TestCase):
+    def test_nearest_valid_indices(self) -> None:
+        indices = nearest_valid_indices(np.array([False, False, True, True, False]))
+        self.assertEqual(indices.tolist(), [2, 2, 2, 3, 3])
+        with self.assertRaisesRegex(ValueError, "no valid frames"):
+            nearest_valid_indices(np.zeros(3, dtype=bool))
+
+    def test_read_official_python_tuple_yaml_safely(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="fromrealhand-yaml-") as temp_dir:
+            path = Path(temp_dir) / "intrinsics.yml"
+            path.write_text("extrinsics: !!python/tuple\n- 1.0\n- 2.0\n", encoding="utf-8")
+            self.assertEqual(read_yaml(path)["extrinsics"], [1.0, 2.0])
+
+    def test_camera_to_world_uses_apriltag_table_frame(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="fromrealhand-extrinsics-") as temp_dir:
+            root = Path(temp_dir)
+            calibration = root / "calibration" / "extrinsics_test"
+            calibration.mkdir(parents=True)
+            camera_to_master = np.eye(4)
+            camera_to_master[0, 3] = 0.4
+            table_to_master = np.eye(4)
+            table_to_master[2, 3] = 1.2
+            payload = {
+                "master": SERIAL,
+                "extrinsics": {
+                    SERIAL: camera_to_master[:3].reshape(-1).tolist(),
+                    "apriltag": table_to_master[:3].reshape(-1).tolist(),
+                },
+            }
+            (calibration / "extrinsics.yml").write_text(yaml.safe_dump(payload), encoding="utf-8")
+            transform, master, _ = load_camera_to_world(root, {"extrinsics": "test"}, SERIAL)
+            self.assertEqual(master, SERIAL)
+            self.assertTrue(np.allclose(transform, np.linalg.inv(table_to_master) @ camera_to_master))
+
     def test_scan_convert_and_visualize(self) -> None:
         with tempfile.TemporaryDirectory(prefix="fromrealhand-dexycb-") as temp_dir:
             workspace = Path(temp_dir)

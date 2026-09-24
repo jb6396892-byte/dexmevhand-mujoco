@@ -44,9 +44,20 @@ DEXMV_FRAME_JOINTS = (0, 1, 2, 3, 5, 6, 7, 9, 10, 11, 13, 14, 15, 17, 18, 19)
 FINGER_CHAINS = ((1, 2, 3, 4), (5, 6, 7, 8), (9, 10, 11, 12), (13, 14, 15, 16), (17, 18, 19, 20))
 
 
+class _DexYCBSafeLoader(yaml.SafeLoader):
+    pass
+
+
+def _construct_python_tuple(loader: yaml.SafeLoader, node: yaml.Node) -> list[Any]:
+    return loader.construct_sequence(node)
+
+
+_DexYCBSafeLoader.add_constructor("tag:yaml.org,2002:python/tuple", _construct_python_tuple)
+
+
 def read_yaml(path: str | Path) -> dict[str, Any]:
     with Path(path).open("r", encoding="utf-8") as stream:
-        data = yaml.safe_load(stream)
+        data = yaml.load(stream, Loader=_DexYCBSafeLoader)
     if not isinstance(data, dict):
         raise ValueError(f"expected a YAML mapping in {path}")
     return data
@@ -199,7 +210,12 @@ def load_camera_to_world(root: str | Path, sequence_meta: dict[str, Any], serial
     transforms = data.get("extrinsics")
     if not isinstance(transforms, dict) or serial not in transforms:
         raise KeyError(f"camera {serial} is missing from {path}")
-    return _as_homogeneous(transforms[serial], label=f"extrinsics[{serial}]"), str(data.get("master", "unknown")), path
+    if "apriltag" not in transforms:
+        raise KeyError(f"apriltag table transform is missing from {path}")
+    camera_to_master = _as_homogeneous(transforms[serial], label=f"extrinsics[{serial}]")
+    table_to_master = _as_homogeneous(transforms["apriltag"], label="extrinsics[apriltag]")
+    camera_to_table = np.linalg.inv(table_to_master) @ camera_to_master
+    return camera_to_table.astype(np.float32), str(data.get("master", "unknown")), path
 
 
 def load_label(path: str | Path) -> dict[str, np.ndarray]:

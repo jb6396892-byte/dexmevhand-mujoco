@@ -14,7 +14,12 @@ from fromrealhand.validation import format_stats, validate_demo_file
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Validate a DexMV demonstration pickle.")
     parser.add_argument("demo_file", help="Demo pickle to validate.")
-    parser.add_argument("--warn-saturation", type=float, default=0.2, help="Warn if action saturation fraction exceeds this.")
+    parser.add_argument(
+        "--warn-saturation",
+        type=float,
+        default=0.4,
+        help="Fail if action saturation exceeds this fraction; official relocate-mug demos peak near 0.35.",
+    )
     return parser.parse_args()
 
 
