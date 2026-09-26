@@ -64,9 +64,13 @@
           <div>
             <p class="eyebrow">执行看板</p>
             <h1>从真实视频训练 MuJoCo 灵巧手</h1>
-            <p class="header-copy">按验收标准逐步推进，从第一条 DexYCB mug 轨迹到语言规划和倒水任务。</p>
+            <p class="header-copy">首条 DexYCB 视频已生成可执行物理示范；当前准备短训练与多序列评估。</p>
           </div>
           <div class="header-actions">
+            <a class="button button-secondary" href="VIDEO_IMITATION_PLAN.md">
+              <i data-lucide="route" aria-hidden="true"></i>
+              <span>视频学习方案</span>
+            </a>
             <a class="button button-secondary" href="EXECUTION_PLAN.md">
               <i data-lucide="file-text" aria-hidden="true"></i>
               <span>完整文档</span>
@@ -84,12 +88,12 @@
         <section class="status-band" aria-label="当前状态">
           <div class="primary-status">
             <span class="status-label">当前任务</span>
-            <strong id="currentStage">C1 · 扩充真实抓杯轨迹</strong>
-            <span id="currentStageHint">检查初始状态，并提高抓取成功率</span>
+            <strong id="currentStage">C0 · 训练与评估新物理示范</strong>
+            <span id="currentStageHint">先验证学到的策略能否抬杯</span>
           </div>
           <div class="metric">
             <span>已完成阶段</span>
-            <strong id="completedStages">7 / 14</strong>
+            <strong id="completedStages">7 / 16</strong>
           </div>
           <div class="metric">
             <span>任务进度</span>
@@ -176,7 +180,7 @@
 
         <footer class="page-footer">
           <span>进度仅保存在当前浏览器中</span>
-          <span>源文档：<a href="EXECUTION_PLAN.md">EXECUTION_PLAN.md</a></span>
+          <span>学习方案：<a href="VIDEO_IMITATION_PLAN.md">VIDEO_IMITATION_PLAN.md</a></span>
         </footer>
       </main>
     </div>

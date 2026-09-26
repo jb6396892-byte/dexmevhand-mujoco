@@ -137,9 +137,13 @@ demonstration 的来源：
 ```text
 真实视频位姿恢复
   -> DexMV 人手到 Adroit retarget
-  -> 生成 MuJoCo demonstration
+  -> 在碰撞模型中生成连续轨迹和动作
+  -> env.step(action) 物理验收，杯子自由运动
+  -> 保存 MuJoCo demonstration
   -> 按技能边界拆分
 ```
+
+DexYCB 的 MANO 和物体标签用于学习人手相对杯子的目标，不是 Adroit 执行器动作标签。可以先监督训练抓持姿态或关键路点模型，再由低层控制器在仿真中产生动作。只有保存动作可独立重放并持续抬杯的 rollout 才进入 BC/DAPG。首条轨迹的具体门槛和多视频扩展顺序见[实施设计](VIDEO_IMITATION_PLAN.md)。
 
 第一版分别训练四个策略：
 

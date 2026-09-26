@@ -32,3 +32,14 @@ def transform_points(transform: np.ndarray, points: np.ndarray) -> np.ndarray:
     hom = np.concatenate([flat, np.ones((flat.shape[0], 1))], axis=1)
     out = (transform @ hom.T).T[:, :3]
     return out.reshape(pts.shape)
+
+
+def align_object_origin(camera_to_world: np.ndarray, object_pose: np.ndarray, target_xyz: np.ndarray) -> np.ndarray:
+    """Translate the task frame so one object pose starts at the requested position."""
+    source = transform_pose(camera_to_world, object_pose)[:3, 3]
+    target = np.asarray(target_xyz, dtype=float)
+    if target.shape != (3,) or not np.isfinite(target).all():
+        raise ValueError("target_xyz must contain three finite coordinates")
+    alignment = np.eye(4)
+    alignment[:3, 3] = target - source
+    return alignment @ camera_to_world

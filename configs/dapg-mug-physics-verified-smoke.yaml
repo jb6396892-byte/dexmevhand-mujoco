@@ -1,0 +1,19 @@
+BC_INIT: true
+USE_DAPG: true
+DAPG_LAM0: 0.1
+DAPG_LAM1: 0.99
+DEMO_FILE: /home/smgbro/mujoconew/GITHUB/data/demonstrations/relocate-mug-physics-verified-v1.pkl
+DEMO_RATIO: 6
+ENV_NAME: relocate-mug-0.8
+JOB_DIR: /home/smgbro/mujoconew/GITHUB/training_log
+JOB_NAME: physics_verified_v1_smoke20
+NUM_ITER: 20
+NUM_TRAJ: 5
+EVAL_RS: 3
+NUM_CPU: 1
+POLICY_INIT_LOG_STD: -2.0
+POLICY_WS: [64, 64]
+RNG_SEED: 200
+SAVE_FREQ: 5
+CHECKPOINT_POLICY: ""
+CHECKPOINT_BASELINE: ""

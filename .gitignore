@@ -32,6 +32,8 @@ runs/
 *.pth
 *.ckpt
 
+MUJOCO_LOG.TXT
+relocate_temp.xml
 # Generated media and logs
 *.mp4
 *.avi

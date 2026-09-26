@@ -18,21 +18,28 @@
 - DexYCB Subject 01 已在共享盘完成解压和校验，并筛出两条右手 `025_mug` 轨迹。
 - 第一条真实轨迹已完成坐标转换、重投影、retarget、MuJoCo 离屏回放和 demonstration 验证。
 - 已用 MANO 官方模型恢复手部旋转，完成标签对比和 20 次 DAPG 短训练。
+- 旧短训策略虽可运行，但物理回放未抬起杯子；已记录失败原因。
+- 基于首条视频生成了可自由运动、可独立重放的物理抓杯示范；11 个窄初态验证通过。
+- 新示范的 20 次 DAPG 课程训练已完成数据与采样器预检，尚未启动。
 
 下一步：
 
-- 扩充真实抓杯轨迹，分析当前策略回放没有接触杯子的原因。
+- 运行新示范的 20 次短训练并独立评估学到的策略。
+- 扩充多条独立真实抓杯轨迹，区分视频来源与毫米级初态扰动副本。
 - 将轨迹拆成 `reach`、`grasp`、`lift` 和 `transport` 技能。
 
 详细文档：
 
 - [网页执行看板](docs/index.html)
 - [层次化模仿学习架构](docs/ARCHITECTURE.md)
+- [从视频到可执行策略的实施设计](docs/VIDEO_IMITATION_PLAN.md)
 - [分阶段实施路线](docs/ROADMAP.md)
 - [实际操作执行计划](docs/EXECUTION_PLAN.md)
 - [数据与标注格式](docs/DATA_FORMAT.md)
 - [实验记录模板](docs/WORK_LOG_TEMPLATE.md)
 - [MANO 与 20 次短训练记录](docs/run_logs/2026-09-24-mano-smoke20.md)
+- [几何与物理失败诊断](docs/run_logs/2026-09-26-stage3-geometry-physics.md)
+- [可执行示范及训练准入](docs/run_logs/2026-09-26-physical-grasp-training-ready.md)
 
 网页版看板可以直接打开 `docs/index.html`。需要发布到 GitHub Pages 时，在仓库
 `Settings -> Pages` 中选择从 `main` 分支的 `/docs` 目录部署。
@@ -46,9 +53,10 @@
   -> 杯子 6D 位姿估计
   -> 相机坐标转换到世界坐标
   -> 人手到 Adroit 灵巧手 retarget
-  -> 生成 DexMV demonstration pickle
-  -> 行为克隆 + DAPG/TRPO 训练
-  -> 策略可视化与评估
+  -> 连续轨迹和自由杯子物理验收
+  -> 生成真实物理动作的 DexMV demonstration
+  -> 行为克隆 + DAPG 训练
+  -> 独立初态和未见过序列的策略物理评估
 ```
 
 DexMV 不负责从原始视频估计手部和物体位姿。本项目目前消费外部姿态估计
@@ -146,6 +154,23 @@ cd /home/smgbro/mujoconew/GITHUB
 bash scripts/00_check_env.sh
 ```
 
+## 物理示范与短训练
+
+在已准备共享盘数据的本机终端中，直接查看**专家保存动作**的 MuJoCo 物理回放：
+
+```bash
+bash scripts/28_view_verified_grasp_gpu.sh
+```
+
+这不是训练策略，也不是逐帧强制设置杯子位姿。进行新示范的课程/GPU 预检和 20 次 DAPG 短训：
+
+```bash
+bash scripts/27_train_verified_smoke.sh
+bash scripts/27_train_verified_smoke.sh --train
+```
+
+短训完成后仍需对新策略单独运行物理抓取评估。仓库不包含 DexYCB 数据、MANO 模型、示范 pkl 或 checkpoint；新机器克隆后需按许可自行配置这些资源。
+
 ## DexYCB 与 MANO 资源
 
 大型数据和受许可约束的 MANO 模型统一保存在 `shared` 固态硬盘：
@@ -228,14 +253,27 @@ python scripts/11_visualize_source_pose.py \
   --output data/processed/seq_dexycb_001
 ```
 
-可视化 retarget 后的手和杯子：
+可视化 retarget 后的手和杯子。窗口播放可加 `--loop` 持续循环（Ctrl+C 结束）、`--fps 10` 放慢；单次播放默认在末帧停留 5 秒。若窗口报 `GLEW initialization error`，使用离屏 MP4：
 
 ```bash
 /home/smgbro/miniconda3/bin/conda run -n dexmv python scripts/04_visualize_retargeting.py \
-  --retargeting data/real_data/relocate_mug/seq_000/retargeting.pkl \
-  --object-dir data/real_data/relocate_mug/seq_000/object_pose \
-  --camera-to-world data/real_data/relocate_mug/seq_000/calib/camera_to_world.npy
+  --retargeting data/real_data/relocate_mug/seq_dexycb_001/retargeting_mano_aligned.pkl \
+  --object-dir data/real_data/relocate_mug/seq_dexycb_001/object_pose \
+  --camera-to-world data/real_data/relocate_mug/seq_dexycb_001/calib/camera_to_mujoco.npy \
+  --skip-frame 20 \
+  --output-video data/processed/seq_dexycb_001/aligned_retargeting.mp4
 ```
+
+这只是按记录位姿播放，不是动作驱动的动力学抓取验证。
+
+本机 MuJoCo 交互窗口使用项目外侧的隔离 GPU 扩展 `../.local/mujoco-py-gpu`；原 `dexmv` 环境的 CPU 扩展未修改。以下窗口只回放记录的手杯位姿，**不是训练模型**：
+
+```bash
+bash scripts/19_visualize_aligned_gpu.sh --loop --fps 10
+```
+
+按 Ctrl+C 结束；不加 `--loop` 时只播放一次并在末帧停留 5 秒。启动脚本已设置 NVIDIA PRIME、GLEW/GL 预加载和旧版 MuJoCo 所需库路径。
+
 
 生成 DexMV demonstration：
 
@@ -260,16 +298,63 @@ bash scripts/07_train_dapg.sh
 bash scripts/08_visualize_policy.sh /path/to/best_policy.pickle
 ```
 
+要看已经训练的 GPU 短训策略在真实 MuJoCo 动力学里执行动作，运行：
+
+```bash
+bash scripts/20_visualize_trained_policy_gpu.sh
+```
+
+该脚本使用 `best_policy.pickle` 的确定性动作，正常调用 `env.step(action)`；不强制移动手或杯。也可以把其他策略文件路径作为第一个参数。当前 20 次迭代的模型仍未学会抬杯，见[物理回放记录](docs/run_logs/2026-09-25-policy-physics.md)。
+
+
 MANO 版本的短训练使用已验收的 `hand_pose_mano/` 和
-`data/demonstrations/relocate-mug-mano-real.pkl`。本机无可用 CUDA，运行：
+`data/demonstrations/relocate-mug-mano-real.pkl`。此前 GPU 驱动不可用时，使用 CPU 入口运行：
 
 ```bash
 TRAIN_ENTRY="$PWD/scripts/15_train_dapg_cpu.py" bash scripts/07_train_dapg.sh \
   "$PWD/configs/dapg-mug-mano-smoke.yaml"
 ```
 
-单轨迹短训练的策略回放没有接触杯子；结果见
+早期单轨迹短训练在离屏检查环境中的策略回放没有接触杯子；结果见
 [MANO 与短训练记录](docs/run_logs/2026-09-24-mano-smoke20.md)。
+
+后续手杯坐标、观测时序和动作动力学验收见
+[对齐版 MANO 示范记录](docs/run_logs/2026-09-24-aligned-demo.md)。对齐版示范尚未通过动力学抓取验收，不用于完整 DAPG 训练。
+
+### GPU 环境
+
+本机 RTX 4060 的 `dexmv` 环境已有 `torch 1.13.1+cu117`；不需要单独安装
+CUDA Toolkit，也不要直接升级这个旧环境中的 PyTorch/NumPy。若 `nvidia-smi`
+无法连接驱动，先检查 `uname -r` 和 `modinfo nvidia`。2026-09-24 的检查显示
+运行内核 `6.17.0-35-generic` 没有匹配的 NVIDIA 模块，已安装的 590 模块仅适用于
+`6.17.0-14-generic`。系统预装了 `7.0.0-30-generic`，但也没有对应模块。
+
+使用管理员权限安装 Ubuntu 仓库提供的匹配驱动和 HWE 内核模块，之后重启：
+
+```bash
+sudo ubuntu-drivers install
+sudo reboot
+```
+
+重启后在本项目目录验证（第一条应显示 NVIDIA GPU，第二条应打印 CUDA 训练成功）：
+
+```bash
+nvidia-smi
+/home/smgbro/miniconda3/bin/conda run -n dexmv python scripts/16_check_gpu.py
+```
+
+2026-09-24 验证结果：启动内核为 `7.0.0-34-generic`，NVIDIA 驱动为
+`595.91.07`，RTX 4060 上的 PyTorch 前向、反向传播和优化器更新均通过。
+本机有 Ubuntu 22.04/24.04 双系统；若安装驱动后重启仍进入旧内核，检查
+`/boot/efi/EFI/ubuntu/grub.cfg` 是否指向当前 Ubuntu 24.04 根分区。
+本次通过重新安装当前系统的 UEFI GRUB 修复了引导指向问题。
+
+GPU 验证通过后，使用默认训练入口（不设置 `TRAIN_ENTRY`）；默认入口会将
+DAPG 的神经网络 baseline 放在 GPU 上：
+
+```bash
+bash scripts/07_train_dapg.sh "$PWD/configs/dapg-mug-mano-smoke.yaml"
+```
 
 ## 仍然缺少的内容
 

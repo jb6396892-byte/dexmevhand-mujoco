@@ -22,6 +22,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--object-id", default=None, help="Optional key in dict-style object pose files.")
     parser.add_argument("--object-scale", type=float, default=0.8, help="DexMV object scale.")
     parser.add_argument("--camera-to-world", default=None, help="Optional 4x4 transform for object poses.")
+    parser.add_argument("--aligned-task-frame", action="store_true", help="Use aligned poses and refresh simulation before observations.")
     parser.add_argument("--skip-frame", type=int, default=0, help="Skip initial frames.")
     parser.add_argument("--limit", type=int, default=None, help="Limit number of frames.")
     parser.add_argument("--append", action="store_true", help="Append/update one trajectory in an existing output file.")
@@ -54,6 +55,7 @@ def main() -> None:
         limit=args.limit,
         append=args.append,
         has_renderer=args.render,
+        aligned_task_frame=args.aligned_task_frame,
     )
     print(f"wrote {output} with {len(merged)} trajector(y/ies)")
 

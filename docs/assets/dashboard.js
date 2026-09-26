@@ -237,6 +237,33 @@ const stages = [
     defaultDone: true,
   },
   {
+    id: "C0",
+    phase: "C",
+    phaseLabel: "物理抓取",
+    title: "训练并评估可执行抓杯示范",
+    objective: "用通过自由杯子动力学验收的示范完成短训，再单独验证学到的策略。",
+    tasks: [
+      "核对六条示范来自同一视频的毫米级扰动，不能当成独立视频",
+      "运行课程与 GPU 预检，再进行 20 次 DAPG 短训练",
+      "在独立复位种子上以 env.step(action) 评估新策略",
+      "记录接触、杯底高度、目标距离、穿透和动作饱和率",
+    ],
+    outputs: [
+      "独立命名的短训 checkpoint 与日志",
+      "逐复位种子的物理抓取评估报告",
+    ],
+    acceptance: [
+      "短训练没有 NaN 或维度错误，策略可以加载",
+      "学到的策略在独立初态下持续接触并抬起自由运动的杯子",
+      "训练链路通过和物理抓取成功分别记录",
+    ],
+    commands: [
+      { label: "课程预检", text: "bash scripts/27_train_verified_smoke.sh" },
+      { label: "20 次短训", text: "bash scripts/27_train_verified_smoke.sh --train" },
+      { label: "查看专家物理示范", text: "bash scripts/28_view_verified_grasp_gpu.sh" },
+    ],
+  },
+  {
     id: "C1",
     phase: "C",
     phaseLabel: "低层技能",

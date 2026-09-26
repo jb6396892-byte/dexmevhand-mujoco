@@ -23,6 +23,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", required=True, help="Output retargeting pickle.")
     parser.add_argument("--name", default="real_retargeting", help="Name shown by the optimizer.")
     parser.add_argument("--link-count", type=int, default=6, help="Number of palm/finger links to match.")
+    parser.add_argument("--limit-global-pose", action="store_true", help="Constrain the six hand-root joints to MuJoCo limits.")
     parser.add_argument("--camera-to-world", default=None, help="Optional 4x4 transform applied to hand joints and frames.")
     parser.add_argument("--no-auto-transform", action="store_true", help="Do not infer calib/camera_to_world.npy from hand-dir.")
     parser.add_argument(
@@ -59,7 +60,7 @@ def main() -> None:
         xml_path_completion("adroit/adroit_relocate.xml"),
         link_names,
         has_joint_limits=True,
-        has_global_pose_limits=False,
+        has_global_pose_limits=args.limit_global_pose,
     )
 
     hand_frame_seq = []
@@ -110,6 +111,7 @@ def main() -> None:
         "invalid_policy": args.invalid_policy,
         "repaired_frames": repaired_frames,
         "camera_to_world": str(camera_to_world_path.resolve()) if camera_to_world_path else None,
+        "limit_global_pose": args.limit_global_pose,
     }
     metadata_path = output.with_name(f"{output.stem}_meta.json")
     metadata_path.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
