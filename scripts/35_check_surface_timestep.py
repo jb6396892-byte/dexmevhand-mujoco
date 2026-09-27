@@ -18,11 +18,13 @@ def main():
     best = admission['best']
     with (args.result/'best/diagnostic_rollout.pkl').open('rb') as f:
         actions = pickle.load(f)['video_faithful']['actions']
-    exp = import_module('33_optimize_surface_grasp').SurfaceExperiment(admission['geometry'])
-    if any(best.get('joint_correction', [])):
-        exp.env.close()
-        exp = import_module('37_optimize_finger_reference').CorrectedExperiment(admission['geometry'])
+    exp = import_module('37_optimize_finger_reference').CorrectedExperiment(admission['geometry'])
+    if 'joint_correction' in best:
         exp.correction = best['joint_correction']
+    exp.closure_lead = best.get('closure_lead', 0.)
+    exp.feedback_weights = best.get('feedback_weights')
+    exp.approach_gain = best.get('approach_gain', 0.)
+    exp.approach_root_gain = best.get('approach_root_gain')
     try:
         original = float(exp.model.opt.timestep)
         exp.model.opt.timestep = original/2
@@ -31,7 +33,8 @@ def main():
         closed, _ = exp.run_surface(best['time_scale'], best['close'], best['cartesian_gain'])
         result = dict(original_timestep_s=original, refined_timestep_s=original/2,
                       saved_action_replay=replay, closed_loop=closed,
-                      passed=bool(replay['surface_physics_passed'] and closed['surface_physics_passed']))
+                      passed=bool(replay['surface_physics_passed'] and closed['surface_physics_passed']),
+                      fidelity_passed=bool(replay['fidelity_passed'] and closed['fidelity_passed']))
         output.write_text(json.dumps(result, indent=2)+'\n')
         print(json.dumps(result, indent=2))
     finally:

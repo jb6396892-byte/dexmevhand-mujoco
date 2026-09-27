@@ -3,7 +3,41 @@ import hashlib
 import json
 import os
 import pickle
+from contextlib import contextmanager
 from pathlib import Path
+from unittest.mock import patch
+
+import numpy as np
+
+
+@contextmanager
+def local_parameter_exports(directory):
+    """Confine the legacy trainer's fixed desktop export to this training job."""
+    directory = str(Path(directory).resolve())
+    expanduser = os.path.expanduser
+
+    def scoped_expanduser(path):
+        if path == '~/Desktop/trpo_params':
+            return directory
+        return expanduser(path)
+
+    with patch.object(os.path, 'expanduser', scoped_expanduser):
+        yield
+
+
+def restore_contact_model(model, demonstration):
+    parameters = demonstration.get('physics_model', {})
+    if set(parameters) - {'geom_margin', 'geom_gap'}:
+        raise ValueError('Unsupported demonstration physics parameters')
+    validated = {}
+    for name, value in parameters.items():
+        target = getattr(model, name)
+        value = np.asarray(value, dtype=float)
+        if value.shape != target.shape or not np.isfinite(value).all() or np.any(value < 0):
+            raise ValueError('Invalid demonstration contact parameter: '+name)
+        validated[name] = value
+    for name, value in validated.items():
+        getattr(model, name)[:] = value
 
 
 def load_admitted_demos():
@@ -40,6 +74,7 @@ def make_verified_environment(env_name=None):
             demo = self.demonstrations[self.demo_index]
             self.sim.reset()
             self.pack_mujoco_model(demo['model_data'][0])
+            restore_contact_model(self.sim.model, demo)
             self.pack(demo['sim_data'][0])
             self.sim.forward()
 

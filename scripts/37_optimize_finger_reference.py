@@ -15,9 +15,17 @@ class CorrectedExperiment(surface.SurfaceExperiment):
     def __init__(self, geometry):
         super().__init__(geometry)
         self.correction = np.zeros(30)
+        self.closure_lead = 0.
+        self.feedback_weights = None
+        self.approach_gain = 0.
+        self.approach_root_gain = None
 
     def run_video(self, *args, **kwargs):
         kwargs['joint_correction'] = self.correction
+        kwargs.setdefault('closure_lead', self.closure_lead)
+        kwargs.setdefault('feedback_weights', self.feedback_weights)
+        kwargs.setdefault('approach_gain', self.approach_gain)
+        kwargs.setdefault('approach_root_gain', self.approach_root_gain)
         return super().run_video(*args, **kwargs)
 
 
@@ -44,6 +52,10 @@ def main():
     admission = json.loads(args.candidate.read_text())
     exp = CorrectedExperiment(admission['geometry'])
     b = admission['best']
+    exp.closure_lead = b.get('closure_lead', 0.)
+    exp.feedback_weights = b.get('feedback_weights')
+    exp.approach_gain = b.get('approach_gain', 0.)
+    exp.approach_root_gain = b.get('approach_root_gain')
     kwargs = dict(scale=b['time_scale'], close=b['close'], gain=b['cartesian_gain'])
     groups = [('THJ4',), ('THJ3',), ('THJ2',), ('THJ1',), ('THJ0',),
               ('MFJ2',), ('MFJ1', 'MFJ0'), ('FFJ2',), ('RFJ2',), ('WRJ1',), ('WRJ0',)]

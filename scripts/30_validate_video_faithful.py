@@ -39,7 +39,8 @@ class VideoExperiment(base.GraspExperiment):
         self.landmarks = HandLandmarks(self.model)
         self.grasp_time = self.source_times[np.argmin(np.abs(g['source_frames']-30))]
 
-    def run_video(self, time_scale, close=0., seed=0, output=None, saved_actions=None, cartesian_gain=0., joint_correction=None):
+    def run_video(self, time_scale, close=0., seed=0, output=None, saved_actions=None, cartesian_gain=0., joint_correction=None,
+                  closure_lead=0., feedback_weights=None, approach_gain=0., approach_root_gain=None):
         e, m, d = self.env, self.model, self.env.sim.data
         g = self.geometry
         e.reset()
@@ -61,23 +62,27 @@ class VideoExperiment(base.GraspExperiment):
         observations, actions, states, rewards, rows = [], [], [], [], []
         previous = g['qpos'][0].copy()
         kp = -m.actuator_biasprm[:, 1]
+        weights = np.ones(5) if feedback_weights is None else np.asarray(feedback_weights, dtype=float)
+        root_gain = approach_gain if approach_root_gain is None else float(approach_root_gain)
+        if weights.shape != (5,) or not np.isfinite(weights).all() or np.any(weights <= 0):
+            raise ValueError('feedback_weights must contain five finite positive values')
         streak = best_streak = 0
         for step in range(count):
             clock = float(source_clock(step*dt, self.duration, time_scale))
             desired = self.qcurve(clock)
-            closing = float(np.clip((clock-self.grasp_time)/.2, 0., 1.)) * close
+            closing = float(np.clip((clock-self.grasp_time+closure_lead)/.2, 0., 1.)) * close
             for finger in ('FF', 'MF', 'RF', 'LF'):
                 for joint in (2, 1, 0):
                     desired[m.jnt_qposadr[m.joint_name2id(finger+'J'+str(joint))]] += closing
             desired[m.jnt_qposadr[m.joint_name2id('THJ0')]] -= closing
             if joint_correction is not None:
-                desired += float(np.clip((clock-self.grasp_time)/.35, 0., 1.))*np.asarray(joint_correction)
+                desired += float(np.clip((clock-self.grasp_time+closure_lead)/.35, 0., 1.))*np.asarray(joint_correction)
             desired = np.clip(desired, m.jnt_range[:30, 0], m.jnt_range[:30, 1])
             velocity = (desired-previous)/dt
             previous = desired.copy()
             if saved_actions is None:
                 force = d.qfrc_bias[:30] + kp*(desired-d.qpos[:30]) + m.dof_damping[:30]*velocity
-                if cartesian_gain:
+                if cartesian_gain or approach_gain or root_gain:
                     reference = np.eye(4)
                     reference[:3, 3] = self.pcurve(clock)
                     reference[:3, :3] = self.rcurve(clock).as_matrix()
@@ -94,8 +99,15 @@ class VideoExperiment(base.GraspExperiment):
                         error = np.clip(targets[i]-tips[i], -.02, .02)
                         target_velocity = object_velocity + np.cross(object_omega, targets[i]-d.body_xpos[e.obj_bid])
                         relative_velocity = jac_full @ d.qvel-target_velocity
-                        feedback = cartesian_gain*error - .4*np.sqrt(cartesian_gain)*relative_velocity
+                        gain = cartesian_gain*weights[i]
+                        feedback = gain*error - .4*np.sqrt(gain)*relative_velocity
                         force[6:] += blend*(jac.T @ feedback)
+                        if approach_gain:
+                            early = approach_gain*error - .4*np.sqrt(approach_gain)*relative_velocity
+                            force[6:] += (1.-blend)*(jac.T @ early)
+                        if root_gain:
+                            early_root = root_gain*error - .4*np.sqrt(root_gain)*relative_velocity
+                            force[:6] += (1.-blend)*(jac_full[:, :6].T @ early_root)
                 action = force_to_action(force, d.qpos[:30], d.qvel[:30], m.actuator_gainprm[:, 0],
                                          m.actuator_biasprm, e.act_mid, e.act_rng)
             else:
@@ -148,7 +160,18 @@ class VideoExperiment(base.GraspExperiment):
                       tail_finger_tip_error_m={name: float(np.mean([r[finger+'_tip_error_m'] for r in tail]))
                                               for name, finger in zip(FINGER_NAMES, FINGERS)})
         report['physics_passed'] = physical_gate(report)
+        report['actuator_saturated_steps'] = {
+            m.actuator_id2name(i): int(np.sum(np.abs(np.asarray(actions)[:, i]) >= .999))
+            for i in range(m.nu)}
         report['joint_correction'] = np.asarray(joint_correction if joint_correction is not None else np.zeros(30)).tolist()
+        report['closure_lead'] = float(closure_lead)
+        report['feedback_weights'] = weights.tolist()
+        report['approach_gain'] = float(approach_gain)
+        report['approach_root_gain'] = root_gain
+        report['phase_mean_tip_error_m'] = {
+            name: float(np.mean([r['mean_tip_error_m'] for r in rows if lo <= r['source_frame'] < hi]))
+            for name, lo, hi in [('initial', 0, 12), ('approach', 12, 30), ('grasp', 30, 50), ('lift_hold', 50, float('inf'))]
+            if any(lo <= r['source_frame'] < hi for r in rows)}
         fractions = report['tail_finger_contact_fraction']
         report['fidelity_passed'] = (report['tail_mean_tip_error_m'] < .015
                                      and report['mean_tip_error_m'] < .02

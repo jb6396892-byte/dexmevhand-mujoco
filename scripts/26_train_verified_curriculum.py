@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'src'))
 from fromrealhand.paths import configure_runtime_paths
 configure_runtime_paths()
-from fromrealhand.verified_curriculum import load_admitted_demos, install_verified_factory, make_verified_environment
+from fromrealhand.verified_curriculum import (load_admitted_demos, install_verified_factory,
+                                             make_verified_environment, local_parameter_exports)
 
 
 def main():
@@ -55,7 +56,7 @@ def main():
     sampled = do_rollout(1, RecordedActions(environment), env=environment, pegasus_seed=200)[0]
     expected = environment.env.demonstrations[environment.env.demo_index]
     sampling_error = float(np.max(np.abs(sampled['observations']-expected['observations'])))
-    if len(sampled['actions']) != 1000 or sampling_error > 1e-8:
+    if len(sampled['actions']) != len(expected['actions']) or sampling_error > 1e-8:
         raise RuntimeError('Training sampler does not reproduce the admitted action trajectory')
     import torch
     if not torch.cuda.is_available():
@@ -80,7 +81,8 @@ def main():
     cfg.freeze()
     sys.path.insert(0, '/home/smgbro/dexmv-sim/examples')
     from train import train
-    train()
+    with local_parameter_exports(Path(cfg.JOB_DIR)/job/'parameter_exports'):
+        train()
 
 
 if __name__ == '__main__':

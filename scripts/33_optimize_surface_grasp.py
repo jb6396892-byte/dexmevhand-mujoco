@@ -34,6 +34,7 @@ class SurfaceExperiment(video.VideoExperiment):
         super().__init__(geometry)
         self.margin = margin
         self.audit = []
+        self.contact_peaks = {}
         original = self.env._pre_action
 
         def audited(action, policy_step=False):
@@ -49,6 +50,14 @@ class SurfaceExperiment(video.VideoExperiment):
                            if m.geom_id2name(int(c.geom1)) in self.hand_geoms
                            or m.geom_id2name(int(c.geom2)) in self.hand_geoms] or [0.])
         loaded = [c['distance_m'] for c in cs if c['normal_force_n'] > .01]
+        for c in d.contact[:d.ncon]:
+            pair = sorted(m.geom_id2name(int(i)) or str(int(i)) for i in (c.geom1, c.geom2))
+            if not self.hand_geoms.intersection(pair):
+                continue
+            key = '|'.join(pair)
+            depth = max(0., -float(c.dist))
+            if depth > self.contact_peaks.get(key, {}).get('penetration_m', -1.):
+                self.contact_peaks[key] = dict(geoms=pair, time_s=float(d.time), penetration_m=depth)
         violation = np.maximum(m.jnt_range[:30, 0]-d.qpos[:30], d.qpos[:30]-m.jnt_range[:30, 1])
         palm = m.body_name2id('palm')
         relative = (d.body_xpos[e.obj_bid]-d.body_xpos[palm]) @ d.body_xmat[palm].reshape(3, 3)
@@ -65,6 +74,7 @@ class SurfaceExperiment(video.VideoExperiment):
         m.geom_margin[ids] = self.margin
         m.geom_gap[ids] = 0.
         self.audit = []
+        self.contact_peaks = {}
         report, actions = self.run_video(scale, close, seed=seed, saved_actions=saved_actions, cartesian_gain=gain)
         self.sample()
         tail = [x for x in self.audit if x['time'] >= self.audit[-1]['time']-1.]
@@ -77,6 +87,7 @@ class SurfaceExperiment(video.VideoExperiment):
                       tail_slip_m=float(np.linalg.norm(relative-relative[0], axis=1).max()),
                       finite=all(x['finite'] for x in self.audit), margin_m=self.margin)
         report['surface_physics_passed'] = surface_gate(report)
+        report['scene_contact_peaks'] = sorted(self.contact_peaks.values(), key=lambda x: -x['penetration_m'])
         self.last_demo['physics_model'] = {key: getattr(m, key).copy() for key in ('geom_margin', 'geom_gap')}
         if output is not None:
             output.mkdir(parents=True, exist_ok=False)

@@ -14,7 +14,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'src'))
 from fromrealhand.paths import configure_runtime_paths
-from fromrealhand.video_fidelity import FINGERS, FINGER_NAMES, HandLandmarks, fidelity_metrics
+from fromrealhand.video_fidelity import FINGERS, FINGER_NAMES, HandLandmarks, fidelity_metrics, source_clock
 
 
 def main():
@@ -50,6 +50,13 @@ def main():
     if args.version == 'video' and steps_file.exists():
         with steps_file.open() as stream:
             source_frames = [int(round(float(row['source_frame']))) for row in csv.DictReader(stream)]
+    elif args.version == 'video' and (args.rollout.parent/'summary.json').exists():
+        summary = json.loads((args.rollout.parent/'summary.json').read_text())
+        if 'time_scale' in summary:
+            frames, fps = geometry['source_frames'], float(geometry['fps'])
+            clocks = source_clock(np.arange(len(actions))*env.control_timestep,
+                                  float((frames[-1]-frames[0])/fps), summary['time_scale'])
+            source_frames = np.rint(frames[0]+clocks*fps).astype(int).tolist()
     if args.output is not None:
         import cv2
         from mujoco_py import MjRenderContextOffscreen
