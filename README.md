@@ -1,3 +1,6 @@
+> 最新审计发现旧候选存在 10 mm 初态手桌穿透，旧报告只覆盖手杯接触。参见 [完整场景修正与未通过项](docs/run_logs/2026-09-27-scene-fidelity.md)。
+> 新版已修正初态，但完整场景与视频忠实度仍未全部通过；实验窗口：`bash scripts/40_view_scene_candidate_gpu.sh`。
+
 > 近表面接触修正：见 [优化方法与验收标准](docs/SURFACE_CONTACT_OPTIMIZATION.md)。使用 `bash scripts/36_view_surface_grasp_gpu.sh` 查看。
 > 新候选通过 6 个窄初态及半步长物理检查；旧版存在提前接触，严格视频忠实度仍未通过，未启动训练。
 

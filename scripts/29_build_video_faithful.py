@@ -25,6 +25,7 @@ def main():
     parser.add_argument('--output', type=Path, default=ROOT/'data/processed/seq_dexycb_001/video_faithful_v1/retarget')
     parser.add_argument('--iterations', type=int, default=90)
     parser.add_argument('--joint-margin', type=float, default=.04)
+    parser.add_argument('--scene-collisions', action='store_true')
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     configure_runtime_paths()
@@ -45,6 +46,15 @@ def main():
     env = YCBRelocate(has_renderer=False, object_name='mug', object_scale=scale,
                       friction=(1, .5, .01), solref='-6000 -300', randomness_scale=.25)
     model, data = env.sim.model, env.sim.data
+    hand_ids = {i for i in range(model.ngeom) if model.geom_id2name(i) in set(env.robot_geom_names)}
+    if args.scene_collisions:
+        for i in range(model.ngeom):
+            if i in hand_ids or model.geom_id2name(i) in set(env.body_geom_names):
+                model.geom_margin[i] = .0002
+                model.geom_gap[i] = 0.
+    def scene_depths():
+        return [max(0., -float(c.dist)) for c in data.contact[:data.ncon]
+                if int(c.geom1) in hand_ids or int(c.geom2) in hand_ids]
     landmarks = HandLandmarks(model)
     bounds = np.column_stack([np.maximum(model.jnt_range[:30, 0], model.actuator_ctrlrange[:, 0]),
                               np.minimum(model.jnt_range[:30, 1], model.actuator_ctrlrange[:, 1])])
@@ -73,6 +83,8 @@ def main():
             fit = np.sum(weights * (points-joints[k])**2)
             direction = .00025 * np.sum((finger_directions(points)-directions)**2)
             collision = sum(max(0., -c['distance_m']-.0003)**2 for c in contacts(env))
+            if args.scene_collisions:
+                collision = 20*sum(max(0., depth-.0001)**2 for depth in scene_depths())
             return fit + direction + 500*collision + 1e-5*np.sum((q-seed)**2) + 3e-5*np.sum((q-previous)**2)
         solved = minimize(objective, np.clip(previous, bounds[:, 0], bounds[:, 1]), method='SLSQP',
                           bounds=bounds, constraints=[tendon_constraint],
@@ -85,6 +97,7 @@ def main():
             raise RuntimeError('Nonfinite retarget at source frame %d' % frame)
         objective(solved.x)
         metrics = fidelity_metrics(landmarks.read(data), poses[k], joints[k], poses[k])
+        metrics['max_hand_scene_penetration_m'] = max(scene_depths() or [0.])
         metrics.update(source_frame=int(frame), converged=bool(solved.success),
                        max_tendon_violation_m=float(max(0., np.max(tendon_lower-tendon_jac @ solved.x),
                                                        np.max(tendon_jac @ solved.x-tendon_upper))),
@@ -103,6 +116,7 @@ def main():
     baseline_paths = [old_path, ROOT/'data/demonstrations/relocate-mug-physics-verified-v1.pkl',
                       ROOT/'data/processed/seq_dexycb_001/physical_grasp_verified_v1/admission.json']
     manifest = dict(baseline_tag='physical-grasp-verified-v1', baseline_commit='5dea040b134a73507481ee71095d621707babaa7',
+                    scene_collision_constraints=args.scene_collisions,
                     protected_files={str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in baseline_paths},
                     source_sequence=json.loads((sequence/'meta.json').read_text())['source_sequence'],
                     source_frames=indices.tolist(), fingers=list(FINGER_NAMES),

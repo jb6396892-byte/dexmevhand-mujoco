@@ -13,6 +13,7 @@ class SurfaceGateTest(unittest.TestCase):
         self.valid = dict(physics_passed=True, max_loaded_gap_m=.0002,
                           max_penetration_m=.0007, max_joint_violation_rad=0.,
                           tail_slip_m=.00002, saturation=.003, finite=True,
+                          max_hand_scene_penetration_m=.0007, initial_hand_scene_penetration_m=.0001,
                           tail_finger_contact_fraction=dict(thumb=1., index=1.))
 
     def test_near_surface_passes(self):

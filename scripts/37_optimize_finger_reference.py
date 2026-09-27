@@ -38,6 +38,7 @@ def main():
     p.add_argument('--quota-stop', type=float, default=85.)
     p.add_argument('--initial-correction', type=Path)
     p.add_argument('--steps', type=float, nargs='+', default=[.12, .06, .03])
+    p.add_argument('--search-seeds', type=int, nargs='+', default=[0])
     args = p.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     admission = json.loads(args.candidate.read_text())
@@ -59,7 +60,10 @@ def main():
         exp.correction = q.copy()
         report, _ = exp.run_surface(**kwargs)
         report['trial'] = len(results)
-        report['score'] = score(report)
+        probes = [report] + [exp.run_surface(**kwargs, seed=seed)[0]
+                             for seed in args.search_seeds if seed != 0]
+        report['score'] = max(score(r) for r in probes)
+        report['search_seed_scores'] = {str(r['seed']): score(r) for r in probes}
         report['quota'] = latest_usage()
         results.append(report)
         (args.output/'search.json').write_text(json.dumps(results, indent=2)+'\n')
@@ -98,11 +102,12 @@ def main():
         manifest = json.loads((Path(admission['geometry']).parent/'manifest.json').read_text())
         unchanged = all(hashlib.sha256((surface.ROOT/name).read_bytes()).hexdigest() == digest for name,digest in manifest['protected_files'].items())
         physical = unchanged and error < 1e-8 and all(r['surface_physics_passed'] for r in [best,replay]+holdouts)
-        ready = physical and all(r['fidelity_passed'] for r in [best,replay]+holdouts)
+        ready = physical and not manifest['failed_optimizer_frames'] and all(r['fidelity_passed'] for r in [best,replay]+holdouts)
         result = dict(surface_physics_passed=bool(physical), training_ready=bool(ready), best=best,replay=replay,
                       holdouts=holdouts,replay_observation_error=error,baseline_unchanged=unchanged,
                       geometry=admission['geometry'], stop_reason=stop_reason,quota=latest_usage(),
                       trials=len(results), source_candidate=str(args.candidate.resolve()))
+        result['search_seeds'] = sorted(set([0]+args.search_seeds))
         (args.output/'admission.json').write_text(json.dumps(result,indent=2)+'\n')
         print('COMPLETE',json.dumps({k:result[k] for k in ('surface_physics_passed','training_ready','trials','stop_reason','quota')}),flush=True)
     finally:
