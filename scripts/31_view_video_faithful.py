@@ -62,6 +62,10 @@ def main():
             env.reset()
             env.sim.reset()
             env.pack_mujoco_model(demo['model_data'][0])
+            for key, values in demo.get('physics_model', {}).items():
+                if key not in ('geom_margin', 'geom_gap'):
+                    raise ValueError('Unsupported physics model field: '+key)
+                getattr(env.sim.model, key)[:] = values
             env.pack(demo['sim_data'][0])
             env.sim.forward()
             start = time.monotonic()

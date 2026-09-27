@@ -1,3 +1,6 @@
+> 近表面接触修正：见 [优化方法与验收标准](docs/SURFACE_CONTACT_OPTIMIZATION.md)。使用 `bash scripts/36_view_surface_grasp_gpu.sh` 查看。
+> 新候选通过 6 个窄初态及半步长物理检查；旧版存在提前接触，严格视频忠实度仍未通过，未启动训练。
+
 > 视频抓法实验版本：见 [版本说明](docs/VIDEO_FAITHFUL_VERSION.md) 和 [验证记录](docs/run_logs/2026-09-27-video-faithful.md)。
 > 旧版保留在 `main` / `physical-grasp-verified-v1`；本分支物理抓杯通过，严格视频忠实度尚未通过，未启动新训练。
 
