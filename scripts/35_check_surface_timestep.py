@@ -19,6 +19,10 @@ def main():
     with (args.result/'best/diagnostic_rollout.pkl').open('rb') as f:
         actions = pickle.load(f)['video_faithful']['actions']
     exp = import_module('33_optimize_surface_grasp').SurfaceExperiment(admission['geometry'])
+    if any(best.get('joint_correction', [])):
+        exp.env.close()
+        exp = import_module('37_optimize_finger_reference').CorrectedExperiment(admission['geometry'])
+        exp.correction = best['joint_correction']
     try:
         original = float(exp.model.opt.timestep)
         exp.model.opt.timestep = original/2
