@@ -1,3 +1,7 @@
+> 视频抓法实验版本：见 [版本说明](docs/VIDEO_FAITHFUL_VERSION.md) 和 [验证记录](docs/run_logs/2026-09-27-video-faithful.md)。
+> 旧版保留在 `main` / `physical-grasp-verified-v1`；本分支物理抓杯通过，严格视频忠实度尚未通过，未启动新训练。
+
+
 # 从真实人手视频训练 MuJoCo 灵巧手
 
 这个项目用于把真实的人手抓杯视频转换成 DexMV 可用的 demonstration，
