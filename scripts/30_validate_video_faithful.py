@@ -40,7 +40,8 @@ class VideoExperiment(base.GraspExperiment):
         self.grasp_time = self.source_times[np.argmin(np.abs(g['source_frames']-30))]
 
     def run_video(self, time_scale, close=0., seed=0, output=None, saved_actions=None, cartesian_gain=0., joint_correction=None,
-                  closure_lead=0., feedback_weights=None, approach_gain=0., approach_root_gain=None):
+                  closure_lead=0., feedback_weights=None, approach_gain=0., approach_root_gain=None,
+                  action_selector=None):
         e, m, d = self.env, self.model, self.env.sim.data
         g = self.geometry
         e.reset()
@@ -59,6 +60,8 @@ class VideoExperiment(base.GraspExperiment):
         count = int(np.ceil((.5+self.duration*time_scale+2.)/dt))
         if saved_actions is not None and len(saved_actions) != count:
             raise ValueError('Saved action horizon differs from source retiming')
+        if saved_actions is not None and action_selector is not None:
+            raise ValueError('Cannot mix saved actions and an action selector')
         observations, actions, states, rewards, rows = [], [], [], [], []
         previous = g['qpos'][0].copy()
         kp = -m.actuator_biasprm[:, 1]
@@ -112,6 +115,10 @@ class VideoExperiment(base.GraspExperiment):
                                          m.actuator_biasprm, e.act_mid, e.act_rng)
             else:
                 action = saved_actions[step]
+            if action_selector is not None:
+                action = np.asarray(action_selector(step, e._get_observations().copy(), action.copy()))
+                if action.shape != (30,) or not np.isfinite(action).all():
+                    raise ValueError('Action selector returned invalid control')
             observations.append(e._get_observations().copy())
             states.append(e.dump())
             actions.append(action.copy())

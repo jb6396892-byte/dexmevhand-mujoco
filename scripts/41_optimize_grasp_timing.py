@@ -32,6 +32,7 @@ def main():
     p.add_argument('--thumb-weights', type=float, nargs='+', default=[1., 2., 4.])
     p.add_argument('--approach-gains', type=float, nargs='+', default=[0.])
     p.add_argument('--approach-root-gains', type=float, nargs='+', default=[None])
+    p.add_argument('--closures', type=float, nargs='+', default=[None])
     p.add_argument('--search-seeds', type=int, nargs='+', default=[0, 2, 5])
     p.add_argument('--quota-stop', type=float, default=85.)
     args = p.parse_args()
@@ -45,8 +46,8 @@ def main():
     results = []
     stopped = False
     try:
-        for lead, weight, approach_gain, root_gain in itertools.product(
-                args.leads, args.thumb_weights, args.approach_gains, args.approach_root_gains):
+        for lead, weight, approach_gain, root_gain, close in itertools.product(
+                args.leads, args.thumb_weights, args.approach_gains, args.approach_root_gains, args.closures):
             quota = latest_usage()
             if results and quota and quota['used_percent'] >= args.quota_stop:
                 stopped = True
@@ -55,6 +56,7 @@ def main():
             exp.feedback_weights = [weight, 1., 1., 1., 1.]
             exp.approach_gain = approach_gain
             exp.approach_root_gain = root_gain
+            kwargs['close'] = b['close'] if close is None else close
             reports = [exp.run_surface(**kwargs, seed=seed)[0] for seed in search_seeds]
             report = reports[0]
             report['search_score'] = max(finger.score(r) for r in reports)
@@ -63,13 +65,14 @@ def main():
                 'max_hand_scene_penetration_m')} for r in reports]
             results.append(report)
             (args.output/'search.json').write_text(json.dumps(results, indent=2)+'\n')
-            print(json.dumps({k: report[k] for k in ('closure_lead', 'feedback_weights', 'approach_gain', 'approach_root_gain', 'search_score',
+            print(json.dumps({k: report[k] for k in ('close', 'closure_lead', 'feedback_weights', 'approach_gain', 'approach_root_gain', 'search_score',
                   'tail_finger_tip_error_m', 'search_seed_metrics')}), flush=True)
         best = min(results, key=lambda r: r['search_score'])
         exp.closure_lead = best['closure_lead']
         exp.feedback_weights = best['feedback_weights']
         exp.approach_gain = best['approach_gain']
         exp.approach_root_gain = best['approach_root_gain']
+        kwargs['close'] = best['close']
         best, actions = exp.run_surface(**kwargs, output=args.output/'best')
         original = exp.last_demo['observations'].copy()
         replay, _ = exp.run_surface(**kwargs, saved_actions=actions, output=args.output/'replay')

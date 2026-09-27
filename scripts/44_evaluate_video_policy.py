@@ -10,6 +10,7 @@ from pathlib import Path
 import numpy as np
 
 surface = import_module('33_optimize_surface_grasp')
+from fromrealhand.policy_learning import StudentActions, lift_success
 
 
 class PolicyActions:
@@ -45,7 +46,8 @@ def main():
     reports = []
     try:
         horizon = int(np.ceil((.5+exp.duration*b['time_scale']+2.)/exp.env.control_timestep))
-        actions = PolicyActions(policy, exp.env, horizon)
+        actions = (StudentActions(policy, exp, horizon) if isinstance(policy, dict)
+                   else PolicyActions(policy, exp.env, horizon))
         for seed in args.seeds:
             report, _ = exp.run_surface(b['time_scale'], 0., 0., seed=seed, saved_actions=actions,
                                          output=args.output/('seed_%d'%seed))
@@ -54,12 +56,12 @@ def main():
             print(json.dumps({k: report[k] for k in ('seed', 'hold_s', 'max_bottom_m', 'final_distance_m',
                   'surface_physics_passed', 'fidelity_passed', 'max_hand_scene_penetration_m')}), flush=True)
         result = dict(policy=str(args.policy.resolve()), policy_sha256=hashlib.sha256(args.policy.read_bytes()).hexdigest(),
-                      execution_mode='Deterministic learned policy actions through env.step; no expert control',
+                      execution_mode=('Fixed nominal action trajectory plus learned residual; no online expert'
+                                      if isinstance(policy, dict) and 'action_reference' in policy else
+                                      'Deterministic learned policy actions through env.step; no expert control'),
                       source_candidate=str(args.candidate.resolve()), geometry=source['geometry'], reports=reports,
                       physical_pass_count=sum(r['surface_physics_passed'] for r in reports),
-                      lift_and_hold_count=sum(r['hold_s'] >= 1. and r['tail_min_bottom_m'] > .015
-                                              and r['tail_min_fingers'] >= 2 and r['tail_min_force_n'] > .05
-                                              for r in reports),
+                      lift_and_hold_count=sum(lift_success(r) for r in reports),
                       fidelity_pass_count=sum(r['fidelity_passed'] for r in reports), episode_count=len(reports),
                       all_passed=all(r['surface_physics_passed'] and r['fidelity_passed'] for r in reports))
         (args.output/'evaluation.json').write_text(json.dumps(result, indent=2)+'\n')
