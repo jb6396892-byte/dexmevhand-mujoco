@@ -57,9 +57,12 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--policy', type=Path)
-    p.add_argument('--case-set', choices=['train', 'heldout', 'orientation', 'test-v5'], default='train')
+    p.add_argument('--case-set', choices=['train', 'heldout', 'orientation', 'test-v5', 'test-v6'], default='train')
     p.add_argument('--quota-stop', type=float, default=85.)
+    p.add_argument('--skip-expert-replay', action='store_true', help='Evaluation sets only: compare the two policies without generating expert demonstrations')
     args = p.parse_args()
+    if args.skip_expert_replay and args.case_set not in ('heldout', 'test-v5', 'test-v6'):
+        p.error('--skip-expert-replay is only valid for evaluation sets')
     root = finger.surface.ROOT
     source = json.loads((root/'data/processed/seq_dexycb_001/scene_fidelity_v3/approach_feedback/admission.json').read_text())
     source_admission = json.loads((root/'data/processed/seq_dexycb_001/scene_fidelity_v3/verified_export/admission.json').read_text())
@@ -74,6 +77,8 @@ def main():
     if args.policy:
         with args.policy.open('rb') as stream:
             checkpoint = pickle.load(stream)
+        if checkpoint.get('action_reference') is not None:
+            nominal = np.asarray(checkpoint['action_reference'])
     args.output.mkdir(parents=True, exist_ok=False)
     base = finger.CorrectedExperiment(source['geometry'])
     b = source['best']
@@ -108,6 +113,16 @@ def main():
                 goal = np.zeros(3); goal[axis] = delta
                 cases.append(('test_goal_%d_%g'%(axis, delta), [0, 0, 0], 0., goal))
         cases += [('cup_yaw_-7', [0, 0, 0], 0., [0, 0, 0]), ('cup_yaw_7', [0, 0, 0], 0., [0, 0, 0])]
+    elif args.case_set == 'test-v6':
+        cases = []
+        for axis in range(2):
+            for delta in (-.008, -.002):
+                offset = np.zeros(3); offset[axis] = delta
+                cases.append(('test_position_%d_%g'%(axis, delta), offset, 0., [0, 0, 0]))
+            for delta in (-.022, .022):
+                goal = np.zeros(3); goal[axis] = delta
+                cases.append(('test_goal_%d_%g'%(axis, delta), [0, 0, 0], 0., goal))
+        cases += [('cup_yaw_-8', [0, 0, 0], 0., [0, 0, 0]), ('cup_yaw_8', [0, 0, 0], 0., [0, 0, 0])]
     results = []
     try:
         for name, offset, yaw, goal in cases:
@@ -133,29 +148,33 @@ def main():
             exp = finger.CorrectedExperiment(path)
             try:
                 configure(exp, b)
-                expert, actions = exp.run_surface(**kwargs, output=folder/'expert')
-                demo = exp.last_demo
-                replay, _ = exp.run_surface(**kwargs, saved_actions=actions)
-                error = float(np.max(np.abs(demo['observations']-exp.last_demo['observations'])))
-                admitted = (expert['surface_physics_passed'] and expert['fidelity_passed']
-                            and replay['surface_physics_passed'] and replay['fidelity_passed'] and error < 1e-8)
+                expert = replay = error = admitted = None
+                if not args.skip_expert_replay:
+                    expert, actions = exp.run_surface(**kwargs, output=folder/'expert')
+                    demo = exp.last_demo
+                    replay, _ = exp.run_surface(**kwargs, saved_actions=actions)
+                    error = float(np.max(np.abs(demo['observations']-exp.last_demo['observations'])))
+                    admitted = bool(expert['surface_physics_passed'] and expert['fidelity_passed']
+                                    and replay['surface_physics_passed'] and replay['fidelity_passed'] and error < 1e-8)
                 zero, _ = exp.run_surface(**kwargs, saved_actions=nominal)
-                result.update(expert=expert, replay=replay, replay_error=error, admitted=bool(admitted), nominal_actions=zero)
+                result.update(expert=expert, replay=replay, replay_error=error, admitted=admitted, nominal_actions=zero)
                 if checkpoint:
-                    student, _ = exp.run_surface(**kwargs, saved_actions=StudentActions(checkpoint, exp, len(nominal)))
+                    student, _ = exp.run_surface(**kwargs, saved_actions=StudentActions(checkpoint, exp, len(nominal)), output=folder/'student')
                     result['student'] = student
-                if admitted and name != 'nominal' and args.case_set not in ('heldout', 'test-v5'):
+                if admitted and name != 'nominal' and args.case_set not in ('heldout', 'test-v5', 'test-v6'):
                     demos['synthetic_'+name] = demo
                 results.append(result)
                 (args.output/'progress.json').write_text(json.dumps(results, indent=2)+'\n')
-                print(json.dumps(dict(name=name, admitted=bool(admitted), nominal_lift=lift_success(zero),
+                print(json.dumps(dict(name=name, admitted=admitted, nominal_lift=lift_success(zero),
                     student_full=bool(result.get('student', {}).get('surface_physics_passed', False) and result.get('student', {}).get('fidelity_passed', False)))), flush=True)
             finally:
                 exp.env.close()
-        if args.case_set in ('heldout', 'test-v5'):
+        if args.case_set in ('heldout', 'test-v5', 'test-v6'):
             (args.output/'evaluation.json').write_text(json.dumps(dict(reports=results,
                 policy=str(args.policy), policy_sha256=hashlib.sha256(args.policy.read_bytes()).hexdigest() if args.policy else None,
                 original_demo_sha256=source_hash, case_set=args.case_set,
+                nominal_source='checkpoint action_reference' if checkpoint and checkpoint.get('action_reference') is not None else 'original demonstration',
+                expert_replay_evaluated=not args.skip_expert_replay,
                 evaluation_only=True, planned_cases=len(cases), completed_cases=len(results)), indent=2)+'\n')
             return
         demo_path = args.output/'expanded_demonstrations.pkl'
