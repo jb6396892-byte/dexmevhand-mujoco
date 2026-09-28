@@ -47,6 +47,7 @@ def main():
     p.add_argument('--initial-correction', type=Path)
     p.add_argument('--steps', type=float, nargs='+', default=[.12, .06, .03])
     p.add_argument('--search-seeds', type=int, nargs='+', default=[0])
+    p.add_argument('--groups', nargs='+', help='Joint names or comma-separated coupled joint names; defaults retain the original search')
     args = p.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     admission = json.loads(args.candidate.read_text())
@@ -59,6 +60,8 @@ def main():
     kwargs = dict(scale=b['time_scale'], close=b['close'], gain=b['cartesian_gain'])
     groups = [('THJ4',), ('THJ3',), ('THJ2',), ('THJ1',), ('THJ0',),
               ('MFJ2',), ('MFJ1', 'MFJ0'), ('FFJ2',), ('RFJ2',), ('WRJ1',), ('WRJ0',)]
+    if args.groups:
+        groups = [tuple(group.split(',')) for group in args.groups]
     ids = [[int(exp.model.jnt_qposadr[exp.model.joint_name2id(name)]) for name in group] for group in groups]
     results = []
     best_q = np.zeros(30)
@@ -120,6 +123,7 @@ def main():
                       geometry=admission['geometry'], stop_reason=stop_reason,quota=latest_usage(),
                       trials=len(results), source_candidate=str(args.candidate.resolve()))
         result['search_seeds'] = sorted(set([0]+args.search_seeds))
+        result['joint_groups'] = [list(group) for group in groups]
         (args.output/'admission.json').write_text(json.dumps(result,indent=2)+'\n')
         print('COMPLETE',json.dumps({k:result[k] for k in ('surface_physics_passed','training_ready','trials','stop_reason','quota')}),flush=True)
     finally:

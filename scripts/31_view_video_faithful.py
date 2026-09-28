@@ -26,6 +26,7 @@ def main():
     parser.add_argument('--speed', type=float, default=1.)
     parser.add_argument('--camera-distance', type=float, default=.55)
     parser.add_argument('--source-sequence', type=Path, default=ROOT/'data/real_data/relocate_mug/seq_dexycb_001')
+    parser.add_argument('--simulation-only', action='store_true', help='Do not read source RGB frames during headless rendering')
     parser.add_argument('--output', type=Path, help='Render one audited headless replay to this new directory')
     args = parser.parse_args()
     if args.speed <= 0 or args.episodes < 0 or args.camera_distance <= 0:
@@ -102,9 +103,11 @@ def main():
                     context.render(640, 480, camera_id=-1)
                     rendered = cv2.cvtColor(context.read_pixels(640, 480, depth=False)[::-1], cv2.COLOR_RGB2BGR)
                     cv2.putText(rendered, '%s physics step %d' % (args.version, step), (12, 25), cv2.FONT_HERSHEY_SIMPLEX, .6, (0, 0, 0), 1)
-                    if source_frames is not None:
+                    if source_frames is not None and not args.simulation_only:
                         frame = source_frames[step]
                         source = cv2.imread(str(args.source_sequence/'rgb'/('%06d.jpg' % frame)))
+                        if source is None:
+                            raise FileNotFoundError('Source RGB unavailable; connect source storage or pass --simulation-only')
                         cv2.putText(source, 'Source video frame %d' % frame, (12, 25), cv2.FONT_HERSHEY_SIMPLEX, .6, (255, 255, 255), 1)
                         rendered = np.hstack([source, rendered])
                     cv2.imwrite(str(args.output/('step_%04d.jpg' % step)), rendered)

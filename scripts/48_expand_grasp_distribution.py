@@ -57,7 +57,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--policy', type=Path)
-    p.add_argument('--case-set', choices=['train', 'heldout', 'orientation'], default='train')
+    p.add_argument('--case-set', choices=['train', 'heldout', 'orientation', 'test-v5'], default='train')
     p.add_argument('--quota-stop', type=float, default=85.)
     args = p.parse_args()
     root = finger.surface.ROOT
@@ -98,6 +98,16 @@ def main():
                 goal = np.zeros(3); goal[axis] = delta
                 cases.append(('held_goal_%d_%g'%(axis, delta), [0, 0, 0], 0., goal))
         cases += [('cup_yaw_-3', [0, 0, 0], 0., [0, 0, 0]), ('cup_yaw_3', [0, 0, 0], 0., [0, 0, 0])]
+    elif args.case_set == 'test-v5':
+        cases = []
+        for axis in range(2):
+            for delta in (-.006, -.004):
+                offset = np.zeros(3); offset[axis] = delta
+                cases.append(('test_position_%d_%g'%(axis, delta), offset, 0., [0, 0, 0]))
+            for delta in (-.018, .018):
+                goal = np.zeros(3); goal[axis] = delta
+                cases.append(('test_goal_%d_%g'%(axis, delta), [0, 0, 0], 0., goal))
+        cases += [('cup_yaw_-7', [0, 0, 0], 0., [0, 0, 0]), ('cup_yaw_7', [0, 0, 0], 0., [0, 0, 0])]
     results = []
     try:
         for name, offset, yaw, goal in cases:
@@ -134,7 +144,7 @@ def main():
                 if checkpoint:
                     student, _ = exp.run_surface(**kwargs, saved_actions=StudentActions(checkpoint, exp, len(nominal)))
                     result['student'] = student
-                if admitted and name != 'nominal' and args.case_set != 'heldout':
+                if admitted and name != 'nominal' and args.case_set not in ('heldout', 'test-v5'):
                     demos['synthetic_'+name] = demo
                 results.append(result)
                 (args.output/'progress.json').write_text(json.dumps(results, indent=2)+'\n')
@@ -142,9 +152,11 @@ def main():
                     student_full=bool(result.get('student', {}).get('surface_physics_passed', False) and result.get('student', {}).get('fidelity_passed', False)))), flush=True)
             finally:
                 exp.env.close()
-        if args.case_set == 'heldout':
+        if args.case_set in ('heldout', 'test-v5'):
             (args.output/'evaluation.json').write_text(json.dumps(dict(reports=results,
-                policy=str(args.policy), evaluation_only=True, planned_cases=len(cases), completed_cases=len(results)), indent=2)+'\n')
+                policy=str(args.policy), policy_sha256=hashlib.sha256(args.policy.read_bytes()).hexdigest() if args.policy else None,
+                original_demo_sha256=source_hash, case_set=args.case_set,
+                evaluation_only=True, planned_cases=len(cases), completed_cases=len(results)), indent=2)+'\n')
             return
         demo_path = args.output/'expanded_demonstrations.pkl'
         with demo_path.open('xb') as stream:

@@ -1,0 +1,17 @@
+{
+  "replay_max_observation_error": 0.0,
+  "steps": 1450,
+  "lifted_steps": 785,
+  "lifted_opposition_fraction": 0.9987261146496815,
+  "tail_opposition_fraction": 1.0,
+  "tail_contact_fraction": {
+    "TH": 1.0,
+    "FF": 1.0,
+    "MF": 1.0,
+    "RF": 0.0,
+    "LF": 0.0
+  },
+  "definition": "Loaded thumb/other-finger normal pair cosine below -0.3; diagnostic, not force-closure proof",
+  "rollout": "/home/smgbro/mujoconew/GITHUB/data/processed/seq_dexycb_002/opposition_verified_v3/best/diagnostic_rollout.pkl",
+  "geometry": "/home/smgbro/mujoconew/GITHUB/data/processed/seq_dexycb_002/retarget_v1/geometry.npz"
+}
