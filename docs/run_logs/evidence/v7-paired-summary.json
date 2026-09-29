@@ -1,0 +1,82 @@
+{
+  "overall": {
+    "count": 10,
+    "nominal_actions": {
+      "physical": 10,
+      "full": 10,
+      "full_and_20mm": 6,
+      "mean_distance_mm": 10.611518793244365,
+      "worst_distance_mm": 22.656529057287198
+    },
+    "student": {
+      "physical": 10,
+      "full": 10,
+      "full_and_20mm": 10,
+      "mean_distance_mm": 5.510127215602243,
+      "worst_distance_mm": 13.5091346294006
+    },
+    "mean_delta_mm": -5.101391577642122,
+    "residual_distance_wins": 6
+  },
+  "groups": {
+    "position": {
+      "count": 4,
+      "nominal_actions": {
+        "physical": 4,
+        "full": 4,
+        "full_and_20mm": 4,
+        "mean_distance_mm": 3.7748210707785246,
+        "worst_distance_mm": 8.042595834943892
+      },
+      "student": {
+        "physical": 4,
+        "full": 4,
+        "full_and_20mm": 4,
+        "mean_distance_mm": 3.1202724012496206,
+        "worst_distance_mm": 6.499693710626523
+      },
+      "mean_delta_mm": -0.6545486695289042,
+      "residual_distance_wins": 2
+    },
+    "goal": {
+      "count": 4,
+      "nominal_actions": {
+        "physical": 4,
+        "full": 4,
+        "full_and_20mm": 0,
+        "mean_distance_mm": 22.011420349095665,
+        "worst_distance_mm": 22.656529057287198
+      },
+      "student": {
+        "physical": 4,
+        "full": 4,
+        "full_and_20mm": 4,
+        "mean_distance_mm": 8.587969668417356,
+        "worst_distance_mm": 13.5091346294006
+      },
+      "mean_delta_mm": -13.423450680678307,
+      "residual_distance_wins": 4
+    },
+    "cup_yaw": {
+      "count": 2,
+      "nominal_actions": {
+        "physical": 2,
+        "full": 2,
+        "full_and_20mm": 2,
+        "mean_distance_mm": 1.4851111264734467,
+        "worst_distance_mm": 1.9037590301801512
+      },
+      "student": {
+        "physical": 2,
+        "full": 2,
+        "full_and_20mm": 2,
+        "mean_distance_mm": 4.134151938677259,
+        "worst_distance_mm": 6.816992994759392
+      },
+      "mean_delta_mm": 2.6490408122038116,
+      "residual_distance_wins": 0
+    }
+  },
+  "evaluation": "/home/smgbro/mujoconew/GITHUB/data/processed/seq_dexycb_001/learning_v6/test/evaluation.json",
+  "scope": "Paired deterministic synthetic scenarios, not independent real videos or statistical proof of generalization"
+}

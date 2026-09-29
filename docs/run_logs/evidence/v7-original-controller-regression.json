@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "differences": {
+    "final_distance_m": 0.0,
+    "hold_s": 0.0,
+    "tail_mean_tip_error_m": 0.0,
+    "max_hand_scene_penetration_m": 0.0
+  },
+  "scope": "Original second-video controller unchanged with new options disabled"
+}

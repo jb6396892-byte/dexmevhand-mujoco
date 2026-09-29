@@ -11,6 +11,16 @@ def object_relative(points, pose):
     return (points - pose[:3, 3]) @ pose[:3, :3]
 
 
+def shifted_tip_targets(local, offset, phase):
+    """Return control targets without modifying the human fidelity reference."""
+    local, offset = np.asarray(local), np.asarray(offset, dtype=float)
+    if (local.shape != (5, 3) or offset.shape != (5, 3)
+            or not np.isfinite(local).all() or not np.isfinite(offset).all()
+            or not np.isfinite(phase) or np.any(np.linalg.norm(offset, axis=1) > .025+1e-10)):
+        raise ValueError('Finite 5x3 tip targets and offsets bounded to 25mm required')
+    return local+np.clip(phase, 0., 1.)*offset
+
+
 def finger_directions(points):
     chains = np.asarray(points)[1:].reshape(5, 4, 3)
     bones = np.diff(chains, axis=1)

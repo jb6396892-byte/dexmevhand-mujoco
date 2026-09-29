@@ -20,6 +20,7 @@ from fromrealhand.paths import configure_runtime_paths
 from fromrealhand.action_recovery import force_to_action
 from fromrealhand.grasp_gate import physical_gate
 from fromrealhand.video_fidelity import FINGERS, FINGER_NAMES, TIP_INDICES, HandLandmarks, fidelity_metrics, object_relative, source_clock
+from fromrealhand.video_fidelity import shifted_tip_targets
 
 configure_runtime_paths()
 base = import_module('24_search_physical_grasp')
@@ -41,7 +42,7 @@ class VideoExperiment(base.GraspExperiment):
 
     def run_video(self, time_scale, close=0., seed=0, output=None, saved_actions=None, cartesian_gain=0., joint_correction=None,
                   closure_lead=0., feedback_weights=None, approach_gain=0., approach_root_gain=None,
-                  action_selector=None):
+                  action_selector=None, tip_offset_curve=None, isolated_fingers=(), joint_correction_curve=None):
         e, m, d = self.env, self.model, self.env.sim.data
         g = self.geometry
         e.reset()
@@ -79,7 +80,10 @@ class VideoExperiment(base.GraspExperiment):
                     desired[m.jnt_qposadr[m.joint_name2id(finger+'J'+str(joint))]] += closing
             desired[m.jnt_qposadr[m.joint_name2id('THJ0')]] -= closing
             if joint_correction is not None:
-                desired += float(np.clip((clock-self.grasp_time+closure_lead)/.35, 0., 1.))*np.asarray(joint_correction)
+                correction = np.asarray(joint_correction_curve(clock) if joint_correction_curve is not None else joint_correction)
+                if correction.shape != (30,) or not np.isfinite(correction).all():
+                    raise ValueError('Finite 30-dimensional joint correction required')
+                desired += float(np.clip((clock-self.grasp_time+closure_lead)/.35, 0., 1.))*correction
             desired = np.clip(desired, m.jnt_range[:30, 0], m.jnt_range[:30, 1])
             velocity = (desired-previous)/dt
             previous = desired.copy()
@@ -90,6 +94,8 @@ class VideoExperiment(base.GraspExperiment):
                     reference[:3, 3] = self.pcurve(clock)
                     reference[:3, :3] = self.rcurve(clock).as_matrix()
                     local = object_relative(self.jcurve(clock)[TIP_INDICES], reference)
+                    if tip_offset_curve is not None:
+                        local = shifted_tip_targets(local, tip_offset_curve(clock), (clock-self.grasp_time)/.35)
                     targets = local @ d.body_xmat[e.obj_bid].reshape(3, 3).T + d.body_xpos[e.obj_bid]
                     tips = self.landmarks.read(d)[TIP_INDICES]
                     body_name = m.body_id2name(e.obj_bid)
@@ -99,6 +105,9 @@ class VideoExperiment(base.GraspExperiment):
                     for i, finger in enumerate(FINGERS):
                         jac_full = d.get_site_jacp('S_'+finger+'tip').reshape(3, m.nv)
                         jac = jac_full[:, 6:30]
+                        if finger in isolated_fingers:
+                            jac = jac.copy()
+                            jac[:, :2] = 0.  # Do not disturb the wrist supporting the other fingers.
                         error = np.clip(targets[i]-tips[i], -.02, .02)
                         target_velocity = object_velocity + np.cross(object_omega, targets[i]-d.body_xpos[e.obj_bid])
                         relative_velocity = jac_full @ d.qvel-target_velocity
