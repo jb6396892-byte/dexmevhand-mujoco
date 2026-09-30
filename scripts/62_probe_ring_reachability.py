@@ -20,7 +20,11 @@ def main():
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--include-little', action='store_true')
     p.add_argument('--whole-hand', action='store_true')
+    p.add_argument('--legacy-expanded-margin', action='store_true',
+                   help='Historical diagnostic only; distances are not native-physics evidence')
     args = p.parse_args()
+    if not args.legacy_expanded_margin:
+        p.error('Expanded margins alter convex-mesh distance estimates in this runtime. Use 63_plan_contact_transition.py; this legacy probe requires explicit opt-in.')
     if args.output.exists():
         raise FileExistsError(args.output)
     source = json.loads(args.candidate.read_text())

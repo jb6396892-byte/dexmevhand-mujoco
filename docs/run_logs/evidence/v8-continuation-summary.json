@@ -1,0 +1,410 @@
+{
+  "scope": "Second-video nominal-scene development only; no new training or generalization",
+  "training_started": false,
+  "generalization_started": false,
+  "training_ready": false,
+  "quota": null,
+  "total_trials": 21,
+  "physics_passed": 12,
+  "fidelity_passed": 0,
+  "max_ring_tail_fraction": 0.0,
+  "protected_files_unchanged": {
+    "data/processed/seq_dexycb_001/repair_v2/geometry.npz": true,
+    "data/demonstrations/relocate-mug-physics-verified-v1.pkl": true,
+    "data/processed/seq_dexycb_001/physical_grasp_verified_v1/admission.json": true
+  },
+  "plans": [
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_linear/planning.json",
+      "nodes": 13,
+      "feasible_nodes": 13,
+      "max_penetration_m": 0.0006613075457703318,
+      "final_ring_distance_m": -0.00018334916041999472
+    },
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_iteration2_projected/planning.json",
+      "nodes": 11,
+      "feasible_nodes": 11,
+      "max_penetration_m": 0.0009837123077122041,
+      "final_ring_distance_m": -0.0002237095075580214
+    },
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_root_effort/planning.json",
+      "nodes": 13,
+      "feasible_nodes": 13,
+      "max_penetration_m": 0.0009324961792215638,
+      "final_ring_distance_m": -0.00038778018812019
+    }
+  ],
+  "experiments": [
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_bounded025/search.json",
+      "sha256": "7fd4134634a959bfdc774630c03e9a73f72e0eec4c8fa473d0f359c998930f35",
+      "trials": [
+        {
+          "tracking_gain": 0.0,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.024265859693357685,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.008988505747126436,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 2.0,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.025865919678725945,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.008988505747126436,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_force/search.json",
+      "sha256": "52e8a34d65fbffdd844d3af7c7caf64ade9b8ae41363f8010f8e44c1c1027d98",
+      "trials": [
+        {
+          "tracking_gain": 0.0,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.015385753650835773,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.008988505747126436,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 2.0,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.01544252681725704,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.008988505747126436,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 4.0,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.015514444293350903,
+          "max_hand_scene_penetration_m": 0.0009954512731438006,
+          "saturation": 0.009655172413793104,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_force3/search.json",
+      "sha256": "0af225a0031dcb528daae0c0d77384faffd051ab0168aecaea7bc8bda186f58a",
+      "trials": [
+        {
+          "tracking_gain": 0.0,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.015391532631434519,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.009218390804597701,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_integral3/search.json",
+      "sha256": "015048f4bcb8836125c6e82c8ce7412c80caa8fa625b2c1b5d25822a513be5e9",
+      "trials": [
+        {
+          "tracking_gain": 0.0,
+          "surface_physics_passed": false,
+          "fidelity_passed": false,
+          "final_distance_m": 0.015361195818763725,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.018091954022988507,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_iteration2_tracking/search.json",
+      "sha256": "fee586aac183d6b3b643039d331e50bcaece30c53da6d028c0ebd8b35d325783",
+      "trials": [
+        {
+          "tracking_gain": 0.0,
+          "surface_physics_passed": false,
+          "fidelity_passed": false,
+          "final_distance_m": 0.023104422557901728,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.011218390804597701,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 2.0,
+          "surface_physics_passed": false,
+          "fidelity_passed": false,
+          "final_distance_m": 0.0231886341746193,
+          "max_hand_scene_penetration_m": 0.0010973331023398508,
+          "saturation": 0.017149425287356322,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_relative/search.json",
+      "sha256": "77b4e7d54633b4ffe16e95d118ba488a0f3b4ab6cc2d4552fe813194b0698330",
+      "trials": [
+        {
+          "tracking_gain": 0.0,
+          "surface_physics_passed": false,
+          "fidelity_passed": false,
+          "final_distance_m": 0.2813386445285013,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.008988505747126436,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 2.0,
+          "surface_physics_passed": false,
+          "fidelity_passed": false,
+          "final_distance_m": 0.28154986920974795,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.008988505747126436,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 4.0,
+          "surface_physics_passed": false,
+          "fidelity_passed": false,
+          "final_distance_m": 0.2816127516396397,
+          "max_hand_scene_penetration_m": 0.0009867625304940779,
+          "saturation": 0.013034482758620689,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_ring/search.json",
+      "sha256": "a02c4d863285d9303209838b417c23785f2f9bfe8f27425a0c4b859139018cbd",
+      "trials": [
+        {
+          "tracking_gain": 2.0,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.015465736156783805,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.008988505747126436,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 4.0,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.015538609920561598,
+          "max_hand_scene_penetration_m": 0.0009614414506569288,
+          "saturation": 0.008988505747126436,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 8.0,
+          "surface_physics_passed": false,
+          "fidelity_passed": false,
+          "final_distance_m": 0.015812680476473853,
+          "max_hand_scene_penetration_m": 0.0010559549163172473,
+          "saturation": 0.03039080459770115,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_root_effort_tracking/search.json",
+      "sha256": "74488dd0ed9b3dcf98e7136cd9e5a3ebb1e23683964c403f824b90b78286473b",
+      "trials": [
+        {
+          "tracking_gain": 0.0,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.02435015651536496,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.00011494252873563218,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 0.5,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.021946610874008357,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.00020689655172413793,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 2.0,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.019842057804459093,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.004091954022988506,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "data/processed/seq_dexycb_002/continuation_v8_tracking/search.json",
+      "sha256": "de6d899bac81b40fa76ce9fcedb80879c9ebcfa2af84329079142327a804fd02",
+      "trials": [
+        {
+          "tracking_gain": 0.0,
+          "surface_physics_passed": true,
+          "fidelity_passed": false,
+          "final_distance_m": 0.015419836324680108,
+          "max_hand_scene_penetration_m": 0.0009537825733412414,
+          "saturation": 0.008988505747126436,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 2.0,
+          "surface_physics_passed": false,
+          "fidelity_passed": false,
+          "final_distance_m": 0.015067547628098754,
+          "max_hand_scene_penetration_m": 0.0012987936677775367,
+          "saturation": 0.013172413793103448,
+          "tail_finger_contact_fraction": {
+            "thumb": 1.0,
+            "index": 1.0,
+            "middle": 1.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        },
+        {
+          "tracking_gain": 8.0,
+          "surface_physics_passed": false,
+          "fidelity_passed": false,
+          "final_distance_m": 0.20893608124361746,
+          "max_hand_scene_penetration_m": 0.0012833340255658063,
+          "saturation": 0.14397701149425288,
+          "tail_finger_contact_fraction": {
+            "thumb": 0.0,
+            "index": 0.0,
+            "middle": 0.0,
+            "ring": 0.0,
+            "little": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -15,7 +15,8 @@ class QuotaWatchTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as root:
             p = Path(root)/'session.jsonl'
             stamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
-            lines = [dict(timestamp=stamp,payload=dict(rate_limits=dict(primary=dict(window_minutes=300,used_percent=84,resets_at=1)))),
+            future = datetime.datetime.now(datetime.timezone.utc).timestamp()+300
+            lines = [dict(timestamp=stamp,payload=dict(rate_limits=dict(primary=dict(window_minutes=300,used_percent=84,resets_at=future)))),
                      dict(timestamp=stamp,payload=dict(rate_limits=dict(primary=dict(window_minutes=10080,used_percent=99))))]
             p.write_text('\n'.join(json.dumps(x) for x in lines)+'\n{"incomplete":')
             self.assertEqual(latest_usage(root)['used_percent'],84)
@@ -27,6 +28,15 @@ class QuotaWatchTest(unittest.TestCase):
     def test_latest_event_wins_across_sessions(self):
         with tempfile.TemporaryDirectory() as root:
             for i in range(2):
-                (Path(root)/('%d.jsonl'%i)).write_text(json.dumps(dict(timestamp='2026-09-27T02:00:0%dZ'%i,
+                stamp = (datetime.datetime.now(datetime.timezone.utc)-datetime.timedelta(seconds=2-i)).isoformat()
+                (Path(root)/('%d.jsonl'%i)).write_text(json.dumps(dict(timestamp=stamp,
                     payload=dict(rate_limits=dict(primary=dict(window_minutes=300,used_percent=80+i))))))
             self.assertEqual(latest_usage(root)['used_percent'],81)
+
+    def test_old_or_reset_window_is_unknown(self):
+        with tempfile.TemporaryDirectory() as root:
+            now = datetime.datetime.now(datetime.timezone.utc)
+            for stamp, reset in [(now-datetime.timedelta(hours=2), now.timestamp()+300), (now, now.timestamp()-1)]:
+                (Path(root)/'old.jsonl').write_text(json.dumps(dict(timestamp=stamp.isoformat(),
+                    payload=dict(rate_limits=dict(primary=dict(window_minutes=300,used_percent=79,resets_at=reset))))))
+                self.assertIsNone(latest_usage(root))

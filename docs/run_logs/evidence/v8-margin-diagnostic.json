@@ -1,0 +1,87 @@
+{
+  "step": 850,
+  "source": "data/processed/seq_dexycb_002/contact_inspection_v7/best/diagnostic_rollout.pkl",
+  "reports": [
+    {
+      "mode": "native",
+      "worst_contacts": [
+        {
+          "distance_m": -0.00037463545692527855,
+          "geoms": [
+            "C_ffdistal",
+            "collision_mug_26"
+          ]
+        },
+        {
+          "distance_m": -0.0003352656150367747,
+          "geoms": [
+            "C_mfdistal",
+            "collision_mug_26"
+          ]
+        },
+        {
+          "distance_m": -0.00020671104190764177,
+          "geoms": [
+            "C_thdistal",
+            "collision_mug_9"
+          ]
+        },
+        {
+          "distance_m": -0.0001624466618652771,
+          "geoms": [
+            "C_rfmiddle",
+            "C_lfdistal"
+          ]
+        },
+        {
+          "distance_m": -0.00014839856569236927,
+          "geoms": [
+            "C_thdistal",
+            "collision_mug_13"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "expanded_30mm",
+      "worst_contacts": [
+        {
+          "distance_m": -0.006079896827737755,
+          "geoms": [
+            "C_thdistal",
+            "collision_mug_13"
+          ]
+        },
+        {
+          "distance_m": -0.004865517110087009,
+          "geoms": [
+            "C_ffdistal",
+            "collision_mug_26"
+          ]
+        },
+        {
+          "distance_m": -0.001468647927805003,
+          "geoms": [
+            "C_thdistal",
+            "collision_mug_9"
+          ]
+        },
+        {
+          "distance_m": -0.000437081951452159,
+          "geoms": [
+            "C_thdistal",
+            "collision_mug_7"
+          ]
+        },
+        {
+          "distance_m": -0.0003542459344923303,
+          "geoms": [
+            "C_mfdistal",
+            "collision_mug_26"
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Identical qpos; geometry-only queries, expanded margin is NOT a grasp result"
+}

@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 
-def latest_usage(root=None):
+def latest_usage(root=None, max_age_s=300):
     root = Path(root) if root else Path.home()/'.codex/sessions'
     candidates = []
     files = sorted(root.rglob('*.jsonl'), key=lambda p: p.stat().st_mtime, reverse=True)[:4]
@@ -22,6 +22,9 @@ def latest_usage(root=None):
                     continue
                 stamp = event['timestamp']
                 age = (datetime.datetime.now(datetime.timezone.utc)-datetime.datetime.fromisoformat(stamp.replace('Z', '+00:00'))).total_seconds()
+                now = datetime.datetime.now(datetime.timezone.utc).timestamp()
+                if age < -60 or age > max_age_s or (primary.get('resets_at') is not None and primary['resets_at'] <= now):
+                    continue
                 candidates.append(dict(timestamp=stamp, used_percent=float(primary['used_percent']),
                                        resets_at=primary.get('resets_at'), age_s=age, source='local_session_rate_limits'))
                 break
