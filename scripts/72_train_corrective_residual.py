@@ -3,6 +3,7 @@
 import argparse
 import json
 import pickle
+import sys
 from pathlib import Path
 from types import SimpleNamespace
 import numpy as np
@@ -61,6 +62,18 @@ def evaluate(checkpoint,label,folder,cases,demos,parent,preferred):
 def rank(row): return (-row['full_fraction'],-row['preferred_fraction'],row['mean_goal_m'])
 
 
+def feedback_phases(arrays,bins):
+    times=np.arange(len(arrays['feedback']))*.01
+    result={}
+    for name,lo,hi in zip(['prepare','approach','closure','lift','transport_hold'],bins[:-1],bins[1:]):
+        ids=(times>=lo)&(times<(hi if hi is not None else np.inf))
+        values=arrays['feedback'][ids]
+        if len(values):
+            result[name]=dict(frames=int(ids.sum()),mean_abs_action=float(np.mean(np.abs(values))),
+                              nonzero_fraction=float(np.mean(np.linalg.norm(values,axis=1)>1e-6)))
+    return result
+
+
 def fit(policy,x,y,weights,epochs,seed,lr,folder,callback=None,checkpoint_epochs=()):
     model_to_device(policy.model,'cuda');optimizer=torch.optim.Adam(policy.model.parameters(),lr=lr)
     features=torch.as_tensor(x,dtype=torch.float32,device='cuda');targets=torch.as_tensor(y,dtype=torch.float32,device='cuda')
@@ -114,7 +127,9 @@ def main():
     np.savez_compressed(args.output/'phase_bc_input.npz',features=x,labels=y,weights=w)
     (args.output/'input.json').write_text(json.dumps(dict(protocol_sha256=sha,expert_sha256=admission['demo_sha256'],
          reference_sha256=admission['reference_sha256'],frames=len(x),trajectories=len(base),label_clip_fraction=clipped/total,
-         feature_dim=x.shape[1],device=torch.cuda.get_device_name(0),heldout_used=False),indent=2)+'\n')
+         feature_dim=x.shape[1],device=torch.cuda.get_device_name(0),heldout_used=False,
+         runtime=dict(python=sys.version,numpy=np.__version__,torch=torch.__version__,cuda=torch.version.cuda),
+         phase_mass=plan['phase_mass'],phase_bins_control_s=plan['phase_bins_control_s']),indent=2)+'\n')
     old=pickle.loads((ROOT/'data/processed/dual_video_v10/learning/residual_bc/epoch_050.pickle').read_bytes())
     pilot_names={'first/video_seed_0','first/former_test_cup_y_plus','second/nominal','second/former_test_cup_x_plus'}
     pilot=[]
@@ -158,7 +173,8 @@ def main():
             if accepted: corrections.append((video['id'],arrays['features'],arrays['labels']))
             row=dict(video=video['name'],case=entry['name'],admitted_labels=accepted,report=r,
                      mean_abs_feedback_action=float(np.mean(np.abs(arrays['feedback']))),
-                     nonzero_feedback_fraction=float(np.mean(np.linalg.norm(arrays['feedback'],axis=1)>1e-6)))
+                     nonzero_feedback_fraction=float(np.mean(np.linalg.norm(arrays['feedback'],axis=1)>1e-6)),
+                     phase_feedback=feedback_phases(arrays,plan['phase_bins_control_s']))
             rows.append(row)
             print('COLLECT',json.dumps(dict(round=iteration,video=video['name'],case=entry['name'],accepted=accepted,feedback=row['mean_abs_feedback_action'])),flush=True)
         collections.append(dict(round=iteration,beta=beta,rows=rows))

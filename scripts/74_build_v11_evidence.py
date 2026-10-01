@@ -54,6 +54,11 @@ def main():
         item['candidates'] = [dict(name=c['name'], report=compact(c['report'])) for c in row['candidates']]
         item['report'] = compact(row.get('report', {}))
         item['half'] = compact(row.get('half', {}))
+        search=RUN/'experts'/row['video']/row['name']/'search'
+        if (search/'safety_search.json').exists():
+            log=read(search/'safety_search.json')
+            item['search']={k:v for k,v in log.items() if k!='history'}
+            item['search']['best']=read(search/'safety_best.json')
         rows.append(item)
     write('experts.json', {**{k: v for k, v in admission.items() if k != 'reports'}, 'reports': rows})
     fig, axes = plt.subplots(2, 1, figsize=(13, 8), sharex=True)
@@ -68,7 +73,9 @@ def main():
         ax.set_ylabel(title)
         ax.grid(axis='y', alpha=.2)
     axes[0].axhline(.75, color='#526A9B', linestyle=':', label='Preferred headroom')
-    axes[0].legend(ncol=4)
+    axes[0].scatter(x+.18,[r['half'].get('max_hand_scene_penetration_m',np.nan)*1000 for r in rows],
+                    marker='x',s=18,color='black',label='Half timestep')
+    axes[0].legend(ncol=3)
     axes[1].set_xticks(x)
     axes[1].set_xticklabels([r['video'][0]+':'+r['name'] for r in rows], rotation=70, ha='right', fontsize=7)
     fig.suptitle('Development only: rejected cases retained; missing bars are not successes')

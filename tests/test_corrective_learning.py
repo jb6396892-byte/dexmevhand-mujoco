@@ -73,5 +73,16 @@ class CorrectiveTests(unittest.TestCase):
         self.assertEqual(np.shape(controller.features),(1,84))
         self.assertGreater(np.linalg.norm(controller.feedback[0]),0.)
 
+    def test_feedback_phase_report_partitions_frames(self):
+        root=Path(__file__).resolve().parents[1]
+        sys.path.insert(0,str(root/'scripts'))
+        module=importlib.import_module('72_train_corrective_residual')
+        bins=[0,.5,5.5,7.1666666667,9.6666666667,None]
+        report=module.feedback_phases({'feedback':np.zeros((1450,30))},bins)
+        self.assertEqual(sum(r['frames'] for r in report.values()),1450)
+        self.assertEqual(report['prepare']['frames'],50)
+        self.assertEqual(report['approach']['frames'],500)
+        self.assertTrue(all(r['mean_abs_action']==0 for r in report.values()))
+
 
 if __name__=='__main__': unittest.main()
