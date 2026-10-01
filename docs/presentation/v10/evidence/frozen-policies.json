@@ -1,0 +1,31 @@
+{
+  "protocol_sha256": "7d0252eae209531c26b421701835e12273ba55ea9f36f8ecc0e5703ef4856ca4",
+  "training_input_sha256": "55b545cb86d09fa90d0beb1c00c9e0d5d4c7ef54ba432c6cb976dd800e4269eb",
+  "selection_protocol_sha256": "f4343ca7bc5aaae9d1ae221a2e22dcc0c8be304489fd886f8a5566875b72be67",
+  "policies": {
+    "direct_bc": {
+      "method": "direct_bc",
+      "epoch": 50,
+      "policy": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v10/learning/direct_bc/epoch_050.pickle",
+      "policy_sha256": "4d50d240b6c70906bc2ae4c09b3d4e3f8d1d1c296905d8bb2c32f88984e63f07",
+      "full_fraction": 0.0,
+      "mean_goal_m": 0.18875453485045335,
+      "full_count": 0,
+      "case_count": 27,
+      "offline_action_rmse": 0.005141522257993434
+    },
+    "residual_bc": {
+      "method": "residual_bc",
+      "epoch": 50,
+      "policy": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v10/learning/residual_bc/epoch_050.pickle",
+      "policy_sha256": "89c4c49feea44c4240d01d248962567d3dbabf9910618e3efcd023c96b934af1",
+      "full_fraction": 0.8778409090909092,
+      "mean_goal_m": 0.0056250518278706425,
+      "full_count": 24,
+      "case_count": 27,
+      "offline_action_rmse": 0.0007087678711630397
+    }
+  },
+  "heldout_evaluated": false,
+  "long_training_started": false
+}

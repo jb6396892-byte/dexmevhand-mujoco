@@ -1,6 +1,7 @@
 import unittest
 from types import SimpleNamespace
 import numpy as np
+import torch
 from fromrealhand.multivideo import conditioned_features, trajectory_arrays, MultiVideoActions
 
 
@@ -33,6 +34,32 @@ class MultiVideoTests(unittest.TestCase):
         video=dict(name='first',id=0,horizon=3,control=dict(time_scale=5.))
         cp=dict(references=dict(first=np.zeros((3,30))),clocks=dict(first=[.01,3.,5.]))
         with self.assertRaises(ValueError): MultiVideoActions(cp,exp,video)
+
+    def test_residual_added_once_and_direct_ignores_reference(self):
+        env=SimpleNamespace(control_timestep=.01,_get_observations=lambda:self.obs.copy(),
+                            sim=SimpleNamespace(data=SimpleNamespace(qpos=self.q,qvel=self.v)))
+        exp=SimpleNamespace(env=env,duration=2.)
+        policy=SimpleNamespace(model=lambda x:torch.full((1,30),.2))
+        references=dict(first=np.full((3,30),.6),second=np.full((5,30),-.3))
+        for name,vid,length,expected in [('first',0,3,.8),('second',1,5,-.1)]:
+            video=dict(name=name,id=vid,horizon=length,control=dict(time_scale=5.))
+            cp=dict(references=references,clocks={name:[.01,2.,5.]},policy=policy,method='residual_bc')
+            actions=MultiVideoActions(cp,exp,video)
+            self.assertEqual(len(actions),length)
+            np.testing.assert_allclose(actions[0],expected,atol=1e-7)
+            cp['method']='direct_bc'
+            np.testing.assert_allclose(MultiVideoActions(cp,exp,video)[0],.2)
+
+    def test_protocol_development_and_heldout_are_disjoint(self):
+        import json
+        from pathlib import Path
+        protocol=json.loads((Path(__file__).resolve().parents[1]/'configs/v10-study.json').read_text())
+        def key(case): return tuple(case['cup_offset_m'])+(case['cup_yaw_deg'],)+tuple(case['goal_offset_m'])
+        development={key(c) for c in protocol['development_second']}
+        heldout={key(c) for c in protocol['heldout_per_video']}
+        self.assertFalse(development.intersection(heldout))
+        self.assertEqual(len(heldout),10)
+        self.assertFalse(protocol['evaluation']['heldout_reoptimization'])
 
 
 if __name__=='__main__': unittest.main()

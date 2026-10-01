@@ -22,7 +22,10 @@ def compact(report):
     keys=['surface_physics_passed','fidelity_passed','final_distance_m','max_hand_scene_penetration_m',
           'initial_hand_scene_penetration_m','max_loaded_gap_m','tail_slip_m','saturation',
           'tail_mean_tip_error_m','tail_finger_contact_fraction','tail_finger_force_n','phase_contacts']
-    return {k:report[k] for k in keys if k in report}
+    result={k:report[k] for k in keys if k in report}
+    if 'scene_contact_peaks' in report:
+        result['largest_contact_peaks']=report['scene_contact_peaks'][:5]
+    return result
 
 
 def write(name,value):
@@ -74,24 +77,37 @@ def main():
     fig.tight_layout();fig.savefig(str(OUT/'assets/bc-loss.png'),dpi=150);plt.close(fig)
     write('development-policy-comparison.json',comparisons)
     protocol=read(ROOT/'configs/v10-study.json')
-    fig,axes=plt.subplots(2,2,figsize=(11,7))
+    fig,axes=plt.subplots(2,2,figsize=(11,7));divergences=[]
     for i,video in enumerate(protocol['videos']):
         nominal='video_seed_0' if i==0 else 'nominal'
         paths={'expert':ROOT/video['paths']['rollout']}
         for method,entry in frozen['policies'].items():
             paths[method]=RUN/'learning'/method/('epoch_%03d'%entry['epoch'])/video['name']/nominal/'diagnostic_rollout.pkl'
         geometry=np.load(ROOT/video['paths']['geometry']);goal=geometry['object_poses'][-1,:3,3]
+        expert=pickle.loads(paths['expert'].read_bytes())['video_faithful']
+        expert_q=np.array([s['qpos'] for s in expert['sim_data']])
         for method,path in paths.items():
             demo=pickle.loads(path.read_bytes())['video_faithful']
-            pos=np.array([s['qpos'][30:33] for s in demo['sim_data']]);t=np.arange(len(pos))*.01
+            q=np.array([s['qpos'] for s in demo['sim_data']]);pos=q[:,30:33];t=np.arange(len(pos))*.01
             axes[i,0].plot(t,pos[:,2]*1000,label=method)
             axes[i,1].plot(t,np.linalg.norm(pos-goal,axis=1)*1000,label=method)
+            if method!='expert':
+                errors=dict(action_rmse=np.sqrt(np.mean((demo['actions']-expert['actions'])**2,axis=1)),
+                            root_translation_m=np.linalg.norm(q[:,:3]-expert_q[:,:3],axis=1),
+                            cup_position_m=np.linalg.norm(q[:,30:33]-expert_q[:,30:33],axis=1))
+                crossings={}
+                for key,error in errors.items():
+                    bad=np.flatnonzero(error>.01)
+                    crossings[key]=dict(threshold=.01,first_step=int(bad[0]) if len(bad) else None,
+                                        time_s=float(bad[0]*.01) if len(bad) else None,initial_error=float(error[0]))
+                divergences.append(dict(video=video['name'],method=method,epoch=frozen['policies'][method]['epoch'],crossings=crossings))
         for j in range(2):
             axes[i,j].set_xlabel('Control time (s)');axes[i,j].set_title(video['name']+' video: development nominal')
             axes[i,j].grid(alpha=.2)
             for frame in [30,40,55]: axes[i,j].axvline(.5+frame/30.*5.,color='gray',linestyle=':',alpha=.5)
         axes[i,0].set_ylabel('Cup center height (mm)');axes[i,1].set_ylabel('Goal distance (mm)')
     axes[0,0].legend();fig.tight_layout();fig.savefig(str(OUT/'assets/development-trajectories.png'),dpi=150);plt.close(fig)
+    write('selected-policy-divergence.json',divergences)
     test_path=RUN/'heldout/summary.json'
     if not test_path.exists(): return
     test=read(test_path)

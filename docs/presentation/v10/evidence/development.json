@@ -48,7 +48,49 @@
               "middle": 3.759351139345896,
               "ring": 2.033684201619765,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009537825733412414
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0009447976210399631
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0009168424636454877
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009030244727537143
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007311659413273375
+              }
+            ]
           }
         },
         {
@@ -76,7 +118,49 @@
               "middle": 3.7638476640879754,
               "ring": 2.0201245446731315,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009537825733424112
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0009447976210413327
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0009168424636454671
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009030244727536692
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007311659413274207
+              }
+            ]
           }
         }
       ],
@@ -103,7 +187,49 @@
           "middle": 3.759351139345896,
           "ring": 2.033684201619765,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.535999999999392,
+            "penetration_m": 0.0009537825733412414
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.537999999999392,
+            "penetration_m": 0.0009447976210399631
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887999999999638,
+            "penetration_m": 0.0009168424636454877
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0009030244727537143
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.867999999999466,
+            "penetration_m": 0.0007311659413273375
+          }
+        ]
       },
       "half_timestep": {
         "surface_physics_passed": true,
@@ -128,7 +254,49 @@
           "middle": 2.5346340715277504,
           "ring": 2.865785712149289,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.047000000000688,
+            "penetration_m": 0.000795784255355936
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.857000000000625,
+            "penetration_m": 0.0007944251399634265
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.27300000000043,
+            "penetration_m": 0.0007228629734286514
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07500000000000005,
+            "penetration_m": 0.0007127539633574312
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887000000000514,
+            "penetration_m": 0.0006467457924833192
+          }
+        ]
       }
     },
     {
@@ -175,7 +343,49 @@
               "middle": 4.438111337288279,
               "ring": 1.935570930163628,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009009533978879972
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 9.475999999999834,
+                "penetration_m": 0.0008983814418020529
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0008730166951975068
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0008563232564072126
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007433057095261157
+              }
+            ]
           }
         },
         {
@@ -203,7 +413,49 @@
               "middle": 3.7659566965454894,
               "ring": 2.0793525590669417,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009185285213396856
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0009076941530122192
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009056325978332213
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0007805390985047624
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007330414326749577
+              }
+            ]
           }
         }
       ],
@@ -230,7 +482,49 @@
           "middle": 3.7659566965454894,
           "ring": 2.0793525590669417,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.535999999999392,
+            "penetration_m": 0.0009185285213396856
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887999999999638,
+            "penetration_m": 0.0009076941530122192
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0009056325978332213
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.537999999999392,
+            "penetration_m": 0.0007805390985047624
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.867999999999466,
+            "penetration_m": 0.0007330414326749577
+          }
+        ]
       },
       "half_timestep": {
         "surface_physics_passed": true,
@@ -255,7 +549,49 @@
           "middle": 2.539677433786212,
           "ring": 2.869407557281132,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.047000000000688,
+            "penetration_m": 0.00079455905426016
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.862000000000626,
+            "penetration_m": 0.0007875210240913751
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.270000000000429,
+            "penetration_m": 0.0007250124440276069
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07500000000000005,
+            "penetration_m": 0.000712753867244848
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.89500000000051,
+            "penetration_m": 0.0006244747270889808
+          }
+        ]
       }
     },
     {
@@ -302,7 +638,49 @@
               "middle": 3.759351139345896,
               "ring": 2.033684201619765,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009537825733412414
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0009447976210399631
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0009168424636454877
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009030244727537143
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007311659413273375
+              }
+            ]
           }
         },
         {
@@ -330,7 +708,49 @@
               "middle": 3.790587094789992,
               "ring": 2.033258291868224,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009533210899556312
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.000944779954810159
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0009169442400064131
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009029583898137105
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007311672974362984
+              }
+            ]
           }
         }
       ],
@@ -357,7 +777,49 @@
           "middle": 3.790587094789992,
           "ring": 2.033258291868224,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.535999999999392,
+            "penetration_m": 0.0009533210899556312
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.537999999999392,
+            "penetration_m": 0.000944779954810159
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887999999999638,
+            "penetration_m": 0.0009169442400064131
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0009029583898137105
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.867999999999466,
+            "penetration_m": 0.0007311672974362984
+          }
+        ]
       },
       "half_timestep": {
         "surface_physics_passed": true,
@@ -382,7 +844,49 @@
           "middle": 2.5367564172644754,
           "ring": 2.8620081383005855,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.047000000000688,
+            "penetration_m": 0.0007957734290206285
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.857000000000625,
+            "penetration_m": 0.0007944253645291226
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.27300000000043,
+            "penetration_m": 0.0007228629734252756
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07500000000000005,
+            "penetration_m": 0.0007127539633574312
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887000000000514,
+            "penetration_m": 0.0006465637453089859
+          }
+        ]
       }
     },
     {
@@ -429,7 +933,49 @@
               "middle": 1.7193297331987345,
               "ring": 3.4504409220329886,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.547999999999391,
+                "penetration_m": 0.0011305214178606658
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0008990717322886763
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.885999999999637,
+                "penetration_m": 0.0008391215326694256
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0008288963493870959
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_7"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0007661474434781911
+              }
+            ]
           }
         },
         {
@@ -457,7 +1003,49 @@
               "middle": 3.271633792776186,
               "ring": 2.256813806793663,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009628317757378596
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.545999999999391,
+                "penetration_m": 0.0009247766274765227
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009018553854240859
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.885999999999637,
+                "penetration_m": 0.0008917327219658623
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.869999999999465,
+                "penetration_m": 0.0008896781931178526
+              }
+            ]
           }
         }
       ],
@@ -484,7 +1072,49 @@
           "middle": 3.271633792776186,
           "ring": 2.256813806793663,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.535999999999392,
+            "penetration_m": 0.0009628317757378596
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.545999999999391,
+            "penetration_m": 0.0009247766274765227
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0009018553854240859
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.885999999999637,
+            "penetration_m": 0.0008917327219658623
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.869999999999465,
+            "penetration_m": 0.0008896781931178526
+          }
+        ]
       },
       "half_timestep": {
         "surface_physics_passed": true,
@@ -509,7 +1139,49 @@
           "middle": 2.5386815085736534,
           "ring": 2.863195355266324,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.051000000000689,
+            "penetration_m": 0.00079409101084913
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.867000000000628,
+            "penetration_m": 0.0007850085839099101
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.27400000000043,
+            "penetration_m": 0.0007239779771330487
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07500000000000005,
+            "penetration_m": 0.0007127540594696466
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887000000000514,
+            "penetration_m": 0.0006482978654263498
+          }
+        ]
       }
     },
     {
@@ -556,7 +1228,49 @@
               "middle": 3.759351139345896,
               "ring": 2.033684201619765,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009537825733412414
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0009447976210399631
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0009168424636454877
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009030244727537143
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007311659413273375
+              }
+            ]
           }
         },
         {
@@ -584,7 +1298,49 @@
               "middle": 3.759343817218379,
               "ring": 2.030353692676644,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009539301278093526
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0009446931027844726
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.000916895156899105
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009030448014213368
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007311645852199008
+              }
+            ]
           }
         }
       ],
@@ -611,7 +1367,49 @@
           "middle": 3.759343817218379,
           "ring": 2.030353692676644,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.535999999999392,
+            "penetration_m": 0.0009539301278093526
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.537999999999392,
+            "penetration_m": 0.0009446931027844726
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887999999999638,
+            "penetration_m": 0.000916895156899105
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0009030448014213368
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.867999999999466,
+            "penetration_m": 0.0007311645852199008
+          }
+        ]
       },
       "half_timestep": {
         "surface_physics_passed": true,
@@ -636,7 +1434,49 @@
           "middle": 2.5120067994192037,
           "ring": 2.9249006972640412,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.047000000000688,
+            "penetration_m": 0.0007957951437435476
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.857000000000625,
+            "penetration_m": 0.0007944249154126197
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.27300000000043,
+            "penetration_m": 0.0007228629734252756
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07500000000000005,
+            "penetration_m": 0.0007127539633574312
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887000000000514,
+            "penetration_m": 0.0006466917137825031
+          }
+        ]
       }
     },
     {
@@ -683,7 +1523,49 @@
               "middle": 1.5033825130531442,
               "ring": 3.729750160410108,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.545999999999391,
+                "penetration_m": 0.0011202740439420144
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009080317946692741
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0008630470120629942
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0007542635570136284
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_7"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.000722223808710454
+              }
+            ]
           }
         },
         {
@@ -711,7 +1593,49 @@
               "middle": 3.6812765961474114,
               "ring": 2.1149296882163977,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009516859265112544
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0009195534939993589
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009041349747309834
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.517999999999394,
+                "penetration_m": 0.0008367197622900574
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.989999999999452,
+                "penetration_m": 0.0007471442409067977
+              }
+            ]
           }
         }
       ],
@@ -738,7 +1662,49 @@
           "middle": 3.6812765961474114,
           "ring": 2.1149296882163977,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.535999999999392,
+            "penetration_m": 0.0009516859265112544
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887999999999638,
+            "penetration_m": 0.0009195534939993589
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0009041349747309834
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.517999999999394,
+            "penetration_m": 0.0008367197622900574
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.989999999999452,
+            "penetration_m": 0.0007471442409067977
+          }
+        ]
       },
       "half_timestep": {
         "surface_physics_passed": true,
@@ -763,7 +1729,49 @@
           "middle": 2.5865294293816556,
           "ring": 2.8051811007698104,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.049000000000689,
+            "penetration_m": 0.0007939445304207147
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.279000000000432,
+            "penetration_m": 0.0007199403843939356
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07500000000000005,
+            "penetration_m": 0.0007127538575612677
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.856000000000624,
+            "penetration_m": 0.0006510352739456515
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887000000000514,
+            "penetration_m": 0.0006390699419612484
+          }
+        ]
       }
     },
     {
@@ -810,7 +1818,49 @@
               "middle": 3.759351139345896,
               "ring": 2.033684201619765,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009537825733412414
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0009447976210399631
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0009168424636454877
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009030244727537143
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007311659413273375
+              }
+            ]
           }
         },
         {
@@ -838,7 +1888,49 @@
               "middle": 3.7583369752192675,
               "ring": 2.039455396618795,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009534344133324191
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0009449206996161205
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0009169760681759911
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009029536934237357
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007311661490615508
+              }
+            ]
           }
         }
       ],
@@ -865,7 +1957,49 @@
           "middle": 3.7583369752192675,
           "ring": 2.039455396618795,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.535999999999392,
+            "penetration_m": 0.0009534344133324191
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.537999999999392,
+            "penetration_m": 0.0009449206996161205
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887999999999638,
+            "penetration_m": 0.0009169760681759911
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0009029536934237357
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.867999999999466,
+            "penetration_m": 0.0007311661490615508
+          }
+        ]
       },
       "half_timestep": {
         "surface_physics_passed": true,
@@ -890,7 +2024,49 @@
           "middle": 2.505231974641168,
           "ring": 2.924708862320437,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.047000000000688,
+            "penetration_m": 0.0007957694857107121
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.857000000000625,
+            "penetration_m": 0.0007944250471613228
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.27300000000043,
+            "penetration_m": 0.0007228629734252756
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07500000000000005,
+            "penetration_m": 0.0007127539633574312
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887000000000514,
+            "penetration_m": 0.0006465039514627851
+          }
+        ]
       }
     },
     {
@@ -937,7 +2113,49 @@
               "middle": 4.677683643701117,
               "ring": 1.5009623588810148,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 9.46599999999983,
+                "penetration_m": 0.0009021898225448347
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009000667127307743
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0008910936346669846
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0008431543550670759
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007497841766219225
+              }
+            ]
           }
         },
         {
@@ -965,7 +2183,49 @@
               "middle": 3.6564145035971216,
               "ring": 2.139628197905652,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009160932997834991
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0009155478634223147
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009059083892964939
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.517999999999394,
+                "penetration_m": 0.0007606632013733027
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007311946722532459
+              }
+            ]
           }
         }
       ],
@@ -992,7 +2252,49 @@
           "middle": 4.677683643701117,
           "ring": 1.5009623588810148,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 9.46599999999983,
+            "penetration_m": 0.0009021898225448347
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0009000667127307743
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.537999999999392,
+            "penetration_m": 0.0008910936346669846
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.537999999999392,
+            "penetration_m": 0.0008431543550670759
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.867999999999466,
+            "penetration_m": 0.0007497841766219225
+          }
+        ]
       },
       "half_timestep": {
         "surface_physics_passed": true,
@@ -1017,7 +2319,49 @@
           "middle": 4.627689107581337,
           "ring": 1.7119475204065402,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.05300000000069,
+            "penetration_m": 0.0007964846771447197
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.27500000000043,
+            "penetration_m": 0.000745953859413253
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 9.078000000000408,
+            "penetration_m": 0.0007403933878177167
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07500000000000005,
+            "penetration_m": 0.0007127539633574312
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.857000000000625,
+            "penetration_m": 0.0006501572531099755
+          }
+        ]
       }
     },
     {
@@ -1064,7 +2408,49 @@
               "middle": 3.759351139345896,
               "ring": 2.033684201619765,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009537825733412414
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0009447976210399631
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0009168424636454877
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009030244727537143
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007311659413273375
+              }
+            ]
           }
         },
         {
@@ -1092,7 +2478,49 @@
               "middle": 3.786670968906648,
               "ring": 2.0302314290470007,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009538217190893577
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0009445132101284533
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.000916972196830356
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009030519756070251
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007311657335921308
+              }
+            ]
           }
         }
       ],
@@ -1119,7 +2547,49 @@
           "middle": 3.786670968906648,
           "ring": 2.0302314290470007,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.535999999999392,
+            "penetration_m": 0.0009538217190893577
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.537999999999392,
+            "penetration_m": 0.0009445132101284533
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887999999999638,
+            "penetration_m": 0.000916972196830356
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0009030519756070251
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.867999999999466,
+            "penetration_m": 0.0007311657335921308
+          }
+        ]
       },
       "half_timestep": {
         "surface_physics_passed": true,
@@ -1144,7 +2614,49 @@
           "middle": 2.5307174854703733,
           "ring": 2.8685131036111984,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.047000000000688,
+            "penetration_m": 0.0007957991093364937
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.857000000000625,
+            "penetration_m": 0.0007944252327791603
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.27300000000043,
+            "penetration_m": 0.0007228629734252756
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07500000000000005,
+            "penetration_m": 0.0007127539633574312
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887000000000514,
+            "penetration_m": 0.0006468516637192837
+          }
+        ]
       }
     },
     {
@@ -1191,7 +2703,49 @@
               "middle": 3.222677486673931,
               "ring": 2.352012216056442,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009058523611753322
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.527999999999393,
+                "penetration_m": 0.0008950305247195336
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0008920226801879845
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0008548908873191272
+              },
+              {
+                "geoms": [
+                  "C_ffproximal",
+                  "C_mfproximal"
+                ],
+                "time_s": 6.263999999999532,
+                "penetration_m": 0.0007267209898494977
+              }
+            ]
           }
         },
         {
@@ -1219,7 +2773,49 @@
               "middle": 3.163372901524603,
               "ring": 2.16506352416252,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0009742700476586958
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009083146295949052
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0008987609460701533
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.869999999999465,
+                "penetration_m": 0.00089738672980073
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.887999999999638,
+                "penetration_m": 0.0008915812060485447
+              }
+            ]
           }
         }
       ],
@@ -1246,7 +2842,49 @@
           "middle": 3.163372901524603,
           "ring": 2.16506352416252,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.535999999999392,
+            "penetration_m": 0.0009742700476586958
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0009083146295949052
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.537999999999392,
+            "penetration_m": 0.0008987609460701533
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.869999999999465,
+            "penetration_m": 0.00089738672980073
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.887999999999638,
+            "penetration_m": 0.0008915812060485447
+          }
+        ]
       },
       "half_timestep": {
         "surface_physics_passed": true,
@@ -1271,7 +2909,49 @@
           "middle": 2.1857568663296507,
           "ring": 3.0832068288463486,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.043000000000687,
+            "penetration_m": 0.0007988794102958057
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.858000000000625,
+            "penetration_m": 0.0007966395752284395
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07500000000000005,
+            "penetration_m": 0.00071275655191226
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.263000000000426,
+            "penetration_m": 0.0007060505214338333
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 10.01099999999989,
+            "penetration_m": 0.0006523683166397296
+          }
+        ]
       }
     },
     {
@@ -1318,7 +2998,49 @@
               "middle": 3.6858312028860944,
               "ring": 2.0360773060528485,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.001131017608952208
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0009028245649163732
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.537999999999392,
+                "penetration_m": 0.0008794809259311331
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.89599999999964,
+                "penetration_m": 0.000861919841544386
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.867999999999466,
+                "penetration_m": 0.0007278826848509311
+              }
+            ]
           }
         },
         {
@@ -1346,7 +3068,49 @@
               "middle": 4.140555737561997,
               "ring": 1.543226255966508,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0010853578969951072
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.545999999999391,
+                "penetration_m": 0.0010338830247292148
+              },
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 8.89599999999964,
+                "penetration_m": 0.0009143452831433394
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0008926696672511497
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.861999999999466,
+                "penetration_m": 0.0008735528671312889
+              }
+            ]
           }
         },
         {
@@ -1374,7 +3138,49 @@
               "middle": 5.25705399622498,
               "ring": 0.997049756355267,
               "little": 0.0
-            }
+            },
+            "largest_contact_peaks": [
+              {
+                "geoms": [
+                  "C_mfdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 9.46599999999983,
+                "penetration_m": 0.0009488187224029292
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_9"
+                ],
+                "time_s": 7.517999999999394,
+                "penetration_m": 0.0009030086877587807
+              },
+              {
+                "geoms": [
+                  "C_lfdistal",
+                  "C_rfmiddle"
+                ],
+                "time_s": 7.1779999999994315,
+                "penetration_m": 0.0008973680210610383
+              },
+              {
+                "geoms": [
+                  "C_thdistal",
+                  "collision_mug_13"
+                ],
+                "time_s": 7.535999999999392,
+                "penetration_m": 0.0008734276672127701
+              },
+              {
+                "geoms": [
+                  "C_ffdistal",
+                  "collision_mug_26"
+                ],
+                "time_s": 6.061999999999554,
+                "penetration_m": 0.0007554406410237852
+              }
+            ]
           }
         }
       ],
@@ -1401,7 +3207,49 @@
           "middle": 5.25705399622498,
           "ring": 0.997049756355267,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 9.46599999999983,
+            "penetration_m": 0.0009488187224029292
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.517999999999394,
+            "penetration_m": 0.0009030086877587807
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0008973680210610383
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.535999999999392,
+            "penetration_m": 0.0008734276672127701
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.061999999999554,
+            "penetration_m": 0.0007554406410237852
+          }
+        ]
       },
       "half_timestep": {
         "surface_physics_passed": true,
@@ -1426,7 +3274,49 @@
           "middle": 5.496498095230298,
           "ring": 0.9180022626770604,
           "little": 0.0
-        }
+        },
+        "largest_contact_peaks": [
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 9.456000000000198,
+            "penetration_m": 0.0008732428847968858
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.05200000000069,
+            "penetration_m": 0.0007976277701509321
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.27400000000043,
+            "penetration_m": 0.0007256021382237438
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07500000000000005,
+            "penetration_m": 0.0007127525973881351
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 6.079000000000365,
+            "penetration_m": 0.0006721854487645359
+          }
+        ]
       }
     }
   ],

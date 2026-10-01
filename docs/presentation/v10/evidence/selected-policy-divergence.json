@@ -1,0 +1,102 @@
+[
+  {
+    "video": "first",
+    "method": "direct_bc",
+    "epoch": 50,
+    "crossings": {
+      "action_rmse": {
+        "threshold": 0.01,
+        "first_step": 5,
+        "time_s": 0.05,
+        "initial_error": 0.008721224487689323
+      },
+      "root_translation_m": {
+        "threshold": 0.01,
+        "first_step": 31,
+        "time_s": 0.31,
+        "initial_error": 0.0
+      },
+      "cup_position_m": {
+        "threshold": 0.01,
+        "first_step": 571,
+        "time_s": 5.71,
+        "initial_error": 0.0
+      }
+    }
+  },
+  {
+    "video": "first",
+    "method": "residual_bc",
+    "epoch": 50,
+    "crossings": {
+      "action_rmse": {
+        "threshold": 0.01,
+        "first_step": null,
+        "time_s": null,
+        "initial_error": 0.00029907961952493195
+      },
+      "root_translation_m": {
+        "threshold": 0.01,
+        "first_step": null,
+        "time_s": null,
+        "initial_error": 0.0
+      },
+      "cup_position_m": {
+        "threshold": 0.01,
+        "first_step": null,
+        "time_s": null,
+        "initial_error": 0.0
+      }
+    }
+  },
+  {
+    "video": "second",
+    "method": "direct_bc",
+    "epoch": 50,
+    "crossings": {
+      "action_rmse": {
+        "threshold": 0.01,
+        "first_step": 0,
+        "time_s": 0.0,
+        "initial_error": 0.024527531052675213
+      },
+      "root_translation_m": {
+        "threshold": 0.01,
+        "first_step": 10,
+        "time_s": 0.1,
+        "initial_error": 0.0
+      },
+      "cup_position_m": {
+        "threshold": 0.01,
+        "first_step": 617,
+        "time_s": 6.17,
+        "initial_error": 0.0
+      }
+    }
+  },
+  {
+    "video": "second",
+    "method": "residual_bc",
+    "epoch": 50,
+    "crossings": {
+      "action_rmse": {
+        "threshold": 0.01,
+        "first_step": null,
+        "time_s": null,
+        "initial_error": 0.0006623830504611074
+      },
+      "root_translation_m": {
+        "threshold": 0.01,
+        "first_step": null,
+        "time_s": null,
+        "initial_error": 0.0
+      },
+      "cup_position_m": {
+        "threshold": 0.01,
+        "first_step": null,
+        "time_s": null,
+        "initial_error": 0.0
+      }
+    }
+  }
+]
