@@ -3,8 +3,9 @@ import numpy as np
 import json
 import importlib
 import sys
+from types import SimpleNamespace
 from pathlib import Path
-from fromrealhand.corrective_learning import phase_weights,tracking_delta
+from fromrealhand.corrective_learning import CorrectiveActions,phase_weights,tracking_delta
 
 
 class CorrectiveTests(unittest.TestCase):
@@ -52,6 +53,25 @@ class CorrectiveTests(unittest.TestCase):
         np.testing.assert_array_equal(actions[1120:],0.)
         np.testing.assert_allclose(actions[800,[29,23]],[.03,-.02])
         self.assertLess(np.max(np.abs(np.diff(actions,axis=0))),.001)
+
+    def test_teacher_labels_do_not_write_simulator_state(self):
+        q=np.zeros(37);q[33]=1.;v=np.zeros(36)
+        model=SimpleNamespace(actuator_biasprm=np.tile([0.,-1.,0.],(30,1)),
+                              actuator_gainprm=np.ones((30,3)))
+        env=SimpleNamespace(sim=SimpleNamespace(data=SimpleNamespace(qpos=q,qvel=v)),
+                            act_rng=np.ones(30),control_timestep=.01,
+                            _get_observations=lambda:np.zeros(39))
+        exp=SimpleNamespace(model=model,env=env,duration=1.)
+        video={'horizon':1,'control':{'time_scale':5.},'id':0}
+        target=q.copy();target[:30]=.01
+        expert={'actions':np.zeros((1,30)),'sim_data':[{'qpos':target,'qvel':v.copy()}]}
+        controller=CorrectiveActions(exp,video,expert,np.zeros((1,30)),np.full(30,.0002),None,.1,1.)
+        before=q.copy()
+        np.testing.assert_allclose(controller[0],.0002)
+        np.testing.assert_array_equal(q,before)
+        np.testing.assert_array_equal(v,0.)
+        self.assertEqual(np.shape(controller.features),(1,84))
+        self.assertGreater(np.linalg.norm(controller.feedback[0]),0.)
 
 
 if __name__=='__main__': unittest.main()

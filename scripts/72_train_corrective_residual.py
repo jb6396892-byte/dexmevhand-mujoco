@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Phase-balanced residual BC and admitted on-policy corrective labels."""
 import argparse
-import copy
 import json
 import pickle
 from pathlib import Path

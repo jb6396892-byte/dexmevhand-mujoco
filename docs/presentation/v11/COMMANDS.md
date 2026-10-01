@@ -35,6 +35,14 @@ python scripts/74_build_v11_evidence.py
 
 ## 打开原生仿真窗口
 
+选中的策略完成冻结后，可以直接在 Ubuntu 桌面终端运行：
+
+```bash
+python3 scripts/75_view_corrective_gpu.py second --episodes 1
+python3 scripts/75_view_corrective_gpu.py first --episodes 1
+python3 scripts/75_view_corrective_gpu.py second --expert --episodes 1
+```
+
 从 `learning/frozen_policy.json` 确认选中的策略目录，再从对应开发报告中找到 `diagnostic_rollout.pkl` 和该工况的 `geometry.npz`：
 
 ```bash
@@ -48,4 +56,4 @@ bash scripts/31_view_video_faithful_gpu.sh \
 
 ## 环境检查记录
 
-一次测试命令遗漏动态库环境变量，触发了 `mujoco_py` 重编译；已终止该测试进程并使用上述固定库路径重新执行。恢复后 76 项测试完成，其中 1 项因原 MANO 文件未挂载而跳过。没有据此升级 Python、NumPy 或 MuJoCo。
+一次测试命令遗漏动态库环境变量，触发了 `mujoco_py` 重编译；已终止该测试进程并使用上述固定库路径重新执行。早期 76 项测试中 1 项因 MANO 未挂载而跳过；随后共享盘恢复且补充两项测试，78 项全部通过。没有据此升级 Python、NumPy 或 MuJoCo。

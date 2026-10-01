@@ -144,6 +144,17 @@ def main():
         axes[i, 1].set_ylabel('Goal distance (mm)')
     axes[0, 0].legend()
     save(fig, 'phase-trajectories.png')
+    force_files=[RUN/'renders'/name/'finger_forces.npy' for name in ['expert_second','policy_second']]
+    if all(p.exists() for p in force_files):
+        fig,axes=plt.subplots(2,1,figsize=(10,6),sharex=True,sharey=True)
+        for ax,path,title in zip(axes,force_files,['Admitted expert','Frozen residual policy']):
+            forces=np.load(path)
+            for i,finger in enumerate(['Thumb','Index','Middle','Ring','Little']):
+                ax.plot(np.arange(len(forces))*.01,forces[:,i],label=finger,linewidth=1)
+            ax.set_title(title);ax.set_ylabel('Simulated normal force (N)');ax.grid(alpha=.2)
+        axes[0].legend(ncol=5);axes[1].set_xlabel('Control time (s)')
+        fig.suptitle('Second-video nominal: simulated forces, not measured human forces')
+        save(fig,'second-contact-forces.png')
     if not (RUN/'heldout/summary.json').exists():
         return
     test = read(RUN/'heldout/summary.json')
