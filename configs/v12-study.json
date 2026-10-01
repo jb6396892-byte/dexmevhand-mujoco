@@ -1,0 +1,39 @@
+{
+  "version": "v12",
+  "date": "2026-10-02",
+  "seed": 20261002,
+  "development": "The 35 admitted v11 development cases only; no v11 heldout used for optimization",
+  "epochs": 150,
+  "hidden_sizes": [64, 64],
+  "phase_mass": [0.15, 0.15, 0.2, 0.3, 0.2],
+  "source_phase_boundaries": [30, 40, 55],
+  "candidates": ["aligned_bc", "contact_reference_bc"],
+  "task_gate": {
+    "goal_m": 0.03,
+    "scene_penetration_m": 0.001,
+    "initial_penetration_m": 0.0005,
+    "loaded_gap_m": 0.0005,
+    "slip_m": 0.005,
+    "joint_violation_rad": 0.02,
+    "saturation_fraction": 0.01,
+    "thumb_contact_fraction": 0.8,
+    "supporting_fingers": 3,
+    "finger_contact_fraction": 0.8
+  },
+  "strict_gate": "Unchanged v10/v11 full_gate, including four-finger fidelity and 20mm goal",
+  "selection": "Equal-video task pass fraction, strict pass fraction, lower mean goal error; original gates always reported",
+  "heldout": {
+    "seed": 12102026,
+    "count_per_video": 8,
+    "cup_xy_bound_m": 0.004,
+    "goal_xy_bound_m": 0.018,
+    "yaw_bound_deg": 6.0,
+    "methods": ["old_residual", "aligned_bc", "contact_reference_bc"],
+    "freeze_before_test": true,
+    "tuning_after_test": false
+  },
+  "dapg": {"iterations": 20, "trajectories_per_iteration": 2, "cg_iterations": 5, "demo_stride": 10},
+  "physics": "Original mass, friction, collision meshes, stiffness, timestep; no object assistance or per-step object state writes",
+  "scope": "Two known videos with synthetic perturbations; task tolerance relaxed prospectively, not proof of exact human grasp fidelity or hardware transfer",
+  "long_training": false
+}
