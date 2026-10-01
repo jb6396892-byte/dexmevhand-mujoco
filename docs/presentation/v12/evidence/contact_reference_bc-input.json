@@ -1,0 +1,431 @@
+{
+  "protocol_sha256": "9707bf73d1882068dbbd721bdd53b7eb65e1656802214bcfea01e8c8b305cc52",
+  "frames": 50156,
+  "feature_dim": 130,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "demo_sha256": "ac27d2ed2fc459be5966b96e23601296dc52cf5e90d10240d8de25c1fe1a2220",
+  "reference_sha256": "c30a0120456b03ac730cbe4f6bad0289bdcbe9cc4f45574a9925dcd4ab13a37e",
+  "phase_audit": [
+    {
+      "video": "first",
+      "case": "video_seed_0",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "video_seed_1",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "video_seed_2",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "video_seed_3",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "video_seed_4",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "video_seed_5",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "synthetic_position_0_-1",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "synthetic_goal_0_-1",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "synthetic_goal_0_1",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "synthetic_position_1_-1",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "synthetic_goal_1_-1",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "synthetic_goal_1_1",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "synthetic_cup_yaw_-10",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.03380381086803105
+    },
+    {
+      "video": "first",
+      "case": "synthetic_cup_yaw_-5",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0313808515643378
+    },
+    {
+      "video": "first",
+      "case": "synthetic_cup_yaw_5",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.03140437544107269
+    },
+    {
+      "video": "first",
+      "case": "synthetic_cup_yaw_10",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.03302752293577982
+    },
+    {
+      "video": "second",
+      "case": "nominal",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "cup_x_minus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "goal_x_minus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "cup_x_plus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "goal_x_plus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "cup_y_minus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "goal_y_minus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "cup_y_plus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "goal_y_plus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "yaw_minus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "yaw_plus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "former_test_cup_y_plus",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "first",
+      "case": "former_test_yaw_plus",
+      "phase_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "former_test_cup_x_minus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "former_test_cup_x_plus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "former_test_cup_y_minus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "former_test_goal_y_minus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "former_test_cup_y_plus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.0
+    },
+    {
+      "video": "second",
+      "case": "former_test_yaw_plus",
+      "phase_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "label_clip_fraction": 0.03133333333333333
+    }
+  ],
+  "heldout_used": false
+}

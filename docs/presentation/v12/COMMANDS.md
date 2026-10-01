@@ -26,6 +26,7 @@ python scripts/77_run_v12_study.py heldout
 python scripts/78_train_residual_dapg_smoke.py --train
 python scripts/79_build_v12_evidence.py
 PYTHONPATH=src python -m unittest discover -s tests
+PYTHONPATH=src python scripts/82_verify_v12_evidence.py
 ```
 
 开发评估支持在协议和 checkpoint 哈希相同的情况下继续未完成的工况；新留出测试不用于调参。`78` 只做 20 次接口短训，不是 2000 次完整训练。
@@ -43,5 +44,7 @@ python3 scripts/80_view_v12_gpu.py second --dapg --episodes 1
 ```
 
 这会打开 MuJoCo 原生窗口。显示的是保存的闭环策略动作经物理引擎重放，不是在线重新推理，也不是逐帧写杯子位姿。绿色透明杯子是无碰撞目标标记。无桌面会话时只能离屏渲染。
+
+本轮已验证离屏截图非空、保存动作的物理重放误差为零，未重新人工检查桌面交互窗口。
 
 本机完整结果：`data/processed/dual_video_v12/`。GitHub 小型证据：`docs/presentation/v12/evidence/`。

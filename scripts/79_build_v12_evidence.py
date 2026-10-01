@@ -49,9 +49,24 @@ def main():
     fig.tight_layout();fig.savefig(str(OUT/'assets/heldout.png'),dpi=140);plt.close(fig)
     for video in ('first','second'):
         folder=RUN/'renders'/video
+        if video=='second' and not folder.exists() and test['selected_before_test']=='aligned_bc':
+            folder=RUN/'renders/aligned_second'
         if folder.exists():
             for path in folder.glob('step_*.jpg'): shutil.copy2(str(path),str(OUT/'assets'/(video+'-'+path.name)))
             shutil.copy2(str(folder/'comparison.json'),str(OUT/'evidence'/(video+'-render.json')))
+    folder=RUN/'renders/dapg_second'
+    if folder.exists():
+        for path in folder.glob('step_*.jpg'): shutil.copy2(str(path),str(OUT/'assets'/('dapg-second-'+path.name)))
+        shutil.copy2(str(folder/'comparison.json'),str(OUT/'evidence/dapg-second-render.json'))
+    old_audit=read(ROOT/'docs/presentation/v11/evidence/phase-window-audit.json')['videos']
+    fig,axes=plt.subplots(1,2,figsize=(10,4))
+    for ax,row in zip(axes,old_audit):
+        x=np.arange(5)
+        ax.bar(x-.18,np.asarray(row['actual_mass_under_frozen_windows'])*100,.36,label='Fixed windows',color='#B37948')
+        ax.bar(x+.18,np.asarray(plan['phase_mass'])*100,.36,label='Exact source phase',color='#477A9E')
+        ax.set_xticks(x);ax.set_xticklabels(['Prepare','Approach','Close','Lift','Carry'],rotation=20)
+        ax.set_title(row['video']);ax.set_ylabel('Sampling mass (%)');ax.legend(fontsize=8)
+    fig.tight_layout();fig.savefig(str(OUT/'assets/phase-sampling.png'),dpi=140);plt.close(fig)
     lines=['# v12 实验结果','', '日期：2026-10-02。以下只适用于两段已知视频及本轮合成扰动，不代表实物泛化。','',
            '## 开发集：35 工况','', '| 方法 | 任务级 | 原严格级 | 等权平均目标误差 |', '|---|---|---|---|']
     names={'aligned_bc':'精确阶段采样 BC','contact_reference_bc':'参考条件＋接触 BC','old_residual':'旧残差 v10',

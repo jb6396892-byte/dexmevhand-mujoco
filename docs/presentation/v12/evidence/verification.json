@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-02",
+  "tests": 89,
+  "skipped": 0,
+  "test_success": true,
+  "unique_heldout_rollouts": 80,
+  "expert_feature_replays": 35,
+  "frozen_policy_hashes_verified": true,
+  "strict_and_task_gates_recomputed": true,
+  "exact_phase_mass_verified": true,
+  "dapg_iterations": 20,
+  "nonzero_dapg_updates": 20,
+  "images": [
+    {
+      "path": "data/processed/dual_video_v12/renders/first/step_0405.jpg",
+      "std": 54.01490380729672
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/first/step_0000.jpg",
+      "std": 49.71051017633622
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/first/step_1416.jpg",
+      "std": 56.30907378463318
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/first/step_1214.jpg",
+      "std": 56.234896831460844
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/first/step_0809.jpg",
+      "std": 55.750892690224816
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/first/step_0202.jpg",
+      "std": 49.967687312256395
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/first/step_0607.jpg",
+      "std": 54.98179487344413
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/first/step_1011.jpg",
+      "std": 56.06265880312978
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/aligned_second/step_0000.jpg",
+      "std": 49.48903176190891
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/aligned_second/step_0414.jpg",
+      "std": 58.34849149761769
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/aligned_second/step_1035.jpg",
+      "std": 63.038063578454704
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/aligned_second/step_1242.jpg",
+      "std": 63.89007539299506
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/aligned_second/step_0621.jpg",
+      "std": 59.47545406110288
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/aligned_second/step_1449.jpg",
+      "std": 63.841870274835046
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/aligned_second/step_0207.jpg",
+      "std": 49.536503651789495
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/aligned_second/step_0828.jpg",
+      "std": 59.51729076143576
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/dapg_second/step_0000.jpg",
+      "std": 49.48903176190891
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/dapg_second/step_0414.jpg",
+      "std": 58.381737309134095
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/dapg_second/step_1035.jpg",
+      "std": 62.89924860365329
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/dapg_second/step_1242.jpg",
+      "std": 63.63865812280114
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/dapg_second/step_0621.jpg",
+      "std": 59.48288548339081
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/dapg_second/step_1449.jpg",
+      "std": 63.548182200145106
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/dapg_second/step_0207.jpg",
+      "std": 49.536495607112975
+    },
+    {
+      "path": "data/processed/dual_video_v12/renders/dapg_second/step_0828.jpg",
+      "std": 59.60389508846921
+    }
+  ],
+  "interactive_desktop_window_retested": false,
+  "long_training": false
+}
