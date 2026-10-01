@@ -1,0 +1,1438 @@
+{
+  "protocol_sha256": "7d0252eae209531c26b421701835e12273ba55ea9f36f8ecc0e5703ef4856ca4",
+  "admitted_count": 11,
+  "planned_count": 11,
+  "demo_sha256": "dd8c565bd3df95557d4fb874f3267f6af31075aa3c15ff2eb0c112dc05c6c8bc",
+  "reports": [
+    {
+      "case": {
+        "name": "nominal",
+        "cup_offset_m": [
+          0,
+          0,
+          0
+        ],
+        "cup_yaw_deg": 0.0,
+        "goal_offset_m": [
+          0,
+          0,
+          0
+        ]
+      },
+      "admitted": true,
+      "selected": "fixed",
+      "replay_error": 0.0,
+      "candidates": [
+        {
+          "name": "fixed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.005248994883898114,
+            "max_hand_scene_penetration_m": 0.0009537825733412414,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999603369488898,
+            "tail_slip_m": 1.9044297131967975e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.01239433951527028,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.042611346970373,
+              "index": 0.30986468119735444,
+              "middle": 3.759351139345896,
+              "ring": 2.033684201619765,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "seed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.005249531481930298,
+            "max_hand_scene_penetration_m": 0.0009537825733424112,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999863325133205,
+            "tail_slip_m": 1.4805503125224835e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012397277907910207,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.041575764966657,
+              "index": 0.31709235973751276,
+              "middle": 3.7638476640879754,
+              "ring": 2.0201245446731315,
+              "little": 0.0
+            }
+          }
+        }
+      ],
+      "replay": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.005248994883898114,
+        "max_hand_scene_penetration_m": 0.0009537825733412414,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999603369488898,
+        "tail_slip_m": 1.9044297131967975e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.01239433951527028,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.042611346970373,
+          "index": 0.30986468119735444,
+          "middle": 3.759351139345896,
+          "ring": 2.033684201619765,
+          "little": 0.0
+        }
+      },
+      "half_timestep": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.00785927020541605,
+        "max_hand_scene_penetration_m": 0.000795784255355936,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.0001999999218771076,
+        "tail_slip_m": 5.375382953490973e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012647265161084793,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 0.98,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.97423067993613,
+          "index": 0.2957459981953954,
+          "middle": 2.5346340715277504,
+          "ring": 2.865785712149289,
+          "little": 0.0
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "cup_x_minus",
+        "cup_offset_m": [
+          -0.002,
+          0.0,
+          0.0
+        ],
+        "cup_yaw_deg": 0.0,
+        "goal_offset_m": [
+          0,
+          0,
+          0
+        ]
+      },
+      "admitted": true,
+      "selected": "seed",
+      "replay_error": 0.0,
+      "candidates": [
+        {
+          "name": "fixed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.005278397210884942,
+            "max_hand_scene_penetration_m": 0.0009009533978879972,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999995972452028,
+            "tail_slip_m": 2.1341102659541666e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012114954117565517,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.280207368683315,
+              "index": 0.2896130056778188,
+              "middle": 4.438111337288279,
+              "ring": 1.935570930163628,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "seed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.005250165294397964,
+            "max_hand_scene_penetration_m": 0.0009185285213396856,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.0001999991662149469,
+            "tail_slip_m": 2.1299585354743325e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012589262491523139,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.0395397027322755,
+              "index": 0.3762213629410249,
+              "middle": 3.7659566965454894,
+              "ring": 2.0793525590669417,
+              "little": 0.0
+            }
+          }
+        }
+      ],
+      "replay": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.005250165294397964,
+        "max_hand_scene_penetration_m": 0.0009185285213396856,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.0001999991662149469,
+        "tail_slip_m": 2.1299585354743325e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012589262491523139,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.0395397027322755,
+          "index": 0.3762213629410249,
+          "middle": 3.7659566965454894,
+          "ring": 2.0793525590669417,
+          "little": 0.0
+        }
+      },
+      "half_timestep": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.007697427401626019,
+        "max_hand_scene_penetration_m": 0.00079455905426016,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.0001999999703179583,
+        "tail_slip_m": 3.835318985254688e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012772009869713082,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 0.99,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.959951976283608,
+          "index": 0.3133057326641096,
+          "middle": 2.539677433786212,
+          "ring": 2.869407557281132,
+          "little": 0.0
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "goal_x_minus",
+        "cup_offset_m": [
+          0,
+          0,
+          0
+        ],
+        "cup_yaw_deg": 0.0,
+        "goal_offset_m": [
+          -0.01,
+          0.0,
+          0.0
+        ]
+      },
+      "admitted": true,
+      "selected": "seed",
+      "replay_error": 0.0,
+      "candidates": [
+        {
+          "name": "fixed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.012764396820296568,
+            "max_hand_scene_penetration_m": 0.0009537825733412414,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999603369488898,
+            "tail_slip_m": 1.9044297131967975e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012394339203985192,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.042611346970373,
+              "index": 0.30986468119735444,
+              "middle": 3.759351139345896,
+              "ring": 2.033684201619765,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "seed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.005254814302234702,
+            "max_hand_scene_penetration_m": 0.0009533210899556312,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999775497169748,
+            "tail_slip_m": 0.00010059770564592856,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.01245685223501804,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.037217426321247,
+              "index": 0.35492660444822866,
+              "middle": 3.790587094789992,
+              "ring": 2.033258291868224,
+              "little": 0.0
+            }
+          }
+        }
+      ],
+      "replay": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.005254814302234702,
+        "max_hand_scene_penetration_m": 0.0009533210899556312,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999775497169748,
+        "tail_slip_m": 0.00010059770564592856,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.01245685223501804,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.037217426321247,
+          "index": 0.35492660444822866,
+          "middle": 3.790587094789992,
+          "ring": 2.033258291868224,
+          "little": 0.0
+        }
+      },
+      "half_timestep": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.007860695426247366,
+        "max_hand_scene_penetration_m": 0.0007957734290206285,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999985945041532,
+        "tail_slip_m": 5.718345120680106e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.01264602905520743,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.974530703688524,
+          "index": 0.3013379153487365,
+          "middle": 2.5367564172644754,
+          "ring": 2.8620081383005855,
+          "little": 0.0
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "cup_x_plus",
+        "cup_offset_m": [
+          0.002,
+          0.0,
+          0.0
+        ],
+        "cup_yaw_deg": 0.0,
+        "goal_offset_m": [
+          0,
+          0,
+          0
+        ]
+      },
+      "admitted": true,
+      "selected": "seed",
+      "replay_error": 0.0,
+      "candidates": [
+        {
+          "name": "fixed",
+          "report": {
+            "surface_physics_passed": false,
+            "fidelity_passed": true,
+            "final_distance_m": 0.009143234801984482,
+            "max_hand_scene_penetration_m": 0.0011305214178606658,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999479938898203,
+            "tail_slip_m": 7.538284886706539e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.014874548515209056,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 4.508644202943698,
+              "index": 0.2585984503051869,
+              "middle": 1.7193297331987345,
+              "ring": 3.4504409220329886,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "seed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.007027771335710904,
+            "max_hand_scene_penetration_m": 0.0009628317757378596,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999946614154195,
+            "tail_slip_m": 1.8155110742298593e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.013402549935084456,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 4.930390391033446,
+              "index": 0.3413750613960705,
+              "middle": 3.271633792776186,
+              "ring": 2.256813806793663,
+              "little": 0.0
+            }
+          }
+        }
+      ],
+      "replay": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.007027771335710904,
+        "max_hand_scene_penetration_m": 0.0009628317757378596,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999946614154195,
+        "tail_slip_m": 1.8155110742298593e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.013402549935084456,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.930390391033446,
+          "index": 0.3413750613960705,
+          "middle": 3.271633792776186,
+          "ring": 2.256813806793663,
+          "little": 0.0
+        }
+      },
+      "half_timestep": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.007806011223748036,
+        "max_hand_scene_penetration_m": 0.00079409101084913,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999963886903091,
+        "tail_slip_m": 2.4768657104606002e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012610283656011568,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.982797887774923,
+          "index": 0.29667654563752566,
+          "middle": 2.5386815085736534,
+          "ring": 2.863195355266324,
+          "little": 0.0
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "goal_x_plus",
+        "cup_offset_m": [
+          0,
+          0,
+          0
+        ],
+        "cup_yaw_deg": 0.0,
+        "goal_offset_m": [
+          0.01,
+          0.0,
+          0.0
+        ]
+      },
+      "admitted": true,
+      "selected": "seed",
+      "replay_error": 0.0,
+      "candidates": [
+        {
+          "name": "fixed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.009600734518682688,
+            "max_hand_scene_penetration_m": 0.0009537825733412414,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999603369488898,
+            "tail_slip_m": 1.9044297131967975e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.0123943394728223,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.042611346970373,
+              "index": 0.30986468119735444,
+              "middle": 3.759351139345896,
+              "ring": 2.033684201619765,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "seed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.005253917684231808,
+            "max_hand_scene_penetration_m": 0.0009539301278093526,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999488469097057,
+            "tail_slip_m": 1.4021983413470042e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012395057434150505,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.043721103318324,
+              "index": 0.31588030992830873,
+              "middle": 3.759343817218379,
+              "ring": 2.030353692676644,
+              "little": 0.0
+            }
+          }
+        }
+      ],
+      "replay": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.005253917684231808,
+        "max_hand_scene_penetration_m": 0.0009539301278093526,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999488469097057,
+        "tail_slip_m": 1.4021983413470042e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012395057434150505,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.043721103318324,
+          "index": 0.31588030992830873,
+          "middle": 3.759343817218379,
+          "ring": 2.030353692676644,
+          "little": 0.0
+        }
+      },
+      "half_timestep": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.007870945588564791,
+        "max_hand_scene_penetration_m": 0.0007957951437435476,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999975976687893,
+        "tail_slip_m": 4.711548534647774e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.01265777251337402,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 0.99,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.963170375127884,
+          "index": 0.3029914740661111,
+          "middle": 2.5120067994192037,
+          "ring": 2.9249006972640412,
+          "little": 0.0
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "cup_y_minus",
+        "cup_offset_m": [
+          0.0,
+          -0.002,
+          0.0
+        ],
+        "cup_yaw_deg": 0.0,
+        "goal_offset_m": [
+          0,
+          0,
+          0
+        ]
+      },
+      "admitted": true,
+      "selected": "seed",
+      "replay_error": 0.0,
+      "candidates": [
+        {
+          "name": "fixed",
+          "report": {
+            "surface_physics_passed": false,
+            "fidelity_passed": true,
+            "final_distance_m": 0.009198655163223083,
+            "max_hand_scene_penetration_m": 0.0011202740439420144,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.0001999992100072981,
+            "tail_slip_m": 7.663076784542285e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.014030127265253885,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 4.615133169903897,
+              "index": 0.21470389352096755,
+              "middle": 1.5033825130531442,
+              "ring": 3.729750160410108,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "seed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.005164705730533623,
+            "max_hand_scene_penetration_m": 0.0009516859265112544,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999887665103495,
+            "tail_slip_m": 3.2693912723984615e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012183948575791281,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 0.99,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.0693445745120895,
+              "index": 0.3081507788800246,
+              "middle": 3.6812765961474114,
+              "ring": 2.1149296882163977,
+              "little": 0.0
+            }
+          }
+        }
+      ],
+      "replay": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.005164705730533623,
+        "max_hand_scene_penetration_m": 0.0009516859265112544,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999887665103495,
+        "tail_slip_m": 3.2693912723984615e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012183948575791281,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 0.99,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.0693445745120895,
+          "index": 0.3081507788800246,
+          "middle": 3.6812765961474114,
+          "ring": 2.1149296882163977,
+          "little": 0.0
+        }
+      },
+      "half_timestep": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.0076965765186220066,
+        "max_hand_scene_penetration_m": 0.0007939445304207147,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999992809731533,
+        "tail_slip_m": 6.499113600383107e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012648239155366746,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 0.98,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.97296628132301,
+          "index": 0.3112080101463411,
+          "middle": 2.5865294293816556,
+          "ring": 2.8051811007698104,
+          "little": 0.0
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "goal_y_minus",
+        "cup_offset_m": [
+          0,
+          0,
+          0
+        ],
+        "cup_yaw_deg": 0.0,
+        "goal_offset_m": [
+          0.0,
+          -0.01,
+          0.0
+        ]
+      },
+      "admitted": true,
+      "selected": "seed",
+      "replay_error": 0.0,
+      "candidates": [
+        {
+          "name": "fixed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.012157005187558544,
+            "max_hand_scene_penetration_m": 0.0009537825733412414,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999603369488898,
+            "tail_slip_m": 1.9044297131967975e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012394338193018679,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.042611346970373,
+              "index": 0.30986468119735444,
+              "middle": 3.759351139345896,
+              "ring": 2.033684201619765,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "seed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.005253123634642014,
+            "max_hand_scene_penetration_m": 0.0009534344133324191,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999840560797131,
+            "tail_slip_m": 1.270882722697036e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.01239247936859639,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.043333694864002,
+              "index": 0.31265661620449736,
+              "middle": 3.7583369752192675,
+              "ring": 2.039455396618795,
+              "little": 0.0
+            }
+          }
+        }
+      ],
+      "replay": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.005253123634642014,
+        "max_hand_scene_penetration_m": 0.0009534344133324191,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999840560797131,
+        "tail_slip_m": 1.270882722697036e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.01239247936859639,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.043333694864002,
+          "index": 0.31265661620449736,
+          "middle": 3.7583369752192675,
+          "ring": 2.039455396618795,
+          "little": 0.0
+        }
+      },
+      "half_timestep": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.00787734931948031,
+        "max_hand_scene_penetration_m": 0.0007957694857107121,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.0001999999461954073,
+        "tail_slip_m": 5.2237253817440266e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012677626090503212,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 0.99,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.9607214888369295,
+          "index": 0.3068294962705307,
+          "middle": 2.505231974641168,
+          "ring": 2.924708862320437,
+          "little": 0.0
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "cup_y_plus",
+        "cup_offset_m": [
+          0.0,
+          0.002,
+          0.0
+        ],
+        "cup_yaw_deg": 0.0,
+        "goal_offset_m": [
+          0,
+          0,
+          0
+        ]
+      },
+      "admitted": true,
+      "selected": "fixed",
+      "replay_error": 0.0,
+      "candidates": [
+        {
+          "name": "fixed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.004407721354473579,
+            "max_hand_scene_penetration_m": 0.0009021898225448347,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999991154910694,
+            "tail_slip_m": 1.2969554500901076e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012220532149020809,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.293311635663357,
+              "index": 0.2983388910659708,
+              "middle": 4.677683643701117,
+              "ring": 1.5009623588810148,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "seed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.0055178221035049,
+            "max_hand_scene_penetration_m": 0.0009160932997834991,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999678524910616,
+            "tail_slip_m": 2.3383056782947837e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012661972495981168,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.023755553327573,
+              "index": 0.3724149740799514,
+              "middle": 3.6564145035971216,
+              "ring": 2.139628197905652,
+              "little": 0.0
+            }
+          }
+        }
+      ],
+      "replay": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.004407721354473579,
+        "max_hand_scene_penetration_m": 0.0009021898225448347,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999991154910694,
+        "tail_slip_m": 1.2969554500901076e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012220532149020809,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.293311635663357,
+          "index": 0.2983388910659708,
+          "middle": 4.677683643701117,
+          "ring": 1.5009623588810148,
+          "little": 0.0
+        }
+      },
+      "half_timestep": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.005468259353281214,
+        "max_hand_scene_penetration_m": 0.0007964846771447197,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999994533775132,
+        "tail_slip_m": 1.7556629976686515e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.011267790928353411,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.426534805034245,
+          "index": 0.31510633534529364,
+          "middle": 4.627689107581337,
+          "ring": 1.7119475204065402,
+          "little": 0.0
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "goal_y_plus",
+        "cup_offset_m": [
+          0,
+          0,
+          0
+        ],
+        "cup_yaw_deg": 0.0,
+        "goal_offset_m": [
+          0.0,
+          0.01,
+          0.0
+        ]
+      },
+      "admitted": true,
+      "selected": "seed",
+      "replay_error": 0.0,
+      "candidates": [
+        {
+          "name": "fixed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.01035910401557769,
+            "max_hand_scene_penetration_m": 0.0009537825733412414,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999603369488898,
+            "tail_slip_m": 1.9044297131967975e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012394340837522055,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.042611346970373,
+              "index": 0.30986468119735444,
+              "middle": 3.759351139345896,
+              "ring": 2.033684201619765,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "seed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.00526087903700414,
+            "max_hand_scene_penetration_m": 0.0009538217190893577,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999955029659588,
+            "tail_slip_m": 8.065807228717347e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012442897097062762,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 0.99,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.035210751139666,
+              "index": 0.34204812820473174,
+              "middle": 3.786670968906648,
+              "ring": 2.0302314290470007,
+              "little": 0.0
+            }
+          }
+        }
+      ],
+      "replay": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.00526087903700414,
+        "max_hand_scene_penetration_m": 0.0009538217190893577,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999955029659588,
+        "tail_slip_m": 8.065807228717347e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012442897097062762,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 0.99,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.035210751139666,
+          "index": 0.34204812820473174,
+          "middle": 3.786670968906648,
+          "ring": 2.0302314290470007,
+          "little": 0.0
+        }
+      },
+      "half_timestep": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.00786020976386551,
+        "max_hand_scene_penetration_m": 0.0007957991093364937,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999900675782287,
+        "tail_slip_m": 6.245013534846795e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012649665952864335,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.969409176327038,
+          "index": 0.3033072665507179,
+          "middle": 2.5307174854703733,
+          "ring": 2.8685131036111984,
+          "little": 0.0
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "yaw_minus",
+        "cup_offset_m": [
+          0,
+          0,
+          0
+        ],
+        "cup_yaw_deg": -2.0,
+        "goal_offset_m": [
+          0,
+          0,
+          0
+        ]
+      },
+      "admitted": true,
+      "selected": "seed",
+      "replay_error": 0.0,
+      "candidates": [
+        {
+          "name": "fixed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.009932992760184103,
+            "max_hand_scene_penetration_m": 0.0009058523611753322,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019998056085754516,
+            "tail_slip_m": 1.792092714973055e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.013523111413101146,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 4.837211327615034,
+              "index": 0.28830323834588323,
+              "middle": 3.222677486673931,
+              "ring": 2.352012216056442,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "seed",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.0074666698203078846,
+            "max_hand_scene_penetration_m": 0.0009742700476586958,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999046167248156,
+            "tail_slip_m": 2.1768978831137287e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.013113963692133204,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 4.892227998098362,
+              "index": 0.30718438579328117,
+              "middle": 3.163372901524603,
+              "ring": 2.16506352416252,
+              "little": 0.0
+            }
+          }
+        }
+      ],
+      "replay": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.0074666698203078846,
+        "max_hand_scene_penetration_m": 0.0009742700476586958,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999046167248156,
+        "tail_slip_m": 2.1768978831137287e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.013113963692133204,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.892227998098362,
+          "index": 0.30718438579328117,
+          "middle": 3.163372901524603,
+          "ring": 2.16506352416252,
+          "little": 0.0
+        }
+      },
+      "half_timestep": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.008672388411195168,
+        "max_hand_scene_penetration_m": 0.0007988794102958057,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999983801345599,
+        "tail_slip_m": 4.993573987423816e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012750988905506662,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.924852010023475,
+          "index": 0.2791790645130984,
+          "middle": 2.1857568663296507,
+          "ring": 3.0832068288463486,
+          "little": 0.0
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "yaw_plus",
+        "cup_offset_m": [
+          0,
+          0,
+          0
+        ],
+        "cup_yaw_deg": 2.0,
+        "goal_offset_m": [
+          0,
+          0,
+          0
+        ]
+      },
+      "admitted": true,
+      "selected": "optimized",
+      "replay_error": 0.0,
+      "candidates": [
+        {
+          "name": "fixed",
+          "report": {
+            "surface_physics_passed": false,
+            "fidelity_passed": true,
+            "final_distance_m": 0.005848763663893758,
+            "max_hand_scene_penetration_m": 0.001131017608952208,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999979612569948,
+            "tail_slip_m": 2.083919082837543e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.013367018043964727,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 4.961105248665601,
+              "index": 0.3194510671642222,
+              "middle": 3.6858312028860944,
+              "ring": 2.0360773060528485,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "seed",
+          "report": {
+            "surface_physics_passed": false,
+            "fidelity_passed": true,
+            "final_distance_m": 0.005692605772104975,
+            "max_hand_scene_penetration_m": 0.0010853578969951072,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019999490430259187,
+            "tail_slip_m": 1.5228919719371736e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.013889652958661314,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 4.945325753325357,
+              "index": 0.39477100144324806,
+              "middle": 4.140555737561997,
+              "ring": 1.543226255966508,
+              "little": 0.0
+            }
+          }
+        },
+        {
+          "name": "optimized",
+          "report": {
+            "surface_physics_passed": true,
+            "fidelity_passed": true,
+            "final_distance_m": 0.004569017278700221,
+            "max_hand_scene_penetration_m": 0.0009488187224029292,
+            "initial_hand_scene_penetration_m": 0.00010918300157924856,
+            "max_loaded_gap_m": 0.00019996222278751796,
+            "tail_slip_m": 1.1363149216443866e-05,
+            "saturation": 0.004229885057471265,
+            "tail_mean_tip_error_m": 0.012405596391888771,
+            "tail_finger_contact_fraction": {
+              "thumb": 1.0,
+              "index": 1.0,
+              "middle": 1.0,
+              "ring": 1.0,
+              "little": 0.0
+            },
+            "tail_finger_force_n": {
+              "thumb": 5.3198796512470174,
+              "index": 0.32707375772898895,
+              "middle": 5.25705399622498,
+              "ring": 0.997049756355267,
+              "little": 0.0
+            }
+          }
+        }
+      ],
+      "replay": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.004569017278700221,
+        "max_hand_scene_penetration_m": 0.0009488187224029292,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019996222278751796,
+        "tail_slip_m": 1.1363149216443866e-05,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.012405596391888771,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.3198796512470174,
+          "index": 0.32707375772898895,
+          "middle": 5.25705399622498,
+          "ring": 0.997049756355267,
+          "little": 0.0
+        }
+      },
+      "half_timestep": {
+        "surface_physics_passed": true,
+        "fidelity_passed": true,
+        "final_distance_m": 0.004373782820098319,
+        "max_hand_scene_penetration_m": 0.0008732428847968858,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_loaded_gap_m": 0.00019999948836557668,
+        "tail_slip_m": 7.589485801102215e-06,
+        "saturation": 0.004229885057471265,
+        "tail_mean_tip_error_m": 0.011477899957497872,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.412182861737758,
+          "index": 0.3186257710274905,
+          "middle": 5.496498095230298,
+          "ring": 0.9180022626770604,
+          "little": 0.0
+        }
+      }
+    }
+  ],
+  "yaw_repair_optimizer": {
+    "success": false,
+    "message": "Maximum number of function evaluations has been exceeded.",
+    "evaluations": 433
+  }
+}

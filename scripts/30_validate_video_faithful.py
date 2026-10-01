@@ -195,6 +195,7 @@ class VideoExperiment(base.GraspExperiment):
                                      and fractions['thumb'] >= .8 and fractions['index'] >= .8
                                      and sum(v >= .8 for v in fractions.values()) >= 4)
         report['passed'] = bool(report['physics_passed'] and report['fidelity_passed'])
+        self.last_step_metrics = rows
         self.last_demo = dict(observations=np.asarray(observations), actions=np.asarray(actions),
                               rewards=np.asarray(rewards), sim_data=states, model_data=[e.dump_mujoco_model()])
         if output is not None:
