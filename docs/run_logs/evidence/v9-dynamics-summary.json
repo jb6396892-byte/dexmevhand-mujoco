@@ -1,0 +1,207 @@
+{
+  "contact_timing": {
+    "first_ring_loaded_step": 1080,
+    "first_ring_loaded_time_s": 10.81,
+    "first_80_percent_window_start_step": 1062,
+    "first_80_percent_window_end_time_s": 11.62,
+    "cup_center_height_at_first_ring_contact_m": 0.22430033476773165,
+    "replay_observation_error": 0.0,
+    "powell_ring_parameters_unchanged": true
+  },
+  "training_input_preflight": {
+    "demo_hash_matches": true,
+    "feature_shape": [1450, 82],
+    "action_shape": [1450, 30],
+    "features_finite": true,
+    "all_states_finite": true,
+    "training_started": false
+  },
+  "training_ready": true,
+  "scope": "Nominal scene plus exact replay and half timestep only",
+  "training_started": false,
+  "generalization_started": false,
+  "replay_observation_error": 0.0,
+  "geometry": "/home/smgbro/mujoconew/GITHUB/data/processed/seq_dexycb_002/retarget_v1/geometry.npz",
+  "protected_files_unchanged": {
+    "data/processed/seq_dexycb_001/repair_v2/geometry.npz": true,
+    "data/demonstrations/relocate-mug-physics-verified-v1.pkl": true,
+    "data/processed/seq_dexycb_001/physical_grasp_verified_v1/admission.json": true
+  },
+  "finite_demo": true,
+  "action_array_sha256": "591dcc14c81d78795480741e49df59cd4e5303080e5c89f1ab6d385dce74921d",
+  "geometry_sha256": "1d9f1b5727a8099e85043d934c45f48c5acc7278e04253b11273b3163cb11414",
+  "nominal_rollout_sha256": "e05e778d63f6e1078feaac075837110be4d8c99bcc99e20a533b449767eaf51c",
+  "demo": "/home/smgbro/mujoconew/GITHUB/data/demonstrations/relocate-mug-second-dynamics-v9.pkl",
+  "demo_sha256": "0d36fc6b59dad849aaef6cb4b8994381f93a6001406723d7291c412957e3b081",
+  "data_format_passed": true,
+  "trajectory_count": 1,
+  "horizon": 1450,
+  "checks": {
+    "nominal": {
+      "surface_physics_passed": true,
+      "fidelity_passed": true,
+      "hold_s": 7.86,
+      "final_distance_m": 0.0052490086161026015,
+      "tail_min_bottom_m": 0.18197072326777022,
+      "max_hand_scene_penetration_m": 0.0009537825733412414,
+      "initial_hand_scene_penetration_m": 0.00010918300157924856,
+      "max_loaded_gap_m": 0.00019999603369488898,
+      "tail_slip_m": 1.9044297131967975e-05,
+      "saturation": 0.004229885057471265,
+      "max_joint_violation_rad": 0.0,
+      "tail_mean_tip_error_m": 0.012394347679058955,
+      "tail_finger_tip_error_m": {
+        "thumb": 0.014821177160525927,
+        "index": 0.007061518330546773,
+        "middle": 0.012736410185114398,
+        "ring": 0.015175818454159211,
+        "little": 0.012176814264948458
+      },
+      "tail_finger_contact_fraction": {
+        "thumb": 1.0,
+        "index": 1.0,
+        "middle": 1.0,
+        "ring": 1.0,
+        "little": 0.0
+      },
+      "tail_finger_force_n": {
+        "thumb": 5.042611346970373,
+        "index": 0.30986468119735444,
+        "middle": 3.759351139345896,
+        "ring": 2.033684201619765,
+        "little": 0.0
+      }
+    },
+    "saved_replay": {
+      "surface_physics_passed": true,
+      "fidelity_passed": true,
+      "hold_s": 7.86,
+      "final_distance_m": 0.0052490086161026015,
+      "tail_min_bottom_m": 0.18197072326777022,
+      "max_hand_scene_penetration_m": 0.0009537825733412414,
+      "initial_hand_scene_penetration_m": 0.00010918300157924856,
+      "max_loaded_gap_m": 0.00019999603369488898,
+      "tail_slip_m": 1.9044297131967975e-05,
+      "saturation": 0.004229885057471265,
+      "max_joint_violation_rad": 0.0,
+      "tail_mean_tip_error_m": 0.012394347679058955,
+      "tail_finger_tip_error_m": {
+        "thumb": 0.014821177160525927,
+        "index": 0.007061518330546773,
+        "middle": 0.012736410185114398,
+        "ring": 0.015175818454159211,
+        "little": 0.012176814264948458
+      },
+      "tail_finger_contact_fraction": {
+        "thumb": 1.0,
+        "index": 1.0,
+        "middle": 1.0,
+        "ring": 1.0,
+        "little": 0.0
+      },
+      "tail_finger_force_n": {
+        "thumb": 5.042611346970373,
+        "index": 0.30986468119735444,
+        "middle": 3.759351139345896,
+        "ring": 2.033684201619765,
+        "little": 0.0
+      }
+    },
+    "half_timestep": {
+      "surface_physics_passed": true,
+      "fidelity_passed": true,
+      "hold_s": 7.86,
+      "final_distance_m": 0.007859283658686258,
+      "tail_min_bottom_m": 0.1801110604116937,
+      "max_hand_scene_penetration_m": 0.000795784255355936,
+      "initial_hand_scene_penetration_m": 0.00010918300157924856,
+      "max_loaded_gap_m": 0.0001999999218771076,
+      "tail_slip_m": 5.375382953490973e-05,
+      "saturation": 0.004229885057471265,
+      "max_joint_violation_rad": 0.0,
+      "tail_mean_tip_error_m": 0.012647273911932388,
+      "tail_finger_tip_error_m": {
+        "thumb": 0.014550426449192697,
+        "index": 0.009400794598290095,
+        "middle": 0.012506930845061399,
+        "ring": 0.013803649046701276,
+        "little": 0.012974568620416476
+      },
+      "tail_finger_contact_fraction": {
+        "thumb": 1.0,
+        "index": 0.98,
+        "middle": 1.0,
+        "ring": 1.0,
+        "little": 0.0
+      },
+      "tail_finger_force_n": {
+        "thumb": 4.97423067993613,
+        "index": 0.2957459981953954,
+        "middle": 2.5346340715277504,
+        "ring": 2.865785712149289,
+        "little": 0.0
+      }
+    }
+  },
+  "source_admission": "data/processed/seq_dexycb_002/dynamic_contact_v9_verified/admission.json",
+  "source_admission_sha256": "b091a6bcd8db1ed51c8c97cf8c4ae541c3d12e294792d5ae355a7b98e6fab8bb",
+  "search_stop": "Manually stopped Powell after a sampled four-finger candidate, before convergence; frozen actions then independently replayed",
+  "best_parameters": {
+    "parameters": [
+      -0.916992673639361,
+      0.6085969786019233,
+      0.2408174437081573,
+      -0.10501834965029419,
+      -0.034053518038099764,
+      0.8173606490673884,
+      -0.4781568952152224,
+      0.471858942428589,
+      0.36700903541560337,
+      -1.3260202502114196,
+      -0.025817858086835944,
+      -0.7776086233618426,
+      -0.26628948634931005,
+      -0.5346433730468474,
+      1.0434721110712164,
+      0.047952628270633305,
+      0.18010002859038107,
+      0.07133026845797988,
+      -0.04791074428727063,
+      -0.2802981677522954,
+      0.1161510183787467,
+      -0.04834962199648109,
+      -0.155380105854082,
+      -0.06687817004306855,
+      -0.06213642687830255,
+      -0.09160284894981544,
+      0.05353095806907238,
+      0.0577216404247819,
+      -0.11024615003162269,
+      -1.2434490838498642
+    ],
+    "evaluation": 240,
+    "cost": 0.0009414877801237908,
+    "max_penetration_m": 0.0009537825733412414,
+    "final_distance_m": 0.005248837815858613,
+    "ring_gap_m": 9.244450314302037e-06,
+    "ring_contact_fraction": 1.0,
+    "min_support_contact_fraction": 1.0,
+    "saturation": 0.004229885057471265,
+    "elapsed_s": 115.4284044850001
+  },
+  "persisted_search_evaluations": {
+    "dynamic_contact_v9": 132,
+    "dynamic_contact_v9_fine": 101,
+    "dynamic_contact_v9_powell": 260
+  },
+  "interactive_viewer": {
+    "completed": true,
+    "replay_observation_error": 0.0,
+    "scope": "One nominal-scene episode; GPU GLX viewer"
+  },
+  "offscreen_rendering": {
+    "completed": false,
+    "error": "Failed to initialize OpenGL"
+  },
+  "independent_generalization_tested": false
+}
