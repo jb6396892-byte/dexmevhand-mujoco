@@ -1,0 +1,23 @@
+{
+  "protocol_sha256": "f7369cc347a9a9def134a101b4f9aeb1f5f2af1765998c0649f5b24aeb7260d3",
+  "selected": {
+    "label": "phase_bc_150",
+    "policy": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v11/learning/phase_bc_150.pickle",
+    "policy_sha256": "d281b45c0243e4d26cf83efe056fb559c37ab7b66702cb7c4e57ca0eb466c451",
+    "full_fraction": 0.6797385620915033,
+    "preferred_fraction": 0.4166666666666667,
+    "mean_goal_m": 0.008006495697884843,
+    "full_count": 24,
+    "case_count": 35
+  },
+  "teacher_gain": 0.25,
+  "expert_sha256": "ac27d2ed2fc459be5966b96e23601296dc52cf5e90d10240d8de25c1fe1a2220",
+  "reference_sha256": "c30a0120456b03ac730cbe4f6bad0289bdcbe9cc4f45574a9925dcd4ab13a37e",
+  "correction_trajectories": 45,
+  "correction_frames": 64194,
+  "heldout_evaluated": false,
+  "long_training_started": false,
+  "base_freeze_sha256": "babb039b033827a69694223216376445bbedacdbd955b4b0a16f9f4ece98545c",
+  "amendment_sha256": "d138452d530ef2481ed4278990330b128cd83c708dd7d4a7b74032ce5aea3cbe",
+  "residual_gain": 1.0
+}

@@ -1,0 +1,32 @@
+{
+  "protocol_sha256": "f7369cc347a9a9def134a101b4f9aeb1f5f2af1765998c0649f5b24aeb7260d3",
+  "expert_sha256": "ac27d2ed2fc459be5966b96e23601296dc52cf5e90d10240d8de25c1fe1a2220",
+  "reference_sha256": "c30a0120456b03ac730cbe4f6bad0289bdcbe9cc4f45574a9925dcd4ab13a37e",
+  "frames": 50156,
+  "trajectories": 35,
+  "label_clip_fraction": 0.0012294973017518676,
+  "feature_dim": 84,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "heldout_used": false,
+  "runtime": {
+    "python": "3.7.11 (default, Jul 27 2021, 14:32:16) \n[GCC 7.5.0]",
+    "numpy": "1.20.3",
+    "torch": "1.13.1+cu117",
+    "cuda": "11.7"
+  },
+  "phase_mass": [
+    0.15,
+    0.15,
+    0.2,
+    0.3,
+    0.2
+  ],
+  "phase_bins_control_s": [
+    0.0,
+    0.5,
+    5.5,
+    7.1666666667,
+    9.6666666667,
+    null
+  ]
+}
