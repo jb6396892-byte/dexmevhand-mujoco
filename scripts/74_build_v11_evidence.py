@@ -74,11 +74,12 @@ def main():
         ax.grid(axis='y', alpha=.2)
     axes[0].axhline(.75, color='#526A9B', linestyle=':', label='Preferred headroom')
     axes[0].scatter(x+.18,[r['half'].get('max_hand_scene_penetration_m',np.nan)*1000 for r in rows],
-                    marker='x',s=18,color='black',label='Half timestep')
+                    marker='x',s=18,color='black',zorder=4,label='Half timestep')
     axes[0].legend(ncol=3)
     axes[1].set_xticks(x)
     axes[1].set_xticklabels([r['video'][0]+':'+r['name'] for r in rows], rotation=70, ha='right', fontsize=7)
-    fig.suptitle('Development only: rejected cases retained; missing bars are not successes')
+    fig.suptitle('Development experts: %d/%d admitted; %d/%d with preferred headroom' %
+                 (admission['admitted_count'],admission['planned_count'],admission['preferred_count'],admission['planned_count']))
     save(fig, 'expert-safety.png')
     for label in ['expert_second', 'policy_first', 'policy_second', 'heldout_failure']:
         source = RUN/'renders'/label
