@@ -1,0 +1,53 @@
+{
+  "version": "v11",
+  "frozen_parent_commit": "4aa3dd7",
+  "parent_protocol_sha256": "7d0252eae209531c26b421701835e12273ba55ea9f36f8ecc0e5703ef4856ca4",
+  "parent_residual_sha256": "89c4c49feea44c4240d01d248962567d3dbabf9910618e3efcd023c96b934af1",
+  "development": "All 27 admitted v10 training cases, plus the 8 known v10 residual failures, explicitly reclassified as development; v10 test results are not fresh evidence in v11",
+  "safety": {
+    "preferred_penetration_m": 0.00075,
+    "original_hard_gate_m": 0.001,
+    "change_model_physics": false,
+    "max_shooting_evaluations_per_case": 160,
+    "root_shift_bound_m": 0.006,
+    "shooting_start": 0,
+    "shooting_transition_steps": 300
+  },
+  "expert": {
+    "type": "Admitted scene trajectory plus bounded joint-state feedback; simulation expert, not human correction labels",
+    "tracking_gain_candidates": [0.1, 0.25, 0.5],
+    "velocity_gain_ratio": 0.02,
+    "position_error_limits": [0.01, 0.1],
+    "velocity_error_limit": 1.0,
+    "admit_collection_only_if_full_gate": true
+  },
+  "learning": {
+    "seed": 20261002,
+    "hidden_sizes": [64, 64],
+    "phase_bc_epochs": [50, 150],
+    "dagger_betas": [0.5, 0.0],
+    "dagger_epochs": 40,
+    "batch_size": 128,
+    "phase_mass": [0.15, 0.15, 0.2, 0.3, 0.2],
+    "phase_bins_control_s": [0.0, 0.5, 5.5, 7.1666666667, 9.6666666667, null],
+    "residual_q_equivalent_limits": [0.025, 0.25, 0.15],
+    "selection": "Equal-video development full-pass fraction, then fraction below preferred penetration, then mean goal distance; no heldout selection",
+    "long_training": false
+  },
+  "heldout": {
+    "axis_cases_per_video": {
+      "cup_xy_offsets_m": [-0.00425, 0.00425],
+      "goal_xy_offsets_m": [-0.019, 0.019],
+      "cup_yaw_deg": [-6.5, 6.5]
+    },
+    "combined_cases_per_video": [
+      {"name": "combo_a", "cup_offset_m": [0.00125, -0.00125, 0], "cup_yaw_deg": 1.25, "goal_offset_m": [0.012, -0.008, 0]},
+      {"name": "combo_b", "cup_offset_m": [-0.00125, 0.00125, 0], "cup_yaw_deg": -1.25, "goal_offset_m": [-0.012, 0.008, 0]}
+    ],
+    "count_per_video": 12,
+    "methods": ["fixed_v10", "residual_v10", "fixed_v11", "residual_v11"],
+    "freeze_before_test": true,
+    "tuning_after_test": false
+  },
+  "scope": "New synthetic perturbations of the same two real sequences, not new real videos or hardware"
+}
