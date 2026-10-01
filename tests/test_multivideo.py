@@ -49,6 +49,8 @@ class MultiVideoTests(unittest.TestCase):
             np.testing.assert_allclose(actions[0],expected,atol=1e-7)
             cp['method']='direct_bc'
             np.testing.assert_allclose(MultiVideoActions(cp,exp,video)[0],.2)
+            cp['method']='residual_bc';cp['residual_limits']={name:[.05]*30}
+            np.testing.assert_allclose(MultiVideoActions(cp,exp,video)[0],references[name][0]+.05,atol=1e-7)
 
     def test_protocol_development_and_heldout_are_disjoint(self):
         import json

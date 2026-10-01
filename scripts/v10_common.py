@@ -61,7 +61,7 @@ def setup_case(video,case,folder):
     return dict(geometry=str(path.resolve()),best=video['control']),g
 
 
-def run_case(video,source,actions,folder=None,half=False,seed=0,checkpoint=None):
+def run_case(video,source,actions,folder=None,half=False,seed=0,checkpoint=None,action_factory=None):
     exp = surface.SurfaceExperiment(source['geometry'])
     exp.env.pack_mujoco_model(reference_demo(video)['model_data'][0])
     if half:
@@ -69,7 +69,11 @@ def run_case(video,source,actions,folder=None,half=False,seed=0,checkpoint=None)
         exp.env.model_timestep = exp.model.opt.timestep
     b = video['control']
     try:
-        if checkpoint is not None:
+        if checkpoint is not None and action_factory is not None:
+            raise ValueError('Choose a checkpoint or an action factory, not both')
+        if action_factory is not None:
+            actions = action_factory(exp)
+        elif checkpoint is not None:
             from fromrealhand.multivideo import MultiVideoActions
             actions = MultiVideoActions(checkpoint,exp,video)
         report,_ = exp.run_surface(scale=b['time_scale'],close=b['close'],gain=b['cartesian_gain'],saved_actions=actions,output=folder,seed=seed)

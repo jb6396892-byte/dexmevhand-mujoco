@@ -65,6 +65,11 @@ class MultiVideoActions:
         actual = [experiment.env.control_timestep, experiment.duration, video['control']['time_scale']]
         if not np.allclose(expected, actual, rtol=0., atol=1e-10):
             raise ValueError('Wrong skill control clock')
+        self.limits = checkpoint.get('residual_limits', {}).get(video['name'])
+        if self.limits is not None and (np.shape(self.limits)!=(30,) or not np.isfinite(self.limits).all() or np.any(np.asarray(self.limits)<=0)):
+            raise ValueError('Residual limits must be 30 finite positive values')
+        if self.limits is not None:
+            self.limits = np.asarray(self.limits,dtype=float)
 
     def __len__(self):
         return self.video['horizon']
@@ -77,6 +82,8 @@ class MultiVideoActions:
         with torch.no_grad():
             action = self.checkpoint['policy'].model(torch.as_tensor(x, dtype=torch.float32)[None]).numpy()[0]
         if self.checkpoint['method'] == 'residual_bc':
+            if self.limits is not None:
+                action = np.clip(action,-self.limits,self.limits)
             action = action + self.reference[step]
         if action.shape != (30,) or not np.isfinite(action).all():
             raise ValueError('Invalid student action')

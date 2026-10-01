@@ -119,6 +119,9 @@ class ShootingProblem:
         return dict(gap=gap, forces=force, tip_error=error, goal=goal, relative=relative,
                     cup_speed=float(np.linalg.norm(d.qvel[30:33])), cup_height=float(d.body_xpos[e.obj_bid,2]))
 
+    def action_sequence(self, x):
+        return corrected_actions(self.demo['actions'],x,self.scales,self.conversion,self.args.start,self.args.transition)
+
     def evaluate(self, x):
         if self.cached is not None and np.array_equal(x,self.cached[0]):
             return self.cached[1]
@@ -129,7 +132,7 @@ class ShootingProblem:
         e.sim.forward(); d.qacc_warmstart[:] = self.warmstart
         e.timestep = self.args.start; e.cur_time = self.clock; e.done = False
         self.max_depth = self.prefix_depth
-        raw = corrected_actions(self.demo['actions'],x,self.scales,self.conversion,self.args.start,self.args.transition)
+        raw = self.action_sequence(x)
         rows = []
         for step in range(self.args.start,len(raw)):
             e.step(np.clip(raw[step],-1.,1.))
