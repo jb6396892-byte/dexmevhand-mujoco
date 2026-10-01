@@ -39,10 +39,10 @@ def main():
     shutil.copy2(str(RUN/'heldout/summary.json'),str(OUT/'evidence/heldout.json'))
     shutil.copy2(str(RUN/'heldout/receipt.json'),str(OUT/'evidence/test-receipt.json'))
     fig,axes=plt.subplots(1,3,figsize=(12,4))
-    methods=list(test['summary']);labels=['Old residual','Aligned phases','Reference + contact','Selected guard']
+    methods=list(test['summary']);labels=['Old residual','Aligned phases','Reference + contact','Selected guard','Fixed windows v11']
     for ax,key,title in zip(axes,['task_count','strict_count','mean_goal_m'],['Task gate / 16','Original strict gate / 16','Mean goal error (mm)']):
         vals=[test['summary'][m][key]*(1000 if key=='mean_goal_m' else 1) for m in methods]
-        ax.bar(labels,vals,color=['#777777','#477A9E','#30856B','#B37948']);ax.set_title(title)
+        ax.bar(labels,vals,color=['#777777','#477A9E','#30856B','#B37948','#8768A8']);ax.set_title(title)
         ax.tick_params(axis='x',labelrotation=20,labelsize=8)
         ax.set_ylim(0,max(18,max(vals)*1.2))
         for i,value in enumerate(vals): ax.text(i,value+.2,'%.2f'%value if key=='mean_goal_m' else str(int(value)),ha='center')
@@ -55,13 +55,14 @@ def main():
     lines=['# v12 实验结果','', '日期：2026-10-02。以下只适用于两段已知视频及本轮合成扰动，不代表实物泛化。','',
            '## 开发集：35 工况','', '| 方法 | 任务级 | 原严格级 | 等权平均目标误差 |', '|---|---|---|---|']
     names={'aligned_bc':'精确阶段采样 BC','contact_reference_bc':'参考条件＋接触 BC','old_residual':'旧残差 v10',
-           'guard_015':'法向卸载 0.15','guard_030':'法向卸载 0.30','guard_060':'法向卸载 0.60','selected_guard':'开发选中的法向卸载'}
+           'guard_015':'法向卸载 0.15','guard_030':'法向卸载 0.30','guard_060':'法向卸载 0.60','selected_guard':'开发选中的法向卸载',
+           'fixed_window_v11':'原固定时间窗 v11'}
     for mode in candidates:
         r=development[mode]['summary']
         lines.append('| %s | %d/35 | %d/35 | %.2f mm |'%(names[mode],r['task_count'],r['strict_count'],r['mean_goal_m']*1000))
     lines+=['','原 v11 固定时间窗 BC 的开发结果为严格 24/35；按本轮任务门槛重新统计为 27/35。改变采样时序不等于必然提高成功率。',
             '', '![开发对照](assets/development.png)','', '## 冻结后的新留出集','',
-            '候选在测试前选择为 **%s**。每视频 8 个组合扰动，四种方法共 64 次回放。'%names[test['selected_before_test']],
+            '候选在测试前选择为 **%s**。每视频 8 个组合扰动，五种方法共 80 次回放。'%names[test['selected_before_test']],
             '', '| 方法 | 任务级 | 原严格级 | 稳定抬杯 | 平均目标误差 |', '|---|---|---|---|---|']
     for mode in methods:
         r=test['summary'][mode]

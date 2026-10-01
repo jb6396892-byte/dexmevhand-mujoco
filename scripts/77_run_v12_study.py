@@ -225,7 +225,8 @@ def heldout():
     guard=min([r for r in frozen['candidates'] if r['method'].startswith('guard_')],
               key=lambda r:(-r['task_fraction'],-r['strict_fraction'],r['mean_goal_m']))
     paths['selected_guard']=Path(guard['path'])
-    methods=plan['heldout']['methods']+['selected_guard']
+    paths['fixed_window_v11']=ROOT/'data/processed/dual_video_v11/learning/phase_bc_150.pickle'
+    methods=plan['heldout']['methods']+['selected_guard','fixed_window_v11']
     checkpoints={k:pickle.loads(p.read_bytes()) for k,p in paths.items()}
     output=RUN/'heldout';output.mkdir(exist_ok=False)
     rows=[]

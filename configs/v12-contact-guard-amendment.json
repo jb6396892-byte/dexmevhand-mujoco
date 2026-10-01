@@ -8,6 +8,7 @@
   "filter_alpha": 0.2,
   "selection": "Same equal-video task/strict/goal ranking; development only",
   "heldout_extra_method": "selected_guard",
+  "heldout_ablation_baseline": "fixed_window_v11",
   "no_physics_parameter_changes": true,
   "heldout_used_for_amendment": false
 }

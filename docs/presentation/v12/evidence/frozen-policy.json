@@ -1,0 +1,159 @@
+{
+  "protocol_sha256": "9707bf73d1882068dbbd721bdd53b7eb65e1656802214bcfea01e8c8b305cc52",
+  "selected": {
+    "method": "aligned_bc",
+    "path": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v12/aligned_bc/policy.pickle",
+    "sha256": "31807d70fbd4371a931a7151e6005e78a333ce504a46d14295eca905e69ca024",
+    "count": 35,
+    "task_count": 25,
+    "strict_count": 23,
+    "lift_count": 35,
+    "task_fraction": 0.7058823529411764,
+    "strict_fraction": 0.6503267973856208,
+    "mean_goal_m": 0.00564614928926459,
+    "mean_peak_penetration_m": 0.0008003497523643108,
+    "per_video": {
+      "first": {
+        "task": 18,
+        "strict": 16,
+        "count": 18
+      },
+      "second": {
+        "task": 7,
+        "strict": 7,
+        "count": 17
+      }
+    }
+  },
+  "candidates": [
+    {
+      "method": "aligned_bc",
+      "path": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v12/aligned_bc/policy.pickle",
+      "sha256": "31807d70fbd4371a931a7151e6005e78a333ce504a46d14295eca905e69ca024",
+      "count": 35,
+      "task_count": 25,
+      "strict_count": 23,
+      "lift_count": 35,
+      "task_fraction": 0.7058823529411764,
+      "strict_fraction": 0.6503267973856208,
+      "mean_goal_m": 0.00564614928926459,
+      "mean_peak_penetration_m": 0.0008003497523643108,
+      "per_video": {
+        "first": {
+          "task": 18,
+          "strict": 16,
+          "count": 18
+        },
+        "second": {
+          "task": 7,
+          "strict": 7,
+          "count": 17
+        }
+      }
+    },
+    {
+      "method": "contact_reference_bc",
+      "path": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v12/contact_reference_bc/policy.pickle",
+      "sha256": "40949374306b7749198189b6b4ace85d9c17d02e6aecbfc76b3662af0293d1a6",
+      "count": 35,
+      "task_count": 18,
+      "strict_count": 17,
+      "lift_count": 25,
+      "task_fraction": 0.5032679738562091,
+      "strict_fraction": 0.4754901960784314,
+      "mean_goal_m": 0.08403106485185063,
+      "mean_peak_penetration_m": 0.0007754958891780991,
+      "per_video": {
+        "first": {
+          "task": 16,
+          "strict": 15,
+          "count": 18
+        },
+        "second": {
+          "task": 2,
+          "strict": 2,
+          "count": 17
+        }
+      }
+    },
+    {
+      "method": "guard_015",
+      "path": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v12/guard_015/policy.pickle",
+      "sha256": "2941d11e5b3ddc7871877446ae24fe87d9f37854e4bd21ed5cf18169281cd88d",
+      "count": 35,
+      "task_count": 25,
+      "strict_count": 23,
+      "lift_count": 35,
+      "task_fraction": 0.7058823529411764,
+      "strict_fraction": 0.6503267973856208,
+      "mean_goal_m": 0.005648119089552921,
+      "mean_peak_penetration_m": 0.0008003882241438455,
+      "per_video": {
+        "first": {
+          "task": 18,
+          "strict": 16,
+          "count": 18
+        },
+        "second": {
+          "task": 7,
+          "strict": 7,
+          "count": 17
+        }
+      }
+    },
+    {
+      "method": "guard_030",
+      "path": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v12/guard_030/policy.pickle",
+      "sha256": "6d618900bc66ebd1dbd8f978aaf84701b179e784dd4f2bcb3b7d708d9e24943d",
+      "count": 35,
+      "task_count": 25,
+      "strict_count": 23,
+      "lift_count": 35,
+      "task_fraction": 0.7058823529411764,
+      "strict_fraction": 0.6503267973856208,
+      "mean_goal_m": 0.005657508476264574,
+      "mean_peak_penetration_m": 0.0007979742613122858,
+      "per_video": {
+        "first": {
+          "task": 18,
+          "strict": 16,
+          "count": 18
+        },
+        "second": {
+          "task": 7,
+          "strict": 7,
+          "count": 17
+        }
+      }
+    },
+    {
+      "method": "guard_060",
+      "path": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v12/guard_060/policy.pickle",
+      "sha256": "8691258c210c41b216966f636234174a551f34fa829d506ffd7551294fe94701",
+      "count": 35,
+      "task_count": 24,
+      "strict_count": 22,
+      "lift_count": 35,
+      "task_fraction": 0.6764705882352942,
+      "strict_fraction": 0.6209150326797386,
+      "mean_goal_m": 0.00570041832697143,
+      "mean_peak_penetration_m": 0.0008047513837063394,
+      "per_video": {
+        "first": {
+          "task": 18,
+          "strict": 16,
+          "count": 18
+        },
+        "second": {
+          "task": 6,
+          "strict": 6,
+          "count": 17
+        }
+      }
+    }
+  ],
+  "demo_sha256": "ac27d2ed2fc459be5966b96e23601296dc52cf5e90d10240d8de25c1fe1a2220",
+  "heldout_used": false,
+  "long_training": false,
+  "guard_amendment_sha256": "fac80f55b76e6b91b250ac2d1bd43dbb6028dfb6d40399c32d4fef840e86f73a"
+}
