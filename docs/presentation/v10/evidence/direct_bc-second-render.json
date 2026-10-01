@@ -1,0 +1,38 @@
+{
+  "policy_sha256": "4d50d240b6c70906bc2ae4c09b3d4e3f8d1d1c296905d8bb2c32f88984e63f07",
+  "scope": "Selected policy, second-video development nominal; saved closed-loop actions replayed in physics",
+  "metrics": {
+    "tip_error_m": [
+      0.2246431527147449,
+      0.20343630333070956,
+      0.19365980499530536,
+      0.1887351130675881,
+      0.21780936240262203
+    ],
+    "mean_tip_error_m": 0.20565674730219402,
+    "max_tip_error_m": 0.2246431527147449,
+    "finger_direction_error_deg": [
+      11.130067333034264,
+      34.17044991375928,
+      41.9543223108496,
+      43.08992481690334,
+      61.55636779858006
+    ],
+    "version": "video",
+    "replay_max_observation_error": 0.0,
+    "tail_finger_force_n": {
+      "thumb": 0.0,
+      "index": 0.0,
+      "middle": 0.0,
+      "ring": 0.0,
+      "little": 0.0
+    },
+    "tail_finger_contact_fraction": {
+      "thumb": 0.0,
+      "index": 0.0,
+      "middle": 0.0,
+      "ring": 0.0,
+      "little": 0.0
+    }
+  }
+}

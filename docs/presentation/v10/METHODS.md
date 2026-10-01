@@ -23,6 +23,8 @@ DexYCB 两段真实采集序列的缓存位姿
 
 实现：`scripts/66_develop_second_video.py`、`scripts/v10_common.py` 和已有 `scripts/64_optimize_dynamic_contact.py`。
 
+第二视频正向旋转开发工况中，历史最优解仅有前三个根部平移参数非零，对应约 (-3.23, +2.05, -0.69) mm 的根部坐标系关节等效偏置。手指闭合参数没有进一步增加；这是优化手的动作以改变接触几何，不是任意挪动杯子。它经动作映射和物理积分执行，不等于把手的位置直接设置为该偏置。
+
 ```python
 report, demo = run_case(video, source, actions)
 passed = (report['surface_physics_passed']

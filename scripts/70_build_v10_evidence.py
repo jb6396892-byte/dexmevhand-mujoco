@@ -43,6 +43,7 @@ def main():
                          replay=compact(r.get('replay',{})),half_timestep=compact(r.get('half_timestep',{}))))
     write('development.json',dict(protocol_sha256=a['protocol_sha256'],admitted_count=a['admitted_count'],
                                  planned_count=a['planned_count'],demo_sha256=a['demo_sha256'],reports=rows,
+                                 yaw_repair_best=read(RUN/'development/yaw_plus/repair/best.json'),
                                  yaw_repair_optimizer=read(RUN/'development/yaw_plus/repair/optimization.json')))
     meta=read(RUN/'training_input/metadata.json')
     write('training-input.json',meta)
@@ -64,6 +65,28 @@ def main():
     frozen_path=RUN/'learning/frozen_policies.json'
     if not frozen_path.exists(): return
     frozen=read(frozen_path);write('frozen-policies.json',frozen)
+    write('selection-protocol.json',read(RUN/'learning/selection_protocol.json'))
+    for method in ['direct_bc','residual_bc']:
+        epoch=frozen['policies'][method]['epoch']
+        folder=RUN/('%s%d_second_screenshots'%(method.split('_')[0],epoch))
+        if folder.exists():
+            for step in [0,828,1449]:
+                shutil.copy2(str(folder/('step_%04d.jpg'%step)),str(OUT/'assets'/('%s-second-%04d.jpg'%(method,step))))
+            write(method+'-second-render.json',dict(policy_sha256=frozen['policies'][method]['policy_sha256'],
+                  scope='Selected policy, second-video development nominal; saved closed-loop actions replayed in physics',
+                  metrics=read(folder/'comparison.json')))
+    force_paths=[RUN/'v9_cpu_screenshots/finger_forces.npy',
+                 RUN/('residual%d_second_screenshots'%frozen['policies']['residual_bc']['epoch'])/'finger_forces.npy']
+    if all(p.exists() for p in force_paths):
+        fig,axes=plt.subplots(2,1,figsize=(10,6),sharex=True,sharey=True)
+        for ax,path,title in zip(axes,force_paths,['Frozen v9 expert','Selected residual BC']):
+            forces=np.load(path);t=np.arange(len(forces))*.01
+            for i,name in enumerate(['Thumb','Index','Middle','Ring','Little']):
+                ax.plot(t,forces[:,i],label=name,linewidth=1)
+            ax.set_ylabel('Normal force (N)');ax.set_title(title);ax.grid(alpha=.2)
+        axes[0].legend(ncol=5);axes[1].set_xlabel('Control time (s)')
+        fig.suptitle('Second-video development nominal: simulated forces, not real force labels')
+        fig.tight_layout();fig.savefig(str(OUT/'assets/second-contact-forces.png'),dpi=150);plt.close(fig)
     comparisons={}
     fig,ax=plt.subplots(figsize=(8,4))
     for method in ['direct_bc','residual_bc']:

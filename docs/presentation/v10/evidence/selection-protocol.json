@@ -1,0 +1,173 @@
+{
+  "protocol_sha256": "7d0252eae209531c26b421701835e12273ba55ea9f36f8ecc0e5703ef4856ca4",
+  "training_input_sha256": "55b545cb86d09fa90d0beb1c00c9e0d5d4c7ef54ba432c6cb976dd800e4269eb",
+  "evaluation_cases": [
+    {
+      "video": "first",
+      "name": "video_seed_0",
+      "geometry_sha256": "0b6072c4caa9355feaa4fdb8b458cd3c1fba2fc1d26a1f2927e9fed2759a0d46",
+      "seed": 0
+    },
+    {
+      "video": "first",
+      "name": "video_seed_1",
+      "geometry_sha256": "0b6072c4caa9355feaa4fdb8b458cd3c1fba2fc1d26a1f2927e9fed2759a0d46",
+      "seed": 1
+    },
+    {
+      "video": "first",
+      "name": "video_seed_2",
+      "geometry_sha256": "0b6072c4caa9355feaa4fdb8b458cd3c1fba2fc1d26a1f2927e9fed2759a0d46",
+      "seed": 2
+    },
+    {
+      "video": "first",
+      "name": "video_seed_3",
+      "geometry_sha256": "0b6072c4caa9355feaa4fdb8b458cd3c1fba2fc1d26a1f2927e9fed2759a0d46",
+      "seed": 3
+    },
+    {
+      "video": "first",
+      "name": "video_seed_4",
+      "geometry_sha256": "0b6072c4caa9355feaa4fdb8b458cd3c1fba2fc1d26a1f2927e9fed2759a0d46",
+      "seed": 4
+    },
+    {
+      "video": "first",
+      "name": "video_seed_5",
+      "geometry_sha256": "0b6072c4caa9355feaa4fdb8b458cd3c1fba2fc1d26a1f2927e9fed2759a0d46",
+      "seed": 5
+    },
+    {
+      "video": "first",
+      "name": "synthetic_position_0_-1",
+      "geometry_sha256": "d346a27ba683983c551203b3e5e5f61f9ad308ea3aaaf706f0eb2f743a56a9d4",
+      "seed": 0
+    },
+    {
+      "video": "first",
+      "name": "synthetic_goal_0_-1",
+      "geometry_sha256": "607f418f0940e26fd76270d49b760545fa93db84e5b6b5dfe38f470709f6a8ca",
+      "seed": 0
+    },
+    {
+      "video": "first",
+      "name": "synthetic_goal_0_1",
+      "geometry_sha256": "2e17ecad3371a5fff49a81f29d8630a874cf6fc1dd5645c7ba5427292adc889a",
+      "seed": 0
+    },
+    {
+      "video": "first",
+      "name": "synthetic_position_1_-1",
+      "geometry_sha256": "ed9f6a7c18f12a4ffe28927ec3327b105d93f5a29e07326c0d6efcafa6f6ad44",
+      "seed": 0
+    },
+    {
+      "video": "first",
+      "name": "synthetic_goal_1_-1",
+      "geometry_sha256": "8619d2a782098476e6c224c98178eee0408c8a77e85f3699dc569b6cc9751532",
+      "seed": 0
+    },
+    {
+      "video": "first",
+      "name": "synthetic_goal_1_1",
+      "geometry_sha256": "374af5603e7dfb0b3b57ca62238b7be0bd670077481f96fef0dd65076702a80d",
+      "seed": 0
+    },
+    {
+      "video": "first",
+      "name": "synthetic_cup_yaw_-10",
+      "geometry_sha256": "abfe46fe7f36a90c077cd270afc53713ac886c70e65e68cd24031fb8fca9b1c1",
+      "seed": 0
+    },
+    {
+      "video": "first",
+      "name": "synthetic_cup_yaw_-5",
+      "geometry_sha256": "f20624d18a439f088370672e68f11b58b2f47f959f87151af594be1d04379582",
+      "seed": 0
+    },
+    {
+      "video": "first",
+      "name": "synthetic_cup_yaw_5",
+      "geometry_sha256": "193e2f8d32eae6f196db2a4d80929312efc2a5ef33cf76be8e4f42fa2da98df1",
+      "seed": 0
+    },
+    {
+      "video": "first",
+      "name": "synthetic_cup_yaw_10",
+      "geometry_sha256": "68387c28041fdc1e1724286c9fd68541c869641a8c461eae980d88aeda5f5992",
+      "seed": 0
+    },
+    {
+      "video": "second",
+      "name": "nominal",
+      "geometry_sha256": "09dd114994372c570719efd4821c90a261787cd842bd79eec6a17b5c5f4abfd7",
+      "seed": 0
+    },
+    {
+      "video": "second",
+      "name": "cup_x_minus",
+      "geometry_sha256": "240fdd38236daf8698f7a619061bd3c25a18563101164245b899e659fb843def",
+      "seed": 0
+    },
+    {
+      "video": "second",
+      "name": "goal_x_minus",
+      "geometry_sha256": "291bb5c0f2cd0fcca572a9f0fb4fa90e05b0b23b35ae71a0acf04d6717fe5fa7",
+      "seed": 0
+    },
+    {
+      "video": "second",
+      "name": "cup_x_plus",
+      "geometry_sha256": "21b2d20d82f976eb6c4ac6b2814f980f14e6a2eda85f3f85bfcc5d9bbde24cb2",
+      "seed": 0
+    },
+    {
+      "video": "second",
+      "name": "goal_x_plus",
+      "geometry_sha256": "409cc605bf904c04600949bd43b633dcf0fd16d356964876c4f28fd1bac40e3f",
+      "seed": 0
+    },
+    {
+      "video": "second",
+      "name": "cup_y_minus",
+      "geometry_sha256": "91c7cca7a6019b4c5e20a6c4ce4479cbe5ef71e7ff32453cee925788a94124a4",
+      "seed": 0
+    },
+    {
+      "video": "second",
+      "name": "goal_y_minus",
+      "geometry_sha256": "3a19032009f15b7d1c99f929fd51034660ecae3cb23bdc56f2c98882b423a0e7",
+      "seed": 0
+    },
+    {
+      "video": "second",
+      "name": "cup_y_plus",
+      "geometry_sha256": "e835569a780af79a8d790ffdf2379c7400f575c9bf47d18f1a971170b3c400cd",
+      "seed": 0
+    },
+    {
+      "video": "second",
+      "name": "goal_y_plus",
+      "geometry_sha256": "1a11c3eebd2f747bf9083390609b1cbd703e22b1b10360faa1aa32b3102ad409",
+      "seed": 0
+    },
+    {
+      "video": "second",
+      "name": "yaw_minus",
+      "geometry_sha256": "c41531e594bfc359da9839b5c5f840d50eb1743a6d73d5f22965ecb4426d27f3",
+      "seed": 0
+    },
+    {
+      "video": "second",
+      "name": "yaw_plus",
+      "geometry_sha256": "ee1fd171b97357802a3fd0896204035f451f53d65c65eaf8386c2ebabd4c645f",
+      "seed": 0
+    }
+  ],
+  "selection": "Equal-video mean full success, then equal-video mean goal distance, then earlier epoch",
+  "lr": 0.001,
+  "input_scale_floor": 0.001,
+  "output_scale_floor": 0.001,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}
