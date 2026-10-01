@@ -1,0 +1,65 @@
+{
+  "scope": "Post-freeze implementation audit, no model changes or retraining",
+  "videos": [
+    {
+      "video": "first",
+      "actual_boundary_steps": [
+        562,
+        652,
+        793
+      ],
+      "intended_phase_mass": [
+        0.15,
+        0.15,
+        0.2,
+        0.3,
+        0.2
+      ],
+      "actual_mass_under_frozen_windows": [
+        0.15,
+        0.16437125748502993,
+        0.10778443113772458,
+        0.16904431137724557,
+        0.4088
+      ],
+      "corrected_sampler_mass": [
+        0.15,
+        0.14999999999999997,
+        0.19999999999999998,
+        0.30000000000000004,
+        0.2
+      ],
+      "corrected_sampler_used_in_frozen_policy": false
+    },
+    {
+      "video": "second",
+      "actual_boundary_steps": [
+        588,
+        677,
+        819
+      ],
+      "intended_phase_mass": [
+        0.15,
+        0.15,
+        0.2,
+        0.3,
+        0.2
+      ],
+      "actual_mass_under_frozen_windows": [
+        0.15,
+        0.19550898203592812,
+        0.10658682634730542,
+        0.1703041916167665,
+        0.37759999999999994
+      ],
+      "corrected_sampler_mass": [
+        0.15,
+        0.15000000000000002,
+        0.20000000000000004,
+        0.30000000000000004,
+        0.2
+      ],
+      "corrected_sampler_used_in_frozen_policy": false
+    }
+  ]
+}

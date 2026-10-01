@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-02",
+  "scope": "Software and artifact consistency, not universal policy success or hardware validation",
+  "unit_tests": 82,
+  "unit_tests_failed": 0,
+  "unit_tests_skipped": 0,
+  "experts_with_exact_replay_and_half_timestep_pass": 35,
+  "unique_heldout_rollouts": 96,
+  "methods": 4,
+  "cases_per_method": 24,
+  "full_gate_flags_recomputed": true,
+  "freeze_commit": "ff7d2bf0164231bd720e5c2b247ddbab8f6fff90",
+  "freeze_receipt_matches_committed_bytes": true,
+  "policy_sha256": "d281b45c0243e4d26cf83efe056fb559c37ab7b66702cb7c4e57ca0eb466c451",
+  "policy_sha256_verified_after_test": true,
+  "reference_sha256": "c30a0120456b03ac730cbe4f6bad0289bdcbe9cc4f45574a9925dcd4ab13a37e",
+  "first_video_fixed_baseline_max_metric_difference": 0.0,
+  "render_replay_max_observation_error": {
+    "expert_second": 0.0,
+    "policy_first": 0.0,
+    "policy_second": 0.0,
+    "heldout_failure": 0.0,
+    "source_second_local": 0.0
+  },
+  "phase_sampler_fix_unit_tested": true,
+  "phase_sampler_fix_used_in_frozen_policy": false,
+  "training_after_heldout": false,
+  "long_dapg_started": false
+}

@@ -5,7 +5,8 @@ import importlib
 import sys
 from types import SimpleNamespace
 from pathlib import Path
-from fromrealhand.corrective_learning import CorrectiveActions,phase_weights,tracking_delta
+from fromrealhand.corrective_learning import (CorrectiveActions,phase_weights,tracking_delta,
+                                              aligned_phase_indices,aligned_phase_weights)
 
 
 class CorrectiveTests(unittest.TestCase):
@@ -100,6 +101,24 @@ class CorrectiveTests(unittest.TestCase):
         np.testing.assert_allclose(policy.model(x).detach().numpy(),before*.25,rtol=1e-6)
         np.testing.assert_array_equal(checkpoint['references']['second'],reference)
         with self.assertRaises(ValueError): module.scale_residual(checkpoint,0)
+
+    def test_aligned_weights_follow_nonlinear_clock_for_both_videos(self):
+        masses=[.15,.15,.2,.3,.2]
+        for start,length,expected in [(3,1417,[562,652,793]),(1,1450,[588,677,819])]:
+            geometry={'source_frames':np.arange(start,74),'fps':30.}
+            ids=aligned_phase_indices(length,geometry,5.)
+            weights=aligned_phase_weights(length,masses,geometry,5.)
+            self.assertEqual([int(np.flatnonzero(ids>=i)[0]) for i in [2,3,4]],expected)
+            np.testing.assert_allclose([weights[ids==i].sum() for i in range(5)],masses)
+            self.assertTrue(np.all(weights>0))
+            self.assertEqual(int(np.sum(ids==0)),50)
+            self.assertLess(phase_weights(length,masses)[ids==2].sum(),.12)
+
+    def test_aligned_sampler_rejects_invalid_clocks(self):
+        geometry={'source_frames':[1,73],'fps':30.}
+        with self.assertRaises(ValueError): aligned_phase_indices(1450,geometry,0.)
+        with self.assertRaises(ValueError): aligned_phase_indices(1450,geometry,5.,source_boundaries=[40,30,55])
+        with self.assertRaises(ValueError): aligned_phase_weights(1450,[1,1,1,1,np.nan],geometry,5.)
 
 
 if __name__=='__main__': unittest.main()

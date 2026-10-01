@@ -1,9 +1,11 @@
 """Bounded state-feedback labels and phase-balanced corrective imitation."""
 import numpy as np
 from .multivideo import MultiVideoActions, conditioned_features
+from .video_fidelity import source_clock
 
 
 def phase_weights(length, masses, dt=.01):
+    """Historical v11 fixed control windows, retained for exact reproduction."""
     bins=np.array([0.,.5,5.5,7.1666666667,9.6666666667,np.inf])
     phase=np.searchsorted(bins[1:],np.arange(length)*dt,side='right')
     weights=np.zeros(length)
@@ -13,6 +15,34 @@ def phase_weights(length, masses, dt=.01):
         ids=phase==i
         if ids.any(): weights[ids]=mass/ids.sum()
     if not len(weights): raise ValueError('Empty trajectory')
+    return weights/weights.sum()
+
+
+def aligned_phase_indices(length,geometry,time_scale,dt=.01,warmup=.5,source_boundaries=(30.,40.,55.)):
+    """Map each control step through the same nonlinear clock as the simulator."""
+    frames=np.asarray(geometry['source_frames'],dtype=float)
+    fps=float(geometry['fps']);boundaries=np.asarray(source_boundaries,dtype=float)
+    if (length<=0 or frames.ndim!=1 or len(frames)<2 or not np.isfinite(frames).all()
+            or np.any(np.diff(frames)<=0) or boundaries.shape!=(3,)
+            or not np.isfinite(boundaries).all() or np.any(np.diff(boundaries)<=0)):
+        raise ValueError('Ordered source frames and three phase boundaries required')
+    if not np.isfinite([fps,dt,time_scale,warmup]).all() or min(fps,dt,time_scale)<=0 or warmup<0:
+        raise ValueError('Invalid control or source clock')
+    times=np.arange(length)*dt
+    source=frames[0]+fps*source_clock(times,(frames[-1]-frames[0])/fps,time_scale,warmup)
+    phase=np.searchsorted(boundaries,source,side='right')+1
+    phase[times<warmup]=0
+    return phase
+
+
+def aligned_phase_weights(length,masses,geometry,time_scale,dt=.01,warmup=.5,source_boundaries=(30.,40.,55.)):
+    """Corrected sampler for a FUTURE study; not used by frozen v11 checkpoints."""
+    masses=np.asarray(masses,dtype=float)
+    if masses.shape!=(5,) or not np.isfinite(masses).all() or np.any(masses<=0):
+        raise ValueError('Five positive phase masses required')
+    phase=aligned_phase_indices(length,geometry,time_scale,dt,warmup,source_boundaries)
+    counts=np.bincount(phase,minlength=5)
+    weights=masses[phase]/counts[phase]
     return weights/weights.sum()
 
 

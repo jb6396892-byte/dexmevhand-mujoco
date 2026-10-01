@@ -3,6 +3,7 @@
 import json
 import pickle
 import shutil
+import sys
 from collections import Counter
 from pathlib import Path
 import numpy as np
@@ -11,6 +12,8 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'src'))
+from fromrealhand.corrective_learning import phase_weights,aligned_phase_indices,aligned_phase_weights
 RUN = ROOT/'data/processed/dual_video_v11'
 OUT = ROOT/'docs/presentation/v11'
 
@@ -105,8 +108,22 @@ def main():
                 item['reports'] = [compact(r) for r in item['reports']]
         write(name.replace('_', '-'), value)
     collections = read(learning/'collections.json')
+    entries={(r['video'],r['name']):r for r in admission['reports']}
     for collection in collections:
         collection['rows'] = [policy_row(r) for r in collection['rows']]
+        for row in collection['rows']:
+            path=learning/('collection_%d'%collection['round'])/row['video']/row['case']/'correction_labels.npz'
+            with np.load(path) as data:
+                feedback=data['feedback']
+            geometry=np.load(entries[row['video'],row['case']]['geometry'])
+            phase=aligned_phase_indices(len(feedback),geometry,5.)
+            row['phase_feedback_definition']='Historical fixed control windows, not exact source-frame stages'
+            row['aligned_phase_feedback']={}
+            for j,name in enumerate(['prepare','approach','closure','lift','transport_hold']):
+                values=feedback[phase==j]
+                if len(values):
+                    row['aligned_phase_feedback'][name]=dict(frames=len(values),mean_abs_action=float(np.mean(np.abs(values))),
+                                    nonzero_fraction=float(np.mean(np.linalg.norm(values,axis=1)>1e-6)))
         collection['accepted_by_video'] = dict(Counter(r['video'] for r in collection['rows'] if r['admitted_labels']))
     write('corrections.json', collections)
     comparisons = read(learning/'comparison.json')
@@ -137,13 +154,23 @@ def main():
     frozen = read(freeze)
     selected = next(r for r in comparisons if r['label'] == frozen['selected']['label'])
     refs = pickle.loads((RUN/'experts/references.pkl').read_bytes())
+    study=read(ROOT/'configs/v11-study.json');phase_audit=[]
     fig, axes = plt.subplots(2, 2, figsize=(11, 7))
     for i, name in enumerate(['first', 'second']):
         case = 'video_seed_0' if i == 0 else 'nominal'
         row = next(r for r in selected['reports'] if r['video'] == name and r['case'] == case)
         entry = next(r for r in admission['reports'] if r['video'] == name and r['name'] == case)
-        goal = np.load(entry['geometry'])['object_poses'][-1, :3, 3]
+        geometry=np.load(entry['geometry']);goal = geometry['object_poses'][-1, :3, 3]
         policy = pickle.loads(Path(row['rollout']).read_bytes())['video_faithful']
+        phase=aligned_phase_indices(len(policy['actions']),geometry,5.)
+        masses=study['learning']['phase_mass']
+        old_weights=phase_weights(len(phase),masses)
+        corrected=aligned_phase_weights(len(phase),masses,geometry,5.)
+        boundaries=[int(np.flatnonzero(phase>=j)[0]) for j in [2,3,4]]
+        phase_audit.append(dict(video=name,actual_boundary_steps=boundaries,
+             intended_phase_mass=masses,actual_mass_under_frozen_windows=[float(old_weights[phase==j].sum()) for j in range(5)],
+             corrected_sampler_mass=[float(corrected[phase==j].sum()) for j in range(5)],
+             corrected_sampler_used_in_frozen_policy=False))
         for label, demo in [('Expert', refs[name]), ('Frozen residual', policy)]:
             q = np.array([s['qpos'] for s in demo['sim_data']])
             t = np.arange(len(q))*.01
@@ -153,12 +180,13 @@ def main():
             ax.set_title(name+' video: development nominal')
             ax.set_xlabel('Control time (s)')
             ax.grid(alpha=.2)
-            for boundary in [5.5, 7.1666666667, 9.6666666667]:
-                ax.axvline(boundary, color='gray', alpha=.5, linestyle=':')
+            for boundary in boundaries:
+                ax.axvline(boundary*.01, color='gray', alpha=.5, linestyle=':')
         axes[i, 0].set_ylabel('Cup center height (mm)')
         axes[i, 1].set_ylabel('Goal distance (mm)')
     axes[0, 0].legend()
     save(fig, 'phase-trajectories.png')
+    write('phase-window-audit.json',dict(scope='Post-freeze implementation audit, no model changes or retraining',videos=phase_audit))
     force_files=[RUN/'renders'/name/'finger_forces.npy' for name in ['expert_second','policy_second']]
     if all(p.exists() for p in force_files):
         fig,axes=plt.subplots(2,1,figsize=(10,6),sharex=True,sharey=True)
@@ -186,6 +214,8 @@ def main():
         ax.tick_params(axis='x', rotation=25)
         if key != 'mean_goal_mm':
             ax.set_ylim(0, 27)
+        else:
+            ax.set_ylim(0,max(vals)*1.2)
         for i, value in enumerate(vals):
             ax.text(i, value+.25, '%.2f' % value if key == 'mean_goal_mm' else str(value), ha='center')
     save(fig, 'heldout-comparison.png')

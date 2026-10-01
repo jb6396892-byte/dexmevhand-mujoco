@@ -154,6 +154,34 @@
               "penetration_m": 0.00040312032897729666
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 8.527669516620395e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 4.124664212566478e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.00017952119027043415,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0001496289017023865,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.00018830913798760217,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -307,6 +335,34 @@
               "penetration_m": 0.000331358580771649
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 4.6777688223727115e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 7.362904447694675e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0004271229868256706,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0002990784723458448,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.00013206512127594987,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -460,6 +516,34 @@
               "penetration_m": 0.00040489811240482926
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00012058441509981762,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00011766995192388614,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0002435500021482291,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00015375656628001876,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.00013237757307912185,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -613,6 +697,34 @@
               "penetration_m": 0.0003470405864496179
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.0001079141273557311,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 8.085247839373315e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0003963819235957151,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00046303940535441306,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0002208379596606784,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -766,6 +878,34 @@
               "penetration_m": 0.00041267066311322445
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 7.915949435413049e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00011683277650208036,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.00028494142845091617,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00016461024599818727,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0002191966665425943,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -919,6 +1059,34 @@
               "penetration_m": 0.0003874480870481365
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00011291734119704877,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.0001037347868188957,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0002983803492509682,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00018902969806634394,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.00018793437009301055,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -1072,6 +1240,34 @@
               "penetration_m": 0.0004008355730787151
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 9.064507100509369e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 9.902904177973232e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0006411237289481956,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0006523427679344514,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.00047524998821500263,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -1225,6 +1421,34 @@
               "penetration_m": 0.00040385643852854786
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 1.6804824942178682e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 4.4474991407150055e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.00021732927302427912,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00024392815788935236,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.000210595433653042,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -1378,6 +1602,34 @@
               "penetration_m": 0.0004230915582978873
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 4.860053603364008e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 4.8022842129407e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.000596113449524344,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0003803705442071065,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.000346165887300012,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -1531,6 +1783,34 @@
               "penetration_m": 0.00034549554531613375
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 7.00061707699888e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00010680047051731571,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.001796310652109121,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0011617976961988802,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0010200734914973546,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -1684,6 +1964,34 @@
               "penetration_m": 0.0004091908235681514
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 8.277604814308039e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 4.091166345744686e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0002470336682053223,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00018344326143285468,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0001537070450073743,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -1837,6 +2145,34 @@
               "penetration_m": 0.00040428066902509566
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 1.327998111794397e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 4.845429398755054e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.00022728876162819893,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00013010009547790945,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0001963307870604888,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -1990,6 +2326,34 @@
               "penetration_m": 0.0003268691076605359
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 8.101916535633497e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 8.724289923703115e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.00026553134762995407,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00035321050242547304,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0003981597259775013,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -2143,6 +2507,34 @@
               "penetration_m": 0.00036667080031973034
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 2.6246173815097043e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 7.807982432182217e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0014707557777860706,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0009919617359446496,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0007500473816664393,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -2296,6 +2688,34 @@
               "penetration_m": 0.00041825530479621884
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.817343332594451e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 5.28629803638886e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.00025670788213583037,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00026133731839087545,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.00026125095234774394,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -2449,6 +2869,34 @@
               "penetration_m": 0.0003623757941227869
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 4.974183556866775e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 9.051403238119246e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.00019101047679544075,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0001751635871446363,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0001408116601383102,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -2602,6 +3050,34 @@
               "penetration_m": 0.0007539141782869361
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.685173554782038e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 5.125479565757145e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0003198213246212272,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.00024864960835400913,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0004982290729707518,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -2755,6 +3231,34 @@
               "penetration_m": 0.0007422201868612097
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 4.317360246915092e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 7.804792853908924e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.00038494637612481445,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.00027397471821821446,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0003776040647226124,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -2908,6 +3412,34 @@
               "penetration_m": 0.0007948824111824125
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.4974328568649116e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 6.0454896702300406e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0004316201333119866,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.00042300437123583704,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0005285557529339037,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -3061,6 +3593,34 @@
               "penetration_m": 0.0007414410634839878
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.5237617164129604e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 6.355960478203761e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0005377638366011469,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0004941447752702237,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0004827514451313948,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -3214,6 +3774,34 @@
               "penetration_m": 0.0008678877310949745
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.679934241731549e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 6.290817657250953e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.00032097841610045154,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0007034541772621243,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.001520432326062927,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -3367,6 +3955,34 @@
               "penetration_m": 0.0008831633229023662
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 4.1579653786915254e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 6.218675859968431e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0006668833654054275,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0013168693282531758,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0014540800938855146,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -3520,6 +4136,34 @@
               "penetration_m": 0.0007500167847180381
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.5039286362507676e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 5.3612806494699224e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.00023765835048043357,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.00022407140335389862,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.000331282416251999,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -3673,6 +4317,34 @@
               "penetration_m": 0.0007478395343987317
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.1536279603743856e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 5.604423553855059e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.00019034762628196273,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.00022738728067687878,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0004922008407942972,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -3826,6 +4498,34 @@
               "penetration_m": 0.0008626383095008098
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.978553804029602e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 5.980639804129812e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0003585049091173767,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0004443180244710095,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0008709045124571299,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -3979,6 +4679,34 @@
               "penetration_m": 0.0007307823432494731
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 6.469374935942607e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.00015984587947714114,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0005874601105112804,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0006797600506297733,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0007784237950008733,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -4132,6 +4860,34 @@
               "penetration_m": 0.0007446208575894113
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.7051047436374336e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0001557419896240023,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0003014725056849419,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.00045250125587106355,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0006670313065870269,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -4285,6 +5041,34 @@
               "penetration_m": 0.0004278514366248265
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 1.2931759670687837e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.0001219133486237723,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0009231972402885185,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0015118271751739948,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0010012378773654879,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -4438,6 +5222,34 @@
               "penetration_m": 0.00034732656040692954
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 2.4263622055560336e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.001041486445714112,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0019715920070591704,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00205268433728255,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0016244797128746379,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -4591,6 +5403,34 @@
               "penetration_m": 0.0007434071269087651
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 4.9433588639957496e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 7.38999173332805e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.00032366548207888175,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.00018125671667089413,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.00030903392130160614,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -4744,6 +5584,34 @@
               "penetration_m": 0.0007340159255392862
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.827386280565585e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 7.846519665333832e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0007428691875945358,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0006487639007644112,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.000906135734870599,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -4897,6 +5765,34 @@
               "penetration_m": 0.0007432116492483046
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 4.558546652083852e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.00011012877803231204,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0009505559851431672,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0009870466260910808,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0015186015973715434,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -5050,6 +5946,34 @@
               "penetration_m": 0.0007458263045419571
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.4568589645280056e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 4.583446860080021e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0002379032996674402,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 9.947767639779084e-05,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0001529922123289549,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -5203,6 +6127,34 @@
               "penetration_m": 0.0007621110995853091
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 2.8507334501813177e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 7.79130930529526e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.00038980982687329463,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0005298634854515771,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.002911192420744777,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -5356,6 +6308,34 @@
               "penetration_m": 0.0007492766683623742
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 4.0547408469016454e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 6.478957325289968e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.00034086087235320065,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0001560498444648311,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.00032040091339736993,
+            "nonzero_fraction": 1.0
+          }
         }
       }
     ],
@@ -5519,6 +6499,34 @@
               "penetration_m": 0.0004084565737788176
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 7.758234092806512e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 7.101258645076233e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0002730061453758831,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00023470883971275945,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0003140277725829752,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -5672,6 +6680,34 @@
               "penetration_m": 0.000311933665718917
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00010186290797673599,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00014145435426070487,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0007468751341050417,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0005365885575563495,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.00026398102668710765,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -5825,6 +6861,34 @@
               "penetration_m": 0.00034918921348081394
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.0002838499898310085,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00025832013679050593,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0005207013859472587,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0007576080019876751,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0005388458627753624,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -5978,6 +7042,34 @@
               "penetration_m": 0.00033794392681542947
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00016483737288474216,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00014512360170403551,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0005883010519682745,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0003927137871016556,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.000334380504337703,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -6131,6 +7223,34 @@
               "penetration_m": 0.00037032033501973574
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00016704822913390346,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00023854415459936482,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0009939994122560348,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0009009533707391644,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0004775968360445501,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -6284,6 +7404,34 @@
               "penetration_m": 0.00043339677998414233
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00017990453663246786,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.0002084048363337012,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.000568081539915699,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0007297367983639553,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0005039615748635161,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -6437,6 +7585,34 @@
               "penetration_m": 0.0004091257058805482
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 9.737930062295728e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00023804979994389012,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0016101310443869545,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0017639002774028994,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0017659826425321218,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -6590,6 +7766,34 @@
               "penetration_m": 0.0004072721908694385
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.061336360667584e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 8.244791880846839e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0003416570553346402,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.000362549917086182,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.00032585314445655867,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -6743,6 +7947,34 @@
               "penetration_m": 0.00035705201374121537
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 6.417247556688811e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00011098274531926765,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0013831302054633202,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.001468720662425632,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0006991012833149954,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -6896,6 +8128,34 @@
               "penetration_m": 0.00035501905986598525
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00013230558151521154,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00021322343677875605,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0018319592009981682,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0017563149800314214,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.002067444438091437,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -7049,6 +8309,34 @@
               "penetration_m": 0.00038741356218089827
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 5.683138114567295e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 9.842834532796102e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0010347996810066136,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0008247308762489077,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0004854391795519294,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -7202,6 +8490,34 @@
               "penetration_m": 0.00039926004870879245
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.233715666356367e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 7.374547999875195e-05,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.00024236696710034478,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.00030966236670210774,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.00033792000322551904,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -7355,6 +8671,34 @@
               "penetration_m": 0.00042359085933443494
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.0001200353528736116,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00019960703932002133,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0017567404811552703,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0010423076459788322,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0007954583616354785,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -7508,6 +8852,34 @@
               "penetration_m": 0.00034060951140751276
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00010136788050687529,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00013662752236621677,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0024886513272661397,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0016194462480529988,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0010602677226489515,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -7661,6 +9033,34 @@
               "penetration_m": 0.00040447440639883704
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 7.21468628580506e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00010930677780373972,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.00024723545309674274,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0002490589764439192,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.00023936611725224857,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -7814,6 +9214,34 @@
               "penetration_m": 0.00038030221486688286
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00011438190741981773,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.0003855693329481391,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0005652974350509846,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0003738052581005502,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.00035438667912856344,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -7967,6 +9395,34 @@
               "penetration_m": 0.0007509895147020779
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 6.051146173056882e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0005873520012583818,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0019256199357678848,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.003158341360355672,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.004444241467602638,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -8120,6 +9576,34 @@
               "penetration_m": 0.0007471084506214515
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 5.896115358416317e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0004740437100056935,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0006107120350560407,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0009571374789618532,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0006018228551405025,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -8273,6 +9757,34 @@
               "penetration_m": 0.0007507333657679011
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 6.0744234059752306e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0005349028930136429,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0009752872739757107,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.00182485461636408,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0026832274278826315,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -8426,6 +9938,34 @@
               "penetration_m": 0.0007271740060395602
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 7.074973837791808e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0006677400090153584,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0019261962398995128,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.003718739847774557,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.004611803101129103,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -8579,6 +10119,34 @@
               "penetration_m": 0.0007537530485093784
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 5.6676529582769365e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0005363681415949817,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0010276934997765262,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0021455963954386628,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.002704995978601346,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -8732,6 +10300,34 @@
               "penetration_m": 0.0007250514858523129
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 8.506647362956145e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0005621533250250812,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0015339284700339685,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0027821377689383154,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.004288993781294319,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -8885,6 +10481,34 @@
               "penetration_m": 0.0008832198928551556
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 7.117488594514062e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0005463629401750645,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0013563891109274469,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0018285871448830296,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0018991362282444893,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -9038,6 +10662,34 @@
               "penetration_m": 0.0008644760103923395
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.811827201421418e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0005077860065042623,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0008149355418507993,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0009393990618245022,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0009628919426876464,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -9191,6 +10843,34 @@
               "penetration_m": 0.0007250885902156706
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 6.501773761646384e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0005600123604825666,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.000908681483263536,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0020074832947076697,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0025869811327329977,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -9344,6 +11024,34 @@
               "penetration_m": 0.0007550190822070642
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00018330944581191702,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.00030416832429613786,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0004906178624243067,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0007884415157116207,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0004345544172973345,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -9497,6 +11205,34 @@
               "penetration_m": 0.0007530284457715272
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 6.648623022508757e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0003388259604581642,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.00032374800171117434,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.00045331690979716105,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0005697156695169811,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -9650,6 +11386,34 @@
               "penetration_m": 0.00040694691706870054
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.827047607896758e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.00018735112389116603,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0012238281748471063,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0014585332305815989,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0019586342035746935,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -9803,6 +11567,34 @@
               "penetration_m": 0.0004106970873744442
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 4.454351656361898e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 512,
+            "mean_abs_action": 0.0007611868449809392,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 90,
+            "mean_abs_action": 0.0021142814337426455,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 141,
+            "mean_abs_action": 0.0022014754346977843,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 624,
+            "mean_abs_action": 0.0018883278547481579,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -9956,6 +11748,34 @@
               "penetration_m": 0.000750743750501632
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 6.386873147521907e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.00048711824104620934,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0011723174476348892,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0019606300013546517,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.003237811125206426,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -10109,6 +11929,34 @@
               "penetration_m": 0.0007437271459968704
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 8.153321749515785e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.000746211213404527,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.002330307472537866,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.003431690363712039,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.00511510284889929,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -10262,6 +12110,34 @@
               "penetration_m": 0.0007303358792792106
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00010525767799838808,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0006126989227673256,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0023482034414721215,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.002928114587377968,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.005967429883238041,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -10415,6 +12291,34 @@
               "penetration_m": 0.0007643554655515369
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 8.441001267538785e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0005256210937008454,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0017748064829318547,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0026351008030704223,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.002239600053806399,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -10568,6 +12472,34 @@
               "penetration_m": 0.0008034442090458365
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 3.242314016494009e-05,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0006009082957655586,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.0009203879457451007,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.0010072125056867294,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0009378853590436866,
+            "nonzero_fraction": 1.0
+          }
         }
       },
       {
@@ -10721,6 +12653,34 @@
               "penetration_m": 0.0007772718867258334
             }
           ]
+        },
+        "phase_feedback_definition": "Historical fixed control windows, not exact source-frame stages",
+        "aligned_phase_feedback": {
+          "prepare": {
+            "frames": 50,
+            "mean_abs_action": 0.00013191512099070408,
+            "nonzero_fraction": 0.98
+          },
+          "approach": {
+            "frames": 538,
+            "mean_abs_action": 0.0004493519490310644,
+            "nonzero_fraction": 1.0
+          },
+          "closure": {
+            "frames": 89,
+            "mean_abs_action": 0.000501748398172139,
+            "nonzero_fraction": 1.0
+          },
+          "lift": {
+            "frames": 142,
+            "mean_abs_action": 0.000696394288211363,
+            "nonzero_fraction": 1.0
+          },
+          "transport_hold": {
+            "frames": 631,
+            "mean_abs_action": 0.0012463200063259408,
+            "nonzero_fraction": 1.0
+          }
         }
       }
     ],

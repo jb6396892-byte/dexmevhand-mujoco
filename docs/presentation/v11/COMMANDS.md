@@ -36,7 +36,7 @@ python scripts/74_build_v11_evidence.py
 
 ## 打开原生仿真窗口
 
-选中的策略完成冻结后，可以直接在 Ubuntu 桌面终端运行：
+本轮候选虽已冻结，但留出成绩比旧模型差，下面的入口用于检查实验，不表示建议部署。可以直接在 Ubuntu 桌面终端运行：
 
 ```bash
 python3 scripts/75_view_corrective_gpu.py second --episodes 1
@@ -44,7 +44,7 @@ python3 scripts/75_view_corrective_gpu.py first --episodes 1
 python3 scripts/75_view_corrective_gpu.py second --expert --episodes 1
 ```
 
-从 `learning/frozen_policy.json` 确认选中的策略目录，再从对应开发报告中找到 `diagnostic_rollout.pkl` 和该工况的 `geometry.npz`：
+从 `learning/safety_frozen_policy.json` 确认最终选中的策略目录，再从对应开发报告中找到 `diagnostic_rollout.pkl` 和该工况的 `geometry.npz`：
 
 ```bash
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia \
@@ -57,4 +57,6 @@ bash scripts/31_view_video_faithful_gpu.sh \
 
 ## 环境检查记录
 
-一次测试命令遗漏动态库环境变量，触发了 `mujoco_py` 重编译；已终止该测试进程并使用上述固定库路径重新执行。早期 76 项测试中 1 项因 MANO 未挂载而跳过；随后共享盘恢复且补充两项测试，78 项全部通过。没有据此升级 Python、NumPy 或 MuJoCo。
+一次测试命令遗漏动态库环境变量，触发了 `mujoco_py` 重编译；已终止该测试进程并使用上述固定库路径重新执行。早期 76 项测试中 1 项因 MANO 未挂载而跳过；随后共享盘恢复，最终补充到 82 项测试，全部通过。没有据此升级 Python、NumPy 或 MuJoCo。
+
+冻结提交为 `ff7d2bf0164231bd720e5c2b247ddbab8f6fff90`，包含本轮训练与测试实现。后续提交新增的 `aligned_phase_weights` 仅为相位问题的修正准备，旧脚本 72 仍保留本轮固定时间窗逻辑以便复现；不要误以为直接再次运行脚本 72 就会用上新采样器。
