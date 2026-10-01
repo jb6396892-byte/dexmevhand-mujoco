@@ -1,0 +1,407 @@
+{
+  "version": "v10",
+  "frozen_base_commit": "7315cb1",
+  "videos": [
+    {
+      "name": "first",
+      "id": 0,
+      "paths": {
+        "candidate": "data/processed/seq_dexycb_001/transport_v6/admission.json",
+        "rollout": "data/processed/seq_dexycb_001/transport_v6/best/diagnostic_rollout.pkl",
+        "geometry": "data/processed/seq_dexycb_001/scene_fidelity_v2/retarget/geometry.npz",
+        "dataset": "data/processed/seq_dexycb_001/learning_v6/demonstrations/demonstrations.pkl"
+      },
+      "sha256": {
+        "candidate": "09873cc10344b5ba39cf1c3674b1dbe92b3d5a6622d264564a1235768b3daaa7",
+        "rollout": "fb6ce22bf4bba88d271dde4979a40f41f40317cee269d01f2054503b2b2a69e9",
+        "geometry": "0b6072c4caa9355feaa4fdb8b458cd3c1fba2fc1d26a1f2927e9fed2759a0d46",
+        "dataset": "7938c20cc48ad4910e25a2e7d0307c76c4b27f6fc8028448ec87da12259ef499"
+      },
+      "control": {
+        "time_scale": 5.0,
+        "close": 0.1,
+        "cartesian_gain": 75.0
+      },
+      "horizon": 1417
+    },
+    {
+      "name": "second",
+      "id": 1,
+      "paths": {
+        "candidate": "data/processed/seq_dexycb_002/dynamic_contact_v9_verified/admission.json",
+        "rollout": "data/processed/seq_dexycb_002/dynamic_contact_v9_verified/nominal/diagnostic_rollout.pkl",
+        "geometry": "data/processed/seq_dexycb_002/retarget_v1/geometry.npz",
+        "dataset": "data/demonstrations/relocate-mug-second-dynamics-v9.pkl"
+      },
+      "sha256": {
+        "candidate": "b091a6bcd8db1ed51c8c97cf8c4ae541c3d12e294792d5ae355a7b98e6fab8bb",
+        "rollout": "e05e778d63f6e1078feaac075837110be4d8c99bcc99e20a533b449767eaf51c",
+        "geometry": "1d9f1b5727a8099e85043d934c45f48c5acc7278e04253b11273b3163cb11414",
+        "dataset": "0d36fc6b59dad849aaef6cb4b8994381f93a6001406723d7291c412957e3b081"
+      },
+      "control": {
+        "time_scale": 5.0,
+        "close": 0.3,
+        "cartesian_gain": 75.0
+      },
+      "horizon": 1450
+    }
+  ],
+  "development_second": [
+    {
+      "name": "nominal",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "cup_x_minus",
+      "cup_offset_m": [
+        -0.002,
+        0.0,
+        0.0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "goal_x_minus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        -0.01,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "cup_x_plus",
+      "cup_offset_m": [
+        0.002,
+        0.0,
+        0.0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "goal_x_plus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0.01,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "cup_y_minus",
+      "cup_offset_m": [
+        0.0,
+        -0.002,
+        0.0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "goal_y_minus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0.0,
+        -0.01,
+        0.0
+      ]
+    },
+    {
+      "name": "cup_y_plus",
+      "cup_offset_m": [
+        0.0,
+        0.002,
+        0.0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "goal_y_plus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0.0,
+        0.01,
+        0.0
+      ]
+    },
+    {
+      "name": "yaw_minus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": -2.0,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "yaw_plus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": 2.0,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "heldout_per_video": [
+    {
+      "name": "test_cup_x_minus",
+      "cup_offset_m": [
+        -0.0035,
+        0.0,
+        0.0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "test_goal_x_minus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        -0.017,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "test_cup_x_plus",
+      "cup_offset_m": [
+        0.0035,
+        0.0,
+        0.0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "test_goal_x_plus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0.017,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "test_cup_y_minus",
+      "cup_offset_m": [
+        0.0,
+        -0.0035,
+        0.0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "test_goal_y_minus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0.0,
+        -0.017,
+        0.0
+      ]
+    },
+    {
+      "name": "test_cup_y_plus",
+      "cup_offset_m": [
+        0.0,
+        0.0035,
+        0.0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "test_goal_y_plus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": 0.0,
+      "goal_offset_m": [
+        0.0,
+        0.017,
+        0.0
+      ]
+    },
+    {
+      "name": "test_yaw_minus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": -4.5,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "test_yaw_plus",
+      "cup_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "cup_yaw_deg": 4.5,
+      "goal_offset_m": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "scene_semantics": "Cup-only initial perturbation with unchanged hand initial state; transformed human/object target trajectories are synthetic guidance, not new real video labels.",
+  "phases": {
+    "approach": [
+      0,
+      30
+    ],
+    "closure": [
+      30,
+      40
+    ],
+    "lift": [
+      40,
+      55
+    ],
+    "transport_hold": [
+      55,
+      null
+    ]
+  },
+  "learning": {
+    "methods": [
+      "direct_bc",
+      "residual_bc"
+    ],
+    "hidden_sizes": [
+      64,
+      64
+    ],
+    "epochs": [
+      50,
+      150,
+      300
+    ],
+    "batch_size": 128,
+    "seed": 20261001,
+    "feature_mode": "phase_plus_video_id",
+    "video_balanced": true,
+    "selection": "Development full-gate success fraction, then mean goal distance, then earlier epoch; never heldout"
+  },
+  "evaluation": {
+    "baseline": "Frozen nominal action reference for each video; no scene-specific oracle or retuning",
+    "freeze_before_test": true,
+    "heldout_reoptimization": false,
+    "training_or_tuning_after_test": false,
+    "long_training": false
+  },
+  "gates": {
+    "max_scene_penetration_m": 0.001,
+    "max_initial_penetration_m": 0.0005,
+    "max_loaded_gap_m": 0.0005,
+    "max_slip_m": 0.005,
+    "max_saturation": 0.01,
+    "max_goal_m": 0.02,
+    "min_tail_contact_fraction": 0.8,
+    "min_finger_count": 4,
+    "max_tail_mean_tip_error_m": 0.015,
+    "max_tail_single_tip_error_m": 0.025,
+    "replay_max_observation_error": 1e-08
+  }
+}
