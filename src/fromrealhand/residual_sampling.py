@@ -10,6 +10,10 @@ class ResidualSampler:
         self.deterministic = deterministic
         self.observations, self.latent_actions, self.executed_actions = [], [], []
         self.context = None
+        self.guard = None
+        if checkpoint.get('contact_guard'):
+            from .contact_guard import ContactGuard
+            self.guard = ContactGuard(experiment, checkpoint['contact_guard'])
         actual = [experiment.env.control_timestep, experiment.duration, video['control']['time_scale']]
         if not np.allclose(checkpoint['clocks'][video['name']], actual, rtol=0., atol=1e-10):
             raise ValueError('Sampling clock differs from training reference')
@@ -33,6 +37,8 @@ class ResidualSampler:
         sample, info = self.checkpoint['policy'].get_action(x)
         latent = info['evaluation'] if self.deterministic else sample
         action = residual_action(reference, latent, self.checkpoint['residual_limits'][self.video['name']])
+        if self.guard is not None:
+            action = self.guard.apply(action)
         self.observations.append(x.copy())
         # DAPG evaluates the density of the *unclipped* sampled residual.
         self.latent_actions.append(latent.copy())

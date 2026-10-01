@@ -66,6 +66,11 @@ def summarize(rows):
 
 def execute(checkpoint, video, entry, output=None, half=False):
     source = dict(geometry=entry['geometry'])
+    if checkpoint.get('contact_guard'):
+        from fromrealhand.multivideo import MultiVideoActions
+        from fromrealhand.contact_guard import GuardedActions
+        factory=lambda exp: GuardedActions(MultiVideoActions(checkpoint,exp,video),exp,checkpoint['contact_guard'])
+        return run_case(video,source,None,output,half=half,seed=entry.get('seed',0),action_factory=factory)
     if checkpoint.get('feature_mode') == 'reference_contact':
         factory = lambda exp: ReferenceActions(checkpoint, exp, video, surface.video.contact_details)
         return run_case(video, source, None, output, half=half, seed=entry.get('seed', 0), action_factory=factory)
@@ -177,9 +182,17 @@ def freeze():
         path=RUN/mode/'policy.pickle'; result=json.loads((RUN/mode/'development.json').read_text())
         if result['summary']['count']!=35 or result['policy_sha256']!=digest(path): raise ValueError('Incomplete/changed development')
         rows.append(dict(method=mode,path=str(path),sha256=digest(path),**result['summary']))
+    amendment=ROOT/'configs/v12-contact-guard-amendment.json'
+    if amendment.exists():
+        for gain in json.loads(amendment.read_text())['gains']:
+            mode='guard_%03d'%round(gain*100)
+            path=RUN/mode/'policy.pickle';result=json.loads((RUN/mode/'development.json').read_text())
+            if result['summary']['count']!=35 or result['policy_sha256']!=digest(path): raise ValueError('Incomplete guard comparison')
+            rows.append(dict(method=mode,path=str(path),sha256=digest(path),**result['summary']))
     selected=min(rows,key=lambda r:(-r['task_fraction'],-r['strict_fraction'],r['mean_goal_m']))
     receipt=dict(protocol_sha256=digest(PLAN),selected=selected,candidates=rows,
                  demo_sha256=admission['demo_sha256'],heldout_used=False,long_training=False)
+    if amendment.exists(): receipt['guard_amendment_sha256']=digest(amendment)
     path=ROOT/'docs/presentation/v12/evidence/frozen-policy.json'
     if path.exists(): raise FileExistsError(path)
     write_json(path,receipt);write_json(RUN/'frozen-policy.json',receipt)
@@ -201,12 +214,18 @@ def heldout():
     receipt_path=ROOT/'docs/presentation/v12/evidence/frozen-policy.json'
     frozen=json.loads(receipt_path.read_text())
     if frozen['protocol_sha256']!=digest(PLAN): raise ValueError('Changed protocol')
+    if frozen.get('guard_amendment_sha256')!=digest(ROOT/'configs/v12-contact-guard-amendment.json'):
+        raise ValueError('Changed guard amendment')
     committed=subprocess.check_output(['git','show','HEAD:docs/presentation/v12/evidence/frozen-policy.json'],cwd=str(ROOT))
     if committed!=receipt_path.read_bytes(): raise ValueError('Commit freeze receipt before testing')
     paths={r['method']:Path(r['path']) for r in frozen['candidates']}
     for r in frozen['candidates']:
         if digest(r['path'])!=r['sha256']: raise ValueError('Changed frozen policy')
     paths['old_residual']=ROOT/'data/processed/dual_video_v10/learning/residual_bc/epoch_050.pickle'
+    guard=min([r for r in frozen['candidates'] if r['method'].startswith('guard_')],
+              key=lambda r:(-r['task_fraction'],-r['strict_fraction'],r['mean_goal_m']))
+    paths['selected_guard']=Path(guard['path'])
+    methods=plan['heldout']['methods']+['selected_guard']
     checkpoints={k:pickle.loads(p.read_bytes()) for k,p in paths.items()}
     output=RUN/'heldout';output.mkdir(exist_ok=False)
     rows=[]
@@ -215,7 +234,7 @@ def heldout():
     for video in parent['videos']:
         for case in heldout_cases(plan):
             folder=output/video['name']/case['name'];source,g=setup_case(video,case,folder)
-            for method in plan['heldout']['methods']:
+            for method in methods:
                 r,demo=execute(checkpoints[method],video,source)
                 row=dict(video=video['name'],case=case['name'],method=method,report=r,**gates(r,plan))
                 rows.append(row)
@@ -224,7 +243,7 @@ def heldout():
                 write_json(output/'progress.json',rows)
                 print('HELDOUT',method,video['name'],case['name'],json.dumps({**gates(r,plan),'goal_mm':r['final_distance_m']*1000,'depth_mm':r['max_hand_scene_penetration_m']*1000}),flush=True)
     result=dict(protocol_sha256=digest(PLAN),selected_before_test=frozen['selected']['method'],reports=rows,
-                summary={m:summarize([r for r in rows if r['method']==m]) for m in plan['heldout']['methods']},
+                summary={m:summarize([r for r in rows if r['method']==m]) for m in methods},
                 tuning_after_test=False,long_training=False)
     write_json(output/'summary.json',result)
     print('HELDOUT_SUMMARY',json.dumps(result['summary']),flush=True)
@@ -233,7 +252,7 @@ def heldout():
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('stage',choices=['train','develop','freeze','heldout'])
-    parser.add_argument('--mode',choices=['aligned_bc','contact_reference_bc'],default='aligned_bc')
+    parser.add_argument('--mode',default='aligned_bc')
     args=parser.parse_args();RUN.mkdir(parents=True,exist_ok=True)
     if args.stage=='train': train(args.mode)
     elif args.stage=='develop': develop(args.mode)

@@ -31,7 +31,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--train',action='store_true')
     args=parser.parse_args()
-    plan,parent,admission,_,_,_=study.load_inputs()
+    plan,parent,admission,demos,_,_=study.load_inputs()
     freeze=json.loads((study.RUN/'frozen-policy.json').read_text())
     chosen=freeze['selected']; path=Path(chosen['path'])
     if digest(path)!=chosen['sha256']: raise ValueError('Frozen candidate changed')
@@ -48,9 +48,11 @@ def main():
         error=float(np.max(np.abs(demo['observations']-expected['observations'])))
         action_error=float(np.max(np.abs(demo['actions']-expected['actions'])))
         if max(error,action_error)>1e-8: raise RuntimeError('Residual sampler changed physical execution')
+        half,_=study.execute(checkpoint,video,entry,half=True)
         checks.append(dict(video=video['name'],observation_error=error,action_error=action_error,
                            feature_dim=trajectory['observations'].shape[1],horizon=len(trajectory['actions']),
-                           report=report,**study.gates(report,plan)))
+                           report=report,half_report=half,half_task_pass=study.gates(half,plan)['task_pass'],
+                           **study.gates(report,plan)))
     preflight=dict(policy_sha256=digest(path),protocol_sha256=digest(study.PLAN),checks=checks,
          device_scope='MuJoCo and legacy MJRL natural-gradient policy on CPU; value baseline on CUDA',
          action_contract='Unclipped residual for Gaussian likelihood; bounded residual plus reference for env.step; native scaling once',
@@ -58,14 +60,39 @@ def main():
     study.write_json(output/'preflight.json',preflight)
     if not args.train:
         print('PREFLIGHT',json.dumps(preflight),flush=True);return
+    if not all(c['task_pass'] and c['half_task_pass'] for c in checks):
+        raise RuntimeError('Nominal standard/half-step task gate failed; not starting short training')
     # Keep exploration comparable to BC output scale, not legacy std=exp(-2).
     std=np.clip(policy.model.out_scale.detach().numpy()*.2,1e-4,.005)
     policy.min_log_std=-10.
     policy.log_std.data=torch.as_tensor(np.log(std),dtype=torch.float32)
     policy.set_param_values(policy.get_param_values())
-    data=np.load(study.RUN/chosen['method']/'input.npz')
     stride=plan['dapg']['demo_stride']
-    demo_paths=[dict(observations=data['features'][::stride],actions=data['labels'][::stride])]
+    if checkpoint.get('contact_guard'):
+        from fromrealhand.contact_guard import ContactGuard
+        from fromrealhand.multivideo import conditioned_features
+        demo_paths=[]
+        for video,entry in zip(parent['videos'],nominal):
+            demonstration=demos[video['name']+'/'+entry['name']];boxes=[]
+            class Expert:
+                def __init__(self,exp):
+                    self.exp=exp;self.guard=ContactGuard(exp,checkpoint['contact_guard'])
+                    self.x=[];self.y=[];boxes.append(self)
+                def __len__(self): return video['horizon']
+                def __getitem__(self,step):
+                    e=self.exp.env;d=e.sim.data
+                    self.x.append(conditioned_features(e._get_observations(),d.qpos,d.qvel,step,e.control_timestep,
+                                      self.exp.duration,video['control']['time_scale'],video['id']))
+                    action=demonstration['actions'][step]
+                    self.y.append(action-checkpoint['references'][video['name']][step]-self.guard.correction())
+                    return action.copy()
+            _,replay=run_case(video,dict(geometry=entry['geometry']),None,seed=entry['seed'],action_factory=Expert)
+            if np.max(np.abs(replay['observations']-demonstration['observations']))>1e-8:
+                raise RuntimeError('Guard-aware expert labels differ from physical replay')
+            demo_paths.append(dict(observations=np.asarray(boxes[0].x)[::stride],actions=np.asarray(boxes[0].y)[::stride]))
+    else:
+        data=np.load(study.RUN/chosen['method']/'input.npz')
+        demo_paths=[dict(observations=data['features'][::stride],actions=data['labels'][::stride])]
     baseline=MLPBaseline(SimpleNamespace(observation_dim=policy.n),epochs=2,use_gpu=True)
     agent=DAPG(None,policy,baseline,demo_paths=demo_paths,
                FIM_invert_args={'iters':plan['dapg']['cg_iterations'],'damping':1e-3},

@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-02",
+  "reason": "Before any v12 heldout run: reference/contact BC regressed on development. Test bounded geometric unloading around the stable aligned BC, without adding closure force.",
+  "parent_candidate": "aligned_bc",
+  "gains": [0.15, 0.3, 0.6],
+  "target_depth_m": 0.0007,
+  "max_joint_delta_rad": 0.025,
+  "filter_alpha": 0.2,
+  "selection": "Same equal-video task/strict/goal ranking; development only",
+  "heldout_extra_method": "selected_guard",
+  "no_physics_parameter_changes": true,
+  "heldout_used_for_amendment": false
+}
