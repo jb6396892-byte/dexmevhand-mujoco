@@ -93,7 +93,11 @@ def main():
     if not (learning/'frozen_policy.json').exists():
         return
     # This exact-byte receipt must be committed BEFORE the heldout evaluator runs.
-    shutil.copy2(str(learning/'frozen_policy.json'), str(OUT/'evidence/frozen-policy.json'))
+    freeze=learning/'safety_frozen_policy.json'
+    if not freeze.exists(): freeze=learning/'frozen_policy.json'
+    shutil.copy2(str(freeze), str(OUT/'evidence/frozen-policy.json'))
+    if freeze.name!='frozen_policy.json':
+        write('base-frozen-policy.json',read(learning/'frozen_policy.json'))
     for name in ['input.json', 'teacher_pilot.json']:
         value = read(learning/name)
         if name == 'teacher_pilot.json':
@@ -106,6 +110,8 @@ def main():
         collection['accepted_by_video'] = dict(Counter(r['video'] for r in collection['rows'] if r['admitted_labels']))
     write('corrections.json', collections)
     comparisons = read(learning/'comparison.json')
+    if (learning/'safety_comparison.json').exists():
+        comparisons+=read(learning/'safety_comparison.json')
     for item in comparisons:
         item['reports'] = [policy_row(r) for r in item['reports']]
     write('development-policies.json', comparisons)
@@ -121,13 +127,14 @@ def main():
     fig, ax = plt.subplots(figsize=(8, 4))
     labels = [r['label'] for r in comparisons]
     ax.bar(labels, [r['full_fraction']*100 for r in comparisons], color='#278477')
+    ax.tick_params(axis='x',labelrotation=25,labelsize=8)
     ax.set_ylim(0, 105)
     ax.set_ylabel('Equal-video full-gate success (%)')
     for i, r in enumerate(comparisons):
         ax.text(i, r['full_fraction']*100+1, '%d/%d' % (r['full_count'], r['case_count']), ha='center')
     ax.set_title('Development selection; not independent test performance')
     save(fig, 'development-policies.png')
-    frozen = read(learning/'frozen_policy.json')
+    frozen = read(freeze)
     selected = next(r for r in comparisons if r['label'] == frozen['selected']['label'])
     refs = pickle.loads((RUN/'experts/references.pkl').read_bytes())
     fig, axes = plt.subplots(2, 2, figsize=(11, 7))

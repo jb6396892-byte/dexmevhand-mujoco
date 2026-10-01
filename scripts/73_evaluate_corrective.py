@@ -16,13 +16,16 @@ from fromrealhand.multivideo import phase_diagnostics
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,default=RUN/'heldout')
+    parser.add_argument('--freeze',type=Path,default=RUN/'learning/frozen_policy.json')
     args=parser.parse_args();study,parent,sha=protocol()
-    frozen_path=RUN/'learning/frozen_policy.json';frozen=json.loads(frozen_path.read_text())
+    frozen_path=args.freeze;frozen=json.loads(frozen_path.read_text())
     selected=frozen['selected']
     if frozen['protocol_sha256']!=sha or digest(selected['policy'])!=selected['policy_sha256']:
         raise ValueError('Frozen candidate changed')
     if digest(RUN/'experts/references.pkl')!=frozen['reference_sha256']:
         raise ValueError('Frozen references changed')
+    if 'amendment_sha256' in frozen and digest(ROOT/'configs/v11-residual-gain-amendment.json')!=frozen['amendment_sha256']:
+        raise ValueError('Gain amendment changed')
     receipt=ROOT/'docs/presentation/v11/evidence/frozen-policy.json'
     if not receipt.exists() or digest(receipt)!=digest(frozen_path):
         raise ValueError('Export the freeze receipt before testing')

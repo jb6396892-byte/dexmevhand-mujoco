@@ -15,7 +15,9 @@ def replay_paths(video, expert=False):
     if expert:
         rollout = Path(admission['rollout'])
     else:
-        frozen = json.loads((RUN/'learning/frozen_policy.json').read_text())
+        freeze=RUN/'learning/safety_frozen_policy.json'
+        if not freeze.exists(): freeze=RUN/'learning/frozen_policy.json'
+        frozen = json.loads(freeze.read_text())
         rollout = RUN/'learning'/frozen['selected']['label']/video/case/'diagnostic_rollout.pkl'
     geometry = Path(admission['geometry'])
     if not rollout.exists() or not geometry.exists():

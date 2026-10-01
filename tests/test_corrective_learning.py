@@ -84,5 +84,22 @@ class CorrectiveTests(unittest.TestCase):
         self.assertEqual(report['approach']['frames'],500)
         self.assertTrue(all(r['mean_abs_action']==0 for r in report.values()))
 
+    def test_residual_gain_scales_network_not_reference(self):
+        import torch
+        root=Path(__file__).resolve().parents[1]
+        sys.path.insert(0,str(root/'scripts'))
+        module=importlib.import_module('76_select_residual_gain')
+        from mjrl.policies.gaussian_mlp import MLP
+        policy=MLP(SimpleNamespace(observation_dim=84,action_dim=30),hidden_sizes=(4,4),seed=4)
+        for model in (policy.model,policy.old_model):
+            model.set_transformations(np.ones(84),np.full(84,2.),np.full(30,.1),np.full(30,.2))
+        x=torch.ones((1,84));before=policy.model(x).detach().numpy().copy()
+        reference=np.full((2,30),.3)
+        checkpoint={'policy':policy,'method':'residual_bc','references':{'second':reference.copy()}}
+        module.scale_residual(checkpoint,.25)
+        np.testing.assert_allclose(policy.model(x).detach().numpy(),before*.25,rtol=1e-6)
+        np.testing.assert_array_equal(checkpoint['references']['second'],reference)
+        with self.assertRaises(ValueError): module.scale_residual(checkpoint,0)
+
 
 if __name__=='__main__': unittest.main()

@@ -1,0 +1,11 @@
+{
+  "parent_protocol_sha256": "f7369cc347a9a9def134a101b4f9aeb1f5f2af1765998c0649f5b24aeb7260d3",
+  "reason": "Development BC/DAgger predictions consume the small contact headroom. First correction round regressed from 24/35 to 20/35 full passes. No new heldout has run.",
+  "base": "Best of the four preregistered development candidates, chosen by the original ranking",
+  "additional_residual_gains": [0.25, 0.5],
+  "selection": "Original development ranking across base and two gain variants",
+  "implementation": "Scale neural residual output shift and scale before the existing residual limits; do not scale the fixed reference or change physics",
+  "new_training": false,
+  "heldout_changes": false,
+  "tuning_after_test": false
+}

@@ -12,9 +12,10 @@ export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 PYTHONPATH=src python -m unittest discover -s tests
 python scripts/71_develop_safe_experts.py --resume
 python scripts/72_train_corrective_residual.py
+python scripts/76_select_residual_gain.py
 python scripts/74_build_v11_evidence.py
 # 检查并提交 evidence/frozen-policy.json 与实现后，才允许下面的新留出评估。
-python scripts/73_evaluate_corrective.py
+python scripts/73_evaluate_corrective.py --freeze data/processed/dual_video_v11/learning/safety_frozen_policy.json
 python scripts/74_build_v11_evidence.py
 ```
 
