@@ -1,0 +1,94 @@
+{
+  "status": {
+    "state": "running",
+    "iterations": 18,
+    "requested_iterations": 200,
+    "started_at": "2026-10-02T06:42:17.348241+00:00",
+    "training_pid": 14178,
+    "errors": [],
+    "warnings": [
+      "exploration_task_failures"
+    ],
+    "sampled_steps": 51606,
+    "updated_at": "2026-10-02T07:01:48.664351+00:00",
+    "elapsed_seconds": 1171.3152035479998,
+    "seconds_without_iteration": 10.013673769999514,
+    "estimated_remaining_seconds": 11843.298169207554,
+    "last_checkpoint": "iteration_0005.pickle",
+    "process_exit_code": null,
+    "stop_reason": null,
+    "trajectories": 36,
+    "task_pass": 35,
+    "strict_pass": 33,
+    "recent_task_fraction": 0.9,
+    "max_measured_kl": 0.000635736680123955,
+    "latest_mean_return": 38204.03913723875,
+    "nonzero_updates": 18
+  },
+  "failures": [
+    {
+      "iteration": 14,
+      "video": "second",
+      "case": "former_test_cup_y_minus",
+      "task_pass": false,
+      "strict_pass": false,
+      "lift_pass": true,
+      "labels": [
+        "scene_penetration"
+      ],
+      "max_penetration_m": 0.0010153733562412478,
+      "goal_distance_m": 0.011353902594036465,
+      "peak_contact": {
+        "geoms": [
+          "C_thdistal",
+          "collision_mug_13"
+        ],
+        "time_s": 7.537999999999392,
+        "penetration_m": 0.0010153733562412478
+      }
+    },
+    {
+      "iteration": 17,
+      "video": "first",
+      "case": "former_test_cup_y_plus",
+      "task_pass": true,
+      "strict_pass": false,
+      "lift_pass": true,
+      "labels": [
+        "tip_error"
+      ],
+      "max_penetration_m": 0.0007193663114616927,
+      "goal_distance_m": 0.014267358716826073,
+      "peak_contact": {
+        "geoms": [
+          "C_ffdistal",
+          "collision_mug_47"
+        ],
+        "time_s": 7.275999999999421,
+        "penetration_m": 0.0007193663114616927
+      }
+    },
+    {
+      "iteration": 18,
+      "video": "first",
+      "case": "former_test_yaw_plus",
+      "task_pass": true,
+      "strict_pass": false,
+      "lift_pass": true,
+      "labels": [
+        "tip_error"
+      ],
+      "max_penetration_m": 0.0005591091149096984,
+      "goal_distance_m": 0.007865390472086892,
+      "peak_contact": {
+        "geoms": [
+          "C_ffdistal",
+          "C_mfdistal"
+        ],
+        "time_s": 6.601999999999495,
+        "penetration_m": 0.0005591091149096984
+      }
+    }
+  ],
+  "scope": "Timestamped training-sample snapshot, not independent evaluation"
+}

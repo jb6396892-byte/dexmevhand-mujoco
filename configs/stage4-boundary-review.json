@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "dataset": "data/processed/stage4_skills_v1",
+  "output": "data/processed/stage4_boundary_review_v1",
+  "boundary_window_steps": 25,
+  "handoff_event_fraction_warning": 0.8,
+  "opposition_cosine_threshold": -0.3,
+  "sensitivity_contact_force_n": [0.005, 0.01, 0.02],
+  "sensitivity_persistence_steps": [3, 5, 10],
+  "source_sequences": {
+    "first": "data/real_data/relocate_mug/seq_dexycb_001",
+    "second": "data/real_data/relocate_mug/seq_dexycb_002"
+  },
+  "scope": "Read-only boundary audit; sensitivity is diagnostic, not parameter selection; no heldout data"
+}

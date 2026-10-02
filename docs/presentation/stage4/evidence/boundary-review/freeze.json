@@ -1,0 +1,30 @@
+{
+  "protected_sha256": {
+    "data/processed/stage4_skills_v1/manifest.json": "46338f73d8490bab3aa8e15159f649d5c9771750ec321be114d2eb85965c7f74",
+    "data/processed/stage4_skills_v1/validation.json": "15f0ee461e295bd6be88e5729fb5cb925b654e7bd6e3ab1e70559a02d5bf2d2b",
+    "configs/stage4-boundary-review.json": "434d19b916840842d22d4c02028da954476fd247582afc64bab98c7c216473f6",
+    "configs/stage4-skills.json": "dc32c22a25c826ecc8c9d9c3c1fde67b17d4b94693f9243442593dd3e3adf7cc",
+    "src/fromrealhand/skills.py": "25b81dfef9849d1d86797016f6f32c36f3ff6acb689486e53724d2ad5e53dac6",
+    "scripts/stage4_common.py": "c367390ad0eb785b368315b5f9a0a0c684bf73ad553dcf53b91e1c983ea8f0e2",
+    "src/fromrealhand/skill_review.py": "fdacc8e87ef70a144509490c533ba2f8824e6bd4f92b66a47c0756b541ea9757",
+    "scripts/94_review_skill_boundaries.py": "7c4be9acbfa09875165702cd0523de032c53d4f88e5d50ce7a44237875bb0d18",
+    "data/processed/seq_dexycb_001/scene_fidelity_v2/retarget/geometry.npz": "0b6072c4caa9355feaa4fdb8b458cd3c1fba2fc1d26a1f2927e9fed2759a0d46",
+    "data/processed/stage4_skills_v1/first/video_seed_0/events.json": "43b0f147fc960a47576d40e20b1f5f5b1994aabf4222624ab63e748ae410fe5e",
+    "data/real_data/relocate_mug/seq_dexycb_001/meta.json": "f74eb2e05d84647e4f83af4da5e6cb242fb7a6dd978d616395d51f7d4b0232b6",
+    "data/real_data/relocate_mug/seq_dexycb_001/frame_mapping.json": "f23c4c2d477a11dce661b9860f6820dc9123475d35647713afdb360a43dcbe4a",
+    "data/processed/stage4_skills_v1/first/video_seed_0/reach.pkl": "c48ecaa1cd534f90ba63b694fb2f45f04ab8839dfaa51002f6225607abf86cde",
+    "data/processed/stage4_skills_v1/first/video_seed_0/grasp.pkl": "e9c78b5cb982487dc4e71457ab7ed15a4f5a21fa7628516961e1559881e42912",
+    "data/processed/stage4_skills_v1/first/video_seed_0/lift.pkl": "e8e7b9f4705330bfd23625b2bd80c0b2a8403fa4965424b1084fc7f04b29131c",
+    "data/processed/stage4_skills_v1/first/video_seed_0/transport.pkl": "b0f621ac762aa201776192fecc4b8fc06df1a4259fc709640becc62dbb6fa221",
+    "data/processed/dual_video_v10/development/nominal/geometry.npz": "09dd114994372c570719efd4821c90a261787cd842bd79eec6a17b5c5f4abfd7",
+    "data/processed/stage4_skills_v1/second/nominal/events.json": "aeeaa5da616d844e59e3433374181610fa308ab9b262d3f09e2187d60ca91db5",
+    "data/real_data/relocate_mug/seq_dexycb_002/meta.json": "50b22b480fed544d0f1a24c02ca6ad4a1ba856e82bb975fc916fd15a993ba03f",
+    "data/real_data/relocate_mug/seq_dexycb_002/frame_mapping.json": "7dae6e7c391d18cc94597295f2cfbe9a39484937a1a0440f085f212e1c7f68f5",
+    "data/processed/stage4_skills_v1/second/nominal/reach.pkl": "5cac02256aad7b7757ffd9712a24f170a9c96ed13916fa4785541d85b74ec5ef",
+    "data/processed/stage4_skills_v1/second/nominal/grasp.pkl": "79ce37c906d5e28e0731de54adf57c9d036f6bcabc5239dc2b8d26b7c08b7765",
+    "data/processed/stage4_skills_v1/second/nominal/lift.pkl": "6d4902a2c66a40081baabd4a60456c48c0965949f1fc121464943d30352a293d",
+    "data/processed/stage4_skills_v1/second/nominal/transport.pkl": "2ad883cda19c4c0297191ed4f7a0077bf0dec09a3cf315dca48dfb148427063a"
+  },
+  "frozen_at": "2026-10-02T06:58:51.593338+00:00",
+  "heldout_used": false
+}

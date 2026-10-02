@@ -1,0 +1,688 @@
+{
+  "completed": true,
+  "inputs_unchanged": true,
+  "heldout_used": false,
+  "reports": [
+    {
+      "checks": {
+        "boundaries_reproduced": true,
+        "finite_source_clock": true,
+        "monotonic_source_clock": true,
+        "all_steps_safe": true,
+        "persistent_events": true,
+        "terminal_hold": true
+      },
+      "mechanical_pass": true,
+      "boundaries": [
+        {
+          "skill": "reach",
+          "next_skill": "grasp",
+          "boundary_state_index": 512,
+          "confirmation_action_range": [
+            507,
+            512
+          ],
+          "boundary_time_s": 5.12,
+          "first_confirming_post_time_s": 5.08,
+          "source_frame_at_last_action": 24.6356932325145,
+          "confirmation_pass": true,
+          "before_event_fraction": 0.36,
+          "after_event_fraction": 1.0,
+          "after_window_steps": 25,
+          "handoff_warning": false,
+          "loaded_fingers": [
+            "th"
+          ],
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774,
+          "window_max_penetration_m": 0.00023314589847439615
+        },
+        {
+          "skill": "grasp",
+          "next_skill": "lift",
+          "boundary_state_index": 538,
+          "confirmation_action_range": [
+            533,
+            538
+          ],
+          "boundary_time_s": 5.38,
+          "first_confirming_post_time_s": 5.34,
+          "source_frame_at_last_action": 27.357929256189557,
+          "confirmation_pass": true,
+          "before_event_fraction": 0.2,
+          "after_event_fraction": 0.92,
+          "after_window_steps": 25,
+          "handoff_warning": false,
+          "loaded_fingers": [
+            "th",
+            "ff",
+            "mf"
+          ],
+          "bottom_m": 0.0001443349133536183,
+          "target_distance_m": 0.1481020583342534,
+          "window_max_penetration_m": 0.00019803418301455442
+        },
+        {
+          "skill": "lift",
+          "next_skill": "transport",
+          "boundary_state_index": 619,
+          "confirmation_action_range": [
+            614,
+            619
+          ],
+          "boundary_time_s": 6.19,
+          "first_confirming_post_time_s": 6.15,
+          "source_frame_at_last_action": 36.275794414890065,
+          "confirmation_pass": true,
+          "before_event_fraction": 0.2,
+          "after_event_fraction": 0.84,
+          "after_window_steps": 25,
+          "handoff_warning": false,
+          "loaded_fingers": [
+            "th",
+            "ff",
+            "mf",
+            "rf"
+          ],
+          "bottom_m": 0.056685651234193286,
+          "target_distance_m": 0.09089898628663791,
+          "window_max_penetration_m": 0.000571679629679276
+        }
+      ],
+      "finger_timing": {
+        "th": {
+          "first_confirmed_state_index": 512,
+          "first_confirmed_time_s": 5.12,
+          "source_frame": 24.6356932325145,
+          "tail_contact_fraction": 1.0,
+          "longest_contact_s": 9.1
+        },
+        "ff": {
+          "first_confirmed_state_index": 538,
+          "first_confirmed_time_s": 5.38,
+          "source_frame": 27.357929256189557,
+          "tail_contact_fraction": 1.0,
+          "longest_contact_s": 8.540000000000001
+        },
+        "mf": {
+          "first_confirmed_state_index": 534,
+          "first_confirmed_time_s": 5.34,
+          "source_frame": 26.933143806526083,
+          "tail_contact_fraction": 1.0,
+          "longest_contact_s": 4.72
+        },
+        "rf": {
+          "first_confirmed_state_index": 548,
+          "first_confirmed_time_s": 5.48,
+          "source_frame": 28.428396417217915,
+          "tail_contact_fraction": 1.0,
+          "longest_contact_s": 4.7
+        },
+        "lf": {
+          "first_confirmed_state_index": null,
+          "first_confirmed_time_s": null,
+          "source_frame": null,
+          "tail_contact_fraction": 0.0,
+          "longest_contact_s": 0.0
+        }
+      },
+      "sensitivity": [
+        {
+          "contact_force_n": 0.005,
+          "persistence_steps": 3,
+          "boundaries": [
+            510,
+            536,
+            617
+          ],
+          "shift_steps": [
+            -2,
+            -2,
+            -2
+          ],
+          "max_abs_shift_s": 0.02,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.005,
+          "persistence_steps": 5,
+          "boundaries": [
+            512,
+            538,
+            619
+          ],
+          "shift_steps": [
+            0,
+            0,
+            0
+          ],
+          "max_abs_shift_s": 0.0,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.005,
+          "persistence_steps": 10,
+          "boundaries": [
+            517,
+            543,
+            624
+          ],
+          "shift_steps": [
+            5,
+            5,
+            5
+          ],
+          "max_abs_shift_s": 0.05,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.01,
+          "persistence_steps": 3,
+          "boundaries": [
+            510,
+            536,
+            617
+          ],
+          "shift_steps": [
+            -2,
+            -2,
+            -2
+          ],
+          "max_abs_shift_s": 0.02,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.01,
+          "persistence_steps": 5,
+          "boundaries": [
+            512,
+            538,
+            619
+          ],
+          "shift_steps": [
+            0,
+            0,
+            0
+          ],
+          "max_abs_shift_s": 0.0,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.01,
+          "persistence_steps": 10,
+          "boundaries": [
+            517,
+            543,
+            624
+          ],
+          "shift_steps": [
+            5,
+            5,
+            5
+          ],
+          "max_abs_shift_s": 0.05,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.02,
+          "persistence_steps": 3,
+          "boundaries": [
+            510,
+            536,
+            617
+          ],
+          "shift_steps": [
+            -2,
+            -2,
+            -2
+          ],
+          "max_abs_shift_s": 0.02,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.02,
+          "persistence_steps": 5,
+          "boundaries": [
+            512,
+            538,
+            619
+          ],
+          "shift_steps": [
+            0,
+            0,
+            0
+          ],
+          "max_abs_shift_s": 0.0,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.02,
+          "persistence_steps": 10,
+          "boundaries": [
+            517,
+            543,
+            624
+          ],
+          "shift_steps": [
+            5,
+            5,
+            5
+          ],
+          "max_abs_shift_s": 0.05,
+          "events_found": true
+        }
+      ],
+      "handoff_warning_count": 0,
+      "human_review_status": "pending",
+      "boundary_change_proposed": false,
+      "physical_replay": {
+        "max_state_replay_error": 0.0,
+        "source_rgb": [
+          {
+            "step": 511,
+            "source_frame": 25,
+            "output_frame": 25,
+            "available": true,
+            "path": "data/real_data/relocate_mug/seq_dexycb_001/rgb/000025.jpg",
+            "sha256": "7c01041ca34e66a43f2b35f1eba6b1c28ff9796d6397f33c870aeb20fc75c86c"
+          },
+          {
+            "step": 537,
+            "source_frame": 27,
+            "output_frame": 27,
+            "available": true,
+            "path": "data/real_data/relocate_mug/seq_dexycb_001/rgb/000027.jpg",
+            "sha256": "30793a162b9ec8aee61f6d04e47ecc7a902447539d030cb037d95f08f1e46294"
+          },
+          {
+            "step": 618,
+            "source_frame": 36,
+            "output_frame": 36,
+            "available": true,
+            "path": "data/real_data/relocate_mug/seq_dexycb_001/rgb/000036.jpg",
+            "sha256": "c5fa3f8782803d044dc328b39c11c47c0a87b6c3ccf2ec2299d48ac15521ada2"
+          }
+        ],
+        "all_source_rgb_available": true,
+        "boundaries": [
+          {
+            "next_skill": "grasp",
+            "state_index": 512,
+            "cosine_at_boundary": null,
+            "opposing_at_boundary": false,
+            "window_opposing_fraction": 0.16
+          },
+          {
+            "next_skill": "lift",
+            "state_index": 538,
+            "cosine_at_boundary": -0.9402151590187143,
+            "opposing_at_boundary": true,
+            "window_opposing_fraction": 0.68
+          },
+          {
+            "next_skill": "transport",
+            "state_index": 619,
+            "cosine_at_boundary": -0.9615407734111626,
+            "opposing_at_boundary": true,
+            "window_opposing_fraction": 1.0
+          }
+        ],
+        "lifted_opposing_fraction": 1.0,
+        "tail_opposing_fraction": 1.0,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "image": "data/processed/stage4_boundary_review_v1/first-boundaries.jpg",
+        "image_sha256": "8ced6553dcd51b6b01924a2c34ec0b5bbcd2764f9b420f48e8381c2b40bacd1d",
+        "opposition_scope": "Loaded thumb/other normal pair; diagnostic, not proof of force closure",
+        "published_image": "first-boundaries.jpg"
+      },
+      "trajectory": "first/video_seed_0",
+      "video": "first",
+      "engineer_checks_passed": true
+    },
+    {
+      "checks": {
+        "boundaries_reproduced": true,
+        "finite_source_clock": true,
+        "monotonic_source_clock": true,
+        "all_steps_safe": true,
+        "persistent_events": true,
+        "terminal_hold": true
+      },
+      "mechanical_pass": true,
+      "boundaries": [
+        {
+          "skill": "reach",
+          "next_skill": "grasp",
+          "boundary_state_index": 550,
+          "confirmation_action_range": [
+            545,
+            550
+          ],
+          "boundary_time_s": 5.5,
+          "first_confirming_post_time_s": 5.46,
+          "source_frame_at_last_action": 25.850321371440803,
+          "confirmation_pass": true,
+          "before_event_fraction": 0.2,
+          "after_event_fraction": 0.88,
+          "after_window_steps": 25,
+          "handoff_warning": false,
+          "loaded_fingers": [
+            "ff",
+            "mf"
+          ],
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424,
+          "window_max_penetration_m": 0.00047750740150147297
+        },
+        {
+          "skill": "grasp",
+          "next_skill": "lift",
+          "boundary_state_index": 582,
+          "confirmation_action_range": [
+            577,
+            582
+          ],
+          "boundary_time_s": 5.82,
+          "first_confirming_post_time_s": 5.78,
+          "source_frame_at_last_action": 29.305667841779698,
+          "confirmation_pass": true,
+          "before_event_fraction": 0.24,
+          "after_event_fraction": 0.92,
+          "after_window_steps": 25,
+          "handoff_warning": false,
+          "loaded_fingers": [
+            "th",
+            "ff",
+            "mf"
+          ],
+          "bottom_m": -7.711616133858042e-05,
+          "target_distance_m": 0.22813303062526322,
+          "window_max_penetration_m": 0.0007319869745972258
+        },
+        {
+          "skill": "lift",
+          "next_skill": "transport",
+          "boundary_state_index": 694,
+          "confirmation_action_range": [
+            689,
+            694
+          ],
+          "boundary_time_s": 6.94,
+          "first_confirming_post_time_s": 6.9,
+          "source_frame_at_last_action": 41.820961563965795,
+          "confirmation_pass": true,
+          "before_event_fraction": 0.2,
+          "after_event_fraction": 0.72,
+          "after_window_steps": 25,
+          "handoff_warning": true,
+          "loaded_fingers": [
+            "th",
+            "ff",
+            "mf"
+          ],
+          "bottom_m": 0.05052074447814414,
+          "target_distance_m": 0.1745417983361829,
+          "window_max_penetration_m": 0.0009009991940679115
+        }
+      ],
+      "finger_timing": {
+        "th": {
+          "first_confirmed_state_index": 576,
+          "first_confirmed_time_s": 5.76,
+          "source_frame": 28.64997863769531,
+          "tail_contact_fraction": 1.0,
+          "longest_contact_s": 8.790000000000001
+        },
+        "ff": {
+          "first_confirmed_state_index": 558,
+          "first_confirmed_time_s": 5.58,
+          "source_frame": 26.703866582692196,
+          "tail_contact_fraction": 1.0,
+          "longest_contact_s": 3.93
+        },
+        "mf": {
+          "first_confirmed_state_index": 550,
+          "first_confirmed_time_s": 5.5,
+          "source_frame": 25.850321371440803,
+          "tail_contact_fraction": 1.0,
+          "longest_contact_s": 6.99
+        },
+        "rf": {
+          "first_confirmed_state_index": 1113,
+          "first_confirmed_time_s": 11.13,
+          "source_frame": 72.08517361195003,
+          "tail_contact_fraction": 1.0,
+          "longest_contact_s": 3.42
+        },
+        "lf": {
+          "first_confirmed_state_index": null,
+          "first_confirmed_time_s": null,
+          "source_frame": null,
+          "tail_contact_fraction": 0.0,
+          "longest_contact_s": 0.0
+        }
+      },
+      "sensitivity": [
+        {
+          "contact_force_n": 0.005,
+          "persistence_steps": 3,
+          "boundaries": [
+            548,
+            580,
+            692
+          ],
+          "shift_steps": [
+            -2,
+            -2,
+            -2
+          ],
+          "max_abs_shift_s": 0.02,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.005,
+          "persistence_steps": 5,
+          "boundaries": [
+            550,
+            582,
+            694
+          ],
+          "shift_steps": [
+            0,
+            0,
+            0
+          ],
+          "max_abs_shift_s": 0.0,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.005,
+          "persistence_steps": 10,
+          "boundaries": [
+            555,
+            601,
+            710
+          ],
+          "shift_steps": [
+            5,
+            19,
+            16
+          ],
+          "max_abs_shift_s": 0.19,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.01,
+          "persistence_steps": 3,
+          "boundaries": [
+            548,
+            580,
+            692
+          ],
+          "shift_steps": [
+            -2,
+            -2,
+            -2
+          ],
+          "max_abs_shift_s": 0.02,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.01,
+          "persistence_steps": 5,
+          "boundaries": [
+            550,
+            582,
+            694
+          ],
+          "shift_steps": [
+            0,
+            0,
+            0
+          ],
+          "max_abs_shift_s": 0.0,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.01,
+          "persistence_steps": 10,
+          "boundaries": [
+            555,
+            601,
+            710
+          ],
+          "shift_steps": [
+            5,
+            19,
+            16
+          ],
+          "max_abs_shift_s": 0.19,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.02,
+          "persistence_steps": 3,
+          "boundaries": [
+            548,
+            580,
+            692
+          ],
+          "shift_steps": [
+            -2,
+            -2,
+            -2
+          ],
+          "max_abs_shift_s": 0.02,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.02,
+          "persistence_steps": 5,
+          "boundaries": [
+            550,
+            582,
+            694
+          ],
+          "shift_steps": [
+            0,
+            0,
+            0
+          ],
+          "max_abs_shift_s": 0.0,
+          "events_found": true
+        },
+        {
+          "contact_force_n": 0.02,
+          "persistence_steps": 10,
+          "boundaries": [
+            555,
+            601,
+            710
+          ],
+          "shift_steps": [
+            5,
+            19,
+            16
+          ],
+          "max_abs_shift_s": 0.19,
+          "events_found": true
+        }
+      ],
+      "handoff_warning_count": 1,
+      "human_review_status": "pending",
+      "boundary_change_proposed": false,
+      "physical_replay": {
+        "max_state_replay_error": 0.0,
+        "source_rgb": [
+          {
+            "step": 549,
+            "source_frame": 26,
+            "output_frame": 26,
+            "available": true,
+            "path": "data/real_data/relocate_mug/seq_dexycb_002/rgb/000026.jpg",
+            "sha256": "5b48a66c8bfa42adb3d1f1d04646b2f7fb6e6dc33f0f2ffe9c7392563572b62b"
+          },
+          {
+            "step": 581,
+            "source_frame": 29,
+            "output_frame": 29,
+            "available": true,
+            "path": "data/real_data/relocate_mug/seq_dexycb_002/rgb/000029.jpg",
+            "sha256": "0975cd4e377ede8c4ff114caeebc072b487234d2f64ff4f658cf109df8de3ab5"
+          },
+          {
+            "step": 693,
+            "source_frame": 42,
+            "output_frame": 42,
+            "available": true,
+            "path": "data/real_data/relocate_mug/seq_dexycb_002/rgb/000042.jpg",
+            "sha256": "ba5ec390dd202f16f99654f4d9c2fe67af7f2a76b88509127e87d3edccc4cce4"
+          }
+        ],
+        "all_source_rgb_available": true,
+        "boundaries": [
+          {
+            "next_skill": "grasp",
+            "state_index": 550,
+            "cosine_at_boundary": null,
+            "opposing_at_boundary": false,
+            "window_opposing_fraction": 0.08
+          },
+          {
+            "next_skill": "lift",
+            "state_index": 582,
+            "cosine_at_boundary": -0.9934488501737062,
+            "opposing_at_boundary": true,
+            "window_opposing_fraction": 0.72
+          },
+          {
+            "next_skill": "transport",
+            "state_index": 694,
+            "cosine_at_boundary": -0.9935168016305467,
+            "opposing_at_boundary": true,
+            "window_opposing_fraction": 1.0
+          }
+        ],
+        "lifted_opposing_fraction": 1.0,
+        "tail_opposing_fraction": 1.0,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "image": "data/processed/stage4_boundary_review_v1/second-boundaries.jpg",
+        "image_sha256": "d4c6a3a94bf8b7cdd74e81003a9139d7f389a3b1c70fbf00906e154e2131649d",
+        "opposition_scope": "Loaded thumb/other normal pair; diagnostic, not proof of force closure",
+        "published_image": "second-boundaries.jpg"
+      },
+      "trajectory": "second/nominal",
+      "video": "second",
+      "engineer_checks_passed": true
+    }
+  ],
+  "engineer_checks_passed": true,
+  "human_review_status": "pending",
+  "stage_4_1_fully_accepted": false,
+  "frozen_manifest_sha256": "46338f73d8490bab3aa8e15159f649d5c9771750ec321be114d2eb85965c7f74",
+  "generated_at": "2026-10-02T07:01:51.506223+00:00",
+  "raw_review_sha256": "324d4cc599d9a3fc5e3b1b62e194de860f370ca914d18e788ae75fe8537fbf18",
+  "freeze_sha256": "aec21ade7d43c0e861478900f7a82e69b9d3c018e54302ee4a6690c914305d25"
+}
