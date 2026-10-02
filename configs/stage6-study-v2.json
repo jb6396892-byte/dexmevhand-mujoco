@@ -1,0 +1,18 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "seed": 20261002,
+  "pilot_epochs": 3,
+  "formal_epochs": 8,
+  "batch_size": 2,
+  "gradient_accumulation": 4,
+  "learning_rate": 0.0002,
+  "max_length": 1024,
+  "max_new_tokens": 160,
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"],
+  "pilot_gate": {"semantic_accuracy_min": 0.9, "schema_fraction_min": 0.95, "unsupported_false_execution_max": 0, "not_worse_than_base": true},
+  "selection": "Minimum validation assistant loss; both pilot and formal start from unchanged base. Heldout only after formal freeze.",
+  "feasibility_threshold": 0.05
+}
