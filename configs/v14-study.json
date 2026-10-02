@@ -1,0 +1,28 @@
+{
+  "version": "v14",
+  "date": "2026-10-02",
+  "baseline": "data/processed/dual_video_v13/base_finetune/policy.pickle",
+  "development": "Same 35 admitted cases, no old heldout used",
+  "pilot_cases": ["nominal", "cup_y_minus", "former_test_goal_y_minus", "former_test_yaw_plus"],
+  "predictive_filter": {
+    "horizon_steps": 3,
+    "target_depth_m": 0.0008,
+    "joint_cap_rad": 0.06,
+    "gains": [0.5, 1.0, 2.0, 4.0],
+    "release": 0.9,
+    "minimum_depth_to_plan_m": 0.0004
+  },
+  "readiness": {
+    "development_task_fraction_each_video": 0.8,
+    "heldout_task_fraction_each_video": 0.75,
+    "heldout_stable_lift_fraction_each_video": 0.875,
+    "nominal_standard_and_half_step_task": true,
+    "finite_nonzero_dapg_updates": 20,
+    "short_training_nominal_task": true,
+    "physics_gate": "Unchanged v12 task gate; strict fidelity also reported",
+    "scope": "Permission to begin controlled long training, not claim of deployment or solved generalization"
+  },
+  "heldout": {"seed": 14102026, "count_per_video": 8, "cup_xy_bound_m": 0.004, "goal_xy_bound_m": 0.018, "yaw_bound_deg": 6.0},
+  "long_training": false,
+  "screenshots_max": 4
+}

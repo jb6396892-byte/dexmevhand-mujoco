@@ -28,6 +28,7 @@ def main():
     parser.add_argument('--source-sequence', type=Path, default=ROOT/'data/real_data/relocate_mug/seq_dexycb_001')
     parser.add_argument('--simulation-only', action='store_true', help='Do not read source RGB frames during headless rendering')
     parser.add_argument('--output', type=Path, help='Render one audited headless replay to this new directory')
+    parser.add_argument('--frame-steps', type=int, nargs='+', help='Explicit headless keyframe steps instead of eight default frames')
     args = parser.parse_args()
     if args.speed <= 0 or args.episodes < 0 or args.camera_distance <= 0:
         parser.error('speed must be positive and episodes nonnegative')
@@ -40,6 +41,8 @@ def main():
     actions = np.asarray(demo['actions'])
     if actions.ndim != 2 or actions.shape[1] != 30 or not np.isfinite(actions).all():
         raise ValueError('Expected finite 30-dimensional saved actions')
+    if args.frame_steps is not None and any(i<0 or i>=len(actions) for i in args.frame_steps):
+        parser.error('frame-steps must lie within the recorded trajectory')
     configure_runtime_paths()
     from hand_imitation.env.environments.ycb_relocate_env import YCBRelocate
     contacts = import_module('21_diagnose_geometry').contacts
@@ -79,7 +82,7 @@ def main():
             env.sim.forward()
             start = time.monotonic()
             forces, images = [], []
-            selected = set(np.linspace(0, len(actions)-1, 8).round().astype(int))
+            selected = set(args.frame_steps if args.frame_steps is not None else np.linspace(0, len(actions)-1, 8).round().astype(int))
             max_replay_error = 0.
             camera = context.cam if args.output is not None else env.viewer.viewer.cam
             camera.type = 0

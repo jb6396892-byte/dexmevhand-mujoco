@@ -11,6 +11,11 @@ class ResidualSampler:
         self.observations, self.latent_actions, self.executed_actions = [], [], []
         self.context = None
         self.guard = None
+        self.predictive_filter = None
+        if checkpoint.get('predictive_filter'):
+            from .predictive_contact import PredictiveContactFilter
+            self.predictive_filter = PredictiveContactFilter(experiment, checkpoint['predictive_filter'],
+                                                            checkpoint['references'][video['name']])
         if checkpoint.get('contact_guard'):
             from .contact_guard import ContactGuard
             self.guard = ContactGuard(experiment, checkpoint['contact_guard'])
@@ -39,6 +44,8 @@ class ResidualSampler:
         action = residual_action(reference, latent, self.checkpoint['residual_limits'][self.video['name']])
         if self.guard is not None:
             action = self.guard.apply(action)
+        if self.predictive_filter is not None:
+            action = self.predictive_filter.apply(action, step)
         self.observations.append(x.copy())
         # DAPG evaluates the density of the *unclipped* sampled residual.
         self.latent_actions.append(latent.copy())

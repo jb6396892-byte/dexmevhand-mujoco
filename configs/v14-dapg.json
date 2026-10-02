@@ -1,0 +1,19 @@
+{
+  "seed": 14102026,
+  "smoke_iterations": 20,
+  "trajectories_per_iteration": 2,
+  "max_measured_kl": 0.002,
+  "cg_iterations": 5,
+  "demo_stride": 10,
+  "lambda_0": 0.01,
+  "lambda_1": 0.95,
+  "reward": {
+    "penetration_target_m": 0.0007,
+    "penetration_scale_m": 0.0003,
+    "penetration_weight": 1.0,
+    "missing_support_weight": 0.2,
+    "contact_phase_source_frame": 40.0
+  },
+  "long_training_requires_ready_receipt": true,
+  "long_training_starts_from_frozen_bc_not_untested_smoke_policy": true
+}
