@@ -1,0 +1,31 @@
+{
+  "version": "v13",
+  "date": "2026-10-02",
+  "seed": 20261002,
+  "epochs": 150,
+  "hidden_sizes": [64, 64],
+  "learning_rate": 0.001,
+  "batch_size": 128,
+  "phase_mass": [0.15, 0.15, 0.2, 0.3, 0.2],
+  "phase_blend_half_width_steps": 10,
+  "modes": ["video", "phase"],
+  "baseline": "data/processed/dual_video_v12/aligned_bc/policy.pickle",
+  "development": "Same 35 admitted v11 cases. No old holdout loaded or used.",
+  "comparison": "Same global transforms, sampled indices, total sample budget and per-head width; independent heads increase parameter count, not a capacity-matched causal test.",
+  "correction": {
+    "max_cases": 4,
+    "takeover_offsets_steps": [0, -20, 20],
+    "gains": [0.0, 0.15, 0.35],
+    "transition_steps": 20,
+    "label_end_steps_after_lift": 30,
+    "require_task_gate_and_half_step": true,
+    "require_replay_error_below": 1e-8,
+    "finetune_epochs": 20,
+    "finetune_learning_rate": 0.0003,
+    "correction_mass": 0.2
+  },
+  "new_holdout": false,
+  "long_training": false,
+  "screenshots_max": 2,
+  "physics": "Unchanged. Only normalized hand actions after normal reset; no object assistance or per-step object state writes."
+}

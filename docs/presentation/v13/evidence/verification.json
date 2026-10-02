@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-02",
+  "tests": 93,
+  "skipped": 0,
+  "success": true,
+  "development_rollouts": 175,
+  "policy_and_data_hashes_checked": {
+    "shared": {
+      "policy": "31807d70fbd4371a931a7151e6005e78a333ce504a46d14295eca905e69ca024",
+      "development": "01eb6835a0214b13b3fd4014b86b289ac9ac4b0e0c3d416eec54de8697fa4b15"
+    },
+    "video": {
+      "policy": "c9bd9e561a7ace1167857995432a0754ef15c20f1b5f703d16914cd63f230ad6",
+      "development": "f71c608925b6a8cd18131f5f9a60d62a382e4fd37efb90e23761ad25fbb488a7"
+    },
+    "phase": {
+      "policy": "8aa870e6ad36adf4c215122f0eedb6f5024fb71cc8a47e76933481c8b7ffc986",
+      "development": "fab53f52a16be00c71cd13a06ffbd86ecba196cdfbf2c4934c865f80bdc66f3f"
+    },
+    "base_finetune": {
+      "policy": "5abb092fa12c2b9a5b6b042e749e408ab3020bc5bf727b6d9a9268d137b83de5",
+      "development": "0a714953401c6ce4193be5ca111fb27bb2ed906f558bbb2f99aa62f0753f3fcf"
+    },
+    "corrected": {
+      "policy": "538a21ea5f93b8357e6e855a0dc25e7a1a289b17bc7ad801a4739656e42dc354",
+      "development": "022454925ac6eef22d9b111754a46a29868f7fbfba5f86658b37943d41267055"
+    }
+  },
+  "accepted_corrections": 3,
+  "corrective_label_frames": 297,
+  "routing_and_sampling_verified": true,
+  "label_execution_verified": true,
+  "independent_holdout": false,
+  "new_screenshots": 0,
+  "long_training": false
+}

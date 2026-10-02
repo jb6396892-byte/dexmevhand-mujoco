@@ -1,0 +1,110 @@
+[
+  {
+    "start_step": 588,
+    "gain": 0.0,
+    "task_pass": false,
+    "strict_pass": false,
+    "admitted": false,
+    "goal_m": 0.010083216724680799,
+    "scene_penetration_m": 0.0010619103529586789,
+    "failures_strict": [
+      "scene_penetration"
+    ]
+  },
+  {
+    "start_step": 588,
+    "gain": 0.15,
+    "task_pass": false,
+    "strict_pass": false,
+    "admitted": false,
+    "goal_m": 0.009718568200720585,
+    "scene_penetration_m": 0.0010915577424852583,
+    "failures_strict": [
+      "scene_penetration"
+    ]
+  },
+  {
+    "start_step": 588,
+    "gain": 0.35,
+    "task_pass": false,
+    "strict_pass": false,
+    "admitted": false,
+    "goal_m": 0.009225699409909157,
+    "scene_penetration_m": 0.0011277232091455923,
+    "failures_strict": [
+      "scene_penetration"
+    ]
+  },
+  {
+    "start_step": 568,
+    "gain": 0.0,
+    "task_pass": false,
+    "strict_pass": false,
+    "admitted": false,
+    "goal_m": 0.009408850258071692,
+    "scene_penetration_m": 0.0010944809826117896,
+    "failures_strict": [
+      "scene_penetration"
+    ]
+  },
+  {
+    "start_step": 568,
+    "gain": 0.15,
+    "task_pass": false,
+    "strict_pass": false,
+    "admitted": false,
+    "goal_m": 0.009207085444172501,
+    "scene_penetration_m": 0.001115670671533002,
+    "failures_strict": [
+      "scene_penetration"
+    ]
+  },
+  {
+    "start_step": 568,
+    "gain": 0.35,
+    "task_pass": false,
+    "strict_pass": false,
+    "admitted": false,
+    "goal_m": 0.00933292635150561,
+    "scene_penetration_m": 0.0010794813513403047,
+    "failures_strict": [
+      "scene_penetration"
+    ]
+  },
+  {
+    "start_step": 608,
+    "gain": 0.0,
+    "task_pass": false,
+    "strict_pass": false,
+    "admitted": false,
+    "goal_m": 0.009627764762966007,
+    "scene_penetration_m": 0.001082689448558629,
+    "failures_strict": [
+      "scene_penetration"
+    ]
+  },
+  {
+    "start_step": 608,
+    "gain": 0.15,
+    "task_pass": false,
+    "strict_pass": false,
+    "admitted": false,
+    "goal_m": 0.009835738221380367,
+    "scene_penetration_m": 0.0011083279958992436,
+    "failures_strict": [
+      "scene_penetration"
+    ]
+  },
+  {
+    "start_step": 608,
+    "gain": 0.35,
+    "task_pass": false,
+    "strict_pass": false,
+    "admitted": false,
+    "goal_m": 0.009869096632537547,
+    "scene_penetration_m": 0.0010677002304966075,
+    "failures_strict": [
+      "scene_penetration"
+    ]
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "protocol_sha256": "19e9dc41506a509cb5d1709af60d8164856c0fe1e4fde3ab41d8f41bf62a1945",
+  "candidates": [
+    {
+      "mode": "shared",
+      "path": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v12/aligned_bc/policy.pickle",
+      "sha256": "31807d70fbd4371a931a7151e6005e78a333ce504a46d14295eca905e69ca024",
+      "count": 35,
+      "task_count": 25,
+      "strict_count": 23,
+      "lift_count": 35,
+      "task_fraction": 0.7058823529411764,
+      "strict_fraction": 0.6503267973856208,
+      "mean_goal_m": 0.00564614928926459,
+      "mean_peak_penetration_m": 0.0008003497523643108,
+      "per_video": {
+        "first": {
+          "task": 18,
+          "strict": 16,
+          "count": 18
+        },
+        "second": {
+          "task": 7,
+          "strict": 7,
+          "count": 17
+        }
+      }
+    },
+    {
+      "mode": "video",
+      "path": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v13/video/policy.pickle",
+      "sha256": "c9bd9e561a7ace1167857995432a0754ef15c20f1b5f703d16914cd63f230ad6",
+      "count": 35,
+      "task_count": 24,
+      "strict_count": 22,
+      "lift_count": 35,
+      "task_fraction": 0.6764705882352942,
+      "strict_fraction": 0.6209150326797386,
+      "mean_goal_m": 0.006212342008702635,
+      "mean_peak_penetration_m": 0.0008235160125443865,
+      "per_video": {
+        "first": {
+          "task": 18,
+          "strict": 16,
+          "count": 18
+        },
+        "second": {
+          "task": 6,
+          "strict": 6,
+          "count": 17
+        }
+      }
+    },
+    {
+      "mode": "phase",
+      "path": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v13/phase/policy.pickle",
+      "sha256": "8aa870e6ad36adf4c215122f0eedb6f5024fb71cc8a47e76933481c8b7ffc986",
+      "count": 35,
+      "task_count": 22,
+      "strict_count": 19,
+      "lift_count": 35,
+      "task_fraction": 0.6176470588235294,
+      "strict_fraction": 0.5326797385620915,
+      "mean_goal_m": 0.0058438425469145095,
+      "mean_peak_penetration_m": 0.0008157686614599595,
+      "per_video": {
+        "first": {
+          "task": 18,
+          "strict": 16,
+          "count": 18
+        },
+        "second": {
+          "task": 4,
+          "strict": 3,
+          "count": 17
+        }
+      }
+    }
+  ],
+  "selected": {
+    "mode": "shared",
+    "path": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v12/aligned_bc/policy.pickle",
+    "sha256": "31807d70fbd4371a931a7151e6005e78a333ce504a46d14295eca905e69ca024",
+    "count": 35,
+    "task_count": 25,
+    "strict_count": 23,
+    "lift_count": 35,
+    "task_fraction": 0.7058823529411764,
+    "strict_fraction": 0.6503267973856208,
+    "mean_goal_m": 0.00564614928926459,
+    "mean_peak_penetration_m": 0.0008003497523643108,
+    "per_video": {
+      "first": {
+        "task": 18,
+        "strict": 16,
+        "count": 18
+      },
+      "second": {
+        "task": 7,
+        "strict": 7,
+        "count": 17
+      }
+    }
+  },
+  "heldout_used": false,
+  "capacity_matched": false
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "start_step": 588,
+    "gain": 0.0,
+    "task_pass": true,
+    "strict_pass": true,
+    "admitted": true,
+    "goal_m": 0.005791719936734391,
+    "scene_penetration_m": 0.0009985934545861704,
+    "failures_strict": []
+  }
+]

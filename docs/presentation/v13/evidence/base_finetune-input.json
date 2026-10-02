@@ -1,0 +1,10 @@
+{
+  "protocol_sha256": "19e9dc41506a509cb5d1709af60d8164856c0fe1e4fde3ab41d8f41bf62a1945",
+  "parent_sha256": "31807d70fbd4371a931a7151e6005e78a333ce504a46d14295eca905e69ca024",
+  "correction_admission_sha256": "056ffb7e3caca3641afaa911ad88aecfa16004c6407d4d60d011459bbcc120c1",
+  "epochs": 20,
+  "samples_per_epoch": 50156,
+  "frames": 50156,
+  "correction_mass": 0.0,
+  "heldout_used": false
+}

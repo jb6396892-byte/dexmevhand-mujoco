@@ -1,0 +1,32 @@
+{
+  "protocol_sha256": "19e9dc41506a509cb5d1709af60d8164856c0fe1e4fde3ab41d8f41bf62a1945",
+  "method": "base_finetune",
+  "policy": "/home/smgbro/mujoconew/GITHUB/data/processed/dual_video_v13/base_finetune/policy.pickle",
+  "policy_sha256": "5abb092fa12c2b9a5b6b042e749e408ab3020bc5bf727b6d9a9268d137b83de5",
+  "summary": {
+    "count": 35,
+    "task_count": 29,
+    "strict_count": 27,
+    "lift_count": 35,
+    "task_fraction": 0.8235294117647058,
+    "strict_fraction": 0.7679738562091503,
+    "mean_goal_m": 0.005741136114874559,
+    "mean_peak_penetration_m": 0.0007888095421192842,
+    "per_video": {
+      "first": {
+        "task": 18,
+        "strict": 16,
+        "count": 18
+      },
+      "second": {
+        "task": 11,
+        "strict": 11,
+        "count": 17
+      }
+    }
+  },
+  "selection": "equal-video task fraction, strict fraction, then mean goal error",
+  "development_only": true,
+  "independent_holdout_evaluated": false,
+  "old_models_replaced": false
+}

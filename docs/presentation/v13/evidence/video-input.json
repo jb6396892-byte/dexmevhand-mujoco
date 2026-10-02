@@ -1,0 +1,17 @@
+{
+  "protocol_sha256": "19e9dc41506a509cb5d1709af60d8164856c0fe1e4fde3ab41d8f41bf62a1945",
+  "input_sha256": "b3f5a52ebabdfc7a6240e9b466266fad86ea025948ecf206dbf46244c0c3ab68",
+  "frames": 50156,
+  "sampled_frames": 7523400,
+  "batch_size": 128,
+  "seed": 20261002,
+  "parameter_count": 23100,
+  "routing_mode": "video",
+  "capacity_matched": false,
+  "heldout_used": false,
+  "route_mass": [
+    0.4999999999998894,
+    0.49999999999997463
+  ],
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}
