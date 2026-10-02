@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "status": "success",
+  "reason": "plan_completed",
+  "plan": {
+    "schema_version": 1,
+    "scene": "first",
+    "object": "mug",
+    "goal": "reach",
+    "skills": [
+      "reach"
+    ]
+  },
+  "backend": "verified_reference",
+  "completed": [
+    "reach"
+  ],
+  "events": [
+    {
+      "kind": "skill_started",
+      "skill": "reach",
+      "global_step": 0,
+      "wall_s": 0.0008523970027454197,
+      "prerequisite_passed": true
+    },
+    {
+      "kind": "skill_succeeded",
+      "skill": "reach",
+      "global_step": 512,
+      "wall_s": 5.116416763001325,
+      "steps": 512,
+      "event": "physical_event",
+      "bottom_m": 0.00013982860428910426,
+      "target_distance_m": 0.1483391649183774
+    },
+    {
+      "kind": "plan_finished",
+      "skill": "reach",
+      "global_step": 512,
+      "wall_s": 5.116429377001623,
+      "status": "success",
+      "reason": "plan_completed"
+    }
+  ],
+  "steps": 512,
+  "provider_retries": 0,
+  "replans": 0,
+  "final_metrics": {
+    "bottom_m": 0.00013982860428910426,
+    "target_distance_m": 0.1483391649183774,
+    "scene_penetration_m": 4.580223369970125e-05,
+    "joint_violation_rad": 0.0,
+    "finite": true,
+    "th_force_n": 0.8847321399154373,
+    "ff_force_n": 0.0,
+    "mf_force_n": 0.0,
+    "rf_force_n": 0.0,
+    "lf_force_n": 0.0
+  },
+  "wall_s": 5.116432235001412,
+  "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+  "physics": {
+    "trajectory": "first/video_seed_0",
+    "max_state_replay_error": 0.0,
+    "max_penetration_m": 0.00042813471146140036,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "actual_env_steps": 512,
+    "halted": true,
+    "final_metrics": {
+      "bottom_m": 0.00013982860428910426,
+      "target_distance_m": 0.1483391649183774,
+      "scene_penetration_m": 4.580223369970125e-05,
+      "joint_violation_rad": 0.0,
+      "finite": true,
+      "th_force_n": 0.8847321399154373,
+      "ff_force_n": 0.0,
+      "mf_force_n": 0.0,
+      "rf_force_n": 0.0,
+      "lf_force_n": 0.0
+    },
+    "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+  },
+  "fault_injection": null,
+  "created_at": "2026-10-02T13:31:55.136309+00:00"
+}

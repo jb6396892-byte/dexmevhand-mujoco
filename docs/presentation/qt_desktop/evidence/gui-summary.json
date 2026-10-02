@@ -1,0 +1,907 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": {
+        "name": "second-transport",
+        "scene": 1,
+        "instruction": "把杯子搬到目标位置",
+        "status": "success",
+        "goal": "transport",
+        "capture": true
+      },
+      "passed": true,
+      "report": {
+        "backend": "verified_reference",
+        "completed": [
+          "reach",
+          "grasp",
+          "lift",
+          "transport"
+        ],
+        "events": [
+          {
+            "global_step": 0,
+            "kind": "skill_started",
+            "prerequisite_passed": true,
+            "skill": "reach",
+            "wall_s": 0.0004126130006625317
+          },
+          {
+            "bottom_m": 7.66419545319909e-05,
+            "event": "physical_event",
+            "global_step": 550,
+            "kind": "skill_succeeded",
+            "skill": "reach",
+            "steps": 550,
+            "target_distance_m": 0.22894692202455424,
+            "wall_s": 5.2795002150014625
+          },
+          {
+            "global_step": 550,
+            "kind": "skill_started",
+            "prerequisite_passed": true,
+            "skill": "grasp",
+            "wall_s": 5.279516449001676
+          },
+          {
+            "bottom_m": 0.00017536760897160887,
+            "event": "physical_event",
+            "global_step": 601,
+            "kind": "skill_succeeded",
+            "skill": "grasp",
+            "steps": 51,
+            "target_distance_m": 0.22772374069665985,
+            "wall_s": 5.795042918998661
+          },
+          {
+            "global_step": 601,
+            "kind": "skill_started",
+            "prerequisite_passed": true,
+            "skill": "lift",
+            "wall_s": 5.795061704000545
+          },
+          {
+            "bottom_m": 0.05929682165621635,
+            "event": "physical_event",
+            "global_step": 710,
+            "kind": "skill_succeeded",
+            "skill": "lift",
+            "steps": 109,
+            "target_distance_m": 0.1608992463697249,
+            "wall_s": 6.879562884001643
+          },
+          {
+            "global_step": 710,
+            "kind": "skill_started",
+            "prerequisite_passed": true,
+            "skill": "transport",
+            "wall_s": 6.879581102999509
+          },
+          {
+            "bottom_m": 0.18511551775044072,
+            "event": "physical_event",
+            "global_step": 1450,
+            "kind": "skill_succeeded",
+            "skill": "transport",
+            "steps": 740,
+            "target_distance_m": 0.0038582429087141296,
+            "wall_s": 14.279510453001421
+          },
+          {
+            "global_step": 1450,
+            "kind": "plan_finished",
+            "reason": "plan_completed",
+            "skill": "transport",
+            "status": "success",
+            "wall_s": 14.279514967998693
+          }
+        ],
+        "final_metrics": {
+          "bottom_m": 0.18511551775044072,
+          "ff_force_n": 0.3155263507552463,
+          "finite": true,
+          "joint_violation_rad": 0.0,
+          "lf_force_n": 0.0,
+          "mf_force_n": 4.917852799733528,
+          "rf_force_n": 1.4346661896688884,
+          "scene_penetration_m": 0.00040825605061056366,
+          "target_distance_m": 0.0038582429087141296,
+          "th_force_n": 5.354185781945432
+        },
+        "not_dapg_policy": true,
+        "physics": {
+          "actual_env_steps": 1450,
+          "final_metrics": {
+            "bottom_m": 0.18511551775044072,
+            "ff_force_n": 0.3155263507552463,
+            "finite": true,
+            "joint_violation_rad": 0.0,
+            "lf_force_n": 0.0,
+            "mf_force_n": 4.917852799733528,
+            "rf_force_n": 1.4346661896688884,
+            "scene_penetration_m": 0.00040825605061056366,
+            "target_distance_m": 0.0038582429087141296,
+            "th_force_n": 5.354185781945432
+          },
+          "halted": true,
+          "initialization_count": 1,
+          "max_penetration_m": 0.0009009991940679115,
+          "max_state_replay_error": 0.0,
+          "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller",
+          "state_writes_during_execution": 0,
+          "trajectory": "second/nominal"
+        },
+        "plan": {
+          "goal": "transport",
+          "object": "mug",
+          "scene": "second",
+          "schema_version": 1,
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        },
+        "provider_retries": 0,
+        "reason": "plan_completed",
+        "render": {
+          "camera_changes": 5,
+          "frames": 168,
+          "gl": {
+            "extension": "/home/smgbro/mujoconew/.local/mujoco-py-gpu/mujoco_py/generated/cymj_2.0.2.8_37_linuxgpuextensionbuilder_37.so",
+            "renderer": "NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2",
+            "vendor": "NVIDIA Corporation",
+            "version": "4.6.0 NVIDIA 595.91.07"
+          },
+          "pixel_std_min": 41.03525292988784,
+          "render_state_writes": 0,
+          "unique_frames": 168
+        },
+        "replans": 0,
+        "schema_version": 1,
+        "simulation_created": true,
+        "status": "success",
+        "steps": 1450,
+        "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+        "wall_s": 14.279516567999963
+      },
+      "frames_received": 168,
+      "unique_received_frames": 168,
+      "run": "/media/smgbro/shared/lora/language/desktop_runs/20261002T134855078935Z",
+      "window_size": [
+        1360,
+        880
+      ],
+      "frame_size": [
+        1023,
+        361
+      ],
+      "image_size": [
+        960,
+        600
+      ],
+      "sidebar_overlaps": [],
+      "sidebar_scroll_max": 0,
+      "status_current_run": true,
+      "log_current_run": true
+    },
+    {
+      "case": {
+        "name": "first-reach",
+        "scene": 0,
+        "instruction": "手先到杯子边上去",
+        "status": "success",
+        "goal": "reach",
+        "small": true
+      },
+      "passed": true,
+      "report": {
+        "backend": "verified_reference",
+        "completed": [
+          "reach"
+        ],
+        "events": [
+          {
+            "global_step": 0,
+            "kind": "skill_started",
+            "prerequisite_passed": true,
+            "skill": "reach",
+            "wall_s": 0.00039323999953921884
+          },
+          {
+            "bottom_m": 0.00013982860428910426,
+            "event": "physical_event",
+            "global_step": 512,
+            "kind": "skill_succeeded",
+            "skill": "reach",
+            "steps": 512,
+            "target_distance_m": 0.1483391649183774,
+            "wall_s": 4.89708973300003
+          },
+          {
+            "global_step": 512,
+            "kind": "plan_finished",
+            "reason": "plan_completed",
+            "skill": "reach",
+            "status": "success",
+            "wall_s": 4.897092754999903
+          }
+        ],
+        "final_metrics": {
+          "bottom_m": 0.00013982860428910426,
+          "ff_force_n": 0.0,
+          "finite": true,
+          "joint_violation_rad": 0.0,
+          "lf_force_n": 0.0,
+          "mf_force_n": 0.0,
+          "rf_force_n": 0.0,
+          "scene_penetration_m": 4.580223369970125e-05,
+          "target_distance_m": 0.1483391649183774,
+          "th_force_n": 0.8847321399154373
+        },
+        "not_dapg_policy": true,
+        "physics": {
+          "actual_env_steps": 512,
+          "final_metrics": {
+            "bottom_m": 0.00013982860428910426,
+            "ff_force_n": 0.0,
+            "finite": true,
+            "joint_violation_rad": 0.0,
+            "lf_force_n": 0.0,
+            "mf_force_n": 0.0,
+            "rf_force_n": 0.0,
+            "scene_penetration_m": 4.580223369970125e-05,
+            "target_distance_m": 0.1483391649183774,
+            "th_force_n": 0.8847321399154373
+          },
+          "halted": true,
+          "initialization_count": 1,
+          "max_penetration_m": 0.00042813471146140036,
+          "max_state_replay_error": 0.0,
+          "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller",
+          "state_writes_during_execution": 0,
+          "trajectory": "first/video_seed_0"
+        },
+        "plan": {
+          "goal": "reach",
+          "object": "mug",
+          "scene": "first",
+          "schema_version": 1,
+          "skills": [
+            "reach"
+          ]
+        },
+        "provider_retries": 0,
+        "reason": "plan_completed",
+        "render": {
+          "camera_changes": 5,
+          "frames": 61,
+          "gl": {
+            "extension": "/home/smgbro/mujoconew/.local/mujoco-py-gpu/mujoco_py/generated/cymj_2.0.2.8_37_linuxgpuextensionbuilder_37.so",
+            "renderer": "NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2",
+            "vendor": "NVIDIA Corporation",
+            "version": "4.6.0 NVIDIA 595.91.07"
+          },
+          "pixel_std_min": 43.33887818298122,
+          "render_state_writes": 0,
+          "unique_frames": 61
+        },
+        "replans": 0,
+        "schema_version": 1,
+        "simulation_created": true,
+        "status": "success",
+        "steps": 512,
+        "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+        "wall_s": 4.897094070001913
+      },
+      "frames_received": 61,
+      "unique_received_frames": 61,
+      "run": "/media/smgbro/shared/lora/language/desktop_runs/20261002T134919471460Z",
+      "window_size": [
+        1000,
+        720
+      ],
+      "frame_size": [
+        682,
+        260
+      ],
+      "image_size": [
+        960,
+        600
+      ],
+      "sidebar_overlaps": [],
+      "sidebar_scroll_max": 146,
+      "status_current_run": true,
+      "log_current_run": true
+    },
+    {
+      "case": {
+        "name": "cancel-running",
+        "scene": 1,
+        "instruction": "抓起杯子",
+        "status": "stopped",
+        "cancel_step": 200
+      },
+      "passed": true,
+      "report": {
+        "backend": "verified_reference",
+        "completed": [],
+        "events": [
+          {
+            "global_step": 0,
+            "kind": "skill_started",
+            "prerequisite_passed": true,
+            "skill": "reach",
+            "wall_s": 0.00039128500065999106
+          },
+          {
+            "global_step": 208,
+            "kind": "plan_finished",
+            "reason": "cancelled",
+            "skill": "reach",
+            "status": "stopped",
+            "wall_s": 1.8522059230017476
+          }
+        ],
+        "final_metrics": {
+          "bottom_m": 0.00016663844674991114,
+          "ff_force_n": 0.0,
+          "finite": true,
+          "joint_violation_rad": 0.0,
+          "lf_force_n": 0.0,
+          "mf_force_n": 0.0,
+          "rf_force_n": 0.0,
+          "scene_penetration_m": 5.153021064925947e-05,
+          "target_distance_m": 0.228980637310395,
+          "th_force_n": 0.0
+        },
+        "not_dapg_policy": true,
+        "physics": {
+          "actual_env_steps": 208,
+          "final_metrics": {
+            "bottom_m": 0.00016663844674991114,
+            "ff_force_n": 0.0,
+            "finite": true,
+            "joint_violation_rad": 0.0,
+            "lf_force_n": 0.0,
+            "mf_force_n": 0.0,
+            "rf_force_n": 0.0,
+            "scene_penetration_m": 5.153021064925947e-05,
+            "target_distance_m": 0.228980637310395,
+            "th_force_n": 0.0
+          },
+          "halted": true,
+          "initialization_count": 1,
+          "max_penetration_m": 0.0007168648966304819,
+          "max_state_replay_error": 0.0,
+          "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller",
+          "state_writes_during_execution": 0,
+          "trajectory": "second/nominal"
+        },
+        "plan": {
+          "goal": "lift",
+          "object": "mug",
+          "scene": "second",
+          "schema_version": 1,
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        },
+        "provider_retries": 0,
+        "reason": "cancelled",
+        "render": {
+          "camera_changes": 3,
+          "frames": 25,
+          "gl": {
+            "extension": "/home/smgbro/mujoconew/.local/mujoco-py-gpu/mujoco_py/generated/cymj_2.0.2.8_37_linuxgpuextensionbuilder_37.so",
+            "renderer": "NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2",
+            "vendor": "NVIDIA Corporation",
+            "version": "4.6.0 NVIDIA 595.91.07"
+          },
+          "pixel_std_min": 41.09280202164165,
+          "render_state_writes": 0,
+          "unique_frames": 24
+        },
+        "replans": 0,
+        "schema_version": 1,
+        "simulation_created": true,
+        "status": "stopped",
+        "steps": 208,
+        "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+        "wall_s": 1.8522102140013885
+      },
+      "frames_received": 25,
+      "unique_received_frames": 24,
+      "run": "/media/smgbro/shared/lora/language/desktop_runs/20261002T134930709761Z",
+      "window_size": [
+        1360,
+        880
+      ],
+      "frame_size": [
+        1023,
+        361
+      ],
+      "image_size": [
+        960,
+        600
+      ],
+      "sidebar_overlaps": [],
+      "sidebar_scroll_max": 0,
+      "status_current_run": true,
+      "log_current_run": true
+    },
+    {
+      "case": {
+        "name": "reject-handoff",
+        "scene": 0,
+        "instruction": "将杯子放到我手上",
+        "status": "rejected",
+        "capture": true
+      },
+      "passed": true,
+      "report": {
+        "reason": "instruction_not_admitted",
+        "simulation_created": false,
+        "status": "rejected",
+        "steps": 0
+      },
+      "frames_received": 0,
+      "unique_received_frames": 0,
+      "run": "/media/smgbro/shared/lora/language/desktop_runs/20261002T134938869863Z",
+      "window_size": [
+        1360,
+        880
+      ],
+      "frame_size": [
+        1023,
+        361
+      ],
+      "image_size": [
+        0,
+        0
+      ],
+      "sidebar_overlaps": [],
+      "sidebar_scroll_max": 0,
+      "status_current_run": true,
+      "log_current_run": true
+    },
+    {
+      "case": {
+        "name": "preview",
+        "scene": 1,
+        "instruction": "握住杯子",
+        "status": "preview",
+        "preview": true
+      },
+      "passed": true,
+      "report": {
+        "reason": "plan_accepted",
+        "status": "preview"
+      },
+      "frames_received": 0,
+      "unique_received_frames": 0,
+      "run": "/media/smgbro/shared/lora/language/desktop_runs/20261002T134939378883Z",
+      "window_size": [
+        1360,
+        880
+      ],
+      "frame_size": [
+        1023,
+        361
+      ],
+      "image_size": [
+        0,
+        0
+      ],
+      "sidebar_overlaps": [],
+      "sidebar_scroll_max": 0,
+      "status_current_run": true,
+      "log_current_run": true
+    },
+    {
+      "case": {
+        "name": "explicit-stop",
+        "scene": 0,
+        "instruction": "停止",
+        "status": "stopped",
+        "goal": "stop"
+      },
+      "passed": true,
+      "report": {
+        "plan": {
+          "goal": "stop",
+          "object": "mug",
+          "scene": "first",
+          "schema_version": 1,
+          "skills": []
+        },
+        "reason": "user_stop",
+        "simulation_created": false,
+        "status": "stopped",
+        "steps": 0
+      },
+      "frames_received": 0,
+      "unique_received_frames": 0,
+      "run": "/media/smgbro/shared/lora/language/desktop_runs/20261002T134943795669Z",
+      "window_size": [
+        1360,
+        880
+      ],
+      "frame_size": [
+        1023,
+        361
+      ],
+      "image_size": [
+        0,
+        0
+      ],
+      "sidebar_overlaps": [],
+      "sidebar_scroll_max": 0,
+      "status_current_run": true,
+      "log_current_run": true
+    },
+    {
+      "case": {
+        "name": "first-transport-repeat",
+        "scene": 0,
+        "instruction": "把杯子搬到目标位置",
+        "status": "success",
+        "goal": "transport"
+      },
+      "passed": true,
+      "report": {
+        "backend": "verified_reference",
+        "completed": [
+          "reach",
+          "grasp",
+          "lift",
+          "transport"
+        ],
+        "events": [
+          {
+            "global_step": 0,
+            "kind": "skill_started",
+            "prerequisite_passed": true,
+            "skill": "reach",
+            "wall_s": 0.0004304910034989007
+          },
+          {
+            "bottom_m": 0.00013982860428910426,
+            "event": "physical_event",
+            "global_step": 512,
+            "kind": "skill_succeeded",
+            "skill": "reach",
+            "steps": 512,
+            "target_distance_m": 0.1483391649183774,
+            "wall_s": 4.88815313500163
+          },
+          {
+            "global_step": 512,
+            "kind": "skill_started",
+            "prerequisite_passed": true,
+            "skill": "grasp",
+            "wall_s": 4.888170707003155
+          },
+          {
+            "bottom_m": 0.00016728594512857662,
+            "event": "physical_event",
+            "global_step": 543,
+            "kind": "skill_succeeded",
+            "skill": "grasp",
+            "steps": 31,
+            "target_distance_m": 0.14804822432962378,
+            "wall_s": 5.198199961003411
+          },
+          {
+            "global_step": 543,
+            "kind": "skill_started",
+            "prerequisite_passed": true,
+            "skill": "lift",
+            "wall_s": 5.198222915001679
+          },
+          {
+            "bottom_m": 0.05445628507161513,
+            "event": "physical_event",
+            "global_step": 624,
+            "kind": "skill_succeeded",
+            "skill": "lift",
+            "steps": 81,
+            "target_distance_m": 0.09251659946582644,
+            "wall_s": 6.008209858002374
+          },
+          {
+            "global_step": 624,
+            "kind": "skill_started",
+            "prerequisite_passed": true,
+            "skill": "transport",
+            "wall_s": 6.008226414000092
+          },
+          {
+            "bottom_m": 0.13799057472001594,
+            "event": "physical_event",
+            "global_step": 1417,
+            "kind": "skill_succeeded",
+            "skill": "transport",
+            "steps": 793,
+            "target_distance_m": 0.0008529841766367158,
+            "wall_s": 13.938263812000514
+          },
+          {
+            "global_step": 1417,
+            "kind": "plan_finished",
+            "reason": "plan_completed",
+            "skill": "transport",
+            "status": "success",
+            "wall_s": 13.938267857000028
+          }
+        ],
+        "final_metrics": {
+          "bottom_m": 0.13799057472001594,
+          "ff_force_n": 3.388907821345503,
+          "finite": true,
+          "joint_violation_rad": 0.0,
+          "lf_force_n": 0.0,
+          "mf_force_n": 0.5506836746016406,
+          "rf_force_n": 0.4390361151682928,
+          "scene_penetration_m": 0.00039818514775355127,
+          "target_distance_m": 0.0008529841766367158,
+          "th_force_n": 4.5492204454486025
+        },
+        "not_dapg_policy": true,
+        "physics": {
+          "actual_env_steps": 1417,
+          "final_metrics": {
+            "bottom_m": 0.13799057472001594,
+            "ff_force_n": 3.388907821345503,
+            "finite": true,
+            "joint_violation_rad": 0.0,
+            "lf_force_n": 0.0,
+            "mf_force_n": 0.5506836746016406,
+            "rf_force_n": 0.4390361151682928,
+            "scene_penetration_m": 0.00039818514775355127,
+            "target_distance_m": 0.0008529841766367158,
+            "th_force_n": 4.5492204454486025
+          },
+          "halted": true,
+          "initialization_count": 1,
+          "max_penetration_m": 0.0005769569515597876,
+          "max_state_replay_error": 0.0,
+          "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller",
+          "state_writes_during_execution": 0,
+          "trajectory": "first/video_seed_0"
+        },
+        "plan": {
+          "goal": "transport",
+          "object": "mug",
+          "scene": "first",
+          "schema_version": 1,
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        },
+        "provider_retries": 0,
+        "reason": "plan_completed",
+        "render": {
+          "camera_changes": 5,
+          "frames": 162,
+          "gl": {
+            "extension": "/home/smgbro/mujoconew/.local/mujoco-py-gpu/mujoco_py/generated/cymj_2.0.2.8_37_linuxgpuextensionbuilder_37.so",
+            "renderer": "NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2",
+            "vendor": "NVIDIA Corporation",
+            "version": "4.6.0 NVIDIA 595.91.07"
+          },
+          "pixel_std_min": 43.34129424990732,
+          "render_state_writes": 0,
+          "unique_frames": 162
+        },
+        "replans": 0,
+        "schema_version": 1,
+        "simulation_created": true,
+        "status": "success",
+        "steps": 1417,
+        "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+        "wall_s": 13.938269230002334
+      },
+      "frames_received": 162,
+      "unique_received_frames": 162,
+      "run": "/media/smgbro/shared/lora/language/desktop_runs/20261002T134948719278Z",
+      "window_size": [
+        1360,
+        880
+      ],
+      "frame_size": [
+        1023,
+        361
+      ],
+      "image_size": [
+        960,
+        600
+      ],
+      "sidebar_overlaps": [],
+      "sidebar_scroll_max": 0,
+      "status_current_run": true,
+      "log_current_run": true
+    },
+    {
+      "case": {
+        "name": "cancel-planning",
+        "scene": 1,
+        "instruction": "抓起杯子",
+        "status": "stopped",
+        "cancel_planning": true
+      },
+      "passed": true,
+      "report": {
+        "reason": "cancelled",
+        "status": "stopped",
+        "worker_exit": 15
+      },
+      "frames_received": 0,
+      "unique_received_frames": 0,
+      "run": "/media/smgbro/shared/lora/language/desktop_runs/20261002T135009004647Z",
+      "window_size": [
+        1360,
+        880
+      ],
+      "frame_size": [
+        1023,
+        361
+      ],
+      "image_size": [
+        0,
+        0
+      ],
+      "sidebar_overlaps": [],
+      "sidebar_scroll_max": 0,
+      "status_current_run": true,
+      "log_current_run": true
+    },
+    {
+      "case": {
+        "name": "close-running",
+        "scene": 1,
+        "instruction": "抓起杯子",
+        "status": "stopped",
+        "cancel_step": 200,
+        "close": true
+      },
+      "passed": true,
+      "report": {
+        "backend": "verified_reference",
+        "completed": [],
+        "events": [
+          {
+            "global_step": 0,
+            "kind": "skill_started",
+            "prerequisite_passed": true,
+            "skill": "reach",
+            "wall_s": 0.00040920799801824614
+          },
+          {
+            "global_step": 208,
+            "kind": "plan_finished",
+            "reason": "cancelled",
+            "skill": "reach",
+            "status": "stopped",
+            "wall_s": 1.8428465939978196
+          }
+        ],
+        "final_metrics": {
+          "bottom_m": 0.00016663844674991114,
+          "ff_force_n": 0.0,
+          "finite": true,
+          "joint_violation_rad": 0.0,
+          "lf_force_n": 0.0,
+          "mf_force_n": 0.0,
+          "rf_force_n": 0.0,
+          "scene_penetration_m": 5.153021064925947e-05,
+          "target_distance_m": 0.228980637310395,
+          "th_force_n": 0.0
+        },
+        "not_dapg_policy": true,
+        "physics": {
+          "actual_env_steps": 208,
+          "final_metrics": {
+            "bottom_m": 0.00016663844674991114,
+            "ff_force_n": 0.0,
+            "finite": true,
+            "joint_violation_rad": 0.0,
+            "lf_force_n": 0.0,
+            "mf_force_n": 0.0,
+            "rf_force_n": 0.0,
+            "scene_penetration_m": 5.153021064925947e-05,
+            "target_distance_m": 0.228980637310395,
+            "th_force_n": 0.0
+          },
+          "halted": true,
+          "initialization_count": 1,
+          "max_penetration_m": 0.0007168648966304819,
+          "max_state_replay_error": 0.0,
+          "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller",
+          "state_writes_during_execution": 0,
+          "trajectory": "second/nominal"
+        },
+        "plan": {
+          "goal": "lift",
+          "object": "mug",
+          "scene": "second",
+          "schema_version": 1,
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        },
+        "provider_retries": 0,
+        "reason": "cancelled",
+        "render": {
+          "camera_changes": 3,
+          "frames": 25,
+          "gl": {
+            "extension": "/home/smgbro/mujoconew/.local/mujoco-py-gpu/mujoco_py/generated/cymj_2.0.2.8_37_linuxgpuextensionbuilder_37.so",
+            "renderer": "NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2",
+            "vendor": "NVIDIA Corporation",
+            "version": "4.6.0 NVIDIA 595.91.07"
+          },
+          "pixel_std_min": 41.09280143721288,
+          "render_state_writes": 0,
+          "unique_frames": 25
+        },
+        "replans": 0,
+        "schema_version": 1,
+        "simulation_created": true,
+        "status": "stopped",
+        "steps": 208,
+        "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+        "wall_s": 1.8428496059968893
+      },
+      "frames_received": 25,
+      "unique_received_frames": 25,
+      "run": "/media/smgbro/shared/lora/language/desktop_runs/20261002T135009595179Z",
+      "window_size": [
+        1360,
+        880
+      ],
+      "frame_size": [
+        1023,
+        361
+      ],
+      "image_size": [
+        960,
+        600
+      ],
+      "sidebar_overlaps": [],
+      "sidebar_scroll_max": 0,
+      "status_current_run": true,
+      "log_current_run": true
+    }
+  ],
+  "max_heartbeat_gap_s": 0.08902178599964827,
+  "worker_pids": [
+    52414,
+    52432,
+    52514,
+    52550,
+    52586,
+    52595,
+    52632,
+    52633,
+    52642,
+    52699,
+    52712,
+    52720,
+    52753,
+    52759,
+    52767
+  ],
+  "chinese_input_event_passed": true,
+  "gui": "PySide6 6.8.3 actual X11 desktop",
+  "frames_from": "MuJoCo GPU worker, not video playback"
+}

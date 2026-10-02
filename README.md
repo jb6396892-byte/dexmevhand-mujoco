@@ -1,4 +1,6 @@
-> 最新进展（2026-10-02）：**阶段 6 已通过有限指令范围的受控执行验收。** 增加对比 LoRA 训练和独立语义门控；最终新 100 条语言测试中模型原始正确 94/100（旧 LoRA 80/100），6 条错误计划全部被拦截，50 条合法任务全部正确放行。240 条回归零错误计划放行，10 项物理检查及 175 项测试通过。默认只生成计划，显式 `--execute` 才执行。[结果、边界与命令](docs/STAGE6_REFINEMENT.md) · [答辩材料](docs/presentation/stage6/REFINEMENT_RESULTS.md)。语言模型及新增训练产物只放 `/media/smgbro/shared/lora/language/`。
+> 最新交付（2026-10-02）：**Qt 抓杯实验台已完成。** 在项目目录运行 `bash scripts/128_launch_qt.sh`，输入中文指令查看实时 MuJoCo 画面、接触力、目标距离和阶段进度。已修复 `Missing GL version`，九项真实界面测试、187 项回归通过。高层使用训练好的 LoRA，低层沿用已验证专家技能，不冒充 DAPG 网络。[启动与验收](docs/QT_DESKTOP.md) · [两张截图与答辩资料](docs/presentation/qt_desktop/README.md)。
+>
+> 阶段 6 最新模型（2026-10-02）：**已通过有限指令范围的受控执行验收。** 增加对比 LoRA 训练和独立语义门控；最终新 100 条语言测试中模型原始正确 94/100（旧 LoRA 80/100），6 条错误计划全部被拦截，50 条合法任务全部正确放行。240 条回归零错误计划放行，10 项物理检查及当时 175 项测试通过。CLI 默认只生成计划，显式 `--execute` 才执行；Qt 点击“执行”才进入仿真。[结果、边界与命令](docs/STAGE6_REFINEMENT.md) · [答辩材料](docs/presentation/stage6/REFINEMENT_RESULTS.md)。语言模型及新增训练产物只放 `/media/smgbro/shared/lora/language/`。
 >
 > **阶段 3 按用户决定以旧稳定策略收尾，不再继续优化。** 原独立评估仍如实记录：第 200 次模型任务 30/32，旧版 31/32；抬杯均 32/32。保留旧版，不把候选未过的不退化门槛改判通过，也不声称严格视频抓法或实物泛化。模型和资料仍在项目原目录，未放入 lora。[评估与收尾范围](docs/presentation/post200/README.md)。
 >

@@ -7,4 +7,9 @@ if [[ $# -eq 0 ]]; then
   exit 2
 fi
 cd "$ROOT"
+for arg in "$@"; do
+  if [[ "$arg" == --render || "$arg" == --verify-render ]]; then
+    exec bash scripts/stage6_study_python.sh scripts/130_run_language_render.py "$@" --root "$STUDY_ROOT"
+  fi
+done
 exec bash scripts/stage6_study_python.sh scripts/123_run_guarded_language.py "$@" --root "$STUDY_ROOT"

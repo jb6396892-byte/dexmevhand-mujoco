@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/home/smgbro/miniconda3/envs/dexmv/bin/python",
+    "/home/smgbro/mujoconew/GITHUB/scripts/124_probe_mujoco_render.py",
+    "--mode",
+    "window"
+  ],
+  "cwd": "/tmp/qt-gl-reproduction-simbckcu",
+  "returncode": 1,
+  "stdout": "EXTENSION /home/smgbro/miniconda3/envs/dexmv/lib/python3.7/site-packages/mujoco_py/generated/cymj_2.0.2.8_37_linuxcpuextensionbuilder_37.so\nERROR: GLEW initalization error: Missing GL version\n\nPress Enter to exit ...",
+  "stderr": "",
+  "expected_failure_reproduced": true,
+  "environment_scope": "Legacy conda CPU/OSMesa import; GPU package not on PYTHONPATH"
+}
