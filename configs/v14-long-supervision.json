@@ -1,0 +1,13 @@
+{
+  "version": "v14c-long-200",
+  "study": "configs/v14c-study.json",
+  "iterations": 200,
+  "poll_seconds": 10,
+  "stall_seconds": 900,
+  "max_consecutive_zero_updates": 3,
+  "catastrophic_penetration_m": 0.005,
+  "warning_task_fraction": 0.5,
+  "warning_window_iterations": 5,
+  "automatic_policy_replacement": false,
+  "scope": "Runtime abort thresholds do not replace the unchanged 1 mm task acceptance gate. No heldout tuning."
+}
