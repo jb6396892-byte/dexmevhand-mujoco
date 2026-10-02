@@ -2,7 +2,8 @@
 
 **最终状态（2026-10-02 18:23:19 北京时间）：200/200 已完成，退出码 0。**
 200 次均有非零更新；训练后两标准场景通过任务与旧严格门槛，目标误差 1.579 / 3.722 mm。
-尚无新的独立留出评估，不自动替换原策略。最终 [状态](presentation/stage6/evidence/v1/training-status.json)、
+新的独立留出已完成：训练后任务 30/32，对照 31/32；不退化门槛未通过，不替换原策略。
+详见 [独立评估及两张截图](presentation/post200/README.md)。最终 [状态](presentation/stage6/evidence/v1/training-status.json)、
 [名义评估](presentation/stage6/evidence/v1/training-summary.json)、[5 次训练采样失败](presentation/stage6/evidence/v1/training-failures.json) 已存档。
 下面的后台管理说明为运行期间记录，不表示当前仍在训练。
 
@@ -52,6 +53,6 @@ journalctl --user -u fromrealhand-v14c-200.service -n 20 --no-pager
 - 同目录 `iteration_0001.pickle`、`0005`、`0020`，之后每 20 次保存一次，最终 `0200`。
 - 同目录 `summary.json`：200 次完成后两条名义场景物理回放与训练总结。
 
-`state=running` 只表示在运行；必须同时检查 `state=completed`、`completed_iterations=200` 以及训练后名义结果。自动监督不等于训练后性能一定改善；最终不会自动覆盖冻结策略。名义评估不是新留出评估，`independent_evaluation_done` 在本轮保持 false。
+`state=running` 只表示在运行；必须同时检查 `state=completed`、`completed_iterations=200` 以及训练后名义结果。自动监督不等于训练后性能一定改善；最终不会自动覆盖冻结策略。名义评估不是新留出评估；旧训练收据中的 `independent_evaluation_done=false` 保持历史原样，新评估另存 `post200_independent_v1/summary.json`。
 
 网页和 GitHub 的历史 [进度快照](presentation/stage4/evidence/training-progress-snapshot.json) 不是实时监控，以文件中的 `updated_at` 为准。本轮实际约 3 小时 41 分钟完成；阶段 4/5 旧快照保留，不覆盖历史证据。

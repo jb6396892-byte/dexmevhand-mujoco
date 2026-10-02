@@ -1,0 +1,273 @@
+{
+  "created_at": "2026-10-02T10:47:23.746029+00:00",
+  "config": {
+    "version": "post200-independent-v1",
+    "seed": 2026100241,
+    "count_per_video": 16,
+    "cup_xy_bound_m": 0.004,
+    "goal_xy_bound_m": 0.018,
+    "yaw_bound_deg": 6.0,
+    "methods": {
+      "pretrain": "data/processed/dual_video_v14c/frozen-policy.pickle",
+      "post200": "data/processed/dual_video_v14c/long_training/iteration_0200.pickle"
+    },
+    "acceptance": {
+      "task_fraction_each_video_min": 0.75,
+      "stable_lift_fraction_each_video_min": 0.875,
+      "no_task_count_regression_vs_pretrain": true,
+      "all_nominal_standard_and_half_task": true
+    },
+    "scope": "New synthetic cup/goal/yaw combinations on two known videos; NOT unseen-video or hardware generalization",
+    "gates": "Unchanged v12 task gate and v10 strict gate; all failures retained",
+    "selection": "Fixed final iteration 200 versus fixed original policy, same predictive contact filter; no checkpoint selection or retuning on test"
+  },
+  "cases": [
+    {
+      "name": "unseen_00",
+      "cup_offset_m": [
+        -0.0034467032140800846,
+        0.00020685904908750857,
+        0.0
+      ],
+      "goal_offset_m": [
+        0.012491153959417054,
+        0.00023707130676363028,
+        0.0
+      ],
+      "cup_yaw_deg": -1.1424379998692267
+    },
+    {
+      "name": "unseen_01",
+      "cup_offset_m": [
+        -0.003489729586352003,
+        0.0034960766178017133,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.011359822124210403,
+        -0.006490674896103478,
+        0.0
+      ],
+      "cup_yaw_deg": -4.91945598480733
+    },
+    {
+      "name": "unseen_02",
+      "cup_offset_m": [
+        0.0006389234697233319,
+        0.0017762361826374655,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.010314157221289645,
+        0.013127860675423177,
+        0.0
+      ],
+      "cup_yaw_deg": -4.625743938683787
+    },
+    {
+      "name": "unseen_03",
+      "cup_offset_m": [
+        -0.003568733768765057,
+        -0.0005511034440696641,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.014625382778608961,
+        -0.00558310240942283,
+        0.0
+      ],
+      "cup_yaw_deg": -3.714838907843207
+    },
+    {
+      "name": "unseen_04",
+      "cup_offset_m": [
+        -0.0012066856931744335,
+        0.002803250901946816,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.005897014209957186,
+        0.004893892275542051,
+        0.0
+      ],
+      "cup_yaw_deg": 3.1358738391798457
+    },
+    {
+      "name": "unseen_05",
+      "cup_offset_m": [
+        -0.0011810184738019237,
+        0.0017214154052960246,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.011732460397694707,
+        -0.004325845619637945,
+        0.0
+      ],
+      "cup_yaw_deg": -2.750646234534454
+    },
+    {
+      "name": "unseen_06",
+      "cup_offset_m": [
+        -0.0012692620190466642,
+        0.002229097094085809,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.01268023601574258,
+        0.013760086718764278,
+        0.0
+      ],
+      "cup_yaw_deg": 2.1909439218090263
+    },
+    {
+      "name": "unseen_07",
+      "cup_offset_m": [
+        -0.0010800691541900916,
+        0.0005905775200333108,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.001137867297783566,
+        0.001337603210275113,
+        0.0
+      ],
+      "cup_yaw_deg": 3.216403480803619
+    },
+    {
+      "name": "unseen_08",
+      "cup_offset_m": [
+        0.0018545309403961022,
+        0.0027876559373553886,
+        0.0
+      ],
+      "goal_offset_m": [
+        0.017439783747353565,
+        -0.004994529510060753,
+        0.0
+      ],
+      "cup_yaw_deg": 2.740455067270597
+    },
+    {
+      "name": "unseen_09",
+      "cup_offset_m": [
+        0.0016909931748971272,
+        0.002223866278307434,
+        0.0
+      ],
+      "goal_offset_m": [
+        0.011374810802745949,
+        0.004803038297249894,
+        0.0
+      ],
+      "cup_yaw_deg": 3.0971001651743535
+    },
+    {
+      "name": "unseen_10",
+      "cup_offset_m": [
+        0.0037600789074318172,
+        0.0034101752679260985,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.008253454970449164,
+        0.007516563633507702,
+        0.0
+      ],
+      "cup_yaw_deg": 0.8868093793805141
+    },
+    {
+      "name": "unseen_11",
+      "cup_offset_m": [
+        0.0005432269259459267,
+        -0.0015813067023581172,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.0072249821046864865,
+        -0.015087301447053031,
+        0.0
+      ],
+      "cup_yaw_deg": -5.391797534248886
+    },
+    {
+      "name": "unseen_12",
+      "cup_offset_m": [
+        -0.0015720640593825746,
+        -0.0011186991690519967,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.0030786335847270644,
+        0.00818701532419297,
+        0.0
+      ],
+      "cup_yaw_deg": -1.8693850886983903
+    },
+    {
+      "name": "unseen_13",
+      "cup_offset_m": [
+        -0.0008275295756955819,
+        -0.003955510835617202,
+        0.0
+      ],
+      "goal_offset_m": [
+        0.004081357403033916,
+        0.01559123827371935,
+        0.0
+      ],
+      "cup_yaw_deg": -1.6260989952393015
+    },
+    {
+      "name": "unseen_14",
+      "cup_offset_m": [
+        0.003173458145394956,
+        -0.0038725960443004824,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.01721378726342961,
+        -0.016907199187046917,
+        0.0
+      ],
+      "cup_yaw_deg": 2.059922566723378
+    },
+    {
+      "name": "unseen_15",
+      "cup_offset_m": [
+        0.001572104188207012,
+        -0.0012535428723686117,
+        0.0
+      ],
+      "goal_offset_m": [
+        -0.002313787409664647,
+        -0.004841332290882374,
+        0.0
+      ],
+      "cup_yaw_deg": -3.7519540898501527
+    }
+  ],
+  "old_cases_checked": 32,
+  "identical_old_cases": 0,
+  "code_commit": "c8f5d5202acce65c124248997a038383cbc457f3",
+  "sha256": {
+    "configs/stage3-post200-eval-v1.json": "5fc3ca39b251c99065796bf4ca086d0d8e1bae9dfeb1f52baaaa2c7abcd3a56a",
+    "scripts/109_evaluate_post200.py": "15b73d07b5435ed46f8556bdd0fe79fdd69a154e0519c2b8f2863a6d8db6607e",
+    "configs/v12-study.json": "9707bf73d1882068dbbd721bdd53b7eb65e1656802214bcfea01e8c8b305cc52",
+    "src/fromrealhand/residual_sampling.py": "ea9aa55ec3894a61cc7ab258c3dbc75f040e7d2b7955a6d223007eb466f8829f",
+    "src/fromrealhand/predictive_contact.py": "cfe8e523ac657c60373a4244313a5f0f9ad361c3e9a3c14c56d706b8355fe5ab",
+    "scripts/v10_common.py": "e244a1bb0a2d9449c7b558488b89852473a5993a71dae59d6d2336be07dfa57a",
+    "scripts/77_run_v12_study.py": "f387257ea3f632cefaa0849fdbb1d04257e7202a12f443930d100d4c09f1f002",
+    "data/processed/dual_video_v14c/frozen-policy.pickle": "7c797b5823c34ccddf0fa861c77bdb0714c783a50e41dbe108d37934d31596b8",
+    "data/processed/dual_video_v14c/long_training/iteration_0200.pickle": "0960d442150dee3a0c1ddb676d894209157298ab75e2151eeecb4a1e7e8bdc97",
+    "data/processed/seq_dexycb_001/transport_v6/admission.json": "09873cc10344b5ba39cf1c3674b1dbe92b3d5a6622d264564a1235768b3daaa7",
+    "data/processed/seq_dexycb_001/transport_v6/best/diagnostic_rollout.pkl": "fb6ce22bf4bba88d271dde4979a40f41f40317cee269d01f2054503b2b2a69e9",
+    "data/processed/seq_dexycb_001/scene_fidelity_v2/retarget/geometry.npz": "0b6072c4caa9355feaa4fdb8b458cd3c1fba2fc1d26a1f2927e9fed2759a0d46",
+    "data/processed/seq_dexycb_001/learning_v6/demonstrations/demonstrations.pkl": "7938c20cc48ad4910e25a2e7d0307c76c4b27f6fc8028448ec87da12259ef499",
+    "data/processed/seq_dexycb_002/dynamic_contact_v9_verified/admission.json": "b091a6bcd8db1ed51c8c97cf8c4ae541c3d12e294792d5ae355a7b98e6fab8bb",
+    "data/processed/seq_dexycb_002/dynamic_contact_v9_verified/nominal/diagnostic_rollout.pkl": "e05e778d63f6e1078feaac075837110be4d8c99bcc99e20a533b449767eaf51c",
+    "data/processed/seq_dexycb_002/retarget_v1/geometry.npz": "1d9f1b5727a8099e85043d934c45f48c5acc7278e04253b11273b3163cb11414",
+    "data/demonstrations/relocate-mug-second-dynamics-v9.pkl": "0d36fc6b59dad849aaef6cb4b8994381f93a6001406723d7291c412957e3b081"
+  },
+  "evaluation_started": false
+}

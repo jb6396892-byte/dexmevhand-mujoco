@@ -1,0 +1,83 @@
+{
+  "metrics": {
+    "pretrain": {
+      "count": 32,
+      "task_count": 31,
+      "strict_count": 17,
+      "lift_count": 32,
+      "task_fraction": 0.96875,
+      "strict_fraction": 0.53125,
+      "mean_goal_m": 0.01243247597589696,
+      "mean_peak_penetration_m": 0.0007509914465095738,
+      "per_video": {
+        "first": {
+          "task": 16,
+          "strict": 7,
+          "count": 16
+        },
+        "second": {
+          "task": 15,
+          "strict": 10,
+          "count": 16
+        }
+      },
+      "task_wilson95": [
+        0.8425539219962727,
+        0.9944622826374491
+      ],
+      "failure_counts": {
+        "tip_error": 9,
+        "goal_miss": 5,
+        "contact_pattern": 1
+      },
+      "per_video_lift": {
+        "first": 16,
+        "second": 16
+      }
+    },
+    "post200": {
+      "count": 32,
+      "task_count": 30,
+      "strict_count": 16,
+      "lift_count": 32,
+      "task_fraction": 0.9375,
+      "strict_fraction": 0.5,
+      "mean_goal_m": 0.012118941691094462,
+      "mean_peak_penetration_m": 0.0007513345967756762,
+      "per_video": {
+        "first": {
+          "task": 16,
+          "strict": 7,
+          "count": 16
+        },
+        "second": {
+          "task": 14,
+          "strict": 9,
+          "count": 16
+        }
+      },
+      "task_wilson95": [
+        0.7985253275199642,
+        0.9826897968048427
+      ],
+      "failure_counts": {
+        "tip_error": 10,
+        "goal_miss": 5,
+        "contact_pattern": 3,
+        "scene_penetration": 1
+      },
+      "per_video_lift": {
+        "first": 16,
+        "second": 16
+      }
+    }
+  },
+  "paired_changes": {
+    "improved": 0,
+    "regressed": 1
+  },
+  "stage3_scoped_acceptance": false,
+  "generalized_to_new_videos": false,
+  "real_robot_tested": false,
+  "exact_human_fidelity_solved": false
+}

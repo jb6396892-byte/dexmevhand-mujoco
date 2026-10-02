@@ -1,0 +1,377 @@
+[
+  {
+    "video": "first",
+    "case": "unseen_01",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 3.684450732336336,
+    "penetration_mm": 0.5324145867769674
+  },
+  {
+    "video": "first",
+    "case": "unseen_01",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 3.836781171640876,
+    "penetration_mm": 0.5374057127962382
+  },
+  {
+    "video": "first",
+    "case": "unseen_02",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 10.68587970780269,
+    "penetration_mm": 0.5253066546830766
+  },
+  {
+    "video": "first",
+    "case": "unseen_02",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 10.962613586753966,
+    "penetration_mm": 0.5079900201779632
+  },
+  {
+    "video": "first",
+    "case": "unseen_04",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 11.116257595601455,
+    "penetration_mm": 0.6742968538972517
+  },
+  {
+    "video": "first",
+    "case": "unseen_04",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 11.78723412185294,
+    "penetration_mm": 0.6774525609487696
+  },
+  {
+    "video": "first",
+    "case": "unseen_06",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 11.060939847865475,
+    "penetration_mm": 0.6589562717872115
+  },
+  {
+    "video": "first",
+    "case": "unseen_06",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 10.175704692565876,
+    "penetration_mm": 0.6738174820576122
+  },
+  {
+    "video": "first",
+    "case": "unseen_07",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 10.422931842555641,
+    "penetration_mm": 0.552665378659438
+  },
+  {
+    "video": "first",
+    "case": "unseen_07",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 10.418086163483059,
+    "penetration_mm": 0.5651586197488231
+  },
+  {
+    "video": "first",
+    "case": "unseen_08",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 12.59907492410629,
+    "penetration_mm": 0.5745892614346997
+  },
+  {
+    "video": "first",
+    "case": "unseen_08",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 12.72285648156755,
+    "penetration_mm": 0.6073421109026802
+  },
+  {
+    "video": "first",
+    "case": "unseen_09",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 8.690450432041404,
+    "penetration_mm": 0.7233841980411216
+  },
+  {
+    "video": "first",
+    "case": "unseen_09",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 8.52767512782967,
+    "penetration_mm": 0.7289972577351558
+  },
+  {
+    "video": "first",
+    "case": "unseen_10",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 11.103536526849606,
+    "penetration_mm": 0.6511913700044224
+  },
+  {
+    "video": "first",
+    "case": "unseen_10",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 12.465637293077876,
+    "penetration_mm": 0.6336119173998294
+  },
+  {
+    "video": "first",
+    "case": "unseen_11",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 17.959229971927112,
+    "penetration_mm": 0.5722507636477646
+  },
+  {
+    "video": "first",
+    "case": "unseen_11",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "tip_error"
+    ],
+    "goal_mm": 18.635400706741972,
+    "penetration_mm": 0.5735497168538571
+  },
+  {
+    "video": "second",
+    "case": "unseen_01",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "goal_miss"
+    ],
+    "goal_mm": 21.76917835695663,
+    "penetration_mm": 0.9864558190423097
+  },
+  {
+    "video": "second",
+    "case": "unseen_01",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "goal_miss",
+      "contact_pattern"
+    ],
+    "goal_mm": 22.50358738115846,
+    "penetration_mm": 0.9020547066064194
+  },
+  {
+    "video": "second",
+    "case": "unseen_02",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "goal_miss"
+    ],
+    "goal_mm": 20.47862127271893,
+    "penetration_mm": 0.8928914409273144
+  },
+  {
+    "video": "second",
+    "case": "unseen_02",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "goal_miss"
+    ],
+    "goal_mm": 21.443812749669277,
+    "penetration_mm": 0.8970596828239289
+  },
+  {
+    "video": "second",
+    "case": "unseen_03",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "goal_miss"
+    ],
+    "goal_mm": 24.662023644147617,
+    "penetration_mm": 0.9007507527462313
+  },
+  {
+    "video": "second",
+    "case": "unseen_03",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "goal_miss"
+    ],
+    "goal_mm": 23.98725678873711,
+    "penetration_mm": 0.9020423016073065
+  },
+  {
+    "video": "second",
+    "case": "unseen_05",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "contact_pattern"
+    ],
+    "goal_mm": 16.928343858003746,
+    "penetration_mm": 0.898881900327467
+  },
+  {
+    "video": "second",
+    "case": "unseen_11",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "goal_miss"
+    ],
+    "goal_mm": 21.98855139670677,
+    "penetration_mm": 0.8971226104801762
+  },
+  {
+    "video": "second",
+    "case": "unseen_11",
+    "method": "post200",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "goal_miss"
+    ],
+    "goal_mm": 22.133264805524814,
+    "penetration_mm": 0.8953484007599285
+  },
+  {
+    "video": "second",
+    "case": "unseen_13",
+    "method": "pretrain",
+    "task_pass": false,
+    "strict_pass": false,
+    "labels": [
+      "contact_pattern"
+    ],
+    "goal_mm": 7.3089652165631325,
+    "penetration_mm": 0.9189177741762397
+  },
+  {
+    "video": "second",
+    "case": "unseen_13",
+    "method": "post200",
+    "task_pass": false,
+    "strict_pass": false,
+    "labels": [
+      "contact_pattern",
+      "tip_error"
+    ],
+    "goal_mm": 7.237939333469075,
+    "penetration_mm": 0.9190361662110127
+  },
+  {
+    "video": "second",
+    "case": "unseen_14",
+    "method": "pretrain",
+    "task_pass": true,
+    "strict_pass": false,
+    "labels": [
+      "goal_miss"
+    ],
+    "goal_mm": 21.099178849395166,
+    "penetration_mm": 0.9115845237650462
+  },
+  {
+    "video": "second",
+    "case": "unseen_14",
+    "method": "post200",
+    "task_pass": false,
+    "strict_pass": false,
+    "labels": [
+      "goal_miss",
+      "scene_penetration"
+    ],
+    "goal_mm": 21.305182292565704,
+    "penetration_mm": 1.067990981695009
+  }
+]
