@@ -1,0 +1,666 @@
+{
+  "admitted": [
+    {
+      "trajectory": "first/former_test_cup_y_plus",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "39a1b08f0d123c8f44e83b3ad8a6804f54df4cba67653dd315dd9d731f0a3b8e",
+      "boundaries": [
+        512,
+        543,
+        624
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.92,
+        0.84
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "first/former_test_yaw_plus",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "734c6544f7f49381fc8cd9e9d3d40f522120eea35caea8b14de3a1f430471a21",
+      "boundaries": [
+        515,
+        544,
+        624
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.92,
+        1.0
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "first/synthetic_cup_yaw_-10",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "88c3be177dec3f63f4791844cf9f79fbff4277e47412b883cc34b1d00b73a65b",
+      "boundaries": [
+        511,
+        543,
+        624
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.96,
+        0.88
+      ],
+      "max_state_error": 7.435152132861944e-09
+    },
+    {
+      "trajectory": "first/synthetic_goal_0_-1",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "9bed6ca905a47357f38a063b7702ebaf0f8e9b4c0940e204e60e11580752315a",
+      "boundaries": [
+        512,
+        543,
+        624
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.92,
+        0.84
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "first/synthetic_goal_0_1",
+      "video": "first",
+      "split": "validation",
+      "geometry_group": "c06624609f01fb67ccf095614a3f8b380020e80d62bccf1879169ca9410e608c",
+      "boundaries": [
+        512,
+        543,
+        624
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.92,
+        0.84
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "first/synthetic_goal_1_-1",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "e1e793f7e79228c0a7f822726ef7bd35f969d37499aa412adb8d1cef58a1f420",
+      "boundaries": [
+        512,
+        543,
+        624
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.92,
+        0.84
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "first/synthetic_goal_1_1",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "56a4e7bd0f0b09f6150e4a91612544588ddb516b7cd3591a0e11d3378cec0fe6",
+      "boundaries": [
+        512,
+        543,
+        624
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.92,
+        0.84
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "first/synthetic_position_0_-1",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "a91660e407d4c2e4b336602c631070b82a049987ed695af55077e6bfc28f5994",
+      "boundaries": [
+        512,
+        543,
+        624
+      ],
+      "handoff_fractions": [
+        1.0,
+        1.0,
+        0.84
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "first/synthetic_position_1_-1",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "ff9fed381b24e59fc7bb69146dac842be50f13a3586d05d65012d2fb84f8b86d",
+      "boundaries": [
+        512,
+        543,
+        624
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.92,
+        0.84
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "first/video_seed_0",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "b6b5953922da2b550c36849d5edebeee358e3029acef1844071c259ed7fd9c68",
+      "boundaries": [
+        512,
+        543,
+        624
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.92,
+        0.84
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "first/video_seed_1",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "b6b5953922da2b550c36849d5edebeee358e3029acef1844071c259ed7fd9c68",
+      "boundaries": [
+        512,
+        543,
+        623
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.84,
+        1.0
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "first/video_seed_3",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "b6b5953922da2b550c36849d5edebeee358e3029acef1844071c259ed7fd9c68",
+      "boundaries": [
+        513,
+        542,
+        623
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.84,
+        1.0
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "first/video_seed_5",
+      "video": "first",
+      "split": "train",
+      "geometry_group": "b6b5953922da2b550c36849d5edebeee358e3029acef1844071c259ed7fd9c68",
+      "boundaries": [
+        513,
+        543,
+        624
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.88,
+        1.0
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "second/cup_x_minus",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "f193885e8b370ea76a5a7befb78e9719a7b0f4c57620d6d40f13e138dfb24185",
+      "boundaries": [
+        551,
+        594,
+        710
+      ],
+      "handoff_fractions": [
+        0.96,
+        1.0,
+        0.88
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "second/cup_x_plus",
+      "video": "second",
+      "split": "validation",
+      "geometry_group": "66d5c4614bb96c987b225b1e65ce4a3db0ff345fc275bb4788803322be52788b",
+      "boundaries": [
+        550,
+        588,
+        710
+      ],
+      "handoff_fractions": [
+        0.88,
+        0.88,
+        0.88
+      ],
+      "max_state_error": 2.15785722623707e-13
+    },
+    {
+      "trajectory": "second/cup_y_plus",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "742a0eb027acba9ea353f05768a125a6a8b0e6266a067502df39b5c6b3f636c4",
+      "boundaries": [
+        550,
+        587,
+        711
+      ],
+      "handoff_fractions": [
+        0.96,
+        0.92,
+        0.88
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "second/former_test_cup_x_minus",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "45b90e094d5ffe87ba98feedf599d08a0f23f70868e7299ecd1ddc002ebc4305",
+      "boundaries": [
+        549,
+        582,
+        710
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.88,
+        0.88
+      ],
+      "max_state_error": 2.1745539049988771e-10
+    },
+    {
+      "trajectory": "second/former_test_cup_x_plus",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "d0b00057896ceb5a130be1b731c066fb3f14d9a421b2e660742a6deb945461f6",
+      "boundaries": [
+        550,
+        583,
+        711
+      ],
+      "handoff_fractions": [
+        0.96,
+        0.92,
+        0.88
+      ],
+      "max_state_error": 2.2514747878565888e-11
+    },
+    {
+      "trajectory": "second/former_test_cup_y_minus",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "3d1b0c8b0f81734c30b9bae726fb8cdd6df3e5c64715121f4f33594c0d4635a3",
+      "boundaries": [
+        550,
+        586,
+        710
+      ],
+      "handoff_fractions": [
+        1.0,
+        0.96,
+        0.88
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "second/former_test_cup_y_plus",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "ed7e8e13ff72498cde1c656de8eb25c45d5607a70f60a8a69258fedbc530e1d8",
+      "boundaries": [
+        549,
+        585,
+        711
+      ],
+      "handoff_fractions": [
+        0.92,
+        0.88,
+        0.88
+      ],
+      "max_state_error": 2.6713582734760877e-11
+    },
+    {
+      "trajectory": "second/former_test_goal_y_minus",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "939642cccaeba469ac8d6cdc471c6c02acdd8695b668f70d0717a94e90f35a7e",
+      "boundaries": [
+        550,
+        585,
+        711
+      ],
+      "handoff_fractions": [
+        0.92,
+        0.84,
+        0.88
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "second/goal_x_minus",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "b7b945e0f62a859d654ec125ae8063c5f8e0741b0a4c0266a1af0b3bcf6c54e3",
+      "boundaries": [
+        551,
+        594,
+        710
+      ],
+      "handoff_fractions": [
+        0.88,
+        1.0,
+        0.8
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "second/goal_y_minus",
+      "video": "second",
+      "split": "validation",
+      "geometry_group": "3951f7f78d69b7884f827ca94c75e86922bb0dabcf50b29464e6b18317e16cd7",
+      "boundaries": [
+        550,
+        601,
+        710
+      ],
+      "handoff_fractions": [
+        0.92,
+        1.0,
+        0.88
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "second/goal_y_plus",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "de3885484635b82364e81af86da2c81e3d44769253ca3748d3d03895e7484013",
+      "boundaries": [
+        551,
+        594,
+        710
+      ],
+      "handoff_fractions": [
+        0.88,
+        1.0,
+        0.8
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "second/nominal",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "3bbe22a87042b4afb4b052e646c3aa56b5a767b449a3466374c21d35c1387b2c",
+      "boundaries": [
+        550,
+        601,
+        710
+      ],
+      "handoff_fractions": [
+        0.88,
+        1.0,
+        0.88
+      ],
+      "max_state_error": 9.559020242022598e-14
+    },
+    {
+      "trajectory": "second/yaw_minus",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "e4ac05032cd4512f12994fad4c0add5e08fa00c871d5ee934ddab6924b8747b6",
+      "boundaries": [
+        550,
+        595,
+        710
+      ],
+      "handoff_fractions": [
+        0.92,
+        0.96,
+        0.88
+      ],
+      "max_state_error": 0.0
+    },
+    {
+      "trajectory": "second/yaw_plus",
+      "video": "second",
+      "split": "train",
+      "geometry_group": "bebd58600c6c9f5a0a84de5ea702d2e07ca5f1665882331c01ebeeb1388f502f",
+      "boundaries": [
+        551,
+        591,
+        710
+      ],
+      "handoff_fractions": [
+        0.88,
+        0.92,
+        0.88
+      ],
+      "max_state_error": 0.0
+    }
+  ],
+  "rejected": [
+    {
+      "trajectory": "first/synthetic_cup_yaw_-5",
+      "split": "train",
+      "reason": "handoff_window",
+      "handoff_fractions": [
+        0.72,
+        0.92,
+        0.76
+      ],
+      "failed_replays": []
+    },
+    {
+      "trajectory": "first/synthetic_cup_yaw_10",
+      "split": "train",
+      "reason": "handoff_window",
+      "handoff_fractions": [
+        0.68,
+        0.8,
+        0.8
+      ],
+      "failed_replays": []
+    },
+    {
+      "trajectory": "first/synthetic_cup_yaw_5",
+      "split": "validation",
+      "reason": "handoff_window",
+      "handoff_fractions": [
+        0.56,
+        0.88,
+        0.76
+      ],
+      "failed_replays": []
+    },
+    {
+      "trajectory": "first/video_seed_2",
+      "split": "train",
+      "reason": "handoff_window",
+      "handoff_fractions": [
+        1.0,
+        0.92,
+        0.68
+      ],
+      "failed_replays": []
+    },
+    {
+      "trajectory": "first/video_seed_4",
+      "split": "train",
+      "reason": "handoff_window",
+      "handoff_fractions": [
+        0.56,
+        0.8,
+        0.92
+      ],
+      "failed_replays": []
+    },
+    {
+      "trajectory": "second/cup_y_minus",
+      "split": "train",
+      "reason": "handoff_window",
+      "handoff_fractions": [
+        0.92,
+        0.56,
+        0.88
+      ],
+      "failed_replays": []
+    },
+    {
+      "trajectory": "second/former_test_yaw_plus",
+      "split": "train",
+      "reason": "isolated_or_stitched_replay",
+      "handoff_fractions": [
+        1.0,
+        0.96,
+        0.8
+      ],
+      "failed_replays": [
+        {
+          "trajectory": "second/former_test_yaw_plus",
+          "skills": [
+            "reach"
+          ],
+          "offset_m": [
+            0.0,
+            0.0
+          ],
+          "passed": false,
+          "complete": true,
+          "state_replay_error": 0.004097424432284486,
+          "state_comparison_required": true,
+          "steps": 552,
+          "expected_steps": 552,
+          "contracts": [
+            {
+              "skill": "reach",
+              "status": "success",
+              "reason": "physical_event",
+              "steps": 552
+            }
+          ],
+          "max_penetration_m": 0.0007168657872393671,
+          "final_bottom_m": 9.194425015398092e-05,
+          "final_goal_distance_m": 0.22871798922581454,
+          "initialization_count": 1,
+          "state_writes_during_execution": 0,
+          "failure_class": "state_replay_mismatch"
+        },
+        {
+          "trajectory": "second/former_test_yaw_plus",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ],
+          "offset_m": [
+            0.0,
+            0.0
+          ],
+          "passed": false,
+          "complete": true,
+          "state_replay_error": 0.20777384208942673,
+          "state_comparison_required": true,
+          "steps": 1450,
+          "expected_steps": 1450,
+          "contracts": [
+            {
+              "skill": "reach",
+              "status": "success",
+              "reason": "physical_event",
+              "steps": 552
+            },
+            {
+              "skill": "grasp",
+              "status": "success",
+              "reason": "physical_event",
+              "steps": 32
+            },
+            {
+              "skill": "lift",
+              "status": "success",
+              "reason": "physical_event",
+              "steps": 115
+            },
+            {
+              "skill": "transport",
+              "status": "success",
+              "reason": "physical_event",
+              "steps": 751
+            }
+          ],
+          "max_penetration_m": 0.0009000011321094693,
+          "final_bottom_m": 0.18222878223252234,
+          "final_goal_distance_m": 0.005643901209863076,
+          "initialization_count": 1,
+          "state_writes_during_execution": 0,
+          "failure_class": "state_replay_mismatch"
+        }
+      ]
+    },
+    {
+      "trajectory": "second/goal_x_plus",
+      "split": "train",
+      "reason": "isolated_or_stitched_replay",
+      "handoff_fractions": [
+        0.88,
+        1.0,
+        0.88
+      ],
+      "failed_replays": [
+        {
+          "trajectory": "second/goal_x_plus",
+          "skills": [
+            "transport"
+          ],
+          "offset_m": [
+            0.0,
+            0.0
+          ],
+          "passed": false,
+          "complete": true,
+          "state_replay_error": 0.06350876697611463,
+          "state_comparison_required": true,
+          "steps": 736,
+          "expected_steps": 736,
+          "contracts": [
+            {
+              "skill": "transport",
+              "status": "success",
+              "reason": "physical_event",
+              "steps": 736
+            }
+          ],
+          "max_penetration_m": 0.0009539301278093756,
+          "final_bottom_m": 0.18206968548546767,
+          "final_goal_distance_m": 0.0052550076850402345,
+          "initialization_count": 1,
+          "state_writes_during_execution": 0,
+          "failure_class": "state_replay_mismatch"
+        }
+      ]
+    }
+  ]
+}

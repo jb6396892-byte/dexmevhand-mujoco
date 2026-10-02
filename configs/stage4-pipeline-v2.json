@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "base_config": "configs/stage4-skills.json",
+  "output": "data/processed/stage4_pipeline_v2",
+  "confirmation_steps": {"reach": 5, "grasp": 10, "lift": 10},
+  "handoff_window_steps": 25,
+  "handoff_min_fraction": 0.8,
+  "support_loss_stop_steps": 20,
+  "pilot_trajectories": ["first/video_seed_0", "second/nominal"],
+  "validation_scenes": ["first/synthetic_cup_yaw_5", "first/synthetic_goal_0_1", "second/cup_x_plus", "second/goal_y_minus"],
+  "references": "data/processed/dual_video_v11/experts/references.pkl",
+  "entry_offsets_m": [[0.0, 0.0], [0.0005, 0.0], [-0.0005, 0.0], [0.0, 0.0005], [0.0, -0.0005]],
+  "seed": 4102026,
+  "sequence_length": 16,
+  "user_scope_confirmation": "2026-10-02: simulation-event boundaries and three-finger support accepted; four-finger video fidelity reported separately",
+  "sources": [
+    "https://github.com/NVlabs/mimicgen/blob/main/docs/tutorials/subtask_termination_signals.md",
+    "https://github.com/NVlabs/mimicgen/blob/main/docs/modules/task_spec.md",
+    "https://arxiv.org/abs/2310.17596",
+    "https://robomimic.github.io/docs/v0.4/api/robomimic.utils.html"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "enabled": false,
+  "status": "proposal_only_no_training_started",
+  "requires_user_authorization": true,
+  "stage4_freeze": "data/processed/stage4_pipeline_v2/delivery/freeze.json",
+  "dataset_index": "data/processed/stage4_pipeline_v2/inputs/index.json",
+  "policy": {
+    "type": "skill_conditioned_residual_bc",
+    "feature_dim": 122,
+    "action_dim": 30,
+    "hidden_sizes": [128, 128],
+    "device": "cuda",
+    "normalized_action": "clip(frozen_video_reference + residual, -1, 1)"
+  },
+  "optimization": {
+    "epochs": 20,
+    "batch_size": 64,
+    "sequence_length": 16,
+    "learning_rate": 0.0003,
+    "sampling": "uniform_video_skill_then_episode_then_local_start",
+    "padding_loss_mask_required": true,
+    "fit_normalization_on": "train_only",
+    "seed": 5102026
+  },
+  "validation": {
+    "scope": "same_two_videos_grouped_development_validation_not_independent_test",
+    "nominal": "four_isolated_skills_and_continuous_chain_for_each_video",
+    "development_offsets_m": [0.0005, -0.0005],
+    "baselines": ["fixed_reference_actions", "no_learning_guarded_reference"],
+    "report": ["task_success", "per_skill_success", "entry_rejections", "contact_loss", "penetration", "goal_distance", "first_deviation_step"]
+  },
+  "independent_test": {
+    "status": "not_registered_not_run",
+    "freeze_candidate_and_scene_manifest_before_testing": true,
+    "exclude_all_prior_development_and_prior_heldout_scenes": true,
+    "compare_on_identical_initial_states": true,
+    "include_nominally_reachable_entries_and_report_invalid_entries_separately": true,
+    "new_real_video_required_for_cross_video_claim": true
+  },
+  "readiness": {
+    "nominal_smoke_candidate": true,
+    "robust_composable_skills": false,
+    "long_skill_training": false,
+    "unrestricted_high_level_planning": false
+  }
+}

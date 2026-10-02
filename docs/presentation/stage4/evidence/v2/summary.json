@@ -1,0 +1,209 @@
+{
+  "created_at": "2026-10-02T07:36:26.715143+00:00",
+  "engineering_stage4_complete": true,
+  "ready_for_nominal_stage5_smoke": true,
+  "robust_composable_skills_ready": false,
+  "skill_policy_training_started": false,
+  "heldout_used": false,
+  "independent_real_videos": 2,
+  "admitted_trajectories": 27,
+  "rejected_trajectories": 8,
+  "admitted_segments": 108,
+  "trajectory_splits": {
+    "train": 24,
+    "validation": 3
+  },
+  "input_checks": {
+    "passed": true,
+    "index_sha256": "ac6465339f45211d47ef7c50c6f6d23d8b06548c5f9f4ab4f33d0c7fd7b5323f",
+    "checks": {
+      "train": {
+        "frames": 34404,
+        "segments": 96,
+        "strata": 8,
+        "input_shape": [
+          32,
+          16,
+          122
+        ],
+        "finite": true,
+        "residual_reconstruction_error": 1.734723475976807e-18,
+        "valid_sample_frames": 471
+      },
+      "validation": {
+        "frames": 4317,
+        "segments": 12,
+        "strata": 8,
+        "input_shape": [
+          32,
+          16,
+          122
+        ],
+        "finite": true,
+        "residual_reconstruction_error": 0.0,
+        "valid_sample_frames": 424
+      }
+    },
+    "torch_forward_loss": 0.35332581400871277,
+    "optimizer_steps": 0,
+    "train_validation_groups_disjoint": true,
+    "normalization_fitted_on_train_only": true
+  },
+  "entries": {
+    "groups": {
+      "first/reach/nominal": {
+        "total": 1,
+        "passed": 1,
+        "failures": {}
+      },
+      "first/reach/perturbed": {
+        "total": 4,
+        "passed": 4,
+        "failures": {}
+      },
+      "first/grasp/nominal": {
+        "total": 1,
+        "passed": 1,
+        "failures": {}
+      },
+      "first/grasp/perturbed": {
+        "total": 4,
+        "passed": 2,
+        "failures": {
+          "entry_condition": 2
+        }
+      },
+      "first/lift/nominal": {
+        "total": 1,
+        "passed": 1,
+        "failures": {}
+      },
+      "first/lift/perturbed": {
+        "total": 4,
+        "passed": 0,
+        "failures": {
+          "entry_condition": 4
+        }
+      },
+      "first/transport/nominal": {
+        "total": 1,
+        "passed": 1,
+        "failures": {}
+      },
+      "first/transport/perturbed": {
+        "total": 4,
+        "passed": 1,
+        "failures": {
+          "entry_condition": 3
+        }
+      },
+      "second/reach/nominal": {
+        "total": 1,
+        "passed": 1,
+        "failures": {}
+      },
+      "second/reach/perturbed": {
+        "total": 4,
+        "passed": 3,
+        "failures": {
+          "reference_exhausted_before_event": 1
+        }
+      },
+      "second/grasp/nominal": {
+        "total": 1,
+        "passed": 1,
+        "failures": {}
+      },
+      "second/grasp/perturbed": {
+        "total": 4,
+        "passed": 0,
+        "failures": {
+          "reference_exhausted_before_event": 3,
+          "entry_condition": 1
+        }
+      },
+      "second/lift/nominal": {
+        "total": 1,
+        "passed": 1,
+        "failures": {}
+      },
+      "second/lift/perturbed": {
+        "total": 4,
+        "passed": 1,
+        "failures": {
+          "entry_condition": 3
+        }
+      },
+      "second/transport/nominal": {
+        "total": 1,
+        "passed": 1,
+        "failures": {}
+      },
+      "second/transport/perturbed": {
+        "total": 4,
+        "passed": 1,
+        "failures": {
+          "entry_condition": 2,
+          "scene_penetration": 1
+        }
+      }
+    },
+    "failure_counts": {
+      "entry_condition": 15,
+      "reference_exhausted_before_event": 4,
+      "scene_penetration": 1
+    },
+    "robust_skill_ready": false,
+    "scope": "Reference action sensitivity, not a learned policy evaluation"
+  },
+  "key_frames": [
+    {
+      "trajectory": "first/video_seed_0",
+      "state_index": 624,
+      "source_frame": 37,
+      "source_path": "data/real_data/relocate_mug/seq_dexycb_001/rgb/000037.jpg",
+      "source_sha256": "224dcd0c4619e735c184ce19bc2dbaf77e3e5cc6226c1a650a848fb695edaf9c",
+      "mapping_path": "data/real_data/relocate_mug/seq_dexycb_001/frame_mapping.json",
+      "mapping_sha256": "f23c4c2d477a11dce661b9860f6820dc9123475d35647713afdb360a43dcbe4a",
+      "image": "first-transport.jpg",
+      "image_sha256": "0a237ce6bbb414dd4ba07120796c3333a7156684d17bc3adff468e675e7956e0",
+      "max_state_error": 0.0,
+      "initialization_count": 1,
+      "state_writes_during_execution": 0,
+      "render_std": 57.79216823437412,
+      "scope": "Physical expert replay, not the running learned policy"
+    },
+    {
+      "trajectory": "second/nominal",
+      "state_index": 710,
+      "source_frame": 44,
+      "source_path": "data/real_data/relocate_mug/seq_dexycb_002/rgb/000044.jpg",
+      "source_sha256": "203ff2300e72e471e46caa7112cd6b06e0da2e9c832a035a3b663995955cd460",
+      "mapping_path": "data/real_data/relocate_mug/seq_dexycb_002/frame_mapping.json",
+      "mapping_sha256": "7dae6e7c391d18cc94597295f2cfbe9a39484937a1a0440f085f212e1c7f68f5",
+      "image": "second-transport.jpg",
+      "image_sha256": "a738ff8faa66773d1e9c55917c83410198f20b796972b373ad16f9a95dbfdf32",
+      "max_state_error": 0.0,
+      "initialization_count": 1,
+      "state_writes_during_execution": 0,
+      "render_std": 62.44273685738962,
+      "scope": "Physical expert replay, not the running learned policy"
+    }
+  ],
+  "max_accepted_replay_error": 7.435152132861944e-09,
+  "user_scope_confirmation": "2026-10-02: simulation-event boundaries and three-finger support accepted; four-finger video fidelity reported separately",
+  "limitations": [
+    "Entry perturbations pass 12/32; no robust skill policy claim",
+    "Two rejected snapshot replays remain unexplained; not admitted",
+    "Only two real videos; grouped validation is not independent generalization",
+    "Three-finger simulated support is not four-finger video fidelity or real force truth"
+  ],
+  "sources": [
+    "https://github.com/NVlabs/mimicgen/blob/main/docs/tutorials/subtask_termination_signals.md",
+    "https://github.com/NVlabs/mimicgen/blob/main/docs/modules/task_spec.md",
+    "https://arxiv.org/abs/2310.17596",
+    "https://robomimic.github.io/docs/v0.4/api/robomimic.utils.html",
+    "https://github.com/google-deepmind/mujoco/blob/main/doc/computation/index.rst",
+    "https://github.com/openai/mujoco-py/blob/master/mujoco_py/mjrendercontext.pyx"
+  ]
+}

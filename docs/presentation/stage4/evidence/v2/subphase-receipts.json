@@ -1,0 +1,77 @@
+{
+  "pilot": {
+    "passed": true,
+    "inputs_unchanged": true,
+    "completed": true,
+    "attempted": 2,
+    "admitted": 2,
+    "rejected": 0,
+    "manifest_sha256": "b1a5ce4c3b398fb23816f8fae38b49776f978d8a5c8a243dd57472b923e22898",
+    "scope": "Expert skill data, not trained skill policies or heldout evaluation"
+  },
+  "build": {
+    "passed": true,
+    "inputs_unchanged": true,
+    "completed": true,
+    "attempted": 35,
+    "admitted": 27,
+    "rejected": 8,
+    "manifest_sha256": "5d7629a66df4306d01342e2e1d66c665acc1e1ae0eb871af019fa78cc922508a",
+    "scope": "Expert skill data, not trained skill policies or heldout evaluation"
+  },
+  "inputs": {
+    "passed": true,
+    "index_sha256": "ac6465339f45211d47ef7c50c6f6d23d8b06548c5f9f4ab4f33d0c7fd7b5323f",
+    "checks": {
+      "train": {
+        "frames": 34404,
+        "segments": 96,
+        "strata": 8,
+        "input_shape": [
+          32,
+          16,
+          122
+        ],
+        "finite": true,
+        "residual_reconstruction_error": 1.734723475976807e-18,
+        "valid_sample_frames": 471
+      },
+      "validation": {
+        "frames": 4317,
+        "segments": 12,
+        "strata": 8,
+        "input_shape": [
+          32,
+          16,
+          122
+        ],
+        "finite": true,
+        "residual_reconstruction_error": 0.0,
+        "valid_sample_frames": 424
+      }
+    },
+    "torch_forward_loss": 0.35332581400871277,
+    "optimizer_steps": 0,
+    "train_validation_groups_disjoint": true,
+    "normalization_fitted_on_train_only": true
+  },
+  "entries": {
+    "passed": true,
+    "nominal_pass": 8,
+    "nominal_count": 8,
+    "perturbed_pass": 12,
+    "perturbed_count": 32,
+    "fixture_checks": {
+      "unsafe_entry": true,
+      "nonfinite": true,
+      "wrong_entry": true,
+      "contact_loss": true,
+      "timeout": true
+    },
+    "source_input_receipt_sha256": "020c109b9b8fcb441a9cdb62b4ebe9bfec0fd949cbe4d1159c532a208cdb20ee",
+    "cases_sha256": "086c3440b2c9934cc107fa0b7ea98e5ff1fae6fcc5fa7cd59147fe4fc5043949",
+    "state_writes_during_execution": 0,
+    "scope": "Fixed expert action entry sensitivity, not learned policy robustness; failed offsets are not demonstrations",
+    "robustness_gate": "Nominal execution and correct rejection required; perturbation success is diagnostic, not guaranteed"
+  }
+}

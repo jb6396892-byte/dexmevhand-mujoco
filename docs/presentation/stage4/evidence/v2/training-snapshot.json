@@ -1,0 +1,27 @@
+{
+  "scope": "Timestamped snapshot, not a live feed",
+  "status": {
+    "state": "running",
+    "iterations": 49,
+    "requested_iterations": 200,
+    "started_at": "2026-10-02T06:42:17.348241+00:00",
+    "training_pid": 14178,
+    "errors": [],
+    "warnings": [],
+    "sampled_steps": 140483,
+    "updated_at": "2026-10-02T07:36:21.725090+00:00",
+    "elapsed_seconds": 3244.3760269950008,
+    "seconds_without_iteration": 50.08929659900059,
+    "estimated_remaining_seconds": 9997.975103596838,
+    "last_checkpoint": "iteration_0040.pickle",
+    "process_exit_code": null,
+    "stop_reason": null,
+    "trajectories": 98,
+    "task_pass": 97,
+    "strict_pass": 92,
+    "recent_task_fraction": 1.0,
+    "max_measured_kl": 0.000635736680123955,
+    "latest_mean_return": 45326.316600202,
+    "nonzero_updates": 49
+  }
+}

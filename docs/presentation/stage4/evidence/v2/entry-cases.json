@@ -1,0 +1,1202 @@
+[
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "reach"
+    ],
+    "offset_m": [
+      0.0,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": 0.0,
+    "state_comparison_required": true,
+    "steps": 512,
+    "expected_steps": 512,
+    "contracts": [
+      {
+        "skill": "reach",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 512
+      }
+    ],
+    "max_penetration_m": 0.00042813471146140036,
+    "final_bottom_m": 0.00013982860428910426,
+    "final_goal_distance_m": 0.1483391649183774,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "reach"
+    ],
+    "offset_m": [
+      0.0005,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 512,
+    "expected_steps": 512,
+    "contracts": [
+      {
+        "skill": "reach",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 512
+      }
+    ],
+    "max_penetration_m": 0.0004281347114739077,
+    "final_bottom_m": 0.00014654881365360308,
+    "final_goal_distance_m": 0.14830830742243212,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "reach"
+    ],
+    "offset_m": [
+      -0.0005,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 512,
+    "expected_steps": 512,
+    "contracts": [
+      {
+        "skill": "reach",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 512
+      }
+    ],
+    "max_penetration_m": 0.00042813471153648266,
+    "final_bottom_m": 0.0001334589219466767,
+    "final_goal_distance_m": 0.14836950467604101,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "reach"
+    ],
+    "offset_m": [
+      0.0,
+      0.0005
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 512,
+    "expected_steps": 512,
+    "contracts": [
+      {
+        "skill": "reach",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 512
+      }
+    ],
+    "max_penetration_m": 0.0004281347115357402,
+    "final_bottom_m": 0.00014079585359282943,
+    "final_goal_distance_m": 0.14841337686256265,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "reach"
+    ],
+    "offset_m": [
+      0.0,
+      -0.0005
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 512,
+    "expected_steps": 512,
+    "contracts": [
+      {
+        "skill": "reach",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 512
+      }
+    ],
+    "max_penetration_m": 0.0004281347057774783,
+    "final_bottom_m": 0.00013856701248276745,
+    "final_goal_distance_m": 0.14826711514808366,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "grasp"
+    ],
+    "offset_m": [
+      0.0,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": 0.0,
+    "state_comparison_required": true,
+    "steps": 31,
+    "expected_steps": 31,
+    "contracts": [
+      {
+        "skill": "grasp",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 31
+      }
+    ],
+    "max_penetration_m": 0.00017444214061452344,
+    "final_bottom_m": 0.00016728594512857662,
+    "final_goal_distance_m": 0.14804822432962378,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "grasp"
+    ],
+    "offset_m": [
+      0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 31,
+    "contracts": [
+      {
+        "skill": "grasp",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 9.829917133746813e-08,
+    "final_bottom_m": 0.0001389528014330301,
+    "final_goal_distance_m": 0.14830910328351143,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "grasp"
+    ],
+    "offset_m": [
+      -0.0005,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 31,
+    "expected_steps": 31,
+    "contracts": [
+      {
+        "skill": "grasp",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 31
+      }
+    ],
+    "max_penetration_m": 0.00023424975339884276,
+    "final_bottom_m": 0.00016829359272370684,
+    "final_goal_distance_m": 0.14815444275798767,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "grasp"
+    ],
+    "offset_m": [
+      0.0,
+      0.0005
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 31,
+    "contracts": [
+      {
+        "skill": "grasp",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 9.829917133746813e-08,
+    "final_bottom_m": 0.0001389528014330301,
+    "final_goal_distance_m": 0.14841205005207211,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "grasp"
+    ],
+    "offset_m": [
+      0.0,
+      -0.0005
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 31,
+    "expected_steps": 31,
+    "contracts": [
+      {
+        "skill": "grasp",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 31
+      }
+    ],
+    "max_penetration_m": 0.00041480369121856453,
+    "final_bottom_m": 0.00016286175102099565,
+    "final_goal_distance_m": 0.14795395130672323,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "lift"
+    ],
+    "offset_m": [
+      0.0,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": 0.0,
+    "state_comparison_required": true,
+    "steps": 81,
+    "expected_steps": 81,
+    "contracts": [
+      {
+        "skill": "lift",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 81
+      }
+    ],
+    "max_penetration_m": 0.0005203315529877426,
+    "final_bottom_m": 0.05445628507161513,
+    "final_goal_distance_m": 0.09251659946582644,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "lift"
+    ],
+    "offset_m": [
+      0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 81,
+    "contracts": [
+      {
+        "skill": "lift",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.0004852944977306431,
+    "final_bottom_m": 0.00016834338771387842,
+    "final_goal_distance_m": 0.14802010270638846,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "lift"
+    ],
+    "offset_m": [
+      -0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 81,
+    "contracts": [
+      {
+        "skill": "lift",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.00037870210478600785,
+    "final_bottom_m": 0.00016834338771387842,
+    "final_goal_distance_m": 0.14808421355323687,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "lift"
+    ],
+    "offset_m": [
+      0.0,
+      0.0005
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 81,
+    "contracts": [
+      {
+        "skill": "lift",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.00016960209114086694,
+    "final_bottom_m": 0.00016834338771387842,
+    "final_goal_distance_m": 0.1481228012427584,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "lift"
+    ],
+    "offset_m": [
+      0.0,
+      -0.0005
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 81,
+    "contracts": [
+      {
+        "skill": "lift",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.0004157132771551923,
+    "final_bottom_m": 0.00016834338771387842,
+    "final_goal_distance_m": 0.14798148823717358,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "transport"
+    ],
+    "offset_m": [
+      0.0,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": 0.0,
+    "state_comparison_required": true,
+    "steps": 793,
+    "expected_steps": 793,
+    "contracts": [
+      {
+        "skill": "transport",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 793
+      }
+    ],
+    "max_penetration_m": 0.0005769569515597876,
+    "final_bottom_m": 0.13799057472001594,
+    "final_goal_distance_m": 0.0008529841766367158,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "transport"
+    ],
+    "offset_m": [
+      0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 793,
+    "contracts": [
+      {
+        "skill": "transport",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.0008567876561063873,
+    "final_bottom_m": 0.054183037705122755,
+    "final_goal_distance_m": 0.09272183682044026,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "transport"
+    ],
+    "offset_m": [
+      -0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 793,
+    "contracts": [
+      {
+        "skill": "transport",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.0005121383450991264,
+    "final_bottom_m": 0.054183037705122755,
+    "final_goal_distance_m": 0.09290576174648253,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "transport"
+    ],
+    "offset_m": [
+      0.0,
+      0.0005
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 793,
+    "contracts": [
+      {
+        "skill": "transport",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.0006349683020984148,
+    "final_bottom_m": 0.054183037705122755,
+    "final_goal_distance_m": 0.09294777538545212,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "first/video_seed_0",
+    "skills": [
+      "transport"
+    ],
+    "offset_m": [
+      0.0,
+      -0.0005
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 793,
+    "expected_steps": 793,
+    "contracts": [
+      {
+        "skill": "transport",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 793
+      }
+    ],
+    "max_penetration_m": 0.000585550584718276,
+    "final_bottom_m": 0.13777859033745302,
+    "final_goal_distance_m": 0.0008912482989681963,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "reach"
+    ],
+    "offset_m": [
+      0.0,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": 0.0,
+    "state_comparison_required": true,
+    "steps": 550,
+    "expected_steps": 550,
+    "contracts": [
+      {
+        "skill": "reach",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 550
+      }
+    ],
+    "max_penetration_m": 0.0007168648966304819,
+    "final_bottom_m": 7.66419545319909e-05,
+    "final_goal_distance_m": 0.22894692202455424,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "reach"
+    ],
+    "offset_m": [
+      0.0005,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 550,
+    "expected_steps": 550,
+    "contracts": [
+      {
+        "skill": "reach",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 550
+      }
+    ],
+    "max_penetration_m": 0.0007168648966304819,
+    "final_bottom_m": 8.303550801715956e-05,
+    "final_goal_distance_m": 0.22889164837429932,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "reach"
+    ],
+    "offset_m": [
+      -0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 550,
+    "expected_steps": 550,
+    "contracts": [
+      {
+        "skill": "reach",
+        "status": "running",
+        "reason": null,
+        "steps": 550
+      }
+    ],
+    "max_penetration_m": 0.0007168648966304819,
+    "final_bottom_m": 8.313712556537326e-05,
+    "final_goal_distance_m": 0.22897847545780678,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "reference_exhausted_before_event"
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "reach"
+    ],
+    "offset_m": [
+      0.0,
+      0.0005
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 550,
+    "expected_steps": 550,
+    "contracts": [
+      {
+        "skill": "reach",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 550
+      }
+    ],
+    "max_penetration_m": 0.0007168648966304819,
+    "final_bottom_m": 9.190354900230841e-05,
+    "final_goal_distance_m": 0.22912474799277147,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "reach"
+    ],
+    "offset_m": [
+      0.0,
+      -0.0005
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 550,
+    "expected_steps": 550,
+    "contracts": [
+      {
+        "skill": "reach",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 550
+      }
+    ],
+    "max_penetration_m": 0.0007168648966304819,
+    "final_bottom_m": 7.239919583769535e-05,
+    "final_goal_distance_m": 0.22873819290389738,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "grasp"
+    ],
+    "offset_m": [
+      0.0,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": 0.0,
+    "state_comparison_required": true,
+    "steps": 51,
+    "expected_steps": 51,
+    "contracts": [
+      {
+        "skill": "grasp",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 51
+      }
+    ],
+    "max_penetration_m": 0.0006056397176681765,
+    "final_bottom_m": 0.00017536760897160887,
+    "final_goal_distance_m": 0.22772374069665985,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "grasp"
+    ],
+    "offset_m": [
+      0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 51,
+    "expected_steps": 51,
+    "contracts": [
+      {
+        "skill": "grasp",
+        "status": "running",
+        "reason": null,
+        "steps": 51
+      }
+    ],
+    "max_penetration_m": 0.0006044856232819574,
+    "final_bottom_m": 0.00017104168655589658,
+    "final_goal_distance_m": 0.22763374808295728,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "reference_exhausted_before_event"
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "grasp"
+    ],
+    "offset_m": [
+      -0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 51,
+    "contracts": [
+      {
+        "skill": "grasp",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.0003770531092221682,
+    "final_bottom_m": 7.869292307471042e-05,
+    "final_goal_distance_m": 0.22897748394342105,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "grasp"
+    ],
+    "offset_m": [
+      0.0,
+      0.0005
+    ],
+    "passed": false,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 51,
+    "expected_steps": 51,
+    "contracts": [
+      {
+        "skill": "grasp",
+        "status": "running",
+        "reason": null,
+        "steps": 51
+      }
+    ],
+    "max_penetration_m": 0.000605279537679259,
+    "final_bottom_m": 0.0001770969065078361,
+    "final_goal_distance_m": 0.22793757224998312,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "reference_exhausted_before_event"
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "grasp"
+    ],
+    "offset_m": [
+      0.0,
+      -0.0005
+    ],
+    "passed": false,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 51,
+    "expected_steps": 51,
+    "contracts": [
+      {
+        "skill": "grasp",
+        "status": "running",
+        "reason": null,
+        "steps": 51
+      }
+    ],
+    "max_penetration_m": 0.0006045355159106282,
+    "final_bottom_m": 0.00017605885189960098,
+    "final_goal_distance_m": 0.22754760120707918,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "reference_exhausted_before_event"
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "lift"
+    ],
+    "offset_m": [
+      0.0,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": 0.0,
+    "state_comparison_required": true,
+    "steps": 109,
+    "expected_steps": 109,
+    "contracts": [
+      {
+        "skill": "lift",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 109
+      }
+    ],
+    "max_penetration_m": 0.000800204387499468,
+    "final_bottom_m": 0.05929682165621635,
+    "final_goal_distance_m": 0.1608992463697249,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "lift"
+    ],
+    "offset_m": [
+      0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 109,
+    "contracts": [
+      {
+        "skill": "lift",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.0006993190974298727,
+    "final_bottom_m": 0.0001649311295683696,
+    "final_goal_distance_m": 0.22766740241956557,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "lift"
+    ],
+    "offset_m": [
+      -0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 109,
+    "contracts": [
+      {
+        "skill": "lift",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.0006243321790126987,
+    "final_bottom_m": 0.0001649311295683696,
+    "final_goal_distance_m": 0.22778589509406746,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "lift"
+    ],
+    "offset_m": [
+      0.0,
+      0.0005
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 109,
+    "expected_steps": 109,
+    "contracts": [
+      {
+        "skill": "lift",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 109
+      }
+    ],
+    "max_penetration_m": 0.0008267267006632323,
+    "final_bottom_m": 0.059139545370016554,
+    "final_goal_distance_m": 0.16115475020283632,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "lift"
+    ],
+    "offset_m": [
+      0.0,
+      -0.0005
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 109,
+    "contracts": [
+      {
+        "skill": "lift",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.0006000689461447758,
+    "final_bottom_m": 0.0001649311295683696,
+    "final_goal_distance_m": 0.22749905369860218,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "transport"
+    ],
+    "offset_m": [
+      0.0,
+      0.0
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": 9.559020242022598e-14,
+    "state_comparison_required": true,
+    "steps": 740,
+    "expected_steps": 740,
+    "contracts": [
+      {
+        "skill": "transport",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 740
+      }
+    ],
+    "max_penetration_m": 0.0009009991940679045,
+    "final_bottom_m": 0.1851155177504409,
+    "final_goal_distance_m": 0.0038582429087141035,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "transport"
+    ],
+    "offset_m": [
+      0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 740,
+    "contracts": [
+      {
+        "skill": "transport",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.0007816853453066203,
+    "final_bottom_m": 0.05944326728007994,
+    "final_goal_distance_m": 0.16052544288375875,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "transport"
+    ],
+    "offset_m": [
+      -0.0005,
+      0.0
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 0,
+    "expected_steps": 740,
+    "contracts": [
+      {
+        "skill": "transport",
+        "status": "failed",
+        "reason": "entry_condition",
+        "steps": 0
+      }
+    ],
+    "max_penetration_m": 0.000761196829661334,
+    "final_bottom_m": 0.05944326728007994,
+    "final_goal_distance_m": 0.1609503863123294,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "entry_condition"
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "transport"
+    ],
+    "offset_m": [
+      0.0,
+      0.0005
+    ],
+    "passed": false,
+    "complete": false,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 43,
+    "expected_steps": 740,
+    "contracts": [
+      {
+        "skill": "transport",
+        "status": "failed",
+        "reason": "scene_penetration",
+        "steps": 43
+      }
+    ],
+    "max_penetration_m": 0.0010491790733505757,
+    "final_bottom_m": 0.10032577547272901,
+    "final_goal_distance_m": 0.11966026216143176,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": "scene_penetration"
+  },
+  {
+    "trajectory": "second/nominal",
+    "skills": [
+      "transport"
+    ],
+    "offset_m": [
+      0.0,
+      -0.0005
+    ],
+    "passed": true,
+    "complete": true,
+    "state_replay_error": null,
+    "state_comparison_required": false,
+    "steps": 740,
+    "expected_steps": 740,
+    "contracts": [
+      {
+        "skill": "transport",
+        "status": "success",
+        "reason": "physical_event",
+        "steps": 740
+      }
+    ],
+    "max_penetration_m": 0.0009641257968973645,
+    "final_bottom_m": 0.18452064043064986,
+    "final_goal_distance_m": 0.0043181836630312815,
+    "initialization_count": 1,
+    "state_writes_during_execution": 0,
+    "failure_class": null
+  }
+]
