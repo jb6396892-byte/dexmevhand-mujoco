@@ -1,0 +1,35 @@
+schema_version: 1
+backend: verified_reference
+dataset: data/processed/stage4_pipeline_v2
+delivery_freeze_sha256: 83cc5aa5ff07a050eb076fec089d77c0bebfefe9f6829f777820d7e92ffd672b
+scenes:
+  first: first/video_seed_0
+  second: second/nominal
+limits:
+  max_total_steps: 3200
+  wall_timeout_s: 120
+  max_provider_retries: 2
+  max_replans: 1
+skills:
+  reach:
+    precondition: safe_state
+    success: sustained_contact
+    max_steps: 800
+  grasp:
+    precondition: contact
+    success: sustained_thumb_and_three_finger_support
+    max_steps: 800
+  lift:
+    precondition: thumb_and_three_finger_support
+    success: supported_bottom_above_50mm
+    max_steps: 800
+  transport:
+    precondition: supported_bottom_above_50mm
+    success: supported_goal_hold
+    max_steps: 1600
+instructions:
+  reach: [接近杯子, 靠近杯子]
+  grasp: [抓住杯子, 握住杯子]
+  lift: [抓起杯子, 拿起杯子, 抬起杯子, 把杯子拿起来, 请抓起杯子]
+  transport: [把杯子搬到目标位置, 将杯子移动到目标位置, 抓起杯子并搬到目标位置]
+  stop: [停止, 停下, 取消]

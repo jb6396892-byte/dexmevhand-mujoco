@@ -1,0 +1,2126 @@
+[
+  {
+    "case": "first-pickup",
+    "test_passed": true,
+    "expected_status": "success",
+    "expected_reason": "plan_completed",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "success",
+      "reason": "plan_completed",
+      "plan": {
+        "schema_version": 1,
+        "scene": "first",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach",
+        "grasp",
+        "lift"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.0008135699972626753,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 512,
+          "wall_s": 0.6184024569993198,
+          "steps": 512,
+          "event": "physical_event",
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6184157360003155,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "grasp",
+          "global_step": 543,
+          "wall_s": 0.6645477789970755,
+          "steps": 31,
+          "event": "physical_event",
+          "bottom_m": 0.00016728594512857662,
+          "target_distance_m": 0.14804822432962378
+        },
+        {
+          "kind": "skill_started",
+          "skill": "lift",
+          "global_step": 543,
+          "wall_s": 0.6645638439986215,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "lift",
+          "global_step": 624,
+          "wall_s": 0.7877417819981929,
+          "steps": 81,
+          "event": "physical_event",
+          "bottom_m": 0.05445628507161513,
+          "target_distance_m": 0.09251659946582644
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "lift",
+          "global_step": 624,
+          "wall_s": 0.787747455000499,
+          "status": "success",
+          "reason": "plan_completed"
+        }
+      ],
+      "steps": 624,
+      "provider_retries": 0,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 0.05445628507161513,
+        "target_distance_m": 0.09251659946582644,
+        "scene_penetration_m": 0.00047219974574438776,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 4.573175457411152,
+        "ff_force_n": 3.4581792893378136,
+        "mf_force_n": 1.2993767651335089,
+        "rf_force_n": 0.6721946154914263,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.7877485209974111,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "first/video_seed_0",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.0005203315529877426,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 624,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.05445628507161513,
+          "target_distance_m": 0.09251659946582644,
+          "scene_penetration_m": 0.00047219974574438776,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 4.573175457411152,
+          "ff_force_n": 3.4581792893378136,
+          "mf_force_n": 1.2993767651335089,
+          "rf_force_n": 0.6721946154914263,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": null,
+      "created_at": "2026-10-02T09:42:38.981280+00:00",
+      "screenshot": {
+        "file": "final.jpg",
+        "sha256": "966b8f426961359159d6ace119902a9d6bfb0dce27bac001e440bbee01c9adb9",
+        "state_unchanged": true,
+        "pixel_std": 55.87030071996078,
+        "width": 960,
+        "height": 720
+      }
+    },
+    "report_sha256": "26f1c6aa3b025fb53b52d2f3a43eb02f91d12d36c842560cdfcf91fc28cf7ee5"
+  },
+  {
+    "case": "first-transport",
+    "test_passed": true,
+    "expected_status": "success",
+    "expected_reason": "plan_completed",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "success",
+      "reason": "plan_completed",
+      "plan": {
+        "schema_version": 1,
+        "scene": "first",
+        "object": "mug",
+        "goal": "transport",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift",
+          "transport"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach",
+        "grasp",
+        "lift",
+        "transport"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.00029025399999227375,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 512,
+          "wall_s": 0.6000871590003953,
+          "steps": 512,
+          "event": "physical_event",
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6000994890018774,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "grasp",
+          "global_step": 543,
+          "wall_s": 0.6460115250010858,
+          "steps": 31,
+          "event": "physical_event",
+          "bottom_m": 0.00016728594512857662,
+          "target_distance_m": 0.14804822432962378
+        },
+        {
+          "kind": "skill_started",
+          "skill": "lift",
+          "global_step": 543,
+          "wall_s": 0.6460271470023145,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "lift",
+          "global_step": 624,
+          "wall_s": 0.7677848439998343,
+          "steps": 81,
+          "event": "physical_event",
+          "bottom_m": 0.05445628507161513,
+          "target_distance_m": 0.09251659946582644
+        },
+        {
+          "kind": "skill_started",
+          "skill": "transport",
+          "global_step": 624,
+          "wall_s": 0.7677981130000262,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "transport",
+          "global_step": 1417,
+          "wall_s": 1.9950510000016948,
+          "steps": 793,
+          "event": "physical_event",
+          "bottom_m": 0.13799057472001594,
+          "target_distance_m": 0.0008529841766367158
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "transport",
+          "global_step": 1417,
+          "wall_s": 1.9950535090029007,
+          "status": "success",
+          "reason": "plan_completed"
+        }
+      ],
+      "steps": 1417,
+      "provider_retries": 0,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 0.13799057472001594,
+        "target_distance_m": 0.0008529841766367158,
+        "scene_penetration_m": 0.00039818514775355127,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 4.5492204454486025,
+        "ff_force_n": 3.388907821345503,
+        "mf_force_n": 0.5506836746016406,
+        "rf_force_n": 0.4390361151682928,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 1.9950546979998762,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "first/video_seed_0",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.0005769569515597876,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 1417,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.13799057472001594,
+          "target_distance_m": 0.0008529841766367158,
+          "scene_penetration_m": 0.00039818514775355127,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 4.5492204454486025,
+          "ff_force_n": 3.388907821345503,
+          "mf_force_n": 0.5506836746016406,
+          "rf_force_n": 0.4390361151682928,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": null,
+      "created_at": "2026-10-02T09:42:41.834199+00:00"
+    },
+    "report_sha256": "b7eb3aee7f952e69e71d34efea44df3955a5da5f2652107408d9345bbe83ee64"
+  },
+  {
+    "case": "first-retry_once",
+    "test_passed": true,
+    "expected_status": "success",
+    "expected_reason": "plan_completed",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "success",
+      "reason": "plan_completed",
+      "plan": {
+        "schema_version": 1,
+        "scene": "first",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach",
+        "grasp",
+        "lift"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.0003248389984946698,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 512,
+          "wall_s": 0.6246939869997732,
+          "steps": 512,
+          "event": "physical_event",
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6247069509990979,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6249735829987912,
+          "reason": "TransientActionError"
+        },
+        {
+          "kind": "provider_retry",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6249887119993218,
+          "attempt": 1,
+          "cursor_preserved": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "grasp",
+          "global_step": 543,
+          "wall_s": 0.6731091039982857,
+          "steps": 31,
+          "event": "physical_event",
+          "bottom_m": 0.00016728594512857662,
+          "target_distance_m": 0.14804822432962378
+        },
+        {
+          "kind": "skill_started",
+          "skill": "lift",
+          "global_step": 543,
+          "wall_s": 0.6731280790008896,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "lift",
+          "global_step": 624,
+          "wall_s": 0.8002068919995509,
+          "steps": 81,
+          "event": "physical_event",
+          "bottom_m": 0.05445628507161513,
+          "target_distance_m": 0.09251659946582644
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "lift",
+          "global_step": 624,
+          "wall_s": 0.8002095299998473,
+          "status": "success",
+          "reason": "plan_completed"
+        }
+      ],
+      "steps": 624,
+      "provider_retries": 1,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 0.05445628507161513,
+        "target_distance_m": 0.09251659946582644,
+        "scene_penetration_m": 0.00047219974574438776,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 4.573175457411152,
+        "ff_force_n": 3.4581792893378136,
+        "mf_force_n": 1.2993767651335089,
+        "rf_force_n": 0.6721946154914263,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.8002106759995513,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "first/video_seed_0",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.0005203315529877426,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 624,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.05445628507161513,
+          "target_distance_m": 0.09251659946582644,
+          "scene_penetration_m": 0.00047219974574438776,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 4.573175457411152,
+          "ff_force_n": 3.4581792893378136,
+          "mf_force_n": 1.2993767651335089,
+          "rf_force_n": 0.6721946154914263,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": "provider_once",
+      "created_at": "2026-10-02T09:42:43.348995+00:00"
+    },
+    "report_sha256": "d240972717c43a737666aee81ac417cccbe5f031c407d258a72a0643a21d26db"
+  },
+  {
+    "case": "first-replan_once",
+    "test_passed": true,
+    "expected_status": "success",
+    "expected_reason": "plan_completed",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "success",
+      "reason": "plan_completed",
+      "plan": {
+        "schema_version": 1,
+        "scene": "first",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach",
+        "grasp",
+        "lift"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.00030305099789984524,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 512,
+          "wall_s": 0.6024165659982827,
+          "steps": 512,
+          "event": "physical_event",
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6024296509967826,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6026823189968127,
+          "reason": "ReplanRequested"
+        },
+        {
+          "kind": "replanned",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6028233799988811,
+          "remaining": [
+            "grasp",
+            "lift"
+          ],
+          "cursor_preserved": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "grasp",
+          "global_step": 543,
+          "wall_s": 0.6487753339970368,
+          "steps": 31,
+          "event": "physical_event",
+          "bottom_m": 0.00016728594512857662,
+          "target_distance_m": 0.14804822432962378
+        },
+        {
+          "kind": "skill_started",
+          "skill": "lift",
+          "global_step": 543,
+          "wall_s": 0.6487884009984555,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "lift",
+          "global_step": 624,
+          "wall_s": 0.7716978169992217,
+          "steps": 81,
+          "event": "physical_event",
+          "bottom_m": 0.05445628507161513,
+          "target_distance_m": 0.09251659946582644
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "lift",
+          "global_step": 624,
+          "wall_s": 0.7717004699989047,
+          "status": "success",
+          "reason": "plan_completed"
+        }
+      ],
+      "steps": 624,
+      "provider_retries": 0,
+      "replans": 1,
+      "final_metrics": {
+        "bottom_m": 0.05445628507161513,
+        "target_distance_m": 0.09251659946582644,
+        "scene_penetration_m": 0.00047219974574438776,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 4.573175457411152,
+        "ff_force_n": 3.4581792893378136,
+        "mf_force_n": 1.2993767651335089,
+        "rf_force_n": 0.6721946154914263,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.7717016799979319,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "first/video_seed_0",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.0005203315529877426,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 624,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.05445628507161513,
+          "target_distance_m": 0.09251659946582644,
+          "scene_penetration_m": 0.00047219974574438776,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 4.573175457411152,
+          "ff_force_n": 3.4581792893378136,
+          "mf_force_n": 1.2993767651335089,
+          "rf_force_n": 0.6721946154914263,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": "replan_once",
+      "created_at": "2026-10-02T09:42:44.859612+00:00"
+    },
+    "report_sha256": "c7f0fe8076d002de78433c7be1c85a68375fe8d96bd91c63c5906ef9649b47ca"
+  },
+  {
+    "case": "first-grasp_timeout",
+    "test_passed": true,
+    "expected_status": "stopped",
+    "expected_reason": "skill_timeout",
+    "configuration_override": "grasp.max_steps=3",
+    "report": {
+      "schema_version": 1,
+      "status": "stopped",
+      "reason": "skill_timeout",
+      "plan": {
+        "schema_version": 1,
+        "scene": "first",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.00031511099950876087,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 512,
+          "wall_s": 0.6082285550000961,
+          "steps": 512,
+          "event": "physical_event",
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6082408850015781,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "grasp",
+          "global_step": 515,
+          "wall_s": 0.6125127769992105,
+          "status": "stopped",
+          "reason": "skill_timeout"
+        }
+      ],
+      "steps": 515,
+      "provider_retries": 0,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 0.0001246469153037544,
+        "target_distance_m": 0.14834664591663516,
+        "scene_penetration_m": 4.541609948779252e-06,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 0.9520329011023734,
+        "ff_force_n": 0.0,
+        "mf_force_n": 0.0,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.612514413001918,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "first/video_seed_0",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.00042813471146140036,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 515,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.0001246469153037544,
+          "target_distance_m": 0.14834664591663516,
+          "scene_penetration_m": 4.541609948779252e-06,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 0.9520329011023734,
+          "ff_force_n": 0.0,
+          "mf_force_n": 0.0,
+          "rf_force_n": 0.0,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": null,
+      "created_at": "2026-10-02T09:42:46.164500+00:00"
+    },
+    "report_sha256": "88939ed86f5ad44fe52e397db35222891130f154004817a8dc411e4b13641e5e"
+  },
+  {
+    "case": "first-retry_exhausted",
+    "test_passed": true,
+    "expected_status": "stopped",
+    "expected_reason": "retry_budget_exhausted",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "stopped",
+      "reason": "retry_budget_exhausted",
+      "plan": {
+        "schema_version": 1,
+        "scene": "first",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.00044499399882624857,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 512,
+          "wall_s": 0.6067319599969778,
+          "steps": 512,
+          "event": "physical_event",
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.606744513999729,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6069970360003936,
+          "reason": "TransientActionError"
+        },
+        {
+          "kind": "provider_retry",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6070109430002049,
+          "attempt": 1,
+          "cursor_preserved": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6072563009984151,
+          "reason": "TransientActionError"
+        },
+        {
+          "kind": "provider_retry",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6072695129987551,
+          "attempt": 2,
+          "cursor_preserved": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6075093149993336,
+          "reason": "TransientActionError"
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6075220669990813,
+          "status": "stopped",
+          "reason": "retry_budget_exhausted"
+        }
+      ],
+      "steps": 512,
+      "provider_retries": 2,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 0.00013982860428910426,
+        "target_distance_m": 0.1483391649183774,
+        "scene_penetration_m": 1.5872620760890715e-06,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 0.8847321399154373,
+        "ff_force_n": 0.0,
+        "mf_force_n": 0.0,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.6075230999995256,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "first/video_seed_0",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.00042813471146140036,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 512,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774,
+          "scene_penetration_m": 1.5872620760890715e-06,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 0.8847321399154373,
+          "ff_force_n": 0.0,
+          "mf_force_n": 0.0,
+          "rf_force_n": 0.0,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": "provider_always",
+      "created_at": "2026-10-02T09:42:47.461893+00:00"
+    },
+    "report_sha256": "770d16a1d595b564b7096eb6417fab9f260a1b4ecd327dfb78f9218559088dd0"
+  },
+  {
+    "case": "first-replan_exhausted",
+    "test_passed": true,
+    "expected_status": "stopped",
+    "expected_reason": "replan_budget_exhausted",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "stopped",
+      "reason": "replan_budget_exhausted",
+      "plan": {
+        "schema_version": 1,
+        "scene": "first",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.00033378500302205794,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 512,
+          "wall_s": 0.6029236800022773,
+          "steps": 512,
+          "event": "physical_event",
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6029362090012,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6032090260014229,
+          "reason": "ReplanRequested"
+        },
+        {
+          "kind": "replanned",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6033661200017377,
+          "remaining": [
+            "grasp",
+            "lift"
+          ],
+          "cursor_preserved": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6036205300006259,
+          "reason": "ReplanRequested"
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6036344890017062,
+          "status": "stopped",
+          "reason": "replan_budget_exhausted"
+        }
+      ],
+      "steps": 512,
+      "provider_retries": 0,
+      "replans": 1,
+      "final_metrics": {
+        "bottom_m": 0.00013982860428910426,
+        "target_distance_m": 0.1483391649183774,
+        "scene_penetration_m": 1.5872620760890715e-06,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 0.8847321399154373,
+        "ff_force_n": 0.0,
+        "mf_force_n": 0.0,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.6036355290016218,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "first/video_seed_0",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.00042813471146140036,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 512,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774,
+          "scene_penetration_m": 1.5872620760890715e-06,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 0.8847321399154373,
+          "ff_force_n": 0.0,
+          "mf_force_n": 0.0,
+          "rf_force_n": 0.0,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": "replan_always",
+      "created_at": "2026-10-02T09:42:48.789422+00:00"
+    },
+    "report_sha256": "67d74a2f8e6e9326a9031db23c38ba9bfc445351d148fe933e9d6631c030dcd8"
+  },
+  {
+    "case": "first-invalid_action",
+    "test_passed": true,
+    "expected_status": "stopped",
+    "expected_reason": "invalid_action",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "stopped",
+      "reason": "invalid_action",
+      "plan": {
+        "schema_version": 1,
+        "scene": "first",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.00032055100018624216,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 512,
+          "wall_s": 0.6070627640001476,
+          "steps": 512,
+          "event": "physical_event",
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6070751389997895,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "grasp",
+          "global_step": 512,
+          "wall_s": 0.6070975089969579,
+          "status": "stopped",
+          "reason": "invalid_action"
+        }
+      ],
+      "steps": 512,
+      "provider_retries": 0,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 0.00013982860428910426,
+        "target_distance_m": 0.1483391649183774,
+        "scene_penetration_m": 4.580223369970125e-05,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 0.8847321399154373,
+        "ff_force_n": 0.0,
+        "mf_force_n": 0.0,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.6070984759971907,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "first/video_seed_0",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.00042813471146140036,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 512,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.00013982860428910426,
+          "target_distance_m": 0.1483391649183774,
+          "scene_penetration_m": 4.580223369970125e-05,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 0.8847321399154373,
+          "ff_force_n": 0.0,
+          "mf_force_n": 0.0,
+          "rf_force_n": 0.0,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": "invalid_action",
+      "created_at": "2026-10-02T09:42:50.086019+00:00"
+    },
+    "report_sha256": "4cfcb574e07624ec00efaa21708906740c22451db3d0e5b7a816e412121fdf0a"
+  },
+  {
+    "case": "second-pickup",
+    "test_passed": true,
+    "expected_status": "success",
+    "expected_reason": "plan_completed",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "success",
+      "reason": "plan_completed",
+      "plan": {
+        "schema_version": 1,
+        "scene": "second",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach",
+        "grasp",
+        "lift"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.0003131119992758613,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 550,
+          "wall_s": 0.704719445999217,
+          "steps": 550,
+          "event": "physical_event",
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.704733012997167,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "grasp",
+          "global_step": 601,
+          "wall_s": 0.7810886769984791,
+          "steps": 51,
+          "event": "physical_event",
+          "bottom_m": 0.00017536760897160887,
+          "target_distance_m": 0.22772374069665985
+        },
+        {
+          "kind": "skill_started",
+          "skill": "lift",
+          "global_step": 601,
+          "wall_s": 0.7811032709978463,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "lift",
+          "global_step": 710,
+          "wall_s": 0.9443979159987066,
+          "steps": 109,
+          "event": "physical_event",
+          "bottom_m": 0.05929682165621635,
+          "target_distance_m": 0.1608992463697249
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "lift",
+          "global_step": 710,
+          "wall_s": 0.9444003959979455,
+          "status": "success",
+          "reason": "plan_completed"
+        }
+      ],
+      "steps": 710,
+      "provider_retries": 0,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 0.05929682165621635,
+        "target_distance_m": 0.1608992463697249,
+        "scene_penetration_m": 0.000777395272360132,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 5.894152958053068,
+        "ff_force_n": 5.227501040302445,
+        "mf_force_n": 1.573043546843023,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.9444014049986436,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "second/nominal",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.000800204387499468,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 710,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.05929682165621635,
+          "target_distance_m": 0.1608992463697249,
+          "scene_penetration_m": 0.000777395272360132,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 5.894152958053068,
+          "ff_force_n": 5.227501040302445,
+          "mf_force_n": 1.573043546843023,
+          "rf_force_n": 0.0,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": null,
+      "created_at": "2026-10-02T09:42:51.720402+00:00"
+    },
+    "report_sha256": "b2031fbababfc4f0c886d8da300d2c15abb04989710c9b1d31981155ee1b18dd"
+  },
+  {
+    "case": "second-transport",
+    "test_passed": true,
+    "expected_status": "success",
+    "expected_reason": "plan_completed",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "success",
+      "reason": "plan_completed",
+      "plan": {
+        "schema_version": 1,
+        "scene": "second",
+        "object": "mug",
+        "goal": "transport",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift",
+          "transport"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach",
+        "grasp",
+        "lift",
+        "transport"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.0003456409976934083,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 550,
+          "wall_s": 0.6935427139978856,
+          "steps": 550,
+          "event": "physical_event",
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.693556185997295,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "grasp",
+          "global_step": 601,
+          "wall_s": 0.7683781349987839,
+          "steps": 51,
+          "event": "physical_event",
+          "bottom_m": 0.00017536760897160887,
+          "target_distance_m": 0.22772374069665985
+        },
+        {
+          "kind": "skill_started",
+          "skill": "lift",
+          "global_step": 601,
+          "wall_s": 0.7683927689977281,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "lift",
+          "global_step": 710,
+          "wall_s": 0.9278439859990613,
+          "steps": 109,
+          "event": "physical_event",
+          "bottom_m": 0.05929682165621635,
+          "target_distance_m": 0.1608992463697249
+        },
+        {
+          "kind": "skill_started",
+          "skill": "transport",
+          "global_step": 710,
+          "wall_s": 0.9278569779999088,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "transport",
+          "global_step": 1450,
+          "wall_s": 1.9550318799992965,
+          "steps": 740,
+          "event": "physical_event",
+          "bottom_m": 0.18511551775044072,
+          "target_distance_m": 0.0038582429087141296
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "transport",
+          "global_step": 1450,
+          "wall_s": 1.9550344029994449,
+          "status": "success",
+          "reason": "plan_completed"
+        }
+      ],
+      "steps": 1450,
+      "provider_retries": 0,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 0.18511551775044072,
+        "target_distance_m": 0.0038582429087141296,
+        "scene_penetration_m": 0.00040825605061056366,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 5.354185781945432,
+        "ff_force_n": 0.3155263507552463,
+        "mf_force_n": 4.917852799733528,
+        "rf_force_n": 1.4346661896688884,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 1.955035766997753,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "second/nominal",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.0009009991940679115,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 1450,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.18511551775044072,
+          "target_distance_m": 0.0038582429087141296,
+          "scene_penetration_m": 0.00040825605061056366,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 5.354185781945432,
+          "ff_force_n": 0.3155263507552463,
+          "mf_force_n": 4.917852799733528,
+          "rf_force_n": 1.4346661896688884,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": null,
+      "created_at": "2026-10-02T09:42:54.506406+00:00",
+      "screenshot": {
+        "file": "final.jpg",
+        "sha256": "6623946f77f4cea704137247ddf4d5cde6c681c4665e1077f2e33090b946d126",
+        "state_unchanged": true,
+        "pixel_std": 64.16824346259314,
+        "width": 960,
+        "height": 720
+      }
+    },
+    "report_sha256": "ff8e7df4198a18e858e3b2c0e45288e53cc9d33a9e7d0d6fcf1d0c8b61bbeae5"
+  },
+  {
+    "case": "second-retry_once",
+    "test_passed": true,
+    "expected_status": "success",
+    "expected_reason": "plan_completed",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "success",
+      "reason": "plan_completed",
+      "plan": {
+        "schema_version": 1,
+        "scene": "second",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach",
+        "grasp",
+        "lift"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.0003217289995518513,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 550,
+          "wall_s": 0.6971638260001782,
+          "steps": 550,
+          "event": "physical_event",
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.6971780580024642,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.6974455620002118,
+          "reason": "TransientActionError"
+        },
+        {
+          "kind": "provider_retry",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.6974595909996424,
+          "attempt": 1,
+          "cursor_preserved": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "grasp",
+          "global_step": 601,
+          "wall_s": 0.7733264910020807,
+          "steps": 51,
+          "event": "physical_event",
+          "bottom_m": 0.00017536760897160887,
+          "target_distance_m": 0.22772374069665985
+        },
+        {
+          "kind": "skill_started",
+          "skill": "lift",
+          "global_step": 601,
+          "wall_s": 0.7733394120004959,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "lift",
+          "global_step": 710,
+          "wall_s": 0.9348170190023666,
+          "steps": 109,
+          "event": "physical_event",
+          "bottom_m": 0.05929682165621635,
+          "target_distance_m": 0.1608992463697249
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "lift",
+          "global_step": 710,
+          "wall_s": 0.934819376001542,
+          "status": "success",
+          "reason": "plan_completed"
+        }
+      ],
+      "steps": 710,
+      "provider_retries": 1,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 0.05929682165621635,
+        "target_distance_m": 0.1608992463697249,
+        "scene_penetration_m": 0.000777395272360132,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 5.894152958053068,
+        "ff_force_n": 5.227501040302445,
+        "mf_force_n": 1.573043546843023,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.9348206180002308,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "second/nominal",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.000800204387499468,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 710,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.05929682165621635,
+          "target_distance_m": 0.1608992463697249,
+          "scene_penetration_m": 0.000777395272360132,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 5.894152958053068,
+          "ff_force_n": 5.227501040302445,
+          "mf_force_n": 1.573043546843023,
+          "rf_force_n": 0.0,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": "provider_once",
+      "created_at": "2026-10-02T09:42:56.287095+00:00"
+    },
+    "report_sha256": "c2a6ec62eb5c4a9a3e7604399418ba01f683601ba8a1660ba13f28f5134f181c"
+  },
+  {
+    "case": "second-replan_once",
+    "test_passed": true,
+    "expected_status": "success",
+    "expected_reason": "plan_completed",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "success",
+      "reason": "plan_completed",
+      "plan": {
+        "schema_version": 1,
+        "scene": "second",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach",
+        "grasp",
+        "lift"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.00029024399918853305,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 550,
+          "wall_s": 0.7005948859987257,
+          "steps": 550,
+          "event": "physical_event",
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7006090069990023,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7008847360011714,
+          "reason": "ReplanRequested"
+        },
+        {
+          "kind": "replanned",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7010416619996249,
+          "remaining": [
+            "grasp",
+            "lift"
+          ],
+          "cursor_preserved": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "grasp",
+          "global_step": 601,
+          "wall_s": 0.7786426829989068,
+          "steps": 51,
+          "event": "physical_event",
+          "bottom_m": 0.00017536760897160887,
+          "target_distance_m": 0.22772374069665985
+        },
+        {
+          "kind": "skill_started",
+          "skill": "lift",
+          "global_step": 601,
+          "wall_s": 0.7786581229993317,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "lift",
+          "global_step": 710,
+          "wall_s": 0.9458652869980142,
+          "steps": 109,
+          "event": "physical_event",
+          "bottom_m": 0.05929682165621635,
+          "target_distance_m": 0.1608992463697249
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "lift",
+          "global_step": 710,
+          "wall_s": 0.94586803600032,
+          "status": "success",
+          "reason": "plan_completed"
+        }
+      ],
+      "steps": 710,
+      "provider_retries": 0,
+      "replans": 1,
+      "final_metrics": {
+        "bottom_m": 0.05929682165621635,
+        "target_distance_m": 0.1608992463697249,
+        "scene_penetration_m": 0.000777395272360132,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 5.894152958053068,
+        "ff_force_n": 5.227501040302445,
+        "mf_force_n": 1.573043546843023,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.9458697340014623,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "second/nominal",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.000800204387499468,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 710,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 0.05929682165621635,
+          "target_distance_m": 0.1608992463697249,
+          "scene_penetration_m": 0.000777395272360132,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 5.894152958053068,
+          "ff_force_n": 5.227501040302445,
+          "mf_force_n": 1.573043546843023,
+          "rf_force_n": 0.0,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": "replan_once",
+      "created_at": "2026-10-02T09:42:57.958142+00:00"
+    },
+    "report_sha256": "0db50ce8ce826ee9f01b98b0f468b81d87d607657c717f14235c59786bfa6913"
+  },
+  {
+    "case": "second-grasp_timeout",
+    "test_passed": true,
+    "expected_status": "stopped",
+    "expected_reason": "skill_timeout",
+    "configuration_override": "grasp.max_steps=3",
+    "report": {
+      "schema_version": 1,
+      "status": "stopped",
+      "reason": "skill_timeout",
+      "plan": {
+        "schema_version": 1,
+        "scene": "second",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.0003077279980061576,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 550,
+          "wall_s": 0.7029055969978799,
+          "steps": 550,
+          "event": "physical_event",
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7029180609970354,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "grasp",
+          "global_step": 553,
+          "wall_s": 0.7072039599988784,
+          "status": "stopped",
+          "reason": "skill_timeout"
+        }
+      ],
+      "steps": 553,
+      "provider_retries": 0,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 5.818800606667085e-05,
+        "target_distance_m": 0.2285905517267999,
+        "scene_penetration_m": 0.0003886198091350157,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 0.0,
+        "ff_force_n": 0.0,
+        "mf_force_n": 2.494190884065283,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.7072051809991535,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "second/nominal",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.0007168648966304819,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 553,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 5.818800606667085e-05,
+          "target_distance_m": 0.2285905517267999,
+          "scene_penetration_m": 0.0003886198091350157,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 0.0,
+          "ff_force_n": 0.0,
+          "mf_force_n": 2.494190884065283,
+          "rf_force_n": 0.0,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": null,
+      "created_at": "2026-10-02T09:42:59.359930+00:00"
+    },
+    "report_sha256": "cd322a8eead93856e3e5c9983beb5a6ac7ed952268f094e4eed8d4487354b255"
+  },
+  {
+    "case": "second-retry_exhausted",
+    "test_passed": true,
+    "expected_status": "stopped",
+    "expected_reason": "retry_budget_exhausted",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "stopped",
+      "reason": "retry_budget_exhausted",
+      "plan": {
+        "schema_version": 1,
+        "scene": "second",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.00033856300069601275,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 550,
+          "wall_s": 0.701119822999317,
+          "steps": 550,
+          "event": "physical_event",
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7011347279985785,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7014116999998805,
+          "reason": "TransientActionError"
+        },
+        {
+          "kind": "provider_retry",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7014277169982961,
+          "attempt": 1,
+          "cursor_preserved": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7016811169996799,
+          "reason": "TransientActionError"
+        },
+        {
+          "kind": "provider_retry",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.701693315000739,
+          "attempt": 2,
+          "cursor_preserved": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7019458579998172,
+          "reason": "TransientActionError"
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7019593429977249,
+          "status": "stopped",
+          "reason": "retry_budget_exhausted"
+        }
+      ],
+      "steps": 550,
+      "provider_retries": 2,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 7.66419545319909e-05,
+        "target_distance_m": 0.22894692202455424,
+        "scene_penetration_m": 0.00037482771461239475,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 0.0,
+        "ff_force_n": 0.7213863088276291,
+        "mf_force_n": 1.3893931325661535,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.7019603900007496,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "second/nominal",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.0007168648966304819,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 550,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424,
+          "scene_penetration_m": 0.00037482771461239475,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 0.0,
+          "ff_force_n": 0.7213863088276291,
+          "mf_force_n": 1.3893931325661535,
+          "rf_force_n": 0.0,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": "provider_always",
+      "created_at": "2026-10-02T09:43:00.752997+00:00"
+    },
+    "report_sha256": "7336df45e5a67bccd98d1f046a9fae7767b54feaa0e0e841f9a4272196ab7865"
+  },
+  {
+    "case": "second-replan_exhausted",
+    "test_passed": true,
+    "expected_status": "stopped",
+    "expected_reason": "replan_budget_exhausted",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "stopped",
+      "reason": "replan_budget_exhausted",
+      "plan": {
+        "schema_version": 1,
+        "scene": "second",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.00031922400012263097,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 550,
+          "wall_s": 0.7307988119973743,
+          "steps": 550,
+          "event": "physical_event",
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7308123229995545,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7310987159980868,
+          "reason": "ReplanRequested"
+        },
+        {
+          "kind": "replanned",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.731250041997555,
+          "remaining": [
+            "grasp",
+            "lift"
+          ],
+          "cursor_preserved": true
+        },
+        {
+          "kind": "provider_failure",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7317176049982663,
+          "reason": "ReplanRequested"
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7317420879990095,
+          "status": "stopped",
+          "reason": "replan_budget_exhausted"
+        }
+      ],
+      "steps": 550,
+      "provider_retries": 0,
+      "replans": 1,
+      "final_metrics": {
+        "bottom_m": 7.66419545319909e-05,
+        "target_distance_m": 0.22894692202455424,
+        "scene_penetration_m": 0.00037482771461239475,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 0.0,
+        "ff_force_n": 0.7213863088276291,
+        "mf_force_n": 1.3893931325661535,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.7317435939985444,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "second/nominal",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.0007168648966304819,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 550,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424,
+          "scene_penetration_m": 0.00037482771461239475,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 0.0,
+          "ff_force_n": 0.7213863088276291,
+          "mf_force_n": 1.3893931325661535,
+          "rf_force_n": 0.0,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": "replan_always",
+      "created_at": "2026-10-02T09:43:02.221660+00:00"
+    },
+    "report_sha256": "72fe830806b6ef593eddfa4886b232aafbded6981aa512f328dfc26827b3dd2a"
+  },
+  {
+    "case": "second-invalid_action",
+    "test_passed": true,
+    "expected_status": "stopped",
+    "expected_reason": "invalid_action",
+    "configuration_override": null,
+    "report": {
+      "schema_version": 1,
+      "status": "stopped",
+      "reason": "invalid_action",
+      "plan": {
+        "schema_version": 1,
+        "scene": "second",
+        "object": "mug",
+        "goal": "lift",
+        "skills": [
+          "reach",
+          "grasp",
+          "lift"
+        ]
+      },
+      "backend": "verified_reference",
+      "completed": [
+        "reach"
+      ],
+      "events": [
+        {
+          "kind": "skill_started",
+          "skill": "reach",
+          "global_step": 0,
+          "wall_s": 0.0003256800009694416,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "skill_succeeded",
+          "skill": "reach",
+          "global_step": 550,
+          "wall_s": 0.7243378189996292,
+          "steps": 550,
+          "event": "physical_event",
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424
+        },
+        {
+          "kind": "skill_started",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.7243496850023803,
+          "prerequisite_passed": true
+        },
+        {
+          "kind": "plan_finished",
+          "skill": "grasp",
+          "global_step": 550,
+          "wall_s": 0.72436573700179,
+          "status": "stopped",
+          "reason": "invalid_action"
+        }
+      ],
+      "steps": 550,
+      "provider_retries": 0,
+      "replans": 0,
+      "final_metrics": {
+        "bottom_m": 7.66419545319909e-05,
+        "target_distance_m": 0.22894692202455424,
+        "scene_penetration_m": 0.00037482771461239475,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "th_force_n": 0.0,
+        "ff_force_n": 0.7213863088276291,
+        "mf_force_n": 1.3893931325661535,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0
+      },
+      "wall_s": 0.7243667059992731,
+      "stop_semantics": "No further simulation steps; not a hardware emergency stop",
+      "physics": {
+        "trajectory": "second/nominal",
+        "max_state_replay_error": 0.0,
+        "max_penetration_m": 0.0007168648966304819,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "actual_env_steps": 550,
+        "halted": true,
+        "final_metrics": {
+          "bottom_m": 7.66419545319909e-05,
+          "target_distance_m": 0.22894692202455424,
+          "scene_penetration_m": 0.00037482771461239475,
+          "joint_violation_rad": 0.0,
+          "finite": true,
+          "th_force_n": 0.0,
+          "ff_force_n": 0.7213863088276291,
+          "mf_force_n": 1.3893931325661535,
+          "rf_force_n": 0.0,
+          "lf_force_n": 0.0
+        },
+        "scope": "Qualified fixed expert reference; not the DAPG policy or a learned skill controller"
+      },
+      "fault_injection": "invalid_action",
+      "created_at": "2026-10-02T09:43:03.651292+00:00"
+    },
+    "report_sha256": "efe21738192783b803b404d0b720a54037df83b8a05167a7663ccca45f9cb0e0"
+  }
+]

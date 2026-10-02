@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "physical_cases": 16,
+  "physical_case_checks_passed": 16,
+  "nominal_plans": 4,
+  "fault_scope": "Provider interruption/revalidation and step-budget injection, not demonstrated physical slip recovery",
+  "skill_policy_trained": false,
+  "learned_policy_evaluation": false,
+  "independent_heldout_used": false,
+  "new_stage5_scope": "C4+D1 hierarchy, superseding the earlier skill-training stage label",
+  "inputs_unchanged": true,
+  "stop_without_simulation": true,
+  "language_valid": 15,
+  "language_rejected": 6,
+  "source_freeze_sha256": "83cc5aa5ff07a050eb076fec089d77c0bebfefe9f6829f777820d7e92ffd672b",
+  "limits": {
+    "max_total_steps": 3200,
+    "wall_timeout_s": 120,
+    "max_provider_retries": 2,
+    "max_replans": 1
+  },
+  "sources": [
+    "https://www.behaviortree.dev/docs/nodes-library/SequenceNode/",
+    "https://www.behaviortree.dev/docs/nodes-library/DecoratorNode/",
+    "https://github.com/google-research/google-research/blob/master/saycan/README.md"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-10-02T09:42:37.056082+00:00",
+  "code_sha256": {
+    "src/fromrealhand/hierarchy/__init__.py": "4425ea99a1873895639917a9581834db462e6da24b81263372e5d4a6bca09365",
+    "src/fromrealhand/hierarchy/registry.py": "112db5f53bd4e0c39e2476781c1d899dc22754b03d2561b593d80cf4c396a50f",
+    "src/fromrealhand/hierarchy/executor.py": "4d2fb834dd86e2382b9c540c3ce2edc854d5131866d11b61653d7c3b81ab578e",
+    "src/fromrealhand/hierarchy/planner.py": "e7f4ad99b52336448e8ba5445774ab69a84eccf8d4b7a3f7b7a99f8b513b498c",
+    "configs/skill_registry.yaml": "f776306aa86334f7a862217bfbf66fc60c85fcbcf12500e83cd05e32a1d951ae",
+    "configs/skill_plan_pickup.json": "3d68c250256611dba8067c7412c0350fe013d7878f27030943dc3bd1134cf980",
+    "scripts/hierarchy_common.py": "5f5241e4a8855822f7f4107af6372d31663c9e4603b24904cbf8c7084b32a7e4",
+    "scripts/15_run_skill_plan.py": "d35da3d9402695e07dc165d1eccf252539d4d5ab4e6ffad8524d8d507dad9035",
+    "scripts/16_run_instruction.py": "8c18654542fc399172a01d23df05b13f4044ea7adcdc474a7c06931603d3ce63",
+    "scripts/100_validate_hierarchy.py": "785b434598e4e2131806637eef701df702643e371333ae96cce730f75b98ef57",
+    "tests/test_hierarchy.py": "14617027a07360a3855021bf531dd9d424076f1e18146024843c0f73e011858a"
+  },
+  "source_freeze_sha256": "83cc5aa5ff07a050eb076fec089d77c0bebfefe9f6829f777820d7e92ffd672b",
+  "scope": "Two qualified nominal references; fault injection is orchestration testing, not recovery training",
+  "independent_heldout_used": false,
+  "new_skill_training": false
+}
