@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source_demonstrations": "data/processed/dual_video_v11/experts/demonstrations.pkl",
+  "source_admission": "data/processed/dual_video_v11/experts/admission.json",
+  "source_protocol": "configs/v10-study.json",
+  "selected_trajectories": ["first/video_seed_0", "second/nominal"],
+  "output": "data/processed/stage4_skills_v1",
+  "action_dim": 30,
+  "contact_force_n": 0.01,
+  "event_persistence_steps": 5,
+  "transport_hold_steps": 100,
+  "support_fingers": 3,
+  "lift_bottom_m": 0.05,
+  "hold_bottom_m": 0.015,
+  "goal_tolerance_m": 0.03,
+  "max_penetration_m": 0.001,
+  "max_joint_violation_rad": 0.02,
+  "replay_state_tolerance": 0.0000001,
+  "replay_observation_tolerance": 0.00000001,
+  "timeout_steps": {"reach": 800, "grasp": 800, "lift": 800, "transport": 1600}
+}

@@ -1,0 +1,430 @@
+{
+  "generated_at": "2026-10-02T06:51:36.113307+00:00",
+  "manifest_sha256": "46338f73d8490bab3aa8e15159f649d5c9771750ec321be114d2eb85965c7f74",
+  "source_demo_sha256": "ac27d2ed2fc459be5966b96e23601296dc52cf5e90d10240d8de25c1fe1a2220",
+  "config": {
+    "schema_version": 1,
+    "source_demonstrations": "data/processed/dual_video_v11/experts/demonstrations.pkl",
+    "source_admission": "data/processed/dual_video_v11/experts/admission.json",
+    "source_protocol": "configs/v10-study.json",
+    "selected_trajectories": [
+      "first/video_seed_0",
+      "second/nominal"
+    ],
+    "output": "data/processed/stage4_skills_v1",
+    "action_dim": 30,
+    "contact_force_n": 0.01,
+    "event_persistence_steps": 5,
+    "transport_hold_steps": 100,
+    "support_fingers": 3,
+    "lift_bottom_m": 0.05,
+    "hold_bottom_m": 0.015,
+    "goal_tolerance_m": 0.03,
+    "max_penetration_m": 0.001,
+    "max_joint_violation_rad": 0.02,
+    "replay_state_tolerance": 1e-07,
+    "replay_observation_tolerance": 1e-08,
+    "timeout_steps": {
+      "reach": 800,
+      "grasp": 800,
+      "lift": 800,
+      "transport": 1600
+    }
+  },
+  "validation": {
+    "schema_version": 1,
+    "manifest_sha256": "46338f73d8490bab3aa8e15159f649d5c9771750ec321be114d2eb85965c7f74",
+    "passed": true,
+    "results": [
+      {
+        "trajectory": "first/video_seed_0",
+        "mode": "reach",
+        "passed": true,
+        "complete": true,
+        "steps": 512,
+        "expected_steps": 512,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "max_qpos_qvel_replay_error": 0.0,
+        "contracts": [
+          {
+            "skill": "reach",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 512
+          }
+        ],
+        "max_hand_scene_penetration_m": 0.00042813471146140036,
+        "final_bottom_m": 0.00013982860428910426,
+        "final_goal_distance_m": 0.1483391649183774
+      },
+      {
+        "trajectory": "first/video_seed_0",
+        "mode": "grasp",
+        "passed": true,
+        "complete": true,
+        "steps": 26,
+        "expected_steps": 26,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "max_qpos_qvel_replay_error": 0.0,
+        "contracts": [
+          {
+            "skill": "grasp",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 26
+          }
+        ],
+        "max_hand_scene_penetration_m": 0.00017444214061452344,
+        "final_bottom_m": 0.0001443349133536183,
+        "final_goal_distance_m": 0.1481020583342534
+      },
+      {
+        "trajectory": "first/video_seed_0",
+        "mode": "lift",
+        "passed": true,
+        "complete": true,
+        "steps": 81,
+        "expected_steps": 81,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "max_qpos_qvel_replay_error": 0.0,
+        "contracts": [
+          {
+            "skill": "lift",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 81
+          }
+        ],
+        "max_hand_scene_penetration_m": 0.0005029154974311617,
+        "final_bottom_m": 0.056685651234193286,
+        "final_goal_distance_m": 0.09089898628663791
+      },
+      {
+        "trajectory": "first/video_seed_0",
+        "mode": "transport",
+        "passed": true,
+        "complete": true,
+        "steps": 798,
+        "expected_steps": 798,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "max_qpos_qvel_replay_error": 0.0,
+        "contracts": [
+          {
+            "skill": "transport",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 798
+          }
+        ],
+        "max_hand_scene_penetration_m": 0.0005769569515597876,
+        "final_bottom_m": 0.13799057472001594,
+        "final_goal_distance_m": 0.0008529841766367158
+      },
+      {
+        "trajectory": "first/video_seed_0",
+        "mode": "stitched",
+        "passed": true,
+        "complete": true,
+        "steps": 1417,
+        "expected_steps": 1417,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "max_qpos_qvel_replay_error": 0.0,
+        "contracts": [
+          {
+            "skill": "reach",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 512
+          },
+          {
+            "skill": "grasp",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 26
+          },
+          {
+            "skill": "lift",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 81
+          },
+          {
+            "skill": "transport",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 798
+          }
+        ],
+        "max_hand_scene_penetration_m": 0.0005769569515597876,
+        "final_bottom_m": 0.13799057472001594,
+        "final_goal_distance_m": 0.0008529841766367158
+      },
+      {
+        "trajectory": "second/nominal",
+        "mode": "reach",
+        "passed": true,
+        "complete": true,
+        "steps": 550,
+        "expected_steps": 550,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "max_qpos_qvel_replay_error": 0.0,
+        "contracts": [
+          {
+            "skill": "reach",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 550
+          }
+        ],
+        "max_hand_scene_penetration_m": 0.0007168648966304819,
+        "final_bottom_m": 7.66419545319909e-05,
+        "final_goal_distance_m": 0.22894692202455424
+      },
+      {
+        "trajectory": "second/nominal",
+        "mode": "grasp",
+        "passed": true,
+        "complete": true,
+        "steps": 32,
+        "expected_steps": 32,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "max_qpos_qvel_replay_error": 0.0,
+        "contracts": [
+          {
+            "skill": "grasp",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 32
+          }
+        ],
+        "max_hand_scene_penetration_m": 0.00047750740150147297,
+        "final_bottom_m": -7.711616133858042e-05,
+        "final_goal_distance_m": 0.22813303062526322
+      },
+      {
+        "trajectory": "second/nominal",
+        "mode": "lift",
+        "passed": true,
+        "complete": true,
+        "steps": 112,
+        "expected_steps": 112,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "max_qpos_qvel_replay_error": 0.0,
+        "contracts": [
+          {
+            "skill": "lift",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 112
+          }
+        ],
+        "max_hand_scene_penetration_m": 0.0007604895893924461,
+        "final_bottom_m": 0.05052074447814414,
+        "final_goal_distance_m": 0.1745417983361829
+      },
+      {
+        "trajectory": "second/nominal",
+        "mode": "transport",
+        "passed": true,
+        "complete": true,
+        "steps": 756,
+        "expected_steps": 756,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "max_qpos_qvel_replay_error": 1.7147221142987945e-13,
+        "contracts": [
+          {
+            "skill": "transport",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 756
+          }
+        ],
+        "max_hand_scene_penetration_m": 0.0009009991940679115,
+        "final_bottom_m": 0.18511551775044044,
+        "final_goal_distance_m": 0.0038582429087143503
+      },
+      {
+        "trajectory": "second/nominal",
+        "mode": "stitched",
+        "passed": true,
+        "complete": true,
+        "steps": 1450,
+        "expected_steps": 1450,
+        "initialization_count": 1,
+        "state_writes_during_execution": 0,
+        "max_qpos_qvel_replay_error": 0.0,
+        "contracts": [
+          {
+            "skill": "reach",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 550
+          },
+          {
+            "skill": "grasp",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 32
+          },
+          {
+            "skill": "lift",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 112
+          },
+          {
+            "skill": "transport",
+            "status": "success",
+            "reason": "physical_event",
+            "steps": 756
+          }
+        ],
+        "max_hand_scene_penetration_m": 0.0009009991940679115,
+        "final_bottom_m": 0.18511551775044072,
+        "final_goal_distance_m": 0.0038582429087141296
+      }
+    ],
+    "independent_skill_policies_trained": false,
+    "human_boundary_review_complete": false,
+    "scope": "Recorded start-state replay only; no unseen-state or hardware claim"
+  },
+  "trajectories": [
+    {
+      "trajectory": "first/video_seed_0",
+      "horizon": 1417,
+      "dt": 0.01,
+      "segments": [
+        {
+          "skill": "reach",
+          "start": 0,
+          "stop": 512,
+          "steps": 512,
+          "time_start_s": 0.0,
+          "time_stop_s": 5.12,
+          "source_frame_first": 3.0,
+          "source_frame_last": 24.6356932325145,
+          "boundary_basis": "persistent_physical_event",
+          "review_status": "pending",
+          "artifact": "first/video_seed_0/reach.pkl",
+          "sha256": "c48ecaa1cd534f90ba63b694fb2f45f04ab8839dfaa51002f6225607abf86cde"
+        },
+        {
+          "skill": "grasp",
+          "start": 512,
+          "stop": 538,
+          "steps": 26,
+          "time_start_s": 5.12,
+          "time_stop_s": 5.38,
+          "source_frame_first": 24.73859245780992,
+          "source_frame_last": 27.357929256189557,
+          "boundary_basis": "persistent_physical_event",
+          "review_status": "pending",
+          "artifact": "first/video_seed_0/grasp.pkl",
+          "sha256": "e9c78b5cb982487dc4e71457ab7ed15a4f5a21fa7628516961e1559881e42912"
+        },
+        {
+          "skill": "lift",
+          "start": 538,
+          "stop": 619,
+          "steps": 81,
+          "time_start_s": 5.38,
+          "time_stop_s": 6.19,
+          "source_frame_first": 27.46443845198939,
+          "source_frame_last": 36.275794414890065,
+          "boundary_basis": "persistent_physical_event",
+          "review_status": "pending",
+          "artifact": "first/video_seed_0/lift.pkl",
+          "sha256": "e8e7b9f4705330bfd23625b2bd80c0b2a8403fa4965424b1084fc7f04b29131c"
+        },
+        {
+          "skill": "transport",
+          "start": 619,
+          "stop": 1417,
+          "steps": 798,
+          "time_start_s": 6.19,
+          "time_stop_s": 14.17,
+          "source_frame_first": 36.38814891917691,
+          "source_frame_last": 73.0,
+          "boundary_basis": "demonstration_end",
+          "review_status": "pending",
+          "artifact": "first/video_seed_0/transport.pkl",
+          "sha256": "b0f621ac762aa201776192fecc4b8fc06df1a4259fc709640becc62dbb6fa221"
+        }
+      ],
+      "source_replay_observation_error": 0.0
+    },
+    {
+      "trajectory": "second/nominal",
+      "horizon": 1450,
+      "dt": 0.01,
+      "segments": [
+        {
+          "skill": "reach",
+          "start": 0,
+          "stop": 550,
+          "steps": 550,
+          "time_start_s": 0.0,
+          "time_stop_s": 5.5,
+          "source_frame_first": 1.0,
+          "source_frame_last": 25.850321371440803,
+          "boundary_basis": "persistent_physical_event",
+          "review_status": "pending",
+          "artifact": "second/nominal/reach.pkl",
+          "sha256": "5cac02256aad7b7757ffd9712a24f170a9c96ed13916fa4785541d85b74ec5ef"
+        },
+        {
+          "skill": "grasp",
+          "start": 550,
+          "stop": 582,
+          "steps": 32,
+          "time_start_s": 5.5,
+          "time_stop_s": 5.82,
+          "source_frame_first": 25.956597222222225,
+          "source_frame_last": 29.305667841779698,
+          "boundary_basis": "persistent_physical_event",
+          "review_status": "pending",
+          "artifact": "second/nominal/grasp.pkl",
+          "sha256": "79ce37c906d5e28e0731de54adf57c9d036f6bcabc5239dc2b8d26b7c08b7765"
+        },
+        {
+          "skill": "lift",
+          "start": 582,
+          "stop": 694,
+          "steps": 112,
+          "time_start_s": 5.82,
+          "time_stop_s": 6.94,
+          "source_frame_first": 29.41525424764444,
+          "source_frame_last": 41.820961563965795,
+          "boundary_basis": "persistent_physical_event",
+          "review_status": "pending",
+          "artifact": "second/nominal/lift.pkl",
+          "sha256": "6d4902a2c66a40081baabd4a60456c48c0965949f1fc121464943d30352a293d"
+        },
+        {
+          "skill": "transport",
+          "start": 694,
+          "stop": 1450,
+          "steps": 756,
+          "time_start_s": 6.94,
+          "time_stop_s": 14.5,
+          "source_frame_first": 41.93228196462223,
+          "source_frame_last": 73.0,
+          "boundary_basis": "demonstration_end",
+          "review_status": "pending",
+          "artifact": "second/nominal/transport.pkl",
+          "sha256": "2ad883cda19c4c0297191ed4f7a0077bf0dec09a3cf315dca48dfb148427063a"
+        }
+      ],
+      "source_replay_observation_error": 0.0
+    }
+  ]
+}
