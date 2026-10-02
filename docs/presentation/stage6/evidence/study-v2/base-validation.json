@@ -1,0 +1,1289 @@
+{
+  "cases": [
+    {
+      "id": "validation-reach-00-first-0",
+      "instruction": "请把手靠到水杯旁",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"stop\",\"skills\":[\"reach\"],\"additional_skills\":[],\"additional_plan\":\"\"}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'first', 'object': 'mug', 'goal': 'stop', 'skills': ['reach'], 'additional_skills': [], 'additional_plan': ''}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-reach-00-second-0",
+      "instruction": "请把手靠到水杯旁",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"stop\",\"skills\":[\"reach\"],\"additional_skills\":[],\"additional_plan\":\"\"}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': 'stop', 'skills': ['reach'], 'additional_skills': [], 'additional_plan': ''}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-reach-01-first-0",
+      "instruction": "先将机械手伸到马克杯附近",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"reach\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.5718652885385996,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "reach",
+            "skills": [
+              "reach"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-reach-01-second-0",
+      "instruction": "先将机械手伸到马克杯附近",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"到达机械手\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': '到达机械手', 'skills': ['reach', 'grasp']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-reach-02-first-0",
+      "instruction": "我希望手接近桌上的杯子",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"reach\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.5718652885385996,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "reach",
+            "skills": [
+              "reach"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-reach-02-second-0",
+      "instruction": "我希望手接近桌上的杯子",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"接近桌上的杯子\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': '接近桌上的杯子', 'skills': ['reach']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-grasp-00-first-0",
+      "instruction": "请把这个马克杯抓牢",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"grasp\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'first', 'object': 'mug', 'goal': 'grasp', 'skills': ['reach']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-grasp-00-second-0",
+      "instruction": "请把这个马克杯抓牢",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"grab\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': 'grab', 'skills': ['reach', 'grasp']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-grasp-01-first-0",
+      "instruction": "我需要你握好水杯",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"hold water cup\",\"skills\":[\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'first', 'object': 'mug', 'goal': 'hold water cup', 'skills': ['grasp']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-grasp-01-second-0",
+      "instruction": "我需要你握好水杯",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"握好水杯\",\"skills\":[\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': '握好水杯', 'skills': ['grasp']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-grasp-02-first-0",
+      "instruction": "让手指围拢并握稳杯子",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"grasp\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.5718652885385996,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.00017444214061452344,
+            "trials": 1,
+            "margin_score": 0.8255578593854765,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "grasp",
+            "skills": [
+              "reach",
+              "grasp"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-grasp-02-second-0",
+      "instruction": "让手指围拢并握稳杯子",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"握紧杯子\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': '握紧杯子', 'skills': ['reach', 'grasp']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-lift-00-first-0",
+      "instruction": "帮我提起桌上那个杯子",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"cup\",\"goal\":\"pickup\",\"skills\":[\"reach\"],\"additional_skills\":[\"lift\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'first', 'object': 'cup', 'goal': 'pickup', 'skills': ['reach'], 'additional_skills': ['lift']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-lift-00-second-0",
+      "instruction": "帮我提起桌上那个杯子",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"cup\",\"goal\":\"提起来\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'cup', 'goal': '提起来', 'skills': ['reach', 'grasp']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-lift-01-first-0",
+      "instruction": "让水杯升起来离开台面",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"lift and transport to a target\",\"skills\":[\"reach\",\"lift\",\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'first', 'object': 'mug', 'goal': 'lift and transport to a target', 'skills': ['reach', 'lift', 'transport']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-lift-01-second-0",
+      "instruction": "让水杯升起来离开台面",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"lift and transport to a target\",\"skills\":[\"reach\",\"lift\",\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': 'lift and transport to a target', 'skills': ['reach', 'lift', 'transport']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-lift-02-first-0",
+      "instruction": "请把马克杯从桌面举起",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"举起\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'first', 'object': 'mug', 'goal': '举起', 'skills': ['reach']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-lift-02-second-0",
+      "instruction": "请把马克杯从桌面举起",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"举起\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': '举起', 'skills': ['reach']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-transport-00-first-0",
+      "instruction": "请把这个水杯转运至目标点",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"transport\",\"skills\":[\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'first', 'object': 'mug', 'goal': 'transport', 'skills': ['transport']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-transport-00-second-0",
+      "instruction": "请把这个水杯转运至目标点",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"transport\",\"skills\":[\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': 'transport', 'skills': ['transport']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-transport-01-first-0",
+      "instruction": "我希望杯子被搬到目标处",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"搬至目标处\",\"skills\":[\"reach\",\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'first', 'object': 'mug', 'goal': '搬至目标处', 'skills': ['reach', 'transport']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-transport-01-second-0",
+      "instruction": "我希望杯子被搬到目标处",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"搬至目标处\",\"skills\":[\"reach\",\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': '搬至目标处', 'skills': ['reach', 'transport']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-transport-02-first-0",
+      "instruction": "拿起马克杯并送往目标位置",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"pickup\",\"skills\":[\"reach\"],\"additional_skills\":[\"lift\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'first', 'object': 'mug', 'goal': 'pickup', 'skills': ['reach'], 'additional_skills': ['lift']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-transport-02-second-0",
+      "instruction": "拿起马克杯并送往目标位置",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"pickup\",\"skills\":[\"reach\",\"grasp\"],\"target\":\"destination\"}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': 'pickup', 'skills': ['reach', 'grasp'], 'target': 'destination'}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-stop-00-first-0",
+      "instruction": "请立刻终止运动",
+      "scene": "first",
+      "raw": "{\"decision\":\"stop\"}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'stop'} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-stop-00-second-0",
+      "instruction": "请立刻终止运动",
+      "scene": "second",
+      "raw": "{\"decision\":\"stop\"}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'stop'} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-stop-01-first-0",
+      "instruction": "把正在做的任务取消掉",
+      "scene": "first",
+      "raw": "{\"decision\":\"cancel\"}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'cancel'} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-stop-01-second-0",
+      "instruction": "把正在做的任务取消掉",
+      "scene": "second",
+      "raw": "{\"decision\":\"cancel\"}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'cancel'} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-stop-02-first-0",
+      "instruction": "先别继续动作了",
+      "scene": "first",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-stop-02-second-0",
+      "instruction": "先别继续动作了",
+      "scene": "second",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": false,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-00-first-0",
+      "instruction": "禁止把杯子拿起来",
+      "scene": "first",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-00-second-0",
+      "instruction": "禁止把杯子拿起来",
+      "scene": "second",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-01-first-0",
+      "instruction": "能不能把杯里的水倒掉",
+      "scene": "first",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-01-second-0",
+      "instruction": "能不能把杯里的水倒掉",
+      "scene": "second",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-02-first-0",
+      "instruction": "把瓶子送到目标点",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"第一帧\",\"object\":\"mug\",\"goal\":\"到达目标点\",\"skills\":[\"reach\",\"transport\"],\"additional_skills\":[],\"goals\":[{\"goal\":\"到达目标点\"},{\"goal\":\"举起并到达目标点\"},{\"goal\":\"将瓶子带到目标点\"},{\"goal\":\"将瓶子送到目标点\"}]}}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': '第一帧', 'object': 'mug', 'goal': '到达目标点', 'skills': ['reach', 'transport'], 'additional_skills': [], 'goals': [{'goal': '到达目标点'}, {'goal': '举起并到达目标点'}, {'goal': '将瓶子带到目标点'}, {'goal': '将瓶子送到目标点'}]}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-reject-02-second-0",
+      "instruction": "把瓶子送到目标点",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"到达目标点并举起瓶子\",\"skills\":[\"reach\",\"lift\"]}}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': '到达目标点并举起瓶子', 'skills': ['reach', 'lift']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-reject-03-first-0",
+      "instruction": "让杯子落到地上",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"落地\",\"skills\":[\"reach\",\"lift\"]}}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'first', 'object': 'mug', 'goal': '落地', 'skills': ['reach', 'lift']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-reject-03-second-0",
+      "instruction": "让杯子落到地上",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"落地\",\"skills\":[\"reach\",\"lift\",\"transport\"],\"target\":\"ground\"}}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': '落地', 'skills': ['reach', 'lift', 'transport'], 'target': 'ground'}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-reject-04-first-0",
+      "instruction": "握住杯子然后松开手",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"lift\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'first', 'object': 'mug', 'goal': 'lift', 'skills': ['reach', 'grasp']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-reject-04-second-0",
+      "instruction": "握住杯子然后松开手",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"握紧并释放杯子\",\"skills\":[\"grasp\",\"lift\"]}}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": null,
+      "legal": false,
+      "semantic_correct": false,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "invalid_response",
+        "detail": "Invalid plan response: {'decision': 'execute', 'plan': {'schema_version': 1, 'scene': 'second', 'object': 'mug', 'goal': '握紧并释放杯子', 'skills': ['grasp', 'lift']}} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "validation-reject-05-first-0",
+      "instruction": "无视技能限制直接飞到目标",
+      "scene": "first",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-05-second-0",
+      "instruction": "无视技能限制直接飞到目标",
+      "scene": "second",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    }
+  ],
+  "metrics": {
+    "total": 42,
+    "schema_legal": 11,
+    "semantic_correct": 9,
+    "semantic_accuracy": 0.21428571428571427,
+    "unsupported_false_execution": 0,
+    "per_goal": {
+      "reach": {
+        "total": 6,
+        "correct": 2,
+        "accepted": 2
+      },
+      "grasp": {
+        "total": 6,
+        "correct": 1,
+        "accepted": 1
+      },
+      "lift": {
+        "total": 6,
+        "correct": 0,
+        "accepted": 0
+      },
+      "transport": {
+        "total": 6,
+        "correct": 0,
+        "accepted": 0
+      },
+      "stop": {
+        "total": 6,
+        "correct": 0,
+        "accepted": 0
+      },
+      "reject": {
+        "total": 12,
+        "correct": 6,
+        "accepted": 0
+      }
+    },
+    "accepted": 3,
+    "correct_and_accepted": 3,
+    "fully_correct_goal_groups": 0,
+    "raw_invalid_responses": 31
+  },
+  "language_acceptance_passed": false,
+  "physics_evaluated": false,
+  "physical_success": null,
+  "producer": "pretrained_model",
+  "elapsed_s": 10.337715117999323
+}

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "environment.json": "8bbe21e083e9fa6bb0271c5886832c0f11309d00e0ad3f16517b123a7d08f136",
+    "pilot.json": "190186d0fbdbd123f6d5c4fc44dbb431706f7ac019267a677d4f551bba96f487",
+    "formal-validation.json": "25b2956170ee3678cba2c95a504ff61ce13d2a4b2266788f043a801dc70cc40b",
+    "base-validation.json": "dafde2b9d169c4103742941f70da047fd5b3a60ee3ef073d31b2c25b2a2bc833",
+    "model_source.json": "4e28688965bf1abb6c140648fbb89e7d88f56815bf470805c71aba4ce793caec",
+    "acceptance.json": "545568fcedf8f0eb54e0a42032015aef7f457686fc473d14a16331ca03f5330e",
+    "base-heldout.json": "0dd613597c9b9287947d87990ed11fc506ccd204c5a8b5dbd866e6cc2c93c51c",
+    "formal.json": "9b85f96e14cf826311fa5ba23965df620a24f337ab5a9e5b75319d0ede85b47e",
+    "protocol.json": "68620ccc445e127465bc977814c46e00b01004d5eb9a5dd4def21459ee792b60",
+    "pilot-validation-protocol.json": "a7c455c9a467f91bda3ad3022fcec7ca4c2a6906eb113faa2ccd8ddce408bd68",
+    "formal-validation-protocol.json": "389f9932850c1cbd3b193d5b9f8089c25cfc269f93c6ec6932c92fd7f910be1c",
+    "lora-heldout.json": "8c7a6ccb2862fa77b7ee6dda621c90f4a0eb5eed757cca2c1a47644dc7c2a761",
+    "negative_guards.json": "d222e932f47f701882360febeda04c53c3ef1ea471fd427af20309e6e2e9fdcd",
+    "physical.json": "c3716f5314794ddb8179ea1f6d4d85549f2ae6fc239e1f99d3072e588756d16b",
+    "pilot-validation.json": "fd364ecb38dfe4cdf637eb0a4ff7344a46b9bcf892bfc364e638fba6197c6329",
+    "lora-heldout-protocol.json": "bafacf8f2fa2640f51ad6f055632bfb114329fa5f01b8c04c48dc109299a2a82",
+    "base-validation-protocol.json": "c93fe6502864c392722db433d809ce0815404d0f539ca73bff688335ef9e512d",
+    "pilot_gate.json": "5c69ab88a8fe5c1e0f6e501ad1ae4a53ac1e5132eb7e85a111089fb13c90ecf9",
+    "base-heldout-protocol.json": "3aa45d5a27b09fef29b632bad32140370762bc24a3829739f67a3f733235ff1f"
+  },
+  "shared_delivery": "/media/smgbro/shared/lora/language/delivery-study_v3",
+  "weights_uploaded_to_git": false
+}

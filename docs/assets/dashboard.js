@@ -427,7 +427,7 @@ const stages = [
     phase: "D",
     phaseLabel: "高层规划",
     title: "训练语言模型生成技能计划",
-    objective: "阶段 6 / D2：数据和门控框架已就绪，用户要求本轮暂不训练语言模型。标准答案接口通过不等于语言模型成绩。",
+    objective: "阶段 6 / D2：正式 LoRA 已训练，留出语义 52/56，但越界误接受 1 条，部署未通过。正确计划物理接口通过不抵消语义错误。",
     tasks: [
       "从规则规划器与成功日志生成指令、场景和计划样本",
       "定义训练集、验证集和指令改写测试集",
@@ -437,10 +437,10 @@ const stages = [
       "用标准场景物理余量分数过滤计划；学习型成功概率模型后续另做",
     ],
     outputs: [
-      "504/42/56 行语言样本与冻结协议；configs/skill_plan.schema.json",
-      "scripts/104_train_language_lora.py 与固定配置；LoRA 权重尚无",
-      "docs/STAGE6_LANGUAGE.md 与 docs/presentation/stage6/README.md",
-      "8 个标准答案动作计划和 2 个停止计划通过；模型生成报告待实测",
+      "800/42/56 行训练、验证、留出；原数据和新增对比指令分开冻结",
+      "/media/smgbro/shared/lora/language/study_v3/formal/adapter/",
+      "docs/STAGE6_STUDY.md 与 docs/presentation/stage6/STUDY_RESULTS.md",
+      "独立基础模型对照、失败记录、10 个正确模型计划物理接口通过；自动执行锁定",
     ],
     acceptance: [
       "JSON 合法率达到预先设定目标",

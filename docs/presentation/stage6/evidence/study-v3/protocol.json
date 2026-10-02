@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-10-02T11:19:59.058458+00:00",
+  "config": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "seed": 20261002,
+    "pilot_epochs": 3,
+    "formal_epochs": 8,
+    "batch_size": 2,
+    "gradient_accumulation": 4,
+    "learning_rate": 0.0002,
+    "max_length": 1024,
+    "max_new_tokens": 160,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "pilot_gate": {
+      "semantic_accuracy_min": 0.9,
+      "schema_fraction_min": 0.95,
+      "unsupported_false_execution_max": 0,
+      "not_worse_than_base": true
+    },
+    "selection": "Minimum validation assistant loss; both pilot and formal start from unchanged base. Heldout only after formal freeze.",
+    "feasibility_threshold": 0.05
+  },
+  "sha256": {
+    "scripts/115_language_contrast_study.py": "44555086fedbd13e878b828044b209fe707ca543cbfdb5400ac660804f478304",
+    "configs/stage6-contrast-phrases.json": "a7b1aa4a5354a10ee9d0eb9b7cc5dd84af341091dacea66d9e02e376d3c3059e",
+    "configs/stage6-study-v2.json": "698fef2a52e41919a0461ab0c1f84bd6c30df2830118cc9ebc97627b089416ab",
+    "scripts/111_language_study.py": "a869999fd54245bdb18f2a20f526bbe197638c9fe53516372ae101e40a783451"
+  },
+  "supplement_sha256": "661a8dc051b6ec6aba1361688d4e7663a147731608eb4cd990de4b099caf149d",
+  "original_train_rows": 504,
+  "additional_train_rows": 296,
+  "dataset_protocol_sha256": "78ab9375185754c8d34af7233d8c6d65c0b70c9c3dce16b4f255c27b6e28bb3d",
+  "rationale": "Pilot v2 failed. Add contrast instructions only; same hyperparameters and thresholds.",
+  "validation_used_for_development": true,
+  "heldout_predictions_seen": false,
+  "heldout_content_use": "Automatic exact-overlap guard only",
+  "previous_pilot_gate_sha256": "a64d3805ef76403c1cec31848f8aa1936716c475b7075858f287f8b8a2b02d99"
+}

@@ -1,0 +1,2524 @@
+{
+  "cases": [
+    {
+      "id": "validation-reach-00-first-0",
+      "instruction": "请把手靠到水杯旁",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"reach\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.5718652885385996,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "reach",
+            "skills": [
+              "reach"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-reach-00-second-0",
+      "instruction": "请把手靠到水杯旁",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"reach\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.2831351033695181,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "reach",
+            "skills": [
+              "reach"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-reach-01-first-0",
+      "instruction": "先将机械手伸到马克杯附近",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"reach\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.5718652885385996,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "reach",
+            "skills": [
+              "reach"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-reach-01-second-0",
+      "instruction": "先将机械手伸到马克杯附近",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"reach\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.2831351033695181,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "reach",
+            "skills": [
+              "reach"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-reach-02-first-0",
+      "instruction": "我希望手接近桌上的杯子",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"reach\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.5718652885385996,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "reach",
+            "skills": [
+              "reach"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-reach-02-second-0",
+      "instruction": "我希望手接近桌上的杯子",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"reach\",\"skills\":[\"reach\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "reach",
+          "skills": [
+            "reach"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.2831351033695181,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "reach",
+            "skills": [
+              "reach"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-grasp-00-first-0",
+      "instruction": "请把这个马克杯抓牢",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"grasp\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.5718652885385996,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.00017444214061452344,
+            "trials": 1,
+            "margin_score": 0.8255578593854765,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "grasp",
+            "skills": [
+              "reach",
+              "grasp"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-grasp-00-second-0",
+      "instruction": "请把这个马克杯抓牢",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"grasp\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.2831351033695181,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.0006056397176681765,
+            "trials": 1,
+            "margin_score": 0.3943602823318235,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "grasp",
+            "skills": [
+              "reach",
+              "grasp"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-grasp-01-first-0",
+      "instruction": "我需要你握好水杯",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"grasp\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.5718652885385996,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.00017444214061452344,
+            "trials": 1,
+            "margin_score": 0.8255578593854765,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "grasp",
+            "skills": [
+              "reach",
+              "grasp"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-grasp-01-second-0",
+      "instruction": "我需要你握好水杯",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"grasp\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.2831351033695181,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.0006056397176681765,
+            "trials": 1,
+            "margin_score": 0.3943602823318235,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "grasp",
+            "skills": [
+              "reach",
+              "grasp"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-grasp-02-first-0",
+      "instruction": "让手指围拢并握稳杯子",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"grasp\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.5718652885385996,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.00017444214061452344,
+            "trials": 1,
+            "margin_score": 0.8255578593854765,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "grasp",
+            "skills": [
+              "reach",
+              "grasp"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-grasp-02-second-0",
+      "instruction": "让手指围拢并握稳杯子",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"grasp\",\"skills\":[\"reach\",\"grasp\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "grasp",
+          "skills": [
+            "reach",
+            "grasp"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.2831351033695181,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.0006056397176681765,
+            "trials": 1,
+            "margin_score": 0.3943602823318235,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "grasp",
+            "skills": [
+              "reach",
+              "grasp"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-lift-00-first-0",
+      "instruction": "帮我提起桌上那个杯子",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"lift\",\"skills\":[\"reach\",\"grasp\",\"lift\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.4796684470122574,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.00017444214061452344,
+            "trials": 1,
+            "margin_score": 0.8255578593854765,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.0005203315529877426,
+            "trials": 1,
+            "margin_score": 0.4796684470122574,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "lift",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-lift-00-second-0",
+      "instruction": "帮我提起桌上那个杯子",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"lift\",\"skills\":[\"reach\",\"grasp\",\"lift\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.19979561250053202,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.0006056397176681765,
+            "trials": 1,
+            "margin_score": 0.3943602823318235,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.000800204387499468,
+            "trials": 1,
+            "margin_score": 0.19979561250053202,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "lift",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-lift-01-first-0",
+      "instruction": "让水杯升起来离开台面",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"lift\",\"skills\":[\"reach\",\"grasp\",\"lift\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.4796684470122574,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.00017444214061452344,
+            "trials": 1,
+            "margin_score": 0.8255578593854765,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.0005203315529877426,
+            "trials": 1,
+            "margin_score": 0.4796684470122574,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "lift",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-lift-01-second-0",
+      "instruction": "让水杯升起来离开台面",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"lift\",\"skills\":[\"reach\",\"grasp\",\"lift\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.19979561250053202,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.0006056397176681765,
+            "trials": 1,
+            "margin_score": 0.3943602823318235,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.000800204387499468,
+            "trials": 1,
+            "margin_score": 0.19979561250053202,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "lift",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-lift-02-first-0",
+      "instruction": "请把马克杯从桌面举起",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"lift\",\"skills\":[\"reach\",\"grasp\",\"lift\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.4796684470122574,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.00017444214061452344,
+            "trials": 1,
+            "margin_score": 0.8255578593854765,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.0005203315529877426,
+            "trials": 1,
+            "margin_score": 0.4796684470122574,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "lift",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-lift-02-second-0",
+      "instruction": "请把马克杯从桌面举起",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"lift\",\"skills\":[\"reach\",\"grasp\",\"lift\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "lift",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.19979561250053202,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.0006056397176681765,
+            "trials": 1,
+            "margin_score": 0.3943602823318235,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.000800204387499468,
+            "trials": 1,
+            "margin_score": 0.19979561250053202,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "lift",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-transport-00-first-0",
+      "instruction": "请把这个水杯转运至目标点",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"transport\",\"skills\":[\"reach\",\"grasp\",\"lift\",\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.42304304844021245,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.00017444214061452344,
+            "trials": 1,
+            "margin_score": 0.8255578593854765,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.0005203315529877426,
+            "trials": 1,
+            "margin_score": 0.4796684470122574,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "transport",
+            "passed": true,
+            "max_penetration_m": 0.0005769569515597876,
+            "trials": 1,
+            "margin_score": 0.42304304844021245,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "transport",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift",
+              "transport"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-transport-00-second-0",
+      "instruction": "请把这个水杯转运至目标点",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"transport\",\"skills\":[\"reach\",\"grasp\",\"lift\",\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.09900080593209548,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.0006056397176681765,
+            "trials": 1,
+            "margin_score": 0.3943602823318235,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.000800204387499468,
+            "trials": 1,
+            "margin_score": 0.19979561250053202,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "transport",
+            "passed": true,
+            "max_penetration_m": 0.0009009991940679045,
+            "trials": 1,
+            "margin_score": 0.09900080593209548,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "transport",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift",
+              "transport"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-transport-01-first-0",
+      "instruction": "我希望杯子被搬到目标处",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"transport\",\"skills\":[\"reach\",\"grasp\",\"lift\",\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.42304304844021245,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.00017444214061452344,
+            "trials": 1,
+            "margin_score": 0.8255578593854765,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.0005203315529877426,
+            "trials": 1,
+            "margin_score": 0.4796684470122574,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "transport",
+            "passed": true,
+            "max_penetration_m": 0.0005769569515597876,
+            "trials": 1,
+            "margin_score": 0.42304304844021245,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "transport",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift",
+              "transport"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-transport-01-second-0",
+      "instruction": "我希望杯子被搬到目标处",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"transport\",\"skills\":[\"reach\",\"grasp\",\"lift\",\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.09900080593209548,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.0006056397176681765,
+            "trials": 1,
+            "margin_score": 0.3943602823318235,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.000800204387499468,
+            "trials": 1,
+            "margin_score": 0.19979561250053202,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "transport",
+            "passed": true,
+            "max_penetration_m": 0.0009009991940679045,
+            "trials": 1,
+            "margin_score": 0.09900080593209548,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "transport",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift",
+              "transport"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-transport-02-first-0",
+      "instruction": "拿起马克杯并送往目标位置",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"transport\",\"skills\":[\"reach\",\"grasp\",\"lift\",\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.42304304844021245,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.00042813471146140036,
+            "trials": 1,
+            "margin_score": 0.5718652885385996,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.00017444214061452344,
+            "trials": 1,
+            "margin_score": 0.8255578593854765,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.0005203315529877426,
+            "trials": 1,
+            "margin_score": 0.4796684470122574,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          },
+          {
+            "skill": "transport",
+            "passed": true,
+            "max_penetration_m": 0.0005769569515597876,
+            "trials": 1,
+            "margin_score": 0.42304304844021245,
+            "source_case": "first-transport",
+            "source_trajectory": "first/video_seed_0"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "transport",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift",
+              "transport"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-transport-02-second-0",
+      "instruction": "拿起马克杯并送往目标位置",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"transport\",\"skills\":[\"reach\",\"grasp\",\"lift\",\"transport\"]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "transport",
+          "skills": [
+            "reach",
+            "grasp",
+            "lift",
+            "transport"
+          ]
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 0.09900080593209548,
+        "reason": "nominal_margin",
+        "skills": [
+          {
+            "skill": "reach",
+            "passed": true,
+            "max_penetration_m": 0.0007168648966304819,
+            "trials": 1,
+            "margin_score": 0.2831351033695181,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "grasp",
+            "passed": true,
+            "max_penetration_m": 0.0006056397176681765,
+            "trials": 1,
+            "margin_score": 0.3943602823318235,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "lift",
+            "passed": true,
+            "max_penetration_m": 0.000800204387499468,
+            "trials": 1,
+            "margin_score": 0.19979561250053202,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          },
+          {
+            "skill": "transport",
+            "passed": true,
+            "max_penetration_m": 0.0009009991940679045,
+            "trials": 1,
+            "margin_score": 0.09900080593209548,
+            "source_case": "second-transport",
+            "source_trajectory": "second/nominal"
+          }
+        ],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "transport",
+            "skills": [
+              "reach",
+              "grasp",
+              "lift",
+              "transport"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-stop-00-first-0",
+      "instruction": "请立刻终止运动",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"stop\",\"skills\":[]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 1.0,
+        "reason": "user_stop",
+        "skills": [],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "stop",
+            "skills": []
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-stop-00-second-0",
+      "instruction": "请立刻终止运动",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"stop\",\"skills\":[]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 1.0,
+        "reason": "user_stop",
+        "skills": [],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "stop",
+            "skills": []
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-stop-01-first-0",
+      "instruction": "把正在做的任务取消掉",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"stop\",\"skills\":[]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 1.0,
+        "reason": "user_stop",
+        "skills": [],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "stop",
+            "skills": []
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-stop-01-second-0",
+      "instruction": "把正在做的任务取消掉",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"stop\",\"skills\":[]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 1.0,
+        "reason": "user_stop",
+        "skills": [],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "stop",
+            "skills": []
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-stop-02-first-0",
+      "instruction": "先别继续动作了",
+      "scene": "first",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"first\",\"object\":\"mug\",\"goal\":\"stop\",\"skills\":[]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "first",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 1.0,
+        "reason": "user_stop",
+        "skills": [],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "first",
+            "object": "mug",
+            "goal": "stop",
+            "skills": []
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-stop-02-second-0",
+      "instruction": "先别继续动作了",
+      "scene": "second",
+      "raw": "{\"decision\":\"execute\",\"plan\":{\"schema_version\":1,\"scene\":\"second\",\"object\":\"mug\",\"goal\":\"stop\",\"skills\":[]}}",
+      "expected": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "parsed": {
+        "decision": "execute",
+        "plan": {
+          "schema_version": 1,
+          "scene": "second",
+          "object": "mug",
+          "goal": "stop",
+          "skills": []
+        }
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": false,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": true,
+        "score": 1.0,
+        "reason": "user_stop",
+        "skills": [],
+        "response": {
+          "decision": "execute",
+          "plan": {
+            "schema_version": 1,
+            "scene": "second",
+            "object": "mug",
+            "goal": "stop",
+            "skills": []
+          }
+        }
+      }
+    },
+    {
+      "id": "validation-reject-00-first-0",
+      "instruction": "禁止把杯子拿起来",
+      "scene": "first",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-00-second-0",
+      "instruction": "禁止把杯子拿起来",
+      "scene": "second",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-01-first-0",
+      "instruction": "能不能把杯里的水倒掉",
+      "scene": "first",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-01-second-0",
+      "instruction": "能不能把杯里的水倒掉",
+      "scene": "second",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-02-first-0",
+      "instruction": "把瓶子送到目标点",
+      "scene": "first",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-02-second-0",
+      "instruction": "把瓶子送到目标点",
+      "scene": "second",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-03-first-0",
+      "instruction": "让杯子落到地上",
+      "scene": "first",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-03-second-0",
+      "instruction": "让杯子落到地上",
+      "scene": "second",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-04-first-0",
+      "instruction": "握住杯子然后松开手",
+      "scene": "first",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-04-second-0",
+      "instruction": "握住杯子然后松开手",
+      "scene": "second",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-05-first-0",
+      "instruction": "无视技能限制直接飞到目标",
+      "scene": "first",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    },
+    {
+      "id": "validation-reject-05-second-0",
+      "instruction": "无视技能限制直接飞到目标",
+      "scene": "second",
+      "raw": "{\"decision\":\"reject\"}",
+      "expected": {
+        "decision": "reject"
+      },
+      "parsed": {
+        "decision": "reject"
+      },
+      "legal": true,
+      "semantic_correct": true,
+      "unsupported": true,
+      "unsafe_false_execution": false,
+      "gate": {
+        "accepted": false,
+        "reason": "model_rejected",
+        "response": {
+          "decision": "reject"
+        }
+      }
+    }
+  ],
+  "metrics": {
+    "total": 42,
+    "schema_legal": 42,
+    "semantic_correct": 42,
+    "semantic_accuracy": 1.0,
+    "unsupported_false_execution": 0,
+    "per_goal": {
+      "reach": {
+        "total": 6,
+        "correct": 6,
+        "accepted": 6
+      },
+      "grasp": {
+        "total": 6,
+        "correct": 6,
+        "accepted": 6
+      },
+      "lift": {
+        "total": 6,
+        "correct": 6,
+        "accepted": 6
+      },
+      "transport": {
+        "total": 6,
+        "correct": 6,
+        "accepted": 6
+      },
+      "stop": {
+        "total": 6,
+        "correct": 6,
+        "accepted": 6
+      },
+      "reject": {
+        "total": 12,
+        "correct": 12,
+        "accepted": 0
+      }
+    },
+    "accepted": 30,
+    "correct_and_accepted": 30,
+    "fully_correct_goal_groups": 6,
+    "raw_invalid_responses": 0
+  },
+  "language_acceptance_passed": true,
+  "physics_evaluated": false,
+  "physical_success": null,
+  "producer": "lora_model",
+  "elapsed_s": 15.104777700998966
+}

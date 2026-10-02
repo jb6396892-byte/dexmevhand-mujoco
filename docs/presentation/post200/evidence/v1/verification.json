@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-10-02T11:32:56.880760+00:00",
+  "tests_run": 163,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "frozen_stage3_inputs_unchanged": true,
+  "frozen_stage6_framework_unchanged": true,
+  "screenshot_count": 2,
+  "screenshot_replay_max_error": 0.0,
+  "stage3_evaluation_sha256": "855adf45d0ca793d1d6971586ee77e47b5fd404e970db0b652c1b43df02b127a",
+  "test_scope": "Software regressions and evidence integrity; not a claim of policy acceptance"
+}

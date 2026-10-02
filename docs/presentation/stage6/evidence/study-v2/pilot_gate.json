@@ -1,0 +1,90 @@
+{
+  "passed": false,
+  "base": {
+    "total": 42,
+    "schema_legal": 11,
+    "semantic_correct": 9,
+    "semantic_accuracy": 0.21428571428571427,
+    "unsupported_false_execution": 0,
+    "per_goal": {
+      "reach": {
+        "total": 6,
+        "correct": 2,
+        "accepted": 2
+      },
+      "grasp": {
+        "total": 6,
+        "correct": 1,
+        "accepted": 1
+      },
+      "lift": {
+        "total": 6,
+        "correct": 0,
+        "accepted": 0
+      },
+      "transport": {
+        "total": 6,
+        "correct": 0,
+        "accepted": 0
+      },
+      "stop": {
+        "total": 6,
+        "correct": 0,
+        "accepted": 0
+      },
+      "reject": {
+        "total": 12,
+        "correct": 6,
+        "accepted": 0
+      }
+    },
+    "accepted": 3,
+    "correct_and_accepted": 3,
+    "fully_correct_goal_groups": 0,
+    "raw_invalid_responses": 31
+  },
+  "pilot": {
+    "total": 42,
+    "schema_legal": 42,
+    "semantic_correct": 34,
+    "semantic_accuracy": 0.8095238095238095,
+    "unsupported_false_execution": 1,
+    "per_goal": {
+      "reach": {
+        "total": 6,
+        "correct": 5,
+        "accepted": 5
+      },
+      "grasp": {
+        "total": 6,
+        "correct": 6,
+        "accepted": 6
+      },
+      "lift": {
+        "total": 6,
+        "correct": 4,
+        "accepted": 4
+      },
+      "transport": {
+        "total": 6,
+        "correct": 4,
+        "accepted": 6
+      },
+      "stop": {
+        "total": 6,
+        "correct": 4,
+        "accepted": 4
+      },
+      "reject": {
+        "total": 12,
+        "correct": 11,
+        "accepted": 1
+      }
+    },
+    "accepted": 26,
+    "correct_and_accepted": 23,
+    "fully_correct_goal_groups": 1,
+    "raw_invalid_responses": 0
+  },
+  "policy": "Proceed only if preregistered validation gate passes; no heldout seen"
+}

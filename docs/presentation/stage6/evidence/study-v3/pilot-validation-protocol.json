@@ -1,0 +1,21 @@
+{
+  "producer": "lora_model",
+  "split": "validation",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "model_source_sha256": "4e28688965bf1abb6c140648fbb89e7d88f56815bf470805c71aba4ce793caec",
+  "dataset_protocol_sha256": "78ab9375185754c8d34af7233d8c6d65c0b70c9c3dce16b4f255c27b6e28bb3d",
+  "study_protocol_sha256": "68620ccc445e127465bc977814c46e00b01004d5eb9a5dd4def21459ee792b60",
+  "adapter_sha256": {
+    "README.md": "a1b1aafd419484ef118aaef181d1ea4e0e1cadb2d7a87dd878f5276659956827",
+    "adapter_model.safetensors": "aedfa1814993f548bf3b4b4db784badb9fae8b5ff431123440c017c1df73499d",
+    "adapter_config.json": "f22dedfbadb778e01c709e96a8ed34c859963be80599aca52f87a5ab6f412ee1",
+    "training_args.bin": "63547f0cc76a5892da8172ddbe5280962c9dd5e9e07d6e18ab67ab8262220089",
+    "tokenizer_config.json": "f91b80bdb7722bdd0a25d79246fa79e513a7d4d78056b2eac8cbf92767937ab8",
+    "special_tokens_map.json": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+  }
+}

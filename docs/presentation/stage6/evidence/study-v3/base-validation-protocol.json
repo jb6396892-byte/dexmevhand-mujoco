@@ -1,0 +1,10 @@
+{
+  "producer": "pretrained_model",
+  "split": "validation",
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "model_source_sha256": "4e28688965bf1abb6c140648fbb89e7d88f56815bf470805c71aba4ce793caec",
+  "dataset_protocol_sha256": "78ab9375185754c8d34af7233d8c6d65c0b70c9c3dce16b4f255c27b6e28bb3d",
+  "study_protocol_sha256": "68620ccc445e127465bc977814c46e00b01004d5eb9a5dd4def21459ee792b60",
+  "adapter_sha256": {}
+}

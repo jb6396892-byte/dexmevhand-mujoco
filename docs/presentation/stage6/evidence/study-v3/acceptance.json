@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-10-02T11:37:26.925537+00:00",
+  "producer": "lora_model",
+  "framework_physics_passed": true,
+  "model_acceptance_passed": false,
+  "unique_plans_tested": 10,
+  "unique_plans_passed": 10,
+  "physical_motion_plans": 8,
+  "language_metrics": {
+    "total": 56,
+    "schema_legal": 55,
+    "semantic_correct": 52,
+    "semantic_accuracy": 0.9285714285714286,
+    "unsupported_false_execution": 1,
+    "per_goal": {
+      "reach": {
+        "total": 8,
+        "correct": 6,
+        "accepted": 8
+      },
+      "grasp": {
+        "total": 8,
+        "correct": 8,
+        "accepted": 8
+      },
+      "lift": {
+        "total": 8,
+        "correct": 8,
+        "accepted": 8
+      },
+      "transport": {
+        "total": 8,
+        "correct": 8,
+        "accepted": 8
+      },
+      "stop": {
+        "total": 8,
+        "correct": 8,
+        "accepted": 8
+      },
+      "reject": {
+        "total": 16,
+        "correct": 14,
+        "accepted": 1
+      }
+    },
+    "accepted": 41,
+    "correct_and_accepted": 38,
+    "fully_correct_goal_groups": 4,
+    "raw_invalid_responses": 1
+  },
+  "fixture_contract_cases": null,
+  "model_trained": true,
+  "independent_physics_scenes": false,
+  "low_level_backend": "verified_reference; NOT the DAPG checkpoint",
+  "dataset_protocol_sha256": "78ab9375185754c8d34af7233d8c6d65c0b70c9c3dce16b4f255c27b6e28bb3d",
+  "adapter_sha256": {
+    "README.md": "a1b1aafd419484ef118aaef181d1ea4e0e1cadb2d7a87dd878f5276659956827",
+    "adapter_model.safetensors": "7b9c33d183768ada07186ece43bb0189ea5f16addd6a260732c770820ceb3386",
+    "adapter_config.json": "d86d3bb9aa5ac3a79b8533af87a864f91706e453d6b125b17f85ed0208170139",
+    "training_args.bin": "fb274413d6c4c7cae846fb44104f4ee25080a3457cce3859158bd7b42149fbda",
+    "tokenizer_config.json": "f91b80bdb7722bdd0a25d79246fa79e513a7d4d78056b2eac8cbf92767937ab8",
+    "special_tokens_map.json": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+  },
+  "model_source_sha256": "4e28688965bf1abb6c140648fbb89e7d88f56815bf470805c71aba4ce793caec",
+  "source_evaluation_sha256": "bafacf8f2fa2640f51ad6f055632bfb114329fa5f01b8c04c48dc109299a2a82",
+  "no_language_training_reason": null,
+  "code_sha256": {
+    "scripts/107_verify_language_pipeline.py": "8c0b5b4580a24d44ff99c02ccbae282d28cfd530d6ec58ba5b2f33b74be67a4c",
+    "src/fromrealhand/language_planner/contracts.py": "0c1fe546f455496be0e25e9447f6a652631ad75d9270f6812a4be0fcdd22b31d",
+    "src/fromrealhand/language_planner/evaluation.py": "6ae407a01c2b54c53bc50b4a624028cfaaf38503bc1d5afbec7b991abcb0f184"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "environment.json": "8bbe21e083e9fa6bb0271c5886832c0f11309d00e0ad3f16517b123a7d08f136",
+    "pilot.json": "85a224b869795ffa49b6a0732da6dc7cc24f95de7dab0fe293ec326a7b490f53",
+    "base-validation.json": "3e9560ea1976a0bc1fe8db78e3ab76ab5e510684b9f5548a2d14a4a2b144755a",
+    "model_source.json": "4e28688965bf1abb6c140648fbb89e7d88f56815bf470805c71aba4ce793caec",
+    "protocol.json": "0df078d22bcb0ae0977943f009d1142c774b72afa275a886c1a649805dc5e88c",
+    "pilot-validation-protocol.json": "249b5e4ad868d040654fd9822951524224835f8246cccef531440e9aebe1cd84",
+    "pilot-validation.json": "1020a44cb7955c57acb2d1cbedbb6071039c0a8986928b0a5f40195799140711",
+    "base-validation-protocol.json": "54adfaf2110c4f638ccbe0072190ac4ba2b2243a8e3ff353e1c0330043d66356",
+    "pilot_gate.json": "a64d3805ef76403c1cec31848f8aa1936716c475b7075858f287f8b8a2b02d99"
+  },
+  "shared_delivery": "/media/smgbro/shared/lora/language/delivery-study_v2",
+  "weights_uploaded_to_git": false
+}

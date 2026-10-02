@@ -1,0 +1,37 @@
+{
+  "created_at": "2026-10-02T11:04:11.481946+00:00",
+  "config": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "seed": 20261002,
+    "pilot_epochs": 3,
+    "formal_epochs": 8,
+    "batch_size": 2,
+    "gradient_accumulation": 4,
+    "learning_rate": 0.0002,
+    "max_length": 1024,
+    "max_new_tokens": 160,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "pilot_gate": {
+      "semantic_accuracy_min": 0.9,
+      "schema_fraction_min": 0.95,
+      "unsupported_false_execution_max": 0,
+      "not_worse_than_base": true
+    },
+    "selection": "Minimum validation assistant loss; both pilot and formal start from unchanged base. Heldout only after formal freeze.",
+    "feasibility_threshold": 0.05
+  },
+  "dataset_protocol_sha256": "78ab9375185754c8d34af7233d8c6d65c0b70c9c3dce16b4f255c27b6e28bb3d",
+  "sha256": {
+    "configs/stage6-study-v2.json": "698fef2a52e41919a0461ab0c1f84bd6c30df2830118cc9ebc97627b089416ab",
+    "scripts/111_language_study.py": "a869999fd54245bdb18f2a20f526bbe197638c9fe53516372ae101e40a783451"
+  },
+  "heldout_used_for_selection": false
+}
