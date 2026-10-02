@@ -1,0 +1,28 @@
+{
+  "sha256": {
+    "quality.json": "6c07b0792caa9dde147e82d66bf65185b0f77e19d9363893250d8fb809ecfe5d",
+    "second-transport.jpg": "6623946f77f4cea704137247ddf4d5cde6c681c4665e1077f2e33090b946d126",
+    "retired-v4-dataset-protocol.json": "88522b0745633f2421c200d31360ae30856bfe4feb50f72442254f36a1a5b86e",
+    "acceptance.json": "4b7794d6d511f9f278bd7540ecc6da672eeda2d216280953f7d6d7a7b5674d2a",
+    "previous-heldout-protocol.json": "689c8c5529ac68fe65adf28bcb6e3302a20de7a61b3628e36f31dd0e8aaf8133",
+    "retired-v4-candidate-heldout.json": "70c9d4c836bdd7d11d086d351b46dc34da2edc2ef94a857ad47a453f0a234808",
+    "retired-v4-candidate-validation.json": "be58bb5a8b0384dc1b3405f9344c2bfeb94ec2ab782f036f28e95453ee97d59a",
+    "retired-v4-protocol.json": "083da39a7810cff0903fba10faa2bd622849a247cb1bc03138752838aacd9216",
+    "previous-heldout.json": "28fc7d1825fd3fe64b824238c11675d208413b927349bc729185b1b7f5377f39",
+    "protocol.json": "0be02ec24b919abeb4e10bf5a856be5bba6bec331679dc204f1f612282400392",
+    "candidate-heldout-protocol.json": "348d4e4b49baa669d7f6d19315858565878b47d49e59e72241c6b1f9df502472",
+    "training.json": "34794d8be808b00c09b587939887565ec469cd2f1edf6a65662a2e2e80ad6525",
+    "candidate-regression-protocol.json": "bbb1da18cbd6f5745533de27717a9de1cd5b32cd0b473f137e35d522912369a4",
+    "candidate-regression.json": "cf5b85942be2fdae58b9e4f29729e0de38b6a9154f7002c4989076713622df3b",
+    "negative_guards.json": "277ddfb624158c35174eafe21e39b5a42dbcf99adb4a20c7bcd13d5a15bbfd38",
+    "retired-v4-previous-validation.json": "ef62c4e8d60e8541c823a459a60e83a20b9137457d39c18473af2871eabcac90",
+    "physical.json": "464fe8cd780d320784073d9dda74f69b43f14c511dcf8e5cd098020a0d2b8b90",
+    "entrypoint-smoke.json": "a0bf06e191c9120702b52e80898cf9e9279420bb3a3331c629d9beae996882d5",
+    "candidate-heldout.json": "6810cf6a4abcca7552fe9a17f9a26563b80bad258d1739686fbb032980f57164",
+    "retired-v4-previous-heldout.json": "b2341717cccbf9607478b96fac2e03f20056fbb2b9f3c8ac1ffae8c2a175c9b7",
+    "retired-v4-candidate-regression.json": "ee372f448312962d81841aabbac172bb4568b14c528a35439f6b49db2ecf1add",
+    "dataset_protocol.json": "8b36f67c7e2f6f4de2628df5fb85511dfc55eb79b5e57c043bf9eb0689e7ca52"
+  },
+  "shared_delivery": "/media/smgbro/shared/lora/language/delivery-study_v4_guard2",
+  "weights_uploaded": false
+}

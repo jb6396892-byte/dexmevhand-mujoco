@@ -1,0 +1,141 @@
+{
+  "model_acceptance_passed": true,
+  "language_system_passed": true,
+  "framework_physics_passed": true,
+  "negative_guards_passed": true,
+  "physical_passed": 10,
+  "unique_plans": 10,
+  "physical_motion_plans": 8,
+  "language_metrics": {
+    "total": 100,
+    "schema_legal": 100,
+    "semantic_correct": 94,
+    "semantic_accuracy": 0.94,
+    "per_goal": {
+      "reach": {
+        "total": 10,
+        "correct": 10,
+        "raw_accepted": 10,
+        "accepted": 10
+      },
+      "grasp": {
+        "total": 10,
+        "correct": 10,
+        "raw_accepted": 10,
+        "accepted": 10
+      },
+      "lift": {
+        "total": 10,
+        "correct": 10,
+        "raw_accepted": 10,
+        "accepted": 10
+      },
+      "transport": {
+        "total": 10,
+        "correct": 10,
+        "raw_accepted": 10,
+        "accepted": 10
+      },
+      "stop": {
+        "total": 10,
+        "correct": 10,
+        "raw_accepted": 10,
+        "accepted": 10
+      },
+      "reject": {
+        "total": 50,
+        "correct": 44,
+        "raw_accepted": 6,
+        "accepted": 0
+      }
+    },
+    "fully_correct_goal_groups": 5,
+    "raw_invalid_responses": 0,
+    "raw_unsupported_false_execution": 6,
+    "raw_accepted": 56,
+    "raw_correct_and_accepted": 50,
+    "unsupported_false_execution": 0,
+    "unsafe_plan_acceptances": 0,
+    "accepted": 50,
+    "correct_and_accepted": 50,
+    "supported_count": 50,
+    "supported_correct_coverage": 1.0,
+    "semantic_vetoes": 6
+  },
+  "regression_metrics": {
+    "total": 240,
+    "schema_legal": 240,
+    "semantic_correct": 236,
+    "semantic_accuracy": 0.9833333333333333,
+    "per_goal": {
+      "reach": {
+        "total": 28,
+        "correct": 28,
+        "raw_accepted": 28,
+        "accepted": 28
+      },
+      "grasp": {
+        "total": 28,
+        "correct": 28,
+        "raw_accepted": 28,
+        "accepted": 28
+      },
+      "lift": {
+        "total": 28,
+        "correct": 28,
+        "raw_accepted": 28,
+        "accepted": 28
+      },
+      "transport": {
+        "total": 28,
+        "correct": 28,
+        "raw_accepted": 28,
+        "accepted": 28
+      },
+      "stop": {
+        "total": 28,
+        "correct": 28,
+        "raw_accepted": 28,
+        "accepted": 28
+      },
+      "reject": {
+        "total": 100,
+        "correct": 96,
+        "raw_accepted": 4,
+        "accepted": 0
+      }
+    },
+    "fully_correct_goal_groups": 5,
+    "raw_invalid_responses": 0,
+    "raw_unsupported_false_execution": 4,
+    "raw_accepted": 144,
+    "raw_correct_and_accepted": 140,
+    "unsupported_false_execution": 0,
+    "unsafe_plan_acceptances": 0,
+    "accepted": 140,
+    "correct_and_accepted": 140,
+    "supported_count": 140,
+    "supported_correct_coverage": 1.0,
+    "semantic_vetoes": 4
+  },
+  "adapter_sha256": {
+    "README.md": "a1b1aafd419484ef118aaef181d1ea4e0e1cadb2d7a87dd878f5276659956827",
+    "adapter_model.safetensors": "114e341a1183cfa4279ed7b2aee656dc3ac95aae6c8f804bad68fbf6e8870e10",
+    "adapter_config.json": "f7310ba4f2ba2a032e1b7c6b76ff3046e61f1d4bcdb2ee76ca87c98a4efe78d2",
+    "training_args.bin": "d0798ed293b3edd4087a62c3cdcc8acdd037d95571effd4fd48ace237f8eb008",
+    "tokenizer_config.json": "f91b80bdb7722bdd0a25d79246fa79e513a7d4d78056b2eac8cbf92767937ab8",
+    "special_tokens_map.json": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+  },
+  "model_source_sha256": "4e28688965bf1abb6c140648fbb89e7d88f56815bf470805c71aba4ce793caec",
+  "dataset_protocol_sha256": "8b36f67c7e2f6f4de2628df5fb85511dfc55eb79b5e57c043bf9eb0689e7ca52",
+  "study_protocol_sha256": "0be02ec24b919abeb4e10bf5a856be5bba6bec331679dc204f1f612282400392",
+  "predictions_sha256": "4c8a54a370c573dbc447f755bc8fd8e9ae8ee53fd9bf2b9deb0819b8702c8017",
+  "scope": "Guarded finite Chinese commands, two nominal scenes, explicit --execute only",
+  "low_level_backend": "verified expert references; NOT DAPG network",
+  "unrestricted_language_safety_proven": false,
+  "independent_physics_generalization": false
+}

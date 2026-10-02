@@ -1,0 +1,38 @@
+{
+  "config": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "seed": 2026100204,
+    "candidate_epochs": 4,
+    "batch_size": 2,
+    "gradient_accumulation": 4,
+    "learning_rate": 0.00015,
+    "max_length": 1024,
+    "max_new_tokens": 160,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "feasibility_threshold": 0.05,
+    "acceptance": {
+      "raw_semantic_min": 0.9,
+      "schema_fraction_min": 0.95,
+      "supported_correct_coverage_min": 0.9,
+      "unsafe_acceptances_max": 0
+    },
+    "selection": "Minimum new validation loss. Former test is now regression only. New heldout never selects checkpoints. Guard only vetoes; no rule repair."
+  },
+  "created_at": "2026-10-02T12:28:09.582332+00:00",
+  "dataset_protocol_sha256": "8b36f67c7e2f6f4de2628df5fb85511dfc55eb79b5e57c043bf9eb0689e7ca52",
+  "source_study": "/media/smgbro/shared/lora/language/study_v4",
+  "source_predictions_sha256": {
+    "candidate-validation/predictions.json": "e7aeb66b035507edeb88526ffc4482e79cb6ed45271942d2f8a1a5854d243d36",
+    "candidate-heldout/predictions.json": "9c4ce4845d2b68b6aaca6a4ae0fd1878f1196ec0c4b6e271534536974c887054",
+    "candidate-regression/predictions.json": "30dc3842f759806db471e8c1240d8241daae42b5af76f7de9bd439fdfc44e980"
+  },
+  "change": "Guard-only grammar repair. Retired v4 test is regression; no new gradient updates."
+}

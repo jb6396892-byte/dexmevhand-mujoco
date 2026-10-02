@@ -1,6 +1,9 @@
-# 阶段 6 实训操作记录
+# 阶段 6 v2/v3 历史实训操作记录
 
-最终状态：正式 8 epoch 已完成，留出语义 52/56，但越界误接受 1 条，部署拒收。
+> 最新版本为 `study_v4_guard2`，已通过受控执行验收，见 [最新报告与入口](STAGE6_REFINEMENT.md)。
+> 下文保留 v3 的训练与拒收历史；公共脚本 `116` 现在使用最新版本，不再使用 v3。
+
+v3 当时状态：正式 8 epoch 已完成，留出语义 52/56，但越界误接受 1 条，部署拒收。
 正确计划的物理接口 10/10 通过不能替代语言安全验收。[完整结果与答辩提纲](presentation/stage6/STUDY_RESULTS.md)。
 
 本轮按用户澄清，`/media/smgbro/shared/lora/` **只保存阶段 6 的语言模型相关内容**。
@@ -93,11 +96,11 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 # 默认只生成并检查计划，不执行物理动作。
 bash scripts/116_run_stage6_model.sh "把杯子抓起来" --scene second
 # 仅匹配模型哈希的独立语言/物理验收收据通过后，才允许执行和打开窗口。
-# 当前候选未通过；下面命令会被拒绝，这是预期行为。
+# 历史 v3 候选未通过；公共 116 现已切到通过验收的 guard2，运行前参见最新报告。
 bash scripts/116_run_stage6_model.sh "把杯子搬到目标" --scene second --execute --render
 ```
 
-以上语言执行日志也进入共享盘 `study_v3/instructions/`。
+v3 历史语言执行日志位于共享盘 `study_v3/instructions/`；当前 `116` 写入 `study_v4_guard2/instructions/`。
 低层执行后端仍是经验证的视频专家参考，不是第 200 次 DAPG checkpoint，也不是四个已学成技能网络。
 语言实验不修复阶段 3 的接触余量或长训退化。
 

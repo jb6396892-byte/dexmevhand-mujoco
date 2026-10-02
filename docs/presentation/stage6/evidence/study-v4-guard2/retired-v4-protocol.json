@@ -1,0 +1,33 @@
+{
+  "config": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "seed": 2026100204,
+    "candidate_epochs": 4,
+    "batch_size": 2,
+    "gradient_accumulation": 4,
+    "learning_rate": 0.00015,
+    "max_length": 1024,
+    "max_new_tokens": 160,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "feasibility_threshold": 0.05,
+    "acceptance": {
+      "raw_semantic_min": 0.9,
+      "schema_fraction_min": 0.95,
+      "supported_correct_coverage_min": 0.9,
+      "unsafe_acceptances_max": 0
+    },
+    "selection": "Minimum new validation loss. Former test is now regression only. New heldout never selects checkpoints. Guard only vetoes; no rule repair."
+  },
+  "dataset_protocol_sha256": "88522b0745633f2421c200d31360ae30856bfe4feb50f72442254f36a1a5b86e",
+  "model_source_sha256": "4e28688965bf1abb6c140648fbb89e7d88f56815bf470805c71aba4ce793caec",
+  "old_adapter_sha256": "7b9c33d183768ada07186ece43bb0189ea5f16addd6a260732c770820ceb3386",
+  "update": "Train contrastive intent boundaries and add veto-only instruction contract"
+}

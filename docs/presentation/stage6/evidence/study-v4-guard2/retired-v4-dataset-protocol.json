@@ -1,0 +1,37 @@
+{
+  "created_at": "2026-10-02T12:06:35.088780+00:00",
+  "sha256": {
+    "configs/stage6-refinement-v4.json": "e44a956c0e22b63234af057440503c80bb76133c7dfd1d7e400bbbafe2b31a39",
+    "scripts/118_refine_language.py": "c084d9cabe8724c1d4d586d06913ce27f2db4db60895a135b235573cf88e307d",
+    "scripts/111_language_study.py": "a869999fd54245bdb18f2a20f526bbe197638c9fe53516372ae101e40a783451",
+    "scripts/119_verify_refined_language.py": "d6483815b6463c51d27d24bdd236febc414ff3dc180c5d9a07f006d2317822a4",
+    "scripts/120_run_refined_language.py": "d2254ad78daafb298cf2366a7d2f63400a9dcf04559cedc4c82f0e9a4745cd93",
+    "src/fromrealhand/language_planner/instruction_guard.py": "249a064c011c81236f03ecc42ac6c992c4b8a756f5732010b03268ebbe4894ac",
+    "src/fromrealhand/language_planner/refinement.py": "77a76b54e9044e9ecdfdfaed02b9671c2cac5b81de6664a24369a9bd6839861c",
+    "configs/stage6-system-prompt.txt": "c75bd0ecdc03193ce72a21d218216a9dedd7d894f13b23674e06b9034bbc1529",
+    "configs/stage6-refinement-train.json": "be5005090d4a8af20bb12817121fcb94b1239171edb572d4df5cfe9f985e0ee1",
+    "configs/stage6-refinement-validation.json": "11c551b48a1ec8df362af2406178d54ecddaac52e92e49a2442575c9da0af248",
+    "configs/stage6-refinement-heldout.json": "05f0e031fbc150f9de67f170887c3fc3c1f65ccbd759e3598a5e222a0f1287a1"
+  },
+  "data_sha256": {
+    "train.jsonl": "964d87478b2cdacb6e19adfd34b8862e7d907c8a2ffef9593f89dc6eb4dccb74",
+    "validation.jsonl": "940b19628b40cbf1744761ce4800008de5e0902849efaad33dfe097fc3f515d1",
+    "heldout.jsonl": "c64dd790998ecdf227743197ed7e6c306e1c12d2fa5e0920f445a7c180b40456",
+    "regression.jsonl": "6a68ffbe779213fd309cd3818a6f2e603c46c8423f0c6f5e5a1bd68662cf7db0",
+    "feasibility.json": "d7d95787afc7a6230ed656be01c2b029851d706e0691e1842c67c2306a57faf4"
+  },
+  "counts": {
+    "train": 1160,
+    "validation": 64,
+    "heldout": 120
+  },
+  "scope": "New manually authored phrases, two nominal scenes, no new physical generalization",
+  "retired_test": "Original 56 rows are regression only; known failure phrases informed development",
+  "acceptance": {
+    "raw_semantic_min": 0.9,
+    "schema_fraction_min": 0.95,
+    "supported_correct_coverage_min": 0.9,
+    "unsafe_acceptances_max": 0
+  },
+  "heldout_for_selection": false
+}

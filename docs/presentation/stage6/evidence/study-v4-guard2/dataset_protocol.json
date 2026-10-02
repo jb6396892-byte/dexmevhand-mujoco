@@ -1,0 +1,26 @@
+{
+  "sha256": {
+    "configs/stage6-guard2-heldout.json": "49a852a99ba097bcc71d8d3d4d78898b8efea77669e5d6a731c862422fbb1e88",
+    "scripts/122_verify_guard_revision.py": "4ceb4be17eb289549f6c3980a846b805a9ce7a88e33e7436317a2c3bfceb8706",
+    "scripts/123_run_guarded_language.py": "57c829137da5691bbd03c3b895c186f2d36e496b285fffe48d656456109aa427",
+    "src/fromrealhand/language_planner/guard_revision.py": "f1a9d8d7fe1e54e9abb22e7b7bd160515315e08b8116d535e8607d5c1f5c4f72"
+  },
+  "data_sha256": {
+    "heldout.jsonl": "1cc0c6c6aaadc02ab8cd10451d090ce9a65c963387ea759bc65b5a25323ab37b",
+    "regression.jsonl": "e492f064287d4ee889f6504998c380e2c5bd66b01ce0fecc56836d946ac90a48",
+    "regression-predictions.json": "37f816cabb10b5f16efb7230eef780ce0e042775032abd20ea12c6ef7f8dbaf9",
+    "feasibility.json": "d7d95787afc7a6230ed656be01c2b029851d706e0691e1842c67c2306a57faf4"
+  },
+  "counts": {
+    "heldout": 100,
+    "regression": 240
+  },
+  "heldout_for_selection": false,
+  "acceptance": {
+    "raw_semantic_min": 0.9,
+    "schema_fraction_min": 0.95,
+    "supported_correct_coverage_min": 0.9,
+    "unsafe_acceptances_max": 0
+  },
+  "scope": "Frozen weights; lexical repair; fresh synthetic language in two known scenes"
+}

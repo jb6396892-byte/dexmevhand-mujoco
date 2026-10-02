@@ -427,20 +427,21 @@ const stages = [
     phase: "D",
     phaseLabel: "高层规划",
     title: "训练语言模型生成技能计划",
-    objective: "阶段 6 / D2：正式 LoRA 已训练，留出语义 52/56，但越界误接受 1 条，部署未通过。正确计划物理接口通过不抵消语义错误。",
+    objective: "阶段 6 / D2：有限指令受控验收通过。新测试原始语义 94/100，对照旧 LoRA 80/100；语义门控后越界误接受 0，合法任务放行 50/50。不是任意语言或新物理场景安全证明。",
     tasks: [
       "从规则规划器与成功日志生成指令、场景和计划样本",
       "定义训练集、验证集和指令改写测试集",
       "选择预训练小型语言模型并进行 LoRA/SFT",
       "把可用技能和参数约束放入模型输入",
       "只接受通过 Schema 和技能注册表校验的 JSON 输出",
+      "核对原指令与模型计划目标，只能否决，不生成替代计划",
       "用标准场景物理余量分数过滤计划；学习型成功概率模型后续另做",
     ],
     outputs: [
-      "800/42/56 行训练、验证、留出；原数据和新增对比指令分开冻结",
-      "/media/smgbro/shared/lora/language/study_v3/formal/adapter/",
-      "docs/STAGE6_STUDY.md 与 docs/presentation/stage6/STUDY_RESULTS.md",
-      "独立基础模型对照、失败记录、10 个正确模型计划物理接口通过；自动执行锁定",
+      "1160 条训练、64 条开发验证；最终新 100 条测试与 240 条回归分开冻结",
+      "/media/smgbro/shared/lora/language/study_v4_guard2/candidate/adapter/",
+      "docs/STAGE6_REFINEMENT.md 与 docs/presentation/stage6/REFINEMENT_RESULTS.md",
+      "保留 v3/v4 失败记录；10 项物理检查、175 项测试通过，仅显式受控执行",
     ],
     acceptance: [
       "JSON 合法率达到预先设定目标",
@@ -450,8 +451,8 @@ const stages = [
     ],
     commands: [
       {
-        label: "只检查数据，不下载、不训练",
-        text: "/home/smgbro/miniconda3/envs/dexmv/bin/python scripts/104_train_language_lora.py check",
+        label: "只生成并检查计划",
+        text: "bash scripts/116_run_stage6_model.sh \"抓起杯子\" --scene second",
       },
     ],
   },
