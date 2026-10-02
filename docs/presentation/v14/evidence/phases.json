@@ -1,0 +1,1507 @@
+[
+  {
+    "video": "first",
+    "case": "video_seed_0",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.148274764444534,
+        "max_cup_center_height_m": 0.034752295497991206,
+        "action_rmse_vs_frozen_reference": 0.00027123611675360684,
+        "action_rmse_vs_expert": 0.00027123611675360684,
+        "cup_position_rmse_vs_expert_m": 2.5308617748043907e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.1114759563862486,
+        "max_cup_center_height_m": 0.10962988074129006,
+        "action_rmse_vs_frozen_reference": 0.001528536031487726,
+        "action_rmse_vs_expert": 0.001528536031487726,
+        "cup_position_rmse_vs_expert_m": 0.0007501042288615075
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.050173093851638095,
+        "max_cup_center_height_m": 0.15200408165035004,
+        "action_rmse_vs_frozen_reference": 0.0018649760524916182,
+        "action_rmse_vs_expert": 0.0018649760524916182,
+        "cup_position_rmse_vs_expert_m": 0.0009118932418227893
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.007495298888335555,
+        "max_cup_center_height_m": 0.18162075014736995,
+        "action_rmse_vs_frozen_reference": 0.0015660574783450116,
+        "action_rmse_vs_expert": 0.0015660574783450116,
+        "cup_position_rmse_vs_expert_m": 0.0018155136079741662
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "video_seed_1",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14842002760261688,
+        "max_cup_center_height_m": 0.03508418898393509,
+        "action_rmse_vs_frozen_reference": 0.0002782564209946665,
+        "action_rmse_vs_expert": 0.000714429494764146,
+        "cup_position_rmse_vs_expert_m": 4.920492445200475e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11156166001670044,
+        "max_cup_center_height_m": 0.11054671707413745,
+        "action_rmse_vs_frozen_reference": 0.002383393600631813,
+        "action_rmse_vs_expert": 0.0015672949319960534,
+        "cup_position_rmse_vs_expert_m": 0.0010172590030696834
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.049679751702412525,
+        "max_cup_center_height_m": 0.15321244178334764,
+        "action_rmse_vs_frozen_reference": 0.0037420491280108913,
+        "action_rmse_vs_expert": 0.0013726116490556661,
+        "cup_position_rmse_vs_expert_m": 0.0009706733759811963
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.008736022801439381,
+        "max_cup_center_height_m": 0.1825853335332874,
+        "action_rmse_vs_frozen_reference": 0.0029955367270954655,
+        "action_rmse_vs_expert": 0.0007544567941969718,
+        "cup_position_rmse_vs_expert_m": 0.0026667000674755865
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "video_seed_2",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.1480349460685075,
+        "max_cup_center_height_m": 0.03460260480642319,
+        "action_rmse_vs_frozen_reference": 0.00028117432957215616,
+        "action_rmse_vs_expert": 0.0014111787572513327,
+        "cup_position_rmse_vs_expert_m": 7.832862731763714e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11234092170026067,
+        "max_cup_center_height_m": 0.10589494535427482,
+        "action_rmse_vs_frozen_reference": 0.005631479087251898,
+        "action_rmse_vs_expert": 0.00093363477622833,
+        "cup_position_rmse_vs_expert_m": 0.0010311165113525323
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.05099281285326325,
+        "max_cup_center_height_m": 0.14915807400466075,
+        "action_rmse_vs_frozen_reference": 0.007716084590954668,
+        "action_rmse_vs_expert": 0.0012580329436062637,
+        "cup_position_rmse_vs_expert_m": 0.001193171884902096
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.008115292991687367,
+        "max_cup_center_height_m": 0.1792815289874097,
+        "action_rmse_vs_frozen_reference": 0.008523258278289602,
+        "action_rmse_vs_expert": 0.0009982239601280577,
+        "cup_position_rmse_vs_expert_m": 0.0018854176256239148
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "video_seed_3",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.1483791614920256,
+        "max_cup_center_height_m": 0.03508893283754385,
+        "action_rmse_vs_frozen_reference": 0.0003058065572196797,
+        "action_rmse_vs_expert": 0.0007510838783450627,
+        "cup_position_rmse_vs_expert_m": 4.786091609952887e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11149291808769922,
+        "max_cup_center_height_m": 0.11068939664519038,
+        "action_rmse_vs_frozen_reference": 0.0024833254450440344,
+        "action_rmse_vs_expert": 0.0008606887721063142,
+        "cup_position_rmse_vs_expert_m": 0.001041929752857461
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.04963628830351049,
+        "max_cup_center_height_m": 0.15327561784501154,
+        "action_rmse_vs_frozen_reference": 0.003827726078968789,
+        "action_rmse_vs_expert": 0.0011793858974658783,
+        "cup_position_rmse_vs_expert_m": 0.0013642836223317
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.008609974025536125,
+        "max_cup_center_height_m": 0.1826313837195025,
+        "action_rmse_vs_frozen_reference": 0.0030216099446169473,
+        "action_rmse_vs_expert": 0.0008427859394044201,
+        "cup_position_rmse_vs_expert_m": 0.00239189955171132
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "video_seed_4",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.1481926173398088,
+        "max_cup_center_height_m": 0.034949071728707724,
+        "action_rmse_vs_frozen_reference": 0.0005861785133701121,
+        "action_rmse_vs_expert": 0.0015408661337854598,
+        "cup_position_rmse_vs_expert_m": 0.00010462461764084965
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11089972028262648,
+        "max_cup_center_height_m": 0.11167285144121189,
+        "action_rmse_vs_frozen_reference": 0.0033632727770640694,
+        "action_rmse_vs_expert": 0.0027138512149899145,
+        "cup_position_rmse_vs_expert_m": 0.002028598075227103
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.04907318996025879,
+        "max_cup_center_height_m": 0.15301589959303602,
+        "action_rmse_vs_frozen_reference": 0.004295479631698532,
+        "action_rmse_vs_expert": 0.0033711511866729134,
+        "cup_position_rmse_vs_expert_m": 0.00255834059827993
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.008426569378846192,
+        "max_cup_center_height_m": 0.18232062077792474,
+        "action_rmse_vs_frozen_reference": 0.0029785833525213653,
+        "action_rmse_vs_expert": 0.0020384495780581273,
+        "cup_position_rmse_vs_expert_m": 0.0022694739700723225
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "video_seed_5",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14856260072929067,
+        "max_cup_center_height_m": 0.035081824032276034,
+        "action_rmse_vs_frozen_reference": 0.0002847480754875841,
+        "action_rmse_vs_expert": 0.001272281278783232,
+        "cup_position_rmse_vs_expert_m": 3.684347825252913e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11209615918426409,
+        "max_cup_center_height_m": 0.11019807186209064,
+        "action_rmse_vs_frozen_reference": 0.002052359538522186,
+        "action_rmse_vs_expert": 0.0014688263113314093,
+        "cup_position_rmse_vs_expert_m": 0.001338633147814171
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.04986339864901565,
+        "max_cup_center_height_m": 0.15358552346154167,
+        "action_rmse_vs_frozen_reference": 0.0037975782796504584,
+        "action_rmse_vs_expert": 0.0010793310501384442,
+        "cup_position_rmse_vs_expert_m": 0.0016628617205230857
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.009828421820198087,
+        "max_cup_center_height_m": 0.18239258247976564,
+        "action_rmse_vs_frozen_reference": 0.0031406902682089123,
+        "action_rmse_vs_expert": 0.0010452931001293556,
+        "cup_position_rmse_vs_expert_m": 0.0042026426253392625
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "synthetic_position_0_-1",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14827362701586302,
+        "max_cup_center_height_m": 0.03460260480642319,
+        "action_rmse_vs_frozen_reference": 0.0007671713446352229,
+        "action_rmse_vs_expert": 0.0010981929717741653,
+        "cup_position_rmse_vs_expert_m": 0.00012071087361346697
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11180964083613804,
+        "max_cup_center_height_m": 0.10632153314895804,
+        "action_rmse_vs_frozen_reference": 0.0038858300854544654,
+        "action_rmse_vs_expert": 0.003484150479709856,
+        "cup_position_rmse_vs_expert_m": 0.0046586851475252
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.051030926989224276,
+        "max_cup_center_height_m": 0.14943329333761704,
+        "action_rmse_vs_frozen_reference": 0.006500250000840793,
+        "action_rmse_vs_expert": 0.0057621521210729785,
+        "cup_position_rmse_vs_expert_m": 0.004622977055991264
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.008745106015534555,
+        "max_cup_center_height_m": 0.1796822005934863,
+        "action_rmse_vs_frozen_reference": 0.006458574070315698,
+        "action_rmse_vs_expert": 0.005284134266171624,
+        "cup_position_rmse_vs_expert_m": 0.002753452860430712
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "synthetic_goal_0_-1",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14797747574310866,
+        "max_cup_center_height_m": 0.03479788540731732,
+        "action_rmse_vs_frozen_reference": 0.00033122254716248876,
+        "action_rmse_vs_expert": 0.00033122254688623746,
+        "cup_position_rmse_vs_expert_m": 3.1203538632410815e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11002713819237529,
+        "max_cup_center_height_m": 0.110129511419718,
+        "action_rmse_vs_frozen_reference": 0.0019032310933280517,
+        "action_rmse_vs_expert": 0.0019032215155905339,
+        "cup_position_rmse_vs_expert_m": 0.0012102951322509312
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.04873528221300706,
+        "max_cup_center_height_m": 0.15207850678632656,
+        "action_rmse_vs_frozen_reference": 0.0023459575448458014,
+        "action_rmse_vs_expert": 0.0022995684156013477,
+        "cup_position_rmse_vs_expert_m": 0.0016726082128035121
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.007910420896568314,
+        "max_cup_center_height_m": 0.18157356873104907,
+        "action_rmse_vs_frozen_reference": 0.003014506292423337,
+        "action_rmse_vs_expert": 0.0015465660523091413,
+        "cup_position_rmse_vs_expert_m": 0.0024869885653673322
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "synthetic_goal_0_1",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14924300415219102,
+        "max_cup_center_height_m": 0.034776743608162186,
+        "action_rmse_vs_frozen_reference": 0.0002905144830697811,
+        "action_rmse_vs_expert": 0.00029051448247450383,
+        "cup_position_rmse_vs_expert_m": 1.6085560935043114e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11379988547425521,
+        "max_cup_center_height_m": 0.10938425309222734,
+        "action_rmse_vs_frozen_reference": 0.0011661521918083716,
+        "action_rmse_vs_expert": 0.0011661596342718394,
+        "cup_position_rmse_vs_expert_m": 0.0009121907734470101
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.053148580182372215,
+        "max_cup_center_height_m": 0.1518121674173795,
+        "action_rmse_vs_frozen_reference": 0.0013978952896227777,
+        "action_rmse_vs_expert": 0.0013580367367764872,
+        "cup_position_rmse_vs_expert_m": 0.0008549412138625439
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.008521316422813676,
+        "max_cup_center_height_m": 0.18154012802633668,
+        "action_rmse_vs_frozen_reference": 0.002912463177040704,
+        "action_rmse_vs_expert": 0.0008053224074378181,
+        "cup_position_rmse_vs_expert_m": 0.0016980565485427545
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "synthetic_position_1_-1",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": 848,
+        "first_cup_error_time_s": 8.48
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14826862958439685,
+        "max_cup_center_height_m": 0.03467462790716194,
+        "action_rmse_vs_frozen_reference": 0.0010397379893461772,
+        "action_rmse_vs_expert": 0.0014132818943049883,
+        "cup_position_rmse_vs_expert_m": 8.729886866424594e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.1119062719156262,
+        "max_cup_center_height_m": 0.1068326822007185,
+        "action_rmse_vs_frozen_reference": 0.00516208904539089,
+        "action_rmse_vs_expert": 0.005123371178698373,
+        "cup_position_rmse_vs_expert_m": 0.005792521565603395
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.05119359921671283,
+        "max_cup_center_height_m": 0.1478665404742554,
+        "action_rmse_vs_frozen_reference": 0.008848583243163824,
+        "action_rmse_vs_expert": 0.008479448458292148,
+        "cup_position_rmse_vs_expert_m": 0.0076741101876783265
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.013992202794331702,
+        "max_cup_center_height_m": 0.1779417303677174,
+        "action_rmse_vs_frozen_reference": 0.010158705357805367,
+        "action_rmse_vs_expert": 0.009655409787741383,
+        "cup_position_rmse_vs_expert_m": 0.012301322734278685
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "synthetic_goal_1_-1",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.15003060148337424,
+        "max_cup_center_height_m": 0.03482608504380591,
+        "action_rmse_vs_frozen_reference": 0.00032802217337720086,
+        "action_rmse_vs_expert": 0.0003280221729798329,
+        "cup_position_rmse_vs_expert_m": 2.6984162682912112e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11399973920396518,
+        "max_cup_center_height_m": 0.1102857310419078,
+        "action_rmse_vs_frozen_reference": 0.0022594547271102953,
+        "action_rmse_vs_expert": 0.0022594550922046346,
+        "cup_position_rmse_vs_expert_m": 0.0011624161158214367
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.053429370611644836,
+        "max_cup_center_height_m": 0.15226794423751058,
+        "action_rmse_vs_frozen_reference": 0.002623458605828074,
+        "action_rmse_vs_expert": 0.00266731313329047,
+        "cup_position_rmse_vs_expert_m": 0.0015999310304846877
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.007955874634518852,
+        "max_cup_center_height_m": 0.18181736584429015,
+        "action_rmse_vs_frozen_reference": 0.002525046386191763,
+        "action_rmse_vs_expert": 0.002163107598865755,
+        "cup_position_rmse_vs_expert_m": 0.003382090107106392
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "synthetic_goal_1_1",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14717844366908858,
+        "max_cup_center_height_m": 0.03480598415382608,
+        "action_rmse_vs_frozen_reference": 0.00026506342399772273,
+        "action_rmse_vs_expert": 0.00026506342354587465,
+        "cup_position_rmse_vs_expert_m": 2.2326764884330135e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.10945865699731401,
+        "max_cup_center_height_m": 0.11000485985043326,
+        "action_rmse_vs_frozen_reference": 0.0020199344394532083,
+        "action_rmse_vs_expert": 0.0020199338670888003,
+        "cup_position_rmse_vs_expert_m": 0.0010905747311500248
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.048244383642293304,
+        "max_cup_center_height_m": 0.15189655714061878,
+        "action_rmse_vs_frozen_reference": 0.002019425090117346,
+        "action_rmse_vs_expert": 0.0020198900267650462,
+        "cup_position_rmse_vs_expert_m": 0.0011997189873525326
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.008339290974662891,
+        "max_cup_center_height_m": 0.18149033170455156,
+        "action_rmse_vs_frozen_reference": 0.0017796813212409284,
+        "action_rmse_vs_expert": 0.0011922121362939902,
+        "cup_position_rmse_vs_expert_m": 0.002639038007734044
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "synthetic_cup_yaw_-10",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.1483210949194641,
+        "max_cup_center_height_m": 0.03495427888239174,
+        "action_rmse_vs_frozen_reference": 0.0007010026035381952,
+        "action_rmse_vs_expert": 0.0010869679159570445,
+        "cup_position_rmse_vs_expert_m": 2.8031802979230908e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11106212278424234,
+        "max_cup_center_height_m": 0.10876076174926926,
+        "action_rmse_vs_frozen_reference": 0.003073252490028565,
+        "action_rmse_vs_expert": 0.0007236479697674131,
+        "cup_position_rmse_vs_expert_m": 0.0005397598390203974
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.04988182261798741,
+        "max_cup_center_height_m": 0.1511994183456919,
+        "action_rmse_vs_frozen_reference": 0.0037649579954451024,
+        "action_rmse_vs_expert": 0.0008897191525227911,
+        "cup_position_rmse_vs_expert_m": 0.0008692050339573108
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.007490805803664931,
+        "max_cup_center_height_m": 0.18135747499238153,
+        "action_rmse_vs_frozen_reference": 0.0032023105594889086,
+        "action_rmse_vs_expert": 0.0008206305503496696,
+        "cup_position_rmse_vs_expert_m": 0.0017431540441045286
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "synthetic_cup_yaw_-5",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14829921580021732,
+        "max_cup_center_height_m": 0.03460260480642319,
+        "action_rmse_vs_frozen_reference": 0.00041025897652047666,
+        "action_rmse_vs_expert": 0.0006637861669210027,
+        "cup_position_rmse_vs_expert_m": 2.606739735724194e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11239370255310151,
+        "max_cup_center_height_m": 0.10771396056736192,
+        "action_rmse_vs_frozen_reference": 0.0036516050681028116,
+        "action_rmse_vs_expert": 0.0008327990072867633,
+        "cup_position_rmse_vs_expert_m": 0.00038240572378894284
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.05088807511743361,
+        "max_cup_center_height_m": 0.15044034094274453,
+        "action_rmse_vs_frozen_reference": 0.0038599417276505604,
+        "action_rmse_vs_expert": 0.0011282893310732612,
+        "cup_position_rmse_vs_expert_m": 0.0007187327608698063
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.008082300208083006,
+        "max_cup_center_height_m": 0.18054122398053396,
+        "action_rmse_vs_frozen_reference": 0.0038153221764797153,
+        "action_rmse_vs_expert": 0.0007553437646667903,
+        "cup_position_rmse_vs_expert_m": 0.00140219011644323
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "synthetic_cup_yaw_5",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14825376310192886,
+        "max_cup_center_height_m": 0.0346553018491671,
+        "action_rmse_vs_frozen_reference": 0.0004452070787965008,
+        "action_rmse_vs_expert": 0.0007163107870661883,
+        "cup_position_rmse_vs_expert_m": 5.042225361805261e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11240987710566984,
+        "max_cup_center_height_m": 0.10751811123104169,
+        "action_rmse_vs_frozen_reference": 0.0013781979668661733,
+        "action_rmse_vs_expert": 0.0006811679308661981,
+        "cup_position_rmse_vs_expert_m": 0.0009901788749669632
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.05122298843937068,
+        "max_cup_center_height_m": 0.1515809574760415,
+        "action_rmse_vs_frozen_reference": 0.0020500578282220292,
+        "action_rmse_vs_expert": 0.0009428065238983334,
+        "cup_position_rmse_vs_expert_m": 0.0013077858118998404
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.008745168750051331,
+        "max_cup_center_height_m": 0.18122173852481824,
+        "action_rmse_vs_frozen_reference": 0.0022826504021031782,
+        "action_rmse_vs_expert": 0.0007571360697952297,
+        "cup_position_rmse_vs_expert_m": 0.0025129830571656545
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "synthetic_cup_yaw_10",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14823749341291745,
+        "max_cup_center_height_m": 0.03460260480642319,
+        "action_rmse_vs_frozen_reference": 0.0009710778201208185,
+        "action_rmse_vs_expert": 0.0011284916160932915,
+        "cup_position_rmse_vs_expert_m": 8.315757263866799e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11263777414974112,
+        "max_cup_center_height_m": 0.10821912437875619,
+        "action_rmse_vs_frozen_reference": 0.0023583582343119176,
+        "action_rmse_vs_expert": 0.0006935532997215653,
+        "cup_position_rmse_vs_expert_m": 0.0007564212932356955
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.05129730038998907,
+        "max_cup_center_height_m": 0.15127263997603926,
+        "action_rmse_vs_frozen_reference": 0.0028403089988578954,
+        "action_rmse_vs_expert": 0.001009329085042794,
+        "cup_position_rmse_vs_expert_m": 0.001542105924379176
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.008093152624312773,
+        "max_cup_center_height_m": 0.1807035922958119,
+        "action_rmse_vs_frozen_reference": 0.0020805665364390046,
+        "action_rmse_vs_expert": 0.0007310492741428605,
+        "cup_position_rmse_vs_expert_m": 0.0015997045968941456
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "nominal",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.22888497074546413,
+        "max_cup_center_height_m": 0.03796124083849449,
+        "action_rmse_vs_frozen_reference": 0.0027556494347165646,
+        "action_rmse_vs_expert": 0.0027556494347165646,
+        "cup_position_rmse_vs_expert_m": 0.00011542119083504055
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.21974571216053754,
+        "max_cup_center_height_m": 0.06392240659217864,
+        "action_rmse_vs_frozen_reference": 0.0007895372562494824,
+        "action_rmse_vs_expert": 0.0007895372562494824,
+        "cup_position_rmse_vs_expert_m": 0.0007991683744746752
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13330926758513126,
+        "max_cup_center_height_m": 0.15789151123838593,
+        "action_rmse_vs_frozen_reference": 0.008558930052975724,
+        "action_rmse_vs_expert": 0.008558930052975724,
+        "cup_position_rmse_vs_expert_m": 0.001562970389372244
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.020272382182983238,
+        "max_cup_center_height_m": 0.2352119164233411,
+        "action_rmse_vs_frozen_reference": 0.00619912965417607,
+        "action_rmse_vs_expert": 0.00619912965417607,
+        "cup_position_rmse_vs_expert_m": 0.0031334736416433386
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "cup_x_minus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.228884268443323,
+        "max_cup_center_height_m": 0.03803237603165798,
+        "action_rmse_vs_frozen_reference": 0.00252114270307765,
+        "action_rmse_vs_expert": 0.002757251362715099,
+        "cup_position_rmse_vs_expert_m": 0.00019331630458793857
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.21953484839380405,
+        "max_cup_center_height_m": 0.06398069545233592,
+        "action_rmse_vs_frozen_reference": 0.0010689333715620318,
+        "action_rmse_vs_expert": 0.0021157449757752645,
+        "cup_position_rmse_vs_expert_m": 0.0022146548079351376
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13306641869976474,
+        "max_cup_center_height_m": 0.1590430917800531,
+        "action_rmse_vs_frozen_reference": 0.011907399349051974,
+        "action_rmse_vs_expert": 0.010537369623378954,
+        "cup_position_rmse_vs_expert_m": 0.002713150597015393
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.02049881234597127,
+        "max_cup_center_height_m": 0.23546381033896738,
+        "action_rmse_vs_frozen_reference": 0.0056806908120390215,
+        "action_rmse_vs_expert": 0.0025728202942957488,
+        "cup_position_rmse_vs_expert_m": 0.003491554306534246
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "goal_x_minus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.228154034972954,
+        "max_cup_center_height_m": 0.03784994952883701,
+        "action_rmse_vs_frozen_reference": 0.002619678811183619,
+        "action_rmse_vs_expert": 0.002728402333633694,
+        "cup_position_rmse_vs_expert_m": 9.878459411156098e-05
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.21796831797178237,
+        "max_cup_center_height_m": 0.0639969144791223,
+        "action_rmse_vs_frozen_reference": 0.0011526295757541057,
+        "action_rmse_vs_expert": 0.0009729844628110158,
+        "cup_position_rmse_vs_expert_m": 0.001033872103558089
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.1300015898349054,
+        "max_cup_center_height_m": 0.15793888806263456,
+        "action_rmse_vs_frozen_reference": 0.00868721199410288,
+        "action_rmse_vs_expert": 0.007486908528824917,
+        "cup_position_rmse_vs_expert_m": 0.0020872489389373986
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.022543450125386427,
+        "max_cup_center_height_m": 0.23664917101790894,
+        "action_rmse_vs_frozen_reference": 0.008096159222162207,
+        "action_rmse_vs_expert": 0.0052739375024917715,
+        "cup_position_rmse_vs_expert_m": 0.007257840271079606
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "cup_x_plus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": 892,
+        "first_cup_error_time_s": 8.92
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.22888401709936637,
+        "max_cup_center_height_m": 0.0380839642626391,
+        "action_rmse_vs_frozen_reference": 0.0030743913882132837,
+        "action_rmse_vs_expert": 0.00287232099257674,
+        "cup_position_rmse_vs_expert_m": 5.3752479721645034e-05
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.21971332815214656,
+        "max_cup_center_height_m": 0.06388657495662221,
+        "action_rmse_vs_frozen_reference": 0.0030896748786898853,
+        "action_rmse_vs_expert": 0.0038292301445735206,
+        "cup_position_rmse_vs_expert_m": 0.0011740890627589932
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13613343481464155,
+        "max_cup_center_height_m": 0.15576025861545145,
+        "action_rmse_vs_frozen_reference": 0.01606937907460078,
+        "action_rmse_vs_expert": 0.019593178962886895,
+        "cup_position_rmse_vs_expert_m": 0.005503360847385985
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.024474144847799795,
+        "max_cup_center_height_m": 0.23090871373162858,
+        "action_rmse_vs_frozen_reference": 0.006924762751558475,
+        "action_rmse_vs_expert": 0.009707408684959942,
+        "cup_position_rmse_vs_expert_m": 0.008103297115424023
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "goal_x_plus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.2300518645688694,
+        "max_cup_center_height_m": 0.03802057121050751,
+        "action_rmse_vs_frozen_reference": 0.0031005577699436955,
+        "action_rmse_vs_expert": 0.0033274941021931292,
+        "cup_position_rmse_vs_expert_m": 0.00016489411752456664
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.22172791558722027,
+        "max_cup_center_height_m": 0.06401325649100627,
+        "action_rmse_vs_frozen_reference": 0.0018246811547795942,
+        "action_rmse_vs_expert": 0.0008686616859047824,
+        "cup_position_rmse_vs_expert_m": 0.001611590341254907
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13744790878279461,
+        "max_cup_center_height_m": 0.15908048998582278,
+        "action_rmse_vs_frozen_reference": 0.0122764440128318,
+        "action_rmse_vs_expert": 0.0077617293098789465,
+        "cup_position_rmse_vs_expert_m": 0.0013889877968301855
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.019993712024760576,
+        "max_cup_center_height_m": 0.23590447526553038,
+        "action_rmse_vs_frozen_reference": 0.006837735843716747,
+        "action_rmse_vs_expert": 0.0020364137876645975,
+        "cup_position_rmse_vs_expert_m": 0.0026976748763098586
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "cup_y_minus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": 893,
+        "first_cup_error_time_s": 8.93
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.22890571528792938,
+        "max_cup_center_height_m": 0.037373563804299605,
+        "action_rmse_vs_frozen_reference": 0.0025554289793093066,
+        "action_rmse_vs_expert": 0.002639012677350701,
+        "cup_position_rmse_vs_expert_m": 8.060848085381386e-05
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.21975306825851332,
+        "max_cup_center_height_m": 0.06430670796557518,
+        "action_rmse_vs_frozen_reference": 0.0025430098335955053,
+        "action_rmse_vs_expert": 0.002366427977588133,
+        "cup_position_rmse_vs_expert_m": 0.0009082139698418621
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13645286627119435,
+        "max_cup_center_height_m": 0.15449117762497472,
+        "action_rmse_vs_frozen_reference": 0.015077497672246335,
+        "action_rmse_vs_expert": 0.014244819292945814,
+        "cup_position_rmse_vs_expert_m": 0.005909337583405004
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.025624941650265593,
+        "max_cup_center_height_m": 0.22977583490957562,
+        "action_rmse_vs_frozen_reference": 0.006438943756830895,
+        "action_rmse_vs_expert": 0.0057013523586091,
+        "cup_position_rmse_vs_expert_m": 0.009132762580976528
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "goal_y_minus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.2334695969832897,
+        "max_cup_center_height_m": 0.03815069485305385,
+        "action_rmse_vs_frozen_reference": 0.0023617856710458495,
+        "action_rmse_vs_expert": 0.002363939469267089,
+        "cup_position_rmse_vs_expert_m": 9.770692967413195e-05
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.2238163923262778,
+        "max_cup_center_height_m": 0.06407725011421588,
+        "action_rmse_vs_frozen_reference": 0.0007839676310569443,
+        "action_rmse_vs_expert": 0.0005877736764374293,
+        "cup_position_rmse_vs_expert_m": 0.0006290579292526932
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13603872581828094,
+        "max_cup_center_height_m": 0.16034750707009263,
+        "action_rmse_vs_frozen_reference": 0.012052840746440053,
+        "action_rmse_vs_expert": 0.013578218731732967,
+        "cup_position_rmse_vs_expert_m": 0.004617092070893397
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.020041381144145942,
+        "max_cup_center_height_m": 0.2369254932839118,
+        "action_rmse_vs_frozen_reference": 0.0033565211479698845,
+        "action_rmse_vs_expert": 0.002879256855117976,
+        "cup_position_rmse_vs_expert_m": 0.004632162824143601
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "cup_y_plus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": 1073,
+        "first_cup_error_time_s": 10.73
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.22887219613701643,
+        "max_cup_center_height_m": 0.03833206843289063,
+        "action_rmse_vs_frozen_reference": 0.0028569498804575755,
+        "action_rmse_vs_expert": 0.0030263043791790307,
+        "cup_position_rmse_vs_expert_m": 0.00010721260113443909
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.21958048091434962,
+        "max_cup_center_height_m": 0.06356999378593482,
+        "action_rmse_vs_frozen_reference": 0.0010292566316052883,
+        "action_rmse_vs_expert": 0.001450218298144947,
+        "cup_position_rmse_vs_expert_m": 0.0007677052182512034
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13320922667918075,
+        "max_cup_center_height_m": 0.15942536556068984,
+        "action_rmse_vs_frozen_reference": 0.01114989945110312,
+        "action_rmse_vs_expert": 0.01621393238006765,
+        "cup_position_rmse_vs_expert_m": 0.0021795473846532025
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.021822709935309763,
+        "max_cup_center_height_m": 0.2333745630966925,
+        "action_rmse_vs_frozen_reference": 0.013315628008136196,
+        "action_rmse_vs_expert": 0.012774596097715528,
+        "cup_position_rmse_vs_expert_m": 0.005347058288910712
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "goal_y_plus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.2246608207158333,
+        "max_cup_center_height_m": 0.03754794732531268,
+        "action_rmse_vs_frozen_reference": 0.0030545847490994803,
+        "action_rmse_vs_expert": 0.0031516171321204147,
+        "cup_position_rmse_vs_expert_m": 4.4698063272388676e-05
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.21581430098320736,
+        "max_cup_center_height_m": 0.06421202153176898,
+        "action_rmse_vs_frozen_reference": 0.003177438236151895,
+        "action_rmse_vs_expert": 0.0021861208538371956,
+        "cup_position_rmse_vs_expert_m": 0.0007555234571059627
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13240635325743355,
+        "max_cup_center_height_m": 0.1580011262951177,
+        "action_rmse_vs_frozen_reference": 0.012221758167055934,
+        "action_rmse_vs_expert": 0.011582999533922559,
+        "cup_position_rmse_vs_expert_m": 0.002040998650437474
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.023887194048482642,
+        "max_cup_center_height_m": 0.23032366025913192,
+        "action_rmse_vs_frozen_reference": 0.006966418864423053,
+        "action_rmse_vs_expert": 0.005880915544081493,
+        "cup_position_rmse_vs_expert_m": 0.005633329854862898
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "yaw_minus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.22887728775009739,
+        "max_cup_center_height_m": 0.03812701091636657,
+        "action_rmse_vs_frozen_reference": 0.0033549963324760717,
+        "action_rmse_vs_expert": 0.005685643151856385,
+        "cup_position_rmse_vs_expert_m": 0.00011579795349892407
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.2190393604482212,
+        "max_cup_center_height_m": 0.06392522432628188,
+        "action_rmse_vs_frozen_reference": 0.003650805450971686,
+        "action_rmse_vs_expert": 0.0056440787387925205,
+        "cup_position_rmse_vs_expert_m": 0.0020773029413533547
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.1338180406496764,
+        "max_cup_center_height_m": 0.1571448295513196,
+        "action_rmse_vs_frozen_reference": 0.013712078967610244,
+        "action_rmse_vs_expert": 0.010700428151559645,
+        "cup_position_rmse_vs_expert_m": 0.004066717929862784
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.01997784508095646,
+        "max_cup_center_height_m": 0.23495755618987446,
+        "action_rmse_vs_frozen_reference": 0.009348632026976918,
+        "action_rmse_vs_expert": 0.004418514718559911,
+        "cup_position_rmse_vs_expert_m": 0.002714130727035727
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "yaw_plus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": 1032,
+        "first_cup_error_time_s": 10.32
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.22889053919539182,
+        "max_cup_center_height_m": 0.037817757110842884,
+        "action_rmse_vs_frozen_reference": 0.0031823946385238057,
+        "action_rmse_vs_expert": 0.006723302184153241,
+        "cup_position_rmse_vs_expert_m": 0.00010080541807622785
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.22001022654666097,
+        "max_cup_center_height_m": 0.06429983848856656,
+        "action_rmse_vs_frozen_reference": 0.0022097042606720684,
+        "action_rmse_vs_expert": 0.006437930278780988,
+        "cup_position_rmse_vs_expert_m": 0.002119764758062525
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13318024299643916,
+        "max_cup_center_height_m": 0.1588901892349322,
+        "action_rmse_vs_frozen_reference": 0.013773486968629848,
+        "action_rmse_vs_expert": 0.015172551709814347,
+        "cup_position_rmse_vs_expert_m": 0.003971725382037568
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.022055274155179397,
+        "max_cup_center_height_m": 0.23318111871392708,
+        "action_rmse_vs_frozen_reference": 0.012134939603203828,
+        "action_rmse_vs_expert": 0.014080017630482979,
+        "cup_position_rmse_vs_expert_m": 0.008071015014309405
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "former_test_cup_y_plus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": 864,
+        "first_cup_error_time_s": 8.64
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14827912660446313,
+        "max_cup_center_height_m": 0.03460260480642319,
+        "action_rmse_vs_frozen_reference": 0.0002774396627140055,
+        "action_rmse_vs_expert": 0.0006147956928765182,
+        "cup_position_rmse_vs_expert_m": 0.0001266935960098043
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11285579905160756,
+        "max_cup_center_height_m": 0.10891735697627876,
+        "action_rmse_vs_frozen_reference": 0.001703221212130946,
+        "action_rmse_vs_expert": 0.0017897026447639575,
+        "cup_position_rmse_vs_expert_m": 0.005008102203709606
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.05157387988180753,
+        "max_cup_center_height_m": 0.15162958386285708,
+        "action_rmse_vs_frozen_reference": 0.002534365947364602,
+        "action_rmse_vs_expert": 0.002491984477381753,
+        "cup_position_rmse_vs_expert_m": 0.004949376001737704
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.01935776311782434,
+        "max_cup_center_height_m": 0.1800461295422949,
+        "action_rmse_vs_frozen_reference": 0.0033672015473614906,
+        "action_rmse_vs_expert": 0.002835812104226034,
+        "cup_position_rmse_vs_expert_m": 0.015464810456171225
+      }
+    }
+  },
+  {
+    "video": "first",
+    "case": "former_test_yaw_plus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 562,
+        "mean_goal_distance_m": 0.14827556529839797,
+        "max_cup_center_height_m": 0.03465113201507506,
+        "action_rmse_vs_frozen_reference": 0.00040839665095947073,
+        "action_rmse_vs_expert": 0.01604578046913048,
+        "cup_position_rmse_vs_expert_m": 9.693245632129664e-05
+      },
+      "closure": {
+        "steps": 90,
+        "mean_goal_distance_m": 0.11263310519728831,
+        "max_cup_center_height_m": 0.10758288820282745,
+        "action_rmse_vs_frozen_reference": 0.0014085059149315027,
+        "action_rmse_vs_expert": 0.015026182082513285,
+        "cup_position_rmse_vs_expert_m": 0.002060048403950692
+      },
+      "lift": {
+        "steps": 141,
+        "mean_goal_distance_m": 0.05153598625766846,
+        "max_cup_center_height_m": 0.15125036655126106,
+        "action_rmse_vs_frozen_reference": 0.0019370665567475863,
+        "action_rmse_vs_expert": 0.015444905391464928,
+        "cup_position_rmse_vs_expert_m": 0.0025765866642610343
+      },
+      "transport_hold": {
+        "steps": 624,
+        "mean_goal_distance_m": 0.011052587179658445,
+        "max_cup_center_height_m": 0.1809334322275423,
+        "action_rmse_vs_frozen_reference": 0.002202183893015781,
+        "action_rmse_vs_expert": 0.015368198462772759,
+        "cup_position_rmse_vs_expert_m": 0.005277833936650331
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "former_test_cup_x_minus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": null,
+        "first_cup_error_time_s": null
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.22888941576746016,
+        "max_cup_center_height_m": 0.037930539081248035,
+        "action_rmse_vs_frozen_reference": 0.0018068577576658134,
+        "action_rmse_vs_expert": 0.0011280071932165943,
+        "cup_position_rmse_vs_expert_m": 0.00010107483352436098
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.21956167006798794,
+        "max_cup_center_height_m": 0.06400849554981783,
+        "action_rmse_vs_frozen_reference": 0.00138887668941668,
+        "action_rmse_vs_expert": 0.0009546015500816781,
+        "cup_position_rmse_vs_expert_m": 0.001269954467542129
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13188940918357095,
+        "max_cup_center_height_m": 0.15840630889937002,
+        "action_rmse_vs_frozen_reference": 0.011309185508843382,
+        "action_rmse_vs_expert": 0.010096966025454995,
+        "cup_position_rmse_vs_expert_m": 0.003064382094302341
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.019844778245384994,
+        "max_cup_center_height_m": 0.23495996693672946,
+        "action_rmse_vs_frozen_reference": 0.006837914217421384,
+        "action_rmse_vs_expert": 0.005995338845541745,
+        "cup_position_rmse_vs_expert_m": 0.0031423097059434836
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "former_test_cup_x_plus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": 901,
+        "first_cup_error_time_s": 9.01
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.2288874404894827,
+        "max_cup_center_height_m": 0.03786707389332986,
+        "action_rmse_vs_frozen_reference": 0.0033936349910728895,
+        "action_rmse_vs_expert": 0.0029024081186511067,
+        "cup_position_rmse_vs_expert_m": 8.497355793161886e-05
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.2197125278286165,
+        "max_cup_center_height_m": 0.06338145335533824,
+        "action_rmse_vs_frozen_reference": 0.0027730756627649678,
+        "action_rmse_vs_expert": 0.002385412604676742,
+        "cup_position_rmse_vs_expert_m": 0.0008272850883256125
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13608147338486545,
+        "max_cup_center_height_m": 0.1562077862161178,
+        "action_rmse_vs_frozen_reference": 0.01493804667826539,
+        "action_rmse_vs_expert": 0.013542851823200723,
+        "cup_position_rmse_vs_expert_m": 0.004963765394610634
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.024613078181043562,
+        "max_cup_center_height_m": 0.23072984562273458,
+        "action_rmse_vs_frozen_reference": 0.007249534359396807,
+        "action_rmse_vs_expert": 0.007396651089776858,
+        "cup_position_rmse_vs_expert_m": 0.008331520130344142
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "former_test_cup_y_minus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": 904,
+        "first_cup_error_time_s": 9.040000000000001
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.22888276494313378,
+        "max_cup_center_height_m": 0.03807310640027101,
+        "action_rmse_vs_frozen_reference": 0.0014027456800368248,
+        "action_rmse_vs_expert": 0.0016150325531068953,
+        "cup_position_rmse_vs_expert_m": 0.00014518329310308023
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.21962188228592183,
+        "max_cup_center_height_m": 0.06399083289358973,
+        "action_rmse_vs_frozen_reference": 0.0028349971167573483,
+        "action_rmse_vs_expert": 0.003102648527694753,
+        "cup_position_rmse_vs_expert_m": 0.0016792634635742053
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.1355401923126812,
+        "max_cup_center_height_m": 0.15646140801233233,
+        "action_rmse_vs_frozen_reference": 0.014748421230904394,
+        "action_rmse_vs_expert": 0.015001764787291264,
+        "cup_position_rmse_vs_expert_m": 0.003786770771438573
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.02733461601340401,
+        "max_cup_center_height_m": 0.23039486630261172,
+        "action_rmse_vs_frozen_reference": 0.007714745112608965,
+        "action_rmse_vs_expert": 0.007885679238211186,
+        "cup_position_rmse_vs_expert_m": 0.010939802354769535
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "former_test_goal_y_minus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": 1102,
+        "first_cup_error_time_s": 11.02
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.23688432974654394,
+        "max_cup_center_height_m": 0.0380818585680772,
+        "action_rmse_vs_frozen_reference": 0.0019032670533689663,
+        "action_rmse_vs_expert": 0.0019075033159456744,
+        "cup_position_rmse_vs_expert_m": 9.352984584030759e-05
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.22697328167603548,
+        "max_cup_center_height_m": 0.06421546781659936,
+        "action_rmse_vs_frozen_reference": 0.0012948813516942342,
+        "action_rmse_vs_expert": 0.0007636166783671032,
+        "cup_position_rmse_vs_expert_m": 0.0008698421418789565
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13659029545089227,
+        "max_cup_center_height_m": 0.15923622163709764,
+        "action_rmse_vs_frozen_reference": 0.009027191638417342,
+        "action_rmse_vs_expert": 0.009161967177057346,
+        "cup_position_rmse_vs_expert_m": 0.0031090368685230602
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.02159214652557377,
+        "max_cup_center_height_m": 0.23680949196755907,
+        "action_rmse_vs_frozen_reference": 0.008895761795918057,
+        "action_rmse_vs_expert": 0.008479595903616546,
+        "cup_position_rmse_vs_expert_m": 0.0067569751674579825
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "former_test_cup_y_plus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": 1186,
+        "first_cup_error_time_s": 11.86
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.22886813397216765,
+        "max_cup_center_height_m": 0.038454602291709335,
+        "action_rmse_vs_frozen_reference": 0.0029371683822287447,
+        "action_rmse_vs_expert": 0.0030081933855416235,
+        "cup_position_rmse_vs_expert_m": 0.0001015967236264541
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.2195851625879944,
+        "max_cup_center_height_m": 0.06323227525810854,
+        "action_rmse_vs_frozen_reference": 0.0020064793539622348,
+        "action_rmse_vs_expert": 0.0023526634587428094,
+        "cup_position_rmse_vs_expert_m": 0.0016420897188671813
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13334560858253278,
+        "max_cup_center_height_m": 0.15958253114211243,
+        "action_rmse_vs_frozen_reference": 0.013193214987293686,
+        "action_rmse_vs_expert": 0.013649510138844597,
+        "cup_position_rmse_vs_expert_m": 0.003251400762032656
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.023225509585431067,
+        "max_cup_center_height_m": 0.2309185800617058,
+        "action_rmse_vs_frozen_reference": 0.009096221725179685,
+        "action_rmse_vs_expert": 0.009703026064259646,
+        "cup_position_rmse_vs_expert_m": 0.009079544567658629
+      }
+    }
+  },
+  {
+    "video": "second",
+    "case": "former_test_yaw_plus",
+    "phases": {
+      "divergence": {
+        "cup_threshold_m": 0.01,
+        "first_cup_error_step": 1003,
+        "first_cup_error_time_s": 10.03
+      },
+      "approach": {
+        "steps": 588,
+        "mean_goal_distance_m": 0.2289091237562698,
+        "max_cup_center_height_m": 0.037523519556771086,
+        "action_rmse_vs_frozen_reference": 0.0037345262060144635,
+        "action_rmse_vs_expert": 0.002674736059004466,
+        "cup_position_rmse_vs_expert_m": 0.00014099105434310405
+      },
+      "closure": {
+        "steps": 89,
+        "mean_goal_distance_m": 0.22070179577804186,
+        "max_cup_center_height_m": 0.06470072514617956,
+        "action_rmse_vs_frozen_reference": 0.0033708465388334686,
+        "action_rmse_vs_expert": 0.001493318099966725,
+        "cup_position_rmse_vs_expert_m": 0.0023439065208230993
+      },
+      "lift": {
+        "steps": 142,
+        "mean_goal_distance_m": 0.13673529172782045,
+        "max_cup_center_height_m": 0.15824815712205734,
+        "action_rmse_vs_frozen_reference": 0.013606555592635022,
+        "action_rmse_vs_expert": 0.013733942370516583,
+        "cup_position_rmse_vs_expert_m": 0.005961818868066954
+      },
+      "transport_hold": {
+        "steps": 631,
+        "mean_goal_distance_m": 0.028105334137279153,
+        "max_cup_center_height_m": 0.22910013032139787,
+        "action_rmse_vs_frozen_reference": 0.005612310642794577,
+        "action_rmse_vs_expert": 0.004794304662804863,
+        "cup_position_rmse_vs_expert_m": 0.009527933606258417
+      }
+    }
+  }
+]

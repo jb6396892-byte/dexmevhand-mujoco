@@ -51,10 +51,10 @@ python scripts/88_build_v14_evidence.py --config configs/v14c-study.json
 ## 长训练入口
 
 ```bash
-python scripts/87_train_v14_dapg.py --config configs/v14c-study.json --long --iterations 2000
+python scripts/87_train_v14_dapg.py --config configs/v14c-study.json --long --iterations 200
 ```
 
-此命令这里只作说明，本轮不会执行。入口要求 `data/processed/dual_video_v14c/readiness.json` 全部通过且冻结哈希一致。长训练从经过留出测试的冻结 BC 加预测修正器开始，而不是默认采用未经留出测试的短训末次策略。
+此命令这里只作说明，本轮没有执行。入口要求 `data/processed/dual_video_v14c/readiness.json` 全部通过且冻结哈希一致，目前已满足。先用 200 次验证学习趋势，再决定是否使用 `--iterations 2000`。长训练从经过留出测试的冻结 BC 加预测修正器开始，而不是默认采用未经留出测试的短训末次策略。当前迭代均值约 65.8 秒，200 次约 3.7 小时，2000 次约 36.6 小时，仅为同负载下的粗估。
 
 ## 测试
 

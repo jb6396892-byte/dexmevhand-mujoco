@@ -57,6 +57,14 @@ def main():
         and r['measured_kl']<=cfg['max_measured_kl'] for r in iterations)
     checks['smoke_post_nominal']=len(smoke['post_nominal'])==2 and all(r['task_pass'] for r in smoke['post_nominal'])
     checks['mean_conversion_exact']=freeze['mean_action_conversion_error']<=1e-8
+    per_iteration=((run/'dapg_smoke/iteration_0020.pickle').stat().st_mtime-
+                   (run/'dapg_smoke/iteration_0001.pickle').stat().st_mtime)/19.
+    timing=dict(measured_mean_iteration_s=per_iteration,measurement='Checkpoint timestamps from iteration 1 to 20',
+        estimated_200_iterations_hours=per_iteration*200/3600.,
+        estimated_2000_iterations_hours=per_iteration*2000/3600.,
+        estimate_only=True,includes_concurrent_evaluation_for_part_of_run=True,
+        filter_seconds_per_development_trajectory={v:float(np.mean([r['audit']['total_filter_seconds']
+            for r in dev['reports'] if r['video']==v])) for v in ('first','second')})
     audited=dev['reports']+freeze['half_step']+[r for r in held['reports'] if r['method']=='predictive']
     checks['branch_matches_live']=all(r['audit']['prediction_error_max']<=1e-7 for r in audited)
     # Deterministic simulator optimizations must preserve the already evaluated pilot.
@@ -94,12 +102,12 @@ def main():
     ready=dict(ready_for_long_training=bool(all(checks.values())),checks={k:bool(v) for k,v in checks.items()},
         failed_checks=[k for k,v in checks.items() if not v],policy_sha256=freeze['policy_sha256'],
         training_config_sha256=digest(cfg_path),protocol_sha256=digest(plan),
-        development=dev['summary'],heldout=held['summary'],smoke=smoke,long_training_started=False,
+        development=dev['summary'],heldout=held['summary'],smoke=smoke,timing=timing,long_training_started=False,
         scope='Controlled long training from frozen BC plus predictive filter, not deployment, new-video generalization, or standalone policy safety.')
     study.write_json(run/'readiness.json',ready)
     for name,value in [('readiness.json',ready),('development.json',dev),('heldout.json',held),
         ('heldout-receipt.json',receipt),('dapg-smoke.json',smoke),('dapg-iterations.json',iterations),
-        ('screenshots.json',images),('pilot-repeat.json',pilot_checks),('phases.json',phase_rows),
+        ('screenshots.json',images),('pilot-repeat.json',pilot_checks),('phases.json',phase_rows),('timing.json',timing),
         ('verification.json',dict(tests=result.testsRun,skipped=len(result.skipped),success=result.wasSuccessful(),
              checks={k:bool(v) for k,v in checks.items()},new_screenshots=len(images),long_training=False))]:
         study.write_json(out/name,value)

@@ -1,0 +1,12 @@
+{
+  "measured_mean_iteration_s": 65.80044740124752,
+  "measurement": "Checkpoint timestamps from iteration 1 to 20",
+  "estimated_200_iterations_hours": 3.6555804111804178,
+  "estimated_2000_iterations_hours": 36.55580411180418,
+  "estimate_only": true,
+  "includes_concurrent_evaluation_for_part_of_run": true,
+  "filter_seconds_per_development_trajectory": {
+    "first": 16.52048503933454,
+    "second": 36.33906813946907
+  }
+}

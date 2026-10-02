@@ -1,0 +1,34 @@
+[
+  {
+    "video": "second",
+    "case": "nominal",
+    "errors": {
+      "max_hand_scene_penetration_m": 0.0,
+      "final_distance_m": 0.0
+    }
+  },
+  {
+    "video": "second",
+    "case": "cup_y_minus",
+    "errors": {
+      "max_hand_scene_penetration_m": 0.0,
+      "final_distance_m": 0.0
+    }
+  },
+  {
+    "video": "second",
+    "case": "former_test_goal_y_minus",
+    "errors": {
+      "max_hand_scene_penetration_m": 0.0,
+      "final_distance_m": 0.0
+    }
+  },
+  {
+    "video": "second",
+    "case": "former_test_yaw_plus",
+    "errors": {
+      "max_hand_scene_penetration_m": 0.0,
+      "final_distance_m": 0.0
+    }
+  }
+]
