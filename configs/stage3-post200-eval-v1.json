@@ -1,0 +1,21 @@
+{
+  "version": "post200-independent-v1",
+  "seed": 2026100241,
+  "count_per_video": 16,
+  "cup_xy_bound_m": 0.004,
+  "goal_xy_bound_m": 0.018,
+  "yaw_bound_deg": 6.0,
+  "methods": {
+    "pretrain": "data/processed/dual_video_v14c/frozen-policy.pickle",
+    "post200": "data/processed/dual_video_v14c/long_training/iteration_0200.pickle"
+  },
+  "acceptance": {
+    "task_fraction_each_video_min": 0.75,
+    "stable_lift_fraction_each_video_min": 0.875,
+    "no_task_count_regression_vs_pretrain": true,
+    "all_nominal_standard_and_half_task": true
+  },
+  "scope": "New synthetic cup/goal/yaw combinations on two known videos; NOT unseen-video or hardware generalization",
+  "gates": "Unchanged v12 task gate and v10 strict gate; all failures retained",
+  "selection": "Fixed final iteration 200 versus fixed original policy, same predictive contact filter; no checkpoint selection or retuning on test"
+}
