@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-10-02T10:27:37.535713+00:00",
+  "purpose": "Framework validation and DAPG completion, NOT trained-language acceptance",
+  "protected_dapg_files_verified": 9,
+  "source_sha256": {
+    "scripts/108_publish_stage6_framework.py": "0de27e5e4f623aaed9627b10eff10f7d45ee1dca9391992f44cb4a4c60f6b75a",
+    "data/processed/stage6_language_v1/dataset/protocol.json": "78ab9375185754c8d34af7233d8c6d65c0b70c9c3dce16b4f255c27b6e28bb3d",
+    "data/processed/stage6_language_v1/framework/summary.json": "110fd734961c573fafc004825a85e35a1f216f3d5c0fcc303b4dcfcce2c94895",
+    "data/processed/dual_video_v14c/long_training/summary.json": "9aedb4b5072f8379515ba445f03a4f9dd382007e838cbefac4a95c43b2a48a03"
+  },
+  "sha256": {
+    "dataset-feasibility.json": "d7d95787afc7a6230ed656be01c2b029851d706e0691e1842c67c2306a57faf4",
+    "second-transport-fixture.jpg": "6623946f77f4cea704137247ddf4d5cde6c681c4665e1077f2e33090b946d126",
+    "framework-physical.json": "1717050424b37c5d399e6125196572de42f6b95cc9038cca26a63548411376f6",
+    "training-status.json": "059ffe08a9ba9e98a8fba88c489ee8408ff8c260ea68b2d1ff9ab64631557a5b",
+    "unit-tests.json": "c8f98fb84c9df38b5257431fb2066dfa880b6a5e3fac4536bfbed00379acf9a4",
+    "dataset-execution_audit.json": "1f5bc932559c0c92e7da0e45e37a1578c95ae673182dc823042fbd1bbc460864",
+    "dataset-protocol.json": "78ab9375185754c8d34af7233d8c6d65c0b70c9c3dce16b4f255c27b6e28bb3d",
+    "training-summary.json": "9aedb4b5072f8379515ba445f03a4f9dd382007e838cbefac4a95c43b2a48a03",
+    "model-evaluation-status.json": "a4dcad70a0e13c969e16616802bbe3be108d510fd2ae03540f88f14eb4d83661",
+    "training-failures.json": "c4820c607d14f24619ec5ee88ba74026f8fab55c225435681b37c2605cae24cf",
+    "framework-summary.json": "110fd734961c573fafc004825a85e35a1f216f3d5c0fcc303b4dcfcce2c94895",
+    "unit-tests.txt": "63f30f87cba31448fd8035575f777a0a2be56b08f47cb96b3417a8e7f7f95efb",
+    "framework-negative_guards.json": "d222e932f47f701882360febeda04c53c3ef1ea471fd427af20309e6e2e9fdcd"
+  }
+}

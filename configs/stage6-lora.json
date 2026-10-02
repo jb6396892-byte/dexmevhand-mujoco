@@ -1,0 +1,17 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "seed": 20261002,
+  "epochs": 8,
+  "batch_size": 2,
+  "gradient_accumulation": 4,
+  "learning_rate": 0.0002,
+  "max_length": 1024,
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"],
+  "max_new_tokens": 140,
+  "feasibility_threshold": 0.05,
+  "selection": "minimum validation assistant-token loss; never heldout",
+  "scope": "Chinese paraphrase generalization on two frozen nominal scenes, not new-scene physics generalization"
+}

@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-10-02T10:23:27.813471+00:00",
+  "counts": {
+    "train": {
+      "rows": 504,
+      "families": 84
+    },
+    "validation": {
+      "rows": 42,
+      "families": 21
+    },
+    "heldout": {
+      "rows": 56,
+      "families": 28
+    }
+  },
+  "splits": "Base sentences disjoint. Wrapper and scene variants stay together; not a syntactic OOD split.",
+  "source_videos": 2,
+  "independent_physics_scenes": false,
+  "heldout_policy": "No training, checkpoint selection, or threshold tuning on heldout",
+  "acceptance": {
+    "semantic_accuracy_min": 0.9,
+    "unsupported_false_execution_max": 0,
+    "registered_order_violations_max": 0,
+    "nominal_physical_success_required": true
+  },
+  "sha256": {
+    "configs/stage6-language-phrases.json": "6d6f37a2e951690804c906cc34aa446bce62df5a7c51d82fb6fbf160f165a6e4",
+    "configs/skill_plan.schema.json": "9db6532b5163a8d38b03fa85862e6830c8da8b817ea23861931da87b3f258054",
+    "configs/stage6-lora.json": "4e3d7ba5761ecc4467502cbb820618773c0a04aa48ecfa8adc14092c267ec720",
+    "configs/stage6-system-prompt.txt": "c75bd0ecdc03193ce72a21d218216a9dedd7d894f13b23674e06b9034bbc1529",
+    "requirements-stage6.txt": "d0887a40178c4970c0278b2d10af1151326d88602feed3f7c321b107ec55a4d6",
+    "data/processed/stage5_hierarchy_v1/cases.json": "2f97824e6096285db67f74226e17cf404bab794355795b0ec568050a88fd1fed",
+    "data/processed/stage4_pipeline_v2/entries/cases.json": "086c3440b2c9934cc107fa0b7ea98e5ff1fae6fcc5fa7cd59147fe4fc5043949",
+    "configs/skill_registry.yaml": "f776306aa86334f7a862217bfbf66fc60c85fcbcf12500e83cd05e32a1d951ae",
+    "scripts/102_build_language_data.py": "f170f5a619f1f02a9defef998cceb559c7c133543f15c7b0e289c97269fcd576",
+    "src/fromrealhand/language_planner/__init__.py": "46e47c7053973596999e95d5cd9c3d675dc677998dfe71621ea27a387517b95d",
+    "src/fromrealhand/language_planner/evaluation.py": "6ae407a01c2b54c53bc50b4a624028cfaaf38503bc1d5afbec7b991abcb0f184",
+    "src/fromrealhand/language_planner/sft.py": "c36d251a2f9647c1b44115d90dc6f13d4317b778701b7df4a08c9890bc9ef111",
+    "src/fromrealhand/language_planner/contracts.py": "0c1fe546f455496be0e25e9447f6a652631ad75d9270f6812a4be0fcdd22b31d",
+    "scripts/104_train_language_lora.py": "67a4f87f7cd7ea98573a3ab1f8483b90b62612cc23bb7d0b4763ea0a18130188",
+    "scripts/105_evaluate_language.py": "6e01b830bfca24d9ce49630e3b99b17d55504357a7ff0fe8b643603bb408dc25",
+    "scripts/106_run_language_plan.py": "b9e7cf2cd63beb7fa42f67688a1c09ce882e10960a5081781062d8fe7f3c4360",
+    "scripts/107_verify_language_pipeline.py": "8c0b5b4580a24d44ff99c02ccbae282d28cfd530d6ec58ba5b2f33b74be67a4c",
+    "scripts/103_setup_language_env.sh": "6087f07eda1ba7801da9cfe41019d674689f9d9420938dad4648457a197dd135",
+    "scripts/stage6_python.sh": "0b0b2320e2ccf156889f2dcfd514fdf274a3c2f1b83590d861f2eb4555ea7c91",
+    "data/processed/stage6_language_v1/dataset/train.jsonl": "56f531910f4ba1a8e43a8f74e8b3e422545f3055b54dea9cc03a8f420540631e",
+    "data/processed/stage6_language_v1/dataset/validation.jsonl": "6f26559119b8f0079093dd6e7faf91bb5346f13c134ebf900a82bf4a3e12cc5e",
+    "data/processed/stage6_language_v1/dataset/heldout.jsonl": "6a68ffbe779213fd309cd3818a6f2e603c46c8423f0c6f5e5a1bd68662cf7db0",
+    "data/processed/stage6_language_v1/dataset/feasibility.json": "d7d95787afc7a6230ed656be01c2b029851d706e0691e1842c67c2306a57faf4",
+    "data/processed/stage6_language_v1/dataset/execution_audit.json": "1f5bc932559c0c92e7da0e45e37a1578c95ae673182dc823042fbd1bbc460864"
+  }
+}

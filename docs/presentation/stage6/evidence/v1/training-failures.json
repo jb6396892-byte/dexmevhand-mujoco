@@ -1,0 +1,37 @@
+[
+  {
+    "iteration": 14,
+    "video": "second",
+    "case": "former_test_cup_y_minus",
+    "max_scene_penetration_m": 0.0010153733562412478,
+    "goal_distance_m": 0.011353902594036465
+  },
+  {
+    "iteration": 72,
+    "video": "second",
+    "case": "cup_x_plus",
+    "max_scene_penetration_m": 0.0010019836537338285,
+    "goal_distance_m": 0.007645686176026588
+  },
+  {
+    "iteration": 108,
+    "video": "second",
+    "case": "cup_y_minus",
+    "max_scene_penetration_m": 0.0010262250433042573,
+    "goal_distance_m": 0.009593296972453024
+  },
+  {
+    "iteration": 120,
+    "video": "second",
+    "case": "nominal",
+    "max_scene_penetration_m": 0.0010010846334288109,
+    "goal_distance_m": 0.00512861802251305
+  },
+  {
+    "iteration": 159,
+    "video": "second",
+    "case": "cup_y_minus",
+    "max_scene_penetration_m": 0.0010608431601378781,
+    "goal_distance_m": 0.009579786617141251
+  }
+]

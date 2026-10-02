@@ -1,0 +1,747 @@
+{
+  "completed_iterations": 200,
+  "nonzero_updates": 200,
+  "finite": true,
+  "max_measured_kl": 0.000635736680123955,
+  "preflight": [
+    {
+      "video": "first",
+      "observation_error": 0.0,
+      "action_error": 0.0,
+      "task_pass": true,
+      "strict_pass": true,
+      "lift_pass": true,
+      "failures_strict": []
+    },
+    {
+      "video": "second",
+      "observation_error": 0.0,
+      "action_error": 0.0,
+      "task_pass": true,
+      "strict_pass": true,
+      "lift_pass": true,
+      "failures_strict": []
+    }
+  ],
+  "post_nominal": [
+    {
+      "video": "first",
+      "report": {
+        "seed": 0,
+        "time_scale": 5.0,
+        "close": 0.1,
+        "cartesian_gain": 75.0,
+        "steps": 1417,
+        "hold_s": 8.36,
+        "max_bottom_m": 0.14144872344688414,
+        "final_bottom_m": 0.13840179938095143,
+        "final_distance_m": 0.0015793737203245327,
+        "tail_min_bottom_m": 0.1383031305778213,
+        "tail_min_force_n": 8.31573842801343,
+        "tail_min_fingers": 4,
+        "max_penetration_m": 0.0005596936346044168,
+        "saturation": 0.0029640084685956247,
+        "mean_tip_error_m": 0.017813731191513835,
+        "tail_mean_tip_error_m": 0.014138175444862728,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 4.495495912596538,
+          "index": 3.1983580552457336,
+          "middle": 0.4588655790960295,
+          "ring": 0.3740130129784253,
+          "little": 0.0
+        },
+        "tail_finger_tip_error_m": {
+          "thumb": 0.01966240942337246,
+          "index": 0.014793245162470929,
+          "middle": 0.008985945204364867,
+          "ring": 0.010505199996195909,
+          "little": 0.01674407743790949
+        },
+        "physics_passed": true,
+        "actuator_saturated_steps": {
+          "A_ARTx": 0,
+          "A_ARTy": 0,
+          "A_ARTz": 0,
+          "A_ARRx": 0,
+          "A_ARRy": 0,
+          "A_ARRz": 0,
+          "A_WRJ1": 58,
+          "A_WRJ0": 57,
+          "A_FFJ3": 0,
+          "A_FFJ2": 0,
+          "A_FFJ1": 0,
+          "A_FFJ0": 0,
+          "A_MFJ3": 3,
+          "A_MFJ2": 0,
+          "A_MFJ1": 0,
+          "A_MFJ0": 0,
+          "A_RFJ3": 8,
+          "A_RFJ2": 0,
+          "A_RFJ1": 0,
+          "A_RFJ0": 0,
+          "A_LFJ4": 0,
+          "A_LFJ3": 0,
+          "A_LFJ2": 0,
+          "A_LFJ1": 0,
+          "A_LFJ0": 0,
+          "A_THJ4": 0,
+          "A_THJ3": 0,
+          "A_THJ2": 0,
+          "A_THJ1": 0,
+          "A_THJ0": 0
+        },
+        "joint_correction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "closure_lead": 0.0,
+        "feedback_weights": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "approach_gain": 0.0,
+        "approach_root_gain": 0.0,
+        "phase_mean_tip_error_m": {
+          "initial": 0.031357158001339376,
+          "approach": 0.010615117646489407,
+          "grasp": 0.011430655101740841,
+          "lift_hold": 0.014205254535679786
+        },
+        "fidelity_passed": true,
+        "passed": true,
+        "max_loaded_gap_m": 0.0001999930310488599,
+        "max_hand_scene_penetration_m": 0.0005852596472443513,
+        "initial_hand_scene_penetration_m": 0.0001228740394229105,
+        "max_joint_violation_rad": 0.008612450629512658,
+        "tail_slip_m": 6.377095619836808e-05,
+        "finite": true,
+        "margin_m": 0.0002,
+        "surface_physics_passed": true,
+        "scene_contact_peaks": [
+          {
+            "geoms": [
+              "C_ffdistal",
+              "C_mfdistal"
+            ],
+            "time_s": 6.399999999999517,
+            "penetration_m": 0.0005852596472443513
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_47"
+            ],
+            "time_s": 6.19599999999954,
+            "penetration_m": 0.0005596936346044168
+          },
+          {
+            "geoms": [
+              "C_mfproximal",
+              "C_rfproximal"
+            ],
+            "time_s": 6.357999999999522,
+            "penetration_m": 0.00041789515106414876
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_37"
+            ],
+            "time_s": 6.321999999999526,
+            "penetration_m": 0.00041023605006755234
+          },
+          {
+            "geoms": [
+              "C_lfproximal",
+              "C_rfproximal"
+            ],
+            "time_s": 3.6959999999998145,
+            "penetration_m": 0.0004080748842367789
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07400000000000005,
+            "penetration_m": 0.000326936232569768
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfdistal"
+            ],
+            "time_s": 1.6420000000000012,
+            "penetration_m": 0.00029844184753389374
+          },
+          {
+            "geoms": [
+              "C_lfmiddle",
+              "C_rfmiddle"
+            ],
+            "time_s": 3.6679999999998176,
+            "penetration_m": 0.0002805815389837138
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_16"
+            ],
+            "time_s": 6.355999999999522,
+            "penetration_m": 0.0002792825937655265
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 2.109999999999989,
+            "penetration_m": 0.00020156054010500232
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_14"
+            ],
+            "time_s": 6.591999999999496,
+            "penetration_m": 0.00019734951852827914
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "C_thdistal"
+            ],
+            "time_s": 0.06000000000000004,
+            "penetration_m": 0.00018456130489864775
+          },
+          {
+            "geoms": [
+              "C_lfmiddle",
+              "C_rfdistal"
+            ],
+            "time_s": 0.17600000000000013,
+            "penetration_m": 0.00016398493290259615
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.0,
+            "penetration_m": 0.0001228740394229105
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.0,
+            "penetration_m": 0.0001149167098379927
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 8.35599999999946,
+            "penetration_m": 4.192747384383657e-05
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 4.307999999999748,
+            "penetration_m": 3.5596606857466774e-05
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "C_rfdistal"
+            ],
+            "time_s": 2.3359999999999643,
+            "penetration_m": 3.364128911724322e-05
+          },
+          {
+            "geoms": [
+              "C_lfmiddle",
+              "table_collision"
+            ],
+            "time_s": 0.0,
+            "penetration_m": 1.6952053553327337e-05
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_36"
+            ],
+            "time_s": 6.319999999999526,
+            "penetration_m": 4.237690519414035e-06
+          },
+          {
+            "geoms": [
+              "C_ffmiddle",
+              "collision_mug_45"
+            ],
+            "time_s": 4.801999999999693,
+            "penetration_m": 0.0
+          },
+          {
+            "geoms": [
+              "C_ffmiddle",
+              "collision_mug_47"
+            ],
+            "time_s": 4.803999999999693,
+            "penetration_m": 0.0
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_15"
+            ],
+            "time_s": 4.937999999999678,
+            "penetration_m": 0.0
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_16"
+            ],
+            "time_s": 6.09999999999955,
+            "penetration_m": 0.0
+          }
+        ],
+        "phase_contacts": {
+          "approach": {
+            "loaded_fraction": {
+              "th": 0.09608540925266904,
+              "ff": 0.05338078291814947,
+              "mf": 0.05871886120996441,
+              "rf": 0.03202846975088968,
+              "lf": 0.0
+            },
+            "max_penetration_m": 0.00019655509004923226,
+            "max_bottom_m": 0.003036973860024582,
+            "final_goal_distance_m": 0.14508288351997772
+          },
+          "closure": {
+            "loaded_fraction": {
+              "th": 1.0,
+              "ff": 1.0,
+              "mf": 1.0,
+              "rf": 0.9555555555555556,
+              "lf": 0.0
+            },
+            "max_penetration_m": 0.0005596936346044168,
+            "max_bottom_m": 0.07142894849153081,
+            "final_goal_distance_m": 0.08038430410118046
+          },
+          "lift": {
+            "loaded_fraction": {
+              "th": 1.0,
+              "ff": 1.0,
+              "mf": 0.851063829787234,
+              "rf": 0.6453900709219859,
+              "lf": 0.0
+            },
+            "max_penetration_m": 0.0003998463760257168,
+            "max_bottom_m": 0.11314670723173213,
+            "final_goal_distance_m": 0.031952591595677086
+          },
+          "transport_hold": {
+            "loaded_fraction": {
+              "th": 1.0,
+              "ff": 1.0,
+              "mf": 0.9903846153846154,
+              "rf": 0.9903846153846154,
+              "lf": 0.0
+            },
+            "max_penetration_m": 0.0004343259427412536,
+            "max_bottom_m": 0.14144872344688414,
+            "final_goal_distance_m": 0.0015793737203245327
+          }
+        }
+      },
+      "task_pass": true,
+      "strict_pass": true,
+      "lift_pass": true,
+      "failures_strict": []
+    },
+    {
+      "video": "second",
+      "report": {
+        "seed": 0,
+        "time_scale": 5.0,
+        "close": 0.3,
+        "cartesian_gain": 75.0,
+        "steps": 1450,
+        "hold_s": 7.86,
+        "max_bottom_m": 0.1832524696649198,
+        "final_bottom_m": 0.1832524696649198,
+        "final_distance_m": 0.003722144454473634,
+        "tail_min_bottom_m": 0.1831075499436848,
+        "tail_min_force_n": 11.667593721082017,
+        "tail_min_fingers": 4,
+        "max_penetration_m": 0.0008504256493527708,
+        "saturation": 0.004229885057471265,
+        "mean_tip_error_m": 0.01162049918709088,
+        "tail_mean_tip_error_m": 0.011603299772495246,
+        "tail_finger_contact_fraction": {
+          "thumb": 1.0,
+          "index": 1.0,
+          "middle": 1.0,
+          "ring": 1.0,
+          "little": 0.0
+        },
+        "tail_finger_force_n": {
+          "thumb": 5.219727602665415,
+          "index": 0.25286486771759364,
+          "middle": 4.1723259143498135,
+          "ring": 2.0276570746099947,
+          "little": 0.0
+        },
+        "tail_finger_tip_error_m": {
+          "thumb": 0.014429999222314704,
+          "index": 0.005966353199860663,
+          "middle": 0.01216902365696091,
+          "ring": 0.014470233646817175,
+          "little": 0.010980889136522773
+        },
+        "physics_passed": true,
+        "actuator_saturated_steps": {
+          "A_ARTx": 0,
+          "A_ARTy": 0,
+          "A_ARTz": 0,
+          "A_ARRx": 0,
+          "A_ARRy": 0,
+          "A_ARRz": 0,
+          "A_WRJ1": 5,
+          "A_WRJ0": 0,
+          "A_FFJ3": 0,
+          "A_FFJ2": 0,
+          "A_FFJ1": 0,
+          "A_FFJ0": 0,
+          "A_MFJ3": 0,
+          "A_MFJ2": 0,
+          "A_MFJ1": 0,
+          "A_MFJ0": 0,
+          "A_RFJ3": 0,
+          "A_RFJ2": 0,
+          "A_RFJ1": 0,
+          "A_RFJ0": 0,
+          "A_LFJ4": 0,
+          "A_LFJ3": 0,
+          "A_LFJ2": 0,
+          "A_LFJ1": 0,
+          "A_LFJ0": 0,
+          "A_THJ4": 0,
+          "A_THJ3": 0,
+          "A_THJ2": 179,
+          "A_THJ1": 0,
+          "A_THJ0": 0
+        },
+        "joint_correction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "closure_lead": 0.0,
+        "feedback_weights": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "approach_gain": 0.0,
+        "approach_root_gain": 0.0,
+        "phase_mean_tip_error_m": {
+          "initial": 0.012220826573759926,
+          "approach": 0.008962002566711003,
+          "grasp": 0.013490599320286007,
+          "lift_hold": 0.011499969762492398
+        },
+        "fidelity_passed": true,
+        "passed": true,
+        "max_loaded_gap_m": 0.00019999988436073045,
+        "max_hand_scene_penetration_m": 0.0008888737041786972,
+        "initial_hand_scene_penetration_m": 0.00010918300157924856,
+        "max_joint_violation_rad": 0.0,
+        "tail_slip_m": 1.6067446883076968e-05,
+        "finite": true,
+        "margin_m": 0.0002,
+        "surface_physics_passed": true,
+        "scene_contact_peaks": [
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfmiddle"
+            ],
+            "time_s": 7.1779999999994315,
+            "penetration_m": 0.0008888737041786972
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_13"
+            ],
+            "time_s": 7.535999999999392,
+            "penetration_m": 0.0008504256493527708
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 8.915999999999647,
+            "penetration_m": 0.0008503233453351098
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_9"
+            ],
+            "time_s": 7.537999999999392,
+            "penetration_m": 0.0008488328766609127
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "collision_mug_26"
+            ],
+            "time_s": 7.243999999999424,
+            "penetration_m": 0.0007702333474713473
+          },
+          {
+            "geoms": [
+              "C_ffproximal",
+              "C_mfproximal"
+            ],
+            "time_s": 6.257999999999533,
+            "penetration_m": 0.000732784030773731
+          },
+          {
+            "geoms": [
+              "C_rfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07600000000000005,
+            "penetration_m": 0.0007163185115548398
+          },
+          {
+            "geoms": [
+              "C_lfmiddle",
+              "C_rfmiddle"
+            ],
+            "time_s": 6.00799999999956,
+            "penetration_m": 0.0006049287105252075
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "table_collision"
+            ],
+            "time_s": 0.07600000000000005,
+            "penetration_m": 0.000580002162771368
+          },
+          {
+            "geoms": [
+              "C_mfproximal",
+              "C_rfproximal"
+            ],
+            "time_s": 5.569999999999609,
+            "penetration_m": 0.000490418464658679
+          },
+          {
+            "geoms": [
+              "C_lfproximal",
+              "C_rfproximal"
+            ],
+            "time_s": 9.984000000000004,
+            "penetration_m": 0.00042627485147614386
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_5"
+            ],
+            "time_s": 7.537999999999392,
+            "penetration_m": 0.00030049537386196094
+          },
+          {
+            "geoms": [
+              "C_thdistal",
+              "collision_mug_7"
+            ],
+            "time_s": 7.545999999999391,
+            "penetration_m": 0.0002928380993832385
+          },
+          {
+            "geoms": [
+              "C_lfdistal",
+              "C_rfdistal"
+            ],
+            "time_s": 5.473999999999619,
+            "penetration_m": 0.0002338034088302781
+          },
+          {
+            "geoms": [
+              "C_ffdistal",
+              "C_thdistal"
+            ],
+            "time_s": 2.7899999999999143,
+            "penetration_m": 0.0001769466337597711
+          },
+          {
+            "geoms": [
+              "C_rfmiddle",
+              "collision_mug_26"
+            ],
+            "time_s": 11.396000000000475,
+            "penetration_m": 6.205418243403007e-05
+          },
+          {
+            "geoms": [
+              "C_mfdistal",
+              "collision_mug_35"
+            ],
+            "time_s": 5.7519999999995886,
+            "penetration_m": 0.0
+          },
+          {
+            "geoms": [
+              "C_rfmiddle",
+              "collision_mug_35"
+            ],
+            "time_s": 11.384000000000471,
+            "penetration_m": 0.0
+          }
+        ],
+        "phase_contacts": {
+          "approach": {
+            "loaded_fraction": {
+              "th": 0.03571428571428571,
+              "ff": 0.05612244897959184,
+              "mf": 0.05612244897959184,
+              "rf": 0.0,
+              "lf": 0.0
+            },
+            "max_penetration_m": 0.00030380864521457483,
+            "max_bottom_m": 0.0006090297956294916,
+            "final_goal_distance_m": 0.22796051465124517
+          },
+          "closure": {
+            "loaded_fraction": {
+              "th": 0.9887640449438202,
+              "ff": 1.0,
+              "mf": 0.8764044943820225,
+              "rf": 0.0,
+              "lf": 0.0
+            },
+            "max_penetration_m": 0.0006536026049800929,
+            "max_bottom_m": 0.025934660253586983,
+            "final_goal_distance_m": 0.1965966965797223
+          },
+          "lift": {
+            "loaded_fraction": {
+              "th": 0.9929577464788732,
+              "ff": 1.0,
+              "mf": 0.971830985915493,
+              "rf": 0.0,
+              "lf": 0.0
+            },
+            "max_penetration_m": 0.0008504256493527708,
+            "max_bottom_m": 0.11168939491979153,
+            "final_goal_distance_m": 0.08774996655664366
+          },
+          "transport_hold": {
+            "loaded_fraction": {
+              "th": 1.0,
+              "ff": 0.9223454833597464,
+              "mf": 1.0,
+              "rf": 0.5752773375594294,
+              "lf": 0.0
+            },
+            "max_penetration_m": 0.0008503233453351098,
+            "max_bottom_m": 0.1832524696649198,
+            "final_goal_distance_m": 0.003722144454473634
+          }
+        }
+      },
+      "task_pass": true,
+      "strict_pass": true,
+      "lift_pass": true,
+      "failures_strict": []
+    }
+  ],
+  "training_config_sha256": "768c4c008d3a92dfbc700649ad3915f2689e21515e9249568973e40d439d4e17",
+  "frozen_policy_sha256": "7c797b5823c34ccddf0fa861c77bdb0714c783a50e41dbe108d37934d31596b8",
+  "heldout_evaluated": false,
+  "long_training": true,
+  "scope": "Policy plus predictive action filter, CPU MuJoCo and actor; CUDA value baseline. No standalone-network claim."
+}

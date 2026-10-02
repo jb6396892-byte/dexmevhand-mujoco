@@ -1,5 +1,11 @@
 # 200 次 DAPG 训练与监督
 
+**最终状态（2026-10-02 18:23:19 北京时间）：200/200 已完成，退出码 0。**
+200 次均有非零更新；训练后两标准场景通过任务与旧严格门槛，目标误差 1.579 / 3.722 mm。
+尚无新的独立留出评估，不自动替换原策略。最终 [状态](presentation/stage6/evidence/v1/training-status.json)、
+[名义评估](presentation/stage6/evidence/v1/training-summary.json)、[5 次训练采样失败](presentation/stage6/evidence/v1/training-failures.json) 已存档。
+下面的后台管理说明为运行期间记录，不表示当前仍在训练。
+
 用户授权后于 **2026-10-02 14:42:17（北京时间）** 启动。总预算是 200 次策略更新，不是 200 个视频或 2000 次。每次采样两条物理轨迹，来自两个视频的开发工况。
 
 本轮从已完成独立评估的冻结 BC 残差策略出发，保留 150 ms 预测接触修正；不从未经过新留出验证的 20 次短训末尾策略继续。启动源码提交为 `28453ed`，冻结策略 SHA256 为 `7c797b5823c34ccddf0fa861c77bdb0714c783a50e41dbe108d37934d31596b8`。
@@ -48,4 +54,4 @@ journalctl --user -u fromrealhand-v14c-200.service -n 20 --no-pager
 
 `state=running` 只表示在运行；必须同时检查 `state=completed`、`completed_iterations=200` 以及训练后名义结果。自动监督不等于训练后性能一定改善；最终不会自动覆盖冻结策略。名义评估不是新留出评估，`independent_evaluation_done` 在本轮保持 false。
 
-网页和 GitHub 的 [进度快照](presentation/stage4/evidence/training-progress-snapshot.json) 不是实时监控，以文件中的 `updated_at` 为准。依据此前约 66 秒/次，200 次约需 3.7 小时，再加初始化和最后评估；这是估计，不是完成承诺。
+网页和 GitHub 的历史 [进度快照](presentation/stage4/evidence/training-progress-snapshot.json) 不是实时监控，以文件中的 `updated_at` 为准。本轮实际约 3 小时 41 分钟完成；阶段 4/5 旧快照保留，不覆盖历史证据。

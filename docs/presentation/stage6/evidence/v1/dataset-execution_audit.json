@@ -1,0 +1,130 @@
+[
+  {
+    "case": "first-pickup",
+    "status": "success",
+    "reason": "plan_completed",
+    "fault_injection": null,
+    "source_sha256": "26f1c6aa3b025fb53b52d2f3a43eb02f91d12d36c842560cdfcf91fc28cf7ee5",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "first-transport",
+    "status": "success",
+    "reason": "plan_completed",
+    "fault_injection": null,
+    "source_sha256": "b7eb3aee7f952e69e71d34efea44df3955a5da5f2652107408d9345bbe83ee64",
+    "use": "success labels"
+  },
+  {
+    "case": "first-retry_once",
+    "status": "success",
+    "reason": "plan_completed",
+    "fault_injection": "provider_once",
+    "source_sha256": "d240972717c43a737666aee81ac417cccbe5f031c407d258a72a0643a21d26db",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "first-replan_once",
+    "status": "success",
+    "reason": "plan_completed",
+    "fault_injection": "replan_once",
+    "source_sha256": "c7f0fe8076d002de78433c7be1c85a68375fe8d96bd91c63c5906ef9649b47ca",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "first-grasp_timeout",
+    "status": "stopped",
+    "reason": "skill_timeout",
+    "fault_injection": null,
+    "source_sha256": "88939ed86f5ad44fe52e397db35222891130f154004817a8dc411e4b13641e5e",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "first-retry_exhausted",
+    "status": "stopped",
+    "reason": "retry_budget_exhausted",
+    "fault_injection": "provider_always",
+    "source_sha256": "770d16a1d595b564b7096eb6417fab9f260a1b4ecd327dfb78f9218559088dd0",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "first-replan_exhausted",
+    "status": "stopped",
+    "reason": "replan_budget_exhausted",
+    "fault_injection": "replan_always",
+    "source_sha256": "67d74a2f8e6e9326a9031db23c38ba9bfc445351d148fe933e9d6631c030dcd8",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "first-invalid_action",
+    "status": "stopped",
+    "reason": "invalid_action",
+    "fault_injection": "invalid_action",
+    "source_sha256": "4cfcb574e07624ec00efaa21708906740c22451db3d0e5b7a816e412121fdf0a",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "second-pickup",
+    "status": "success",
+    "reason": "plan_completed",
+    "fault_injection": null,
+    "source_sha256": "b2031fbababfc4f0c886d8da300d2c15abb04989710c9b1d31981155ee1b18dd",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "second-transport",
+    "status": "success",
+    "reason": "plan_completed",
+    "fault_injection": null,
+    "source_sha256": "ff8e7df4198a18e858e3b2c0e45288e53cc9d33a9e7d0d6fcf1d0c8b61bbeae5",
+    "use": "success labels"
+  },
+  {
+    "case": "second-retry_once",
+    "status": "success",
+    "reason": "plan_completed",
+    "fault_injection": "provider_once",
+    "source_sha256": "c2a6ec62eb5c4a9a3e7604399418ba01f683601ba8a1660ba13f28f5134f181c",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "second-replan_once",
+    "status": "success",
+    "reason": "plan_completed",
+    "fault_injection": "replan_once",
+    "source_sha256": "0db50ce8ce826ee9f01b98b0f468b81d87d607657c717f14235c59786bfa6913",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "second-grasp_timeout",
+    "status": "stopped",
+    "reason": "skill_timeout",
+    "fault_injection": null,
+    "source_sha256": "cd322a8eead93856e3e5c9983beb5a6ac7ed952268f094e4eed8d4487354b255",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "second-retry_exhausted",
+    "status": "stopped",
+    "reason": "retry_budget_exhausted",
+    "fault_injection": "provider_always",
+    "source_sha256": "7336df45e5a67bccd98d1f046a9fae7767b54feaa0e0e841f9a4272196ab7865",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "second-replan_exhausted",
+    "status": "stopped",
+    "reason": "replan_budget_exhausted",
+    "fault_injection": "replan_always",
+    "source_sha256": "72fe830806b6ef593eddfa4886b232aafbded6981aa512f328dfc26827b3dd2a",
+    "use": "audit only; injected failures are not new language labels"
+  },
+  {
+    "case": "second-invalid_action",
+    "status": "stopped",
+    "reason": "invalid_action",
+    "fault_injection": "invalid_action",
+    "source_sha256": "efe21738192783b803b404d0b720a54037df83b8a05167a7663ccca45f9cb0e0",
+    "use": "audit only; injected failures are not new language labels"
+  }
+]

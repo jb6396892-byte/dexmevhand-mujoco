@@ -427,19 +427,20 @@ const stages = [
     phase: "D",
     phaseLabel: "高层规划",
     title: "训练语言模型生成技能计划",
-    objective: "让多种自然语言表达稳定输出符合 Schema 且可由低层执行的技能计划。",
+    objective: "阶段 6 / D2：数据和门控框架已就绪，用户要求本轮暂不训练语言模型。标准答案接口通过不等于语言模型成绩。",
     tasks: [
       "从规则规划器与成功日志生成指令、场景和计划样本",
       "定义训练集、验证集和指令改写测试集",
       "选择预训练小型语言模型并进行 LoRA/SFT",
       "把可用技能和参数约束放入模型输入",
       "只接受通过 Schema 和技能注册表校验的 JSON 输出",
-      "结合语言分数与 affordance 成功概率选择技能",
+      "用标准场景物理余量分数过滤计划；学习型成功概率模型后续另做",
     ],
     outputs: [
-      "高层规划训练数据集和版本说明",
-      "LoRA 适配器及训练配置",
-      "计划合法率、顺序正确率和泛化评估报告",
+      "504/42/56 行语言样本与冻结协议；configs/skill_plan.schema.json",
+      "scripts/104_train_language_lora.py 与固定配置；LoRA 权重尚无",
+      "docs/STAGE6_LANGUAGE.md 与 docs/presentation/stage6/README.md",
+      "8 个标准答案动作计划和 2 个停止计划通过；模型生成报告待实测",
     ],
     acceptance: [
       "JSON 合法率达到预先设定目标",
@@ -449,8 +450,8 @@ const stages = [
     ],
     commands: [
       {
-        label: "语言规划评估",
-        text: "python scripts/16_run_instruction.py \\\n  --instruction \"把杯子拿起来\" \\\n  --planner language \\\n  --dry-run",
+        label: "只检查数据，不下载、不训练",
+        text: "/home/smgbro/miniconda3/envs/dexmv/bin/python scripts/104_train_language_lora.py check",
       },
     ],
   },

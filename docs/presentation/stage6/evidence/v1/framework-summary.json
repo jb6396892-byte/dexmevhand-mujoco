@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-10-02T10:23:50.408269+00:00",
+  "producer": "ground_truth_fixtures_NOT_model_predictions",
+  "framework_physics_passed": true,
+  "model_acceptance_passed": false,
+  "unique_plans_tested": 10,
+  "unique_plans_passed": 10,
+  "physical_motion_plans": 8,
+  "language_metrics": null,
+  "fixture_contract_cases": 42,
+  "model_trained": false,
+  "independent_physics_scenes": false,
+  "low_level_backend": "verified_reference; NOT the DAPG checkpoint",
+  "dataset_protocol_sha256": "78ab9375185754c8d34af7233d8c6d65c0b70c9c3dce16b4f255c27b6e28bb3d",
+  "adapter_sha256": null,
+  "model_source_sha256": null,
+  "source_evaluation_sha256": null,
+  "no_language_training_reason": "User deferred until shared disk is writable",
+  "code_sha256": {
+    "scripts/107_verify_language_pipeline.py": "8c0b5b4580a24d44ff99c02ccbae282d28cfd530d6ec58ba5b2f33b74be67a4c",
+    "src/fromrealhand/language_planner/contracts.py": "0c1fe546f455496be0e25e9447f6a652631ad75d9270f6812a4be0fcdd22b31d",
+    "src/fromrealhand/language_planner/evaluation.py": "6ae407a01c2b54c53bc50b4a624028cfaaf38503bc1d5afbec7b991abcb0f184"
+  }
+}

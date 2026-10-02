@@ -1,0 +1,82 @@
+{
+  "scope": "Frozen nominal references only; score is a margin, not a success probability",
+  "penetration_limit_m": 0.001,
+  "scenes": {
+    "first": {
+      "reach": {
+        "skill": "reach",
+        "passed": true,
+        "max_penetration_m": 0.00042813471146140036,
+        "trials": 1,
+        "margin_score": 0.5718652885385996,
+        "source_case": "first-transport",
+        "source_trajectory": "first/video_seed_0"
+      },
+      "grasp": {
+        "skill": "grasp",
+        "passed": true,
+        "max_penetration_m": 0.00017444214061452344,
+        "trials": 1,
+        "margin_score": 0.8255578593854765,
+        "source_case": "first-transport",
+        "source_trajectory": "first/video_seed_0"
+      },
+      "lift": {
+        "skill": "lift",
+        "passed": true,
+        "max_penetration_m": 0.0005203315529877426,
+        "trials": 1,
+        "margin_score": 0.4796684470122574,
+        "source_case": "first-transport",
+        "source_trajectory": "first/video_seed_0"
+      },
+      "transport": {
+        "skill": "transport",
+        "passed": true,
+        "max_penetration_m": 0.0005769569515597876,
+        "trials": 1,
+        "margin_score": 0.42304304844021245,
+        "source_case": "first-transport",
+        "source_trajectory": "first/video_seed_0"
+      }
+    },
+    "second": {
+      "reach": {
+        "skill": "reach",
+        "passed": true,
+        "max_penetration_m": 0.0007168648966304819,
+        "trials": 1,
+        "margin_score": 0.2831351033695181,
+        "source_case": "second-transport",
+        "source_trajectory": "second/nominal"
+      },
+      "grasp": {
+        "skill": "grasp",
+        "passed": true,
+        "max_penetration_m": 0.0006056397176681765,
+        "trials": 1,
+        "margin_score": 0.3943602823318235,
+        "source_case": "second-transport",
+        "source_trajectory": "second/nominal"
+      },
+      "lift": {
+        "skill": "lift",
+        "passed": true,
+        "max_penetration_m": 0.000800204387499468,
+        "trials": 1,
+        "margin_score": 0.19979561250053202,
+        "source_case": "second-transport",
+        "source_trajectory": "second/nominal"
+      },
+      "transport": {
+        "skill": "transport",
+        "passed": true,
+        "max_penetration_m": 0.0009009991940679045,
+        "trials": 1,
+        "margin_score": 0.09900080593209548,
+        "source_case": "second-transport",
+        "source_trajectory": "second/nominal"
+      }
+    }
+  }
+}

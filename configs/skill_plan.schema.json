@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Registered nominal mug skill plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scene", "object", "goal", "skills"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "scene": {"enum": ["first", "second"]},
+    "object": {"const": "mug"},
+    "goal": {"enum": ["reach", "grasp", "lift", "transport", "stop"]},
+    "skills": {"type": "array", "maxItems": 4, "uniqueItems": true, "items": {"enum": ["reach", "grasp", "lift", "transport"]}}
+  },
+  "oneOf": [
+    {"properties": {"goal": {"const": "reach"}, "skills": {"const": ["reach"]}}},
+    {"properties": {"goal": {"const": "grasp"}, "skills": {"const": ["reach", "grasp"]}}},
+    {"properties": {"goal": {"const": "lift"}, "skills": {"const": ["reach", "grasp", "lift"]}}},
+    {"properties": {"goal": {"const": "transport"}, "skills": {"const": ["reach", "grasp", "lift", "transport"]}}},
+    {"properties": {"goal": {"const": "stop"}, "skills": {"const": []}}}
+  ]
+}

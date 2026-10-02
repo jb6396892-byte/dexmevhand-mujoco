@@ -1,0 +1,10 @@
+{
+  "status": "not_run",
+  "lora_adapter": null,
+  "language_accuracy": null,
+  "raw_json_validity": null,
+  "learned_planner_physics": null,
+  "reason": "User explicitly selected framework only; no environment install, model download, or SFT this turn",
+  "storage_observation": "TARGET               FSTYPE OPTIONS\n/media/smgbro/shared exfat  rw,nosuid,nodev,relatime,uid=1000,gid=1000,fmask=0022,dmask=0022,iocharset=utf8,errors=remount-ro",
+  "storage_note": "Host rw; initial sandbox ro observation was not a disk fault. No repair/remount performed."
+}
