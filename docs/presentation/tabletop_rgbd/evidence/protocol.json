@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-10-03T05:31:26.542440+00:00",
+  "config": {
+    "schema_version": 1,
+    "development_seeds": [
+      0,
+      1,
+      2
+    ],
+    "heldout_seeds": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119
+    ],
+    "negative_seeds": [
+      200,
+      201,
+      202
+    ],
+    "cup_translation_range_m": 0.02,
+    "cup_yaw_range_deg": 15,
+    "noise_std_m": 0.001,
+    "depth_dropout_fraction": 0.02,
+    "position_median_limit_m": 0.005,
+    "position_p95_limit_m": 0.01,
+    "rotation_median_limit_deg": 10,
+    "required_admission_fraction": 0.9,
+    "scope": "Perception only; one upright known mug; fixed camera; visible handle; no grasp policy or real-robot claim"
+  },
+  "mode": "heldout",
+  "source_sha256": {
+    "configs/tabletop-perception-v1.json": "b15b87f4d118f9480970b186913326aa9cf64815e2cf0bdb05b4a26721776694",
+    "scripts/136_capture_tabletop.py": "0f7660a5be16d251a90b405cf5ef56e918939091777cdbce44c2be2cdd7355b1",
+    "scripts/138_estimate_tabletop.py": "188f015b0d88d2a71d082d0510295709a23db9988bde33585ddae11759033b77",
+    "scripts/140_verify_tabletop_perception.py": "aea07dd3291aea9b25ff82d841f9e7c907ff9ce50d7113e9a1c57b6d85f0c81b",
+    "src/fromrealhand/perception/__init__.py": "29a4499f012a775425e5507f2e18274d51f65a740b2d781ebd4ab7b3d747a3ee",
+    "src/fromrealhand/perception/detector.py": "753d3c87fdbc811c1872b288e72262fbf1c8d7df470805612d2a84b21a244f9a",
+    "src/fromrealhand/perception/registration.py": "2a5bf1c7bc1781943e4502a1017578818802b431553dfa564fbbebe5a5fc1b9a",
+    "src/fromrealhand/tabletop/__init__.py": "cfb770b2591ae36eb0e819c9dc3d77138c1607513891bf0178197e362392d161",
+    "src/fromrealhand/tabletop/camera.py": "e525d5da05cdaf6965312b937d0e5f17f154546526d23a9a03bec67152a1cc1b",
+    "src/fromrealhand/tabletop/scene.py": "c4d762c40b26f59f7334b1210fba7033f34d787466d42c7b7b76664155d7d0f4"
+  },
+  "detector": {
+    "model_id": "IDEA-Research/grounding-dino-tiny",
+    "revision": "a2bb814dd30d776dcf7e30523b00659f4f141c71",
+    "license": "Apache-2.0",
+    "files": {
+      "preprocessor_config.json": "8454179ba95e2ad22947835aad7b45862a601fc0055ab88bf1ee70892d3aea60",
+      "tokenizer_config.json": "d40ab645b68211910b9170d22433d43186a6ec8ee6fd10ba170524b25bf4fb56",
+      "README.md": "cf46f74c7b6850f1d5cbe406028324d8798148726016d46a69a365b4a2d3e89f",
+      "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+      "config.json": "eec82c5ab66e16df12a9a212e68ac011779927c2536cf9078658e35d85f0c67a",
+      "added_tokens.json": "909e96cb32d92ce728a01bc99850cbba26196d74115c17ebeb019275412588f2",
+      "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "model.safetensors": "1a2412ef99bd74bcd3c2a246fa1e48581f8889a1300c9051974741314fc042f3"
+    }
+  },
+  "perception_process_receives_evaluation_directory": false
+}

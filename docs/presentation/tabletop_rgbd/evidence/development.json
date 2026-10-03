@@ -1,0 +1,169 @@
+{
+  "passed": true,
+  "mode": "development",
+  "metrics": {
+    "clean": {
+      "total": 3,
+      "accepted": 3,
+      "position_median_m": 5.555591856479653e-05,
+      "position_p95_m": 5.6418113360247365e-05,
+      "rotation_median_deg": 0.1195891354484015,
+      "rotation_max_deg": 0.12030649628618847,
+      "inference_median_s": 1.0840889579999384
+    }
+  },
+  "cases": [
+    {
+      "seed": 0,
+      "negative": false,
+      "rows": [
+        {
+          "frame": "0000",
+          "accepted": true,
+          "reason": "pose_accepted",
+          "latency_s": 1.0840889579999384,
+          "position_error_m": 5.2260702034059125e-05,
+          "rotation_error_deg": 0.12030649628618847
+        }
+      ],
+      "capture": {
+        "seed": 0,
+        "objects": [
+          "mug",
+          "banana",
+          "sugar_box",
+          "mustard_bottle",
+          "tomato_soup_can"
+        ],
+        "initial_penetration_m": 0.0,
+        "settling_max_penetration_m": 0.0006222820518984029,
+        "settling_steps": 600,
+        "finite": true,
+        "hand_mode": "parked by joint equality only in this perception sandbox",
+        "control_enabled": false,
+        "object_scale": 0.8,
+        "object_source": "existing DexMV YCB 025_mug visual mesh and v0 collision parts",
+        "all_objects_free": true,
+        "frames": [
+          {
+            "index": 0,
+            "rgb_std": 72.06114061797123,
+            "table_plane_median_error_m": 8.569758908061331e-07,
+            "table_plane_samples": 21920,
+            "roundtrip_max_pixel_error": 1.1368683772161603e-13,
+            "near_m": 0.01459166039662493,
+            "far_m": 72.95830361386982,
+            "time_s": 1.2000000000000008
+          }
+        ],
+        "camera": "rgbd",
+        "truth_isolated": true,
+        "render_state_writes": 0,
+        "passed": true
+      }
+    },
+    {
+      "seed": 1,
+      "negative": false,
+      "rows": [
+        {
+          "frame": "0000",
+          "accepted": true,
+          "reason": "pose_accepted",
+          "latency_s": 1.1313033580001957,
+          "position_error_m": 5.555591856479653e-05,
+          "rotation_error_deg": 0.11544023946778935
+        }
+      ],
+      "capture": {
+        "seed": 1,
+        "objects": [
+          "mug",
+          "banana",
+          "sugar_box",
+          "mustard_bottle",
+          "tomato_soup_can"
+        ],
+        "initial_penetration_m": 0.0,
+        "settling_max_penetration_m": 0.0006223169031944827,
+        "settling_steps": 600,
+        "finite": true,
+        "hand_mode": "parked by joint equality only in this perception sandbox",
+        "control_enabled": false,
+        "object_scale": 0.8,
+        "object_source": "existing DexMV YCB 025_mug visual mesh and v0 collision parts",
+        "all_objects_free": true,
+        "frames": [
+          {
+            "index": 0,
+            "rgb_std": 72.07885319936916,
+            "table_plane_median_error_m": 8.569758908061331e-07,
+            "table_plane_samples": 21872,
+            "roundtrip_max_pixel_error": 1.1368683772161603e-13,
+            "near_m": 0.01459166039662493,
+            "far_m": 72.95830361386982,
+            "time_s": 1.2000000000000008
+          }
+        ],
+        "camera": "rgbd",
+        "truth_isolated": true,
+        "render_state_writes": 0,
+        "passed": true
+      }
+    },
+    {
+      "seed": 2,
+      "negative": false,
+      "rows": [
+        {
+          "frame": "0000",
+          "accepted": true,
+          "reason": "pose_accepted",
+          "latency_s": 1.0704150319998007,
+          "position_error_m": 5.651391278196413e-05,
+          "rotation_error_deg": 0.1195891354484015
+        }
+      ],
+      "capture": {
+        "seed": 2,
+        "objects": [
+          "mug",
+          "banana",
+          "sugar_box",
+          "mustard_bottle",
+          "tomato_soup_can"
+        ],
+        "initial_penetration_m": 0.0,
+        "settling_max_penetration_m": 0.0006223151615452642,
+        "settling_steps": 600,
+        "finite": true,
+        "hand_mode": "parked by joint equality only in this perception sandbox",
+        "control_enabled": false,
+        "object_scale": 0.8,
+        "object_source": "existing DexMV YCB 025_mug visual mesh and v0 collision parts",
+        "all_objects_free": true,
+        "frames": [
+          {
+            "index": 0,
+            "rgb_std": 72.09407533982306,
+            "table_plane_median_error_m": 8.569758908061331e-07,
+            "table_plane_samples": 21951,
+            "roundtrip_max_pixel_error": 1.1368683772161603e-13,
+            "near_m": 0.01459166039662493,
+            "far_m": 72.95830361386982,
+            "time_s": 1.2000000000000008
+          }
+        ],
+        "camera": "rgbd",
+        "truth_isolated": true,
+        "render_state_writes": 0,
+        "passed": true
+      }
+    }
+  ],
+  "negatives": 0,
+  "negative_rejections": 0,
+  "control_enabled": false,
+  "scope": "Perception only; one upright known mug; fixed camera; visible handle; no grasp policy or real-robot claim",
+  "truth_used_only_after_inference": true
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "development_seeds": [0, 1, 2],
+  "heldout_seeds": [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119],
+  "negative_seeds": [200, 201, 202],
+  "cup_translation_range_m": 0.02,
+  "cup_yaw_range_deg": 15,
+  "noise_std_m": 0.001,
+  "depth_dropout_fraction": 0.02,
+  "position_median_limit_m": 0.005,
+  "position_p95_limit_m": 0.01,
+  "rotation_median_limit_deg": 10,
+  "required_admission_fraction": 0.9,
+  "scope": "Perception only; one upright known mug; fixed camera; visible handle; no grasp policy or real-robot claim"
+}
