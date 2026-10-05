@@ -1,0 +1,2698 @@
+[
+  {
+    "video": "first",
+    "seed": 0,
+    "split": "train",
+    "passed": true,
+    "steps": 1541,
+    "max_penetration_m": 0.0006117414394898341,
+    "visual_goal_error_m": 0.004273494590756037,
+    "actual_goal_error_after_stop_m": 0.0038595116012397797,
+    "final_bottom_m": 0.1427690049223258,
+    "events": [
+      {
+        "phase": "reach",
+        "step": 522,
+        "reference_step": 511,
+        "consecutive_steps": 5,
+        "visual_confirmations": 1
+      },
+      {
+        "phase": "grasp",
+        "step": 622,
+        "reference_step": 542,
+        "consecutive_steps": 50,
+        "visual_confirmations": 4
+      },
+      {
+        "phase": "lift",
+        "step": 748,
+        "reference_step": 623,
+        "consecutive_steps": 22,
+        "visual_confirmations": 2
+      },
+      {
+        "phase": "transport",
+        "step": 1541,
+        "reference_step": 1416,
+        "consecutive_steps": 572,
+        "visual_confirmations": 29
+      }
+    ],
+    "orientation_fraction": 1.0,
+    "initial_visual_pose": [
+      [
+        -0.05289826725857453,
+        -0.9985998817863485,
+        0.00022230009164439152,
+        0.001963779016312896
+      ],
+      [
+        0.9985984144176887,
+        -0.05289780207796317,
+        0.0017404763136749683,
+        0.008668351729807998
+      ],
+      [
+        -0.0017262802548380443,
+        0.00031405670023899434,
+        0.9999984606612508,
+        0.031852886861231895
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "goal_world_m": [
+      0.0131271079323892,
+      -0.010892120296799007,
+      0.17786826426159283
+    ],
+    "dynamics": {
+      "mug_mass_kg": 0.3012446627472328,
+      "mug_inertia": [
+        0.00020362185461842233,
+        0.00020043899341901173,
+        0.00017493682292474714
+      ],
+      "object_scale": 0.8,
+      "mug_geom_friction": {
+        "collision_mug_1": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_2": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_3": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_4": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_5": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_6": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_7": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_8": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_9": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_10": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_11": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_12": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_13": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_14": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_15": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_16": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_17": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_18": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_19": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_20": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_21": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_22": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_23": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_24": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_25": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_26": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_27": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_28": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_29": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_30": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_31": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_32": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_33": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_34": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_35": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_36": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_37": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_38": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_39": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_40": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_41": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_42": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_43": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_44": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_45": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_46": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_47": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_48": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_49": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "None": [
+          1.0,
+          0.005,
+          0.0001
+        ]
+      },
+      "physical_parameters_changed_for_this_run": false
+    },
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/frozen-development/first-seed-0",
+    "report_sha256": "605ab140b70b7bd26cbf02dfaa3fa99315aaea9cdc20884b511043d4e9c7d2fe"
+  },
+  {
+    "video": "first",
+    "seed": 1,
+    "split": "train",
+    "passed": true,
+    "steps": 1499,
+    "max_penetration_m": 0.000603904805730561,
+    "visual_goal_error_m": 0.002950686017062192,
+    "actual_goal_error_after_stop_m": 0.0025530343216172207,
+    "final_bottom_m": 0.14144391939932394,
+    "events": [
+      {
+        "phase": "reach",
+        "step": 517,
+        "reference_step": 511,
+        "consecutive_steps": 5,
+        "visual_confirmations": 2
+      },
+      {
+        "phase": "grasp",
+        "step": 589,
+        "reference_step": 542,
+        "consecutive_steps": 50,
+        "visual_confirmations": 3
+      },
+      {
+        "phase": "lift",
+        "step": 706,
+        "reference_step": 623,
+        "consecutive_steps": 22,
+        "visual_confirmations": 2
+      },
+      {
+        "phase": "transport",
+        "step": 1499,
+        "reference_step": 1416,
+        "consecutive_steps": 590,
+        "visual_confirmations": 30
+      }
+    ],
+    "orientation_fraction": 0.0,
+    "initial_visual_pose": [
+      [
+        0.2605024568291052,
+        -0.9654730056399173,
+        -0.0005876790148323174,
+        -0.003310382916305273
+      ],
+      [
+        0.9654715198429038,
+        0.26050082908074446,
+        0.0020155447100713895,
+        0.008891437424905849
+      ],
+      [
+        -0.0017928631386370853,
+        -0.0010924417004524393,
+        0.9999977961040202,
+        0.03184877816939371
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "goal_world_m": [
+      0.005440047689153064,
+      -0.012079893511354464,
+      0.17783287202465906
+    ],
+    "dynamics": {
+      "mug_mass_kg": 0.3012446627472328,
+      "mug_inertia": [
+        0.00020362185461842233,
+        0.00020043899341901173,
+        0.00017493682292474714
+      ],
+      "object_scale": 0.8,
+      "mug_geom_friction": {
+        "collision_mug_1": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_2": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_3": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_4": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_5": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_6": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_7": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_8": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_9": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_10": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_11": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_12": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_13": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_14": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_15": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_16": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_17": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_18": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_19": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_20": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_21": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_22": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_23": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_24": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_25": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_26": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_27": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_28": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_29": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_30": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_31": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_32": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_33": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_34": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_35": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_36": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_37": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_38": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_39": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_40": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_41": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_42": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_43": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_44": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_45": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_46": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_47": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_48": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_49": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "None": [
+          1.0,
+          0.005,
+          0.0001
+        ]
+      },
+      "physical_parameters_changed_for_this_run": false
+    },
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/frozen-development/first-seed-1",
+    "report_sha256": "337457ad6aed7dbd19c19b90927ac6717719f12f919993f8705071615b1ae34e"
+  },
+  {
+    "video": "first",
+    "seed": 2,
+    "split": "train",
+    "passed": true,
+    "steps": 1520,
+    "max_penetration_m": 0.0006195034429337075,
+    "visual_goal_error_m": 0.0031299628139983774,
+    "actual_goal_error_after_stop_m": 0.0026932046374804294,
+    "final_bottom_m": 0.14167236711804534,
+    "events": [
+      {
+        "phase": "reach",
+        "step": 518,
+        "reference_step": 511,
+        "consecutive_steps": 5,
+        "visual_confirmations": 2
+      },
+      {
+        "phase": "grasp",
+        "step": 595,
+        "reference_step": 542,
+        "consecutive_steps": 50,
+        "visual_confirmations": 3
+      },
+      {
+        "phase": "lift",
+        "step": 727,
+        "reference_step": 623,
+        "consecutive_steps": 22,
+        "visual_confirmations": 2
+      },
+      {
+        "phase": "transport",
+        "step": 1520,
+        "reference_step": 1416,
+        "consecutive_steps": 591,
+        "visual_confirmations": 30
+      }
+    ],
+    "orientation_fraction": 1.0,
+    "initial_visual_pose": [
+      [
+        -0.025773006004792574,
+        -0.9996678184037628,
+        7.077667806331471e-05,
+        -0.0025433849441826627
+      ],
+      [
+        0.9996671305957022,
+        -0.025772904938728435,
+        0.0011770206349051532,
+        -0.01889008042967257
+      ],
+      [
+        -0.0011748055297162465,
+        0.00010108847856382406,
+        0.9999993048063017,
+        0.03188072664766696
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "goal_world_m": [
+      0.008055880529375815,
+      -0.03882765354005232,
+      0.17788713460858938
+    ],
+    "dynamics": {
+      "mug_mass_kg": 0.3012446627472328,
+      "mug_inertia": [
+        0.00020362185461842233,
+        0.00020043899341901173,
+        0.00017493682292474714
+      ],
+      "object_scale": 0.8,
+      "mug_geom_friction": {
+        "collision_mug_1": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_2": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_3": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_4": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_5": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_6": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_7": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_8": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_9": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_10": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_11": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_12": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_13": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_14": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_15": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_16": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_17": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_18": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_19": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_20": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_21": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_22": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_23": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_24": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_25": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_26": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_27": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_28": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_29": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_30": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_31": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_32": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_33": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_34": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_35": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_36": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_37": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_38": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_39": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_40": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_41": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_42": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_43": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_44": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_45": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_46": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_47": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_48": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_49": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "None": [
+          1.0,
+          0.005,
+          0.0001
+        ]
+      },
+      "physical_parameters_changed_for_this_run": false
+    },
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/frozen-development/first-seed-2",
+    "report_sha256": "8ccee6ceece6e93454fc9d8f75d871e61595ede275cd2d5a96a61bf3692940b4"
+  },
+  {
+    "video": "first",
+    "seed": 3,
+    "split": "validation",
+    "passed": true,
+    "steps": 1603,
+    "max_penetration_m": 0.0006446766163644268,
+    "visual_goal_error_m": 0.0035161529103976,
+    "actual_goal_error_after_stop_m": 0.003171354383846379,
+    "final_bottom_m": 0.1416688412955169,
+    "events": [
+      {
+        "phase": "reach",
+        "step": 519,
+        "reference_step": 511,
+        "consecutive_steps": 5,
+        "visual_confirmations": 2
+      },
+      {
+        "phase": "grasp",
+        "step": 614,
+        "reference_step": 542,
+        "consecutive_steps": 50,
+        "visual_confirmations": 3
+      },
+      {
+        "phase": "lift",
+        "step": 810,
+        "reference_step": 623,
+        "consecutive_steps": 21,
+        "visual_confirmations": 2
+      },
+      {
+        "phase": "transport",
+        "step": 1603,
+        "reference_step": 1416,
+        "consecutive_steps": 574,
+        "visual_confirmations": 29
+      }
+    ],
+    "orientation_fraction": 0.0,
+    "initial_visual_pose": [
+      [
+        0.11035788843983677,
+        -0.9938919123507969,
+        5.497979106103766e-05,
+        0.0020565893125221923
+      ],
+      [
+        0.9938907361347453,
+        0.11035784265923017,
+        0.0015333587755280396,
+        0.008397798477063801
+      ],
+      [
+        -0.001530060336860792,
+        -0.00011457433167777775,
+        0.9999988228933512,
+        0.03186190235184589
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "goal_world_m": [
+      0.010807019917980526,
+      -0.01257353245919651,
+      0.17784599620711122
+    ],
+    "dynamics": {
+      "mug_mass_kg": 0.3012446627472328,
+      "mug_inertia": [
+        0.00020362185461842233,
+        0.00020043899341901173,
+        0.00017493682292474714
+      ],
+      "object_scale": 0.8,
+      "mug_geom_friction": {
+        "collision_mug_1": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_2": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_3": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_4": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_5": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_6": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_7": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_8": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_9": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_10": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_11": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_12": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_13": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_14": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_15": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_16": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_17": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_18": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_19": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_20": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_21": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_22": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_23": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_24": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_25": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_26": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_27": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_28": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_29": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_30": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_31": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_32": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_33": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_34": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_35": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_36": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_37": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_38": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_39": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_40": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_41": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_42": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_43": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_44": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_45": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_46": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_47": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_48": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_49": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "None": [
+          1.0,
+          0.005,
+          0.0001
+        ]
+      },
+      "physical_parameters_changed_for_this_run": false
+    },
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/frozen-development/first-seed-3",
+    "report_sha256": "71c80fc647cbb37ba21859897378333fe10abe32a0e6e608b6e8b5fc417e3d19"
+  },
+  {
+    "video": "second",
+    "seed": 0,
+    "split": "train",
+    "passed": true,
+    "steps": 1558,
+    "max_penetration_m": 0.0006222700933037045,
+    "visual_goal_error_m": 0.006863525942796423,
+    "actual_goal_error_after_stop_m": 0.005614115085961119,
+    "final_bottom_m": 0.1452830373228043,
+    "events": [
+      {
+        "phase": "reach",
+        "step": 550,
+        "reference_step": 549,
+        "consecutive_steps": 10,
+        "visual_confirmations": 1
+      },
+      {
+        "phase": "grasp",
+        "step": 651,
+        "reference_step": 600,
+        "consecutive_steps": 50,
+        "visual_confirmations": 3
+      },
+      {
+        "phase": "lift",
+        "step": 778,
+        "reference_step": 709,
+        "consecutive_steps": 20,
+        "visual_confirmations": 2
+      },
+      {
+        "phase": "transport",
+        "step": 1558,
+        "reference_step": 1449,
+        "consecutive_steps": 100,
+        "visual_confirmations": 5
+      }
+    ],
+    "orientation_fraction": 1.0,
+    "initial_visual_pose": [
+      [
+        -0.053145038321241504,
+        -0.9985867787461914,
+        0.00022408734783104553,
+        0.001964748966418829
+      ],
+      [
+        0.9985852837705925,
+        -0.053144564527555845,
+        0.0017567862652538041,
+        0.008670369135701014
+      ],
+      [
+        -0.0017423945130487291,
+        0.00031713480121241,
+        0.9999984317422096,
+        0.03185280063371189
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "goal_world_m": [
+      0.020525356467747162,
+      -0.09141593625941234,
+      0.18463013217138813
+    ],
+    "dynamics": {
+      "mug_mass_kg": 0.3012446627472328,
+      "mug_inertia": [
+        0.00020362185461842233,
+        0.00020043899341901173,
+        0.00017493682292474714
+      ],
+      "object_scale": 0.8,
+      "mug_geom_friction": {
+        "collision_mug_1": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_2": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_3": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_4": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_5": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_6": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_7": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_8": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_9": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_10": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_11": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_12": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_13": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_14": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_15": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_16": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_17": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_18": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_19": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_20": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_21": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_22": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_23": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_24": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_25": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_26": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_27": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_28": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_29": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_30": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_31": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_32": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_33": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_34": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_35": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_36": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_37": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_38": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_39": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_40": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_41": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_42": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_43": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_44": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_45": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_46": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_47": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_48": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_49": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "None": [
+          1.0,
+          0.005,
+          0.0001
+        ]
+      },
+      "physical_parameters_changed_for_this_run": false
+    },
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/frozen-development/second-seed-0",
+    "report_sha256": "9c52c57789df3fef8985ebb3ff95f06e68ff4e9864f09696310f2821fcb5235e"
+  },
+  {
+    "video": "second",
+    "seed": 1,
+    "split": "train",
+    "passed": true,
+    "steps": 1538,
+    "max_penetration_m": 0.0007586550163096832,
+    "visual_goal_error_m": 0.007996560148675598,
+    "actual_goal_error_after_stop_m": 0.00615759694597077,
+    "final_bottom_m": 0.14573294076777132,
+    "events": [
+      {
+        "phase": "reach",
+        "step": 550,
+        "reference_step": 549,
+        "consecutive_steps": 10,
+        "visual_confirmations": 1
+      },
+      {
+        "phase": "grasp",
+        "step": 672,
+        "reference_step": 600,
+        "consecutive_steps": 50,
+        "visual_confirmations": 3
+      },
+      {
+        "phase": "lift",
+        "step": 781,
+        "reference_step": 709,
+        "consecutive_steps": 25,
+        "visual_confirmations": 2
+      },
+      {
+        "phase": "transport",
+        "step": 1538,
+        "reference_step": 1449,
+        "consecutive_steps": 100,
+        "visual_confirmations": 5
+      }
+    ],
+    "orientation_fraction": 0.5,
+    "initial_visual_pose": [
+      [
+        0.26050245682910517,
+        -0.9654730056399171,
+        -0.0005876790148323348,
+        -0.0033103829163052727
+      ],
+      [
+        0.9654715198429038,
+        0.26050082908074457,
+        0.002015544710071361,
+        0.008891437424905849
+      ],
+      [
+        -0.0017928631386370513,
+        -0.0010924417004524497,
+        0.9999977961040202,
+        0.03184877816939371
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "goal_world_m": [
+      0.002075035359715302,
+      -0.09289663766417147,
+      0.18455693267644752
+    ],
+    "dynamics": {
+      "mug_mass_kg": 0.3012446627472328,
+      "mug_inertia": [
+        0.00020362185461842233,
+        0.00020043899341901173,
+        0.00017493682292474714
+      ],
+      "object_scale": 0.8,
+      "mug_geom_friction": {
+        "collision_mug_1": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_2": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_3": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_4": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_5": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_6": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_7": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_8": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_9": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_10": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_11": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_12": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_13": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_14": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_15": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_16": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_17": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_18": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_19": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_20": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_21": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_22": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_23": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_24": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_25": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_26": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_27": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_28": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_29": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_30": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_31": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_32": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_33": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_34": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_35": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_36": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_37": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_38": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_39": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_40": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_41": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_42": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_43": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_44": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_45": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_46": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_47": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_48": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_49": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "None": [
+          1.0,
+          0.005,
+          0.0001
+        ]
+      },
+      "physical_parameters_changed_for_this_run": false
+    },
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/frozen-development/second-seed-1",
+    "report_sha256": "2c8ff8a4389980c25bcbb2310c2e30f3139389c8cffdef2591e9dafc0ca1af7d"
+  },
+  {
+    "video": "second",
+    "seed": 2,
+    "split": "train",
+    "passed": true,
+    "steps": 1516,
+    "max_penetration_m": 0.0006545576525060735,
+    "visual_goal_error_m": 0.007716533583481408,
+    "actual_goal_error_after_stop_m": 0.006107600137826785,
+    "final_bottom_m": 0.14555031480419303,
+    "events": [
+      {
+        "phase": "reach",
+        "step": 550,
+        "reference_step": 549,
+        "consecutive_steps": 10,
+        "visual_confirmations": 1
+      },
+      {
+        "phase": "grasp",
+        "step": 628,
+        "reference_step": 600,
+        "consecutive_steps": 50,
+        "visual_confirmations": 4
+      },
+      {
+        "phase": "lift",
+        "step": 755,
+        "reference_step": 709,
+        "consecutive_steps": 11,
+        "visual_confirmations": 2
+      },
+      {
+        "phase": "transport",
+        "step": 1516,
+        "reference_step": 1449,
+        "consecutive_steps": 100,
+        "visual_confirmations": 5
+      }
+    ],
+    "orientation_fraction": 1.0,
+    "initial_visual_pose": [
+      [
+        -0.02579040603037886,
+        -0.9996673697165803,
+        6.98621605480541e-05,
+        -0.00254343442283803
+      ],
+      [
+        0.999666691954591,
+        -0.025790306893437826,
+        0.0011683607781513585,
+        -0.018890011026579112
+      ],
+      [
+        -0.001166170379413814,
+        9.997137378636747e-05,
+        0.999999315025951,
+        0.03188106097539777
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "goal_world_m": [
+      0.013229538663625896,
+      -0.11956480094893586,
+      0.1846030648578228
+    ],
+    "dynamics": {
+      "mug_mass_kg": 0.3012446627472328,
+      "mug_inertia": [
+        0.00020362185461842233,
+        0.00020043899341901173,
+        0.00017493682292474714
+      ],
+      "object_scale": 0.8,
+      "mug_geom_friction": {
+        "collision_mug_1": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_2": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_3": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_4": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_5": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_6": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_7": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_8": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_9": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_10": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_11": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_12": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_13": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_14": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_15": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_16": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_17": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_18": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_19": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_20": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_21": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_22": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_23": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_24": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_25": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_26": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_27": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_28": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_29": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_30": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_31": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_32": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_33": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_34": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_35": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_36": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_37": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_38": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_39": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_40": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_41": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_42": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_43": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_44": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_45": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_46": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_47": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_48": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_49": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "None": [
+          1.0,
+          0.005,
+          0.0001
+        ]
+      },
+      "physical_parameters_changed_for_this_run": false
+    },
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/frozen-development/second-seed-2",
+    "report_sha256": "ce17eb88ad2439cbf5edb28a06bc3359eaab031a3a6f41bd9a84de33c0ec49e5"
+  },
+  {
+    "video": "second",
+    "seed": 3,
+    "split": "validation",
+    "passed": true,
+    "steps": 1585,
+    "max_penetration_m": 0.0007551095469519459,
+    "visual_goal_error_m": 0.00824965500833536,
+    "actual_goal_error_after_stop_m": 0.0063921064216231295,
+    "final_bottom_m": 0.14498235494907058,
+    "events": [
+      {
+        "phase": "reach",
+        "step": 550,
+        "reference_step": 549,
+        "consecutive_steps": 10,
+        "visual_confirmations": 1
+      },
+      {
+        "phase": "grasp",
+        "step": 679,
+        "reference_step": 600,
+        "consecutive_steps": 50,
+        "visual_confirmations": 3
+      },
+      {
+        "phase": "lift",
+        "step": 806,
+        "reference_step": 709,
+        "consecutive_steps": 22,
+        "visual_confirmations": 2
+      },
+      {
+        "phase": "transport",
+        "step": 1585,
+        "reference_step": 1449,
+        "consecutive_steps": 100,
+        "visual_confirmations": 5
+      }
+    ],
+    "orientation_fraction": 1.0,
+    "initial_visual_pose": [
+      [
+        0.11035788843983721,
+        -0.9938919123507963,
+        5.4979791060972535e-05,
+        0.0020565893125221923
+      ],
+      [
+        0.9938907361347453,
+        0.11035784265923068,
+        0.0015333587755280876,
+        0.0083977984770638
+      ],
+      [
+        -0.00153006033686083,
+        -0.00011457433167784975,
+        0.9999988228933512,
+        0.03186190235184588
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "goal_world_m": [
+      0.003960891016240274,
+      -0.09340851439313197,
+      0.1846234844101834
+    ],
+    "dynamics": {
+      "mug_mass_kg": 0.3012446627472328,
+      "mug_inertia": [
+        0.00020362185461842233,
+        0.00020043899341901173,
+        0.00017493682292474714
+      ],
+      "object_scale": 0.8,
+      "mug_geom_friction": {
+        "collision_mug_1": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_2": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_3": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_4": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_5": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_6": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_7": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_8": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_9": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_10": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_11": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_12": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_13": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_14": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_15": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_16": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_17": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_18": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_19": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_20": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_21": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_22": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_23": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_24": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_25": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_26": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_27": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_28": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_29": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_30": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_31": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_32": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_33": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_34": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_35": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_36": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_37": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_38": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_39": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_40": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_41": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_42": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_43": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_44": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_45": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_46": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_47": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_48": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "collision_mug_49": [
+          1.0,
+          0.5,
+          0.01
+        ],
+        "None": [
+          1.0,
+          0.005,
+          0.0001
+        ]
+      },
+      "physical_parameters_changed_for_this_run": false
+    },
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/frozen-development/second-seed-3",
+    "report_sha256": "46094b71372d18123e081287e120f04f25d5de3c9b6df08e0a0c45ba40458b62"
+  }
+]

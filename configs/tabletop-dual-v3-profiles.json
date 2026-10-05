@@ -1,0 +1,13 @@
+{
+  "status": "development_candidate",
+  "automatic_execution_enabled": false,
+  "camera": "rgbd_side",
+  "profiles": {
+    "first": {"anchor": 400, "clearance": 0.0, "kp": 0.0, "root_gain": 1.0,
+      "hold_steps": 200, "installation_y": 0.06, "goal_offset": [0.0, 0.0, 0.0],
+      "upright_correspondence": false, "stable_carry": false, "bounded_orientation": true},
+    "second": {"anchor": 450, "clearance": 0.025, "kp": 0.0, "root_gain": 1.0,
+      "hold_steps": 200, "installation_y": 0.005, "goal_offset": [0.0, 0.0, -0.05],
+      "upright_correspondence": true, "stable_carry": true, "bounded_orientation": true}
+  }
+}

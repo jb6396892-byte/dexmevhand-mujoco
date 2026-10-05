@@ -1,0 +1,58 @@
+{
+  "plan": {
+    "schema_version": 1,
+    "scene": "first",
+    "object": "mug",
+    "goal": "transport",
+    "skills": [
+      "reach",
+      "grasp",
+      "lift",
+      "transport"
+    ]
+  },
+  "seed": 0,
+  "candidate_not_validated": true,
+  "language_run": "/media/smgbro/shared/lora/language/desktop_runs/20261003T064548706107Z",
+  "config": {
+    "schema_version": 1,
+    "status": "development_tested_not_admitted",
+    "automatic_execution_enabled": false,
+    "perception_mode": "pause_simulation_during_inference",
+    "max_inference_wall_s": 90.0,
+    "max_pose_sim_age_s": 0.25,
+    "perception_period_sim_s": 0.2,
+    "max_translation_m": 0.15,
+    "max_yaw_deg": 25.0,
+    "max_tilt_deg": 15.0,
+    "max_anchor_tilt_deg": 10.0,
+    "workspace_min_m": [
+      -0.35,
+      -0.3,
+      0.0
+    ],
+    "workspace_max_m": [
+      0.35,
+      0.3,
+      0.45
+    ],
+    "max_pose_jump_m": 0.04,
+    "max_pose_jump_deg": 30.0,
+    "root_feedback_gain": 0.15,
+    "max_action_correction": 0.3,
+    "entry_blend_s": 2.0,
+    "wall_timeout_s": 900,
+    "max_total_steps": 3200,
+    "max_penetration_m": 0.001,
+    "max_joint_violation_rad": 0.02,
+    "max_hand_speed": 20.0,
+    "force_threshold_n": 0.01,
+    "supported_fingers": 3,
+    "support_loss_stop_steps": 15,
+    "confirmation_steps": 10,
+    "lift_height_m": 0.05,
+    "goal_tolerance_m": 0.02,
+    "minimum_visual_confirmations": 2
+  },
+  "acceptance_inherited": false
+}

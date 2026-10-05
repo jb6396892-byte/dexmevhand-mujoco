@@ -1,0 +1,33 @@
+{
+  "scope": "development demonstration preparation, not learned-policy generalization",
+  "passed": 8,
+  "total": 8,
+  "training_started": false,
+  "reserved_test_executed": false,
+  "source_hashes_verified": true,
+  "readiness": {
+    "ready_for_small_scale_generalization_training": true,
+    "training_started": false,
+    "accepted_episodes": 8,
+    "required_episodes": 8,
+    "missing": [],
+    "failures": [],
+    "independent_generalization_claim": false,
+    "final_holdout_executed": false,
+    "feature_version": "tabletop_visual_reference_v1",
+    "checkpoint_compatible": false,
+    "packaging_checks_complete": true
+  },
+  "qt": {
+    "first": true,
+    "second": true,
+    "stop": true,
+    "locked": true,
+    "instruction_rejected": true,
+    "gui": true,
+    "training_started": false
+  },
+  "candidate_execution_default_locked": true,
+  "second_video_exact": false,
+  "controller": "video-derived reference, constrained mapping, contact gates, visual carry correction"
+}

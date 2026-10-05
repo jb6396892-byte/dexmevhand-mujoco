@@ -1,0 +1,124 @@
+[
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/development-orientation/first-seed-3",
+    "reason": "stage_not_confirmed:lift",
+    "steps": 795,
+    "completed": [
+      "reach",
+      "grasp"
+    ],
+    "max_penetration_m": 0.000454592338051547
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/development-round1/first-seed-1",
+    "reason": "Full transformed reference is outside joint workspace",
+    "steps": 0,
+    "completed": [],
+    "max_penetration_m": 0.0
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/development-round1/first-seed-3",
+    "reason": "Full transformed reference is outside joint workspace",
+    "steps": 0,
+    "completed": [],
+    "max_penetration_m": 0.0
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/development-round1/second-seed-1",
+    "reason": "Excessive normalized action correction at 122: 0.301259",
+    "steps": 0,
+    "completed": [],
+    "max_penetration_m": 0.0
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/second-carry-feedforward",
+    "reason": "stage_not_confirmed:transport",
+    "steps": 1689,
+    "completed": [
+      "reach",
+      "grasp",
+      "lift"
+    ],
+    "max_penetration_m": 0.0006167880517431116
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/second-carry-robust-rotation",
+    "reason": "stage_not_confirmed:transport",
+    "steps": 1718,
+    "completed": [
+      "reach",
+      "grasp",
+      "lift"
+    ],
+    "max_penetration_m": 0.0006222700933037045
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/second-carry-screen",
+    "reason": "Full transformed reference is outside joint workspace",
+    "steps": 0,
+    "completed": [],
+    "max_penetration_m": 0.0
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/second-carry-workspace",
+    "reason": "Excessive normalized action correction at 693: 0.301004",
+    "steps": 0,
+    "completed": [],
+    "max_penetration_m": 0.0
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/second-depth-track",
+    "reason": "Visual pose discontinuity; reacquisition required",
+    "steps": 809,
+    "completed": [
+      "reach",
+      "grasp"
+    ],
+    "max_penetration_m": 0.0008527291742899158
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/second-live-associated",
+    "reason": "stage_not_confirmed:grasp",
+    "steps": 701,
+    "completed": [
+      "reach"
+    ],
+    "max_penetration_m": 0.000776101607058266
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/second-live-transport",
+    "reason": "Perception rejected: Expected exactly one detected mug",
+    "steps": 579,
+    "completed": [
+      "reach"
+    ],
+    "max_penetration_m": 0.00046378363713908254
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/second-measured-carry",
+    "reason": "Visual pose discontinuity; reacquisition required",
+    "steps": 714,
+    "completed": [
+      "reach",
+      "grasp"
+    ],
+    "max_penetration_m": 0.0006222700933037045
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/second-settle200",
+    "reason": "Perception rejected: Visual identity ambiguous or missing",
+    "steps": 789,
+    "completed": [
+      "reach",
+      "grasp"
+    ],
+    "max_penetration_m": 0.0008527291742899158
+  },
+  {
+    "run": "/media/smgbro/shared/visual_grasp/dual-contact-v3/second-upright-screen",
+    "reason": "physics_safety_stop:{\"scene_penetration_m\": 0.0011430564396137507, \"joint_violation_rad\": 0.0, \"finite\": true, \"max_hand_speed\": 1.3747617109546533, \"non_target_contacts\": 0, \"table_contacts\": 4, \"th_force_n\": 0.0, \"ff_force_n\": 0.0, \"mf_force_n\": 0.0, \"rf_force_n\": 0.0, \"lf_force_n\": 0.0}",
+    "steps": 6,
+    "completed": [],
+    "max_penetration_m": 0.0011430564396137507
+  }
+]

@@ -1,0 +1,101 @@
+{
+  "report": {
+    "attempted_action_count": 733,
+    "candidate_not_validated": true,
+    "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+    "clipped_action_calls": 0,
+    "completed": [
+      "reach",
+      "grasp",
+      "lift"
+    ],
+    "contact_tracking": true,
+    "events": [
+      {
+        "consecutive_success_steps": 5,
+        "extension_steps": 10,
+        "reference_step": 512,
+        "skill": "reach",
+        "step": 522,
+        "visual_confirmations": 2
+      },
+      {
+        "consecutive_success_steps": 50,
+        "extension_steps": 69,
+        "reference_step": 543,
+        "skill": "grasp",
+        "step": 622,
+        "visual_confirmations": 4
+      },
+      {
+        "consecutive_success_steps": 12,
+        "extension_steps": 30,
+        "reference_step": 624,
+        "skill": "lift",
+        "step": 733,
+        "visual_confirmations": 3
+      }
+    ],
+    "final_metrics": {
+      "action_abs_max": 0.9249814091092995,
+      "bottom_m": 0.0660264310407414,
+      "ff_force_n": 2.7894009261519286,
+      "finite": true,
+      "joint_violation_rad": 0.0,
+      "lf_force_n": 0.0,
+      "max_hand_speed": 0.22798198465073516,
+      "mf_force_n": 1.3493373719082813,
+      "non_target_contacts": 0,
+      "normal_dots": {
+        "ff": -0.9348878149827459,
+        "mf": -0.9444620589717387,
+        "rf": -0.8369602916856405
+      },
+      "object_metrics_source": "rgbd_estimate",
+      "opposition": true,
+      "pose_sim_age_s": 0.0,
+      "rf_force_n": 0.4446183688563531,
+      "root_error_m": 0.025477215129325475,
+      "scene_penetration_m": 0.0004114482171720963,
+      "table_contacts": 0,
+      "target_distance_m": 0.08345701072465599,
+      "th_force_n": 4.850081379777128,
+      "tip_error_m": [
+        0.006099969486337242,
+        0.005398804888573937,
+        0.0049571485871095985,
+        0.004941937669602321,
+        0.003039217800302536
+      ]
+    },
+    "learned_action_calls": 733,
+    "max_hand_scene_penetration_m": 0.00044045025130950207,
+    "not_dapg_policy": true,
+    "object_pose_input": "rgbd_only",
+    "output": "/media/smgbro/shared/visual_grasp/control_runs/20261005T064758090120Z",
+    "partial_final_action_possible": false,
+    "perception_mode": "pause_simulation_during_inference",
+    "policy_mode": "structured-residual",
+    "reason": "candidate_plan_completed",
+    "reference_step": 624,
+    "state_writes_during_execution": 0,
+    "status": "success",
+    "steps": 733,
+    "wall_s": 44.301270852000016
+  },
+  "scene": "first",
+  "seed": 0,
+  "goal": "lift",
+  "instruction": "抓起杯子",
+  "frames_received": 144,
+  "unique_frames": 143,
+  "max_gui_gap_s": 0.055942152999705286,
+  "surviving_workers": [],
+  "language_run": "/media/smgbro/shared/lora/language/desktop_runs/20261005T064758090120Z",
+  "physics_run": "/media/smgbro/shared/visual_grasp/control_runs/20261005T064758090120Z",
+  "gui_responsive": true,
+  "actual_pipeline": true,
+  "pre_recorded_images": false,
+  "task_passed": true,
+  "cancellation_latency_s": null
+}

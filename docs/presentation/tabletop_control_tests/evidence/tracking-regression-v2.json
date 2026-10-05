@@ -1,0 +1,233 @@
+{
+  "development_replay": true,
+  "not_independent_test": true,
+  "frames": [
+    {
+      "frame": "000000",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": null,
+      "rmse_m": 0.0006099502888134493,
+      "retained_fraction": null
+    },
+    {
+      "frame": "000001",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006096913337680753,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000002",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.000614341201004889,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000003",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.000614461905761035,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000004",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006141982531076867,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000005",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006144781418791885,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000006",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006144545958319592,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000007",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006143457920927989,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000008",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.000614407805475696,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000009",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006144791622148229,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000010",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006143657330542515,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000011",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006140798446437701,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000012",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006143681963424204,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000013",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006144666315535352,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000014",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006143806793492712,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000015",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006141999518136207,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000016",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006144339788475057,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000017",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006144818680920726,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000018",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006142334793584708,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000019",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006141232625812746,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000020",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 1.0,
+      "rmse_m": 0.0006143173897806403,
+      "retained_fraction": 1.0
+    },
+    {
+      "frame": "000021",
+      "old_accepted": true,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 0.8851528384279476,
+      "rmse_m": 0.0006105454514778147,
+      "retained_fraction": 0.8851528384279476
+    },
+    {
+      "frame": "000022",
+      "old_accepted": false,
+      "accepted": true,
+      "fitness": 1.0,
+      "raw_fitness": 0.840958135520069,
+      "rmse_m": 0.0006110160426775254,
+      "retained_fraction": 0.840958135520069
+    }
+  ],
+  "negative": [
+    {
+      "name": "zero_initial_depth",
+      "rejected": true,
+      "reason": "Insufficient valid depth"
+    },
+    {
+      "name": "zero_tracking_depth",
+      "rejected": true,
+      "reason": "No tracked foreground"
+    },
+    {
+      "name": "empty_roi",
+      "rejected": true,
+      "reason": "Detection box outside depth image"
+    }
+  ],
+  "all_accepted": true,
+  "all_negative_rejected": true,
+  "boxes_source": "cached actual Grounding DINO outputs; not redrawn boxes"
+}

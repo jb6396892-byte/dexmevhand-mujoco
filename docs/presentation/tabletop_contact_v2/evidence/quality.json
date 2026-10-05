@@ -1,0 +1,37 @@
+{
+  "qt": {
+    "transport": true,
+    "stop": true,
+    "locked": true,
+    "second_rejected": true,
+    "instruction_rejected": true,
+    "gui": true
+  },
+  "regression": {
+    "command": [
+      "/home/smgbro/miniconda3/envs/dexmv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"matches\": 1, \"with_complete_camera\": 1, \"output\": \"/tmp/fromrealhand-dexycb-y0qe7owh/mug.json\"}\nconverted 20200709-subject-01/20200709_141754/932122060861: 2/3 valid frames -> /tmp/fromrealhand-dexycb-y0qe7owh/seq_dexycb_001\n{\n  \"sequence_dir\": \"/tmp/fromrealhand-dexycb-y0qe7owh/seq_dexycb_001\",\n  \"frame_count\": 3,\n  \"valid_frame_count\": 2,\n  \"valid_frame_ratio\": 0.6666666666666666,\n  \"sampled_overlay_frames\": [\n    0,\n    2\n  ],\n  \"wrist_trajectory_m\": {\n    \"count\": 2,\n    \"min\": [\n      0.0,\n      0.0,\n      0.800000011920929\n    ],\n    \"max\": [\n      0.004000000189989805,\n      0.0,\n      0.800000011920929\n    ],\n    \"max_step\": 0.004000000189989805,\n    \"mean_step\": 0.004000000189989805\n  },\n  \"object_trajectory_m\": {\n    \"count\": 2,\n    \"min\": [\n      0.03999999910593033,\n      0.07999999821186066,\n      0.8199999928474426\n    ],\n    \"max\": [\n      0.04399999976158142,\n      0.07999999821186066,\n      0.8199999928474426\n    ],\n    \"max_step\": 0.0040000006556510925,\n    \"mean_step\": 0.0040000006556510925\n  },\n  \"joint_reprojection_error_px\": {\n    \"count\": 42,\n    \"mean\": 0.0,\n    \"max\": 0.0\n  },\n  \"mesh_projected\": null\n}\n",
+    "stderr": "............................................................................................................/home/smgbro/miniconda3/envs/dexmv/lib/python3.7/site-packages/chumpy/ch.py:1203: DeprecationWarning: inspect.getargspec() is deprecated since Python 3.0, use inspect.signature() or inspect.getfullargspec()\n  want_out = 'out' in inspect.getargspec(func).args\n/home/smgbro/miniconda3/envs/dexmv/lib/python3.7/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.\nDeprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations\n  from numpy import bool, int, float, complex, object, unicode, str, nan, inf\n/home/smgbro/miniconda3/envs/dexmv/lib/python3.7/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.\nDeprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations\n  from numpy import bool, int, float, complex, object, unicode, str, nan, inf\n/home/smgbro/miniconda3/envs/dexmv/lib/python3.7/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.\nDeprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations\n  from numpy import bool, int, float, complex, object, unicode, str, nan, inf\n/home/smgbro/miniconda3/envs/dexmv/lib/python3.7/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.complex` is a deprecated alias for the builtin `complex`. To silence this warning, use `complex` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.complex128` here.\nDeprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations\n  from numpy import bool, int, float, complex, object, unicode, str, nan, inf\n/home/smgbro/miniconda3/envs/dexmv/lib/python3.7/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe. \nDeprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations\n  from numpy import bool, int, float, complex, object, unicode, str, nan, inf\n/home/smgbro/miniconda3/envs/dexmv/lib/python3.7/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.unicode` is a deprecated alias for `np.compat.unicode`. To silence this warning, use `np.compat.unicode` by itself. In the likely event your code does not need to work on Python 2 you can use the builtin `str` for which `np.compat.unicode` is itself an alias. Doing this will not modify any behaviour and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.\nDeprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations\n  from numpy import bool, int, float, complex, object, unicode, str, nan, inf\n/home/smgbro/miniconda3/envs/dexmv/lib/python3.7/site-packages/chumpy/__init__.py:11: DeprecationWarning: `np.str` is a deprecated alias for the builtin `str`. To silence this warning, use `str` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.str_` here.\nDeprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations\n  from numpy import bool, int, float, complex, object, unicode, str, nan, inf\n/home/smgbro/mujoconew/external/manopth/mano/webuser/smpl_handpca_wrapper_HAND_only.py:30: ResourceWarning: unclosed file <_io.BufferedReader name='/media/smgbro/shared/DexYCB/mano/models/MANO_RIGHT.pkl'>\n  dd = pickle.load(open(fname_or_dict, 'rb'), encoding='latin1')\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/home/smgbro/mujoconew/external/manopth/manopth/manolayer.py:72: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:199.)\n  torch.Tensor(smpl_data['betas'].r).unsqueeze(0))\n..............................................................................................................\n----------------------------------------------------------------------\nRan 218 tests in 1.294s\n\nOK\n"
+  },
+  "frozen_language": {
+    "command": [
+      "/home/smgbro/miniconda3/envs/dexmv/bin/python",
+      "scripts/122_verify_guard_revision.py",
+      "verify"
+    ],
+    "exit_code": 0,
+    "stdout": "Guard revision verified\n",
+    "stderr": ""
+  },
+  "source_hashes_match": true,
+  "independent_generalization_test": false,
+  "training_started": false,
+  "automatic_execution_enabled": false
+}

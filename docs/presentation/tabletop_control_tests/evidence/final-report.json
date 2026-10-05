@@ -1,0 +1,17 @@
+{
+  "status": "stopped",
+  "reason": "skill_success_not_confirmed:reach",
+  "candidate_not_validated": true,
+  "error_type": "RuntimeError",
+  "steps": 512,
+  "output": "/media/smgbro/shared/visual_grasp/control_runs/20261003T064548706107Z",
+  "events": [],
+  "wall_s": 29.283117497000603,
+  "state_writes_during_execution": 0,
+  "object_pose_input": "rgbd_only",
+  "not_dapg_policy": true,
+  "perception_mode": "pause_simulation_during_inference",
+  "max_hand_scene_penetration_m": 0.0006679417149495805,
+  "attempted_action_count": 512,
+  "partial_final_action_possible": false
+}

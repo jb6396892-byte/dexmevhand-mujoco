@@ -1,0 +1,200 @@
+{
+  "dev-shared-60/first": {
+    "reach": {
+      "steps": 29,
+      "max_action_error": 0.8055144455130692,
+      "mean_action_rms": 0.09799163794386698,
+      "final_target_distance_m": 0.14801332822743904,
+      "first_error_over_001_step": 1
+    }
+  },
+  "dev-shared-60/second": {
+    "reach": {
+      "steps": 69,
+      "max_action_error": 1.1623955743768304,
+      "mean_action_rms": 0.2969207965294214,
+      "final_target_distance_m": 0.1838153820111653,
+      "first_error_over_001_step": 1
+    }
+  },
+  "dev-routed-60/first": {
+    "reach": {
+      "steps": 515,
+      "max_action_error": 0.005326610786981045,
+      "mean_action_rms": 0.00040634126354551674,
+      "final_target_distance_m": 0.1479391339628677,
+      "first_error_over_001_step": null
+    },
+    "grasp": {
+      "steps": 103,
+      "max_action_error": 0.002822387972841678,
+      "mean_action_rms": 0.0004837928545847949,
+      "final_target_distance_m": 0.14790134568819796,
+      "first_error_over_001_step": null
+    },
+    "lift": {
+      "steps": 130,
+      "max_action_error": 0.0051727696242199195,
+      "mean_action_rms": 0.0005308929289730853,
+      "final_target_distance_m": 0.09651682987631101,
+      "first_error_over_001_step": null
+    },
+    "transport": {
+      "steps": 793,
+      "max_action_error": 0.003866855017977844,
+      "mean_action_rms": 0.00047283761946203086,
+      "final_target_distance_m": 0.002735760198449221,
+      "first_error_over_001_step": null
+    }
+  },
+  "dev-routed-60/second": {
+    "reach": {
+      "steps": 550,
+      "max_action_error": 0.0019244477106221264,
+      "mean_action_rms": 0.0001748962473521583,
+      "final_target_distance_m": 0.18376307606731754,
+      "first_error_over_001_step": null
+    },
+    "grasp": {
+      "steps": 130,
+      "max_action_error": 0.005682652498223674,
+      "mean_action_rms": 0.0008416925274966784,
+      "final_target_distance_m": 0.18272553566431604,
+      "first_error_over_001_step": null
+    },
+    "lift": {
+      "steps": 109,
+      "max_action_error": 0.0011421316372983575,
+      "mean_action_rms": 0.00016317191347441198,
+      "final_target_distance_m": 0.11992550612208813,
+      "first_error_over_001_step": null
+    },
+    "transport": {
+      "steps": 756,
+      "max_action_error": 0.04112112300226378,
+      "mean_action_rms": 0.013680095445640677,
+      "final_target_distance_m": 0.00793685621073929,
+      "first_error_over_001_step": 804
+    }
+  },
+  "dev-structured/first": {
+    "reach": {
+      "steps": 519,
+      "max_action_error": 1.8605683382855176e-09,
+      "mean_action_rms": 8.675313913130551e-11,
+      "final_target_distance_m": 0.14797550966869125,
+      "first_error_over_001_step": null
+    },
+    "grasp": {
+      "steps": 95,
+      "max_action_error": 9.27780186010807e-10,
+      "mean_action_rms": 8.469878700886379e-11,
+      "final_target_distance_m": 0.14784768574617238,
+      "first_error_over_001_step": null
+    },
+    "lift": {
+      "steps": 196,
+      "max_action_error": 3.6809939540916048e-09,
+      "mean_action_rms": 2.656944778000264e-10,
+      "final_target_distance_m": 0.09477471796313171,
+      "first_error_over_001_step": null
+    },
+    "transport": {
+      "steps": 793,
+      "max_action_error": 1.8202677143364099e-09,
+      "mean_action_rms": 7.355427953405766e-11,
+      "final_target_distance_m": 0.0035161529103976364,
+      "first_error_over_001_step": null
+    }
+  },
+  "dev-structured/second": {
+    "reach": {
+      "steps": 550,
+      "max_action_error": 3.7133947028422654e-09,
+      "mean_action_rms": 1.4098370451011955e-10,
+      "final_target_distance_m": 0.18376207967352703,
+      "first_error_over_001_step": null
+    },
+    "grasp": {
+      "steps": 129,
+      "max_action_error": 1.9063588208023674e-09,
+      "mean_action_rms": 1.0300223095777343e-10,
+      "final_target_distance_m": 0.18290576464401093,
+      "first_error_over_001_step": null
+    },
+    "lift": {
+      "steps": 127,
+      "max_action_error": 3.680004079242849e-09,
+      "mean_action_rms": 1.8947849542503217e-10,
+      "final_target_distance_m": 0.12623883401572947,
+      "first_error_over_001_step": null
+    },
+    "transport": {
+      "steps": 779,
+      "max_action_error": 1.868852073094729e-09,
+      "mean_action_rms": 1.9650927143753726e-10,
+      "final_target_distance_m": 0.008249786649043397,
+      "first_error_over_001_step": null
+    }
+  },
+  "dev-cadence/first": {
+    "reach": {
+      "steps": 519,
+      "max_action_error": 1.8605683382855176e-09,
+      "mean_action_rms": 8.675313913130551e-11,
+      "final_target_distance_m": 0.14797550966869125,
+      "first_error_over_001_step": null
+    },
+    "grasp": {
+      "steps": 95,
+      "max_action_error": 9.27780186010807e-10,
+      "mean_action_rms": 8.469878700886379e-11,
+      "final_target_distance_m": 0.14784768574617238,
+      "first_error_over_001_step": null
+    },
+    "lift": {
+      "steps": 111,
+      "max_action_error": 3.6809939540916048e-09,
+      "mean_action_rms": 2.4469875693670586e-10,
+      "final_target_distance_m": 0.08409574328029377,
+      "first_error_over_001_step": null
+    },
+    "transport": {
+      "steps": 793,
+      "max_action_error": 3.563844386267334e-09,
+      "mean_action_rms": 8.094962623322459e-11,
+      "final_target_distance_m": 0.0034779541054957676,
+      "first_error_over_001_step": null
+    }
+  },
+  "dev-cadence/second": {
+    "reach": {
+      "steps": 550,
+      "max_action_error": 3.7133947028422654e-09,
+      "mean_action_rms": 1.4098370472737893e-10,
+      "final_target_distance_m": 0.18376207967352703,
+      "first_error_over_001_step": null
+    },
+    "grasp": {
+      "steps": 129,
+      "max_action_error": 1.9063588763135186e-09,
+      "mean_action_rms": 1.0300221087795796e-10,
+      "final_target_distance_m": 0.18290576464401093,
+      "first_error_over_001_step": null
+    },
+    "lift": {
+      "steps": 109,
+      "max_action_error": 3.6801040548262165e-09,
+      "mean_action_rms": 2.0010043661041313e-10,
+      "final_target_distance_m": 0.12178932207569024,
+      "first_error_over_001_step": null
+    },
+    "transport": {
+      "steps": 771,
+      "max_action_error": 1.86965598558686e-09,
+      "mean_action_rms": 1.9233043317274934e-10,
+      "final_target_distance_m": 0.008343772847529041,
+      "first_error_over_001_step": null
+    }
+  }
+}

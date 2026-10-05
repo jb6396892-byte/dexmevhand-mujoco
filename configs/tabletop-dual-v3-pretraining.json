@@ -1,0 +1,16 @@
+{
+  "training_enabled": false,
+  "approval_required_before_training": true,
+  "dataset": "/media/smgbro/shared/visual_grasp/dual-contact-v3/training-inputs/index.json",
+  "feature_version": "tabletop_visual_reference_v1",
+  "input_dimension": 139,
+  "action_dimension": 30,
+  "hidden_sizes": [64, 64],
+  "comparisons": ["shared_absolute_BC", "video_and_phase_routed_residual_BC"],
+  "residual_label": "executed_expert_action minus current_adapted_reference_action",
+  "sampling": "balanced video and phase; no cross-episode or cross-phase windows",
+  "normalization": "training_episodes_only",
+  "first_training_acceptance": "Physical closed-loop rollout with the existing unchanged safety gates; loss alone is insufficient.",
+  "heldout_policy": "Freeze the learned candidate before final seeds 101-108; do not tune on these scenes.",
+  "old_checkpoints": "Preserve unchanged; incompatible observation dimensions must not be silently reused."
+}

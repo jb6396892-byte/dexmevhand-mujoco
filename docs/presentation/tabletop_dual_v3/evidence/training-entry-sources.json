@@ -1,0 +1,5 @@
+{
+  "scripts/158_package_dual_visual_inputs.py": "4ddc01bad016c48c266b2bbfb1e1819f283d44da2c8e31d74c8310ecb16bbc1f",
+  "scripts/161_prepare_tabletop_bc.py": "63675d97133b2416c0e250ca2fa0b2127faa00fefd9def7e85d3010e1e4f09a4",
+  "configs/tabletop-dual-v3-pretraining.json": "9595dc8a3ba7678c4cf33203ee2e44a5c5fcd7a69f382b4602f1844314a96331"
+}

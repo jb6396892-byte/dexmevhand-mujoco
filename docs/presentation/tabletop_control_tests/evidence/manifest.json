@@ -1,0 +1,22 @@
+{
+  "sha256": {
+    "final-report.json": "41d02ac241455fc067b4fc83fa1344497ed4b5dc695f95b1e263e1842ad1d431",
+    "quality.json": "b92a3ac0a5665a7d8efb731c7a7556e4459470d1fbd88abc337ca13e9552c11a",
+    "second-pose-rejected.png": "cdce49dcf6b30d62a446d77a2d2e7f7bccf0539ef80a514097fa22ab0f438683",
+    "final-evaluation_only.json": "b8e9f1c57c3ca6186fbcedfa872cb5328f90bb46defffb427fc230d82520f8fd",
+    "first-reach-stopped.png": "785884642117b07d13948b8c87653676aa3667c008cb692fc75a633811f3c6ff",
+    "final-adaptation.json": "6da72e0df6a862c31b59af3840b3285f779d3c4885dbd5a9839b7b9ddc261dfc",
+    "probe-second-v1.json": "4168644d40b5ab74c6a7a8610705fb3241c260cdf05352fd4a4a78744a3febfd",
+    "probe-first-v2.json": "a4666db25b1a98dadecf11d3a92ac2ffc86a0963998373903aeb014a3b822f51",
+    "cases.json": "ef42a89ca46a849a306d691ce3866fb2e6ceb169d802f3684d681d241dcd8899",
+    "summary.json": "3d3ca16293d5e7707a80f27ab9b40f3f4ccb8e72b85c3e103377922efa1ea5ca",
+    "final-preflight.json": "d98a32bdbe33736a789e09b89a14cf2b58619f53f57d12e0abc30626cbcc491f",
+    "publication-sources.json": "8a45a676e51da4b49d5bc612c3567941d38ea505efd97215fcd3e3e6a5d486cb",
+    "tracking-regression-v2.json": "c9d672e215caf222159bde0c835f2e7c4c563c2e9a488bbb8fb894b2fad95863",
+    "final-scene.json": "cc0e5b1eee94802294aafc2eb746e5bbdb9775165ab443d759de6bca16984bfa",
+    "final-source.json": "b4e04ee9374752c819ae7bdc9651a9758c6771932ff53b675ce5ace001720763",
+    "workspace-first-v2.json": "3c7ba0c54e8c91b9c8d302b5afc293ebcfd5e6c27b7b50df4a66a653aece00a5",
+    "final-request.json": "5d8214b8e7aab6b9be624adc12961d3090c636aebc7608832622d04bad4d71eb"
+  },
+  "raw_store": "/media/smgbro/shared/visual_grasp/control-tests-v1"
+}

@@ -1,0 +1,204 @@
+{
+  "dev-shared-60": {
+    "passed": 0,
+    "total": 2,
+    "max_penetration_mm": 1.1418596603701763,
+    "mean_actual_error_mm": 165.8664094771093,
+    "by_video": {
+      "first": {
+        "passed": 0,
+        "total": 1
+      },
+      "second": {
+        "passed": 0,
+        "total": 1
+      }
+    }
+  },
+  "dev-routed-60": {
+    "passed": 2,
+    "total": 2,
+    "max_penetration_mm": 0.7073402275692906,
+    "mean_actual_error_mm": 4.19028673202639,
+    "by_video": {
+      "first": {
+        "passed": 1,
+        "total": 1
+      },
+      "second": {
+        "passed": 1,
+        "total": 1
+      }
+    }
+  },
+  "heldout-routed": {
+    "passed": 14,
+    "total": 16,
+    "max_penetration_mm": 0.7298977735941091,
+    "mean_actual_error_mm": 10.641027218359978,
+    "by_video": {
+      "first": {
+        "passed": 8,
+        "total": 8
+      },
+      "second": {
+        "passed": 6,
+        "total": 8
+      }
+    }
+  },
+  "heldout-expert": {
+    "passed": 16,
+    "total": 16,
+    "max_penetration_mm": 0.7741459850847087,
+    "mean_actual_error_mm": 5.2983142229954865,
+    "by_video": {
+      "first": {
+        "passed": 8,
+        "total": 8
+      },
+      "second": {
+        "passed": 8,
+        "total": 8
+      }
+    }
+  },
+  "dev-structured": {
+    "passed": 2,
+    "total": 2,
+    "max_penetration_mm": 0.7551095497494373,
+    "mean_actual_error_mm": 4.781716924134554,
+    "by_video": {
+      "first": {
+        "passed": 1,
+        "total": 1
+      },
+      "second": {
+        "passed": 1,
+        "total": 1
+      }
+    }
+  },
+  "regression-structured": {
+    "passed": 2,
+    "total": 2,
+    "max_penetration_mm": 0.7196858275736774,
+    "mean_actual_error_mm": 13.05811552386901,
+    "by_video": {
+      "first": {
+        "passed": 0,
+        "total": 0
+      },
+      "second": {
+        "passed": 2,
+        "total": 2
+      }
+    }
+  },
+  "fresh-structured": {
+    "passed": 7,
+    "total": 8,
+    "max_penetration_mm": 0.7618774931718135,
+    "mean_actual_error_mm": 19.188018654392966,
+    "by_video": {
+      "first": {
+        "passed": 4,
+        "total": 4
+      },
+      "second": {
+        "passed": 3,
+        "total": 4
+      }
+    }
+  },
+  "fresh-expert": {
+    "passed": 7,
+    "total": 8,
+    "max_penetration_mm": 0.7618774912064517,
+    "mean_actual_error_mm": 19.188548831869312,
+    "by_video": {
+      "first": {
+        "passed": 4,
+        "total": 4
+      },
+      "second": {
+        "passed": 3,
+        "total": 4
+      }
+    }
+  },
+  "dev-cadence": {
+    "passed": 2,
+    "total": 2,
+    "max_penetration_mm": 0.7551095497504989,
+    "mean_actual_error_mm": 4.7954511329215395,
+    "by_video": {
+      "first": {
+        "passed": 1,
+        "total": 1
+      },
+      "second": {
+        "passed": 1,
+        "total": 1
+      }
+    }
+  },
+  "regression-cadence": {
+    "passed": 3,
+    "total": 3,
+    "max_penetration_mm": 0.7196858275736774,
+    "mean_actual_error_mm": 6.206228624336123,
+    "by_video": {
+      "first": {
+        "passed": 0,
+        "total": 0
+      },
+      "second": {
+        "passed": 3,
+        "total": 3
+      }
+    }
+  },
+  "final-structured": {
+    "passed": 8,
+    "total": 8,
+    "max_penetration_mm": 0.754820708351419,
+    "mean_actual_error_mm": 4.475332519294516,
+    "by_video": {
+      "first": {
+        "passed": 4,
+        "total": 4
+      },
+      "second": {
+        "passed": 4,
+        "total": 4
+      }
+    }
+  },
+  "final-expert": {
+    "passed": 8,
+    "total": 8,
+    "max_penetration_mm": 0.7548207115928851,
+    "mean_actual_error_mm": 4.475963584249411,
+    "by_video": {
+      "first": {
+        "passed": 4,
+        "total": 4
+      },
+      "second": {
+        "passed": 4,
+        "total": 4
+      }
+    }
+  },
+  "qt_passed": true,
+  "all_frozen_learning_cases_passed": true,
+  "regression_passed": true,
+  "candidate_development_passed": true,
+  "software_checks_passed": true,
+  "delivery_passed": true,
+  "selected_model": "structured-bc/candidate.pt",
+  "previous_mlp_failures_retained": true,
+  "learning_algorithm": "Supervised behavior cloning; no new reinforcement-learning updates",
+  "scope": "Same mug/camera; small layout shifts and reference-conditioned goals, not hardware transfer"
+}

@@ -1,0 +1,11 @@
+{
+  "registered_before_execution": true,
+  "videos": ["first", "second"],
+  "test_seeds": [301, 302, 303, 304],
+  "candidate": "Frozen structured BC with 0.10 second lift visual sampling",
+  "development_validation_seeds": [3],
+  "previous_test_seeds_now_regression_only": [101, 102, 103, 104, 105, 106, 107, 108, 201, 202, 203, 204],
+  "paired_baseline": "Expert reference controller with identical phase-specific sensor cadence",
+  "acceptance": "Unchanged physical gates; max pose jump stays 0.04m and 30 degrees",
+  "prohibited": "No fitting or candidate selection using these new test outcomes"
+}

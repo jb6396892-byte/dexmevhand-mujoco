@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/home/smgbro/miniconda3/envs/dexmv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests"
+  ],
+  "returncode": 0,
+  "passed": true
+}

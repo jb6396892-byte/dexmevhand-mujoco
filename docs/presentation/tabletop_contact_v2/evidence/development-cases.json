@@ -1,0 +1,1144 @@
+{
+  "ablation-root0-v2": {
+    "passed": true,
+    "reason": "requested_stages_complete",
+    "steps": 593,
+    "phase": "grasp",
+    "source_index": 542,
+    "completed": [
+      "reach",
+      "grasp"
+    ],
+    "max_penetration_m": 0.0005119234071143874,
+    "final": {
+      "scene_penetration_m": 0.00010535672113889949,
+      "joint_violation_rad": 0.0,
+      "finite": true,
+      "max_hand_speed": 0.027183076977982095,
+      "non_target_contacts": 0,
+      "table_contacts": 0,
+      "th_force_n": 1.5835123463843153,
+      "ff_force_n": 0.25136184773511366,
+      "mf_force_n": 0.6999283976210694,
+      "rf_force_n": 0.0,
+      "lf_force_n": 0.0,
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.846483935544296,
+        "mf": -0.8468608830328395
+      },
+      "step": 593,
+      "source_index": 542,
+      "phase": "grasp",
+      "bottom_m": 0.00037523666266352923,
+      "target_distance_m": 0.14770171245088162,
+      "tip_error_m": [
+        0.008404631806902207,
+        0.007426375863210304,
+        0.0074659992524648165,
+        0.007420830174432077,
+        0.00771322045899572
+      ],
+      "root_error_m": 0.011162955044140175,
+      "action_abs_max": 0.8649496033264983
+    },
+    "ground_truth_after_stop": [
+      [
+        -0.05375123110150021,
+        -0.9985223195908122,
+        0.007998902053226245,
+        0.0021443523841212
+      ],
+      [
+        0.9984529068875834,
+        -0.05362986192407865,
+        0.014684367120826491,
+        0.009179167256805143
+      ],
+      [
+        -0.014233688306551969,
+        0.008775829817643618,
+        0.9998601836898016,
+        0.03197402453034717
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": false,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false,
+    "final_contact_geometry": {
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.846483935544296,
+        "mf": -0.8468608830328395
+      },
+      "pairs": [
+        {
+          "hand": "C_ffdistal",
+          "object": "collision_mug_16",
+          "distance_m": 0.00014806472215126543,
+          "normal_force_n": 0.25136184773511366
+        },
+        {
+          "hand": "C_mfdistal",
+          "object": "collision_mug_14",
+          "distance_m": 9.60776683364591e-05,
+          "normal_force_n": 0.6999283976210694
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_33",
+          "distance_m": -1.072283671803295e-05,
+          "normal_force_n": 1.5835123463843153
+        }
+      ]
+    }
+  },
+  "ablation-root1": {
+    "passed": true,
+    "reason": "requested_stages_complete",
+    "steps": 599,
+    "phase": "grasp",
+    "source_index": 542,
+    "completed": [
+      "reach",
+      "grasp"
+    ],
+    "max_penetration_m": 0.0004404611407709041,
+    "final": {
+      "scene_penetration_m": 0.0001291225787100267,
+      "joint_violation_rad": 0.0,
+      "finite": true,
+      "max_hand_speed": 0.012672882947114555,
+      "non_target_contacts": 0,
+      "table_contacts": 0,
+      "th_force_n": 1.620050301679154,
+      "ff_force_n": 0.5949266445464536,
+      "mf_force_n": 0.8500748748962833,
+      "rf_force_n": 0.0,
+      "lf_force_n": 0.0,
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9677057887571733,
+        "mf": -0.9461532394217002
+      },
+      "step": 599,
+      "source_index": 542,
+      "phase": "grasp",
+      "bottom_m": 0.0005330391694067273,
+      "target_distance_m": 0.14786192729468292,
+      "tip_error_m": [
+        0.005030934786929793,
+        0.005071055580471929,
+        0.00499208529712879,
+        0.005255259683726826,
+        0.005331104600494129
+      ],
+      "root_error_m": 0.006633792552347557,
+      "action_abs_max": 0.8649496033264983
+    },
+    "ground_truth_after_stop": [
+      [
+        -0.053651548224803336,
+        -0.9985561879232812,
+        0.002655359336619621,
+        0.0020384306046550235
+      ],
+      [
+        0.9985484989428044,
+        -0.05366336131957017,
+        -0.004597707141337497,
+        0.008464028403052833
+      ],
+      [
+        0.004733564423755929,
+        0.002404830973318292,
+        0.9999859049785831,
+        0.031721902380787356
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": false,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false,
+    "final_contact_geometry": {
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9677057887571733,
+        "mf": -0.9461532394217002
+      },
+      "pairs": [
+        {
+          "hand": "C_ffdistal",
+          "object": "collision_mug_16",
+          "distance_m": 6.628520012914749e-05,
+          "normal_force_n": 0.5949266445464536
+        },
+        {
+          "hand": "C_mfdistal",
+          "object": "collision_mug_14",
+          "distance_m": 7.336109586013846e-05,
+          "normal_force_n": 0.8500748748962833
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_33",
+          "distance_m": 3.2911017750836524e-05,
+          "normal_force_n": 0.9359745379583398
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_36",
+          "distance_m": 0.00019447261508872724,
+          "normal_force_n": 0.16505043162699806
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_37",
+          "distance_m": 0.00010401206798480968,
+          "normal_force_n": 0.5190253320938162
+        }
+      ]
+    }
+  },
+  "ablation-tip40": {
+    "passed": false,
+    "reason": "Contact controller actuator saturation",
+    "steps": 276,
+    "phase": "reach",
+    "source_index": 276,
+    "completed": [],
+    "max_penetration_m": 0.0004406736097261532,
+    "final": {
+      "scene_penetration_m": 7.112142727254758e-05,
+      "joint_violation_rad": 0.0,
+      "finite": true,
+      "max_hand_speed": 4.742440402290865,
+      "non_target_contacts": 0,
+      "table_contacts": 0,
+      "th_force_n": 0.0,
+      "ff_force_n": 0.0,
+      "mf_force_n": 0.0,
+      "rf_force_n": 0.0,
+      "lf_force_n": 0.0,
+      "opposition": false,
+      "normal_dots": {},
+      "step": 276,
+      "source_index": 275,
+      "phase": "reach",
+      "bottom_m": 0.00040815546908137823,
+      "target_distance_m": 0.14799513589720226,
+      "tip_error_m": [
+        0.004341285466089609,
+        0.0039923201414200525,
+        0.0040777696881591306,
+        0.0038752645710842725,
+        0.003885367992720821
+      ],
+      "root_error_m": 0.005348773981956654,
+      "action_abs_max": 0.9937630914490337
+    },
+    "ground_truth_after_stop": [
+      [
+        -0.053780821165612946,
+        -0.9985527607092514,
+        8.57594603140236e-05,
+        0.0019552614093810623
+      ],
+      [
+        0.998552762115254,
+        -0.0537808150451507,
+        7.214621491395628e-05,
+        0.008609863368708476
+      ],
+      [
+        -6.742958840353357e-05,
+        8.951542865614512e-05,
+        0.9999999937201194,
+        0.031613300673681025
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": false,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false,
+    "final_contact_geometry": {
+      "opposition": false,
+      "normal_dots": {},
+      "pairs": []
+    }
+  },
+  "anchor400-gain1": {
+    "passed": false,
+    "reason": "Full transformed reference is outside joint workspace",
+    "steps": 0,
+    "phase": "initial",
+    "source_index": 0,
+    "completed": [],
+    "max_penetration_m": 0.0,
+    "final": null,
+    "ground_truth_after_stop": [
+      [
+        -0.053780825158023626,
+        -0.9985527529890863,
+        0.00014947655007079586,
+        0.0019572748436619014
+      ],
+      [
+        0.9985527603784574,
+        -0.05378081129416046,
+        9.527384215237534e-05,
+        0.008610592858130772
+      ],
+      [
+        -8.709698723684245e-05,
+        0.00015438412753197194,
+        0.999999984289828,
+        0.03187677985129273
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": false,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false
+  },
+  "anchor400-gain1b": {
+    "passed": false,
+    "reason": "Full transformed reference is outside joint workspace",
+    "steps": 0,
+    "phase": "initial",
+    "source_index": 0,
+    "completed": [],
+    "max_penetration_m": 0.0,
+    "final": null,
+    "ground_truth_after_stop": [
+      [
+        -0.053780825158023626,
+        -0.9985527529890863,
+        0.00014947655007079586,
+        0.0019572748436619014
+      ],
+      [
+        0.9985527603784574,
+        -0.05378081129416046,
+        9.527384215237534e-05,
+        0.008610592858130772
+      ],
+      [
+        -8.709698723684245e-05,
+        0.00015438412753197194,
+        0.999999984289828,
+        0.03187677985129273
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": false,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false
+  },
+  "anchor400-gain1c": {
+    "passed": true,
+    "reason": "requested_stages_complete",
+    "steps": 559,
+    "phase": "grasp",
+    "source_index": 542,
+    "completed": [
+      "reach",
+      "grasp"
+    ],
+    "max_penetration_m": 0.0004404611407709041,
+    "final": {
+      "scene_penetration_m": 0.00010460651560362938,
+      "joint_violation_rad": 0.0,
+      "finite": true,
+      "max_hand_speed": 0.11305385136651781,
+      "non_target_contacts": 0,
+      "table_contacts": 0,
+      "th_force_n": 1.2944232771721185,
+      "ff_force_n": 0.4783010510933032,
+      "mf_force_n": 0.7398536549419334,
+      "rf_force_n": 0.0,
+      "lf_force_n": 0.0,
+      "step": 559,
+      "source_index": 542,
+      "phase": "grasp",
+      "bottom_m": 0.0005591514785616217,
+      "target_distance_m": 0.1476508858311294,
+      "tip_error_m": [
+        0.005145264090479997,
+        0.005362004196207637,
+        0.0050073364788640485,
+        0.00546223447578596,
+        0.005271997536329558
+      ],
+      "root_error_m": 0.007514088871459602,
+      "action_abs_max": 0.8649496033264983
+    },
+    "ground_truth_after_stop": [
+      [
+        -0.05367707218801587,
+        -0.9985272556558021,
+        0.007879824478694829,
+        0.0022036598636427725
+      ],
+      [
+        0.9984861692073016,
+        -0.05376639895590851,
+        -0.01159932088711085,
+        0.008240210441345451
+      ],
+      [
+        0.012005907839501858,
+        0.0072452781731685125,
+        0.9999016772268876,
+        0.03189265345958477
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": false,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false
+  },
+  "live-grasp-gain1": {
+    "passed": true,
+    "reason": "requested_stages_complete",
+    "steps": 599,
+    "phase": "grasp",
+    "source_index": 542,
+    "completed": [
+      "reach",
+      "grasp"
+    ],
+    "max_penetration_m": 0.0004404611407709041,
+    "final": {
+      "scene_penetration_m": 0.0001291225787100267,
+      "joint_violation_rad": 0.0,
+      "finite": true,
+      "max_hand_speed": 0.012672882947114555,
+      "non_target_contacts": 0,
+      "table_contacts": 0,
+      "th_force_n": 1.620050301679154,
+      "ff_force_n": 0.5949266445464536,
+      "mf_force_n": 0.8500748748962833,
+      "rf_force_n": 0.0,
+      "lf_force_n": 0.0,
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9677057887571733,
+        "mf": -0.9461532394217002
+      },
+      "step": 599,
+      "source_index": 542,
+      "phase": "grasp",
+      "bottom_m": 0.0005129908631916202,
+      "target_distance_m": 0.1477162675706119,
+      "tip_error_m": [
+        0.005088299162773084,
+        0.004956652956875758,
+        0.004860291706317157,
+        0.005053520814126631,
+        0.004969350237768794
+      ],
+      "root_error_m": 0.006633792552347557,
+      "action_abs_max": 0.8649496033264983
+    },
+    "ground_truth_after_stop": [
+      [
+        -0.053651548224803336,
+        -0.9985561879232812,
+        0.002655359336619621,
+        0.0020384306046550235
+      ],
+      [
+        0.9985484989428044,
+        -0.05366336131957017,
+        -0.004597707141337497,
+        0.008464028403052833
+      ],
+      [
+        0.004733564423755929,
+        0.002404830973318292,
+        0.9999859049785831,
+        0.031721902380787356
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": true,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false,
+    "final_contact_geometry": {
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9677057887571733,
+        "mf": -0.9461532394217002
+      },
+      "pairs": [
+        {
+          "hand": "C_ffdistal",
+          "object": "collision_mug_16",
+          "distance_m": 6.628520012914749e-05,
+          "normal_force_n": 0.5949266445464536
+        },
+        {
+          "hand": "C_mfdistal",
+          "object": "collision_mug_14",
+          "distance_m": 7.336109586013846e-05,
+          "normal_force_n": 0.8500748748962833
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_33",
+          "distance_m": 3.2911017750836524e-05,
+          "normal_force_n": 0.9359745379583398
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_36",
+          "distance_m": 0.00019447261508872724,
+          "normal_force_n": 0.16505043162699806
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_37",
+          "distance_m": 0.00010401206798480968,
+          "normal_force_n": 0.5190253320938162
+        }
+      ]
+    }
+  },
+  "live-transport-gain1": {
+    "passed": false,
+    "reason": "Perception rejected: Insufficient visible model surface under occlusion",
+    "steps": 642,
+    "phase": "lift",
+    "source_index": 586,
+    "completed": [
+      "reach",
+      "grasp"
+    ],
+    "max_penetration_m": 0.0004404611407709041,
+    "final": {
+      "scene_penetration_m": 0.00036575685517466205,
+      "joint_violation_rad": 0.0,
+      "finite": true,
+      "max_hand_speed": 0.3583185085936355,
+      "non_target_contacts": 0,
+      "table_contacts": 0,
+      "th_force_n": 4.026565586718624,
+      "ff_force_n": 1.5089689083116595,
+      "mf_force_n": 1.7389871229643916,
+      "rf_force_n": 0.625061223455653,
+      "lf_force_n": 0.0,
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9276844069948812,
+        "mf": -0.9398818816253964,
+        "rf": -0.8362126935254628
+      },
+      "step": 642,
+      "source_index": 585,
+      "phase": "lift",
+      "bottom_m": 0.0008788344741904458,
+      "target_distance_m": 0.14674164283292387,
+      "tip_error_m": [
+        0.004956066969838959,
+        0.008329394284100813,
+        0.008916120817822766,
+        0.008830165595857602,
+        0.008743491752269386
+      ],
+      "root_error_m": 0.015000151304727576,
+      "action_abs_max": 0.9116305681555094
+    },
+    "ground_truth_after_stop": [
+      [
+        -0.1309269452307672,
+        -0.9913893728038236,
+        -0.0022905248702298417,
+        -0.005964597067667214
+      ],
+      [
+        0.990259416928151,
+        -0.13066661357241627,
+        -0.048088702234883596,
+        0.010163799090147026
+      ],
+      [
+        0.04737533321949475,
+        -0.008564320706178508,
+        0.9988404428201652,
+        0.03834583581195785
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": true,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false,
+    "final_contact_geometry": {
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9276844069948812,
+        "mf": -0.9398818816253964,
+        "rf": -0.8362126935254628
+      },
+      "pairs": [
+        {
+          "hand": "C_ffdistal",
+          "object": "collision_mug_16",
+          "distance_m": -0.00015279870352180166,
+          "normal_force_n": 1.5089689083116595
+        },
+        {
+          "hand": "C_mfdistal",
+          "object": "collision_mug_14",
+          "distance_m": -0.0001087190744920558,
+          "normal_force_n": 1.7389871229643916
+        },
+        {
+          "hand": "C_rfdistal",
+          "object": "collision_mug_13",
+          "distance_m": 1.681698038110335e-05,
+          "normal_force_n": 0.625061223455653
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_33",
+          "distance_m": 2.7715110186471914e-05,
+          "normal_force_n": 2.509366198633763
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_37",
+          "distance_m": 5.899264469787208e-05,
+          "normal_force_n": 1.5171993880848604
+        }
+      ]
+    }
+  },
+  "live-transport-gain1-airborne": {
+    "passed": false,
+    "reason": "Perception rejected: Insufficient visible model surface under occlusion: points=495 retained=0.438 cells=86",
+    "steps": 829,
+    "phase": "transport",
+    "source_index": 738,
+    "completed": [
+      "reach",
+      "grasp",
+      "lift"
+    ],
+    "max_penetration_m": 0.0006143990045602687,
+    "final": {
+      "scene_penetration_m": 0.00045769218399547423,
+      "joint_violation_rad": 0.0,
+      "finite": true,
+      "max_hand_speed": 0.7622322862479401,
+      "non_target_contacts": 0,
+      "table_contacts": 0,
+      "th_force_n": 3.3691686653988513,
+      "ff_force_n": 3.812129522530541,
+      "mf_force_n": 0.9825132976083429,
+      "rf_force_n": 0.0,
+      "lf_force_n": 0.0,
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9321372389669977,
+        "mf": -0.9361781373907788
+      },
+      "step": 829,
+      "source_index": 737,
+      "phase": "transport",
+      "bottom_m": 0.10025857133446249,
+      "target_distance_m": 0.04627406262954313,
+      "tip_error_m": [
+        0.019751289194639483,
+        0.029933981493972233,
+        0.03070225018611401,
+        0.029968822129743854,
+        0.02805628215377456
+      ],
+      "root_error_m": 0.004560346577097114,
+      "action_abs_max": 0.9863788490946114
+    },
+    "ground_truth_after_stop": [
+      [
+        -0.02218276285689702,
+        -0.9970269131330399,
+        0.07379200173756062,
+        0.01849222077381202
+      ],
+      [
+        0.9457138793726302,
+        -0.04486475386680022,
+        -0.3218888196605182,
+        -0.000162993490848476
+      ],
+      [
+        0.3242424762334584,
+        0.06264573687708452,
+        0.9438974140536259,
+        0.1523280337944312
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": true,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false,
+    "final_contact_geometry": {
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9321372389669977,
+        "mf": -0.9361781373907788
+      },
+      "pairs": [
+        {
+          "hand": "C_ffdistal",
+          "object": "collision_mug_16",
+          "distance_m": -0.0002416642323968803,
+          "normal_force_n": 3.1237726134419446
+        },
+        {
+          "hand": "C_ffdistal",
+          "object": "collision_mug_47",
+          "distance_m": 0.0001988880960119495,
+          "normal_force_n": 0.6883569090885964
+        },
+        {
+          "hand": "C_mfdistal",
+          "object": "collision_mug_14",
+          "distance_m": 0.00018478514010059993,
+          "normal_force_n": 0.9825132976083429
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_33",
+          "distance_m": 0.00011266100020839631,
+          "normal_force_n": 3.3691686653988513
+        }
+      ]
+    }
+  },
+  "live-transport-gain1-surface": {
+    "passed": false,
+    "reason": "Perception rejected: tracking_quality_failed",
+    "steps": 789,
+    "phase": "transport",
+    "source_index": 698,
+    "completed": [
+      "reach",
+      "grasp",
+      "lift"
+    ],
+    "max_penetration_m": 0.0005633682036934977,
+    "final": {
+      "scene_penetration_m": 0.0005633682036934977,
+      "joint_violation_rad": 0.0,
+      "finite": true,
+      "max_hand_speed": 0.8668986613143198,
+      "non_target_contacts": 0,
+      "table_contacts": 0,
+      "th_force_n": 4.10683688149539,
+      "ff_force_n": 2.870046498716403,
+      "mf_force_n": 0.9381480794164022,
+      "rf_force_n": 0.0,
+      "lf_force_n": 0.0,
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9503232681849116,
+        "mf": -0.9532012220507771
+      },
+      "step": 789,
+      "source_index": 697,
+      "phase": "transport",
+      "bottom_m": 0.08137457676291165,
+      "target_distance_m": 0.06237798073549925,
+      "tip_error_m": [
+        0.020776458242432044,
+        0.023959470246073852,
+        0.024675720826776274,
+        0.024061981632618367,
+        0.023579305242135955
+      ],
+      "root_error_m": 0.004511971792898876,
+      "action_abs_max": 0.9504827315448645
+    },
+    "ground_truth_after_stop": [
+      [
+        -0.09553260568629873,
+        -0.9927953252024505,
+        0.07232540015061747,
+        0.005125792576280554
+      ],
+      [
+        0.944180671163734,
+        -0.11338717093840245,
+        -0.3092995468269979,
+        0.006446540074708363
+      ],
+      [
+        0.31527191668714627,
+        0.038740053210421205,
+        0.9482103283690106,
+        0.14788318979952111
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": true,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false,
+    "final_contact_geometry": {
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9503232681849116,
+        "mf": -0.9532012220507771
+      },
+      "pairs": [
+        {
+          "hand": "C_ffdistal",
+          "object": "collision_mug_16",
+          "distance_m": -0.00022510988607686645,
+          "normal_force_n": 2.870046498716403
+        },
+        {
+          "hand": "C_mfdistal",
+          "object": "collision_mug_14",
+          "distance_m": 0.00015341014326640184,
+          "normal_force_n": 0.9381480794164022
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_33",
+          "distance_m": -4.292391349163742e-05,
+          "normal_force_n": 2.779118556470893
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_36",
+          "distance_m": 0.00018204462841784735,
+          "normal_force_n": 0.6143899037857958
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_37",
+          "distance_m": 3.0171486332503572e-05,
+          "normal_force_n": 0.7133284212387018
+        }
+      ]
+    }
+  },
+  "live-transport-gain1-volume": {
+    "passed": false,
+    "reason": "Perception rejected: Insufficient visible model surface under occlusion",
+    "steps": 642,
+    "phase": "lift",
+    "source_index": 586,
+    "completed": [
+      "reach",
+      "grasp"
+    ],
+    "max_penetration_m": 0.0004404611407709041,
+    "final": {
+      "scene_penetration_m": 0.00036575685517466205,
+      "joint_violation_rad": 0.0,
+      "finite": true,
+      "max_hand_speed": 0.3583185085936355,
+      "non_target_contacts": 0,
+      "table_contacts": 0,
+      "th_force_n": 4.026565586718624,
+      "ff_force_n": 1.5089689083116595,
+      "mf_force_n": 1.7389871229643916,
+      "rf_force_n": 0.625061223455653,
+      "lf_force_n": 0.0,
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9276844069948812,
+        "mf": -0.9398818816253964,
+        "rf": -0.8362126935254628
+      },
+      "step": 642,
+      "source_index": 585,
+      "phase": "lift",
+      "bottom_m": 0.0008788344741904874,
+      "target_distance_m": 0.14674164283292385,
+      "tip_error_m": [
+        0.004956066969838938,
+        0.008329394284100783,
+        0.008916120817822736,
+        0.008830165595857562,
+        0.008743491752269333
+      ],
+      "root_error_m": 0.015000151304727576,
+      "action_abs_max": 0.9116305681555094
+    },
+    "ground_truth_after_stop": [
+      [
+        -0.1309269452307672,
+        -0.9913893728038236,
+        -0.0022905248702298417,
+        -0.005964597067667214
+      ],
+      [
+        0.990259416928151,
+        -0.13066661357241627,
+        -0.048088702234883596,
+        0.010163799090147026
+      ],
+      [
+        0.04737533321949475,
+        -0.008564320706178508,
+        0.9988404428201652,
+        0.03834583581195785
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": true,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false,
+    "final_contact_geometry": {
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9276844069948812,
+        "mf": -0.9398818816253964,
+        "rf": -0.8362126935254628
+      },
+      "pairs": [
+        {
+          "hand": "C_ffdistal",
+          "object": "collision_mug_16",
+          "distance_m": -0.00015279870352180166,
+          "normal_force_n": 1.5089689083116595
+        },
+        {
+          "hand": "C_mfdistal",
+          "object": "collision_mug_14",
+          "distance_m": -0.0001087190744920558,
+          "normal_force_n": 1.7389871229643916
+        },
+        {
+          "hand": "C_rfdistal",
+          "object": "collision_mug_13",
+          "distance_m": 1.681698038110335e-05,
+          "normal_force_n": 0.625061223455653
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_33",
+          "distance_m": 2.7715110186471914e-05,
+          "normal_force_n": 2.509366198633763
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_37",
+          "distance_m": 5.899264469787208e-05,
+          "normal_force_n": 1.5171993880848604
+        }
+      ]
+    }
+  },
+  "live-transport-side": {
+    "passed": true,
+    "reason": "requested_stages_complete",
+    "steps": 1529,
+    "phase": "transport",
+    "source_index": 1416,
+    "completed": [
+      "reach",
+      "grasp",
+      "lift",
+      "transport"
+    ],
+    "max_penetration_m": 0.0006060453718258214,
+    "final": {
+      "scene_penetration_m": 0.0003526239300011367,
+      "joint_violation_rad": 0.0,
+      "finite": true,
+      "max_hand_speed": 0.004692991974114438,
+      "non_target_contacts": 0,
+      "table_contacts": 0,
+      "th_force_n": 4.1641116312724735,
+      "ff_force_n": 3.073608889738316,
+      "mf_force_n": 0.5142957019118194,
+      "rf_force_n": 0.27305699229547675,
+      "lf_force_n": 0.0,
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9268928227540045,
+        "mf": -0.9270437041455644,
+        "rf": -0.7768289714735445
+      },
+      "step": 1529,
+      "source_index": 1416,
+      "phase": "transport",
+      "bottom_m": 0.14274408835684677,
+      "target_distance_m": 0.004266751256018656,
+      "tip_error_m": [
+        0.006711834000751042,
+        0.004971580204304765,
+        0.0047023434748999105,
+        0.005304093895303705,
+        0.004760182845660292
+      ],
+      "root_error_m": 0.005086989348559638,
+      "action_abs_max": 0.9804445137590144
+    },
+    "ground_truth_after_stop": [
+      [
+        -0.07917079367009922,
+        -0.9896517517000049,
+        0.1196720342718335,
+        0.014514565122080455
+      ],
+      [
+        0.9456611047976896,
+        -0.11254012927478302,
+        -0.30505703429953684,
+        -0.011573730270765243
+      ],
+      [
+        0.31536813457047347,
+        0.089017580622748,
+        0.9447850602320154,
+        0.18139320239279522
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "live_vision": true,
+    "grasp_generalization_claim": false,
+    "state_writes_during_execution": 0,
+    "object_forces_applied": false,
+    "training": false,
+    "final_contact_geometry": {
+      "opposition": true,
+      "normal_dots": {
+        "ff": -0.9268928227540045,
+        "mf": -0.9270437041455644,
+        "rf": -0.7768289714735445
+      },
+      "pairs": [
+        {
+          "hand": "C_ffdistal",
+          "object": "collision_mug_16",
+          "distance_m": -0.00023498621720538968,
+          "normal_force_n": 2.7184173146812887
+        },
+        {
+          "hand": "C_ffdistal",
+          "object": "collision_mug_47",
+          "distance_m": 0.00013050195471455068,
+          "normal_force_n": 0.3551915750570273
+        },
+        {
+          "hand": "C_mfdistal",
+          "object": "collision_mug_14",
+          "distance_m": 0.00011565947493442935,
+          "normal_force_n": 0.5142957019118194
+        },
+        {
+          "hand": "C_rfdistal",
+          "object": "collision_mug_13",
+          "distance_m": 0.00014021983837548378,
+          "normal_force_n": 0.27305699229547675
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_33",
+          "distance_m": -2.4306183205244656e-05,
+          "normal_force_n": 2.0815199276686838
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_36",
+          "distance_m": 0.00018074095476184652,
+          "normal_force_n": 0.5571195184993395
+        },
+        {
+          "hand": "C_thdistal",
+          "object": "collision_mug_37",
+          "distance_m": 3.5225488710932754e-05,
+          "normal_force_n": 1.5254721851044504
+        }
+      ]
+    }
+  }
+}

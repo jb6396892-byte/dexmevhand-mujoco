@@ -1,0 +1,16 @@
+{
+  "status": "development_candidate",
+  "automatic_execution_enabled": false,
+  "supported_reference": "first",
+  "stable_reference_anchor": 400,
+  "installation_slide_offset_m": [-0.01, 0.06, 0.0],
+  "camera": "rgbd_side",
+  "additional_root_feedback_gain": 1.0,
+  "fingertip_cartesian_gain": 0.0,
+  "finger_joint_feedback_gain": 0.0,
+  "grasp_confirmation_steps": 50,
+  "phase_extension_steps": 100,
+  "opposed_normal_dot_threshold": -0.3,
+  "opposed_finger_count": 2,
+  "training_required": false
+}

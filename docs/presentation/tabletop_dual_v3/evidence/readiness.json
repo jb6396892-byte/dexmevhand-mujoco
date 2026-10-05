@@ -1,0 +1,13 @@
+{
+  "ready_for_small_scale_generalization_training": true,
+  "training_started": false,
+  "accepted_episodes": 8,
+  "required_episodes": 8,
+  "missing": [],
+  "failures": [],
+  "independent_generalization_claim": false,
+  "final_holdout_executed": false,
+  "feature_version": "tabletop_visual_reference_v1",
+  "checkpoint_compatible": false,
+  "packaging_checks_complete": true
+}

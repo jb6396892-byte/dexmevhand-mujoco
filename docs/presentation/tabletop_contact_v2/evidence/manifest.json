@@ -1,0 +1,23 @@
+{
+  "raw_store": "/media/smgbro/shared/visual_grasp/contact-control-v2",
+  "physics_run": "/media/smgbro/shared/visual_grasp/control_runs/20261003T142231129777Z",
+  "sha256": {
+    "final-report.json": "78775596a1158a20b16e60c0e3a9dd0129b59f8b38bc70c613c8e48601155225",
+    "quality.json": "0b8c89fdff41c3aee7b0be7541b308775c445150d811983694815314be9a3fea",
+    "qt-transport-success.png": "05e18354e5222526c1e1917cf449ad61cd97ee38eaec873206a5423fbf944545",
+    "kinematic-diagnosis.json": "098fc4993154ed1753c0e8c37e3f9204bb9fba57d8517513b5853549452502f2",
+    "final-evaluation_only.json": "4bd4287e923e80a4b1bdb50d9f32e4474efb266f161df35ac90646fe9d8a0842",
+    "airborne-tracking-regression.json": "688c80272e30951b9ab3b4a9f89119cb54f6c3e910e1da82fd37b5e0eb4cd8ba",
+    "qt-cases.json": "8898aafaed257544642f25de4ff75d9cb68c466591c1c4e5574ae1a14ad7f44f",
+    "final-adaptation.json": "1217e6f3a9385fb61b8961863cdc99cbd236afa5d25a74c92bcb15bd21276a88",
+    "development-cases.json": "4c93209b0d1136b74892431053d77f5a293aed38ac46a25216bcd5db961dde42",
+    "summary.json": "0033800b97ccd9cd1c4ff4e388de3b93e7bab6f6322851cd47e084ef3b4d13e4",
+    "final-preflight.json": "7888be8098dcc0c04536c25e658ad64ee515445e45b262afbf2ae24bcc06adc9",
+    "transport-physics.png": "0fb364c7a513fa8d13fc7e82d74bdaeae7dd565a626cb8e724e6716cef029e0c",
+    "final-scene.json": "cdc6374075be15d33fa53adc2027581247ee3512af545f05c26a03a6ed98f69b",
+    "lift-tracking-surface-regression.json": "6f4a2cb5905eabc19c1ff814ef844637ecd659dcef0fde37bd8b78561c10fec1",
+    "stable-grasp.png": "4f659aaf4f4bc415899d71cd6075bc72e187c011fef458969dc6003e87bc97bc",
+    "final-source.json": "f3007f7df1984b8838ec9537f0cc464dad91e1f551239527295aebe270a2cc4a",
+    "final-request.json": "8f4d9f50cc42c1c37410ef1e13375a00f07e0f4bdb3b0835bd81faf39e6ca2d4"
+  }
+}

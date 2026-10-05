@@ -1,0 +1,23 @@
+{
+  "version": "tabletop-dual-v3",
+  "status": "development_only_no_training",
+  "videos": ["first", "second"],
+  "development_train_seeds": [0, 1, 2],
+  "development_validation_seeds": [3],
+  "reserved_final_test_seeds": [101, 102, 103, 104, 105, 106, 107, 108],
+  "split_unit": "complete_scene_episode",
+  "camera": "rgbd_side",
+  "limits": {
+    "penetration_m": 0.001,
+    "joint_violation_rad": 0.02,
+    "grasp_consecutive_steps": 50,
+    "opposed_finger_count": 2,
+    "opposed_normal_dot": -0.3,
+    "lift_bottom_m": 0.05,
+    "goal_distance_m": 0.02,
+    "minimum_visual_confirmations": 2
+  },
+  "readiness": "Both videos need complete live RGB-D motor rollouts in each development split; failed episodes never become positive demonstrations.",
+  "heldout_policy": "Reserved seeds must not be executed or used for tuning before a trained candidate is frozen.",
+  "scope": "Upright YCB mug, virtual RGB-D, Adroit. Second video uses functional upright correspondence, not exact original object orientation. No hardware claim."
+}

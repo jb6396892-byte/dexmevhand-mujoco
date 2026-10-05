@@ -1,0 +1,43 @@
+{
+  "status": "ready_for_authorized_testing_not_validated",
+  "client_date": "2026-10-03",
+  "syntax_checked": [
+    "configs/tabletop-control-candidate.json",
+    "src/fromrealhand/tabletop/control.py",
+    "src/fromrealhand/tabletop/control_scene.py",
+    "src/fromrealhand/tabletop/vision_client.py",
+    "src/fromrealhand/perception/tracking.py",
+    "src/fromrealhand/desktop/tabletop_window.py",
+    "scripts/142_tabletop_vision_worker.py",
+    "scripts/143_stream_visual_grasp.py",
+    "scripts/144_qt_tabletop.py",
+    "scripts/145_launch_tabletop_qt.sh",
+    "scripts/146_record_tabletop_pretest.py",
+    "tests/test_tabletop_control_candidate.py"
+  ],
+  "previous_perception_source_unchanged": true,
+  "unit_tests_executed": false,
+  "physics_tests_executed": false,
+  "end_to_end_tests_executed": false,
+  "new_training_started": false,
+  "automatic_tabletop_execution_locked": true,
+  "screenshot": "Offline Qt layout with previous perception evidence; not a grasp test",
+  "sha256": {
+    "configs/tabletop-control-candidate.json": "22e33cb334dab4a74f0cf92e0016333b1662ea2a730643f97e5b7a84e91c261f",
+    "src/fromrealhand/tabletop/control.py": "94595334dec2255967a47d0b22bfd975d26d0cf4b09d2399746b47b80d908141",
+    "src/fromrealhand/tabletop/control_scene.py": "e3582c8ecd53ad2a6bb675e275b427edda161240220898ac9f486cc028f1e62d",
+    "src/fromrealhand/tabletop/vision_client.py": "2a4e780a2fa477f9aa49bfda3299d2fda5d75579cd003eaa034c6b35f275d024",
+    "src/fromrealhand/perception/tracking.py": "bb02a09a1d1f08ea3dee6357e6148b551b9e4bcb8fbfeda176b7d903360a523a",
+    "src/fromrealhand/desktop/tabletop_window.py": "f5094b1b824db6618a4d7773c39b30cda6336e06ed68b193a585bf3733a2c597",
+    "scripts/142_tabletop_vision_worker.py": "5cd5b4c5416f0a56f0689fb468efd1bb2be5e9e41ff409ba617da2b4eb921c38",
+    "scripts/143_stream_visual_grasp.py": "18f9f1dc645c0068dd42a36341fd1140e3ac3a2c95107635d3c5b8d139aac766",
+    "scripts/144_qt_tabletop.py": "77cab36cefece4e2d5b652c6ec292033c64803b306af39032465f913131cf0d4",
+    "scripts/145_launch_tabletop_qt.sh": "bb78e3e3a7b638d9451303b6e7df4309be4fd4ffc03f71234ba23c8ee10fb018",
+    "scripts/146_record_tabletop_pretest.py": "4d13a6afae5e0e9c35dd0749dc7f2536652d05871f750c5b2aec2b192aef2a1f",
+    "tests/test_tabletop_control_candidate.py": "4a67396cfdadee2c7df7a272fb6a0842d7eb6455b0d941657036ef2ca977a028",
+    "docs/TABLETOP_CONTROL_PRETEST.md": "682587b540e6aa2ded365f1a0302c217c37c3de4653e75b5ed34f0466e3281f4",
+    "docs/presentation/tabletop_control_pretest/README.md": "6ac6835b4adce534557f7cc7d1d9cbdf564cc9722f414baeb6ec9a5ab5069387",
+    "docs/presentation/tabletop_control_pretest/qt-layout-offline.png": "b2347d1d3b21a60d5cff5c3cb70e73535838b79299abb8eebbf70e76c4076171",
+    "docs/run_logs/2026-10-03-tabletop-control-pretest.md": "ac548b7501efdfbaedea2619d3178740e987803521fe286b6a2f589b7806b4b1"
+  }
+}

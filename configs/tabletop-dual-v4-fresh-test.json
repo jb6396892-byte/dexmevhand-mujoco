@@ -1,0 +1,11 @@
+{
+  "registered_before_execution": true,
+  "videos": ["first", "second"],
+  "test_seeds": [201, 202, 203, 204],
+  "candidate": "structured-residual fitted only on the original six training demonstrations",
+  "development_validation_seeds": [3],
+  "previous_test_seeds_now_regression_only": [101, 102, 103, 104, 105, 106, 107, 108],
+  "paired_baseline": "unchanged expert reference feedback controller",
+  "acceptance": "Same opposition, penetration, lift and 20mm post-stop truth gates as v3",
+  "prohibited": "No fitting, gain adjustment or candidate selection using the fresh test outcomes"
+}

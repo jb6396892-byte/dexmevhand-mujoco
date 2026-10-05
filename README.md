@@ -1,4 +1,8 @@
-> 最新交付（2026-10-03）：**桌面 RGB-D 前三步基础版已完成。** 真实纹理桌面、训练用杯子及四件干扰物、虚拟 RGB-D 与标定、Grounding DINO 自动检测及 Open3D 位姿估计已跑通。冻结后的 20 个新布局在理想/加噪深度下均 20/20 准入，4 项无目标或无效深度检查均拒绝；194 项回归通过。这是有限仿真感知验收，不是抓取成功率，尚未接入新桌面抓取或 Qt RGB-D 面板。[原生窗口与复现](docs/RGBD_TABLETOP_PROGRESS.md) · [三张图与答辩资料](docs/presentation/tabletop_rgbd/README.md) · [量化结果](docs/presentation/tabletop_rgbd/RESULTS.md)。
+> 最新交付（2026-10-05）：**两视频桌面小规模学习、独立评估及学习策略 Qt 接入完成。** 六条示范 9172 帧，已执行两组各 60 轮 GPU 行为克隆，最终采用从示范拟合的结构化残差 BC。修正抬杯视觉采样时序后，重新冻结的新独立测试学习策略 **8/8**、专家 **8/8**；目标误差 2.03–6.37 mm，手部相关穿透峰值 0.755 mm，动作截断为零。Qt 七项检查、242 项软件测试通过。运行 `bash scripts/165_launch_learned_tabletop.sh` 查看学习策略。原 MLP 14/16 和第二轮 7/8 的失败完整保留；这是同杯型、小范围布局的参考条件反馈蒸馏，不是优于专家、端到端视觉学习或实物泛化。[结果与操作](docs/TABLETOP_LEARNING_V4_RESULTS.md) · [三张截图与答辩资料](docs/presentation/tabletop_learning_v4/README.md)。模型与原始输出在共享盘 `visual_grasp/dual-learn-v4/`，未混入语言模型目录。
+>
+> 上轮交付（2026-10-04）：**两视频桌面视觉抓取已完成小规模训练前准备。** 冻结开发工况 8/8 完成接近、对握、抬杯和搬运，穿透峰值均低于 1 mm；6 条训练示范 9172 帧、2 条开发验证示范 3188 帧，139 维输入和共享/分视频分阶段残差网络前向检查通过。两视频实际 Qt 任务、停止、锁定及指令拒绝通过，233 项回归通过。**当时没有启动训练或独立留出测试**；这是参考加反馈专家控制，不是新学习策略的泛化，第二视频为直立杯功能重定向。运行 `bash scripts/145_launch_tabletop_qt.sh --allow-unvalidated-tabletop`。[结果与查看方式](docs/TABLETOP_DUAL_V3_RESULTS.md) · [三张图与答辩材料](docs/presentation/tabletop_dual_v3/README.md)。
+>
+> 上一轮感知基线（2026-10-03）：**桌面 RGB-D 前三步基础版已完成。** 真实纹理桌面、训练用杯子及四件干扰物、虚拟 RGB-D 与标定、Grounding DINO 自动检测及 Open3D 位姿估计已跑通。冻结后的 20 个新布局在理想/加噪深度下均 20/20 准入，4 项无目标或无效深度检查均拒绝；194 项回归通过。这是有限仿真感知验收，不是抓取成功率，当时尚未接入新桌面抓取或 Qt RGB-D 面板。[原生窗口与复现](docs/RGBD_TABLETOP_PROGRESS.md) · [三张图与答辩资料](docs/presentation/tabletop_rgbd/README.md) · [量化结果](docs/presentation/tabletop_rgbd/RESULTS.md)。
 >
 > Qt 交付（2026-10-02）：**Qt 抓杯实验台已完成。** 在项目目录运行 `bash scripts/128_launch_qt.sh`，输入中文指令查看实时 MuJoCo 画面、接触力、目标距离和阶段进度。已修复 `Missing GL version`，九项真实界面测试、187 项回归通过。高层使用训练好的 LoRA，低层沿用已验证专家技能，不冒充 DAPG 网络。[启动与验收](docs/QT_DESKTOP.md) · [两张截图与答辩资料](docs/presentation/qt_desktop/README.md)。
 >

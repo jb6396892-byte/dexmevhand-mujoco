@@ -1,0 +1,9 @@
+{
+  "first": true,
+  "second": true,
+  "stop": true,
+  "locked": true,
+  "instruction_rejected": true,
+  "gui": true,
+  "training_started": false
+}

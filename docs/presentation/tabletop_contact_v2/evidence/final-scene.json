@@ -1,0 +1,52 @@
+{
+  "seed": 0,
+  "objects": [
+    "mug",
+    "banana",
+    "sugar_box",
+    "mustard_bottle",
+    "tomato_soup_can"
+  ],
+  "initial_penetration_m": 0.0,
+  "settling_max_penetration_m": 0.0006222820518984029,
+  "settling_steps": 600,
+  "finite": true,
+  "hand_mode": "actuated; parking equalities removed",
+  "control_enabled": true,
+  "object_scale": 0.8,
+  "object_source": "existing DexMV YCB 025_mug visual mesh and v0 collision parts",
+  "all_objects_free": true,
+  "candidate_not_validated": true,
+  "initial_hand_source": "frozen reference, independent of current object truth",
+  "installation_slide_offset_m": [
+    -0.01,
+    0.06,
+    0.0
+  ],
+  "reference_base": [
+    [
+      -0.999998731727413,
+      -0.0015926529960037347,
+      -4.696640013750544e-10,
+      0.0
+    ],
+    [
+      1.2676045154155898e-06,
+      -0.0007962014166185138,
+      0.9999996830307984,
+      -0.7
+    ],
+    [
+      -0.0015926524915557336,
+      0.9999984147586127,
+      0.0007962024256722433,
+      0.2
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ]
+}

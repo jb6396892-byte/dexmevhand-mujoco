@@ -1,0 +1,7 @@
+{
+  "scripts/143_stream_visual_grasp.py": "2a9b873c240a8fe69691b85bb77477c5f32e7c38358d787e2b383902ba421477",
+  "src/fromrealhand/tabletop/control.py": "c896d3d247214efdbdd4a1fc097f4b5509a64ee1af2b6bc4849af9aa8f264282",
+  "src/fromrealhand/tabletop/control_scene.py": "53b4d6ae9bc6d27d04a79652826734788465649529ddda600cb30f33fe0f6d4d",
+  "src/fromrealhand/perception/tracking.py": "dd8cde13c43eef8907b24c1be7272b0ab57e126296b0a9c5d1ad55940ee1ba14",
+  "configs/tabletop-control-candidate.json": "f2a502ed96a9f5d1dca5d314a794d04e827521e37b331377344c49ab3b9cdba9"
+}

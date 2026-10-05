@@ -1,0 +1,11 @@
+{
+  "scripts/143_stream_visual_grasp.py": "522041cf037ea431ba99d0c131681b6f4303f044e759ad6d86e65af8e3ec7810",
+  "src/fromrealhand/tabletop/control.py": "c896d3d247214efdbdd4a1fc097f4b5509a64ee1af2b6bc4849af9aa8f264282",
+  "src/fromrealhand/tabletop/control_scene.py": "c9b25406bbdb3085155b3a50d54904b94ad643b4f45ab1060557e7cdd4de1dea",
+  "src/fromrealhand/perception/tracking.py": "e744ee72fda073af89adc7b60d0be1924d74df3a9e95fe84f7b24a66cbcc45be",
+  "configs/tabletop-control-candidate.json": "f2a502ed96a9f5d1dca5d314a794d04e827521e37b331377344c49ab3b9cdba9",
+  "src/fromrealhand/tabletop/contact_control.py": "558e882a1b098569d6f4a25aa494963fd6312b9667bfa1b819550228e785b494",
+  "configs/tabletop-contact-v2.json": "7bafecfcf932cdfe486975763c70b8311d81ab4e293a032478ef5db695d8e678",
+  "src/fromrealhand/tabletop/vision_client.py": "13df67fbd1f14ca496eff57af4bda4a9389ad5ae9b54d64faed0d1a05a5fb5f3",
+  "scripts/142_tabletop_vision_worker.py": "5cd5b4c5416f0a56f0689fb468efd1bb2be5e9e41ff409ba617da2b4eb921c38"
+}

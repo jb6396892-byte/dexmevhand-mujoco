@@ -1,0 +1,38 @@
+{
+  "train": {
+    "frames": 9172,
+    "groups": 8,
+    "batch_shape": [
+      16,
+      8,
+      139
+    ],
+    "finite": true
+  },
+  "validation": {
+    "frames": 3188,
+    "groups": 8,
+    "batch_shape": [
+      16,
+      8,
+      139
+    ],
+    "finite": true
+  },
+  "untrained_forward_only": {
+    "shared_shape": [
+      128,
+      30
+    ],
+    "routed_shape": [
+      128,
+      30
+    ],
+    "route_count": 8,
+    "optimizer_created": false,
+    "backward_called": false,
+    "checkpoints_saved": false,
+    "weights_are_random": true,
+    "policy_success_not_tested": true
+  }
+}

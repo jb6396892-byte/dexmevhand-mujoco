@@ -1,0 +1,11 @@
+{
+  "first": true,
+  "second": true,
+  "first_lift": true,
+  "second_lift": true,
+  "stop": true,
+  "locked": true,
+  "instruction_rejected": true,
+  "gui": true,
+  "training_started": false
+}

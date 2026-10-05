@@ -1,0 +1,21 @@
+{
+  "raw_store": "/media/smgbro/shared/visual_grasp/dual-contact-v3",
+  "sha256": {
+    "failure-history.json": "b1f22e77e7869f0e25d0091b2d195568d567a7f6370a20c8e252f537a67c79b9",
+    "loader_checks.json": "8dd60ced0048bc828eabd70936f7076e1f238c447ceedc943def552fe67d4ab7",
+    "development-matrix.json": "7b4637dbb8c360cf0239b4f124600a02b1d3dc9da2f5e18e1119edff06f21bfa",
+    "second-transport.png": "7b1fc29325a25c0b996248cf54ba22c6d159e2fe9b11b83d1788baf0a6f443d4",
+    "pretraining-dry-runs.json": "b1cd153b6207ae097d1998efd76c99128f2916ce5a0ba832c497d16c0893dff2",
+    "qt-cases.json": "4a59aab6e90490ee877d9e9688c4f2f191ea8973b232ed3a571ba99d506c2bd6",
+    "index.json": "0bb981468ff27ac9bf0e49570f96edf39fdcbb882a829600a44ea7f7ec6cd94b",
+    "protocol.json": "547d4bc69ac8d08225b8539e2aeb4da9f0d3bcf3a6bce8aa81eefef8aa80f463",
+    "qt-quality.json": "400ae5d87604a7c9a21239a421ac7c44b489786d1e8a595a4938087da32b3244",
+    "training-entry-sources.json": "ef0f8f722e1efbd89fe66c54c42ba19f41053fc1cf1cfe85b872842b28927c77",
+    "summary.json": "f9d53024db2b98d89f999ce2923406c7aa59c73ba01127abd3ba3ecb64c23098",
+    "profiles.json": "a175f1d392be2c41fd1e8dcfec393030050abd01038fcd64cd92fd1acb651768",
+    "software-checks.json": "bcf21eb0b6e57cb159ba76557972788e22a4ea5c84bee52795bd701ddec2f293",
+    "second-qt.png": "7643bcb61ed8ddffe914299cb453309b92ff26e22dc2387d7d5cee26a916821b",
+    "second-grasp.png": "21040a9c6ecc6def4d767196b051e0e98fd199ae34588257e5130003f1fde92b",
+    "readiness.json": "98626fbf08bb4b81739130f3a611c09303bde10383cb2cdd769cecdcf1ef5197"
+  }
+}

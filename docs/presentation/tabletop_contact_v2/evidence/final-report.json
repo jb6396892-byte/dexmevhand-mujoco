@@ -1,0 +1,89 @@
+{
+  "status": "success",
+  "reason": "candidate_plan_completed",
+  "candidate_not_validated": true,
+  "completed": [
+    "reach",
+    "grasp",
+    "lift",
+    "transport"
+  ],
+  "final_metrics": {
+    "scene_penetration_m": 0.0003771177860777738,
+    "joint_violation_rad": 0.0,
+    "finite": true,
+    "max_hand_speed": 0.002340257966219842,
+    "non_target_contacts": 0,
+    "table_contacts": 0,
+    "th_force_n": 4.291527223021038,
+    "ff_force_n": 3.2214217296869507,
+    "mf_force_n": 0.5005761974246478,
+    "rf_force_n": 0.28258263479145584,
+    "lf_force_n": 0.0,
+    "opposition": true,
+    "normal_dots": {
+      "ff": -0.9432030510659437,
+      "mf": -0.9454273421270026,
+      "rf": -0.8087729622953236
+    },
+    "tip_error_m": [
+      0.006719843011422871,
+      0.0049029827613482685,
+      0.004629726696437021,
+      0.005225007198407419,
+      0.004672520807229417
+    ],
+    "root_error_m": 0.005087397176995666,
+    "action_abs_max": 0.9804445137590144,
+    "bottom_m": 0.1428079770985783,
+    "target_distance_m": 0.004320176619630516,
+    "pose_sim_age_s": 0.0,
+    "object_metrics_source": "rgbd_estimate"
+  },
+  "steps": 1542,
+  "reference_step": 1417,
+  "output": "/media/smgbro/shared/visual_grasp/control_runs/20261003T142231129777Z",
+  "events": [
+    {
+      "skill": "reach",
+      "step": 522,
+      "reference_step": 512,
+      "extension_steps": 10,
+      "consecutive_success_steps": 5,
+      "visual_confirmations": 2
+    },
+    {
+      "skill": "grasp",
+      "step": 622,
+      "reference_step": 543,
+      "extension_steps": 69,
+      "consecutive_success_steps": 50,
+      "visual_confirmations": 4
+    },
+    {
+      "skill": "lift",
+      "step": 749,
+      "reference_step": 624,
+      "extension_steps": 46,
+      "consecutive_success_steps": 22,
+      "visual_confirmations": 3
+    },
+    {
+      "skill": "transport",
+      "step": 1542,
+      "reference_step": 1417,
+      "extension_steps": 0,
+      "consecutive_success_steps": 591,
+      "visual_confirmations": 31
+    }
+  ],
+  "wall_s": 72.4608771799999,
+  "state_writes_during_execution": 0,
+  "object_pose_input": "rgbd_only",
+  "not_dapg_policy": true,
+  "perception_mode": "pause_simulation_during_inference",
+  "max_hand_scene_penetration_m": 0.0006158743993780694,
+  "attempted_action_count": 1542,
+  "partial_final_action_possible": false,
+  "contact_tracking": true
+}

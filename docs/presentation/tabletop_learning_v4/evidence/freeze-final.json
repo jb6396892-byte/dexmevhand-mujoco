@@ -1,0 +1,50 @@
+{
+  "created_utc": "2026-10-05T06:33:41.739840+00:00",
+  "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+  "checkpoint_sha256": "ab0a893e65b79448eedd14e0206351374b0d67df9b51baa424d8b7326b8bf922",
+  "development": "/media/smgbro/shared/visual_grasp/dual-learn-v4/dev-cadence/evaluation.json",
+  "development_sha256": "106903c91ffbaae325f820141063258c5c8a2bac959eaf7d22e3c9c66317bb22",
+  "source_sha256": {
+    "scripts/153_test_contact_tracking.py": "09fd1b3c7f5b1da78e6e332d13567d88e0419bdec54fb0da7d446f0224892f6d",
+    "scripts/162_evaluate_tabletop_policy.py": "684d760a9baed761b73bc05934420d831e53d177d012195903c88451e727dae2",
+    "src/fromrealhand/tabletop/learned_control.py": "4b556016c81c3bc6be4731996405030fc82650ce46c5e28ba71cca7cfe7784ef",
+    "src/fromrealhand/tabletop/training_inputs.py": "2c97513889135d420b402762f6f57aa9753f40a2ebf376870558276eecdd1bf2",
+    "src/fromrealhand/tabletop/structured_control.py": "7076e0a725ea8c40c315c58efc8d7869e72759179c0a5c7e667a1b5f36294879",
+    "src/fromrealhand/tabletop/contact_control.py": "2f8b64fa7acb886f097c3519968df8081c4b06705d1d32b8678b1ab44ff6858f",
+    "src/fromrealhand/tabletop/control.py": "ef8949f34f47b56437f78d157ebc73df662ddd3c2cefdaf36a480f7b54ecc6d1",
+    "src/fromrealhand/tabletop/control_scene.py": "8f839f4955ceee1059d44f7ac532f8677e2919f9024fcc738b614780c96d656b",
+    "src/fromrealhand/tabletop/scene.py": "c4d762c40b26f59f7334b1210fba7033f34d787466d42c7b7b76664155d7d0f4",
+    "src/fromrealhand/tabletop/functional_reference.py": "f97929d82ca1293f7ad650b6b76abf86d295e7d78cf047fc57fea70fd4c0a5fe",
+    "src/fromrealhand/tabletop/vision_client.py": "13df67fbd1f14ca496eff57af4bda4a9389ad5ae9b54d64faed0d1a05a5fb5f3",
+    "src/fromrealhand/perception/tracking.py": "c182d07147823ca08a2d948a3025fd37bdc76e33f304e316458e905d26c55bb4",
+    "src/fromrealhand/perception/association.py": "61f45538b31cc992373a2b71e26c385a5811aa6729d8368be52ae8f0d7cc7131",
+    "scripts/142_tabletop_vision_worker.py": "5ac512120b6057f0eb214b516e777d39b7b73702e6df35e630cd4bd0ae448659",
+    "configs/tabletop-dual-v3-profiles.json": "d20e8f295dddc29dbdd92164bfa96f98cbd8dceab182e475bd57df079ba55059",
+    "configs/tabletop-control-candidate.json": "0ed5e73b452bfb7a3f691d12605aa9a621e9008070dc0672b3e1905266f6d5af",
+    "configs/tabletop-dual-v3-protocol.json": "fb66e325b69dad59db7f3d8a5cc8bf9f216326109a4bbbdd05668458f36a3247"
+  },
+  "test_seeds": [
+    301,
+    302,
+    303,
+    304
+  ],
+  "videos": [
+    "first",
+    "second"
+  ],
+  "limits": {
+    "penetration_m": 0.001,
+    "joint_violation_rad": 0.02,
+    "grasp_consecutive_steps": 50,
+    "opposed_finger_count": 2,
+    "opposed_normal_dot": -0.3,
+    "lift_bottom_m": 0.05,
+    "goal_distance_m": 0.02,
+    "minimum_visual_confirmations": 2
+  },
+  "fresh_protocol": "configs/tabletop-dual-v4-final-test.json",
+  "acceptance": "All requested skills, unchanged physics gates and actual post-stop goal error <=20mm",
+  "no_tuning_on_test": true,
+  "scope": "Local in-distribution layout generalization; same camera, mug and reference family"
+}
