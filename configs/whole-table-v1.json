@@ -1,0 +1,68 @@
+{
+  "version": "whole-table-scaffold-v1",
+  "status": "scaffold_only",
+  "execution_enabled": false,
+  "baseline_commit": "181e09abacc048bf311e05d7df12b4e1b367dc78",
+  "table": {
+    "size_xy_m": [0.85, 0.80],
+    "surface_z_m": 0.0,
+    "sampling": "entire_surface_minus_each_object_footprint",
+    "central_clear_corridor": false,
+    "edge_clearance_m": 0.005
+  },
+  "objects": {
+    "target": "025_mug",
+    "target_scale": 0.8,
+    "target_yaw_deg": 0.0,
+    "distractors": ["banana", "sugar_box", "mustard_bottle", "tomato_soup_can"],
+    "count_range": [0, 4],
+    "initial_pose_source": "known",
+    "obstacle_pose_source": "known",
+    "resample_after_planning_failure": false
+  },
+  "platform": {
+    "mechanism": "xyz_gantry",
+    "joint_names": ["gantry_x", "gantry_y", "gantry_z"],
+    "actuator_names": ["gantry_x_servo", "gantry_y_servo", "gantry_z_servo"],
+    "parameters_validated": false,
+    "provisional_joint_min_m": [-0.60, -0.60, 0.0],
+    "provisional_joint_max_m": [0.60, 0.60, 0.45],
+    "provisional_max_velocity_m_s": [0.15, 0.15, 0.10],
+    "provisional_max_acceleration_m_s2": [0.30, 0.30, 0.20],
+    "provisional_max_jerk_m_s3": [1.0, 1.0, 0.6]
+  },
+  "local_policy": {
+    "action_dim": 30,
+    "feature_dim": 139,
+    "feature_version": "tabletop_visual_reference_v1",
+    "mapping": "named_joints_and_actuators",
+    "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+    "reuse_validated_on_platform": false
+  },
+  "planning": {
+    "backend_candidate": "ompl_rrtconnect",
+    "collision_backend_candidate": "mujoco_planning_copy",
+    "timing_candidate": "ruckig_local_state_to_state",
+    "bounded_replans": 2
+  },
+  "task": {
+    "completion": "transport_and_hold",
+    "completion_confirmation": "confirmed_2026-10-06",
+    "release_in_scope": false,
+    "hold_duration_s": 1.0,
+    "goal_height_m": [0.14, 0.20]
+  },
+  "acceptance": {
+    "task_success_rate_strictly_above": 0.8,
+    "max_penetration_m": 0.001,
+    "max_goal_error_m": 0.020,
+    "min_lift_m": 0.050,
+    "heldout_grid_xy": [4, 4],
+    "heldout_layouts_per_cell": 10,
+    "videos": ["first", "second"],
+    "heldout_seed_manifest": null,
+    "report_wilson_interval": true,
+    "failures_stay_in_denominator": true
+  },
+  "artifact_root": "/media/smgbro/shared/visual_grasp/whole-table-v1"
+}
