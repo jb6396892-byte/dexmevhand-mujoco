@@ -1,0 +1,157 @@
+{
+  "report": {
+    "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+    "clipped_action_calls": 0,
+    "completed": [
+      "reach",
+      "grasp",
+      "lift",
+      "transport"
+    ],
+    "events": [
+      {
+        "confirmation_steps": 10,
+        "phase": "reach",
+        "steps": 550
+      },
+      {
+        "confirmation_steps": 50,
+        "phase": "grasp",
+        "steps": 626
+      },
+      {
+        "confirmation_steps": 14,
+        "phase": "lift",
+        "steps": 735
+      },
+      {
+        "confirmation_steps": 162,
+        "phase": "transport",
+        "steps": 1475
+      }
+    ],
+    "final": {
+      "bottom_m": 0.146239679884239,
+      "cup_position_m": [
+        0.027197409658211057,
+        -0.040089179059863846,
+        0.18267599284385486
+      ],
+      "ff_force_n": 5.320127161187631,
+      "finite": true,
+      "joint_violation_rad": 0.0,
+      "lf_force_n": 0.0,
+      "max_hand_speed": 0.0038516831893614808,
+      "metric_source": "simulation_evaluation",
+      "mf_force_n": 0.6449450660853173,
+      "non_target_contacts": 0,
+      "normal_dots": {
+        "ff": -0.7632875824937416,
+        "mf": -0.9131487039065027
+      },
+      "opposition": true,
+      "phase": "transport",
+      "prediction_error_m": 0.0038275793232007333,
+      "proprioceptive_cup_prediction_m": [
+        0.03006672363411912,
+        -0.04033303399847657,
+        0.18015449813793802
+      ],
+      "rf_force_n": 0.0,
+      "root_tracking_world_m": [
+        3.087487750205632e-05,
+        5.59229792751394e-05,
+        0.007389760298215591
+      ],
+      "scene_penetration_m": 0.0004503906621580976,
+      "source_index": 1449,
+      "step": 1475,
+      "table_contacts": 0,
+      "target_distance_m": 0.003876003512507347,
+      "th_force_n": 5.1349190158407785
+    },
+    "layout": {
+      "cup_model": "025_mug",
+      "distractor_count": 2,
+      "goal_world_m": [
+        0.03,
+        -0.04,
+        0.18
+      ],
+      "object_scale": 0.8,
+      "objects": [
+        {
+          "name": "mug",
+          "xy": [
+            -0.02877572800109077,
+            -0.028831485510742525
+          ],
+          "yaw_deg": 0.0
+        },
+        {
+          "name": "mustard_bottle",
+          "xy": [
+            -0.2860945081363956,
+            -0.1845218787574054
+          ],
+          "yaw_deg": 19.48540945722329
+        },
+        {
+          "name": "tomato_soup_can",
+          "xy": [
+            -0.228698885749518,
+            0.20801304343968977
+          ],
+          "yaw_deg": 17.85771235364148
+        }
+      ],
+      "seed": 11,
+      "table_rgba": [
+        0.92,
+        0.95,
+        0.96,
+        1
+      ],
+      "table_variant": 0,
+      "version": "random-known-pose-v5"
+    },
+    "learned_action_calls": 1475,
+    "live_truth_usage": "stage termination, safety, evaluation and display; never motor action features",
+    "max_penetration_m": 0.0007036613302475181,
+    "object_forces_applied": false,
+    "passed": true,
+    "phase": "transport",
+    "pose_input": "initial_known_pose_only",
+    "reason": "random_task_completed",
+    "seed": 11,
+    "state_writes_during_execution": 0,
+    "status": "success",
+    "steps": 1475,
+    "video": "second",
+    "wall_s": 25.564868209999986
+  },
+  "scene": "second",
+  "seed": 11,
+  "goal": "transport",
+  "instruction": "把杯子搬到目标位置",
+  "random_mode": true,
+  "requested_target": [
+    0.03,
+    -0.04,
+    0.18
+  ],
+  "requested_count": 2,
+  "frames_received": 249,
+  "unique_frames": 248,
+  "max_gui_gap_s": 0.055302776999951675,
+  "surviving_workers": [],
+  "language_run": "/media/smgbro/shared/lora/language/desktop_runs/20261006T055954825583Z",
+  "physics_run": "/media/smgbro/shared/visual_grasp/random-v5/qt-runs/20261006T055954825583Z",
+  "gui_responsive": true,
+  "actual_pipeline": true,
+  "pre_recorded_images": false,
+  "task_passed": true,
+  "cancellation_latency_s": null,
+  "target_matches_ui": true,
+  "count_matches_ui": true
+}

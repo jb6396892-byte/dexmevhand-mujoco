@@ -1,0 +1,191 @@
+{
+  "created_utc": "2026-10-06T05:57:54.393677+00:00",
+  "sources": {
+    "src/fromrealhand/tabletop/training_inputs.py": "2c97513889135d420b402762f6f57aa9753f40a2ebf376870558276eecdd1bf2",
+    "src/fromrealhand/tabletop/random_scene.py": "c2cb6806b2ade9b845dfcc1f39d8ccf1cd37c852bc8b01e44c0902f7ed94eebc",
+    "src/fromrealhand/tabletop/__init__.py": "cfb770b2591ae36eb0e819c9dc3d77138c1607513891bf0178197e362392d161",
+    "src/fromrealhand/tabletop/vision_client.py": "13df67fbd1f14ca496eff57af4bda4a9389ad5ae9b54d64faed0d1a05a5fb5f3",
+    "src/fromrealhand/tabletop/camera.py": "e525d5da05cdaf6965312b937d0e5f17f154546526d23a9a03bec67152a1cc1b",
+    "src/fromrealhand/tabletop/learned_control.py": "4b556016c81c3bc6be4731996405030fc82650ce46c5e28ba71cca7cfe7784ef",
+    "src/fromrealhand/tabletop/random_task.py": "cccfd70ef9094f62b23fca15abe654254c4314a9bdb18291683ae3fcc268b79c",
+    "src/fromrealhand/tabletop/control_scene.py": "e0c5e80e2da04fd24b87c78571f6e418d8f8262248ec3190f2a3a273b837fea6",
+    "src/fromrealhand/tabletop/structured_control.py": "7076e0a725ea8c40c315c58efc8d7869e72759179c0a5c7e667a1b5f36294879",
+    "src/fromrealhand/tabletop/contact_control.py": "2f8b64fa7acb886f097c3519968df8081c4b06705d1d32b8678b1ab44ff6858f",
+    "src/fromrealhand/tabletop/functional_reference.py": "20562bfee5bf4413db9fa26056f136e16082a5190feaa58a56881cf14400244e",
+    "src/fromrealhand/tabletop/scene.py": "c94b697cb841c2206c889951996316dafff3a145db956e38a72468eafcacf5ed",
+    "src/fromrealhand/tabletop/control.py": "ef8949f34f47b56437f78d157ebc73df662ddd3c2cefdaf36a480f7b54ecc6d1",
+    "scripts/167_evaluate_random_tabletop.py": "0aabdffb0974cab9a84e400d6edd9d628a3ba4f0c6b1e3c07153effcfcee2cc1",
+    "scripts/168_stream_random_tabletop.py": "4c73bf8937b94b692a090a13fff1eec3333f153e0823d3d51c5b99279d54db9b",
+    "src/fromrealhand/desktop/random_window.py": "6c4d494e7b2d6d9a148b31807cbf92202e5ea6ed57a84f6f154b335f5c6ce1fc",
+    "configs/tabletop-random-v5.json": "69061f0c17ec87789b5c6ff0e104ae539e8d477d0617660c644a2178d797c25e",
+    "configs/tabletop-control-candidate.json": "0ed5e73b452bfb7a3f691d12605aa9a621e9008070dc0672b3e1905266f6d5af",
+    "configs/tabletop-dual-v3-profiles.json": "d20e8f295dddc29dbdd92164bfa96f98cbd8dceab182e475bd57df079ba55059"
+  },
+  "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+  "checkpoint_sha256": "ab0a893e65b79448eedd14e0206351374b0d67df9b51baa424d8b7326b8bf922",
+  "development": "/media/smgbro/shared/visual_grasp/random-v5/dev-full/evaluation.json",
+  "development_sha256": "b37bd27a840be17520abfa0075a72449e7789189d143591790c73dd0eb38478c",
+  "videos": [
+    "first",
+    "second"
+  ],
+  "seeds": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019,
+    1020,
+    1021,
+    1022,
+    1023,
+    1024,
+    1025,
+    1026,
+    1027,
+    1028,
+    1029,
+    1030,
+    1031,
+    1032,
+    1033,
+    1034,
+    1035,
+    1036,
+    1037,
+    1038,
+    1039,
+    1040
+  ],
+  "success_rate_must_exceed": 0.8,
+  "protocol": {
+    "version": "random-known-pose-v5",
+    "cup_xy_min_m": [
+      -0.045,
+      -0.03
+    ],
+    "cup_xy_max_m": [
+      0.045,
+      0.03
+    ],
+    "cup_yaw_deg": 0.0,
+    "goal_min_m": [
+      -0.04,
+      -0.08,
+      0.14
+    ],
+    "goal_max_m": [
+      0.04,
+      0.0,
+      0.19
+    ],
+    "distractor_count_range": [
+      0,
+      4
+    ],
+    "distractor_x_abs_range_m": [
+      0.22,
+      0.3
+    ],
+    "distractor_y_range_m": [
+      -0.23,
+      0.26
+    ],
+    "distractor_min_separation_m": 0.17,
+    "table_colors": [
+      [
+        0.92,
+        0.95,
+        0.96,
+        1
+      ],
+      [
+        0.7,
+        0.79,
+        0.73,
+        1
+      ],
+      [
+        0.73,
+        0.73,
+        0.78,
+        1
+      ]
+    ],
+    "development_seeds": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "heldout_seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019,
+      1020,
+      1021,
+      1022,
+      1023,
+      1024,
+      1025,
+      1026,
+      1027,
+      1028,
+      1029,
+      1030,
+      1031,
+      1032,
+      1033,
+      1034,
+      1035,
+      1036,
+      1037,
+      1038,
+      1039,
+      1040
+    ],
+    "minimum_success_rate": 0.8,
+    "pose_input": "initial_known_pose_only; no live cup pose feedback",
+    "placement_scope": "Separated tabletop objects outside a clear central manipulation corridor; no obstacle avoidance claim"
+  },
+  "failures_counted": true,
+  "no_test_selection_or_retries": true
+}

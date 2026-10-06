@@ -13,10 +13,16 @@ def prepare_reference(actions,qpos,source_poses,estimate,base,model,config,dt,pr
                 dict(config,orientation_transfer_fraction=fraction),dt)
             adapter.set_clearance(profile['clearance'],350,500)
             goal=adapter.goal(source_poses[-1,:3,3])+np.asarray(profile['goal_offset'])
+            if profile.get('goal_world_m') is not None:
+                goal=np.asarray(profile['goal_world_m'], dtype=float)
+                if goal.shape!=(3,) or not np.isfinite(goal).all(): raise ValueError('Invalid absolute goal')
             if profile['stable_carry']:
                 grasp=next(s['stop'] for s in segments if s['skill']=='grasp')-1
                 lift=next(s['stop'] for s in segments if s['skill']=='lift')-1
                 adapter.set_carry(grasp,lift,len(actions),goal-adapter.goal(source_poses[grasp,:3,3]))
+            elif profile.get('goal_world_m') is not None:
+                lift=next(s['stop'] for s in segments if s['skill']=='lift')-1
+                adapter.goal_warp=(lift,len(actions)-1,goal-adapter.goal(source_poses[-1,:3,3]))
             receipt=adapter.preflight(stop)
             receipt.update(orientation_transfer_fraction=fraction,failed_candidates=attempts,
                 estimated_object_pose_unchanged=True,not_video_exact=fraction<1.)
@@ -65,6 +71,10 @@ class ClearanceReference(VisualReference):
         t=np.clip((index-start)/float(stop-start),0.,1.)
         blend=t**3*(10-15*t+6*t*t)
         desired[:3] += self.base[:3,:3].T @ np.array([0.,0.,height*(1-blend)])
+        if hasattr(self,'goal_warp'):
+            start,stop,offset=self.goal_warp
+            t=np.clip((index-start)/float(stop-start),0.,1.)
+            desired[:3]+=self.base[:3,:3].T @ offset*t**3*(10-15*t+6*t*t)
         return desired
 
 

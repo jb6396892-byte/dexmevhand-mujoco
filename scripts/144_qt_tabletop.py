@@ -13,11 +13,16 @@ p.add_argument('--visual-root',type=Path,default=Path('/media/smgbro/shared/visu
 p.add_argument('--allow-unvalidated-tabletop',action='store_true')
 p.add_argument('--offline-layout-screenshot',type=Path)
 p.add_argument('--checkpoint',type=Path)
+p.add_argument('--random-mode',action='store_true')
 a=p.parse_args()
 if a.offline_layout_screenshot and a.allow_unvalidated_tabletop:
     p.error('Offline layout capture must not enable execution')
 app=QApplication(sys.argv[:1]); app.setStyle('Fusion')
-window=TabletopWindow(a.root,a.visual_root,a.allow_unvalidated_tabletop,a.checkpoint); window.show()
+window_type=TabletopWindow
+if a.random_mode:
+    from fromrealhand.desktop.random_window import RandomTabletopWindow
+    window_type=RandomTabletopWindow
+window=window_type(a.root,a.visual_root,a.allow_unvalidated_tabletop,a.checkpoint); window.show()
 if a.offline_layout_screenshot:
     window.load_offline_evidence()
     def capture():

@@ -4,11 +4,11 @@ import numpy as np
 from .scene import build
 
 
-def create(reference_env, initial_snapshot, seed, dt, installation_slide_offset=None, initial_hand_world_shift=None):
+def create(reference_env, initial_snapshot, seed, dt, installation_slide_offset=None, initial_hand_world_shift=None, layout=None):
     import mujoco_py
     import transforms3d
     # Build/settle only at episode initialization. No object reset after vision.
-    parked, xml, mesh, report = build(seed)
+    parked, xml, mesh, report = build(seed, layout=layout)
     root = ET.fromstring(xml)
     equality = root.find('equality')
     for node in list(equality):
@@ -56,7 +56,7 @@ def create(reference_env, initial_snapshot, seed, dt, installation_slide_offset=
     model.body_pos[forearm] -= reference_base[:3,:3] @ slide_offset
     # Recompute model constants after inertial parameters were transferred.
     mujoco_py.functions.mj_setConst(model, sim.data)
-    for name in ('mug', 'banana', 'sugar_box', 'mustard_bottle', 'tomato_soup_can'):
+    for name in report['objects']:
         joint = name+'_joint_0'
         sim.data.set_joint_qpos(joint, parked.data.get_joint_qpos(joint).copy())
         sim.data.set_joint_qvel(joint, np.zeros(6))

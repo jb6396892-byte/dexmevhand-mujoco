@@ -20,7 +20,7 @@ def mesh_local(model,gid):
     return vertices,model.mesh_face[fa:fa+fn].copy()
 
 
-def build(seed=0, target=True):
+def build(seed=0, target=True, layout=None):
     import mujoco_py
     import transforms3d
     from hand_imitation.env.models import TableArena
@@ -42,9 +42,13 @@ def build(seed=0, target=True):
     positions=[('banana',[-.23,.21]),('sugar_box',[.20,.22]),
                ('mustard_bottle',[.24,-.07]),('tomato_soup_can',[-.24,-.02])]
     if target: positions.insert(0,('mug',rng.uniform(-.02,.02,2)))
+    if layout is not None:
+        positions=[(o['name'],o['xy']) for o in layout['objects'] if target or o['name']!='mug']
+        arena.table_visual.set('rgba',fmt(layout['table_rgba']))
     for name,xy in positions:
         scale=.8 if name=='mug' else 1.
         yaw=rng.uniform(-15,15) if name=='mug' else rng.uniform(-10,10)
+        if layout is not None: yaw=next(o['yaw_deg'] for o in layout['objects'] if o['name']==name)
         quat=transforms3d.quaternions.qmult(transforms3d.quaternions.axangle2quat([0,0,1],np.deg2rad(yaw)),YCB_ORIENTATION[name])
         arena.add_ycb_object(name,pos=[float(xy[0]),float(xy[1]),.3],quat=quat,
             scale=scale,free=True,margin='.0005',condim='4',friction='1 .5 .01')
@@ -81,6 +85,7 @@ def build(seed=0, target=True):
         hand_mode='parked by joint equality only in this perception sandbox',control_enabled=False,
         object_scale=.8,object_source='existing DexMV YCB 025_mug visual mesh and v0 collision parts',
         all_objects_free=True)
+    if layout is not None: report['random_layout']=layout
     return sim,xml,exported,report
 
 

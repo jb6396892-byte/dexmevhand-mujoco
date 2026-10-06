@@ -1,0 +1,235 @@
+{
+  "split": "development",
+  "complete": true,
+  "records": [
+    {
+      "video": "first",
+      "seed": 15,
+      "passed": true,
+      "reason": "random_task_completed",
+      "steps": 1491,
+      "phase": "transport",
+      "max_penetration_m": 0.0005886697826014212,
+      "final": {
+        "scene_penetration_m": 0.00034489839824947133,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "max_hand_speed": 0.008485479341308902,
+        "non_target_contacts": 0,
+        "table_contacts": 0,
+        "th_force_n": 4.385144822998968,
+        "ff_force_n": 3.149645248347753,
+        "mf_force_n": 0.5221899002032624,
+        "rf_force_n": 0.375759598270933,
+        "lf_force_n": 0.0,
+        "opposition": true,
+        "normal_dots": {
+          "ff": -0.9409264846526562,
+          "mf": -0.9424959266551531,
+          "rf": -0.804451422857136
+        },
+        "bottom_m": 0.15340874149045738,
+        "target_distance_m": 0.0031687235837725937,
+        "cup_position_m": [
+          0.041350512488409666,
+          -0.0009668075305823316,
+          0.19269855671939937
+        ],
+        "metric_source": "simulation_evaluation",
+        "phase": "transport",
+        "step": 1491,
+        "source_index": 1416,
+        "root_tracking_world_m": [
+          -1.1662535215351047e-05,
+          -8.49752020549745e-06,
+          0.0050844855975046115
+        ],
+        "proprioceptive_cup_prediction_m": [
+          0.031397521754611614,
+          -0.019264140628536534,
+          0.0318767785214564
+        ],
+        "prediction_error_m": 0.16216503558348488
+      },
+      "layout": {
+        "seed": 15,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              0.031393592754172084,
+              -0.019266244504740092
+            ],
+            "yaw_deg": 0.0
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              -0.2225996424342077,
+              0.015988441569425915
+            ],
+            "yaw_deg": 2.5441385305356334
+          },
+          {
+            "name": "mustard_bottle",
+            "xy": [
+              0.23601846478203783,
+              0.2592862673363142
+            ],
+            "yaw_deg": -6.360651083605589
+          },
+          {
+            "name": "banana",
+            "xy": [
+              -0.22699210075943138,
+              0.2418700636905469
+            ],
+            "yaw_deg": -11.316459646434184
+          },
+          {
+            "name": "sugar_box",
+            "xy": [
+              0.28857773341120396,
+              0.058502973056846735
+            ],
+            "yaw_deg": 16.33364946394481
+          }
+        ],
+        "goal_world_m": [
+          0.04,
+          0.0,
+          0.19
+        ],
+        "distractor_count": 4,
+        "table_variant": 0,
+        "table_rgba": [
+          0.92,
+          0.95,
+          0.96,
+          1
+        ],
+        "cup_model": "025_mug",
+        "object_scale": 0.8,
+        "version": "random-known-pose-v5"
+      },
+      "output": "/media/smgbro/shared/visual_grasp/random-v5/target-max-boundary/first-seed-15"
+    },
+    {
+      "video": "second",
+      "seed": 15,
+      "passed": true,
+      "reason": "random_task_completed",
+      "steps": 1540,
+      "phase": "transport",
+      "max_penetration_m": 0.0007601258412288647,
+      "final": {
+        "scene_penetration_m": 0.00045113481073994627,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "max_hand_speed": 0.0010657046875254949,
+        "non_target_contacts": 0,
+        "table_contacts": 0,
+        "th_force_n": 5.110279540483467,
+        "ff_force_n": 5.093244451163202,
+        "mf_force_n": 0.8061697264754821,
+        "rf_force_n": 0.0,
+        "lf_force_n": 0.0,
+        "opposition": true,
+        "normal_dots": {
+          "ff": -0.7593988382652386,
+          "mf": -0.9159603037803355
+        },
+        "bottom_m": 0.15667944836275682,
+        "target_distance_m": 0.005370730753750041,
+        "cup_position_m": [
+          0.0355975032457465,
+          0.00011790219509605255,
+          0.19307390146726525
+        ],
+        "metric_source": "simulation_evaluation",
+        "phase": "transport",
+        "step": 1540,
+        "source_index": 1449,
+        "root_tracking_world_m": [
+          -2.6408471844316306e-05,
+          -3.074949293677916e-05,
+          0.007337164637859035
+        ],
+        "proprioceptive_cup_prediction_m": [
+          0.03986939406779802,
+          -8.139998458753933e-05,
+          0.19026287213174103
+        ],
+        "prediction_error_m": 0.005117680966954887
+      },
+      "layout": {
+        "seed": 15,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              0.031393592754172084,
+              -0.019266244504740092
+            ],
+            "yaw_deg": 0.0
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              -0.2225996424342077,
+              0.015988441569425915
+            ],
+            "yaw_deg": 2.5441385305356334
+          },
+          {
+            "name": "mustard_bottle",
+            "xy": [
+              0.23601846478203783,
+              0.2592862673363142
+            ],
+            "yaw_deg": -6.360651083605589
+          },
+          {
+            "name": "banana",
+            "xy": [
+              -0.22699210075943138,
+              0.2418700636905469
+            ],
+            "yaw_deg": -11.316459646434184
+          },
+          {
+            "name": "sugar_box",
+            "xy": [
+              0.28857773341120396,
+              0.058502973056846735
+            ],
+            "yaw_deg": 16.33364946394481
+          }
+        ],
+        "goal_world_m": [
+          0.04,
+          0.0,
+          0.19
+        ],
+        "distractor_count": 4,
+        "table_variant": 0,
+        "table_rgba": [
+          0.92,
+          0.95,
+          0.96,
+          1
+        ],
+        "cup_model": "025_mug",
+        "object_scale": 0.8,
+        "version": "random-known-pose-v5"
+      },
+      "output": "/media/smgbro/shared/visual_grasp/random-v5/target-max-boundary/second-seed-15"
+    }
+  ],
+  "passed": 2,
+  "total": 2,
+  "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+  "seeds": [
+    15
+  ]
+}

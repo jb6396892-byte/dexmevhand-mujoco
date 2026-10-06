@@ -46,6 +46,15 @@ class FunctionalReferenceTests(unittest.TestCase):
         np.testing.assert_allclose(adapter.qpos[10,:3],[0,0,.08])
         np.testing.assert_allclose(adapter.qpos[19,:3],[.02,0,.12])
 
+    def test_custom_goal_warp_changes_only_transport_translation(self):
+        adapter=object.__new__(ClearanceReference); adapter.base=np.eye(4)
+        adapter.goal_warp=(10,20,np.array([.03,-.02,.01]))
+        with patch.object(VisualReference,'desired_qpos',side_effect=lambda i:np.zeros(30)):
+            np.testing.assert_allclose(adapter.desired_qpos(10),np.zeros(30))
+            np.testing.assert_allclose(adapter.desired_qpos(15)[:3],[.015,-.01,.005])
+            np.testing.assert_allclose(adapter.desired_qpos(20)[:3],[.03,-.02,.01])
+            np.testing.assert_allclose(adapter.desired_qpos(20)[3:],np.zeros(27))
+
 
 class AssociationTests(unittest.TestCase):
     def setUp(self):

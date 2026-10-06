@@ -1,0 +1,18 @@
+{
+  "version": "random-known-pose-v5",
+  "cup_xy_min_m": [-0.045, -0.03],
+  "cup_xy_max_m": [0.045, 0.03],
+  "cup_yaw_deg": 0.0,
+  "goal_min_m": [-0.04, -0.08, 0.14],
+  "goal_max_m": [0.04, 0.0, 0.19],
+  "distractor_count_range": [0, 4],
+  "distractor_x_abs_range_m": [0.22, 0.30],
+  "distractor_y_range_m": [-0.23, 0.26],
+  "distractor_min_separation_m": 0.17,
+  "table_colors": [[0.92, 0.95, 0.96, 1], [0.70, 0.79, 0.73, 1], [0.73, 0.73, 0.78, 1]],
+  "development_seeds": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+  "heldout_seeds": [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040],
+  "minimum_success_rate": 0.8,
+  "pose_input": "initial_known_pose_only; no live cup pose feedback",
+  "placement_scope": "Separated tabletop objects outside a clear central manipulation corridor; no obstacle avoidance claim"
+}

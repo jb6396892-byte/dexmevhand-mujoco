@@ -1,0 +1,26 @@
+{
+  "report": {
+    "status": "locked",
+    "reason": "default_lock_checked",
+    "steps": 0,
+    "simulation_created": false
+  },
+  "scene": "second",
+  "seed": 0,
+  "goal": "transport",
+  "instruction": "把杯子搬到目标位置",
+  "random_mode": true,
+  "requested_target": null,
+  "requested_count": null,
+  "frames_received": 0,
+  "unique_frames": 0,
+  "max_gui_gap_s": 0.05022375999988071,
+  "surviving_workers": [],
+  "language_run": "None",
+  "physics_run": "None",
+  "gui_responsive": true,
+  "actual_pipeline": true,
+  "pre_recorded_images": false,
+  "task_passed": false,
+  "cancellation_latency_s": null
+}
