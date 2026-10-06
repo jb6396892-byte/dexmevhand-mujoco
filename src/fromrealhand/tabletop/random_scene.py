@@ -12,11 +12,20 @@ def validate_goal(goal, config):
     return value.copy()
 
 
-def sample(seed, config, goal=None, count=None):
+def validate_cup(cup_xy, config):
+    value=np.asarray(cup_xy,dtype=float)
+    if (value.shape!=(2,) or not np.isfinite(value).all()
+            or np.any(value<config['cup_xy_min_m']) or np.any(value>config['cup_xy_max_m'])):
+        raise ValueError('Initial cup position outside registered workspace')
+    return value.copy()
+
+
+def sample(seed, config, goal=None, count=None, cup_xy=None):
     if not isinstance(seed, (int, np.integer)) or not 0 <= seed < 2**32:
         raise ValueError('Invalid scene seed')
     rng = np.random.RandomState(seed)
     cup = rng.uniform(config['cup_xy_min_m'], config['cup_xy_max_m'])
+    if cup_xy is not None: cup=validate_cup(cup_xy,config)
     target = rng.uniform(config['goal_min_m'], config['goal_max_m'])
     if goal is not None: target = validate_goal(goal, config)
     low, high = config['distractor_count_range']

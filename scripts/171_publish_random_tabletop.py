@@ -31,6 +31,8 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--run',type=Path,default=Path('/media/smgbro/shared/visual_grasp/random-v5'))
     p.add_argument('--qt',default='qt-final')
+    p.add_argument('--history',nargs='*',default=['dev-initial','dev-hand-integral','dev-servo-anchor','dev-proprioception'])
+    p.add_argument('--boundary',nargs='+',default=['target-min-boundary','target-max-boundary'])
     p.add_argument('--output',type=Path,default=ROOT/'docs/presentation/random_tabletop_v5/evidence')
     a=p.parse_args(); a.output.mkdir(parents=True,exist_ok=True)
     frozen=read(a.run/'freeze.json'); evaluation=read(a.run/'heldout/evaluation.json')
@@ -68,7 +70,7 @@ def main():
         live_object_state_writes=sum(r['state_writes_during_execution'] for r in reports),
         any_object_assistance=any(r['object_forces_applied'] for r in reports))
     boundary=[]
-    for name in ('target-min-boundary','target-max-boundary'):
+    for name in a.boundary:
         result=read(a.run/name/'evaluation.json')
         if not result['complete']: raise ValueError('Incomplete target boundary check')
         write(a.output/(name+'.json'),result)
@@ -79,7 +81,7 @@ def main():
     write(a.output/'summary.json',summary); write(a.output/'freeze.json',frozen)
     write(a.output/'heldout.json',evaluation); write(a.output/'development.json',read(a.run/'dev-full/evaluation.json'))
     history={}
-    for name in ('dev-initial','dev-hand-integral','dev-servo-anchor','dev-proprioception'):
+    for name in a.history:
         history[name]=read(a.run/name/'evaluation.json')
     write(a.output/'failure-history.json',history)
     for case in ('first-manual','second-manual','empty-lift','stop','locked','instruction-rejected'):

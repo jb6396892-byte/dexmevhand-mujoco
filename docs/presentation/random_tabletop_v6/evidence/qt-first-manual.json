@@ -1,0 +1,179 @@
+{
+  "report": {
+    "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+    "clipped_action_calls": 0,
+    "completed": [
+      "reach",
+      "grasp",
+      "lift",
+      "transport"
+    ],
+    "events": [
+      {
+        "confirmation_steps": 5,
+        "phase": "reach",
+        "steps": 518
+      },
+      {
+        "confirmation_steps": 50,
+        "phase": "grasp",
+        "steps": 616
+      },
+      {
+        "confirmation_steps": 10,
+        "phase": "lift",
+        "steps": 718
+      },
+      {
+        "confirmation_steps": 200,
+        "phase": "transport",
+        "steps": 1511
+      }
+    ],
+    "final": {
+      "bottom_m": 0.11336180575332389,
+      "cup_position_m": [
+        0.07139885566312537,
+        -0.08599092173816425,
+        0.15265245516230683
+      ],
+      "ff_force_n": 3.1019786560198765,
+      "finite": true,
+      "joint_violation_rad": 0.0,
+      "lf_force_n": 0.0,
+      "max_hand_speed": 0.002044108087325556,
+      "metric_source": "simulation_evaluation",
+      "mf_force_n": 0.515330833317253,
+      "non_target_contacts": 0,
+      "normal_dots": {
+        "ff": -0.9414634406391903,
+        "mf": -0.9440131153733559,
+        "rf": -0.8072655666641961
+      },
+      "opposition": true,
+      "phase": "transport",
+      "prediction_error_m": 0.23641725902691374,
+      "proprioceptive_cup_prediction_m": [
+        -0.0699948971423141,
+        0.0600031667635471,
+        0.031877237688076744
+      ],
+      "rf_force_n": 0.37390905952333303,
+      "root_tracking_world_m": [
+        -2.8422744860296506e-05,
+        1.1007970083558604e-05,
+        0.005091697168114519
+      ],
+      "scene_penetration_m": 0.0003456345743445121,
+      "source_index": 1416,
+      "step": 1511,
+      "table_contacts": 0,
+      "target_distance_m": 0.0031582022489816124,
+      "th_force_n": 4.327109649277964
+    },
+    "layout": {
+      "cup_model": "025_mug",
+      "distractor_count": 4,
+      "goal_world_m": [
+        0.07,
+        -0.085,
+        0.15
+      ],
+      "object_scale": 0.8,
+      "objects": [
+        {
+          "name": "mug",
+          "xy": [
+            -0.07,
+            0.06
+          ],
+          "yaw_deg": 0.0
+        },
+        {
+          "name": "banana",
+          "xy": [
+            0.2668555414817326,
+            -0.030721850203651674
+          ],
+          "yaw_deg": -18.188283899047654
+        },
+        {
+          "name": "tomato_soup_can",
+          "xy": [
+            -0.23993207902799626,
+            0.24740945105075093
+          ],
+          "yaw_deg": -21.370805452074805
+        },
+        {
+          "name": "sugar_box",
+          "xy": [
+            -0.2271762706228742,
+            -0.13407208418268773
+          ],
+          "yaw_deg": 24.709684214868076
+        },
+        {
+          "name": "mustard_bottle",
+          "xy": [
+            0.22480493321358344,
+            0.1939017312844016
+          ],
+          "yaw_deg": 23.94057129880509
+        }
+      ],
+      "seed": 30,
+      "table_rgba": [
+        0.92,
+        0.95,
+        0.96,
+        1
+      ],
+      "table_variant": 0,
+      "version": "random-known-pose-v6"
+    },
+    "learned_action_calls": 1511,
+    "live_truth_usage": "stage termination, safety, evaluation and display; never motor action features",
+    "max_penetration_m": 0.0005888231729920951,
+    "object_forces_applied": false,
+    "passed": true,
+    "phase": "transport",
+    "pose_input": "initial_known_pose_only",
+    "reason": "random_task_completed",
+    "seed": 30,
+    "state_writes_during_execution": 0,
+    "status": "success",
+    "steps": 1511,
+    "video": "first",
+    "wall_s": 29.964630213999953
+  },
+  "scene": "first",
+  "seed": 30,
+  "goal": "transport",
+  "instruction": "把杯子搬到目标位置",
+  "random_mode": true,
+  "requested_target": [
+    0.07,
+    -0.085,
+    0.15
+  ],
+  "requested_count": 4,
+  "requested_cup_xy": [
+    -0.07,
+    0.06
+  ],
+  "frames_received": 281,
+  "unique_frames": 281,
+  "max_gui_gap_s": 0.057919612000205234,
+  "surviving_workers": [],
+  "language_run": "/media/smgbro/shared/lora/language/desktop_runs/20261006T064851897684Z",
+  "physics_run": "/media/smgbro/shared/visual_grasp/random-v6/qt-runs/20261006T064851897684Z",
+  "gui_responsive": true,
+  "actual_pipeline": true,
+  "pre_recorded_images": false,
+  "task_passed": true,
+  "cancellation_latency_s": null,
+  "target_matches_ui": true,
+  "count_matches_ui": true,
+  "cup_matches_ui": true
+}

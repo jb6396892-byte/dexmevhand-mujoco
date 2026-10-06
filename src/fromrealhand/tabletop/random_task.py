@@ -13,7 +13,7 @@ from .learned_control import LearnedControl
 
 
 class RandomTask:
-    def __init__(self, root, video, checkpoint):
+    def __init__(self, root, video, checkpoint, protocol=None):
         from hierarchy_common import SkillRegistry, verify_delivery, read
         from stage4_pipeline_common import load_pieces
         from stage4_common import experiment
@@ -30,7 +30,9 @@ class RandomTask:
         if self.profile['upright_correspondence']:
             self.local, self.poses, _ = upright_source_correspondence(self.local, self.poses, self.profile['anchor'])
         self.config = read(self.root/'configs/tabletop-control-candidate.json')
-        self.protocol = read(self.root/'configs/tabletop-random-v5.json')
+        self.protocol_path=Path(protocol) if protocol else self.root/'configs/tabletop-random-v5.json'
+        self.protocol = read(self.protocol_path)
+        self.config['max_translation_m']=self.protocol.get('max_anchor_translation_m',self.config['max_translation_m'])
         self.actions = np.concatenate([p['actions'] for p in self.pieces])
         self.qpos = np.asarray([s['qpos'][:30] for s in self.states])
         self.learner = LearnedControl(checkpoint)
@@ -40,11 +42,11 @@ class RandomTask:
         self.reference.env.close()
 
     def run(self, seed, output, goal=None, count=None, stop_skill='transport', callback=None,
-            cancelled=None, realtime=False, screenshots=False):
+            cancelled=None, realtime=False, screenshots=False, cup_xy=None):
         import transforms3d
         from hierarchy_common import write
         output = Path(output); output.mkdir(parents=True, exist_ok=False)
-        layout = sample(seed, self.protocol, goal, count)
+        layout = sample(seed, self.protocol, goal, count, cup_xy)
         write(output/'layout.json', layout)
         rows, events, completed = [], [], []
         peak, phase, index = 0., 'initialization', 0
@@ -59,8 +61,9 @@ class RandomTask:
         try:
             profile = dict(self.profile, goal_world_m=goal.tolist())
             if self.video=='first': profile['installation_y']=.04
+            installation=self.protocol.get('installation_offsets',{}).get(self.video,[-.01,profile['installation_y'],0.])
             env, mesh, scene = create(self.reference.env, self.pieces[0]['initial_snapshot'], seed,
-                self.entry['dt'], [-.01,profile['installation_y'],0.],
+                self.entry['dt'], installation,
                 [0.,0.,profile['clearance']] if profile['clearance'] else None, layout=layout)
             sim, m, d = env.sim, env.sim.model, env.sim.data
             mug = m.body_name2id('mug_0')

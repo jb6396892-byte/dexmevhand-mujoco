@@ -1,18 +1,29 @@
 """Random tabletop controls; language planning remains unchanged."""
 import json
-from PySide6.QtWidgets import QWidget, QFormLayout, QComboBox, QDoubleSpinBox, QSpinBox, QToolButton, QStyle, QTableWidgetItem, QLabel
+from pathlib import Path
+from PySide6.QtWidgets import QWidget, QFormLayout, QVBoxLayout, QTabWidget, QComboBox, QDoubleSpinBox, QSpinBox, QToolButton, QStyle, QTableWidgetItem, QLabel
 from .tabletop_window import TabletopWindow
 from .runtime import ROOT
 
 
 class RandomTabletopWindow(TabletopWindow):
-    def __init__(self, storage, visual_root, allow_candidate=False, checkpoint=None):
+    def __init__(self, storage, visual_root, allow_candidate=False, checkpoint=None, protocol=None):
         super().__init__(storage, visual_root, allow_candidate, checkpoint)
-        self.random_config=json.loads((ROOT/'configs/tabletop-random-v5.json').read_text())
+        self.random_protocol=Path(protocol).resolve() if protocol else ROOT/'configs/tabletop-random-v5.json'
+        self.random_config=json.loads(self.random_protocol.read_text())
         self.workflow.addItem('随机桌面 · 已知初始位置', 'random')
         self.count=QSpinBox(); self.count.setRange(-1,4); self.count.setValue(-1)
         self.count.setSpecialValueText('干扰物数量：随机'); self.count.setPrefix('干扰物 ')
         self.count.setToolTip('不包含待抓取杯子，0 至 4 件')
+        self.position_tabs=QTabWidget()
+        self.cup_mode=QComboBox(); self.cup_mode.addItems(['初始杯位置：跟随种子','初始杯位置：手动坐标'])
+        self.cup_box=QWidget(); cup_form=QFormLayout(self.cup_box); cup_form.setContentsMargins(0,0,0,0)
+        self.cup_inputs=[]
+        for i,axis in enumerate('XY'):
+            spin=QDoubleSpinBox(); spin.setDecimals(1); spin.setSingleStep(5); spin.setSuffix(' mm')
+            spin.setRange(self.random_config['cup_xy_min_m'][i]*1000,self.random_config['cup_xy_max_m'][i]*1000)
+            spin.setToolTip('初始杯子世界坐标；高度由桌面支撑确定')
+            cup_form.addRow('初始 '+axis,spin); self.cup_inputs.append(spin)
         self.target_mode=QComboBox(); self.target_mode.addItems(['目标位置：跟随种子','目标位置：手动坐标'])
         self.target_box=QWidget(); row=QFormLayout(self.target_box); row.setContentsMargins(0,0,0,0); row.setSpacing(3)
         self.targets=[]
@@ -22,11 +33,16 @@ class RandomTabletopWindow(TabletopWindow):
             spin.setSuffix(' mm'); spin.setMinimumWidth(0)
             spin.setToolTip('杯子模型原点的世界坐标，不是杯底高度')
             row.addRow('目标 '+axis,spin); self.targets.append(spin)
+        for title,mode,box in [('初始位置',self.cup_mode,self.cup_box),('目标位置',self.target_mode,self.target_box)]:
+            page=QWidget(); layout=QVBoxLayout(page); layout.setContentsMargins(4,4,4,4)
+            layout.addWidget(mode); layout.addWidget(box); layout.addStretch()
+            self.position_tabs.addTab(page,title)
         self.shuffle=QToolButton(); self.shuffle.setIcon(self.style().standardIcon(QStyle.SP_BrowserReload))
         self.shuffle.setToolTip('切换下一桌面种子'); self.shuffle.clicked.connect(lambda:self.seed.setValue(self.seed.value()+1))
-        for i,widget in enumerate((self.count,self.target_mode,self.target_box,self.shuffle)):
+        for i,widget in enumerate((self.count,self.position_tabs,self.shuffle)):
             self.sidebar.layout().insertWidget(3+i,widget)
         self.target_mode.currentIndexChanged.connect(self.update_random_controls)
+        self.cup_mode.currentIndexChanged.connect(self.update_random_controls)
         self.seed.valueChanged.connect(self.update_random_controls)
         self.workflow.setCurrentIndex(self.workflow.findData('random'))
         self.setWindowTitle('抓杯实验台 · 随机桌面与可调目标')
@@ -35,16 +51,17 @@ class RandomTabletopWindow(TabletopWindow):
     def update_random_controls(self):
         if not hasattr(self,'targets'): return
         random=self.workflow.currentData()=='random'
-        for widget in (self.count,self.target_mode,self.target_box,self.shuffle):
+        for widget in (self.count,self.position_tabs,self.shuffle):
             widget.setVisible(random); widget.setEnabled(random and not self.busy)
-        manual=self.target_mode.currentIndex()==1
-        for spin in self.targets:
-            if not manual:
-                spin.setSpecialValueText('自动'); spin.setValue(spin.minimum())
-            else:
-                if spin.specialValueText(): spin.setValue((spin.minimum()+spin.maximum())/2)
-                spin.setSpecialValueText('')
-            spin.setEnabled(random and manual and not self.busy)
+        for mode,spins in ((self.target_mode,self.targets),(self.cup_mode,self.cup_inputs)):
+            manual=mode.currentIndex()==1
+            for spin in spins:
+                if not manual:
+                    spin.setSpecialValueText('自动'); spin.setValue(spin.minimum())
+                else:
+                    if spin.specialValueText(): spin.setValue((spin.minimum()+spin.maximum())/2)
+                    spin.setSpecialValueText('')
+                spin.setEnabled(random and manual and not self.busy)
 
     def mode_changed(self):
         super().mode_changed()
@@ -71,10 +88,12 @@ class RandomTabletopWindow(TabletopWindow):
             if not self.allow_candidate: raise RuntimeError('Random tabletop execution locked')
             args=[str(ROOT/'scripts/168_stream_random_tabletop.py'),'--root',str(self.storage),
                   '--output',str(self.output),'--visual-root',str(self.visual_root),'--seed',str(self.seed.value()),
-                  '--checkpoint',str(self.checkpoint)]
+                  '--checkpoint',str(self.checkpoint),'--protocol',str(self.random_protocol)]
             if self.count.value()>=0: args.extend(['--count',str(self.count.value())])
             if self.target_mode.currentIndex()==1:
                 args.extend(['--target-world']+[str(spin.value()/1000) for spin in self.targets])
+            if self.cup_mode.currentIndex()==1:
+                args.extend(['--cup-xy']+[str(spin.value()/1000) for spin in self.cup_inputs])
         super().start_worker(kind,program,args,environment)
 
     def message(self, packet):

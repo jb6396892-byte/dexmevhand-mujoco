@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 import unittest
 import numpy as np
-from fromrealhand.tabletop.random_scene import sample, validate_goal, DISTRACTORS
+from fromrealhand.tabletop.random_scene import sample, validate_goal, validate_cup, DISTRACTORS
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -40,6 +40,25 @@ class RandomSceneTests(unittest.TestCase):
     def test_count_override(self):
         for count in range(5):
             self.assertEqual(sample(10,self.cfg,count=count)['distractor_count'],count)
+
+    def test_initial_cup_override_and_goal_are_independent(self):
+        row=sample(10,self.cfg,cup_xy=[.02,-.02])
+        self.assertEqual(row['objects'][0]['xy'],[.02,-.02])
+        self.assertEqual(row['goal_world_m'],sample(10,self.cfg)['goal_world_m'])
+        both=sample(10,self.cfg,cup_xy=[.02,-.02],goal=[-.03,-.05,.18])
+        self.assertEqual(both['objects'][0],row['objects'][0])
+
+    def test_initial_cup_invalid_input_is_rejected(self):
+        for cup in ([0], [0,0,0], [float('nan'),0], [1,0]):
+            with self.assertRaises(ValueError): validate_cup(cup,self.cfg)
+
+    def test_wide_protocol_is_larger_and_uses_fresh_seeds(self):
+        wide=json.loads((ROOT/'configs/tabletop-random-v6.json').read_text())
+        for low,high in [('cup_xy_min_m','cup_xy_max_m'),('goal_min_m','goal_max_m')]:
+            self.assertTrue(np.all(np.array(wide[low])<=self.cfg[low]))
+            self.assertTrue(np.all(np.array(wide[high])>=self.cfg[high]))
+            self.assertGreater(np.prod(np.array(wide[high])-wide[low]),np.prod(np.array(self.cfg[high])-self.cfg[low]))
+        self.assertFalse(set(wide['heldout_seeds']) & set(self.cfg['heldout_seeds']+wide['development_seeds']))
 
     def test_reject_invalid_input(self):
         for goal in ([0,0], [float('nan'),0,.17], [1,0,.17], [0,0,-1]):

@@ -1,0 +1,268 @@
+{
+  "overall": {
+    "passed": 80,
+    "total": 80,
+    "rate": 1.0,
+    "failures": {},
+    "max_penetration_mm": 0.76372871579932,
+    "successful_max_goal_error_mm": 5.759229514212588
+  },
+  "by_video": {
+    "first": {
+      "passed": 40,
+      "total": 40,
+      "rate": 1.0,
+      "failures": {},
+      "max_penetration_mm": 0.76372871579932,
+      "successful_max_goal_error_mm": 3.7801157813914323,
+      "wilson_95": [
+        0.9123783988027135,
+        1.0
+      ]
+    },
+    "second": {
+      "passed": 40,
+      "total": 40,
+      "rate": 1.0,
+      "failures": {},
+      "max_penetration_mm": 0.7276708641895946,
+      "successful_max_goal_error_mm": 5.759229514212588,
+      "wilson_95": [
+        0.9123783988027135,
+        1.0
+      ]
+    }
+  },
+  "by_distractor_count": {
+    "0": {
+      "passed": 18,
+      "total": 18,
+      "rate": 1.0,
+      "failures": {},
+      "max_penetration_mm": 0.751326528718752,
+      "successful_max_goal_error_mm": 5.557167473876308
+    },
+    "1": {
+      "passed": 18,
+      "total": 18,
+      "rate": 1.0,
+      "failures": {},
+      "max_penetration_mm": 0.7208310815844517,
+      "successful_max_goal_error_mm": 5.759229514212588
+    },
+    "2": {
+      "passed": 14,
+      "total": 14,
+      "rate": 1.0,
+      "failures": {},
+      "max_penetration_mm": 0.7232972166052627,
+      "successful_max_goal_error_mm": 4.995736625540066
+    },
+    "3": {
+      "passed": 12,
+      "total": 12,
+      "rate": 1.0,
+      "failures": {},
+      "max_penetration_mm": 0.76372871579932,
+      "successful_max_goal_error_mm": 5.749346767643911
+    },
+    "4": {
+      "passed": 18,
+      "total": 18,
+      "rate": 1.0,
+      "failures": {},
+      "max_penetration_mm": 0.7214281368753094,
+      "successful_max_goal_error_mm": 5.167333242676811
+    }
+  },
+  "by_table_variant": {
+    "0": {
+      "passed": 20,
+      "total": 20,
+      "rate": 1.0,
+      "failures": {},
+      "max_penetration_mm": 0.7235554969212931,
+      "successful_max_goal_error_mm": 5.1723503770866195
+    },
+    "1": {
+      "passed": 34,
+      "total": 34,
+      "rate": 1.0,
+      "failures": {},
+      "max_penetration_mm": 0.76372871579932,
+      "successful_max_goal_error_mm": 5.759229514212588
+    },
+    "2": {
+      "passed": 26,
+      "total": 26,
+      "rate": 1.0,
+      "failures": {},
+      "max_penetration_mm": 0.7235366810977757,
+      "successful_max_goal_error_mm": 5.749346767643911
+    }
+  },
+  "tests_passed": true,
+  "qt_checks": {
+    "first-manual": true,
+    "second-manual": true,
+    "empty-lift": true,
+    "stop": true,
+    "locked": true,
+    "instruction_rejected": true,
+    "gui": true
+  },
+  "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+  "no_new_training": true,
+  "object_input": "known initial pose; hand kinematic prediction in second-video carry",
+  "scope": {
+    "version": "random-known-pose-v6",
+    "cup_xy_min_m": [
+      -0.075,
+      -0.075
+    ],
+    "cup_xy_max_m": [
+      0.075,
+      0.075
+    ],
+    "cup_yaw_deg": 0.0,
+    "goal_min_m": [
+      -0.075,
+      -0.09,
+      0.14
+    ],
+    "goal_max_m": [
+      0.075,
+      0.09,
+      0.2
+    ],
+    "max_anchor_translation_m": 0.2,
+    "installation_offsets": {
+      "first": [
+        0.02,
+        0.04,
+        0.0
+      ],
+      "second": [
+        -0.01,
+        0.0,
+        0.0
+      ]
+    },
+    "distractor_count_range": [
+      0,
+      4
+    ],
+    "distractor_x_abs_range_m": [
+      0.22,
+      0.3
+    ],
+    "distractor_y_range_m": [
+      -0.23,
+      0.26
+    ],
+    "distractor_min_separation_m": 0.17,
+    "table_colors": [
+      [
+        0.92,
+        0.95,
+        0.96,
+        1
+      ],
+      [
+        0.7,
+        0.79,
+        0.73,
+        1
+      ],
+      [
+        0.73,
+        0.73,
+        0.78,
+        1
+      ]
+    ],
+    "development_seeds": [
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41
+    ],
+    "heldout_seeds": [
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2028,
+      2029,
+      2030,
+      2031,
+      2032,
+      2033,
+      2034,
+      2035,
+      2036,
+      2037,
+      2038,
+      2039,
+      2040
+    ],
+    "minimum_success_rate": 0.8,
+    "pose_input": "initial_known_pose_only; no live cup pose feedback",
+    "placement_scope": "Separated tabletop objects outside a clear central manipulation corridor; no obstacle avoidance claim"
+  },
+  "both_videos_per_independent_layout": {
+    "passed": 40,
+    "total": 40,
+    "wilson_95": [
+      0.9123783988027135,
+      1.0
+    ],
+    "note": "Two videos share each layout; do not treat 80 rollouts as 80 independent layouts"
+  },
+  "execution_audit": {
+    "clipped_action_calls": 0,
+    "learned_action_calls": 120183,
+    "live_object_state_writes": 0,
+    "any_object_assistance": false
+  },
+  "target_boundary_regression": {
+    "passed": 16,
+    "total": 16,
+    "rate": 1.0,
+    "failures": {},
+    "max_penetration_mm": 0.7799802469976987,
+    "successful_max_goal_error_mm": 6.904998866364319
+  },
+  "delivery_passed": true
+}

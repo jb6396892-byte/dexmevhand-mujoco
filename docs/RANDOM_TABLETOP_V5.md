@@ -22,7 +22,7 @@
 
 ```bash
 cd /home/smgbro/mujoconew/GITHUB
-bash scripts/169_launch_random_tabletop.sh
+bash scripts/169_launch_random_tabletop.sh --random-protocol configs/tabletop-random-v5.json
 ```
 
 需要共享盘和图形桌面。默认进入“随机桌面 · 已知初始位置”，旧桌面视觉模式和原标准场景仍可切换。

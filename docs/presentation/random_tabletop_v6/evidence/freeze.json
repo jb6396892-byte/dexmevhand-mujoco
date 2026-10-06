@@ -1,0 +1,205 @@
+{
+  "created_utc": "2026-10-06T06:50:45.726248+00:00",
+  "sources": {
+    "src/fromrealhand/tabletop/training_inputs.py": "2c97513889135d420b402762f6f57aa9753f40a2ebf376870558276eecdd1bf2",
+    "src/fromrealhand/tabletop/random_scene.py": "a16ebb5bed5adfc1c2f344d40be13aeadb396e7ddcbb85b50a8a8d6d913446b5",
+    "src/fromrealhand/tabletop/__init__.py": "cfb770b2591ae36eb0e819c9dc3d77138c1607513891bf0178197e362392d161",
+    "src/fromrealhand/tabletop/vision_client.py": "13df67fbd1f14ca496eff57af4bda4a9389ad5ae9b54d64faed0d1a05a5fb5f3",
+    "src/fromrealhand/tabletop/camera.py": "e525d5da05cdaf6965312b937d0e5f17f154546526d23a9a03bec67152a1cc1b",
+    "src/fromrealhand/tabletop/learned_control.py": "4b556016c81c3bc6be4731996405030fc82650ce46c5e28ba71cca7cfe7784ef",
+    "src/fromrealhand/tabletop/random_task.py": "fd92d28d72a9f5c5c39be86f0cb2a1d11f76d248d17d9282c6e7343ec42a848d",
+    "src/fromrealhand/tabletop/control_scene.py": "e0c5e80e2da04fd24b87c78571f6e418d8f8262248ec3190f2a3a273b837fea6",
+    "src/fromrealhand/tabletop/structured_control.py": "7076e0a725ea8c40c315c58efc8d7869e72759179c0a5c7e667a1b5f36294879",
+    "src/fromrealhand/tabletop/contact_control.py": "2f8b64fa7acb886f097c3519968df8081c4b06705d1d32b8678b1ab44ff6858f",
+    "src/fromrealhand/tabletop/functional_reference.py": "20562bfee5bf4413db9fa26056f136e16082a5190feaa58a56881cf14400244e",
+    "src/fromrealhand/tabletop/scene.py": "c94b697cb841c2206c889951996316dafff3a145db956e38a72468eafcacf5ed",
+    "src/fromrealhand/tabletop/control.py": "c3c75aaa980a2a5ed6231abeda2d5eaa185d9c177a4632b4cbed964806ecce08",
+    "configs/tabletop-random-v6.json": "a1848ddc1be4eb52511b32d868b24bfd140f71830ee509990fd1682a4376a550",
+    "scripts/167_evaluate_random_tabletop.py": "a4343df98c87cdfa492aac598b471fe1a9b04a328c99b577af87b2173b333632",
+    "scripts/168_stream_random_tabletop.py": "6107bd384f8c36121ea1d69a96615b4219b2f99b463eca1deb42806b338976b6",
+    "src/fromrealhand/desktop/random_window.py": "5a1c11828a5310fb52d7d3aab0df70afdd1eafb6d349c9c68b302c85b61efa69",
+    "configs/tabletop-random-v5.json": "69061f0c17ec87789b5c6ff0e104ae539e8d477d0617660c644a2178d797c25e",
+    "configs/tabletop-control-candidate.json": "0ed5e73b452bfb7a3f691d12605aa9a621e9008070dc0672b3e1905266f6d5af",
+    "configs/tabletop-dual-v3-profiles.json": "d20e8f295dddc29dbdd92164bfa96f98cbd8dceab182e475bd57df079ba55059"
+  },
+  "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+  "checkpoint_sha256": "ab0a893e65b79448eedd14e0206351374b0d67df9b51baa424d8b7326b8bf922",
+  "development": "/media/smgbro/shared/visual_grasp/random-v6/dev-full/evaluation.json",
+  "development_sha256": "9b5d4d90020784c735c6f246c288d5da3cce828a82a77249be04a1a610b9f96e",
+  "videos": [
+    "first",
+    "second"
+  ],
+  "seeds": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2036,
+    2037,
+    2038,
+    2039,
+    2040
+  ],
+  "success_rate_must_exceed": 0.8,
+  "protocol": {
+    "version": "random-known-pose-v6",
+    "cup_xy_min_m": [
+      -0.075,
+      -0.075
+    ],
+    "cup_xy_max_m": [
+      0.075,
+      0.075
+    ],
+    "cup_yaw_deg": 0.0,
+    "goal_min_m": [
+      -0.075,
+      -0.09,
+      0.14
+    ],
+    "goal_max_m": [
+      0.075,
+      0.09,
+      0.2
+    ],
+    "max_anchor_translation_m": 0.2,
+    "installation_offsets": {
+      "first": [
+        0.02,
+        0.04,
+        0.0
+      ],
+      "second": [
+        -0.01,
+        0.0,
+        0.0
+      ]
+    },
+    "distractor_count_range": [
+      0,
+      4
+    ],
+    "distractor_x_abs_range_m": [
+      0.22,
+      0.3
+    ],
+    "distractor_y_range_m": [
+      -0.23,
+      0.26
+    ],
+    "distractor_min_separation_m": 0.17,
+    "table_colors": [
+      [
+        0.92,
+        0.95,
+        0.96,
+        1
+      ],
+      [
+        0.7,
+        0.79,
+        0.73,
+        1
+      ],
+      [
+        0.73,
+        0.73,
+        0.78,
+        1
+      ]
+    ],
+    "development_seeds": [
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41
+    ],
+    "heldout_seeds": [
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2028,
+      2029,
+      2030,
+      2031,
+      2032,
+      2033,
+      2034,
+      2035,
+      2036,
+      2037,
+      2038,
+      2039,
+      2040
+    ],
+    "minimum_success_rate": 0.8,
+    "pose_input": "initial_known_pose_only; no live cup pose feedback",
+    "placement_scope": "Separated tabletop objects outside a clear central manipulation corridor; no obstacle avoidance claim"
+  },
+  "failures_counted": true,
+  "no_test_selection_or_retries": true
+}

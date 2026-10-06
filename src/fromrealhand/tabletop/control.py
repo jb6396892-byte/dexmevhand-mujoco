@@ -86,7 +86,10 @@ class VisualReference:
     def preflight(self, stop):
         targets = np.asarray([self.desired_qpos(i) for i in range(stop)])
         if np.any(targets[:,:6] < self.ranges[:6,0]) or np.any(targets[:,:6] > self.ranges[:6,1]):
-            raise ValueError('Full transformed reference is outside joint workspace')
+            invalid=(targets[:,:6]<self.ranges[:6,0]) | (targets[:,:6]>self.ranges[:6,1])
+            frame,axis=np.argwhere(invalid)[0]
+            raise ValueError('Full transformed reference is outside joint workspace: frame=%d axis=%d value=%.6f range=%s'%
+                (frame,axis,targets[frame,axis],self.ranges[axis].tolist()))
         # Zero feedback gives a feedforward-envelope check, not a dynamics guarantee.
         for i in range(stop): self.action(i, targets[i])
         return dict(steps=stop,root_min=targets[:,:6].min(0).tolist(),root_max=targets[:,:6].max(0).tolist(),

@@ -1,0 +1,27 @@
+{
+  "report": {
+    "reason": "instruction_not_admitted",
+    "simulation_created": false,
+    "status": "rejected",
+    "steps": 0
+  },
+  "scene": "second",
+  "seed": 0,
+  "goal": "transport",
+  "instruction": "将杯子放到我手上",
+  "random_mode": true,
+  "requested_target": null,
+  "requested_count": null,
+  "requested_cup_xy": null,
+  "frames_received": 0,
+  "unique_frames": 0,
+  "max_gui_gap_s": 0.05299123800068628,
+  "surviving_workers": [],
+  "language_run": "/media/smgbro/shared/lora/language/desktop_runs/20261006T065037311480Z",
+  "physics_run": "None",
+  "gui_responsive": true,
+  "actual_pipeline": true,
+  "pre_recorded_images": false,
+  "task_passed": false,
+  "cancellation_latency_s": null
+}

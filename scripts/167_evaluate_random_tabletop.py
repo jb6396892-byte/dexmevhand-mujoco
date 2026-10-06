@@ -17,12 +17,15 @@ p.add_argument('--freeze',type=Path)
 p.add_argument('--screenshots',action='store_true')
 p.add_argument('--target-world',nargs=3,type=float)
 p.add_argument('--count',type=int)
-a=p.parse_args(); cfg=read(ROOT/'configs/tabletop-random-v5.json')
+p.add_argument('--cup-xy',type=float,nargs=2)
+p.add_argument('--protocol',type=Path,default=ROOT/'configs/tabletop-random-v5.json')
+a=p.parse_args(); cfg=read(a.protocol)
 seeds=a.seeds if a.seeds is not None else cfg[a.split+'_seeds']
 if a.split=='heldout':
-    if a.target_world is not None or a.count is not None: p.error('Heldout must use the registered random distribution')
+    if a.target_world is not None or a.count is not None or a.cup_xy is not None: p.error('Heldout must use the registered random distribution')
     if not a.freeze: p.error('Heldout requires a pre-execution freeze')
     frozen=read(a.freeze)
+    if cfg!=frozen['protocol']: p.error('Protocol does not match freeze')
     if seeds!=frozen['seeds'] or a.videos!=frozen['videos']: p.error('Changed heldout schedule')
     for name,digest in frozen['sources'].items():
         if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest: p.error('Frozen source changed: '+name)
@@ -31,11 +34,11 @@ elif set(seeds)&set(cfg['heldout_seeds']): p.error('Reserved test seed requested
 a.output.mkdir(parents=True,exist_ok=False)
 rows=[]
 for video in a.videos:
-    task=RandomTask(ROOT,video,a.checkpoint)
+    task=RandomTask(ROOT,video,a.checkpoint,a.protocol)
     try:
         for seed in seeds:
             folder=a.output/(video+'-seed-'+str(seed))
-            result=task.run(seed,folder,goal=a.target_world,count=a.count,screenshots=a.screenshots)
+            result=task.run(seed,folder,goal=a.target_world,count=a.count,screenshots=a.screenshots,cup_xy=a.cup_xy)
             rows.append(dict(video=video,seed=seed,passed=result['passed'],reason=result['reason'],
                 steps=result['steps'],phase=result['phase'],max_penetration_m=result['max_penetration_m'],
                 final=result['final'],layout=result['layout'],output=str(folder)))

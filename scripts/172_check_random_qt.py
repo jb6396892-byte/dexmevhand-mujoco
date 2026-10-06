@@ -8,6 +8,7 @@ import subprocess
 
 ROOT=Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser(description=__doc__); p.add_argument('--output',type=Path,required=True)
+p.add_argument('--protocol',type=Path)
 a=p.parse_args(); a.output.mkdir(parents=True,exist_ok=False)
 gui=Path('/media/smgbro/shared/lora/language/gui-runtime'); env=dict(os.environ)
 for key in ('LD_PRELOAD','PYTHONHOME','QT_PLUGIN_PATH','QT_QPA_PLATFORM_PLUGIN_PATH'): env.pop(key,None)
@@ -21,18 +22,24 @@ cases={
     'stop':['--scene','second','--seed','13','--cancel-step','100'],
     'locked':['--locked'],
     'instruction-rejected':['--instruction','将杯子放到我手上']}
+if a.protocol:
+    cases['first-manual']=['--scene','first','--seed','30','--cup-xy','-.07','.06',
+        '--target-world','.07','-.085','.15','--count','4']
+    cases['second-manual']=['--scene','second','--seed','31','--cup-xy','.07','-.06',
+        '--target-world','-.07','.085','.195','--count','2']
 results={}
 for name,extra in cases.items():
     command=[str(ROOT/'data/runtime/stage6-study-venv/bin/python'),str(ROOT/'scripts/148_check_tabletop_qt.py'),
         '--random-mode','--checkpoint','/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt',
         '--output',str(a.output/name)]+extra
+    if a.protocol: command.extend(['--protocol',str(a.protocol.resolve())])
     with (a.output/(name+'.log')).open('w') as log:
         subprocess.run(command,env=env,cwd=str(ROOT),stdout=log,stderr=subprocess.STDOUT,check=True,timeout=300)
     row=json.loads((a.output/name/'summary.json').read_text()); results[name]=row
     print(json.dumps(dict(case=name,status=row['report']['status'],reason=row['report']['reason'],
         unique_frames=row['unique_frames'],gui_responsive=row['gui_responsive'])),flush=True)
 quality={name:results[name]['task_passed'] and results[name].get('target_matches_ui',False)
-    and results[name].get('count_matches_ui',False) and results[name]['unique_frames']>20
+    and results[name].get('count_matches_ui',False) and results[name].get('cup_matches_ui',False) and results[name]['unique_frames']>20
     for name in ('first-manual','second-manual','empty-lift')}
 quality.update(stop=results['stop']['report']['reason']=='user_stop' and results['stop']['cancellation_latency_s']<3,
     locked=results['locked']['report']['status']=='locked',
