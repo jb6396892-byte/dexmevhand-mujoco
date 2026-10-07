@@ -1,4 +1,6 @@
-> 整桌项目 F1（2026-10-07）：**XYZ 移动平台、整桌物品采样、名称索引及独立物理演示已实现；尚未接入抓取策略。** 保留 v6 默认入口和旧模型，264 项软件测试通过，未训练。原生窗口：`bash scripts/177_launch_whole_table_f1.sh`。平台运动与物体支撑验收、附加静置微抖问题分别报告，不把空手到位当成抓取成功。[F1 操作说明](docs/WHOLE_TABLE_F1.md) · [结果与截图](docs/presentation/whole_table/F1_RESULTS.md) · [分阶段任务书](docs/WHOLE_TABLE_TASKBOOK.md) · [开源参考](docs/WHOLE_TABLE_REFERENCES.md)。下一步 F2 局部策略适配，本轮未开始。
+> 最新方向（2026-10-07）：**按用户要求取消新方案的 XYZ 机构，直接通过原有执行器移动 Adroit。** 手掌中心标定、空手避障导航、两视频局部平移适配和物理带杯模块已实现。空手六个布局与绕墙通过；两视频局部抬杯通过；第一视频约 42 cm 搬运通过。第二视频到位保持但交接加速度未过，近桌面导航交接也仍被保护拦截，因此 F2/F3 尚未全验收，不宣称整桌 >80%。原生窗口：`bash scripts/180_launch_adroit_navigation.sh`。未训练，旧 Qt 与模型不变。[使用与方法](docs/ADROIT_NAVIGATION.md) · [结果、截图及答辩提纲](docs/presentation/adroit_navigation/README.md)。
+>
+> 历史 XYZ F1（已停止作为新方案，源码保留）：平台、整桌采样和独立空手物理演示曾完成，264 项软件测试通过。[历史实现](docs/WHOLE_TABLE_F1.md) · [历史证据](docs/presentation/whole_table/F1_RESULTS.md) · [旧任务书与新方向说明](docs/WHOLE_TABLE_TASKBOOK.md)。
 >
 > 工作区扩展 v6（2026-10-06）：**Qt 支持分别设置初始杯位置和目标位置。** 初始 X/Y 各 ±75 mm，目标 X ±75 mm、Y ±90 mm、Z 140–200 mm；初始平面面积是 v5 的 4.17 倍。两个页签均支持手动坐标或跟随种子，仍复用原学习权重。默认运行 `bash scripts/169_launch_random_tabletop.sh`。[新范围和操作](docs/RANDOM_TABLETOP_V6.md) · [截图与答辩资料](docs/presentation/random_tabletop_v6/README.md)。
 >

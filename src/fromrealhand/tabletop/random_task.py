@@ -42,7 +42,8 @@ class RandomTask:
         self.reference.env.close()
 
     def run(self, seed, output, goal=None, count=None, stop_skill='transport', callback=None,
-            cancelled=None, realtime=False, screenshots=False, cup_xy=None):
+            cancelled=None, realtime=False, screenshots=False, cup_xy=None,
+            scene_adapter=None, completion=None):
         import transforms3d
         from hierarchy_common import write
         output = Path(output); output.mkdir(parents=True, exist_ok=False)
@@ -65,6 +66,12 @@ class RandomTask:
             env, mesh, scene = create(self.reference.env, self.pieces[0]['initial_snapshot'], seed,
                 self.entry['dt'], installation,
                 [0.,0.,profile['clearance']] if profile['clearance'] else None, layout=layout)
+            source_poses = self.poses
+            if scene_adapter is not None:
+                source_poses = scene_adapter(env, mesh, scene, source_poses)
+                goal = np.asarray(layout['goal_world_m'])
+                profile['goal_world_m'] = goal.tolist()
+                write(output/'layout.json',layout)
             sim, m, d = env.sim, env.sim.model, env.sim.data
             mug = m.body_name2id('mug_0')
             # The only object pose supplied to the motor policy is this initial measurement.
@@ -73,14 +80,16 @@ class RandomTask:
             write(output/'scene.json', scene)
             base = np.eye(4); b = m.body_name2id('forearm')
             base[:3,3] = m.body_pos[b]; base[:3,:3] = transforms3d.quaternions.quat2mat(m.body_quat[b])
-            adapter, _, preflight = prepare_reference(self.actions, self.qpos, self.poses, initial, base,
+            adapter, _, preflight = prepare_reference(self.actions, self.qpos, source_poses, initial, base,
                 dict(joint_range=m.jnt_range[:30], gain=m.actuator_gainprm[:,0], bias=m.actuator_biasprm,
                      action_range=env.rng, reference_base=env.reference_base), self.config, self.entry['dt'],
                 profile, self.entry['segments'], bounds[stop_skill][1])
             write(output/'preflight.json', preflight)
             write(output/'input.json',dict(initial_known_pose=initial.tolist(),goal_world_m=goal.tolist(),
                 checkpoint=self.checkpoint,checkpoint_sha256=hashlib.sha256(Path(self.checkpoint).read_bytes()).hexdigest(),
-                continuous_object_pose_for_action=False,initial_hand_repositioned=False))
+                continuous_object_pose_for_action=False,
+                initial_hand_repositioned=bool(scene.get('initial_hand_repositioned',False)),
+                initialization_frame_translation_m=scene.get('local_frame_translation_m',[0,0,0])))
             controller = ContactTracker(adapter, self.local, kp=0., root_gain=profile['root_gain'], finger_gain=0.)
             if callback or screenshots:
                 from fromrealhand.desktop.rendering import stream_context
@@ -187,6 +196,8 @@ class RandomTask:
                 completed.append(phase); events.append(dict(phase=phase,steps=len(rows),confirmation_steps=streak))
                 draw(q,action,phase+'.png' if screenshots else None)
                 if phase==stop_skill: break
+            if completion is not None:
+                report['continuation'] = completion(env, controller, rows, initial, goal)
             report.update(status='success',reason='random_task_completed')
         except Exception as error:
             report.update(status='stopped',reason=str(error),error_type=type(error).__name__)
@@ -197,6 +208,9 @@ class RandomTask:
                 learned_action_calls=self.learner.calls-old_calls,clipped_action_calls=self.learner.clipped_calls-old_clips,
                 state_writes_during_execution=0,object_forces_applied=False,pose_input='initial_known_pose_only',
                 live_truth_usage='stage termination, safety, evaluation and display; never motor action features')
+            if completion is not None:
+                report['pose_input']='local policy: initial known pose; continuation: see separate receipt'
+                report['live_truth_usage']='local policy safety/evaluation; continuation separately audited'
             write(output/'report.json',report); write(output/'trace.json',rows)
             if callback: callback('result',dict(report=report))
             if context:
