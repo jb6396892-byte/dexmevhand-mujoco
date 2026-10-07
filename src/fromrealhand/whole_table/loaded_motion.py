@@ -49,10 +49,11 @@ class LoadedMotion(MotionBridge):
         return row
 
 
-def carry(env,held_action,cup_goal,config,on_step=None):
+def carry(env,held_action,cup_goal,config,on_step=None,cancelled=None):
     # Let the local lift finish dynamically before handing control to the transit servo.
     settle=[]
     def audit():
+        if cancelled and cancelled():raise RuntimeError('user_stop')
         q=supported(env)
         if q['scene_penetration_m']>.001 or q['non_target_contacts']:
             raise NavigationRejected('carry_handoff_physics_violation')
@@ -65,7 +66,7 @@ def carry(env,held_action,cup_goal,config,on_step=None):
     initial=env.sim.data.body_xpos[mug].copy()
     target=bridge.position()+np.asarray(cup_goal)-initial
     # Long-distance carrying is deliberately slower than empty-hand transit.
-    bridge.config=dict(config,max_velocity_m_s=[.04,.04,.03],max_acceleration_m_s2=[.06,.06,.05],
+    bridge.config=dict(config,max_velocity_m_s=(np.array([.04,.04,.03])*config.get('carry_speed_scale',1.)).tolist(),max_acceleration_m_s2=[.06,.06,.05],
                        max_jerk_m_s3=[.2,.2,.15])
     start_conflicts=margin_conflicts(bridge,bridge.position(),config['clearance_m'])
     goal_conflicts=margin_conflicts(bridge,target,config['clearance_m'])
@@ -83,6 +84,7 @@ def carry(env,held_action,cup_goal,config,on_step=None):
         result=navigate(bridge,target,on_step)
         hold=[]
         for i in range(int(round(1./bridge.config['timestep_s']))):
+            if cancelled and cancelled():raise RuntimeError('user_stop')
             bridge.step(bridge.target);q=bridge.contacts()
             hold.append(q['payload_valid'] and supported(env)['supported'])
             if not q['payload_valid'] or q['hand_environment_contacts']:

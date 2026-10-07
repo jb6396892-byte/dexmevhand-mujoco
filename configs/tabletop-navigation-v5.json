@@ -1,0 +1,19 @@
+{
+  "base_config": "adroit-navigation-v3.json",
+  "version": "tabletop-navigation-v5-entry380",
+  "home_m": [-0.50, -0.60, 0.40],
+  "workspace_min_m": [-0.75, -0.90, 0.06],
+  "workspace_max_m": [0.75, 0.65, 0.70],
+  "cup_xy_min_m": [-0.38, -0.35],
+  "cup_xy_max_m": [0.38, 0.34],
+  "goal_min_m": [-0.35, -0.32, 0.18],
+  "goal_max_m": [0.35, 0.32, 0.30],
+  "distractor_count_range": [2, 4],
+  "speed_scale": 1.0,
+  "planning_clearance_m": 0.025,
+  "candidate_videos": ["first", "second"],
+  "entry_frames": [0, 420, 380],
+  "grasp_yaws_deg": [0, 180, 90, -90],
+  "planning_protocol": "isolated full-physics previews; one selected execution; no live retry reset",
+  "selection_note": "Retain full and near entry, then test the earlier collision-free preshape for rotated grasps. Physical gates unchanged."
+}

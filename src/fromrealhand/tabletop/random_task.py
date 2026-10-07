@@ -44,7 +44,8 @@ class RandomTask:
 
     def run(self, seed, output, goal=None, count=None, stop_skill='transport', callback=None,
             cancelled=None, realtime=False, screenshots=False, cup_xy=None,
-            scene_adapter=None, completion=None, scene_fixtures=(), scene_layout=None):
+            scene_adapter=None, completion=None, scene_fixtures=(), scene_layout=None, step_callback=None,
+            start_reference_step=0):
         import transforms3d
         from hierarchy_common import write
         output = Path(output); output.mkdir(parents=True, exist_ok=False)
@@ -61,6 +62,8 @@ class RandomTask:
         goal = np.asarray(layout['goal_world_m'])
         bounds = {s['skill']:(s['start'],s['stop']) for s in self.entry['segments']}
         if stop_skill not in bounds: raise ValueError('Unknown requested skill')
+        if type(start_reference_step) is not int or not bounds['reach'][0]<=start_reference_step<bounds['reach'][1]:
+            raise ValueError('Reference entry must be inside the reach phase')
         try:
             profile = dict(self.profile, goal_world_m=goal.tolist())
             if self.video=='first': profile['installation_y']=.04
@@ -173,7 +176,8 @@ class RandomTask:
                     equilibrium=(d.qfrc_bias[:6]-m.actuator_biasprm[:6,0]-m.actuator_biasprm[:6,1]*q)/m.actuator_gainprm[:6,0]
                     controller.carry['action'][:6]=(equilibrium-env.mid[:6])/env.rng[:6]
                 required=max(segment['confirmation_steps'],50 if phase=='grasp' else 0)
-                indices=list(range(segment['start'],segment['stop']))+[segment['stop']-1]*profile['hold_steps']
+                effective_start=max(segment['start'],start_reference_step)
+                indices=list(range(effective_start,segment['stop']))+[segment['stop']-1]*profile['hold_steps']
                 for j,index in enumerate(indices):
                     audit()
                     predicted_pose=initial.copy()
@@ -188,12 +192,13 @@ class RandomTask:
                     controller.last_action=action.copy()
                     env.step(action,audit)
                     q=metrics(); rows.append(q); streak=streak+1 if success(q) else 0
+                    if step_callback:step_callback(env,q,action)
                     if phase in ('lift','transport'):
                         lost=0 if supported(q) else lost+1
                         if lost>=15: raise RuntimeError('persistent_support_loss')
                     if callback and time.monotonic()-last_draw>1/15: draw(q,action)
                     if realtime: time.sleep(self.entry['dt'])
-                    if j>=segment['stop']-segment['start']-1 and streak>=required: break
+                    if j>=segment['stop']-effective_start-1 and streak>=required: break
                 if streak<required: raise RuntimeError('stage_not_confirmed:'+phase)
                 completed.append(phase); events.append(dict(phase=phase,steps=len(rows),confirmation_steps=streak))
                 draw(q,action,phase+'.png' if screenshots else None)
@@ -210,6 +215,7 @@ class RandomTask:
         finally:
             report.update(passed=report['status']=='success',video=self.video,seed=seed,steps=len(rows),phase=phase,
                 completed=completed,events=events,final=rows[-1] if rows else None,max_penetration_m=peak,
+                start_reference_step=start_reference_step,
                 wall_s=time.monotonic()-started,layout=layout,checkpoint=self.checkpoint,
                 learned_action_calls=self.learner.calls-old_calls,clipped_action_calls=self.learner.clipped_calls-old_clips,
                 state_writes_during_execution=0,object_forces_applied=False,pose_input='initial_known_pose_only',

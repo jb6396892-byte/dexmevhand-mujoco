@@ -14,16 +14,20 @@ p.add_argument('--allow-unvalidated-tabletop',action='store_true')
 p.add_argument('--offline-layout-screenshot',type=Path)
 p.add_argument('--checkpoint',type=Path)
 p.add_argument('--random-mode',action='store_true')
+p.add_argument('--navigation-mode',action='store_true')
 p.add_argument('--random-protocol',type=Path)
 a=p.parse_args()
 if a.offline_layout_screenshot and a.allow_unvalidated_tabletop:
     p.error('Offline layout capture must not enable execution')
 app=QApplication(sys.argv[:1]); app.setStyle('Fusion')
 window_type=TabletopWindow
-if a.random_mode:
+if a.navigation_mode:
+    from fromrealhand.desktop.navigation_window import NavigationWindow
+    window_type=NavigationWindow
+elif a.random_mode:
     from fromrealhand.desktop.random_window import RandomTabletopWindow
     window_type=RandomTabletopWindow
-kwargs=dict(protocol=a.random_protocol) if a.random_mode else {}
+kwargs=dict(protocol=a.random_protocol) if a.random_mode or a.navigation_mode else {}
 window=window_type(a.root,a.visual_root,a.allow_unvalidated_tabletop,a.checkpoint,**kwargs); window.show()
 if a.offline_layout_screenshot:
     window.load_offline_evidence()

@@ -21,6 +21,10 @@ p.add_argument('--cancel-step',type=int)
 p.add_argument('--locked',action='store_true')
 p.add_argument('--checkpoint',type=Path)
 p.add_argument('--random-mode',action='store_true')
+p.add_argument('--navigation-mode',action='store_true')
+p.add_argument('--selection',choices=['auto','fixed'],default='auto')
+p.add_argument('--speed',type=float,default=1.)
+p.add_argument('--clearance',type=float,default=25.)
 p.add_argument('--target-world',type=float,nargs=3)
 p.add_argument('--count',type=int)
 p.add_argument('--cup-xy',type=float,nargs=2)
@@ -28,13 +32,16 @@ p.add_argument('--protocol',type=Path)
 a=p.parse_args(); a.output.mkdir(parents=True,exist_ok=False)
 app=QApplication([]); app.setStyle('Fusion')
 window_type=TabletopWindow
-if a.random_mode:
+if a.navigation_mode:
+    from fromrealhand.desktop.navigation_window import NavigationWindow
+    window_type=NavigationWindow
+elif a.random_mode:
     from fromrealhand.desktop.random_window import RandomTabletopWindow
     window_type=RandomTabletopWindow
-kwargs=dict(protocol=a.protocol) if a.random_mode else {}
+kwargs=dict(protocol=a.protocol) if a.random_mode or a.navigation_mode else {}
 w=window_type('/media/smgbro/shared/lora','/media/smgbro/shared/visual_grasp',not a.locked,a.checkpoint,**kwargs)
 w.scene.setCurrentIndex(0 if a.scene=='first' else 1); w.seed.setValue(a.seed)
-if a.random_mode:
+if a.random_mode or a.navigation_mode:
     if a.target_world:
         w.target_mode.setCurrentIndex(1)
         for spin,value in zip(w.targets,a.target_world): spin.setValue(value*1000)
@@ -42,6 +49,8 @@ if a.random_mode:
     if a.cup_xy:
         w.cup_mode.setCurrentIndex(1)
         for spin,value in zip(w.cup_inputs,a.cup_xy): spin.setValue(value*1000)
+if a.navigation_mode:
+    w.grasp_mode.setCurrentIndex(w.grasp_mode.findData(a.selection));w.speed.setValue(a.speed);w.clearance.setValue(a.clearance)
 w.instruction.setPlainText(a.instruction or dict(reach='接近杯子',grasp='握住杯子',lift='抓起杯子',transport='把杯子搬到目标位置')[a.goal])
 w.show(); state=dict(heartbeat=time.monotonic(),max_gap_s=0.,frames=set(),messages=[],cancelled_at=None,done=False)
 original=w.message
@@ -71,7 +80,7 @@ def finish(report):
     def save():
         if not w.overlay.image.isNull(): w.views.setCurrentWidget(w.overlay)
         w.info_tabs.setCurrentWidget(w.parameters)
-        if a.random_mode:
+        if a.random_mode or a.navigation_mode:
             w.sidebar_scroll.verticalScrollBar().setValue(0)
             w.sidebar_scroll.horizontalScrollBar().setValue(0)
         app.processEvents()
@@ -82,17 +91,22 @@ def finish(report):
             try: os.kill(pid,0); alive.append(pid)
             except ProcessLookupError: pass
         result=dict(report=report,scene=a.scene,seed=a.seed,goal=a.goal,instruction=w.instruction.toPlainText(),
-            random_mode=a.random_mode,requested_target=a.target_world,requested_count=a.count,requested_cup_xy=a.cup_xy,
+            random_mode=a.random_mode,navigation_mode=a.navigation_mode,requested_target=a.target_world,requested_count=a.count,requested_cup_xy=a.cup_xy,
             frames_received=w.frames,unique_frames=len(state['frames']),max_gui_gap_s=state['max_gap_s'],
             surviving_workers=alive,language_run=str(w.output),physics_run=str(w.visual_output),
             gui_responsive=state['max_gap_s']<.5,actual_pipeline=True,pre_recorded_images=False,
             task_passed=report.get('status')=='success',
+            stop_button_visible=w.stop_button.isVisible(),stop_button_geometry=w.stop_button.geometry().getRect(),
+            stop_button_in_window=w.rect().contains(w.stop_button.mapTo(w,w.stop_button.rect().center())),
             cancellation_latency_s=None if state['cancelled_at'] is None else time.monotonic()-state['cancelled_at'])
-        if a.random_mode and report.get('layout'):
+        if (a.random_mode or a.navigation_mode) and report.get('layout'):
             layout=report['layout']
             result['target_matches_ui']=(a.target_world is None or all(abs(x-y)<1e-8 for x,y in zip(layout['goal_world_m'],a.target_world)))
             result['count_matches_ui']=(a.count is None or layout['distractor_count']==a.count)
             result['cup_matches_ui']=(a.cup_xy is None or all(abs(x-y)<1e-8 for x,y in zip(layout['objects'][0]['xy'],a.cup_xy)))
+        if a.navigation_mode and report.get('layout'):
+            result['speed_matches_ui']=abs(report.get('speed_scale',-1)-a.speed)<1e-8
+            result['clearance_matches_ui']=abs(report.get('planning_clearance_m',-1)-a.clearance/1000)<1e-8
         (a.output/'summary.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
         (a.output/'messages.json').write_text(json.dumps(state['messages'],indent=2,ensure_ascii=False)+'\n')
         (a.output/'stderr-ui.log').write_text(w.log.toPlainText())

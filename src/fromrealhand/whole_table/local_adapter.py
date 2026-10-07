@@ -24,6 +24,33 @@ def translate_initial_scene(env, delta, source_poses, scene, translate_object=Tr
     return transformed
 
 
+def yaw_correspondence(poses,pivot,object_rotation,yaw_deg):
+    """Conjugate the pose delta so rotating the hand does not rotate the real cup."""
+    from scipy.spatial.transform import Rotation
+    rotation=Rotation.from_euler('z',yaw_deg,degrees=True).as_matrix()
+    result=np.asarray(poses).copy();pivot=np.asarray(pivot);anchor=np.asarray(object_rotation)
+    result[:,:3,3]=(result[:,:3,3]-pivot)@rotation.T+pivot
+    result[:,:3,:3]=rotation@result[:,:3,:3]@anchor.T@rotation.T@anchor
+    return result,rotation
+
+
+def rotate_initial_grasp(env,poses,yaw_deg,scene):
+    import mujoco_py
+    import transforms3d
+    sim,m,d=env.sim,env.sim.model,env.sim.data
+    cup=m.body_name2id('mug_0');pivot=d.body_xpos[cup].copy()
+    transformed,rotation=yaw_correspondence(poses,pivot,d.body_xmat[cup].reshape(3,3),yaw_deg)
+    hand=m.body_name2id('forearm')
+    m.body_pos[hand]=rotation@(m.body_pos[hand]-pivot)+pivot
+    m.body_quat[hand]=transforms3d.quaternions.mat2quat(rotation@transforms3d.quaternions.quat2mat(m.body_quat[hand]))
+    env.reference_base[:3,3]=rotation@(env.reference_base[:3,3]-pivot)+pivot
+    env.reference_base[:3,:3]=rotation@env.reference_base[:3,:3]
+    state=sim.get_state();control=d.ctrl.copy()
+    mujoco_py.functions.mj_setConst(m,d);sim.set_state(state);d.ctrl[:]=control;sim.forward()
+    scene.update(grasp_yaw_deg=float(yaw_deg),cup_rotated=False,functional_rotated_grasp=True)
+    return transformed
+
+
 class MotionBridge(HandScene):
     """Temporary physical navigation servo around a live local-policy environment."""
     def __init__(self,env,config,site='C_palm0',held_action=None):
