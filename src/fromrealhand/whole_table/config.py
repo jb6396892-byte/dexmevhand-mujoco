@@ -49,10 +49,11 @@ def inspect(config):
                 table_size_xy_m=config['table']['size_xy_m'],
                 mechanism=config['platform']['mechanism'],
                 control_channels=dict(platform_metric=3, local_normalized=30),
-                missing=['gantry_mjcf_and_named_index_mapping', 'whole_table_layout_sampler',
-                         'collision_and_time_parameterized_planner', 'local_policy_frame_adapter',
+                available_separately=['F1 gantry and named mapping', 'F1 whole-table layout sampler'],
+                f1_entrypoint='scripts/177_launch_whole_table_f1.sh',
+                missing=['collision_and_time_parameterized_planner', 'local_policy_frame_adapter',
                          'physical_supervisor_and_qt_integration', 'new_frozen_evaluation'])
 
 
 def create_runtime(config):
-    raise ScaffoldOnlyError('Whole-table runtime is not implemented; only framework inspection is available')
+    raise ScaffoldOnlyError('Whole-table grasp runtime is not implemented; F1 platform demo is a separate entrypoint')

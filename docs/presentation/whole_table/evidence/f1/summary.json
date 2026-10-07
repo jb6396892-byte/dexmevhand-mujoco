@@ -1,0 +1,611 @@
+{
+  "scope": "F1 platform and layout, NOT grasp success",
+  "passed": true,
+  "layouts_passed": 20,
+  "layouts_total": 20,
+  "low_velocity_layouts": 11,
+  "low_velocity_is_additional_diagnostic": true,
+  "grid_passed": 9,
+  "grid_total": 9,
+  "limits_passed": 6,
+  "limits_total": 6,
+  "invalid_targets_rejected": 7,
+  "invalid_targets_total": 7,
+  "corners": [
+    {
+      "cup_xy": [
+        -0.3819304014817046,
+        -0.35459280048498465
+      ],
+      "objects": [
+        {
+          "name": "mug",
+          "world_position_m": [
+            -0.38192813424583844,
+            -0.35459298516383275,
+            0.03187758666676345
+          ],
+          "min_m": [
+            -0.4199954576429792,
+            -0.3950003851375546,
+            0.00043556489919940877
+          ],
+          "max_m": [
+            -0.34494815697215997,
+            -0.3009545831498198,
+            0.06598901813225586
+          ],
+          "linear_speed_m_s": 5.560399029085046e-06,
+          "angular_speed_rad_s": 0.00017548757700423567,
+          "low_velocity": true,
+          "supported": true
+        },
+        {
+          "name": "tomato_soup_can",
+          "world_position_m": [
+            0.24790619703655506,
+            -0.27706001957676196,
+            0.059718762497354076
+          ],
+          "min_m": [
+            0.21184822207454526,
+            -0.31148810979911234,
+            -0.00041844870920865196
+          ],
+          "max_m": [
+            0.2828271292806055,
+            -0.24050962877924348,
+            0.10322547467964549
+          ],
+          "linear_speed_m_s": 0.005411468821019055,
+          "angular_speed_rad_s": 0.08863161095422069,
+          "low_velocity": false,
+          "supported": true
+        },
+        {
+          "name": "banana",
+          "world_position_m": [
+            0.1355447879770199,
+            0.11087183613306807,
+            0.018522951600094508
+          ],
+          "min_m": [
+            0.07621709846703735,
+            0.01976633287158655,
+            0.0002024295422522679
+          ],
+          "max_m": [
+            0.2336885034490523,
+            0.17382391455812374,
+            0.03985714729474611
+          ],
+          "linear_speed_m_s": 0.0002914935032115944,
+          "angular_speed_rad_s": 0.01574936002621766,
+          "low_velocity": true,
+          "supported": true
+        },
+        {
+          "name": "sugar_box",
+          "world_position_m": [
+            0.09647594557254074,
+            -0.12088406987671221,
+            0.09314111707910927
+          ],
+          "min_m": [
+            0.06209679443492392,
+            -0.17106549883305774,
+            -0.0001946638330455469
+          ],
+          "max_m": [
+            0.13007709840753057,
+            -0.06816483692057826,
+            0.177761765771213
+          ],
+          "linear_speed_m_s": 0.006671578175971823,
+          "angular_speed_rad_s": 0.0694273709424239,
+          "low_velocity": false,
+          "supported": true
+        },
+        {
+          "name": "mustard_bottle",
+          "world_position_m": [
+            0.0796910693278826,
+            -0.2762407866796898,
+            0.08462674839146796
+          ],
+          "min_m": [
+            0.03084676660275848,
+            -0.30530121342985905,
+            -0.00019179108413806822
+          ],
+          "max_m": [
+            0.13020059910057827,
+            -0.24281672073330635,
+            0.19313091090079704
+          ],
+          "linear_speed_m_s": 0.005428723274661843,
+          "angular_speed_rad_s": 0.06375763729686515,
+          "low_velocity": false,
+          "supported": true
+        }
+      ],
+      "max_penetration_m": 0.000644785845898989,
+      "low_velocity": false,
+      "passed": true
+    },
+    {
+      "cup_xy": [
+        -0.3819304014817046,
+        0.3413616011390609
+      ],
+      "objects": [
+        {
+          "name": "mug",
+          "world_position_m": [
+            -0.38192733742285473,
+            0.3413646189580168,
+            0.031877393360210005
+          ],
+          "min_m": [
+            -0.41999386757053153,
+            0.3009604834403489,
+            0.00043376325464829224
+          ],
+          "max_m": [
+            -0.344946531424877,
+            0.3950035960671149,
+            0.06599131325672287
+          ],
+          "linear_speed_m_s": 2.2201419538438105e-05,
+          "angular_speed_rad_s": 0.0007003358602801659,
+          "low_velocity": true,
+          "supported": true
+        },
+        {
+          "name": "mustard_bottle",
+          "world_position_m": [
+            0.25751878604648365,
+            0.32405311003665127,
+            0.08455541340066841
+          ],
+          "min_m": [
+            0.20875874923887966,
+            0.29066517181439216,
+            -0.0002647032471324168
+          ],
+          "max_m": [
+            0.307246756081716,
+            0.3527500126590014,
+            0.19306032480967
+          ],
+          "linear_speed_m_s": 0.0075668124083124195,
+          "angular_speed_rad_s": 0.08686340690033365,
+          "low_velocity": false,
+          "supported": true
+        },
+        {
+          "name": "tomato_soup_can",
+          "world_position_m": [
+            -0.1579048536858913,
+            0.15790746711102416,
+            0.05973902188247687
+          ],
+          "min_m": [
+            -0.19298311577240992,
+            0.12128968731415082,
+            -0.00040062035577006355
+          ],
+          "max_m": [
+            -0.12214836190584816,
+            0.19184086988123533,
+            0.10324923686662316
+          ],
+          "linear_speed_m_s": 0.004702014060388002,
+          "angular_speed_rad_s": 0.07818047198372054,
+          "low_velocity": false,
+          "supported": true
+        },
+        {
+          "name": "sugar_box",
+          "world_position_m": [
+            0.3310170310425031,
+            -0.2628807527273605,
+            0.09310373996173973
+          ],
+          "min_m": [
+            0.2833293909320611,
+            -0.30912659698946293,
+            -0.0002339768758494315
+          ],
+          "max_m": [
+            0.3813180806082248,
+            -0.21353888896414547,
+            0.17772188432736058
+          ],
+          "linear_speed_m_s": 0.010495507699392316,
+          "angular_speed_rad_s": 0.11197847674216016,
+          "low_velocity": false,
+          "supported": true
+        },
+        {
+          "name": "banana",
+          "world_position_m": [
+            -0.29533887758388977,
+            -0.0767360605873381,
+            0.01848931504381478
+          ],
+          "min_m": [
+            -0.3476313835014832,
+            -0.1525918284570345,
+            0.00017171135626817616
+          ],
+          "max_m": [
+            -0.21703238469063044,
+            0.028630950223971552,
+            0.03982109900727459
+          ],
+          "linear_speed_m_s": 0.0016054692716286245,
+          "angular_speed_rad_s": 0.015552692126127018,
+          "low_velocity": true,
+          "supported": true
+        }
+      ],
+      "max_penetration_m": 0.0006847029335801578,
+      "low_velocity": false,
+      "passed": true
+    },
+    {
+      "cup_xy": [
+        0.38302239966871954,
+        -0.35459280048498465
+      ],
+      "objects": [
+        {
+          "name": "mug",
+          "world_position_m": [
+            0.383026040118498,
+            -0.35459085547903835,
+            0.03187766383671688
+          ],
+          "min_m": [
+            0.3449607111565553,
+            -0.3949960760187194,
+            0.00043373366233270816
+          ],
+          "max_m": [
+            0.42000810087946294,
+            -0.3009520831027416,
+            0.0659921377409198
+          ],
+          "linear_speed_m_s": 3.2300218746005717e-07,
+          "angular_speed_rad_s": 1.017440316519428e-05,
+          "low_velocity": true,
+          "supported": true
+        },
+        {
+          "name": "sugar_box",
+          "world_position_m": [
+            0.05720333908738153,
+            0.06786242705251584,
+            0.09312009231952638
+          ],
+          "min_m": [
+            0.028714319794126385,
+            0.019988306744904483,
+            -0.00021636009276564117
+          ],
+          "max_m": [
+            0.08351076723025215,
+            0.1179005846149108,
+            0.17774027568457546
+          ],
+          "linear_speed_m_s": 0.010169549020272162,
+          "angular_speed_rad_s": 0.10541640961970615,
+          "low_velocity": false,
+          "supported": true
+        },
+        {
+          "name": "mustard_bottle",
+          "world_position_m": [
+            0.23378173491075485,
+            -0.18687973012258485,
+            0.084632916346552
+          ],
+          "min_m": [
+            0.18561782044840008,
+            -0.23184406774057087,
+            -0.00019090381424660685
+          ],
+          "max_m": [
+            0.27796298020792276,
+            -0.14553546955238805,
+            0.19313821340400988
+          ],
+          "linear_speed_m_s": 0.004250157184060941,
+          "angular_speed_rad_s": 0.04994815453838647,
+          "low_velocity": true,
+          "supported": true
+        },
+        {
+          "name": "banana",
+          "world_position_m": [
+            -0.2796200962085753,
+            -0.05041680474437278,
+            0.01849415112487495
+          ],
+          "min_m": [
+            -0.3571662997397655,
+            -0.12709948968989188,
+            0.00016548142857342532
+          ],
+          "max_m": [
+            -0.23941650572222783,
+            0.051767971626090634,
+            0.03983385651423425
+          ],
+          "linear_speed_m_s": 0.0005413898969331537,
+          "angular_speed_rad_s": 0.023275243591628483,
+          "low_velocity": true,
+          "supported": true
+        },
+        {
+          "name": "tomato_soup_can",
+          "world_position_m": [
+            -0.06718569881940052,
+            0.1761758621611061,
+            0.059718215378083944
+          ],
+          "min_m": [
+            -0.10381624647535889,
+            0.1393019555180795,
+            -0.0004164266809702777
+          ],
+          "max_m": [
+            -0.032705773656211114,
+            0.21044568429219523,
+            0.10322207991561339
+          ],
+          "linear_speed_m_s": 0.005055486127988232,
+          "angular_speed_rad_s": 0.08455554849375688,
+          "low_velocity": false,
+          "supported": true
+        }
+      ],
+      "max_penetration_m": 0.000583689652678824,
+      "low_velocity": false,
+      "passed": true
+    },
+    {
+      "cup_xy": [
+        0.38302239966871954,
+        0.3413616011390609
+      ],
+      "objects": [
+        {
+          "name": "mug",
+          "world_position_m": [
+            0.3830272644624198,
+            0.3413644865637244,
+            0.03187754008311587
+          ],
+          "min_m": [
+            0.3449624960054265,
+            0.30096018185716034,
+            0.00043298794436388843
+          ],
+          "max_m": [
+            0.4200099107245263,
+            0.3950034317562542,
+            0.06599317531118881
+          ],
+          "linear_speed_m_s": 4.160315458253249e-06,
+          "angular_speed_rad_s": 0.0001309821414888486,
+          "low_velocity": true,
+          "supported": true
+        },
+        {
+          "name": "mustard_bottle",
+          "world_position_m": [
+            0.2819489318906585,
+            0.13019756092767495,
+            0.08463020803662477
+          ],
+          "min_m": [
+            0.24857030541173636,
+            0.08065732304514163,
+            -0.00018931255633695965
+          ],
+          "max_m": [
+            0.3100613497943191,
+            0.17973858053847233,
+            0.19313488039935128
+          ],
+          "linear_speed_m_s": 0.004417482005547699,
+          "angular_speed_rad_s": 0.049773126062963365,
+          "low_velocity": true,
+          "supported": true
+        },
+        {
+          "name": "tomato_soup_can",
+          "world_position_m": [
+            0.02496661890489715,
+            0.19663345899226617,
+            0.059918242747127363
+          ],
+          "min_m": [
+            -0.008600708085496091,
+            0.16172786025030647,
+            -0.00021628923170812636
+          ],
+          "max_m": [
+            0.0619721713132311,
+            0.23172384298232046,
+            0.10342185828656847
+          ],
+          "linear_speed_m_s": 0.0032537093870947083,
+          "angular_speed_rad_s": 0.037043829872031246,
+          "low_velocity": true,
+          "supported": true
+        },
+        {
+          "name": "sugar_box",
+          "world_position_m": [
+            0.022221085210362642,
+            0.08599153945430278,
+            0.09323083979469572
+          ],
+          "min_m": [
+            -0.023690492312111056,
+            0.037280447967058414,
+            -0.00010588235323860662
+          ],
+          "max_m": [
+            0.07029429881659416,
+            0.1378597717547721,
+            0.1778514405246815
+          ],
+          "linear_speed_m_s": 0.004582104948424466,
+          "angular_speed_rad_s": 0.031830294315499066,
+          "low_velocity": true,
+          "supported": true
+        },
+        {
+          "name": "banana",
+          "world_position_m": [
+            0.2888903614221269,
+            -0.2848139567012513,
+            0.01855825082326502
+          ],
+          "min_m": [
+            0.24576923073149412,
+            -0.38767623490117786,
+            0.00024106859488813234
+          ],
+          "max_m": [
+            0.3229943048668909,
+            -0.18506124553587824,
+            0.039889821651165724
+          ],
+          "linear_speed_m_s": 0.0005264240260964939,
+          "angular_speed_rad_s": 0.0237447369961253,
+          "low_velocity": true,
+          "supported": true
+        }
+      ],
+      "max_penetration_m": 0.000597747742255872,
+      "low_velocity": true,
+      "passed": true
+    }
+  ],
+  "braking": {
+    "passed": true,
+    "target_m": [
+      0.2949549954848467,
+      0.21068213963217752,
+      0.38427285586023835
+    ],
+    "duration_s": 3.0,
+    "final_joint_error_m": 1.5645768119965098e-07,
+    "grasp_site_error_m": 5.716306664362534e-05,
+    "peak_tracking_error_m": 0.007364838990226358,
+    "max_velocity_m_s": [
+      0.12019209671592783,
+      0.08575745196311327,
+      0.03429009243011725
+    ],
+    "max_acceleration_m_s2": [
+      0.09059155925295648,
+      0.06447412711371947,
+      0.02576884460044937
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "final_speed_m_s": [
+      6.325841406068825e-07,
+      1.4380742313904566e-08,
+      9.179017224135317e-11
+    ]
+  },
+  "reset_move": {
+    "passed": true,
+    "target_m": [
+      0.0,
+      0.0,
+      0.3
+    ],
+    "duration_s": 4.398437499870964,
+    "final_joint_error_m": 4.686212529136924e-11,
+    "grasp_site_error_m": 5.716427492132359e-05,
+    "peak_tracking_error_m": 0.004901592084323336,
+    "max_velocity_m_s": [
+      1.912871440551737e-09,
+      6.040030385055824e-09,
+      0.08005164217802598
+    ],
+    "max_acceleration_m_s2": [
+      7.004362779399528e-08,
+      1.0658661740591887e-06,
+      0.07267744476873617
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614
+  },
+  "screenshot_motion": {
+    "passed": true,
+    "target_m": [
+      0.38,
+      -0.35,
+      0.35
+    ],
+    "duration_s": 6.9375000001236025,
+    "final_joint_error_m": 9.439060333349403e-08,
+    "grasp_site_error_m": 5.7164507188139045e-05,
+    "peak_tracking_error_m": 0.007361773679152583,
+    "max_velocity_m_s": [
+      0.12017097143948134,
+      0.11058329225144313,
+      0.01579283733695151
+    ],
+    "max_acceleration_m_s2": [
+      0.06245606136416716,
+      0.05742329077737651,
+      0.008201916247507768
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.0005671638549211914
+  },
+  "screenshots": {
+    "scene": {
+      "pixel_std": 44.35915640823525,
+      "width": 1200,
+      "height": 900
+    },
+    "corner": {
+      "pixel_std": 43.80661674622363,
+      "width": 1200,
+      "height": 900
+    }
+  },
+  "max_position_error_m": 8.553506036790282e-08,
+  "max_site_error_m": 5.716872424451593e-05,
+  "max_penetration_m": 0.0007119420878804405,
+  "no_execution_pose_writes": true,
+  "local_hand": "relative joint equalities, no grasp policy",
+  "training_started": false,
+  "grasp_success_rate": null,
+  "sources": {
+    "src/fromrealhand/whole_table/motion.py": "e523871ac48bc813fd0c9466427c61633322232a7791d4f7e3a7ca0342039ee1",
+    "src/fromrealhand/whole_table/__init__.py": "655e8a2377c2186709f5ec12654115af365075d50d172f046167a78130728abd",
+    "src/fromrealhand/whole_table/contracts.py": "073db567e3de3d125694509a0e47808b43a9caa9d807970d167ddad322b61777",
+    "src/fromrealhand/whole_table/interfaces.py": "26f85c8d8414e10f3a67feb1c3b6c6794577845ddafc4754120f23f460bb9136",
+    "src/fromrealhand/whole_table/config.py": "e10a811d0c36466455ca5455fd7f82acee1cb361e409f19ef86d060fc366e0fc",
+    "src/fromrealhand/whole_table/platform_checks.py": "44742a5074f370f328e3ec441e7423ac42b80e5d9d48344ab7c4cd48222626fd",
+    "src/fromrealhand/whole_table/layout.py": "ffb74ad18c9d66115e0cef406f95f5a90f2b90c5d3a413bfb547b750535875d0",
+    "src/fromrealhand/whole_table/scene.py": "207581df03838ce7975c8949de24bd2c908f920ce0711331120a2ea36e26148b",
+    "configs/whole-table-f1.json": "ec8ec0f44fd331fd86dbe578e329da3c6bec3c5853e966a7861dccb9492e7536",
+    "scripts/175_check_whole_table_f1.py": "87acb403fe139515c5962b66a1cf3c916be5266549beb24ec2c7fc1ed2194f81"
+  }
+}

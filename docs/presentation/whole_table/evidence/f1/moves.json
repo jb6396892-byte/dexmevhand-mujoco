@@ -1,0 +1,404 @@
+[
+  {
+    "passed": true,
+    "target_m": [
+      -0.4,
+      -0.375,
+      0.3
+    ],
+    "duration_s": 7.249999999867261,
+    "final_joint_error_m": 8.553506036790282e-08,
+    "grasp_site_error_m": 5.7167619857230346e-05,
+    "peak_tracking_error_m": 0.007359649979930882,
+    "max_velocity_m_s": [
+      0.12015430085838981,
+      0.1125523486125126,
+      7.580199878411293e-08
+    ],
+    "max_acceleration_m_s2": [
+      0.059314678212979866,
+      0.0555194678244053,
+      6.663804239082083e-06
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "grid"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      -0.4,
+      0.0,
+      0.3
+    ],
+    "duration_s": 6.85937499930605,
+    "final_joint_error_m": 5.483477359566921e-11,
+    "grasp_site_error_m": 5.716726113985153e-05,
+    "peak_tracking_error_m": 0.007348108507513468,
+    "max_velocity_m_s": [
+      3.4493853079884633e-07,
+      0.12006351876342528,
+      8.360843505033024e-10
+    ],
+    "max_acceleration_m_s2": [
+      9.917473857672793e-06,
+      0.06317869796297253,
+      4.287025490157248e-08
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "grid"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      -0.4,
+      0.375,
+      0.3
+    ],
+    "duration_s": 6.859375000856794,
+    "final_joint_error_m": 5.4690196815698755e-11,
+    "grasp_site_error_m": 5.716820713917074e-05,
+    "peak_tracking_error_m": 0.007348108510334073,
+    "max_velocity_m_s": [
+      2.7354522774211308e-09,
+      0.12006351879737104,
+      9.220578091327743e-10
+    ],
+    "max_acceleration_m_s2": [
+      4.694229995377662e-08,
+      0.06317869743374453,
+      4.5955989236290407e-08
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "grid"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      0.0,
+      -0.375,
+      0.3
+    ],
+    "duration_s": 12.718749999145466,
+    "final_joint_error_m": 1.3184144256332519e-08,
+    "grasp_site_error_m": 5.716872424451593e-05,
+    "peak_tracking_error_m": 0.0073420278997422305,
+    "max_velocity_m_s": [
+      0.06402339911426976,
+      0.12001589367323787,
+      1.0476858166852973e-10
+    ],
+    "max_acceleration_m_s2": [
+      0.016834786803551955,
+      0.031559242449557316,
+      9.496055497493217e-09
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "grid"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      0.0,
+      0.0,
+      0.3
+    ],
+    "duration_s": 6.859374999688992,
+    "final_joint_error_m": 5.455373284520069e-11,
+    "grasp_site_error_m": 5.716745917892637e-05,
+    "peak_tracking_error_m": 0.0073481085119799505,
+    "max_velocity_m_s": [
+      5.866272837695456e-08,
+      0.1200635187872207,
+      9.55665992998605e-10
+    ],
+    "max_acceleration_m_s2": [
+      1.6555618728466268e-06,
+      0.06317869744304545,
+      5.1628020969474164e-08
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "grid"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      0.0,
+      0.375,
+      0.3
+    ],
+    "duration_s": 6.859375000852403,
+    "final_joint_error_m": 5.4692028683689387e-11,
+    "grasp_site_error_m": 5.716457679922936e-05,
+    "peak_tracking_error_m": 0.007348108509963314,
+    "max_velocity_m_s": [
+      2.827804723592157e-09,
+      0.12006351875891934,
+      9.539045180285656e-10
+    ],
+    "max_acceleration_m_s2": [
+      4.820413283682787e-08,
+      0.06317869743426159,
+      5.150295123712567e-08
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "grid"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      0.4,
+      -0.375,
+      0.3
+    ],
+    "duration_s": 12.718749999145437,
+    "final_joint_error_m": 1.3072085913723441e-08,
+    "grasp_site_error_m": 5.716457331213051e-05,
+    "peak_tracking_error_m": 0.0073420280167862915,
+    "max_velocity_m_s": [
+      0.06402339903073086,
+      0.12001589900680981,
+      1.7647766261531968e-10
+    ],
+    "max_acceleration_m_s2": [
+      0.016834786803439028,
+      0.031559242449703886,
+      1.8101744103660167e-08
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "grid"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      0.4,
+      0.0,
+      0.3
+    ],
+    "duration_s": 6.859374999693917,
+    "final_joint_error_m": 5.4679904090352055e-11,
+    "grasp_site_error_m": 5.716459402086024e-05,
+    "peak_tracking_error_m": 0.007348108507382128,
+    "max_velocity_m_s": [
+      5.818700391965602e-08,
+      0.12006351878424733,
+      9.515361173884985e-10
+    ],
+    "max_acceleration_m_s2": [
+      1.5820409848483745e-06,
+      0.06317869744519186,
+      4.960365629358421e-08
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "grid"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      0.4,
+      0.375,
+      0.3
+    ],
+    "duration_s": 6.859375000854374,
+    "final_joint_error_m": 5.4677762317822953e-11,
+    "grasp_site_error_m": 5.716459372720503e-05,
+    "peak_tracking_error_m": 0.007348108507403611,
+    "max_velocity_m_s": [
+      2.827736122285472e-09,
+      0.12006351878399063,
+      9.535681419013545e-10
+    ],
+    "max_acceleration_m_s2": [
+      6.971263698462248e-08,
+      0.06317869743327677,
+      4.950248211343933e-08
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "grid"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      -0.595,
+      0.0,
+      0.3
+    ],
+    "duration_s": 16.546875000044643,
+    "final_joint_error_m": 1.4030160810918346e-08,
+    "grasp_site_error_m": 5.716476670498943e-05,
+    "peak_tracking_error_m": 0.0073431736014094445,
+    "max_velocity_m_s": [
+      0.12002492604421319,
+      0.04522953582768176,
+      4.1271965683243296e-10
+    ],
+    "max_acceleration_m_s2": [
+      0.02378419651722393,
+      0.008964269826864683,
+      4.046014367986572e-08
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "limit",
+    "axis": 0,
+    "side": "min"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      0.595,
+      0.0,
+      0.3
+    ],
+    "duration_s": 19.59375021922126,
+    "final_joint_error_m": 9.806101153309044e-09,
+    "grasp_site_error_m": 5.716454113984539e-05,
+    "peak_tracking_error_m": 0.007342218660174187,
+    "max_velocity_m_s": [
+      0.12001742589082352,
+      6.507271428638648e-10,
+      1.0963307635410247e-10
+    ],
+    "max_acceleration_m_s2": [
+      0.019883923825551396,
+      2.755024199304002e-08,
+      1.2264376181292391e-08
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "limit",
+    "axis": 0,
+    "side": "max"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      0.0,
+      -0.595,
+      0.3
+    ],
+    "duration_s": 10.29687515322033,
+    "final_joint_error_m": 3.908686113303589e-08,
+    "grasp_site_error_m": 5.7165138974752644e-05,
+    "peak_tracking_error_m": 0.007348876712528429,
+    "max_velocity_m_s": [
+      0.12006971410149424,
+      0.12002525479974106,
+      6.503522820811852e-10
+    ],
+    "max_acceleration_m_s2": [
+      0.03980808355443932,
+      0.039787879140485025,
+      3.910188439704143e-08
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "limit",
+    "axis": 1,
+    "side": "min"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      0.0,
+      0.595,
+      0.3
+    ],
+    "duration_s": 19.593749999592063,
+    "final_joint_error_m": 8.565814724192933e-12,
+    "grasp_site_error_m": 5.716455003693526e-05,
+    "peak_tracking_error_m": 0.007340805646978376,
+    "max_velocity_m_s": [
+      1.690537109111427e-07,
+      0.12000631699406623,
+      9.089330029434492e-11
+    ],
+    "max_acceleration_m_s2": [
+      4.673372073869078e-06,
+      0.019886577925403822,
+      7.020002357194244e-09
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "limit",
+    "axis": 1,
+    "side": "max"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      0.0,
+      0.0,
+      0.005
+    ],
+    "duration_s": 10.29687499986616,
+    "final_joint_error_m": 2.8209030413508455e-11,
+    "grasp_site_error_m": 5.716443286719637e-05,
+    "peak_tracking_error_m": 0.007343222329949828,
+    "max_velocity_m_s": [
+      1.5592812728033812e-09,
+      0.12002525875150508,
+      0.05950097846761301
+    ],
+    "max_acceleration_m_s2": [
+      5.615467198316553e-08,
+      0.039787880453395985,
+      0.019731460763544817
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "limit",
+    "axis": 2,
+    "side": "min"
+  },
+  {
+    "passed": true,
+    "target_m": [
+      0.0,
+      0.0,
+      0.445
+    ],
+    "duration_s": 11.312499999882117,
+    "final_joint_error_m": 5.50554046796492e-12,
+    "grasp_site_error_m": 5.716436342826324e-05,
+    "peak_tracking_error_m": 0.004894233380414809,
+    "max_velocity_m_s": [
+      1.8422269217656345e-10,
+      4.870615309770066e-09,
+      0.08000566238067719
+    ],
+    "max_acceleration_m_s2": [
+      3.2475675693870827e-09,
+      9.97161000705583e-08,
+      0.02391766512207738
+    ],
+    "joint_violation_m": 0.0,
+    "robot_environment_collision_steps": 0,
+    "max_penetration_m": 0.00018869610459463614,
+    "case": "limit",
+    "axis": 2,
+    "side": "max"
+  }
+]

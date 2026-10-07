@@ -1,4 +1,4 @@
-> 整桌项目 F0（2026-10-06）：**XYZ 移动平台 + Adroit 框架与任务书已建立，尚未实现整桌物理抓取。** 用户确认先搬运并保持，放下另做。保留 v6 默认入口，新增独立接口、草案配置、只读检查命令及七项测试；全部 259 项软件测试通过。未新建平台模型、未安装规划依赖、未训练。[分阶段任务书](docs/WHOLE_TABLE_TASKBOOK.md) · [开源模型与论文](docs/WHOLE_TABLE_REFERENCES.md) · [答辩资料框架](docs/presentation/whole_table/README.md)。检查：`python3 scripts/174_inspect_whole_table.py`；下一步待用户启动 F1。
+> 整桌项目 F1（2026-10-07）：**XYZ 移动平台、整桌物品采样、名称索引及独立物理演示已实现；尚未接入抓取策略。** 保留 v6 默认入口和旧模型，264 项软件测试通过，未训练。原生窗口：`bash scripts/177_launch_whole_table_f1.sh`。平台运动与物体支撑验收、附加静置微抖问题分别报告，不把空手到位当成抓取成功。[F1 操作说明](docs/WHOLE_TABLE_F1.md) · [结果与截图](docs/presentation/whole_table/F1_RESULTS.md) · [分阶段任务书](docs/WHOLE_TABLE_TASKBOOK.md) · [开源参考](docs/WHOLE_TABLE_REFERENCES.md)。下一步 F2 局部策略适配，本轮未开始。
 >
 > 工作区扩展 v6（2026-10-06）：**Qt 支持分别设置初始杯位置和目标位置。** 初始 X/Y 各 ±75 mm，目标 X ±75 mm、Y ±90 mm、Z 140–200 mm；初始平面面积是 v5 的 4.17 倍。两个页签均支持手动坐标或跟随种子，仍复用原学习权重。默认运行 `bash scripts/169_launch_random_tabletop.sh`。[新范围和操作](docs/RANDOM_TABLETOP_V6.md) · [截图与答辩资料](docs/presentation/random_tabletop_v6/README.md)。
 >
