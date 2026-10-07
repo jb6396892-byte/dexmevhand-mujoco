@@ -31,7 +31,8 @@ for video,run in [('first','transit-first-c'),('second','transit-second-a')]:
 for src,name in [('navigation-final/detour.png','empty-hand-detour.png'),
                  ('delivery-first/carry.png','first-carry.png'),
                  ('delivery-second/carry.png','second-carry-not-accepted.png')]:
-    shutil.copy2(a.runs/src,a.output/name)
+    shutil.copyfile(a.runs/src,a.output/name)
+    (a.output/name).chmod(0o644)
 paths=list((ROOT/'src/fromrealhand/whole_table').glob('*.py'))
 paths += [ROOT/'src/fromrealhand/tabletop/random_task.py',ROOT/'configs/adroit-navigation-v1.json']
 paths += [ROOT/'scripts'/name for name in ('178_check_adroit_navigation.py','179_view_adroit_navigation.py',

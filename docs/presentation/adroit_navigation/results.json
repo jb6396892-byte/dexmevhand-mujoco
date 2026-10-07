@@ -912,6 +912,6 @@
     "scripts/179_view_adroit_navigation.py": "385010dae9bfdc6d837061396d8780fa276f181e33326ac21a30a26ab6fec143",
     "scripts/180_launch_adroit_navigation.sh": "e466c50c32afd9ea75a1272925baf01ab685418231c00a74bbe5f80a54e4e402",
     "scripts/181_check_free_hand_local.py": "cf590007f9e4dc4227e0e2e7dee24d74c94c74d32c171aacddaebde5d3f74147",
-    "scripts/182_publish_adroit_navigation.py": "6a410c645926425157d678f3d2b388d85629666e2cd1e90339d8414ba0373b32"
+    "scripts/182_publish_adroit_navigation.py": "f1bda867527fcd40c6f0e7a84e2ee637f96e99e1b88fa7347bf096bc84b89f0d"
   }
 }
