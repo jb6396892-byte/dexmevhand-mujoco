@@ -62,7 +62,8 @@ class MotionBridge(HandScene):
             bid=m.body_name2id(name+'_0')
             self.object_vertices[name]=np.concatenate([mesh_local(m,g)[0] for g in range(m.ngeom)
                 if m.geom_bodyid[g]==bid and m.geom_type[g]==7])
-        self.fixture_gids=[m.geom_name2id('table_collision')]
+        self.fixture_gids=[m.geom_name2id('table_collision')]+[m.geom_name2id(n) for n in m.geom_names
+            if n and n.startswith('nav_obstacle_')]
         self.target=self.position();self.steps=0
         self.hand_envelope=self.hand_shapes()-self.position()
 

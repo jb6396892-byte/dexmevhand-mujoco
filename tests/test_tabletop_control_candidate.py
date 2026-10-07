@@ -118,6 +118,32 @@ class VisualControlContracts(unittest.TestCase):
         np.testing.assert_array_equal(sim.data.ctrl,np.full(30,5.))
         self.assertEqual(audits,[1,2,3,4,5])
 
+    def test_handoff_preserves_starting_force_and_ends_at_policy(self):
+        env,sim=self.motor_env()
+        sim.model.actuator_gainprm=np.tile([2.,0.,0.],(30,1))
+        sim.model.actuator_biasprm=np.zeros((30,3))
+        sim.data.qpos=np.zeros(30);sim.data.qvel=np.zeros(30);sim.data.time=0.
+        controls=[]
+        def step():
+            controls.append(sim.data.ctrl.copy());sim.data.time+=.002
+        sim.step=step
+        env.motor_handoff=dict(start=0.,duration=.004,gain=np.full(30,4.),
+            bias=np.zeros((30,3)),ctrl=np.full(30,2.))
+        env.step(np.full(30,.5),lambda:None)
+        np.testing.assert_allclose(controls[0]*2.,np.full(30,8.))
+        np.testing.assert_allclose(controls[-1],np.full(30,5.))
+        self.assertIsNone(env.motor_handoff)
+
+    def test_handoff_authority_failure_prevents_integration(self):
+        env,sim=self.motor_env()
+        sim.model.actuator_gainprm=np.tile([1.,0.,0.],(30,1))
+        sim.model.actuator_biasprm=np.zeros((30,3))
+        sim.data.qpos=np.zeros(30);sim.data.qvel=np.zeros(30);sim.data.time=0.
+        env.motor_handoff=dict(start=0.,duration=1.,gain=np.full(30,100.),
+            bias=np.zeros((30,3)),ctrl=np.ones(30))
+        with self.assertRaises(ValueError):env.step(np.zeros(30),lambda:None)
+        self.assertEqual(sim.calls,0)
+
     def test_invalid_action_does_not_step(self):
         for action in [np.ones(30)*1.1,np.full(30,np.nan),np.zeros(29)]:
             env,sim=self.motor_env()

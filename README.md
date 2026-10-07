@@ -1,4 +1,6 @@
-> 最新方向（2026-10-07）：**按用户要求取消新方案的 XYZ 机构，直接通过原有执行器移动 Adroit。** 手掌中心标定、空手避障导航、两视频局部平移适配和物理带杯模块已实现。空手六个布局与绕墙通过；两视频局部抬杯通过；第一视频约 42 cm 搬运通过。第二视频到位保持但交接加速度未过，近桌面导航交接也仍被保护拦截，因此 F2/F3 尚未全验收，不宣称整桌 >80%。原生窗口：`bash scripts/180_launch_adroit_navigation.sh`。未训练，旧 Qt 与模型不变。[使用与方法](docs/ADROIT_NAVIGATION.md) · [结果、截图及答辩提纲](docs/presentation/adroit_navigation/README.md)。
+> 最新 v2（2026-10-07）：**连续导航、近桌抓取交接和带杯绕障的宽松工程版完成。** 两视频各无墙/有墙，共四个开发用例通过；带杯越障路径约 72/67 cm，目标误差 1.13/0.23 mm，末秒持续对握。第二视频仍未过旧严格动态门槛，按用户授权使用独立 0.5 m/s² 工程验收值，保留严格失败标记；碰撞、穿透和掉杯门槛不放宽。274 项测试通过，旧 v6 回归通过，未训练、未替换 Qt 默认入口。[运行与口径](docs/ADROIT_NAVIGATION_V2.md) · [越障截图、加速度图和答辩提纲](docs/presentation/adroit_navigation_v2/README.md)。这些是开发用例，不是整桌 >80% 的统计验收。
+>
+> 历史 v1（2026-10-07）：取消 XYZ 机构，完成掌心标定、空手导航和两视频局部平移适配；当时连续交接和第二视频带杯尚有阻碍，原结果保留。[v1 使用与方法](docs/ADROIT_NAVIGATION.md) · [v1 证据](docs/presentation/adroit_navigation/README.md)。原生空手窗口仍可用：`bash scripts/180_launch_adroit_navigation.sh`。
 >
 > 历史 XYZ F1（已停止作为新方案，源码保留）：平台、整桌采样和独立空手物理演示曾完成，264 项软件测试通过。[历史实现](docs/WHOLE_TABLE_F1.md) · [历史证据](docs/presentation/whole_table/F1_RESULTS.md) · [旧任务书与新方向说明](docs/WHOLE_TABLE_TASKBOOK.md)。
 >

@@ -163,6 +163,10 @@ class HandScene:
     def hand_shapes(self):
         m=self.sim.model;groups={}
         for g in self.hand_geoms:
+            if self.config.get('collision_geometry_only'):
+                if not (m.geom_contype[g] or m.geom_conaffinity[g]):continue
+                groups[g]=[geom_bounds(self.sim,g)]
+                continue
             body=m.body_id2name(int(m.geom_bodyid[g]))
             key=body if body in ('forearm','wrist','palm','mug_0') else body[:2]
             groups.setdefault(key,[]).append(geom_bounds(self.sim,g))

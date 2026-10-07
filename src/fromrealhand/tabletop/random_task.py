@@ -43,7 +43,7 @@ class RandomTask:
 
     def run(self, seed, output, goal=None, count=None, stop_skill='transport', callback=None,
             cancelled=None, realtime=False, screenshots=False, cup_xy=None,
-            scene_adapter=None, completion=None):
+            scene_adapter=None, completion=None, scene_fixtures=()):
         import transforms3d
         from hierarchy_common import write
         output = Path(output); output.mkdir(parents=True, exist_ok=False)
@@ -65,7 +65,7 @@ class RandomTask:
             installation=self.protocol.get('installation_offsets',{}).get(self.video,[-.01,profile['installation_y'],0.])
             env, mesh, scene = create(self.reference.env, self.pieces[0]['initial_snapshot'], seed,
                 self.entry['dt'], installation,
-                [0.,0.,profile['clearance']] if profile['clearance'] else None, layout=layout)
+                [0.,0.,profile['clearance']] if profile['clearance'] else None, layout=layout,fixtures=scene_fixtures)
             source_poses = self.poses
             if scene_adapter is not None:
                 source_poses = scene_adapter(env, mesh, scene, source_poses)
@@ -201,6 +201,10 @@ class RandomTask:
             report.update(status='success',reason='random_task_completed')
         except Exception as error:
             report.update(status='stopped',reason=str(error),error_type=type(error).__name__)
+            if env is not None:
+                report['failure_contacts']=[dict(geom1=env.sim.model.geom_id2name(c.geom1),
+                    geom2=env.sim.model.geom_id2name(c.geom2),distance_m=float(c.dist))
+                    for c in env.sim.data.contact[:env.sim.data.ncon] if c.dist<0]
         finally:
             report.update(passed=report['status']=='success',video=self.video,seed=seed,steps=len(rows),phase=phase,
                 completed=completed,events=events,final=rows[-1] if rows else None,max_penetration_m=peak,

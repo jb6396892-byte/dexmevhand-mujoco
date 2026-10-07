@@ -4,12 +4,16 @@ import numpy as np
 from .scene import build
 
 
-def create(reference_env, initial_snapshot, seed, dt, installation_slide_offset=None, initial_hand_world_shift=None, layout=None):
+def create(reference_env, initial_snapshot, seed, dt, installation_slide_offset=None, initial_hand_world_shift=None, layout=None, fixtures=()):
     import mujoco_py
     import transforms3d
     # Build/settle only at episode initialization. No object reset after vision.
     parked, xml, mesh, report = build(seed, layout=layout)
     root = ET.fromstring(xml)
+    for fixture in fixtures:
+        ET.SubElement(root.find('worldbody'),'geom',name=fixture['name'],type='box',
+            pos=' '.join(map(str,fixture['pos'])),size=' '.join(map(str,fixture['size'])),
+            rgba='.35 .4 .45 1',contype='1',conaffinity='1')
     equality = root.find('equality')
     for node in list(equality):
         if node.tag == 'joint': equality.remove(node)
@@ -71,6 +75,7 @@ def create(reference_env, initial_snapshot, seed, dt, installation_slide_offset=
     sim.data.ctrl[:] = initial_snapshot['arrays']['ctrl']
     sim.forward()
     report.update(control_enabled=True, candidate_not_validated=True, hand_mode='actuated; parking equalities removed',
+                  navigation_fixtures=list(fixtures),
                   initial_hand_source='frozen reference, independent of current object truth',
                   installation_slide_offset_m=slide_offset.tolist(),reference_base=reference_base.tolist())
     env=ControlEnv(sim, dt); env.reference_base=reference_base
@@ -90,8 +95,22 @@ class ControlEnv:
         a = np.asarray(action, dtype=float)
         if a.shape != (30,) or not np.isfinite(a).all() or np.max(np.abs(a)) > 1+1e-8:
             raise ValueError('Invalid normalized control')
-        self.sim.data.ctrl[:] = self.mid+self.rng*a
+        target=self.mid+self.rng*a
+        self.sim.data.ctrl[:] = target
         for _ in range(self.substeps):
+            handoff=getattr(self,'motor_handoff',None)
+            if handoff is not None:
+                m,d=self.sim.model,self.sim.data
+                t=min(1.,max(0.,(d.time-handoff['start'])/handoff['duration']))
+                blend=t*t*t*(10.+t*(-15.+6.*t))
+                old_bias=handoff['bias'][:,0]+handoff['bias'][:,1]*d.qpos[:30]+handoff['bias'][:,2]*d.qvel[:30]
+                old_force=handoff['gain']*handoff['ctrl']+old_bias
+                bias=m.actuator_biasprm[:,0]+m.actuator_biasprm[:,1]*d.qpos[:30]+m.actuator_biasprm[:,2]*d.qvel[:30]
+                equivalent=(old_force-bias)/m.actuator_gainprm[:,0]
+                d.ctrl[:]=equivalent*(1.-blend)+target*blend
+                if np.any(d.ctrl<m.actuator_ctrlrange[:,0]) or np.any(d.ctrl>m.actuator_ctrlrange[:,1]):
+                    raise ValueError('Motor handoff exceeds actuator authority')
+                if t>=1.:self.motor_handoff=None
             self.sim.step()
             audit()
 

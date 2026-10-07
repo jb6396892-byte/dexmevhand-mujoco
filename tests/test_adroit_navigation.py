@@ -1,4 +1,5 @@
 import unittest
+from types import SimpleNamespace
 import numpy as np
 from fromrealhand.whole_table.navigation import plan,segments_clear,inflated_boxes,NavigationRejected
 
@@ -29,6 +30,39 @@ class NavigationTests(unittest.TestCase):
         delta=np.array([.2,-.2,0]);moved=pose.copy();moved[:3,3]+=delta
         after=features(zero,zero,palm+delta,moved,goal+delta,'second','grasp',3,(0,10),zero,zero)
         np.testing.assert_allclose(before,after,atol=1e-7)
+
+    def test_engineering_gate_keeps_strict_result(self):
+        from fromrealhand.whole_table.navigation_runner import navigate
+        cfg=dict(self.cfg,timestep_s=.01,control_period_s=.02,max_velocity_m_s=[.1]*3,
+            max_acceleration_m_s2=[.05]*3,max_jerk_m_s3=[.2]*3,position_tolerance_m=.003,
+            tracking_tolerance_m=.015,posture_tolerance_rad=.025,execution_clearance_m=.001,
+            acceptance_max_acceleration_m_s2=[.5]*3)
+        scene=SimpleNamespace(config=cfg,hand_envelope=self.hand,target=np.array([-.7,0,.5]),
+            sim=SimpleNamespace(data=SimpleNamespace(time=0.)))
+        scene.position=lambda:scene.target.copy()
+        scene.obstacles=lambda:[]
+        scene.velocity=lambda:np.zeros(3)
+        scene.acceleration=lambda:np.array([0,0,.3])
+        scene.contacts=lambda:dict(hand_environment_contacts=0,posture_error_rad=0.)
+        scene.hand_shapes=lambda:self.hand+scene.position()
+        def step(target):scene.target=np.array(target);scene.sim.data.time+=.01
+        scene.step=step
+        result=navigate(scene,[-.6,0,.5])
+        self.assertTrue(result['passed']);self.assertFalse(result['strict_passed'])
+        self.assertFalse(result['strict_checks']['acceleration'])
+        scene.acceleration=lambda:np.array([0,0,.6])
+        self.assertFalse(navigate(scene,[-.5,0,.5])['passed'])
+
+    def test_navigation_geometry_excludes_visual_only_meshes(self):
+        from fromrealhand.whole_table.hand_scene import HandScene
+        scene=HandScene.__new__(HandScene)
+        scene.config=dict(collision_geometry_only=True);scene.hand_geoms=[0,1]
+        scene.sim=SimpleNamespace(model=SimpleNamespace(geom_contype=[0,1],geom_conaffinity=[0,0],
+            geom_type=[6,6],geom_size=np.array([[10,10,10],[.01,.02,.03]])),
+            data=SimpleNamespace(geom_xpos=np.zeros((2,3)),geom_xmat=np.tile(np.eye(3).ravel(),(2,1))))
+        boxes=scene.hand_shapes()
+        self.assertEqual(boxes.shape,(1,2,3))
+        np.testing.assert_allclose(boxes[0],[[ -.01,-.02,-.03],[.01,.02,.03]])
 
     def test_direct_and_detour(self):
         start=[-.7,0,.2];goal=[.7,0,.2]
