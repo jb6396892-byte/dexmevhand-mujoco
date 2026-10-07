@@ -3,7 +3,7 @@ import numpy as np
 from .hand_scene import HandScene, TRANSLATION_JOINTS
 
 
-def translate_initial_scene(env, delta, source_poses, scene):
+def translate_initial_scene(env, delta, source_poses, scene, translate_object=True):
     import mujoco_py
     delta=np.asarray(delta,dtype=float)
     if delta.shape!=(3,) or not np.isfinite(delta).all() or abs(delta[2])>1e-12:
@@ -11,7 +11,7 @@ def translate_initial_scene(env, delta, source_poses, scene):
     sim,m,d=env.sim,env.sim.model,env.sim.data
     m.body_pos[m.body_name2id('forearm')]+=delta
     env.reference_base=env.reference_base.copy();env.reference_base[:3,3]+=delta
-    for name in ('mug',):
+    for name in (('mug',) if translate_object else ()):
         q=d.get_joint_qpos(name+'_joint_0').copy();q[:3]+=delta
         d.set_joint_qpos(name+'_joint_0',q)
     state=sim.get_state();control=d.ctrl.copy()
@@ -20,6 +20,7 @@ def translate_initial_scene(env, delta, source_poses, scene):
     transformed=source_poses.copy();transformed[:,:3,3]+=delta
     scene['local_frame_translation_m']=delta.tolist()
     scene['frame_set_only_at_initialization']=True
+    scene['cup_translated_at_initialization']=translate_object
     return transformed
 
 

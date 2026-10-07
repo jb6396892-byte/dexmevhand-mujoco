@@ -2,7 +2,7 @@
 import numpy as np
 from .local_adapter import MotionBridge
 from .navigation_runner import navigate
-from .navigation import NavigationRejected
+from .navigation import NavigationRejected, inflated_boxes, segments_clear
 from ..tabletop.contact_control import opposing_contacts,FINGERS
 
 
@@ -10,6 +10,11 @@ def supported(env):
     row=env.contacts();row.update(opposing_contacts(env.sim));row.pop('pairs',None)
     row['supported']=bool(row['th_force_n']>.01 and sum(row[f+'_force_n']>.01 for f in FINGERS)>=3 and row['opposition'])
     return row
+
+
+def margin_conflicts(bridge, center, clearance):
+    return [o['name'] for o in bridge.obstacles()
+            if not segments_clear(center,center,inflated_boxes(bridge.hand_envelope,[o],clearance))[0]]
 
 
 class LoadedMotion(MotionBridge):
@@ -62,7 +67,19 @@ def carry(env,held_action,cup_goal,config,on_step=None):
     # Long-distance carrying is deliberately slower than empty-hand transit.
     bridge.config=dict(config,max_velocity_m_s=[.04,.04,.03],max_acceleration_m_s2=[.06,.06,.05],
                        max_jerk_m_s3=[.2,.2,.15])
+    start_conflicts=margin_conflicts(bridge,bridge.position(),config['clearance_m'])
+    goal_conflicts=margin_conflicts(bridge,target,config['clearance_m'])
+    egress=None
     try:
+        if config.get('carry_egress_m') and start_conflicts and not goal_conflicts:
+            transit_cfg=bridge.config
+            # Near-grasp retreat uses a smaller planning buffer, not a smaller physical gate.
+            bridge.config=dict(transit_cfg,clearance_m=config['carry_egress_clearance_m'],
+                               max_velocity_m_s=[.02,.02,.02])
+            egress=navigate(bridge,bridge.position()+[0,0,config['carry_egress_m']],on_step)
+            if not egress['passed']:raise NavigationRejected('carry_egress_failed')
+            bridge.config=transit_cfg
+            bridge.hand_envelope=bridge.hand_shapes()-bridge.position()
         result=navigate(bridge,target,on_step)
         hold=[]
         for i in range(int(round(1./bridge.config['timestep_s']))):
@@ -80,11 +97,18 @@ def carry(env,held_action,cup_goal,config,on_step=None):
             controller_handoff_seconds=bridge.handoff_seconds,
             pre_handoff_settling_seconds=3.,
             cup_pose_input='measured once at carry handoff for payload/goal calibration; live pose for safety only')
+        if egress is not None:
+            result['egress']=egress
+            result['strict_passed']=bool(result['strict_passed'] and egress['strict_passed'])
         result['passed']=bool(result['passed'] and error<=.02 and all(hold))
+        result['initial_margin_conflicts']=dict(start=start_conflicts,goal=goal_conflicts)
         return result
     except NavigationRejected as error:
         result=getattr(bridge,'last_navigation',{})
         result.update(passed=False,reason=str(error),payload_audit=supported(env),
-                      cup_final_m=env.sim.data.body_xpos[mug].tolist())
+                      cup_final_m=env.sim.data.body_xpos[mug].tolist(),
+                      initial_margin_conflicts=dict(start=start_conflicts,goal=goal_conflicts),
+                      current_execution_margin_conflicts=margin_conflicts(bridge,bridge.position(),config['execution_clearance_m']))
+        if egress is not None and result is not egress:result['egress']=egress
         return result
     finally:bridge.restore()

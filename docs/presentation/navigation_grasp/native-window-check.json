@@ -1,0 +1,14 @@
+{
+  "case": "seed-4304-first",
+  "source_batch": "navigation-grasp-v1",
+  "output": "/tmp/adroit-navigation-grasp-10e6iqb6/run",
+  "passed": true,
+  "strict_carry_passed": true,
+  "rendered_frames": 3426,
+  "cup_error_m": 0.00046093855914970417,
+  "hold_supported_fraction": 1.0,
+  "hand_environment_contacts": 0,
+  "max_grasp_penetration_m": 0.0006450877584867638,
+  "gl_error_observed": false,
+  "included_in_batch_denominator": false
+}

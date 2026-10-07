@@ -1,0 +1,14 @@
+{
+  "base_config": "adroit-navigation-v1.json",
+  "version": "adroit-navigation-v3-clutter-egress",
+  "collision_geometry_only": true,
+  "staged_approach": true,
+  "approach_clearance_m": 0.002,
+  "approach_execution_clearance_m": 0.0005,
+  "approach_offset_m": [0.0, 0.0, 0.08],
+  "pregrasp_hover_m": {"first": 0.006, "second": 0.0},
+  "acceptance_max_acceleration_m_s2": [0.5, 0.5, 0.5],
+  "acceptance_profile": "engineering; original strict acceleration also reported",
+  "carry_egress_m": 0.12,
+  "carry_egress_clearance_m": 0.01
+}

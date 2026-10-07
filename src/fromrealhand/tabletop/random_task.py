@@ -1,5 +1,6 @@
 """Known-initial-pose tasks. Shared by the batch evaluator and Qt worker."""
 import hashlib
+import copy
 import json
 import time
 from pathlib import Path
@@ -43,11 +44,12 @@ class RandomTask:
 
     def run(self, seed, output, goal=None, count=None, stop_skill='transport', callback=None,
             cancelled=None, realtime=False, screenshots=False, cup_xy=None,
-            scene_adapter=None, completion=None, scene_fixtures=()):
+            scene_adapter=None, completion=None, scene_fixtures=(), scene_layout=None):
         import transforms3d
         from hierarchy_common import write
         output = Path(output); output.mkdir(parents=True, exist_ok=False)
-        layout = sample(seed, self.protocol, goal, count, cup_xy)
+        layout = (sample(seed, self.protocol, goal, count, cup_xy) if scene_layout is None
+                  else copy.deepcopy(scene_layout))
         write(output/'layout.json', layout)
         rows, events, completed = [], [], []
         peak, phase, index = 0., 'initialization', 0

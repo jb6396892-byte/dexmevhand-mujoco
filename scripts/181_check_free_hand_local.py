@@ -2,6 +2,7 @@
 """Two-video translated local grasp and optional continuous navigation handoff."""
 import argparse
 import json
+import time
 from pathlib import Path
 import numpy as np
 from hierarchy_common import ROOT,write
@@ -12,6 +13,8 @@ from fromrealhand.whole_table.navigation_runner import navigate,capture
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--output',type=Path,required=True)
 p.add_argument('--video',choices=['first','second'],required=True)
+p.add_argument('--seed',type=int,default=30)
+p.add_argument('--layout',type=Path,help='Frozen full-table layout; mug XY must match --shift')
 p.add_argument('--shift',type=float,nargs=2,default=[.2,0])
 p.add_argument('--transit',action='store_true')
 p.add_argument('--carry-goal',type=float,nargs=3)
@@ -19,8 +22,16 @@ p.add_argument('--config',type=Path,default=ROOT/'configs/adroit-navigation-v1.j
 p.add_argument('--wall',action='store_true')
 p.add_argument('--wall-height',type=float,default=.28)
 p.add_argument('--wall-half-y',type=float,default=.35)
+p.add_argument('--viewer',action='store_true',help='Show continuous native MuJoCo physics')
+p.add_argument('--viewer-seconds',type=float,default=0)
+p.add_argument('--close-after-run',action='store_true')
 p.add_argument('--checkpoint',type=Path,default=Path('/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt'))
 a=p.parse_args();a.output.mkdir(parents=True,exist_ok=False)
+layout=json.loads(a.layout.read_text()) if a.layout else None
+if layout is not None:
+    cup=next(o for o in layout['objects'] if o['name']=='mug')
+    if not np.allclose(cup['xy'],a.shift,atol=1e-10,rtol=0):
+        raise ValueError('Frozen mug position must match local frame translation')
 override=json.loads(a.config.read_text())
 cfg=json.loads((a.config.parent/override['base_config']).read_text()) if 'base_config' in override else {}
 cfg.update(override)
@@ -29,17 +40,44 @@ if not np.isfinite([a.wall_height,a.wall_half_y]).all() or min(a.wall_height,a.w
 fixtures=[dict(name='nav_obstacle_wall',pos=[.02,0,a.wall_height/2],size=[.025,a.wall_half_y,a.wall_height/2])] if a.wall else []
 task=RandomTask(ROOT,a.video,a.checkpoint,ROOT/'configs/tabletop-random-v6.json')
 delta=np.r_[a.shift,0.];receipt=dict(video=a.video,shift_m=delta.tolist(),transit_requested=a.transit)
+viewer=[None];view_clock=[0.,0.];rendered=[0]
+def display(*unused):
+    if viewer[0] is None:return
+    import glfw
+    now=time.monotonic()
+    if glfw.window_should_close(viewer[0].window) or (a.viewer_seconds and now-view_clock[0]>=a.viewer_seconds):
+        raise KeyboardInterrupt
+    viewer[0].render();rendered[0]+=1
+    time.sleep(max(0.,viewer[0].sim.data.time-view_clock[1]-(time.monotonic()-view_clock[0])))
+
+def open_viewer(env):
+    if not a.viewer:return
+    import glfw
+    import mujoco_py
+    if not glfw.init():raise RuntimeError('GLFW initialization failed')
+    glfw.default_window_hints()
+    viewer[0]=mujoco_py.MjViewer(env.sim)
+    viewer[0].cam.lookat[:]=[0,0,.12];viewer[0].cam.distance=1.65
+    viewer[0].cam.azimuth=135;viewer[0].cam.elevation=-40
+    viewer[0].vopt.geomgroup[2]=0;viewer[0].vopt.geomgroup[4]=0
+    view_clock[:]=[time.monotonic(),env.sim.data.time]
+    step=env.step
+    def visible_step(action,audit):
+        step(action,audit);display()
+    env.step=visible_step
+
 def setup(env,mesh,scene,poses):
-    transformed=translate_initial_scene(env,delta,poses,scene)
+    transformed=translate_initial_scene(env,delta,poses,scene,translate_object=layout is None)
     mug=env.sim.model.body_name2id('mug_0')
     vertices=mesh['vertices']@env.sim.data.body_xmat[mug].reshape(3,3).T+env.sim.data.body_xpos[mug]
     limits=np.array(cfg['table_size_xy_m'])/2-cfg['edge_clearance_m']
     if np.any(np.abs(vertices[:,:2])>limits):
         raise ValueError('Translated cup footprint outside tabletop support')
     # The layout dictionary is shared with the task, so its goal remains in world coordinates.
-    scene['random_layout']['goal_world_m']=(np.array(scene['random_layout']['goal_world_m'])+delta).tolist()
-    for item in scene['random_layout']['objects']:
-        if item['name']=='mug':item['xy']=(np.array(item['xy'])+delta[:2]).tolist()
+    if layout is None:
+        scene['random_layout']['goal_world_m']=(np.array(scene['random_layout']['goal_world_m'])+delta).tolist()
+        for item in scene['random_layout']['objects']:
+            if item['name']=='mug':item['xy']=(np.array(item['xy'])+delta[:2]).tolist()
     bridge=MotionBridge(env,cfg)
     receipt['pregrasp_center_m']=bridge.position().tolist()
     if a.transit:
@@ -51,21 +89,22 @@ def setup(env,mesh,scene,poses):
         env.sim.data.qvel[:30]=0;env.sim.forward()
         bridge.target=np.array(cfg['home_m']);bridge.hand_envelope=bridge.hand_shapes()-bridge.position()
         for _ in range(int(cfg['settling_s']/cfg['timestep_s'])):bridge.step(bridge.target)
+        open_viewer(env)
         capture(bridge,a.output/'navigation-start.png')
         attempted_goal=goal
         try:
             if cfg.get('staged_approach'):
                 attempted_goal=goal+np.array(cfg['approach_offset_m'])
-                receipt['navigation']=navigate(bridge,attempted_goal)
+                receipt['navigation']=navigate(bridge,attempted_goal,display)
                 if not receipt['navigation']['passed']:raise RuntimeError('navigation_acceptance_failed')
                 bridge.config=dict(cfg,clearance_m=cfg['approach_clearance_m'],
                     execution_clearance_m=cfg['approach_execution_clearance_m'],
                     max_velocity_m_s=[.025,.025,.02],max_acceleration_m_s2=[.05,.05,.04],max_jerk_m_s3=[.15,.15,.12])
                 bridge.hand_envelope=bridge.hand_shapes()-bridge.position()
                 attempted_goal=goal
-                receipt['approach']=navigate(bridge,goal)
+                receipt['approach']=navigate(bridge,goal,display)
                 if not receipt['approach']['passed']:raise RuntimeError('approach_acceptance_failed')
-            else:receipt['navigation']=navigate(bridge,goal)
+            else:receipt['navigation']=navigate(bridge,goal,display)
             if not receipt['navigation']['passed']:raise RuntimeError('navigation_acceptance_failed')
             if cfg.get('staged_approach'):
                 m,d=env.sim.model,env.sim.data
@@ -85,7 +124,8 @@ def setup(env,mesh,scene,poses):
             raise
         finally:
             bridge.restore();write(a.output/'adapter.json',receipt)
-    else:bridge.restore()
+    else:
+        bridge.restore();open_viewer(env)
     write(a.output/'adapter.json',receipt)
     return transformed
 def finish(env,controller,rows,initial,goal):
@@ -95,7 +135,8 @@ def finish(env,controller,rows,initial,goal):
         from fromrealhand.whole_table.loaded_motion import carry
         captured=[False]
         def carry_frame(motion,report,row):
-            if a.wall and not captured[0] and abs(row['center_m'][0]-.02)<.015:
+            display()
+            if (a.wall or layout is not None) and not captured[0] and abs(row['center_m'][0]-.02)<.015:
                 capture(motion,a.output/'carry-over-wall.png');captured[0]=True
         result=carry(env,controller.last_action,np.asarray(a.carry_goal),cfg,carry_frame)
         write(a.output/'carry.json',result)
@@ -105,11 +146,24 @@ def finish(env,controller,rows,initial,goal):
         return result
     return dict(scope='local grasp and lift; no long-distance carry',learned_grasp=True)
 try:
-    report=task.run(30,a.output/'local',goal=[0,0,.16],count=0,cup_xy=[0,0],stop_skill='lift',
-                    scene_adapter=setup,completion=finish,scene_fixtures=fixtures)
+    report=task.run(a.seed,a.output/'local',goal=[0,0,.16],count=0,cup_xy=[0,0],stop_skill='lift',
+                    scene_adapter=setup,completion=finish,scene_fixtures=fixtures,scene_layout=layout)
     write(a.output/'summary.json',dict(passed=report['passed'],reason=report['reason'],completed=report['completed'],
         video=a.video,shift_m=delta.tolist(),continuous_navigation=a.transit,
         initial_hand_repositioned_only_before_execution=a.transit,training_started=False))
-    print(json.dumps({k:report[k] for k in ('passed','reason','completed','final')},indent=2),flush=True)
+    visible={k:report[k] for k in ('passed','reason','completed')}
+    visible['local_lift_final']=report['final']
+    visible['carry_final']={k:v for k,v in report.get('continuation',{}).items()
+        if k in ('passed','reason','cup_final_m','cup_error_m','hold_supported_fraction','strict_passed')}
+    print(json.dumps(visible,indent=2),flush=True)
+    if a.viewer and not a.close_after_run:
+        while True:display();time.sleep(.016)
     if not report['passed']:raise SystemExit(1)
-finally:task.close()
+except KeyboardInterrupt:
+    print('Viewer closed by user or time limit',flush=True)
+finally:
+    if viewer[0] is not None:
+        import glfw
+        print('rendered_frames',rendered[0],flush=True)
+        glfw.destroy_window(viewer[0].window)
+    task.close()

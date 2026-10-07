@@ -17,6 +17,14 @@ class NavigationTests(unittest.TestCase):
         boxes=inflated_boxes(self.hand,[dict(bounds=[[0,0,0],[.1,.1,.3]])],.02)
         self.assertFalse(segments_clear([-.04,0,.2],[-.04,0,.2],boxes)[0])
 
+    def test_retreat_planning_margin_is_not_physical_collision(self):
+        from fromrealhand.whole_table.loaded_motion import margin_conflicts
+        bridge=SimpleNamespace(hand_envelope=self.hand,
+            obstacles=lambda:[dict(name='box',bounds=[[0,0,0],[.1,.1,.3]])])
+        self.assertEqual(margin_conflicts(bridge,[-.07,0,.2],.025),['box'])
+        self.assertEqual(margin_conflicts(bridge,[-.07,0,.2],.01),[])
+        self.assertEqual(margin_conflicts(bridge,[-.055,0,.2],.008),['box'])
+
     def test_part_union_preserves_empty_gap(self):
         parts=np.array([[[-.2,-.05,-.05],[-.1,.05,.05]],[[.1,-.05,-.05],[.2,.05,.05]]])
         boxes=inflated_boxes(parts,[dict(bounds=[[-.02,-.02,.48],[.02,.02,.52]])],.01)
@@ -30,6 +38,39 @@ class NavigationTests(unittest.TestCase):
         delta=np.array([.2,-.2,0]);moved=pose.copy();moved[:3,3]+=delta
         after=features(zero,zero,palm+delta,moved,goal+delta,'second','grasp',3,(0,10),zero,zero)
         np.testing.assert_allclose(before,after,atol=1e-7)
+
+    def test_initial_frame_translation_preserves_preplaced_cup(self):
+        from unittest.mock import Mock,patch
+        from fromrealhand.whole_table.local_adapter import translate_initial_scene
+        data=SimpleNamespace(ctrl=np.zeros(30),get_joint_qpos=Mock(return_value=np.array([.2,0,.04,1,0,0,0])),
+                             set_joint_qpos=Mock())
+        model=SimpleNamespace(body_pos=np.zeros((1,3)),body_name2id=lambda name:0)
+        sim=SimpleNamespace(model=model,data=data,get_state=Mock(return_value='state'),
+                            set_state=Mock(),forward=Mock())
+        env=SimpleNamespace(sim=sim,reference_base=np.eye(4))
+        poses=np.eye(4)[None];scene={}
+        module=SimpleNamespace(functions=SimpleNamespace(mj_setConst=Mock()))
+        with patch.dict('sys.modules',{'mujoco_py':module}):
+            result=translate_initial_scene(env,[.2,0,0],poses,scene,translate_object=False)
+        data.set_joint_qpos.assert_not_called()
+        np.testing.assert_allclose(model.body_pos[0],[.2,0,0])
+        np.testing.assert_allclose(result[0,:3,3],[.2,0,0])
+        np.testing.assert_allclose(poses[0,:3,3],0)
+        self.assertFalse(scene['cup_translated_at_initialization'])
+
+    def test_initial_frame_translation_keeps_legacy_cup_shift(self):
+        from unittest.mock import Mock,patch
+        from fromrealhand.whole_table.local_adapter import translate_initial_scene
+        data=SimpleNamespace(ctrl=np.zeros(30),get_joint_qpos=Mock(return_value=np.array([0.,0,.04,1,0,0,0])),
+                             set_joint_qpos=Mock())
+        model=SimpleNamespace(body_pos=np.zeros((1,3)),body_name2id=lambda name:0)
+        sim=SimpleNamespace(model=model,data=data,get_state=Mock(),set_state=Mock(),forward=Mock())
+        env=SimpleNamespace(sim=sim,reference_base=np.eye(4));scene={}
+        module=SimpleNamespace(functions=SimpleNamespace(mj_setConst=Mock()))
+        with patch.dict('sys.modules',{'mujoco_py':module}):
+            translate_initial_scene(env,[-.2,.04,0],np.eye(4)[None],scene)
+        np.testing.assert_allclose(data.set_joint_qpos.call_args[0][1][:3],[-.2,.04,.04])
+        self.assertTrue(scene['cup_translated_at_initialization'])
 
     def test_engineering_gate_keeps_strict_result(self):
         from fromrealhand.whole_table.navigation_runner import navigate

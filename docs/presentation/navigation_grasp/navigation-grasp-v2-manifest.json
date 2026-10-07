@@ -1,0 +1,884 @@
+{
+  "cases": [
+    {
+      "name": "seed-4301-first",
+      "seed": 4301,
+      "video": "first",
+      "shift": [
+        0.2,
+        -0.04
+      ],
+      "goal": [
+        -0.2,
+        0.08,
+        0.2
+      ],
+      "layout": {
+        "seed": 4301,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              0.2,
+              -0.04
+            ],
+            "yaw_deg": 0.0,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.16193040148170462,
+                -0.08040719951501538
+              ],
+              [
+                0.23697760033128049,
+                0.013638398860939135
+              ]
+            ]
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              -0.2607004370611763,
+              -0.32354927739076816
+            ],
+            "yaw_deg": 97.24967891450012,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.2974040293469306,
+                -0.3592152301709832
+              ],
+              [
+                -0.22688701912931308,
+                -0.28849441476428256
+              ]
+            ]
+          },
+          {
+            "name": "sugar_box",
+            "xy": [
+              0.3344258808689908,
+              -0.004704501857823784
+            ],
+            "yaw_deg": 124.5418301359212,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.28584244986146784,
+                -0.04774675435132075
+              ],
+              [
+                0.3860407928065661,
+                0.04103053224310142
+              ]
+            ]
+          }
+        ],
+        "distractor_count": 2,
+        "sampling": "full_table_mesh_projected_aabb",
+        "central_clear_corridor": false,
+        "goal_world_m": [
+          0.2,
+          -0.04,
+          0.16
+        ],
+        "table_rgba": [
+          0.88,
+          0.9,
+          0.91,
+          1.0
+        ],
+        "cup_model": "025_mug",
+        "object_scale": 0.8,
+        "version": "navigation-grasp-v1"
+      }
+    },
+    {
+      "name": "seed-4301-second",
+      "seed": 4301,
+      "video": "second",
+      "shift": [
+        -0.2,
+        -0.04
+      ],
+      "goal": [
+        0.2,
+        0.08,
+        0.2
+      ],
+      "layout": {
+        "seed": 4301,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              -0.2,
+              -0.04
+            ],
+            "yaw_deg": 0.0,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.2380695985182954,
+                -0.08040719951501538
+              ],
+              [
+                -0.16302239966871954,
+                0.013638398860939135
+              ]
+            ]
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              -0.2607004370611763,
+              -0.32354927739076816
+            ],
+            "yaw_deg": 97.24967891450012,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.2974040293469306,
+                -0.3592152301709832
+              ],
+              [
+                -0.22688701912931308,
+                -0.28849441476428256
+              ]
+            ]
+          },
+          {
+            "name": "sugar_box",
+            "xy": [
+              0.3344258808689908,
+              -0.004704501857823784
+            ],
+            "yaw_deg": 124.5418301359212,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.28584244986146784,
+                -0.04774675435132075
+              ],
+              [
+                0.3860407928065661,
+                0.04103053224310142
+              ]
+            ]
+          }
+        ],
+        "distractor_count": 2,
+        "sampling": "full_table_mesh_projected_aabb",
+        "central_clear_corridor": false,
+        "goal_world_m": [
+          -0.2,
+          -0.04,
+          0.16
+        ],
+        "table_rgba": [
+          0.88,
+          0.9,
+          0.91,
+          1.0
+        ],
+        "cup_model": "025_mug",
+        "object_scale": 0.8,
+        "version": "navigation-grasp-v1"
+      }
+    },
+    {
+      "name": "seed-4302-first",
+      "seed": 4302,
+      "video": "first",
+      "shift": [
+        0.16,
+        0.04
+      ],
+      "goal": [
+        -0.2,
+        0.1,
+        0.2
+      ],
+      "layout": {
+        "seed": 4302,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              0.16,
+              0.04
+            ],
+            "yaw_deg": 0.0,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.12193040148170461,
+                -0.0004071995150153815
+              ],
+              [
+                0.19697760033128048,
+                0.09363839886093914
+              ]
+            ]
+          },
+          {
+            "name": "banana",
+            "xy": [
+              0.16139300221434588,
+              0.2763404478052263
+            ],
+            "yaw_deg": 18.4196679837612,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.12820108009552594,
+                0.1732791222205322
+              ],
+              [
+                0.21060180988331167,
+                0.3738506390841143
+              ]
+            ]
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              -0.25027713291352477,
+              -0.08570546989392774
+            ],
+            "yaw_deg": -117.9072532849155,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.28396985076955544,
+                -0.12151393191955155
+              ],
+              [
+                -0.2135900057661978,
+                -0.05045987771455656
+              ]
+            ]
+          },
+          {
+            "name": "sugar_box",
+            "xy": [
+              -0.3324733210247195,
+              0.11753868605173456
+            ],
+            "yaw_deg": -119.74325400423322,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.3860386329626678,
+                0.0749025369009391
+              ],
+              [
+                -0.2819292165991994,
+                0.16173992382647062
+              ]
+            ]
+          }
+        ],
+        "distractor_count": 3,
+        "sampling": "full_table_mesh_projected_aabb",
+        "central_clear_corridor": false,
+        "goal_world_m": [
+          0.16,
+          0.04,
+          0.16
+        ],
+        "table_rgba": [
+          0.88,
+          0.9,
+          0.91,
+          1.0
+        ],
+        "cup_model": "025_mug",
+        "object_scale": 0.8,
+        "version": "navigation-grasp-v1"
+      }
+    },
+    {
+      "name": "seed-4302-second",
+      "seed": 4302,
+      "video": "second",
+      "shift": [
+        -0.16,
+        0.04
+      ],
+      "goal": [
+        0.2,
+        0.1,
+        0.2
+      ],
+      "layout": {
+        "seed": 4302,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              -0.16,
+              0.04
+            ],
+            "yaw_deg": 0.0,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.1980695985182954,
+                -0.0004071995150153815
+              ],
+              [
+                -0.12302239966871953,
+                0.09363839886093914
+              ]
+            ]
+          },
+          {
+            "name": "banana",
+            "xy": [
+              0.16139300221434588,
+              0.2763404478052263
+            ],
+            "yaw_deg": 18.4196679837612,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.12820108009552594,
+                0.1732791222205322
+              ],
+              [
+                0.21060180988331167,
+                0.3738506390841143
+              ]
+            ]
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              -0.25027713291352477,
+              -0.08570546989392774
+            ],
+            "yaw_deg": -117.9072532849155,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.28396985076955544,
+                -0.12151393191955155
+              ],
+              [
+                -0.2135900057661978,
+                -0.05045987771455656
+              ]
+            ]
+          },
+          {
+            "name": "sugar_box",
+            "xy": [
+              -0.3324733210247195,
+              0.11753868605173456
+            ],
+            "yaw_deg": -119.74325400423322,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.3860386329626678,
+                0.0749025369009391
+              ],
+              [
+                -0.2819292165991994,
+                0.16173992382647062
+              ]
+            ]
+          }
+        ],
+        "distractor_count": 3,
+        "sampling": "full_table_mesh_projected_aabb",
+        "central_clear_corridor": false,
+        "goal_world_m": [
+          -0.16,
+          0.04,
+          0.16
+        ],
+        "table_rgba": [
+          0.88,
+          0.9,
+          0.91,
+          1.0
+        ],
+        "cup_model": "025_mug",
+        "object_scale": 0.8,
+        "version": "navigation-grasp-v1"
+      }
+    },
+    {
+      "name": "seed-4303-first",
+      "seed": 4303,
+      "video": "first",
+      "shift": [
+        0.2,
+        -0.04
+      ],
+      "goal": [
+        -0.2,
+        0.12,
+        0.2
+      ],
+      "layout": {
+        "seed": 4303,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              0.2,
+              -0.04
+            ],
+            "yaw_deg": 0.0,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.16193040148170462,
+                -0.08040719951501538
+              ],
+              [
+                0.23697760033128049,
+                0.013638398860939135
+              ]
+            ]
+          },
+          {
+            "name": "mustard_bottle",
+            "xy": [
+              -0.16077845387974007,
+              -0.12499547994549295
+            ],
+            "yaw_deg": 88.07626102464917,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.21049059701138223,
+                -0.15437423652429036
+              ],
+              [
+                -0.11187906279213844,
+                -0.09134657779301808
+              ]
+            ]
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              -0.10281935361635369,
+              -0.03307268699841864
+            ],
+            "yaw_deg": 110.43936220367522,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.13929594164890777,
+                -0.06863053411443695
+              ],
+              [
+                -0.06880628075680414,
+                0.0013261558255247205
+              ]
+            ]
+          },
+          {
+            "name": "sugar_box",
+            "xy": [
+              0.3153554744385062,
+              0.06213405111255249
+            ],
+            "yaw_deg": 121.68828258438236,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.2667019700122539,
+                0.020411984176870582
+              ],
+              [
+                0.36717050219966924,
+                0.10639427495576916
+              ]
+            ]
+          },
+          {
+            "name": "banana",
+            "xy": [
+              0.23023746639318998,
+              0.17825422817455427
+            ],
+            "yaw_deg": 84.47018768521644,
+            "placement_attempts": 2,
+            "bounds_xy": [
+              [
+                0.1549162657383312,
+                0.13596949246016418
+              ],
+              [
+                0.3317500977277247,
+                0.2587183124278915
+              ]
+            ]
+          }
+        ],
+        "distractor_count": 4,
+        "sampling": "full_table_mesh_projected_aabb",
+        "central_clear_corridor": false,
+        "goal_world_m": [
+          0.2,
+          -0.04,
+          0.16
+        ],
+        "table_rgba": [
+          0.88,
+          0.9,
+          0.91,
+          1.0
+        ],
+        "cup_model": "025_mug",
+        "object_scale": 0.8,
+        "version": "navigation-grasp-v1"
+      }
+    },
+    {
+      "name": "seed-4303-second",
+      "seed": 4303,
+      "video": "second",
+      "shift": [
+        -0.2,
+        -0.04
+      ],
+      "goal": [
+        0.2,
+        0.12,
+        0.2
+      ],
+      "layout": {
+        "seed": 4303,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              -0.2,
+              -0.04
+            ],
+            "yaw_deg": 0.0,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.2380695985182954,
+                -0.08040719951501538
+              ],
+              [
+                -0.16302239966871954,
+                0.013638398860939135
+              ]
+            ]
+          },
+          {
+            "name": "mustard_bottle",
+            "xy": [
+              -0.16077845387974007,
+              -0.12499547994549295
+            ],
+            "yaw_deg": 88.07626102464917,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.21049059701138223,
+                -0.15437423652429036
+              ],
+              [
+                -0.11187906279213844,
+                -0.09134657779301808
+              ]
+            ]
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              -0.10281935361635369,
+              -0.03307268699841864
+            ],
+            "yaw_deg": 110.43936220367522,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.13929594164890777,
+                -0.06863053411443695
+              ],
+              [
+                -0.06880628075680414,
+                0.0013261558255247205
+              ]
+            ]
+          },
+          {
+            "name": "sugar_box",
+            "xy": [
+              0.3153554744385062,
+              0.06213405111255249
+            ],
+            "yaw_deg": 121.68828258438236,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.2667019700122539,
+                0.020411984176870582
+              ],
+              [
+                0.36717050219966924,
+                0.10639427495576916
+              ]
+            ]
+          },
+          {
+            "name": "banana",
+            "xy": [
+              0.19725907600347237,
+              -0.07991190997668046
+            ],
+            "yaw_deg": 84.47018768521644,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.12193787534861358,
+                -0.12219664569107055
+              ],
+              [
+                0.29877170733800706,
+                0.0005521742766567833
+              ]
+            ]
+          }
+        ],
+        "distractor_count": 4,
+        "sampling": "full_table_mesh_projected_aabb",
+        "central_clear_corridor": false,
+        "goal_world_m": [
+          -0.2,
+          -0.04,
+          0.16
+        ],
+        "table_rgba": [
+          0.88,
+          0.9,
+          0.91,
+          1.0
+        ],
+        "cup_model": "025_mug",
+        "object_scale": 0.8,
+        "version": "navigation-grasp-v1"
+      }
+    },
+    {
+      "name": "seed-4304-first",
+      "seed": 4304,
+      "video": "first",
+      "shift": [
+        0.16,
+        0.04
+      ],
+      "goal": [
+        -0.2,
+        0.08,
+        0.2
+      ],
+      "layout": {
+        "seed": 4304,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              0.16,
+              0.04
+            ],
+            "yaw_deg": 0.0,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.12193040148170461,
+                -0.0004071995150153815
+              ],
+              [
+                0.19697760033128048,
+                0.09363839886093914
+              ]
+            ]
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              0.04987104008525661,
+              -0.09535956341380997
+            ],
+            "yaw_deg": 128.46701644852044,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.012882648452672583,
+                -0.13235173725717994
+              ],
+              [
+                0.08445563217433563,
+                -0.0605132563605698
+              ]
+            ]
+          },
+          {
+            "name": "banana",
+            "xy": [
+              -0.292392936030033,
+              0.2996975636306911
+            ],
+            "yaw_deg": 109.04638393406748,
+            "placement_attempts": 2,
+            "bounds_xy": [
+              [
+                -0.3903865855761174,
+                0.2665085472310188
+              ],
+              [
+                -0.1895131014324209,
+                0.34798385685693495
+              ]
+            ]
+          }
+        ],
+        "distractor_count": 2,
+        "sampling": "full_table_mesh_projected_aabb",
+        "central_clear_corridor": false,
+        "goal_world_m": [
+          0.16,
+          0.04,
+          0.16
+        ],
+        "table_rgba": [
+          0.88,
+          0.9,
+          0.91,
+          1.0
+        ],
+        "cup_model": "025_mug",
+        "object_scale": 0.8,
+        "version": "navigation-grasp-v1"
+      }
+    },
+    {
+      "name": "seed-4304-second",
+      "seed": 4304,
+      "video": "second",
+      "shift": [
+        -0.16,
+        0.04
+      ],
+      "goal": [
+        0.2,
+        0.08,
+        0.2
+      ],
+      "layout": {
+        "seed": 4304,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              -0.16,
+              0.04
+            ],
+            "yaw_deg": 0.0,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.1980695985182954,
+                -0.0004071995150153815
+              ],
+              [
+                -0.12302239966871953,
+                0.09363839886093914
+              ]
+            ]
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              0.04987104008525661,
+              -0.09535956341380997
+            ],
+            "yaw_deg": 128.46701644852044,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.012882648452672583,
+                -0.13235173725717994
+              ],
+              [
+                0.08445563217433563,
+                -0.0605132563605698
+              ]
+            ]
+          },
+          {
+            "name": "banana",
+            "xy": [
+              0.12557414052819393,
+              0.026650640110332413
+            ],
+            "yaw_deg": 109.04638393406748,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.027580490982109546,
+                -0.0065383762893399255
+              ],
+              [
+                0.22845397512580606,
+                0.07493693333657624
+              ]
+            ]
+          }
+        ],
+        "distractor_count": 2,
+        "sampling": "full_table_mesh_projected_aabb",
+        "central_clear_corridor": false,
+        "goal_world_m": [
+          -0.16,
+          0.04,
+          0.16
+        ],
+        "table_rgba": [
+          0.88,
+          0.9,
+          0.91,
+          1.0
+        ],
+        "cup_model": "025_mug",
+        "object_scale": 0.8,
+        "version": "navigation-grasp-v1"
+      }
+    }
+  ],
+  "created_before_execution": true,
+  "config": "/home/smgbro/mujoconew/GITHUB/configs/adroit-navigation-v3.json",
+  "acceptance": "engineering dynamics; strict gates reported separately",
+  "source_sha256": {
+    "scripts/181_check_free_hand_local.py": "4a00d5d4462214acebfdf26a80119781494273182e879157e2329fbeb65172db",
+    "scripts/185_test_navigation_grasp.py": "c6805529de3052cccc0e23926c5ab93f8514d8b6f2cec6055254b8f5632a7f77",
+    "configs/adroit-navigation-v3.json": "8e0c2186e450309911a59a7d08a12c57f3d602597c3f0c9ecc8d1bdb2f899947",
+    "src/fromrealhand/tabletop/random_task.py": "0fe157a3257f8645561722e629fe7b18ca2b1c1ff24380918d8c8c6b7dedd9b4",
+    "src/fromrealhand/whole_table/motion.py": "e523871ac48bc813fd0c9466427c61633322232a7791d4f7e3a7ca0342039ee1",
+    "src/fromrealhand/whole_table/navigation_runner.py": "2db4c7ed4395de4ff40b279ff54a97cd61b9c68852284d09a75d42d9ac2fd3a8",
+    "src/fromrealhand/whole_table/__init__.py": "655e8a2377c2186709f5ec12654115af365075d50d172f046167a78130728abd",
+    "src/fromrealhand/whole_table/contracts.py": "073db567e3de3d125694509a0e47808b43a9caa9d807970d167ddad322b61777",
+    "src/fromrealhand/whole_table/interfaces.py": "26f85c8d8414e10f3a67feb1c3b6c6794577845ddafc4754120f23f460bb9136",
+    "src/fromrealhand/whole_table/local_adapter.py": "2074282b44634fb09623e468f3bede6410b90ef0553ffb3b4037e59a17c9d8f8",
+    "src/fromrealhand/whole_table/hand_scene.py": "bb9f798f76ce00af9c14bb640f0acee5c014d7cda3128ed9ea669a8a321fdb4c",
+    "src/fromrealhand/whole_table/navigation.py": "224691048f3f1fcf0373b1e81b7a5c76e22f375f42e4168185cdc6c3a082b9c4",
+    "src/fromrealhand/whole_table/config.py": "e10a811d0c36466455ca5455fd7f82acee1cb361e409f19ef86d060fc366e0fc",
+    "src/fromrealhand/whole_table/platform_checks.py": "44742a5074f370f328e3ec441e7423ac42b80e5d9d48344ab7c4cd48222626fd",
+    "src/fromrealhand/whole_table/layout.py": "ffb74ad18c9d66115e0cef406f95f5a90f2b90c5d3a413bfb547b750535875d0",
+    "src/fromrealhand/whole_table/loaded_motion.py": "163492f9ece102f8f8359e0997d4810bc2fb81af63e1a4bffe870132f5d3e661",
+    "src/fromrealhand/whole_table/scene.py": "207581df03838ce7975c8949de24bd2c908f920ce0711331120a2ea36e26148b"
+  }
+}
