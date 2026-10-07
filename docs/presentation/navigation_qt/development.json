@@ -1,0 +1,2292 @@
+[
+  {
+    "path": "/media/smgbro/shared/visual_grasp/navigation-v4/development-a",
+    "result": {
+      "cases": [
+        {
+          "seed": 5201,
+          "preferred": "first",
+          "selected": "first",
+          "passed": true,
+          "reason": "random_task_completed",
+          "attempts": [
+            {
+              "video": "first",
+              "passed": true,
+              "reason": "random_task_completed",
+              "wall_s": 28.510531420000007,
+              "steps": 698
+            }
+          ],
+          "actual_executions": 1,
+          "cup_error_m": 0.0003533795823851686,
+          "carry_penetration_m": 0.0006023330125844144,
+          "local_penetration_m": 0.00043339482305362886,
+          "hold_supported_fraction": 1.0,
+          "execution_resets": 0,
+          "planning_seconds": 29.617597996000086,
+          "total_wall_s": 58.21784982100007,
+          "carry_detour": false,
+          "egress": false,
+          "strict_passed": false,
+          "cup_xy": [
+            -0.04915081797989879,
+            -0.00286532671644818
+          ],
+          "goal": [
+            0.0031678790408939395,
+            -0.2582660859338892,
+            0.26623853215727167
+          ]
+        },
+        {
+          "seed": 5202,
+          "preferred": "second",
+          "selected": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "attempts": [
+            {
+              "video": "second",
+              "passed": true,
+              "reason": "random_task_completed",
+              "wall_s": 52.888067654999986,
+              "steps": 769
+            }
+          ],
+          "actual_executions": 1,
+          "cup_error_m": 0.0002898329907490057,
+          "carry_penetration_m": 0.00046221372833272004,
+          "local_penetration_m": 0.0007176496278159597,
+          "hold_supported_fraction": 1.0,
+          "execution_resets": 0,
+          "planning_seconds": 53.89625893699986,
+          "total_wall_s": 108.02788308100003,
+          "carry_detour": false,
+          "egress": false,
+          "strict_passed": false,
+          "cup_xy": [
+            -0.18664207912115086,
+            0.3094459247570016
+          ],
+          "goal": [
+            -0.04564736470795505,
+            -0.27332447883942323,
+            0.26449540521574716
+          ]
+        },
+        {
+          "seed": 5203,
+          "preferred": "first",
+          "selected": null,
+          "passed": false,
+          "reason": "no_feasible_grasp_candidate",
+          "attempts": [
+            {
+              "video": "first",
+              "passed": false,
+              "reason": "goal_in_collision_margin",
+              "wall_s": 4.542814185999987,
+              "steps": 0
+            },
+            {
+              "video": "second",
+              "passed": false,
+              "reason": "goal_in_collision_margin",
+              "wall_s": 4.551410849999911,
+              "steps": 0
+            }
+          ],
+          "actual_executions": 0,
+          "cup_error_m": null,
+          "carry_penetration_m": null,
+          "local_penetration_m": null,
+          "hold_supported_fraction": null,
+          "execution_resets": 0,
+          "planning_seconds": 9.113495278000073,
+          "total_wall_s": 9.113496331000078,
+          "carry_detour": false,
+          "egress": false,
+          "strict_passed": false,
+          "cup_xy": [
+            0.3374943709568526,
+            0.1963465042257051
+          ],
+          "goal": [
+            -0.01840022442177608,
+            -0.29235501317747803,
+            0.18982655148950037
+          ]
+        },
+        {
+          "seed": 5204,
+          "preferred": "second",
+          "selected": null,
+          "passed": false,
+          "reason": "no_feasible_grasp_candidate",
+          "attempts": [
+            {
+              "video": "second",
+              "passed": false,
+              "reason": "non_target_collision",
+              "wall_s": 14.502507323000145,
+              "steps": 321
+            },
+            {
+              "video": "first",
+              "passed": false,
+              "reason": "non_target_collision",
+              "wall_s": 12.754530503000069,
+              "steps": 292
+            }
+          ],
+          "actual_executions": 0,
+          "cup_error_m": null,
+          "carry_penetration_m": null,
+          "local_penetration_m": null,
+          "hold_supported_fraction": null,
+          "execution_resets": 0,
+          "planning_seconds": 27.291624727,
+          "total_wall_s": 27.29162600099994,
+          "carry_detour": false,
+          "egress": false,
+          "strict_passed": false,
+          "cup_xy": [
+            -0.12900078964220013,
+            0.11211284729147325
+          ],
+          "goal": [
+            0.0655945390778424,
+            0.17987782840879268,
+            0.21084126084802807
+          ]
+        }
+      ],
+      "passed": 2,
+      "total": 4,
+      "label": "development",
+      "success_rate": 0.5,
+      "source_unchanged": true,
+      "reaches_80_percent": false,
+      "claim": "system with model-based candidate previews; not independent raw-policy trials"
+    }
+  },
+  {
+    "path": "/media/smgbro/shared/visual_grasp/navigation-v4/development-b",
+    "result": {
+      "cases": [
+        {
+          "seed": 5204,
+          "preferred": "first",
+          "selected": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "attempts": [
+            {
+              "video": "first",
+              "passed": false,
+              "reason": "non_target_collision",
+              "entry_frame": 0,
+              "yaw_deg": 0,
+              "wall_s": 12.120415539000078,
+              "steps": 292
+            },
+            {
+              "video": "second",
+              "passed": false,
+              "reason": "non_target_collision",
+              "entry_frame": 0,
+              "yaw_deg": 0,
+              "wall_s": 13.3698973569999,
+              "steps": 321
+            },
+            {
+              "video": "first",
+              "passed": false,
+              "reason": "goal_in_collision_margin",
+              "entry_frame": 420,
+              "yaw_deg": 0,
+              "wall_s": 2.899171228999876,
+              "steps": 0
+            },
+            {
+              "video": "second",
+              "passed": true,
+              "reason": "random_task_completed",
+              "entry_frame": 420,
+              "yaw_deg": 0,
+              "wall_s": 37.10553005800011,
+              "steps": 315
+            }
+          ],
+          "actual_executions": 1,
+          "cup_error_m": 0.001156168638024011,
+          "carry_penetration_m": 0.0004500114956707546,
+          "local_penetration_m": 0.0006176110124567168,
+          "hold_supported_fraction": 1.0,
+          "execution_resets": 0,
+          "planning_seconds": 67.58130439600018,
+          "total_wall_s": 104.82690829100011,
+          "carry_detour": true,
+          "egress": false,
+          "strict_passed": true,
+          "cup_xy": [
+            -0.12900078964220013,
+            0.11211284729147325
+          ],
+          "goal": [
+            0.0655945390778424,
+            0.17987782840879268,
+            0.21084126084802807
+          ]
+        },
+        {
+          "seed": 5205,
+          "preferred": "second",
+          "selected": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "attempts": [
+            {
+              "video": "second",
+              "passed": true,
+              "reason": "random_task_completed",
+              "entry_frame": 0,
+              "yaw_deg": 0,
+              "wall_s": 56.388607266000236,
+              "steps": 782
+            }
+          ],
+          "actual_executions": 1,
+          "cup_error_m": 0.0003908089217752406,
+          "carry_penetration_m": 0.0004620639398547899,
+          "local_penetration_m": 0.0007118080754519897,
+          "hold_supported_fraction": 1.0,
+          "execution_resets": 0,
+          "planning_seconds": 56.46237128200028,
+          "total_wall_s": 114.65186676700023,
+          "carry_detour": false,
+          "egress": false,
+          "strict_passed": false,
+          "cup_xy": [
+            -0.21715315634702367,
+            0.06746810411191068
+          ],
+          "goal": [
+            0.3264582658638526,
+            0.05121228320793331,
+            0.253482323533102
+          ]
+        },
+        {
+          "seed": 5206,
+          "preferred": "first",
+          "selected": null,
+          "passed": false,
+          "reason": "no_feasible_grasp_candidate",
+          "attempts": [
+            {
+              "video": "first",
+              "passed": false,
+              "reason": "non_target_collision",
+              "entry_frame": 0,
+              "yaw_deg": 0,
+              "wall_s": 23.71042229199975,
+              "steps": 304
+            },
+            {
+              "video": "second",
+              "passed": false,
+              "reason": "non_target_collision",
+              "entry_frame": 0,
+              "yaw_deg": 0,
+              "wall_s": 26.00834374599981,
+              "steps": 376
+            },
+            {
+              "video": "first",
+              "passed": false,
+              "reason": "goal_in_collision_margin",
+              "entry_frame": 420,
+              "yaw_deg": 0,
+              "wall_s": 4.848507492999943,
+              "steps": 0
+            },
+            {
+              "video": "second",
+              "passed": false,
+              "reason": "goal_in_collision_margin",
+              "entry_frame": 420,
+              "yaw_deg": 0,
+              "wall_s": 16.482225082999776,
+              "steps": 0
+            },
+            {
+              "video": "first",
+              "passed": false,
+              "reason": "goal_in_collision_margin",
+              "entry_frame": 420,
+              "yaw_deg": 180,
+              "wall_s": 17.72563061899973,
+              "steps": 0
+            },
+            {
+              "video": "second",
+              "passed": false,
+              "reason": "stage_not_confirmed:grasp",
+              "entry_frame": 420,
+              "yaw_deg": 180,
+              "wall_s": 27.87190375399996,
+              "steps": 381
+            },
+            {
+              "video": "first",
+              "passed": false,
+              "reason": "goal_in_collision_margin",
+              "entry_frame": 420,
+              "yaw_deg": 90,
+              "wall_s": 22.874520462999953,
+              "steps": 0
+            },
+            {
+              "video": "second",
+              "passed": false,
+              "reason": "persistent_support_loss",
+              "entry_frame": 420,
+              "yaw_deg": 90,
+              "wall_s": 25.486646289999953,
+              "steps": 261
+            },
+            {
+              "video": "first",
+              "passed": false,
+              "reason": "goal_in_collision_margin",
+              "entry_frame": 420,
+              "yaw_deg": -90,
+              "wall_s": 4.556111169999895,
+              "steps": 0
+            },
+            {
+              "video": "second",
+              "passed": false,
+              "reason": "physics_safety_stop:scene_penetration_m",
+              "entry_frame": 420,
+              "yaw_deg": -90,
+              "wall_s": 21.411505467000097,
+              "steps": 102
+            }
+          ],
+          "actual_executions": 0,
+          "cup_error_m": null,
+          "carry_penetration_m": null,
+          "local_penetration_m": null,
+          "hold_supported_fraction": null,
+          "execution_resets": 0,
+          "planning_seconds": 191.12226764800016,
+          "total_wall_s": 191.12226912100004,
+          "carry_detour": false,
+          "egress": false,
+          "strict_passed": false,
+          "cup_xy": [
+            0.15097116992758525,
+            0.03468848505751959
+          ],
+          "goal": [
+            -0.12791027873721156,
+            -0.3180491461913761,
+            0.22355690767706826
+          ]
+        },
+        {
+          "seed": 5207,
+          "preferred": "second",
+          "selected": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "attempts": [
+            {
+              "video": "second",
+              "passed": true,
+              "reason": "random_task_completed",
+              "entry_frame": 0,
+              "yaw_deg": 0,
+              "wall_s": 38.296890277999864,
+              "steps": 778
+            }
+          ],
+          "actual_executions": 1,
+          "cup_error_m": 0.00038763687828961385,
+          "carry_penetration_m": 0.00046161615604159434,
+          "local_penetration_m": 0.0007183017622838413,
+          "hold_supported_fraction": 1.0,
+          "execution_resets": 0,
+          "planning_seconds": 38.35397240799966,
+          "total_wall_s": 75.79641225399973,
+          "carry_detour": false,
+          "egress": false,
+          "strict_passed": true,
+          "cup_xy": [
+            -0.12460303099849229,
+            -0.2172131166088821
+          ],
+          "goal": [
+            0.2896092926888608,
+            -0.2376388629131489,
+            0.2840881403065302
+          ]
+        },
+        {
+          "seed": 5208,
+          "preferred": "first",
+          "selected": "first",
+          "passed": true,
+          "reason": "random_task_completed",
+          "attempts": [
+            {
+              "video": "first",
+              "passed": true,
+              "reason": "random_task_completed",
+              "entry_frame": 0,
+              "yaw_deg": 0,
+              "wall_s": 31.76059745099974,
+              "steps": 698
+            }
+          ],
+          "actual_executions": 1,
+          "cup_error_m": 0.00022660452348547785,
+          "carry_penetration_m": 0.0006509587394531585,
+          "local_penetration_m": 0.0004280994949011317,
+          "hold_supported_fraction": 1.0,
+          "execution_resets": 0,
+          "planning_seconds": 31.801944290999927,
+          "total_wall_s": 65.61664037199989,
+          "carry_detour": false,
+          "egress": false,
+          "strict_passed": false,
+          "cup_xy": [
+            0.21486714645213928,
+            -0.06765767179603338
+          ],
+          "goal": [
+            0.15422990420345895,
+            -0.20933792219078234,
+            0.18263677455093574
+          ]
+        },
+        {
+          "seed": 5209,
+          "preferred": "second",
+          "selected": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "attempts": [
+            {
+              "video": "second",
+              "passed": false,
+              "reason": "goal_in_collision_margin",
+              "entry_frame": 0,
+              "yaw_deg": 0,
+              "wall_s": 11.966865901999881,
+              "steps": 0
+            },
+            {
+              "video": "first",
+              "passed": false,
+              "reason": "goal_in_collision_margin",
+              "entry_frame": 0,
+              "yaw_deg": 0,
+              "wall_s": 12.090518052000334,
+              "steps": 0
+            },
+            {
+              "video": "second",
+              "passed": true,
+              "reason": "random_task_completed",
+              "entry_frame": 420,
+              "yaw_deg": 0,
+              "wall_s": 44.62441462799961,
+              "steps": 336
+            }
+          ],
+          "actual_executions": 1,
+          "cup_error_m": 0.0005471608688855128,
+          "carry_penetration_m": 0.0004561107365091098,
+          "local_penetration_m": 0.000672689239510308,
+          "hold_supported_fraction": 1.0,
+          "execution_resets": 0,
+          "planning_seconds": 68.7422877959998,
+          "total_wall_s": 113.28085703099987,
+          "carry_detour": false,
+          "egress": false,
+          "strict_passed": false,
+          "cup_xy": [
+            -0.1783845928994523,
+            0.301874485427984
+          ],
+          "goal": [
+            0.02209808815143527,
+            0.20301435051998512,
+            0.25086388058327047
+          ]
+        },
+        {
+          "seed": 5210,
+          "preferred": "first",
+          "selected": "first",
+          "passed": true,
+          "reason": "random_task_completed",
+          "attempts": [
+            {
+              "video": "first",
+              "passed": true,
+              "reason": "random_task_completed",
+              "entry_frame": 0,
+              "yaw_deg": 0,
+              "wall_s": 48.20094660299992,
+              "steps": 692
+            }
+          ],
+          "actual_executions": 1,
+          "cup_error_m": 0.00015131904614168153,
+          "carry_penetration_m": 0.0007190324208430961,
+          "local_penetration_m": 0.00042757735168237956,
+          "hold_supported_fraction": 1.0,
+          "execution_resets": 0,
+          "planning_seconds": 48.26867695200008,
+          "total_wall_s": 97.00175884700002,
+          "carry_detour": false,
+          "egress": false,
+          "strict_passed": true,
+          "cup_xy": [
+            0.09689415129917645,
+            -0.2544078413209907
+          ],
+          "goal": [
+            0.24146629435031153,
+            0.2634088927552846,
+            0.2551293112134516
+          ]
+        },
+        {
+          "seed": 5211,
+          "preferred": "second",
+          "selected": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "attempts": [
+            {
+              "video": "second",
+              "passed": true,
+              "reason": "random_task_completed",
+              "entry_frame": 0,
+              "yaw_deg": 0,
+              "wall_s": 36.78544070099997,
+              "steps": 733
+            }
+          ],
+          "actual_executions": 1,
+          "cup_error_m": 0.00040543074476144617,
+          "carry_penetration_m": 0.0004555993050854301,
+          "local_penetration_m": 0.0007132744551346278,
+          "hold_supported_fraction": 1.0,
+          "execution_resets": 0,
+          "planning_seconds": 36.83176822899986,
+          "total_wall_s": 74.00132386099995,
+          "carry_detour": false,
+          "egress": false,
+          "strict_passed": false,
+          "cup_xy": [
+            -0.033281139774723356,
+            0.17543521484460978
+          ],
+          "goal": [
+            0.0878216089847525,
+            -0.04594469329939471,
+            0.2511263427986959
+          ]
+        }
+      ],
+      "passed": 7,
+      "total": 8,
+      "label": "development",
+      "success_rate": 0.875,
+      "source_unchanged": false,
+      "reaches_80_percent": true,
+      "claim": "system with model-based candidate previews; not independent raw-policy trials"
+    }
+  },
+  {
+    "path": "/media/smgbro/shared/visual_grasp/navigation-v4/development-v5-5203",
+    "result": {
+      "status": "success",
+      "reason": "random_task_completed",
+      "continuation": {
+        "waypoints": [
+          [
+            0.2942968567267474,
+            0.3129538747639622,
+            0.08654617223624096
+          ],
+          [
+            0.07500000000000073,
+            0.3129538747639622,
+            0.18499999999999997
+          ],
+          [
+            -0.07391286580588785,
+            -0.17239059714269472,
+            0.20558549968092293
+          ]
+        ],
+        "direct": false,
+        "free_grid_nodes": 110917,
+        "planning_seconds": 10.369286424000165,
+        "path_length_m": 0.7484761553418873,
+        "clearance_m": 0.025,
+        "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+        "passed": true,
+        "checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": true
+        },
+        "strict_passed": false,
+        "strict_checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": false
+        },
+        "acceleration_peak_time_s": [
+          3.006999999992992,
+          3.0059999999929943,
+          3.006999999992992
+        ],
+        "acceleration_acceptance_m_s2": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "endpoint_error_m": 1.1689616964641325e-05,
+        "max_tracking_error_m": 0.0025361675618544633,
+        "max_velocity_m_s": [
+          0.03200944253937945,
+          0.03199968708672014,
+          0.014376599854818492
+        ],
+        "max_acceleration_m_s2": [
+          0.27067319960595265,
+          0.03657591903554563,
+          0.05899657674698763
+        ],
+        "max_posture_error_rad": 8.853969953532062e-05,
+        "hand_environment_contacts": 0,
+        "simulation_seconds": 42.28900000004002,
+        "cup_start_m": [
+          0.34980949811085915,
+          0.1929894587291789,
+          0.07078722404481841
+        ],
+        "cup_goal_m": [
+          -0.01840022442177608,
+          -0.29235501317747803,
+          0.18982655148950037
+        ],
+        "cup_final_m": [
+          -0.018165072313173394,
+          -0.2923613431515667,
+          0.1892113029327242
+        ],
+        "cup_error_m": 0.000658686093194176,
+        "hold_seconds": 1.0,
+        "hold_supported_fraction": 1.0,
+        "support_fraction": 1.0,
+        "max_grasp_penetration_m": 0.0005726297962211652,
+        "cup_freejoint_preserved": true,
+        "object_pose_writes_during_execution": 0,
+        "payload_feedforward_force_n": [
+          -0.0,
+          -0.0,
+          2.955210141550354
+        ],
+        "payload_feedforward_torque_nm": [
+          -0.21744609029025921,
+          -0.0769300577091553,
+          -0.0
+        ],
+        "controller_handoff_seconds": 2.0,
+        "pre_handoff_settling_seconds": 3.0,
+        "cup_pose_input": "measured once at carry handoff for payload/goal calibration; live pose for safety only",
+        "initial_margin_conflicts": {
+          "start": [],
+          "goal": []
+        }
+      },
+      "passed": true,
+      "video": "first",
+      "seed": 5203,
+      "steps": 330,
+      "phase": "lift",
+      "completed": [
+        "reach",
+        "grasp",
+        "lift"
+      ],
+      "events": [
+        {
+          "phase": "reach",
+          "steps": 153,
+          "confirmation_steps": 5
+        },
+        {
+          "phase": "grasp",
+          "steps": 226,
+          "confirmation_steps": 50
+        },
+        {
+          "phase": "lift",
+          "steps": 330,
+          "confirmation_steps": 10
+        }
+      ],
+      "final": {
+        "scene_penetration_m": 0.0003397740756739924,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "max_hand_speed": 0.26498438465985485,
+        "non_target_contacts": 0,
+        "table_contacts": 0,
+        "th_force_n": 3.398430816095343,
+        "ff_force_n": 2.0152822830559143,
+        "mf_force_n": 1.4684378391788049,
+        "rf_force_n": 0.2902071311221857,
+        "lf_force_n": 0.0,
+        "opposition": true,
+        "normal_dots": {
+          "ff": -0.8871775175349863,
+          "mf": -0.8713578870473645,
+          "rf": -0.7061398493215957
+        },
+        "bottom_m": 0.06325503232153748,
+        "target_distance_m": 0.06414667529561617,
+        "cup_position_m": [
+          0.3503047667155762,
+          0.19478558494783269,
+          0.09716487253936652
+        ],
+        "metric_source": "simulation_evaluation",
+        "phase": "lift",
+        "step": 330,
+        "source_index": 623,
+        "root_tracking_world_m": [
+          -0.004997250115922854,
+          0.0014525232945971876,
+          -0.02450698515090334
+        ],
+        "proprioceptive_cup_prediction_m": [
+          0.33749865634124965,
+          0.19634919874402634,
+          0.031613958876033736
+        ],
+        "prediction_error_m": 0.06680840989816171
+      },
+      "max_penetration_m": 0.00034628317659974185,
+      "start_reference_step": 380,
+      "wall_s": 97.15746087000025,
+      "layout": {
+        "seed": 5203,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              0.3374943709568526,
+              0.1963465042257051
+            ],
+            "yaw_deg": 0.0,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.2994247724385572,
+                0.15593930471068973
+              ],
+              [
+                0.37447197128813303,
+                0.24998490308664423
+              ]
+            ]
+          },
+          {
+            "name": "banana",
+            "xy": [
+              -0.1767168746225181,
+              0.02146061724527326
+            ],
+            "yaw_deg": 134.14040990984165,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.28397922588528635,
+                -0.023695353930546614
+              ],
+              [
+                -0.09082321058276459,
+                0.08887234383982962
+              ]
+            ]
+          },
+          {
+            "name": "sugar_box",
+            "xy": [
+              0.2598709011750875,
+              0.08221010447525356
+            ],
+            "yaw_deg": 69.4870204230167,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.20887527962262506,
+                0.04294019057873687
+              ],
+              [
+                0.31367622185088223,
+                0.12099195083336169
+              ]
+            ]
+          },
+          {
+            "name": "mustard_bottle",
+            "xy": [
+              0.36376198325461573,
+              -0.13260795523638394
+            ],
+            "yaw_deg": -15.756721355855518,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.334670038865089,
+                -0.183144565517261
+              ],
+              [
+                0.39725020296003705,
+                -0.08379845237772732
+              ]
+            ]
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              -0.03738304258984493,
+              -0.16660036922363025
+            ],
+            "yaw_deg": 100.32416998902153,
+            "placement_attempts": 2,
+            "bounds_xy": [
+              [
+                -0.07399137664565354,
+                -0.20236919399280814
+              ],
+              [
+                -0.0034444179999683494,
+                -0.13153279666433032
+              ]
+            ]
+          }
+        ],
+        "distractor_count": 4,
+        "sampling": "full_table_mesh_projected_aabb",
+        "central_clear_corridor": false,
+        "goal_world_m": [
+          -0.01840022442177608,
+          -0.29235501317747803,
+          0.18982655148950037
+        ],
+        "table_rgba": [
+          0.88,
+          0.9,
+          0.91,
+          1.0
+        ],
+        "version": "tabletop-navigation-v5-entry380",
+        "cup_model": "025_mug",
+        "object_scale": 0.8
+      },
+      "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+      "learned_action_calls": 330,
+      "clipped_action_calls": 0,
+      "state_writes_during_execution": 0,
+      "object_forces_applied": false,
+      "pose_input": "local policy: initial known pose; continuation: see separate receipt",
+      "live_truth_usage": "local policy safety/evaluation; continuation separately audited",
+      "adapter": {
+        "entry_reference_step": 380,
+        "navigation": {
+          "waypoints": [
+            [
+              -0.5000000000000872,
+              -0.6000000000033809,
+              0.40000000000004676
+            ],
+            [
+              0.26903132888188874,
+              0.4222590001604084,
+              0.23499999999999996
+            ],
+            [
+              0.26903132888188874,
+              0.4222590001604084,
+              0.1893353887142804
+            ]
+          ],
+          "direct": false,
+          "free_grid_nodes": 111199,
+          "planning_seconds": 3.64019664099942,
+          "path_length_m": 1.335489269221,
+          "clearance_m": 0.025,
+          "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+          "passed": true,
+          "checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "strict_passed": true,
+          "strict_checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "acceleration_peak_time_s": [
+            15.804999999998888,
+            15.818999999998905,
+            20.972000000005202
+          ],
+          "acceleration_acceptance_m_s2": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "endpoint_error_m": 2.812877220678926e-05,
+          "max_tracking_error_m": 0.008722678019347457,
+          "max_velocity_m_s": [
+            0.0722178914485413,
+            0.0959974758854768,
+            0.04119006346333795
+          ],
+          "max_acceleration_m_s2": [
+            0.011942525787732748,
+            0.014895767547027929,
+            0.06500911970622106
+          ],
+          "max_posture_error_rad": 0.0005274944832946993,
+          "hand_environment_contacts": 0,
+          "simulation_seconds": 23.04000000000773
+        },
+        "approach": {
+          "waypoints": [
+            [
+              0.2690326599618936,
+              0.4222658201064538,
+              0.18930813170806512
+            ],
+            [
+              0.26903132888188874,
+              0.4222590001604084,
+              0.10933538871428042
+            ]
+          ],
+          "direct": true,
+          "free_grid_nodes": 2,
+          "planning_seconds": 0.005540375000236963,
+          "path_length_m": 0.07997274329565905,
+          "clearance_m": 0.002,
+          "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+          "passed": true,
+          "checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "strict_passed": true,
+          "strict_checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "acceleration_peak_time_s": [
+            0.025000000000030553,
+            8.636000000004596,
+            2.1440000000026203
+          ],
+          "acceleration_acceptance_m_s2": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "endpoint_error_m": 4.060867062687367e-06,
+          "max_tracking_error_m": 0.001159237882991677,
+          "max_velocity_m_s": [
+            5.162181552770332e-07,
+            2.3612154898085354e-06,
+            0.01599810051092844
+          ],
+          "max_acceleration_m_s2": [
+            0.00018494887498514992,
+            0.0001572976709115989,
+            0.005694971600404718
+          ],
+          "max_posture_error_rad": 5.72659979519996e-05,
+          "hand_environment_contacts": 0,
+          "simulation_seconds": 9.875000000001709
+        }
+      },
+      "carry": {
+        "waypoints": [
+          [
+            0.2942968567267474,
+            0.3129538747639622,
+            0.08654617223624096
+          ],
+          [
+            0.07500000000000073,
+            0.3129538747639622,
+            0.18499999999999997
+          ],
+          [
+            -0.07391286580588785,
+            -0.17239059714269472,
+            0.20558549968092293
+          ]
+        ],
+        "direct": false,
+        "free_grid_nodes": 110917,
+        "planning_seconds": 10.369286424000165,
+        "path_length_m": 0.7484761553418873,
+        "clearance_m": 0.025,
+        "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+        "passed": true,
+        "checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": true
+        },
+        "strict_passed": false,
+        "strict_checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": false
+        },
+        "acceleration_peak_time_s": [
+          3.006999999992992,
+          3.0059999999929943,
+          3.006999999992992
+        ],
+        "acceleration_acceptance_m_s2": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "endpoint_error_m": 1.1689616964641325e-05,
+        "max_tracking_error_m": 0.0025361675618544633,
+        "max_velocity_m_s": [
+          0.03200944253937945,
+          0.03199968708672014,
+          0.014376599854818492
+        ],
+        "max_acceleration_m_s2": [
+          0.27067319960595265,
+          0.03657591903554563,
+          0.05899657674698763
+        ],
+        "max_posture_error_rad": 8.853969953532062e-05,
+        "hand_environment_contacts": 0,
+        "simulation_seconds": 42.28900000004002,
+        "cup_start_m": [
+          0.34980949811085915,
+          0.1929894587291789,
+          0.07078722404481841
+        ],
+        "cup_goal_m": [
+          -0.01840022442177608,
+          -0.29235501317747803,
+          0.18982655148950037
+        ],
+        "cup_final_m": [
+          -0.018165072313173394,
+          -0.2923613431515667,
+          0.1892113029327242
+        ],
+        "cup_error_m": 0.000658686093194176,
+        "hold_seconds": 1.0,
+        "hold_supported_fraction": 1.0,
+        "support_fraction": 1.0,
+        "max_grasp_penetration_m": 0.0005726297962211652,
+        "cup_freejoint_preserved": true,
+        "object_pose_writes_during_execution": 0,
+        "payload_feedforward_force_n": [
+          -0.0,
+          -0.0,
+          2.955210141550354
+        ],
+        "payload_feedforward_torque_nm": [
+          -0.21744609029025921,
+          -0.0769300577091553,
+          -0.0
+        ],
+        "controller_handoff_seconds": 2.0,
+        "pre_handoff_settling_seconds": 3.0,
+        "cup_pose_input": "measured once at carry handoff for payload/goal calibration; live pose for safety only",
+        "initial_margin_conflicts": {
+          "start": [],
+          "goal": []
+        }
+      },
+      "actual_executions": 1,
+      "planning_attempts": [
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 4.525987674000135,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 4.535907389000386,
+          "steps": 0
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 4.623051766999197,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 17.79253755799982,
+          "steps": 0
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 380,
+          "yaw_deg": 0,
+          "wall_s": 4.616639202999977,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 380,
+          "yaw_deg": 0,
+          "wall_s": 18.124902288000158,
+          "steps": 0
+        },
+        {
+          "video": "first",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 380,
+          "yaw_deg": 180,
+          "wall_s": 97.20168175900017,
+          "steps": 330
+        }
+      ],
+      "selected_video": "first",
+      "preferred_video": "first",
+      "selected_entry_frame": 380,
+      "selected_yaw_deg": 180,
+      "planning_seconds": 153.6258561579998,
+      "speed_scale": 1.0,
+      "planning_clearance_m": 0.025,
+      "total_wall_s": 250.87784916800047,
+      "execution_resets": 0,
+      "planning_model": "same MuJoCo dynamics in isolated previews",
+      "success_scope": "model-based candidate selection plus learned local grasp; not raw policy generalization"
+    }
+  },
+  {
+    "path": "/media/smgbro/shared/visual_grasp/navigation-grasp-dev3/entry380-5203/380",
+    "result": {
+      "status": "success",
+      "reason": "random_task_completed",
+      "continuation": {
+        "waypoints": [
+          [
+            0.2942968567267474,
+            0.3129538747639622,
+            0.08654617223624096
+          ],
+          [
+            0.07500000000000073,
+            0.3129538747639622,
+            0.18499999999999997
+          ],
+          [
+            -0.07391286580588785,
+            -0.17239059714269472,
+            0.20558549968092293
+          ]
+        ],
+        "direct": false,
+        "free_grid_nodes": 110917,
+        "planning_seconds": 10.537159278000217,
+        "path_length_m": 0.7484761553418873,
+        "clearance_m": 0.025,
+        "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+        "passed": true,
+        "checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": true
+        },
+        "strict_passed": false,
+        "strict_checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": false
+        },
+        "acceleration_peak_time_s": [
+          3.006999999992992,
+          3.0059999999929943,
+          3.006999999992992
+        ],
+        "acceleration_acceptance_m_s2": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "endpoint_error_m": 1.1689616964641325e-05,
+        "max_tracking_error_m": 0.0025361675618544633,
+        "max_velocity_m_s": [
+          0.03200944253937945,
+          0.03199968708672014,
+          0.014376599854818492
+        ],
+        "max_acceleration_m_s2": [
+          0.27067319960595265,
+          0.03657591903554563,
+          0.05899657674698763
+        ],
+        "max_posture_error_rad": 8.853969953532062e-05,
+        "hand_environment_contacts": 0,
+        "simulation_seconds": 42.28900000004002,
+        "cup_start_m": [
+          0.34980949811085915,
+          0.1929894587291789,
+          0.07078722404481841
+        ],
+        "cup_goal_m": [
+          -0.01840022442177608,
+          -0.29235501317747803,
+          0.18982655148950037
+        ],
+        "cup_final_m": [
+          -0.018165072313173394,
+          -0.2923613431515667,
+          0.1892113029327242
+        ],
+        "cup_error_m": 0.000658686093194176,
+        "hold_seconds": 1.0,
+        "hold_supported_fraction": 1.0,
+        "support_fraction": 1.0,
+        "max_grasp_penetration_m": 0.0005726297962211652,
+        "cup_freejoint_preserved": true,
+        "object_pose_writes_during_execution": 0,
+        "payload_feedforward_force_n": [
+          -0.0,
+          -0.0,
+          2.955210141550354
+        ],
+        "payload_feedforward_torque_nm": [
+          -0.21744609029025921,
+          -0.0769300577091553,
+          -0.0
+        ],
+        "controller_handoff_seconds": 2.0,
+        "pre_handoff_settling_seconds": 3.0,
+        "cup_pose_input": "measured once at carry handoff for payload/goal calibration; live pose for safety only",
+        "initial_margin_conflicts": {
+          "start": [],
+          "goal": []
+        }
+      },
+      "passed": true,
+      "video": "first",
+      "seed": 5203,
+      "steps": 330,
+      "phase": "lift",
+      "completed": [
+        "reach",
+        "grasp",
+        "lift"
+      ],
+      "events": [
+        {
+          "phase": "reach",
+          "steps": 153,
+          "confirmation_steps": 5
+        },
+        {
+          "phase": "grasp",
+          "steps": 226,
+          "confirmation_steps": 50
+        },
+        {
+          "phase": "lift",
+          "steps": 330,
+          "confirmation_steps": 10
+        }
+      ],
+      "final": {
+        "scene_penetration_m": 0.0003397740756739924,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "max_hand_speed": 0.26498438465985485,
+        "non_target_contacts": 0,
+        "table_contacts": 0,
+        "th_force_n": 3.398430816095343,
+        "ff_force_n": 2.0152822830559143,
+        "mf_force_n": 1.4684378391788049,
+        "rf_force_n": 0.2902071311221857,
+        "lf_force_n": 0.0,
+        "opposition": true,
+        "normal_dots": {
+          "ff": -0.8871775175349863,
+          "mf": -0.8713578870473645,
+          "rf": -0.7061398493215957
+        },
+        "bottom_m": 0.06325503232153748,
+        "target_distance_m": 0.06414667529561617,
+        "cup_position_m": [
+          0.3503047667155762,
+          0.19478558494783269,
+          0.09716487253936652
+        ],
+        "metric_source": "simulation_evaluation",
+        "phase": "lift",
+        "step": 330,
+        "source_index": 623,
+        "root_tracking_world_m": [
+          -0.004997250115922854,
+          0.0014525232945971876,
+          -0.02450698515090334
+        ],
+        "proprioceptive_cup_prediction_m": [
+          0.33749865634124965,
+          0.19634919874402634,
+          0.031613958876033736
+        ],
+        "prediction_error_m": 0.06680840989816171
+      },
+      "max_penetration_m": 0.00034628317659974185,
+      "start_reference_step": 380,
+      "wall_s": 96.53201199700015,
+      "layout": {
+        "seed": 5203,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              0.3374943709568526,
+              0.1963465042257051
+            ],
+            "yaw_deg": 0.0,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.2994247724385572,
+                0.15593930471068973
+              ],
+              [
+                0.37447197128813303,
+                0.24998490308664423
+              ]
+            ]
+          },
+          {
+            "name": "banana",
+            "xy": [
+              -0.1767168746225181,
+              0.02146061724527326
+            ],
+            "yaw_deg": 134.14040990984165,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.28397922588528635,
+                -0.023695353930546614
+              ],
+              [
+                -0.09082321058276459,
+                0.08887234383982962
+              ]
+            ]
+          },
+          {
+            "name": "sugar_box",
+            "xy": [
+              0.2598709011750875,
+              0.08221010447525356
+            ],
+            "yaw_deg": 69.4870204230167,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.20887527962262506,
+                0.04294019057873687
+              ],
+              [
+                0.31367622185088223,
+                0.12099195083336169
+              ]
+            ]
+          },
+          {
+            "name": "mustard_bottle",
+            "xy": [
+              0.36376198325461573,
+              -0.13260795523638394
+            ],
+            "yaw_deg": -15.756721355855518,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.334670038865089,
+                -0.183144565517261
+              ],
+              [
+                0.39725020296003705,
+                -0.08379845237772732
+              ]
+            ]
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              -0.03738304258984493,
+              -0.16660036922363025
+            ],
+            "yaw_deg": 100.32416998902153,
+            "placement_attempts": 2,
+            "bounds_xy": [
+              [
+                -0.07399137664565354,
+                -0.20236919399280814
+              ],
+              [
+                -0.0034444179999683494,
+                -0.13153279666433032
+              ]
+            ]
+          }
+        ],
+        "distractor_count": 4,
+        "sampling": "full_table_mesh_projected_aabb",
+        "central_clear_corridor": false,
+        "goal_world_m": [
+          -0.01840022442177608,
+          -0.29235501317747803,
+          0.18982655148950037
+        ],
+        "table_rgba": [
+          0.88,
+          0.9,
+          0.91,
+          1.0
+        ],
+        "version": "tabletop-navigation-v4",
+        "cup_model": "025_mug",
+        "object_scale": 0.8
+      },
+      "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+      "learned_action_calls": 330,
+      "clipped_action_calls": 0,
+      "state_writes_during_execution": 0,
+      "object_forces_applied": false,
+      "pose_input": "local policy: initial known pose; continuation: see separate receipt",
+      "live_truth_usage": "local policy safety/evaluation; continuation separately audited",
+      "adapter": {
+        "entry_reference_step": 380,
+        "navigation": {
+          "waypoints": [
+            [
+              -0.5000000000000872,
+              -0.6000000000033809,
+              0.40000000000004676
+            ],
+            [
+              0.26903132888188874,
+              0.4222590001604084,
+              0.23499999999999996
+            ],
+            [
+              0.26903132888188874,
+              0.4222590001604084,
+              0.1893353887142804
+            ]
+          ],
+          "direct": false,
+          "free_grid_nodes": 111199,
+          "planning_seconds": 3.7805232669998077,
+          "path_length_m": 1.335489269221,
+          "clearance_m": 0.025,
+          "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+          "passed": true,
+          "checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "strict_passed": true,
+          "strict_checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "acceleration_peak_time_s": [
+            15.804999999998888,
+            15.818999999998905,
+            20.972000000005202
+          ],
+          "acceleration_acceptance_m_s2": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "endpoint_error_m": 2.812877220678926e-05,
+          "max_tracking_error_m": 0.008722678019347457,
+          "max_velocity_m_s": [
+            0.0722178914485413,
+            0.0959974758854768,
+            0.04119006346333795
+          ],
+          "max_acceleration_m_s2": [
+            0.011942525787732748,
+            0.014895767547027929,
+            0.06500911970622106
+          ],
+          "max_posture_error_rad": 0.0005274944832946993,
+          "hand_environment_contacts": 0,
+          "simulation_seconds": 23.04000000000773
+        },
+        "approach": {
+          "waypoints": [
+            [
+              0.2690326599618936,
+              0.4222658201064538,
+              0.18930813170806512
+            ],
+            [
+              0.26903132888188874,
+              0.4222590001604084,
+              0.10933538871428042
+            ]
+          ],
+          "direct": true,
+          "free_grid_nodes": 2,
+          "planning_seconds": 0.005364313999962178,
+          "path_length_m": 0.07997274329565905,
+          "clearance_m": 0.002,
+          "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+          "passed": true,
+          "checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "strict_passed": true,
+          "strict_checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "acceleration_peak_time_s": [
+            0.025000000000030553,
+            8.636000000004596,
+            2.1440000000026203
+          ],
+          "acceleration_acceptance_m_s2": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "endpoint_error_m": 4.060867062687367e-06,
+          "max_tracking_error_m": 0.001159237882991677,
+          "max_velocity_m_s": [
+            5.162181552770332e-07,
+            2.3612154898085354e-06,
+            0.01599810051092844
+          ],
+          "max_acceleration_m_s2": [
+            0.00018494887498514992,
+            0.0001572976709115989,
+            0.005694971600404718
+          ],
+          "max_posture_error_rad": 5.72659979519996e-05,
+          "hand_environment_contacts": 0,
+          "simulation_seconds": 9.875000000001709
+        }
+      },
+      "carry": {
+        "waypoints": [
+          [
+            0.2942968567267474,
+            0.3129538747639622,
+            0.08654617223624096
+          ],
+          [
+            0.07500000000000073,
+            0.3129538747639622,
+            0.18499999999999997
+          ],
+          [
+            -0.07391286580588785,
+            -0.17239059714269472,
+            0.20558549968092293
+          ]
+        ],
+        "direct": false,
+        "free_grid_nodes": 110917,
+        "planning_seconds": 10.537159278000217,
+        "path_length_m": 0.7484761553418873,
+        "clearance_m": 0.025,
+        "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+        "passed": true,
+        "checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": true
+        },
+        "strict_passed": false,
+        "strict_checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": false
+        },
+        "acceleration_peak_time_s": [
+          3.006999999992992,
+          3.0059999999929943,
+          3.006999999992992
+        ],
+        "acceleration_acceptance_m_s2": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "endpoint_error_m": 1.1689616964641325e-05,
+        "max_tracking_error_m": 0.0025361675618544633,
+        "max_velocity_m_s": [
+          0.03200944253937945,
+          0.03199968708672014,
+          0.014376599854818492
+        ],
+        "max_acceleration_m_s2": [
+          0.27067319960595265,
+          0.03657591903554563,
+          0.05899657674698763
+        ],
+        "max_posture_error_rad": 8.853969953532062e-05,
+        "hand_environment_contacts": 0,
+        "simulation_seconds": 42.28900000004002,
+        "cup_start_m": [
+          0.34980949811085915,
+          0.1929894587291789,
+          0.07078722404481841
+        ],
+        "cup_goal_m": [
+          -0.01840022442177608,
+          -0.29235501317747803,
+          0.18982655148950037
+        ],
+        "cup_final_m": [
+          -0.018165072313173394,
+          -0.2923613431515667,
+          0.1892113029327242
+        ],
+        "cup_error_m": 0.000658686093194176,
+        "hold_seconds": 1.0,
+        "hold_supported_fraction": 1.0,
+        "support_fraction": 1.0,
+        "max_grasp_penetration_m": 0.0005726297962211652,
+        "cup_freejoint_preserved": true,
+        "object_pose_writes_during_execution": 0,
+        "payload_feedforward_force_n": [
+          -0.0,
+          -0.0,
+          2.955210141550354
+        ],
+        "payload_feedforward_torque_nm": [
+          -0.21744609029025921,
+          -0.0769300577091553,
+          -0.0
+        ],
+        "controller_handoff_seconds": 2.0,
+        "pre_handoff_settling_seconds": 3.0,
+        "cup_pose_input": "measured once at carry handoff for payload/goal calibration; live pose for safety only",
+        "initial_margin_conflicts": {
+          "start": [],
+          "goal": []
+        }
+      }
+    }
+  },
+  {
+    "path": "/media/smgbro/shared/visual_grasp/navigation-grasp-dev3/entry380-5206",
+    "result": {
+      "status": "success",
+      "reason": "random_task_completed",
+      "continuation": {
+        "waypoints": [
+          [
+            0.10777410540693223,
+            0.15129079119075833,
+            0.08652199967108233
+          ],
+          [
+            -0.04999999999999938,
+            0.12500000000000078,
+            0.23499999999999996
+          ],
+          [
+            -0.18364049823936052,
+            -0.19816959931663314,
+            0.24018521949034732
+          ]
+        ],
+        "direct": false,
+        "free_grid_nodes": 109981,
+        "planning_seconds": 10.882692804000726,
+        "path_length_m": 0.567992327140311,
+        "clearance_m": 0.025,
+        "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+        "passed": true,
+        "checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": true
+        },
+        "strict_passed": true,
+        "strict_checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": true
+        },
+        "acceleration_peak_time_s": [
+          29.32399999993732,
+          26.08399999993921,
+          10.133999999976382
+        ],
+        "acceleration_acceptance_m_s2": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "endpoint_error_m": 7.517953695025753e-06,
+        "max_tracking_error_m": 0.0025474997060223013,
+        "max_velocity_m_s": [
+          0.025530392177300257,
+          0.031999326844991176,
+          0.024000753257969448
+        ],
+        "max_acceleration_m_s2": [
+          0.06625777201042965,
+          0.012790953856204981,
+          0.022838970769869467
+        ],
+        "max_posture_error_rad": 8.405438035884345e-05,
+        "hand_environment_contacts": 0,
+        "simulation_seconds": 31.535999999947883,
+        "cup_start_m": [
+          0.16350432490908118,
+          0.031411244316015385,
+          0.06989368785780324
+        ],
+        "cup_goal_m": [
+          -0.12791027873721156,
+          -0.3180491461913761,
+          0.22355690767706826
+        ],
+        "cup_final_m": [
+          -0.12780055349058822,
+          -0.31791737298816247,
+          0.2230229411568334
+        ],
+        "cup_error_m": 0.0005608244391638488,
+        "hold_seconds": 1.0,
+        "hold_supported_fraction": 1.0,
+        "support_fraction": 1.0,
+        "max_grasp_penetration_m": 0.0005289329929216921,
+        "cup_freejoint_preserved": true,
+        "object_pose_writes_during_execution": 0,
+        "payload_feedforward_force_n": [
+          -0.0,
+          -0.0,
+          2.955210141550354
+        ],
+        "payload_feedforward_torque_nm": [
+          -0.21717510862307565,
+          -0.07756175314986441,
+          -0.0
+        ],
+        "controller_handoff_seconds": 2.0,
+        "pre_handoff_settling_seconds": 3.0,
+        "cup_pose_input": "measured once at carry handoff for payload/goal calibration; live pose for safety only",
+        "initial_margin_conflicts": {
+          "start": [],
+          "goal": []
+        }
+      },
+      "passed": true,
+      "video": "first",
+      "seed": 5206,
+      "steps": 329,
+      "phase": "lift",
+      "completed": [
+        "reach",
+        "grasp",
+        "lift"
+      ],
+      "events": [
+        {
+          "phase": "reach",
+          "steps": 152,
+          "confirmation_steps": 5
+        },
+        {
+          "phase": "grasp",
+          "steps": 225,
+          "confirmation_steps": 50
+        },
+        {
+          "phase": "lift",
+          "steps": 329,
+          "confirmation_steps": 10
+        }
+      ],
+      "final": {
+        "scene_penetration_m": 0.00030948582376665555,
+        "joint_violation_rad": 0.0,
+        "finite": true,
+        "max_hand_speed": 0.2625532041446813,
+        "non_target_contacts": 0,
+        "table_contacts": 0,
+        "th_force_n": 3.32035860609176,
+        "ff_force_n": 1.8948532039521881,
+        "mf_force_n": 1.4523293377752282,
+        "rf_force_n": 0.31152169954032016,
+        "lf_force_n": 0.0,
+        "opposition": true,
+        "normal_dots": {
+          "ff": -0.8951273558373828,
+          "mf": -0.881022467931229,
+          "rf": -0.7232953514283643
+        },
+        "bottom_m": 0.06251094705005623,
+        "target_distance_m": 0.0649968310861744,
+        "cup_position_m": [
+          0.16397256807387459,
+          0.033188647341318066,
+          0.09633445056931174
+        ],
+        "metric_source": "simulation_evaluation",
+        "phase": "lift",
+        "step": 329,
+        "source_index": 623,
+        "root_tracking_world_m": [
+          -0.004993534346870243,
+          0.0014488045093335846,
+          -0.024527148107328322
+        ],
+        "proprioceptive_cup_prediction_m": [
+          0.15097389164214994,
+          0.034690607589337404,
+          0.0316137013782266
+        ],
+        "prediction_error_m": 0.06603027221978304
+      },
+      "max_penetration_m": 0.00035316780872551336,
+      "start_reference_step": 380,
+      "wall_s": 80.62094336300015,
+      "layout": {
+        "seed": 5206,
+        "objects": [
+          {
+            "name": "mug",
+            "xy": [
+              0.15097116992758525,
+              0.03468848505751959
+            ],
+            "yaw_deg": 0.0,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.11290157140928986,
+                -0.005718714457495791
+              ],
+              [
+                0.18794877025886572,
+                0.08832688391845872
+              ]
+            ]
+          },
+          {
+            "name": "tomato_soup_can",
+            "xy": [
+              -0.057523814316650046,
+              -0.112598033663142
+            ],
+            "yaw_deg": -55.89225987239786,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.0919561090168889,
+                -0.14764687092698414
+              ],
+              [
+                -0.02051213317384598,
+                -0.07576525142986637
+              ]
+            ]
+          },
+          {
+            "name": "sugar_box",
+            "xy": [
+              -0.17248356017739802,
+              0.29676225963406333
+            ],
+            "yaw_deg": -26.11148544126422,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                -0.21487464318658756,
+                0.24293583967209176
+              ],
+              [
+                -0.13138254938572488,
+                0.3476416165990064
+              ]
+            ]
+          },
+          {
+            "name": "banana",
+            "xy": [
+              -0.2708602195984432,
+              -0.2772392245690676
+            ],
+            "yaw_deg": -90.28335067677112,
+            "placement_attempts": 3,
+            "bounds_xy": [
+              [
+                -0.3736610985210798,
+                -0.3508779480940927
+              ],
+              [
+                -0.1926194314359242,
+                -0.23978218820726543
+              ]
+            ]
+          },
+          {
+            "name": "mustard_bottle",
+            "xy": [
+              0.24535985367055896,
+              -0.12422424833672899
+            ],
+            "yaw_deg": -156.4949141509537,
+            "placement_attempts": 1,
+            "bounds_xy": [
+              [
+                0.20432980505069293,
+                -0.17436416102657593
+              ],
+              [
+                0.2809332156367361,
+                -0.0765317092578861
+              ]
+            ]
+          }
+        ],
+        "distractor_count": 4,
+        "sampling": "full_table_mesh_projected_aabb",
+        "central_clear_corridor": false,
+        "goal_world_m": [
+          -0.12791027873721156,
+          -0.3180491461913761,
+          0.22355690767706826
+        ],
+        "table_rgba": [
+          0.88,
+          0.9,
+          0.91,
+          1.0
+        ],
+        "version": "tabletop-navigation-v4",
+        "cup_model": "025_mug",
+        "object_scale": 0.8
+      },
+      "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+      "learned_action_calls": 329,
+      "clipped_action_calls": 0,
+      "state_writes_during_execution": 0,
+      "object_forces_applied": false,
+      "pose_input": "local policy: initial known pose; continuation: see separate receipt",
+      "live_truth_usage": "local policy safety/evaluation; continuation separately audited",
+      "adapter": {
+        "entry_reference_step": 380,
+        "navigation": {
+          "waypoints": [
+            [
+              -0.49999999999962025,
+              -0.6000000000233324,
+              0.4000000000001474
+            ],
+            [
+              0.08250912134444047,
+              0.2606010917065996,
+              0.18933667101316382
+            ]
+          ],
+          "direct": true,
+          "free_grid_nodes": 2,
+          "planning_seconds": 0.006161385999803315,
+          "path_length_m": 1.0603443561955044,
+          "clearance_m": 0.025,
+          "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+          "passed": true,
+          "checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "strict_passed": true,
+          "strict_checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "acceleration_peak_time_s": [
+            13.322999999997057,
+            13.321999999997058,
+            13.321999999997058
+          ],
+          "acceleration_acceptance_m_s2": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "endpoint_error_m": 5.38396460860846e-06,
+          "max_tracking_error_m": 0.008519821296617295,
+          "max_velocity_m_s": [
+            0.06497685452076797,
+            0.09599642527240908,
+            0.02349871303140291
+          ],
+          "max_acceleration_m_s2": [
+            0.012752544642043524,
+            0.01772924655685795,
+            0.004979278950170132
+          ],
+          "max_posture_error_rad": 0.00010010504750750104,
+          "hand_environment_contacts": 0,
+          "simulation_seconds": 17.309000000000726
+        },
+        "approach": {
+          "waypoints": [
+            [
+              0.08251309708769954,
+              0.260600544237358,
+              0.18933308202753077
+            ],
+            [
+              0.08250912134444047,
+              0.2606010917065996,
+              0.10933667101316383
+            ]
+          ],
+          "direct": true,
+          "free_grid_nodes": 2,
+          "planning_seconds": 0.005878790999304329,
+          "path_length_m": 0.07999641111503557,
+          "clearance_m": 0.002,
+          "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+          "passed": true,
+          "checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "strict_passed": true,
+          "strict_checks": {
+            "endpoint": true,
+            "no_environment_contact": true,
+            "velocity": true,
+            "acceleration": true
+          },
+          "acceleration_peak_time_s": [
+            7.68300000000939,
+            1.8510000000022622,
+            7.476000000009137
+          ],
+          "acceleration_acceptance_m_s2": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "endpoint_error_m": 4.017123946960451e-06,
+          "max_tracking_error_m": 0.0011584726715134072,
+          "max_velocity_m_s": [
+            1.6484370109637947e-06,
+            3.177139269187424e-07,
+            0.01599824312928999
+          ],
+          "max_acceleration_m_s2": [
+            0.0009601705807260672,
+            0.00017225044306106376,
+            0.005671225880397929
+          ],
+          "max_posture_error_rad": 4.6639448018331864e-05,
+          "hand_environment_contacts": 0,
+          "simulation_seconds": 9.875000000012069
+        }
+      },
+      "carry": {
+        "waypoints": [
+          [
+            0.10777410540693223,
+            0.15129079119075833,
+            0.08652199967108233
+          ],
+          [
+            -0.04999999999999938,
+            0.12500000000000078,
+            0.23499999999999996
+          ],
+          [
+            -0.18364049823936052,
+            -0.19816959931663314,
+            0.24018521949034732
+          ]
+        ],
+        "direct": false,
+        "free_grid_nodes": 109981,
+        "planning_seconds": 10.882692804000726,
+        "path_length_m": 0.567992327140311,
+        "clearance_m": 0.025,
+        "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+        "passed": true,
+        "checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": true
+        },
+        "strict_passed": true,
+        "strict_checks": {
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true,
+          "acceleration": true
+        },
+        "acceleration_peak_time_s": [
+          29.32399999993732,
+          26.08399999993921,
+          10.133999999976382
+        ],
+        "acceleration_acceptance_m_s2": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "endpoint_error_m": 7.517953695025753e-06,
+        "max_tracking_error_m": 0.0025474997060223013,
+        "max_velocity_m_s": [
+          0.025530392177300257,
+          0.031999326844991176,
+          0.024000753257969448
+        ],
+        "max_acceleration_m_s2": [
+          0.06625777201042965,
+          0.012790953856204981,
+          0.022838970769869467
+        ],
+        "max_posture_error_rad": 8.405438035884345e-05,
+        "hand_environment_contacts": 0,
+        "simulation_seconds": 31.535999999947883,
+        "cup_start_m": [
+          0.16350432490908118,
+          0.031411244316015385,
+          0.06989368785780324
+        ],
+        "cup_goal_m": [
+          -0.12791027873721156,
+          -0.3180491461913761,
+          0.22355690767706826
+        ],
+        "cup_final_m": [
+          -0.12780055349058822,
+          -0.31791737298816247,
+          0.2230229411568334
+        ],
+        "cup_error_m": 0.0005608244391638488,
+        "hold_seconds": 1.0,
+        "hold_supported_fraction": 1.0,
+        "support_fraction": 1.0,
+        "max_grasp_penetration_m": 0.0005289329929216921,
+        "cup_freejoint_preserved": true,
+        "object_pose_writes_during_execution": 0,
+        "payload_feedforward_force_n": [
+          -0.0,
+          -0.0,
+          2.955210141550354
+        ],
+        "payload_feedforward_torque_nm": [
+          -0.21717510862307565,
+          -0.07756175314986441,
+          -0.0
+        ],
+        "controller_handoff_seconds": 2.0,
+        "pre_handoff_settling_seconds": 3.0,
+        "cup_pose_input": "measured once at carry handoff for payload/goal calibration; live pose for safety only",
+        "initial_margin_conflicts": {
+          "start": [],
+          "goal": []
+        }
+      }
+    }
+  }
+]

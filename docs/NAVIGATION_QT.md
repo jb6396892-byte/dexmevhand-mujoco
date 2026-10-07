@@ -1,0 +1,94 @@
+# 整桌导航、抓取与搬运 Qt 实验台
+
+## 启动与操作
+
+```bash
+cd /home/smgbro/mujoconew/GITHUB
+bash scripts/191_launch_navigation_qt.sh
+```
+
+需要共享盘中的原模型、语言环境和 GUI 环境，以及当前桌面会话。启动器复用现有 NVIDIA GLX 隔离环境，不重新安装 MuJoCo，不修改旧模型。
+
+1. 保持任务模式为“整桌导航 · 抓取 · 搬运”。
+2. 设置桌面种子和干扰物数量。初始位置、目标位置分别在两个页签中设置，可选择随种子或手动坐标；界面单位为 mm。
+3. 选择“自动选择可行抓法”，并选择优先第一或第二视频；固定抓法模式只尝试所选视频，不保证同样成功率。
+4. 设置速度倍率 0.5–1.0、规划余量 25–40 mm。增大余量会拒绝更多拥挤场景，不一定更容易完成。
+5. 输入“把杯子搬到目标位置”，点击执行。先显示候选物理预演状态，通过后才显示实时实际执行。也可单独要求接近、握住或抬杯。
+6. 上方停止按钮始终可见。底部导航参数显示实际抓法、入口帧、抓取方位、杯位及目标；画面旁显示杯底高度、目标距离、穿透、接触力和阶段信息。
+
+查看已验证的拥挤开发示例：种子 **5203**、干扰物 **4**、杯位与目标均跟随种子、自动选择抓法、优先第一视频，执行“把杯子搬到目标位置”。它会选择 380 帧反向入口；该示例用于演示修复，不计入新 20 轮留出分母。
+
+目标是搬运后稳定保持，不包含松手放下。大范围任务使用自由基座 Adroit，不包含真实机械臂的可达性约束。
+
+## 范围
+
+- 桌面 0.85 × 0.80 m。杯子和杂物按各自 mesh 投影包络采样，留桌边 5 mm、物体间 10 mm 初始间隙；不保留中央无障碍走廊。
+- 杯型保持训练使用的 `025_mug`、缩放 0.8、朝向固定。杂物包括香蕉、糖盒、芥末瓶和罐头，位置与朝向变化。
+- 手动杯心 X 为 −380–380 mm，Y 为 −350–340 mm；仍需通过实际杯子 footprint 的桌面支撑检查。
+- 目标 X 为 −350–350 mm，Y 为 −320–320 mm，Z 为 180–300 mm；这是杯子模型原点的世界坐标，不是杯底高度。
+- 杯子和障碍初始位姿已知。本模式不运行 RGB-D 估计，也不声称解决了实物感知误差。
+- 导航碰撞包络和安全验收读取当前仿真状态；局部学习策略使用初始杯位姿和关节反馈，带杯交接时再次读取杯位以标定载荷及目标位移。这不是现实相机闭环的测试。
+
+## 方法与代码
+
+完整流程：中文指令 → 已注册技能计划 → 候选抓法预演 → 空手导航 → 低速接近 → 学习残差局部抓取 → 带杯避障 → 末秒保持。
+
+- `whole_table/task.py`：组合两视频与不同局部入口帧、抓取方位候选。参考坐标随杯子平移，杯子不被重复平移。近入口的手型在任务初始化设置，随后靠执行器导航到入口，再继续参考条件策略。
+- 最终候选配置为 `tabletop-navigation-v5.json`：正向依次尝试 0、420、380 帧；旋转候选使用列表末尾的 380 帧，方向为 180、90、−90 度。380 帧在原开发失败场景 5203、5206 均通过完整物理任务；过晚的 420 帧旋转入口可能已挤入杯子的接近包络。
+- `tabletop/random_task.py`：局部 139 维参考条件输入、30 维归一化动作和已有结构化残差权重不变；新增入口参考帧与实际执行遥测回调。
+- `whole_table/navigation.py`：继续使用 SciPy Dijkstra 和逐几何 AABB 膨胀空间；直线段采用连续 slab 相交检测，物理执行时再次检查实际包络与碰撞。
+- `whole_table/loaded_motion.py`：杯子保持自由刚体。抓稳后平滑切换到携物伺服，重力前馈施加到手执行器；必要时低速上撤，再进行搬运。
+- `whole_table/stream.py` / `desktop/navigation_window.py`：只串流实际执行，实时显示参数，目标标记使用用户请求的全局目标。
+
+候选预演是同一 MuJoCo 模型下的额外计算，不是假装免费的学习能力：
+
+```python
+for candidate in candidates:
+    trial = isolated_physics_rollout(candidate, layout)
+    record(trial)
+    if trial.passed:
+        selected = candidate
+        break
+# 最多执行一次；执行失败不重置杯子再试。
+result = execute_once(selected, layout) if selected else reject()
+```
+
+源码有全部候选耗时、失败原因、预演数、实际执行数和执行重置数。这里复用原学习权重，没有开展新训练；成功率属于“规划选择 + 学习抓取 + 伺服搬运”的系统。
+
+视频参考主要保留局部接近后段、闭合和抬杯的手部动作；长距离接近与带杯路径交给规划器。第 380 帧仍在第一视频的接近阶段，先把手物理导航到该帧的未接触手型，再继续策略；不是从已经抓住杯子的状态开始。反向抓法属于功能性抓取适配，不是逐帧复现原视频视角。
+
+## 验收口径
+
+- 每轮必须实际完成导航、抓住、抬杯、搬运和末秒保持，未找到候选也算失败。
+- 杯子全程自由动力学，执行期间物体位姿写入次数为 0；不可用预演成功替代实际执行成功。
+- 搬运到位误差 ≤20 mm，最后 1 s 全部采样保持对握支持；至少拇指与另外两指有效承力、法向对握。
+- 抓取/搬运穿透 ≤1 mm，非目标碰撞停止，持续支持丢失停止。
+- 远距离规划余量默认 25 mm，执行净空 8 mm。低速抓前接近使用 2 mm 规划 / 0.5 mm 执行净空；带杯上撤使用 10 mm 规划 / 8 mm 执行净空。三者用途不同，不能混为一个门槛。
+- 沿用上一版工程加速度上限 0.5 m/s²；旧严格动态结果同时单列，不把工程通过说成严格动态全通过。
+- 20 个新种子在执行前一次性生成并保存。源码和模型哈希冻结，20 轮全部保留，至少 16 轮通过才达到本次样本验收。
+
+最终结果见 [答辩证据](presentation/navigation_qt/README.md) 和 [运行记录](run_logs/2026-10-07-navigation-qt.md)。20 次只是有限样本，不能保证任意桌面布局或实物成功率。
+
+## 复现
+
+输出目录必须不存在，避免覆盖原始证据。
+
+```bash
+# 单个随机桌面，自动选择抓法
+bash scripts/137_tabletop_gpu.sh scripts/189_run_navigation_task.py --seed 5204 --count 2 --output /media/smgbro/shared/visual_grasp/navigation-v4/manual-new
+
+# 独立整批测试；更换种子段和输出目录，不能覆盖旧结果
+bash scripts/137_tabletop_gpu.sh scripts/192_evaluate_navigation_task.py --config configs/tabletop-navigation-v5.json --start-seed 5401 --count 20 --output /media/smgbro/shared/visual_grasp/navigation-v4/reproduction-new
+
+# 实际 Qt 测试，两视频、拥挤反向抓取、停止、锁定、非法指令
+python3 scripts/193_check_navigation_qt.py --output /media/smgbro/shared/visual_grasp/navigation-v4/qt-reproduction-new
+
+bash scripts/137_tabletop_gpu.sh -m unittest discover -s tests
+```
+
+## 开源参考
+
+- [MoveIt Task Constructor 的 Alternatives / Fallbacks](https://moveit.picknik.ai/main/doc/concepts/moveit_task_constructor/parallel_containers.html)：借鉴按顺序尝试不同解的组合方式。本项目未安装 MoveIt，实际候选通过 MuJoCo 全物理预演筛选。
+- [OMPL State / Motion Validity](https://ompl.kavrakilab.org/stateValidation.html)：区分端点合法与整段运动合法。本项目沿用自有 AABB 连续线段检查和子步接触停止，不以端点无碰撞代替轨迹验收。
+
+后续应优先减少昂贵的全轨迹候选预演、改进拥挤处的姿态规划与接触保持，再验证感知误差和真实机械臂。此次不扩展这些范围。

@@ -1,0 +1,253 @@
+{
+  "success": 18,
+  "total": 20,
+  "source_unchanged": true,
+  "wilson_95_interval": [
+    0.6989663547715128,
+    0.9721335187862319
+  ],
+  "strict_success": 6,
+  "chosen_video_successes": {
+    "first": 8,
+    "second": 10
+  },
+  "near_entry_successes": 2,
+  "rotated_successes": 1,
+  "carry_detour_successes": 6,
+  "preview_attempts": 57,
+  "actual_executions": 18,
+  "median_planning_s": 48.42016887849968,
+  "max_cup_error_mm": 0.78283471948411,
+  "max_carry_penetration_mm": 0.9323298477336949,
+  "failures": [
+    {
+      "seed": 5407,
+      "reason": "no_feasible_grasp_candidate",
+      "attempts": [
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "carry_acceptance_failed:start_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 13.472126632999789,
+          "steps": 716
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 13.520938438000485,
+          "steps": 551
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 3.2539135629995144,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 12.45752132799953,
+          "steps": 102
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "physics_safety_stop:scene_penetration_m",
+          "entry_frame": 380,
+          "yaw_deg": 0,
+          "wall_s": 12.411192747000314,
+          "steps": 77
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 380,
+          "yaw_deg": 0,
+          "wall_s": 12.68629310400047,
+          "steps": 166
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 380,
+          "yaw_deg": 180,
+          "wall_s": 17.247968379000667,
+          "steps": 97
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 380,
+          "yaw_deg": 180,
+          "wall_s": 14.431222394999168,
+          "steps": 100
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "stage_not_confirmed:grasp",
+          "entry_frame": 380,
+          "yaw_deg": 90,
+          "wall_s": 18.95237328699932,
+          "steps": 370
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "physics_safety_stop:scene_penetration_m",
+          "entry_frame": 380,
+          "yaw_deg": 90,
+          "wall_s": 14.92595692499981,
+          "steps": 215
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 380,
+          "yaw_deg": -90,
+          "wall_s": 3.238894425999206,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "Motor handoff exceeds actuator authority",
+          "entry_frame": 380,
+          "yaw_deg": -90,
+          "wall_s": 11.101717857999574,
+          "steps": 67
+        }
+      ]
+    },
+    {
+      "seed": 5418,
+      "reason": "no_feasible_grasp_candidate",
+      "attempts": [
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 19.801128084000084,
+          "steps": 502
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 10.102498922999985,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 21.12250427300023,
+          "steps": 94
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 4.5601365339998665,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 380,
+          "yaw_deg": 0,
+          "wall_s": 20.442044082999928,
+          "steps": 180
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 380,
+          "yaw_deg": 0,
+          "wall_s": 4.53621597900019,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "stage_not_confirmed:grasp",
+          "entry_frame": 380,
+          "yaw_deg": 180,
+          "wall_s": 28.46322967800006,
+          "steps": 421
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "carry_acceptance_failed:start_in_collision_margin",
+          "entry_frame": 380,
+          "yaw_deg": 180,
+          "wall_s": 50.59473507999974,
+          "steps": 329
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 380,
+          "yaw_deg": 90,
+          "wall_s": 24.796411529999205,
+          "steps": 98
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 380,
+          "yaw_deg": 90,
+          "wall_s": 4.530733537999367,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 380,
+          "yaw_deg": -90,
+          "wall_s": 23.13576363500033,
+          "steps": 81
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 380,
+          "yaw_deg": -90,
+          "wall_s": 4.508450411999547,
+          "steps": 0
+        }
+      ]
+    }
+  ],
+  "scope": "Known initial poses, same-model physics previews, one live execution. Not raw policy or hardware success."
+}

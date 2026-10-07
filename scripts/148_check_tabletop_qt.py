@@ -107,6 +107,13 @@ def finish(report):
         if a.navigation_mode and report.get('layout'):
             result['speed_matches_ui']=abs(report.get('speed_scale',-1)-a.speed)<1e-8
             result['clearance_matches_ui']=abs(report.get('planning_clearance_m',-1)-a.clearance/1000)<1e-8
+        if a.navigation_mode and state['frames']:
+            metrics=[packet['metrics'] for packet in state['messages'] if packet['type']=='frame']
+            result['angular_limit_violation_max_rad']=max(row['joint_violation_rad'] for row in metrics)
+            result['translation_limit_violation_max_m']=(max(row['root_translation_violation_m'] for row in metrics)
+                if all('root_translation_violation_m' in row for row in metrics) else None)
+            result['navigation_limits_display_passed']=(result['angular_limit_violation_max_rad']<=.02
+                and result['translation_limit_violation_max_m'] is not None and result['translation_limit_violation_max_m']<=.02)
         (a.output/'summary.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
         (a.output/'messages.json').write_text(json.dumps(state['messages'],indent=2,ensure_ascii=False)+'\n')
         (a.output/'stderr-ui.log').write_text(w.log.toPlainText())

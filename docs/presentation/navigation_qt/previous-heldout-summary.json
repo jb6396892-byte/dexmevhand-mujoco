@@ -1,0 +1,1387 @@
+{
+  "cases": [
+    {
+      "seed": 5301,
+      "preferred": "first",
+      "selected": "first",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "first",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 28.535763211999893,
+          "steps": 698
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.00037396810760677627,
+      "carry_penetration_m": 0.0006872354806050623,
+      "local_penetration_m": 0.00043598057126236975,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 29.655309549999856,
+      "total_wall_s": 58.13723942099978,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": true,
+      "cup_xy": [
+        -0.21202972679186602,
+        -0.3009019755084278
+      ],
+      "goal": [
+        -0.1609402089740002,
+        -0.13029950035998306,
+        0.2517432878111127
+      ]
+    },
+    {
+      "seed": 5302,
+      "preferred": "second",
+      "selected": "second",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 65.06311468000013,
+          "steps": 740
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.0003283443132768626,
+      "carry_penetration_m": 0.00046236384548848167,
+      "local_penetration_m": 0.0007104193085500053,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 66.17271846200038,
+      "total_wall_s": 131.72038511000028,
+      "carry_detour": false,
+      "egress": true,
+      "strict_passed": false,
+      "cup_xy": [
+        0.022223234787842105,
+        0.10219630870633384
+      ],
+      "goal": [
+        -0.1799993599139616,
+        -0.2926592819643239,
+        0.24340056050439723
+      ]
+    },
+    {
+      "seed": 5303,
+      "preferred": "first",
+      "selected": null,
+      "selected_entry_frame": null,
+      "selected_yaw_deg": null,
+      "passed": false,
+      "reason": "no_feasible_grasp_candidate",
+      "attempts": [
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 18.62048655300032,
+          "steps": 212
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 19.90108397699987,
+          "steps": 277
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 4.901250937999976,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 14.046261251000033,
+          "steps": 0
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 19.44561426400014,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "stage_not_confirmed:grasp",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 29.447957475000294,
+          "steps": 381
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 24.200168344000303,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "persistent_support_loss",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 25.85150839200014,
+          "steps": 262
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 20.391877193000255,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "physics_safety_stop:scene_penetration_m",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 22.97248252700001,
+          "steps": 102
+        }
+      ],
+      "actual_executions": 0,
+      "cup_error_m": null,
+      "carry_penetration_m": null,
+      "local_penetration_m": null,
+      "hold_supported_fraction": null,
+      "execution_resets": 0,
+      "planning_seconds": 199.92429211699982,
+      "total_wall_s": 199.92429373799996,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        -0.24641433120669926,
+        0.1555931597428324
+      ],
+      "goal": [
+        -0.11175414404209719,
+        -0.2412934533254809,
+        0.29216700798249884
+      ]
+    },
+    {
+      "seed": 5304,
+      "preferred": "second",
+      "selected": "second",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 26.45391005600004,
+          "steps": 779
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.0005555599003757826,
+      "carry_penetration_m": 0.00045437082981368906,
+      "local_penetration_m": 0.0007137643073040802,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 26.52447177399972,
+      "total_wall_s": 53.07589347799967,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        -0.007926749312008707,
+        -0.31286469058490235
+      ],
+      "goal": [
+        -0.11151082997029074,
+        -0.2454330182603654,
+        0.23135837590094635
+      ]
+    },
+    {
+      "seed": 5305,
+      "preferred": "first",
+      "selected": null,
+      "selected_entry_frame": null,
+      "selected_yaw_deg": null,
+      "passed": false,
+      "reason": "no_feasible_grasp_candidate",
+      "attempts": [
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 17.594556085000022,
+          "steps": 448
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 19.275076115000047,
+          "steps": 468
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 3.713586695000231,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 17.912178343999585,
+          "steps": 88
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 12.482777884999905,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "stage_not_confirmed:grasp",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 20.431924574000277,
+          "steps": 381
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 3.6917880450000666,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 13.228726026999993,
+          "steps": 0
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 10.05467514699967,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "physics_safety_stop:scene_penetration_m",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 16.8479210520004,
+          "steps": 102
+        }
+      ],
+      "actual_executions": 0,
+      "cup_error_m": null,
+      "carry_penetration_m": null,
+      "local_penetration_m": null,
+      "hold_supported_fraction": null,
+      "execution_resets": 0,
+      "planning_seconds": 135.37056261999987,
+      "total_wall_s": 135.37056380400008,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        0.045657251055577774,
+        -0.054289778487438045
+      ],
+      "goal": [
+        0.12082800229285129,
+        0.28332377700315753,
+        0.27057205566599796
+      ]
+    },
+    {
+      "seed": 5306,
+      "preferred": "second",
+      "selected": "second",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 37.325857275999624,
+          "steps": 733
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.0003737709363204106,
+      "carry_penetration_m": 0.0004568072147488299,
+      "local_penetration_m": 0.000721101162552102,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 37.3713091730001,
+      "total_wall_s": 74.78709680199972,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        -0.18115584652356959,
+        -0.19914987427776995
+      ],
+      "goal": [
+        -0.041951218706015536,
+        -0.10710105294005118,
+        0.2626940535515715
+      ]
+    },
+    {
+      "seed": 5307,
+      "preferred": "first",
+      "selected": "first",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "first",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 42.701891525000065,
+          "steps": 692
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.0001263927745909495,
+      "carry_penetration_m": 0.0007645382551127664,
+      "local_penetration_m": 0.0004343809163898614,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 42.78723313699993,
+      "total_wall_s": 86.29008285400005,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": true,
+      "cup_xy": [
+        0.036246421809857654,
+        -0.21228102487772227
+      ],
+      "goal": [
+        -0.010089095722118413,
+        0.29021075032553717,
+        0.25326737809582145
+      ]
+    },
+    {
+      "seed": 5308,
+      "preferred": "second",
+      "selected": "second",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 31.90123992100007,
+          "steps": 771
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.0003767083643830435,
+      "carry_penetration_m": 0.00045399798232238775,
+      "local_penetration_m": 0.0007163680300765751,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 31.94655333899982,
+      "total_wall_s": 63.801320071999726,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        -0.10020164618133914,
+        -0.3131458478791419
+      ],
+      "goal": [
+        -0.16644268963621556,
+        -0.20963650357542746,
+        0.2241954726947863
+      ]
+    },
+    {
+      "seed": 5309,
+      "preferred": "first",
+      "selected": null,
+      "selected_entry_frame": null,
+      "selected_yaw_deg": null,
+      "passed": false,
+      "reason": "no_feasible_grasp_candidate",
+      "attempts": [
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 22.798680395000247,
+          "steps": 385
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "carry_acceptance_failed:start_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 26.072122806000152,
+          "steps": 736
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 4.612912395999956,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 23.802262947000145,
+          "steps": 152
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 20.796611807999852,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 24.328676746999918,
+          "steps": 105
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 4.6810951639999985,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 25.69280370000024,
+          "steps": 77
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 4.599940884999796,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 19.988285820999863,
+          "steps": 70
+        }
+      ],
+      "actual_executions": 0,
+      "cup_error_m": null,
+      "carry_penetration_m": null,
+      "local_penetration_m": null,
+      "hold_supported_fraction": null,
+      "execution_resets": 0,
+      "planning_seconds": 177.5230796269998,
+      "total_wall_s": 177.52308108299985,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        0.17053032911078853,
+        -0.05716956728564393
+      ],
+      "goal": [
+        -0.30169809477347964,
+        0.13917582379443855,
+        0.25970756688179986
+      ]
+    },
+    {
+      "seed": 5310,
+      "preferred": "second",
+      "selected": null,
+      "selected_entry_frame": null,
+      "selected_yaw_deg": null,
+      "passed": false,
+      "reason": "no_feasible_grasp_candidate",
+      "attempts": [
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "carry_acceptance_failed:start_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 17.794465253,
+          "steps": 736
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "carry_acceptance_failed:start_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 29.53967416500018,
+          "steps": 697
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "carry_acceptance_failed:start_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 16.247097851000035,
+          "steps": 348
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "carry_acceptance_failed:start_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 28.922375007000028,
+          "steps": 284
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 12.051844253999661,
+          "steps": 0
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 2.8956742770001256,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "persistent_support_loss",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 16.997367422000025,
+          "steps": 259
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 14.599122437000005,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 15.007479614000204,
+          "steps": 87
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 2.948899855000036,
+          "steps": 0
+        }
+      ],
+      "actual_executions": 0,
+      "cup_error_m": null,
+      "carry_penetration_m": null,
+      "local_penetration_m": null,
+      "hold_supported_fraction": null,
+      "execution_resets": 0,
+      "planning_seconds": 157.1629586969998,
+      "total_wall_s": 157.16296020599975,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        0.10280105767892522,
+        0.08316601865231787
+      ],
+      "goal": [
+        0.04188431386027003,
+        -0.10964169676935684,
+        0.2451809438726351
+      ]
+    },
+    {
+      "seed": 5311,
+      "preferred": "first",
+      "selected": "first",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "first",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 41.35137859000042,
+          "steps": 697
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.0003862487724125303,
+      "carry_penetration_m": 0.0006170423702257545,
+      "local_penetration_m": 0.0004299709248827589,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 41.399680358000296,
+      "total_wall_s": 82.86798233799982,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        0.3131462155002575,
+        0.10534503935308365
+      ],
+      "goal": [
+        0.05116202951182025,
+        -0.19015533013986136,
+        0.18833107411343472
+      ]
+    },
+    {
+      "seed": 5312,
+      "preferred": "second",
+      "selected": "second",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 28.206558777999817,
+          "steps": 767
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.00033584150391160317,
+      "carry_penetration_m": 0.00045369291458383434,
+      "local_penetration_m": 0.0007215197681399582,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 28.247887933999664,
+      "total_wall_s": 56.64556602999983,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        -0.34458511746451953,
+        -0.027628071903721796
+      ],
+      "goal": [
+        -0.2682983861800911,
+        -0.1593552825507146,
+        0.18715260964912864
+      ]
+    },
+    {
+      "seed": 5313,
+      "preferred": "first",
+      "selected": "first",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "first",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 40.871933452999656,
+          "steps": 692
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.0004741437727402214,
+      "carry_penetration_m": 0.0006221413380853059,
+      "local_penetration_m": 0.0004381309493158153,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 40.930463173000135,
+      "total_wall_s": 82.18925154899989,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": true,
+      "cup_xy": [
+        0.03222348353665272,
+        -0.17076829079623998
+      ],
+      "goal": [
+        0.03391988390805334,
+        0.2966541268415977,
+        0.2453149234629866
+      ]
+    },
+    {
+      "seed": 5314,
+      "preferred": "second",
+      "selected": "second",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "second",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 38.54512589400019,
+          "steps": 771
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.0003910354723779706,
+      "carry_penetration_m": 0.00045899148655113506,
+      "local_penetration_m": 0.0007200908294776043,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 38.62491747100012,
+      "total_wall_s": 77.27286289099993,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        -0.24630866851904964,
+        -0.2802360735466014
+      ],
+      "goal": [
+        0.07941007505229492,
+        -0.22919474994042283,
+        0.22642763803020838
+      ]
+    },
+    {
+      "seed": 5315,
+      "preferred": "first",
+      "selected": "first",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "first",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 53.06290116400032,
+          "steps": 720
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.0005861631030841344,
+      "carry_penetration_m": 0.0008231002279591032,
+      "local_penetration_m": 0.00042718785130637857,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 53.118755488000716,
+      "total_wall_s": 106.47724903700055,
+      "carry_detour": false,
+      "egress": true,
+      "strict_passed": true,
+      "cup_xy": [
+        0.23801341374199708,
+        -0.06329052718138906
+      ],
+      "goal": [
+        0.09303071592208567,
+        0.0696557131311134,
+        0.19629968978634343
+      ]
+    },
+    {
+      "seed": 5316,
+      "preferred": "second",
+      "selected": null,
+      "selected_entry_frame": null,
+      "selected_yaw_deg": null,
+      "passed": false,
+      "reason": "no_feasible_grasp_candidate",
+      "attempts": [
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 3.1403026149992,
+          "steps": 0
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 3.1529624430004333,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 9.74888879900027,
+          "steps": 0
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 3.2141292570004225,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "stage_not_confirmed:grasp",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 19.416082071000346,
+          "steps": 381
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 12.991537496999626,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "persistent_support_loss",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 18.041007326,
+          "steps": 279
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 11.984158288999424,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "physics_safety_stop:scene_penetration_m",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 16.820879885999602,
+          "steps": 102
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 14.961126810999303,
+          "steps": 0
+        }
+      ],
+      "actual_executions": 0,
+      "cup_error_m": null,
+      "carry_penetration_m": null,
+      "local_penetration_m": null,
+      "hold_supported_fraction": null,
+      "execution_resets": 0,
+      "planning_seconds": 113.58080233500004,
+      "total_wall_s": 113.58080393700038,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        -0.1804160517793633,
+        0.2310852643290251
+      ],
+      "goal": [
+        0.31232331711176464,
+        -0.0786463629558864,
+        0.20564789579052917
+      ]
+    },
+    {
+      "seed": 5317,
+      "preferred": "first",
+      "selected": "first",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "first",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 41.526184221999756,
+          "steps": 719
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.0003007946080341773,
+      "carry_penetration_m": 0.0006852513407152282,
+      "local_penetration_m": 0.00043266661946185156,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 41.573509998999725,
+      "total_wall_s": 83.67399787300019,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": true,
+      "cup_xy": [
+        0.22289252465714454,
+        0.15878560959988208
+      ],
+      "goal": [
+        0.2010356888261512,
+        0.21458860774358263,
+        0.24472722417503084
+      ]
+    },
+    {
+      "seed": 5318,
+      "preferred": "second",
+      "selected": "first",
+      "selected_entry_frame": 0,
+      "selected_yaw_deg": 0,
+      "passed": true,
+      "reason": "random_task_completed",
+      "attempts": [
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 15.424713474999407,
+          "steps": 0
+        },
+        {
+          "video": "first",
+          "passed": true,
+          "reason": "random_task_completed",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 99.0787688700002,
+          "steps": 697
+        }
+      ],
+      "actual_executions": 1,
+      "cup_error_m": 0.000532104464558371,
+      "carry_penetration_m": 0.0006858444941212887,
+      "local_penetration_m": 0.0004322483085773335,
+      "hold_supported_fraction": 1.0,
+      "execution_resets": 0,
+      "planning_seconds": 114.60413206500016,
+      "total_wall_s": 207.95847042600053,
+      "carry_detour": false,
+      "egress": true,
+      "strict_passed": true,
+      "cup_xy": [
+        0.14273336122381924,
+        0.3134253420348211
+      ],
+      "goal": [
+        0.29648634757620773,
+        -0.2932889116660197,
+        0.2623052761294251
+      ]
+    },
+    {
+      "seed": 5319,
+      "preferred": "first",
+      "selected": null,
+      "selected_entry_frame": null,
+      "selected_yaw_deg": null,
+      "passed": false,
+      "reason": "no_feasible_grasp_candidate",
+      "attempts": [
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "carry_acceptance_failed:goal_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 18.004693642000348,
+          "steps": 698
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "carry_acceptance_failed:goal_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 19.431780399000672,
+          "steps": 737
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "carry_acceptance_failed:goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 18.105109023000296,
+          "steps": 284
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "carry_acceptance_failed:goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 18.540125686000465,
+          "steps": 352
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 3.231891176999852,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 11.45014250299937,
+          "steps": 0
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 12.63747934300045,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "persistent_support_loss",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 18.926592735000668,
+          "steps": 259
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 3.164244182999937,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 9.151867001000028,
+          "steps": 0
+        }
+      ],
+      "actual_executions": 0,
+      "cup_error_m": null,
+      "carry_penetration_m": null,
+      "local_penetration_m": null,
+      "hold_supported_fraction": null,
+      "execution_resets": 0,
+      "planning_seconds": 132.79777865800042,
+      "total_wall_s": 132.79778053599966,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        0.26398907345566075,
+        -0.00943588568287862
+      ],
+      "goal": [
+        0.20641166289126323,
+        0.1483387462825359,
+        0.19807715490098082
+      ]
+    },
+    {
+      "seed": 5320,
+      "preferred": "second",
+      "selected": null,
+      "selected_entry_frame": null,
+      "selected_yaw_deg": null,
+      "passed": false,
+      "reason": "no_feasible_grasp_candidate",
+      "attempts": [
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "carry_acceptance_failed:start_in_collision_margin",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 15.83991870400041,
+          "steps": 789
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 0,
+          "yaw_deg": 0,
+          "wall_s": 14.700853211000322,
+          "steps": 354
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 7.172246659999473,
+          "steps": 0
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 0,
+          "wall_s": 4.12826705399948,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "stage_not_confirmed:grasp",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 19.193973132000792,
+          "steps": 381
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 180,
+          "wall_s": 11.174773942000684,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "non_target_collision",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 16.926810867000313,
+          "steps": 98
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": 90,
+          "wall_s": 4.080392935999953,
+          "steps": 0
+        },
+        {
+          "video": "second",
+          "passed": false,
+          "reason": "physics_safety_stop:scene_penetration_m",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 15.022707733000061,
+          "steps": 102
+        },
+        {
+          "video": "first",
+          "passed": false,
+          "reason": "goal_in_collision_margin",
+          "entry_frame": 420,
+          "yaw_deg": -90,
+          "wall_s": 8.578723925000304,
+          "steps": 0
+        }
+      ],
+      "actual_executions": 0,
+      "cup_error_m": null,
+      "carry_penetration_m": null,
+      "local_penetration_m": null,
+      "hold_supported_fraction": null,
+      "execution_resets": 0,
+      "planning_seconds": 116.96745924900006,
+      "total_wall_s": 116.96746078900014,
+      "carry_detour": false,
+      "egress": false,
+      "strict_passed": false,
+      "cup_xy": [
+        -0.3689498309417385,
+        -0.19484643381862668
+      ],
+      "goal": [
+        0.01534235708133358,
+        0.08695201405033637,
+        0.2755343379642388
+      ]
+    }
+  ],
+  "passed": 13,
+  "total": 20,
+  "label": "heldout",
+  "success_rate": 0.65,
+  "source_unchanged": true,
+  "reaches_80_percent": false,
+  "claim": "system with model-based candidate previews; not independent raw-policy trials"
+}

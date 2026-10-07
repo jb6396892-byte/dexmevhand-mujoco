@@ -1,0 +1,544 @@
+{
+  "report": {
+    "actual_executions": 1,
+    "adapter": {
+      "approach": {
+        "acceleration_acceptance_m_s2": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "acceleration_peak_time_s": [
+          0.16499999999990855,
+          7.967000000002548,
+          7.796000000002339
+        ],
+        "checks": {
+          "acceleration": true,
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true
+        },
+        "clearance_m": 0.002,
+        "direct": true,
+        "endpoint_error_m": 1.236709677775967e-06,
+        "free_grid_nodes": 2,
+        "hand_environment_contacts": 0,
+        "max_acceleration_m_s2": [
+          0.000660113568977444,
+          0.0005777295148791635,
+          0.006075405110829502
+        ],
+        "max_posture_error_rad": 0.0005379731335173055,
+        "max_tracking_error_m": 0.0011586958433444942,
+        "max_velocity_m_s": [
+          3.3581048978212823e-06,
+          3.02532197715016e-06,
+          0.015998098422665138
+        ],
+        "passed": true,
+        "path_length_m": 0.07999730919854396,
+        "planning_seconds": 0.0036920369993822533,
+        "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+        "simulation_seconds": 9.87500000000488,
+        "strict_checks": {
+          "acceleration": true,
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true
+        },
+        "strict_passed": true,
+        "waypoints": [
+          [
+            -0.11283564375841292,
+            -0.49368772623095997,
+            0.20949175217407454
+          ],
+          [
+            -0.11284475813230974,
+            -0.49368387768983124,
+            0.1294944435873204
+          ]
+        ]
+      },
+      "navigation": {
+        "acceleration_acceptance_m_s2": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "acceleration_peak_time_s": [
+          2.0919999999998105,
+          2.0919999999998105,
+          2.09099999999981
+        ],
+        "checks": {
+          "acceleration": true,
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true
+        },
+        "clearance_m": 0.025,
+        "direct": true,
+        "endpoint_error_m": 1.0253135403889766e-05,
+        "free_grid_nodes": 2,
+        "hand_environment_contacts": 0,
+        "max_acceleration_m_s2": [
+          0.026891857692865374,
+          0.006362095385444733,
+          0.012832356488899316
+        ],
+        "max_posture_error_rad": 0.0005368525560613957,
+        "max_tracking_error_m": 0.006367751834750565,
+        "max_velocity_m_s": [
+          0.07679100563235751,
+          0.021087449964018914,
+          0.037786177964690304
+        ],
+        "passed": true,
+        "path_length_m": 0.4443910141784148,
+        "planning_seconds": 0.003969001999394095,
+        "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+        "simulation_seconds": 9.952999999998925,
+        "strict_checks": {
+          "acceleration": true,
+          "endpoint": true,
+          "no_environment_contact": true,
+          "velocity": true
+        },
+        "strict_passed": true,
+        "waypoints": [
+          [
+            -0.49999699270978204,
+            -0.5999995152148123,
+            0.40000298922726485
+          ],
+          [
+            -0.11284475813230974,
+            -0.49368387768983124,
+            0.2094944435873204
+          ]
+        ]
+      }
+    },
+    "carry": {
+      "acceleration_acceptance_m_s2": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "acceleration_peak_time_s": [
+        4.604999999989268,
+        4.605999999989265,
+        4.605999999989265
+      ],
+      "checks": {
+        "acceleration": true,
+        "endpoint": true,
+        "no_environment_contact": true,
+        "velocity": true
+      },
+      "clearance_m": 0.025,
+      "controller_handoff_seconds": 2.0,
+      "cup_error_m": 0.000424338214198725,
+      "cup_final_m": [
+        0.19995304759932667,
+        0.07957843591738796,
+        0.20001192125630296
+      ],
+      "cup_freejoint_preserved": true,
+      "cup_goal_m": [
+        0.2,
+        0.08,
+        0.2
+      ],
+      "cup_pose_input": "measured once at carry handoff for payload/goal calibration; live pose for safety only",
+      "cup_start_m": [
+        -0.22133220616251753,
+        -0.0574773213747794,
+        0.08993383931144507
+      ],
+      "direct": true,
+      "endpoint_error_m": 1.0506996477711795e-05,
+      "free_grid_nodes": 2,
+      "hand_environment_contacts": 0,
+      "hold_seconds": 1.0,
+      "hold_supported_fraction": 1.0,
+      "initial_margin_conflicts": {
+        "goal": [],
+        "start": []
+      },
+      "max_acceleration_m_s2": [
+        0.07336371216966592,
+        0.023168913854136018,
+        0.2682805785475626
+      ],
+      "max_grasp_penetration_m": 0.00046225486327398924,
+      "max_posture_error_rad": 3.114878818963329e-05,
+      "max_tracking_error_m": 0.0020034247477643597,
+      "max_velocity_m_s": [
+        0.025601454339873177,
+        0.008354170600582146,
+        0.006690632629556308
+      ],
+      "object_pose_writes_during_execution": 0,
+      "passed": true,
+      "path_length_m": 0.4566567656028731,
+      "payload_feedforward_force_n": [
+        -0.0,
+        -0.0,
+        2.955210141550354
+      ],
+      "payload_feedforward_torque_nm": [
+        0.060846905560248875,
+        0.05960231383823956,
+        0.0
+      ],
+      "planning_seconds": 0.009651374999521067,
+      "pre_handoff_settling_seconds": 3.0,
+      "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+      "simulation_seconds": 31.359999999926913,
+      "strict_checks": {
+        "acceleration": false,
+        "endpoint": true,
+        "no_environment_contact": true,
+        "velocity": true
+      },
+      "strict_passed": false,
+      "support_fraction": 0.999938195302843,
+      "waypoints": [
+        [
+          -0.20156789378469706,
+          -0.08226782113488518,
+          0.2071280435259425
+        ],
+        [
+          0.2197643123778205,
+          0.055209500239894224,
+          0.31719420421449745
+        ]
+      ]
+    },
+    "checkpoint": "/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt",
+    "clipped_action_calls": 0,
+    "completed": [
+      "reach",
+      "grasp",
+      "lift"
+    ],
+    "continuation": {
+      "acceleration_acceptance_m_s2": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "acceleration_peak_time_s": [
+        4.604999999989268,
+        4.605999999989265,
+        4.605999999989265
+      ],
+      "checks": {
+        "acceleration": true,
+        "endpoint": true,
+        "no_environment_contact": true,
+        "velocity": true
+      },
+      "clearance_m": 0.025,
+      "controller_handoff_seconds": 2.0,
+      "cup_error_m": 0.000424338214198725,
+      "cup_final_m": [
+        0.19995304759932667,
+        0.07957843591738796,
+        0.20001192125630296
+      ],
+      "cup_freejoint_preserved": true,
+      "cup_goal_m": [
+        0.2,
+        0.08,
+        0.2
+      ],
+      "cup_pose_input": "measured once at carry handoff for payload/goal calibration; live pose for safety only",
+      "cup_start_m": [
+        -0.22133220616251753,
+        -0.0574773213747794,
+        0.08993383931144507
+      ],
+      "direct": true,
+      "endpoint_error_m": 1.0506996477711795e-05,
+      "free_grid_nodes": 2,
+      "hand_environment_contacts": 0,
+      "hold_seconds": 1.0,
+      "hold_supported_fraction": 1.0,
+      "initial_margin_conflicts": {
+        "goal": [],
+        "start": []
+      },
+      "max_acceleration_m_s2": [
+        0.07336371216966592,
+        0.023168913854136018,
+        0.2682805785475626
+      ],
+      "max_grasp_penetration_m": 0.00046225486327398924,
+      "max_posture_error_rad": 3.114878818963329e-05,
+      "max_tracking_error_m": 0.0020034247477643597,
+      "max_velocity_m_s": [
+        0.025601454339873177,
+        0.008354170600582146,
+        0.006690632629556308
+      ],
+      "object_pose_writes_during_execution": 0,
+      "passed": true,
+      "path_length_m": 0.4566567656028731,
+      "payload_feedforward_force_n": [
+        -0.0,
+        -0.0,
+        2.955210141550354
+      ],
+      "payload_feedforward_torque_nm": [
+        0.060846905560248875,
+        0.05960231383823956,
+        0.0
+      ],
+      "planning_seconds": 0.009651374999521067,
+      "pre_handoff_settling_seconds": 3.0,
+      "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+      "simulation_seconds": 31.359999999926913,
+      "strict_checks": {
+        "acceleration": false,
+        "endpoint": true,
+        "no_environment_contact": true,
+        "velocity": true
+      },
+      "strict_passed": false,
+      "support_fraction": 0.999938195302843,
+      "waypoints": [
+        [
+          -0.20156789378469706,
+          -0.08226782113488518,
+          0.2071280435259425
+        ],
+        [
+          0.2197643123778205,
+          0.055209500239894224,
+          0.31719420421449745
+        ]
+      ]
+    },
+    "events": [
+      {
+        "confirmation_steps": 6,
+        "phase": "reach",
+        "steps": 550
+      },
+      {
+        "confirmation_steps": 50,
+        "phase": "grasp",
+        "steps": 624
+      },
+      {
+        "confirmation_steps": 18,
+        "phase": "lift",
+        "steps": 733
+      }
+    ],
+    "execution_resets": 0,
+    "final": {
+      "bottom_m": 0.07451960136161434,
+      "cup_position_m": [
+        -0.21671293455505375,
+        -0.05111561425740967,
+        0.11019951302567986
+      ],
+      "ff_force_n": 4.6125581251001915,
+      "finite": true,
+      "joint_violation_rad": 0.0,
+      "lf_force_n": 0.0,
+      "max_hand_speed": 0.025515749206186242,
+      "metric_source": "simulation_evaluation",
+      "mf_force_n": 0.6702042766899979,
+      "non_target_contacts": 0,
+      "normal_dots": {
+        "ff": -0.6502907247181103,
+        "mf": -0.9006668890274985
+      },
+      "opposition": true,
+      "phase": "lift",
+      "prediction_error_m": 0.004192580765861668,
+      "proprioceptive_cup_prediction_m": [
+        -0.21291129702413503,
+        -0.051047671560435263,
+        0.10843297138968278
+      ],
+      "rf_force_n": 0.0,
+      "root_tracking_world_m": [
+        -0.0017389945599577215,
+        -0.0021165550261669696,
+        -0.0010808650004091205
+      ],
+      "scene_penetration_m": 0.00045519312208658694,
+      "source_index": 709,
+      "step": 733,
+      "table_contacts": 0,
+      "target_distance_m": 0.05369327299243797,
+      "th_force_n": 4.778017981809116
+    },
+    "layout": {
+      "central_clear_corridor": false,
+      "cup_model": "025_mug",
+      "distractor_count": 2,
+      "goal_world_m": [
+        0.2,
+        0.08,
+        0.2
+      ],
+      "object_scale": 0.8,
+      "objects": [
+        {
+          "bounds_xy": [
+            [
+              -0.2380695985182954,
+              -0.08040719951501538
+            ],
+            [
+              -0.16302239966871954,
+              0.013638398860939135
+            ]
+          ],
+          "name": "mug",
+          "placement_attempts": 1,
+          "xy": [
+            -0.2,
+            -0.04
+          ],
+          "yaw_deg": 0.0
+        },
+        {
+          "bounds_xy": [
+            [
+              -0.2974040293469306,
+              -0.3592152301709832
+            ],
+            [
+              -0.22688701912931308,
+              -0.28849441476428256
+            ]
+          ],
+          "name": "tomato_soup_can",
+          "placement_attempts": 1,
+          "xy": [
+            -0.2607004370611763,
+            -0.32354927739076816
+          ],
+          "yaw_deg": 97.24967891450012
+        },
+        {
+          "bounds_xy": [
+            [
+              0.28584244986146784,
+              -0.04774675435132075
+            ],
+            [
+              0.3860407928065661,
+              0.04103053224310142
+            ]
+          ],
+          "name": "sugar_box",
+          "placement_attempts": 1,
+          "xy": [
+            0.3344258808689908,
+            -0.004704501857823784
+          ],
+          "yaw_deg": 124.5418301359212
+        }
+      ],
+      "sampling": "full_table_mesh_projected_aabb",
+      "seed": 4301,
+      "table_rgba": [
+        0.88,
+        0.9,
+        0.91,
+        1.0
+      ],
+      "version": "tabletop-navigation-v5-entry380"
+    },
+    "learned_action_calls": 733,
+    "live_truth_usage": "local policy safety/evaluation; continuation separately audited",
+    "max_penetration_m": 0.0007064817944492235,
+    "object_forces_applied": false,
+    "passed": true,
+    "phase": "lift",
+    "planning_attempts": [
+      {
+        "entry_frame": 0,
+        "passed": true,
+        "reason": "random_task_completed",
+        "steps": 760,
+        "video": "second",
+        "wall_s": 42.55516097899999,
+        "yaw_deg": 0
+      }
+    ],
+    "planning_clearance_m": 0.025,
+    "planning_model": "same MuJoCo dynamics in isolated previews",
+    "planning_seconds": 43.68294668599992,
+    "pose_input": "local policy: initial known pose; continuation: see separate receipt",
+    "preferred_video": "second",
+    "reason": "random_task_completed",
+    "seed": 4301,
+    "selected_entry_frame": 0,
+    "selected_video": "second",
+    "selected_yaw_deg": 0,
+    "speed_scale": 0.8,
+    "start_reference_step": 0,
+    "state_writes_during_execution": 0,
+    "status": "success",
+    "steps": 733,
+    "success_scope": "model-based candidate selection plus learned local grasp; not raw policy generalization",
+    "total_wall_s": 116.12689528800001,
+    "video": "second",
+    "wall_s": 72.38822581199929
+  },
+  "scene": "second",
+  "seed": 4301,
+  "goal": "transport",
+  "instruction": "把杯子搬到目标位置",
+  "random_mode": false,
+  "navigation_mode": true,
+  "requested_target": [
+    0.2,
+    0.08,
+    0.2
+  ],
+  "requested_count": 2,
+  "requested_cup_xy": [
+    -0.2,
+    -0.04
+  ],
+  "frames_received": 872,
+  "unique_frames": 872,
+  "max_gui_gap_s": 0.056541484000263154,
+  "surviving_workers": [],
+  "language_run": "/media/smgbro/shared/lora/language/desktop_runs/20261007T151345749605Z",
+  "physics_run": "/media/smgbro/shared/visual_grasp/navigation-v4/qt-runs/20261007T151345749605Z",
+  "gui_responsive": true,
+  "actual_pipeline": true,
+  "pre_recorded_images": false,
+  "task_passed": true,
+  "stop_button_visible": true,
+  "stop_button_geometry": [
+    141,
+    0,
+    72,
+    37
+  ],
+  "stop_button_in_window": true,
+  "cancellation_latency_s": null,
+  "target_matches_ui": true,
+  "count_matches_ui": true,
+  "cup_matches_ui": true,
+  "speed_matches_ui": true,
+  "clearance_matches_ui": true,
+  "angular_limit_violation_max_rad": 0.0,
+  "translation_limit_violation_max_m": 0.0,
+  "navigation_limits_display_passed": true
+}

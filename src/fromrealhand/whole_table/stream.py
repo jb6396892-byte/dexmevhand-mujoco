@@ -5,6 +5,7 @@ import time
 from pathlib import Path
 import numpy as np
 from ..desktop.rendering import stream_context
+from ..desktop.navigation_metrics import joint_limit_metrics
 from ..tabletop.contact_control import opposing_contacts
 
 
@@ -30,6 +31,7 @@ class Observer:
         self.callback('ready',dict(bounds={s['skill']:[s['start'],s['stop']] for s in entry['segments']},
             total_steps=entry['segments'][-1]['stop'],gl=info))
         m,d=env.sim.model,env.sim.data;bid=m.body_name2id('mug_0');pose=np.eye(4)
+        self.navigation_translation_ranges=m.jnt_range[:3].copy()
         pose[:3,:3]=d.body_xmat[bid].reshape(3,3);pose[:3,3]=d.body_xpos[bid]
         self.callback('random_scene',dict(layout=layout,initial_known_pose=pose.tolist(),
             output=str(self.output.parent),checkpoint=self.checkpoint))
@@ -46,6 +48,11 @@ class Observer:
         m,d=env.sim.model,env.sim.data;bid=m.body_name2id('mug_0')
         q=dict(row) if row is not None else env.contacts()
         q.update(opposing_contacts(env.sim));q.pop('pairs',None)
+        navigation=phase in ('navigate','approach','transport')
+        travel=self.navigation_translation_ranges if navigation else m.jnt_range[:3]
+        # Cleanup restores local limits; final telemetry still describes navigation mode.
+        q.update(joint_limit_metrics(d.qpos,m.jnt_range,travel))
+        q['joint_limit_mode']='navigation' if navigation else 'local'
         position=d.body_xpos[bid];rotation=d.body_xmat[bid].reshape(3,3)
         q.update(bottom_m=float((self.mesh['vertices']@rotation.T+position)[:,2].min()),
             target_distance_m=float(np.linalg.norm(position-self.goal)),cup_position_m=position.tolist(),

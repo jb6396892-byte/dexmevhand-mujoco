@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import shutil
+import subprocess
 from pathlib import Path
 import numpy as np
 import matplotlib
@@ -23,17 +24,32 @@ def main():
     parser.add_argument('--qt',type=Path,required=True)
     parser.add_argument('--development',type=Path,nargs='*',default=[])
     parser.add_argument('--previous-evaluation',type=Path)
+    parser.add_argument('--frozen-commit',required=True)
     parser.add_argument('--output',type=Path,default=ROOT/'docs/presentation/navigation_qt')
     args=parser.parse_args();args.output.mkdir(parents=True,exist_ok=True)
     manifest=read(args.evaluation/'manifest.json');result=read(args.evaluation/'summary.json')
+    changes=[]
+    for name,expected in manifest['source_sha256'].items():
+        frozen=subprocess.check_output(['git','show',args.frozen_commit+':'+name],cwd=str(ROOT))
+        if hashlib.sha256(frozen).hexdigest()!=expected:
+            raise ValueError('Frozen commit does not match evaluated source: '+name)
+        if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=expected:changes.append(name)
+    if set(changes)-{'src/fromrealhand/whole_table/stream.py'}:
+        raise ValueError('Control source changed after evaluation: '+str(changes))
+    write(args.output/'release-source-audit.json',dict(frozen_commit=args.frozen_commit,
+        evaluated_source_verified=True,release_changed_files=changes,
+        note='Only Qt telemetry may differ; stream.py is not used by the headless evaluator. Qt is checked separately.'))
     if len(result['cases'])!=manifest['denominator']:
         raise ValueError('Incomplete evaluation: do not publish a reduced denominator')
+    quality=read(args.qt/'quality.json')
+    if result['total']!=20 or result['passed']<16 or not result['source_unchanged'] or not all(quality.values()):
+        raise ValueError('Release requires 16/20, frozen evaluation, and passing Qt checks')
     write(args.output/'heldout-manifest.json',manifest)
     write(args.output/'heldout-results.json',result)
     if args.previous_evaluation:
         for file in ('manifest','summary'):
             write(args.output/('previous-heldout-'+file+'.json'),read(args.previous_evaluation/(file+'.json')))
-    write(args.output/'qt-quality.json',read(args.qt/'quality.json'))
+    write(args.output/'qt-quality.json',quality)
     for name in ('first','second','clutter','stop','locked','rejected'):
         write(args.output/('qt-'+name+'.json'),brief(read(args.qt/name/'summary.json')))
     for name in ('clutter','second'):
@@ -53,6 +69,7 @@ def main():
         chosen_video_successes={v:sum(r.get('selected')==v for r in successful) for v in ('first','second')},
         near_entry_successes=sum(bool(r.get('selected_entry_frame')) for r in successful),
         rotated_successes=sum(bool(r.get('selected_yaw_deg')) for r in successful),
+        carry_detour_successes=sum(r.get('carry_detour',False) for r in successful),
         preview_attempts=sum(len(r.get('attempts',[])) for r in result['cases']),
         actual_executions=sum(r.get('actual_executions',0) for r in result['cases']),
         median_planning_s=float(np.median([r['planning_seconds'] for r in result['cases']])),

@@ -24,6 +24,7 @@ class NavigationWindow(RandomTabletopWindow):
         self.workflow.clear();self.workflow.addItem('整桌导航 · 抓取 · 搬运','navigation')
         self.workflow.blockSignals(False);self.mode_changed()
         self.setWindowTitle('抓杯实验台 · 整桌导航与抓取')
+        self.joint.setWordWrap(True)
         self.seed.setValue(5301);self.count.setValue(2)
 
     def update_random_controls(self):
@@ -91,6 +92,10 @@ class NavigationWindow(RandomTabletopWindow):
             name=dict(navigate='导航',approach='低速接近',reach='接近杯子',grasp='闭合',lift='抬杯',transport='带杯搬运').get(packet['skill'],packet['skill'])
             self.view_state.setText('MuJoCo · '+name+' | 已知初始位置')
             if packet.get('control_kind')=='navigation_servo':self.action.setText('控制方式：位置伺服')
+            metrics=packet['metrics']
+            if 'root_translation_violation_m' in metrics:
+                self.joint.setText('转动越限 %.5f rad\n平移越限 %.3f mm'%
+                    (metrics['joint_violation_rad'],metrics['root_translation_violation_m']*1000))
 
     def finish(self,report):
         super().finish(report)

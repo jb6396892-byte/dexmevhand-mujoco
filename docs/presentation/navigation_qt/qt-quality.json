@@ -1,0 +1,9 @@
+{
+  "first": true,
+  "second": true,
+  "clutter": true,
+  "stop": true,
+  "locked": true,
+  "rejected": true,
+  "gui": true
+}

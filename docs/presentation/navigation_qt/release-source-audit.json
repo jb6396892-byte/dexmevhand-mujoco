@@ -1,0 +1,8 @@
+{
+  "frozen_commit": "37a3a12",
+  "evaluated_source_verified": true,
+  "release_changed_files": [
+    "src/fromrealhand/whole_table/stream.py"
+  ],
+  "note": "Only Qt telemetry may differ; stream.py is not used by the headless evaluator. Qt is checked separately."
+}

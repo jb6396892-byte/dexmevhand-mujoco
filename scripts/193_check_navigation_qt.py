@@ -43,7 +43,8 @@ for name,result in results.items():
     elif name=='stop':quality[name]=result['report']['reason']=='user_stop' and result['cancellation_latency_s']<3
     elif name=='locked':quality[name]=result['report']['status']=='locked'
     elif name=='rejected':quality[name]=result['report']['status']=='rejected'
-quality['gui']=all(r['gui_responsive'] and not r['surviving_workers'] and r['stop_button_visible'] and r['stop_button_in_window'] for r in results.values())
+quality['gui']=all(r['gui_responsive'] and not r['surviving_workers'] and r['stop_button_visible']
+    and r['stop_button_in_window'] and r.get('navigation_limits_display_passed',True) for r in results.values())
 (a.output/'quality.json').write_text(json.dumps(quality,indent=2)+'\n')
 print(json.dumps(quality),flush=True)
 raise SystemExit(0 if all(quality.values()) else 1)
