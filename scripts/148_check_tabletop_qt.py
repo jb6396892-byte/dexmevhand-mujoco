@@ -18,6 +18,7 @@ p.add_argument('--seed',type=int,default=0)
 p.add_argument('--goal',choices=['reach','grasp','lift','transport'],default='transport')
 p.add_argument('--instruction')
 p.add_argument('--cancel-step',type=int)
+p.add_argument('--cancel-phase')
 p.add_argument('--locked',action='store_true')
 p.add_argument('--checkpoint',type=Path)
 p.add_argument('--random-mode',action='store_true')
@@ -73,7 +74,9 @@ def heartbeat():
 
 def frame(packet):
     state['frames'].add(hashlib.sha256(packet['jpeg'].encode()).hexdigest())
-    if a.cancel_step is not None and packet['step']>=a.cancel_step and state['cancelled_at'] is None:
+    stop_at_step=a.cancel_step is not None and packet['step']>=a.cancel_step
+    stop_at_phase=a.cancel_phase is not None and packet['skill']==a.cancel_phase
+    if (stop_at_step or stop_at_phase) and state['cancelled_at'] is None:
         state['cancelled_at']=time.monotonic(); QTest.mouseClick(w.stop_button,Qt.LeftButton)
 
 

@@ -28,6 +28,7 @@ if a.place:
     # Dedicated placement regression; the old second carry target has a blocked descent.
     cases['second']=['--scene','second','--seed','6302','--count','0','--cup-xy','-.15','.1',
                      '--target-world','-.16','-.12','.2','--speed','1.0']
+    cases['stop_release']=first+['--cancel-phase','release']
 results={}
 for name in a.cases:
     command=[str(ROOT/'data/runtime/stage6-study-venv/bin/python'),str(ROOT/'scripts/148_check_tabletop_qt.py'),
@@ -47,7 +48,7 @@ for name,result in results.items():
     if name in ('first','second','clutter'):
         quality[name]=all(result.get(k,False) for k in ('task_passed','target_matches_ui','count_matches_ui','cup_matches_ui','speed_matches_ui','clearance_matches_ui')) and result['unique_frames']>20
         if a.place:quality[name]=bool(quality[name] and result['report'].get('placement',{}).get('passed'))
-    elif name=='stop':quality[name]=result['report']['reason']=='user_stop' and result['cancellation_latency_s']<3
+    elif name.startswith('stop'):quality[name]=result['report']['reason']=='user_stop' and result['cancellation_latency_s']<3
     elif name=='locked':quality[name]=result['report']['status']=='locked'
     elif name=='rejected':quality[name]=result['report']['status']=='rejected'
 quality['gui']=all(r['gui_responsive'] and not r['surviving_workers'] and r['stop_button_visible']

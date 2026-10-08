@@ -1,0 +1,319 @@
+{
+  "passed": true,
+  "reason": "placed_and_returned",
+  "initial": {
+    "cup_position_m": [
+      -0.12666823442057035,
+      0.20810943488802586,
+      0.2000148354126886
+    ],
+    "bottom_gap_m": 0.1636654067759701,
+    "rest_origin_z_m": 0.03143999735179462,
+    "tilt_deg": 13.317957887882283,
+    "linear_speed_m_s": 3.3440388359679476e-05,
+    "angular_speed_rad_s": 0.0003792913651435767,
+    "table_force_n": 0.0,
+    "table_weight_ratio": 0.0,
+    "table_contacts": 0,
+    "hand_cup_contacts": 5,
+    "hand_cup_force_n": 10.333137803334045,
+    "penetration_m": 0.00045335147080615215,
+    "illegal_contacts": [],
+    "cup_bounds_m": [
+      [
+        -0.16575775010383317,
+        0.16765704664513081,
+        0.16366540677597008
+      ],
+      [
+        -0.09085912356625417,
+        0.26184282759192634,
+        0.2422061515612413
+      ]
+    ]
+  },
+  "home_m": [
+    -0.4999969954416273,
+    -0.5999995161859223,
+    0.4000029861525662
+  ],
+  "object_pose_writes_during_execution": 0,
+  "object_forces_applied": false,
+  "posture_adjustment_rad": [
+    0.10471975511965981,
+    0.0,
+    0.0
+  ],
+  "aligned": {
+    "cup_position_m": [
+      -0.12688870934900295,
+      0.20720080687607875,
+      0.2001740762987938
+    ],
+    "bottom_gap_m": 0.1655755886039983,
+    "rest_origin_z_m": 0.03143999735179462,
+    "tilt_deg": 7.753665723271099,
+    "linear_speed_m_s": 4.107430819447351e-05,
+    "angular_speed_rad_s": 0.00023567883949065734,
+    "table_force_n": 0.0,
+    "table_weight_ratio": 0.0,
+    "table_contacts": 0,
+    "hand_cup_contacts": 5,
+    "hand_cup_force_n": 10.544840927997575,
+    "penetration_m": 0.0004561930795402222,
+    "illegal_contacts": [],
+    "cup_bounds_m": [
+      [
+        -0.16595055677148382,
+        0.16850018416741036,
+        0.16557558860399826
+      ],
+      [
+        -0.09105864794501113,
+        0.26100142861973763,
+        0.2392573700093185
+      ]
+    ]
+  },
+  "lower_timeout_s": 40.0,
+  "release_ik": {
+    "anchor_count": 5,
+    "cost": 3.97978854000743e-05,
+    "converged": true
+  },
+  "retreat_displacement_m": [
+    0.03141666637502838,
+    -0.05111744392944703,
+    0.12
+  ],
+  "stability": {
+    "passed": true,
+    "checks": {
+      "goal": true,
+      "upright": true,
+      "grounded": true,
+      "slow": true,
+      "drift": true,
+      "support": true,
+      "released": true,
+      "safe": true
+    },
+    "final": {
+      "cup_position_m": [
+        -0.12601754927328596,
+        0.20309252720261162,
+        0.03161380864102296
+      ],
+      "bottom_gap_m": 0.0001706085507297353,
+      "rest_origin_z_m": 0.03143999735179462,
+      "tilt_deg": 0.006945556242580785,
+      "linear_speed_m_s": 2.1489595936989948e-05,
+      "angular_speed_rad_s": 0.0005786701784509535,
+      "table_force_n": 2.9539360862534814,
+      "table_weight_ratio": 0.9995688782740152,
+      "table_contacts": 7,
+      "hand_cup_contacts": 0,
+      "hand_cup_force_n": 0.0,
+      "penetration_m": 0.00046728488169930915,
+      "illegal_contacts": [],
+      "cup_bounds_m": [
+        [
+          -0.1643126103543834,
+          0.16256188502938662,
+          0.00017060855072971448
+        ],
+        [
+          -0.08937755307272445,
+          0.2565641058893088,
+          0.06572728064265299
+        ]
+      ]
+    },
+    "xy_error_m": 0.0054208745821518484,
+    "samples": 2000
+  },
+  "return_home": {
+    "waypoints": [
+      [
+        -0.07531304415334583,
+        0.12058461325111608,
+        0.2679292830692743
+      ],
+      [
+        -0.4999969954416273,
+        -0.5999995161859223,
+        0.4000029861525662
+      ]
+    ],
+    "direct": true,
+    "free_grid_nodes": 2,
+    "planning_seconds": 0.004963164999935543,
+    "path_length_m": 0.8467829764021567,
+    "clearance_m": 0.025,
+    "scope": "fixed posture per-part conservative AABBs; translational navigation only",
+    "passed": true,
+    "checks": {
+      "endpoint": true,
+      "no_environment_contact": true,
+      "velocity": true,
+      "acceleration": true
+    },
+    "strict_passed": true,
+    "strict_checks": {
+      "endpoint": true,
+      "no_environment_contact": true,
+      "velocity": true,
+      "acceleration": true
+    },
+    "acceleration_peak_time_s": [
+      8.97400000004285,
+      8.97400000004285,
+      9.419000000044974
+    ],
+    "acceleration_acceptance_m_s2": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "endpoint_error_m": 2.1604836988329653e-06,
+    "max_tracking_error_m": 0.0027074756990782536,
+    "max_velocity_m_s": [
+      0.01885951416556509,
+      0.031999811703542075,
+      0.005865291030737749
+    ],
+    "max_acceleration_m_s2": [
+      0.0015208684162258776,
+      0.002365674826227998,
+      0.00047548121716187066
+    ],
+    "max_posture_error_rad": 0.0013980043609437831,
+    "hand_environment_contacts": 0,
+    "simulation_seconds": 42.72200000020399
+  },
+  "after_return": {
+    "passed": true,
+    "checks": {
+      "goal": true,
+      "upright": true,
+      "grounded": true,
+      "slow": true,
+      "drift": true,
+      "support": true,
+      "released": true,
+      "safe": true
+    },
+    "final": {
+      "cup_position_m": [
+        -0.12601749445232036,
+        0.20309254894534942,
+        0.03161398035913977
+      ],
+      "bottom_gap_m": 0.00017073165546790947,
+      "rest_origin_z_m": 0.03143999735179462,
+      "tilt_deg": 0.0070550015745702065,
+      "linear_speed_m_s": 5.337333296507508e-06,
+      "angular_speed_rad_s": 9.17897656001847e-05,
+      "table_force_n": 2.961855060955446,
+      "table_weight_ratio": 1.0022485437876867,
+      "table_contacts": 7,
+      "hand_cup_contacts": 0,
+      "hand_cup_force_n": 0.0,
+      "penetration_m": 0.0004505750853523692,
+      "illegal_contacts": [],
+      "cup_bounds_m": [
+        [
+          -0.16431249772062584,
+          0.1625619294066878,
+          0.00017073165546788865
+        ],
+        [
+          -0.08937743958197336,
+          0.2565641272201191,
+          0.06572752731700336
+        ]
+      ]
+    },
+    "xy_error_m": 0.005420859035784529,
+    "samples": 1000
+  },
+  "placement_passed": true,
+  "final": {
+    "cup_position_m": [
+      -0.12601749445232036,
+      0.20309254894534942,
+      0.03161398035913977
+    ],
+    "bottom_gap_m": 0.00017073165546790947,
+    "rest_origin_z_m": 0.03143999735179462,
+    "tilt_deg": 0.0070550015745702065,
+    "linear_speed_m_s": 5.337333296507508e-06,
+    "angular_speed_rad_s": 9.17897656001847e-05,
+    "table_force_n": 2.961855060955446,
+    "table_weight_ratio": 1.0022485437876867,
+    "table_contacts": 7,
+    "hand_cup_contacts": 0,
+    "hand_cup_force_n": 0.0,
+    "penetration_m": 0.0004505750853523692,
+    "illegal_contacts": [],
+    "cup_bounds_m": [
+      [
+        -0.16431249772062584,
+        0.1625619294066878,
+        0.00017073165546788865
+      ],
+      [
+        -0.08937743958197336,
+        0.2565641272201191,
+        0.06572752731700336
+      ]
+    ]
+  },
+  "max_penetration_m": 0.0004672850145456854,
+  "final_hand_qpos": [
+    0.36915018411028466,
+    0.2211062487254179,
+    -0.5394171682463252,
+    0.023589160473814652,
+    0.16196372142716126,
+    -0.2278094680511581,
+    -0.3691915602837766,
+    0.47200824958330034,
+    -0.3747000491980367,
+    0.39873127929184443,
+    0.6063122213799573,
+    0.7354138622724844,
+    -0.42488227156419994,
+    0.5852642846134392,
+    0.822122066465012,
+    0.8316358817656697,
+    -0.1468288059587813,
+    1.0453436245564232,
+    0.6714975224714229,
+    0.9086583036221056,
+    0.37245889631003687,
+    -0.30771789961618484,
+    0.3301714935041997,
+    1.4625056149238218,
+    1.5473656547452774,
+    0.5246706613071564,
+    0.16462684471269629,
+    0.25223785842797214,
+    0.5141262290399592,
+    -0.3699716121990798
+  ],
+  "motion_peak": {
+    "speed_m_s": 0.025153239426882898,
+    "acceleration_m_s2": 0.35007009978843134,
+    "tracking_m": 0.0020390582911768624
+  },
+  "phase_acceleration_m_s2": {
+    "preplace": 0.06213960127370229,
+    "lower": 0.3000993095789637,
+    "settle": 0.30007141098871437,
+    "release": 0.35007009978843134,
+    "retreat": 0.009362187656936246,
+    "verify": 0.0007303167138345873,
+    "return_home": 0.036480562110210966
+  }
+}

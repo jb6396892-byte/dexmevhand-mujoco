@@ -50,6 +50,10 @@
 
 独立验收使用新种子 6401-6420，配置、源码和权重哈希在运行前冻结；结果另行归档，不把上述开发例计入。
 
+冻结实现提交为 `19fd83d`。会话外部中断发生时，前 18 个场景已完成，14 个完整成功；第 19 个场景只有未完成的候选预演，没有实际执行。恢复时先核对清单中的 132 个源码/配置哈希与权重哈希，全部一致。`scripts/199_resume_placement_evaluation.py` 保留已完成记录，将未完成预演另存为 `seed-6419-interrupted-preview`，只继续原清单最后两例。不重新抽种子，不重跑前 18 例，不改门槛。断点记录在原始目录的 `resume.json`；不完整预演的额外耗时未计入原 20 例汇总耗时。
+
+补充回归：`hold-regression` 使用旧搬运模式，种子 4304、两件杂物，连续任务通过，未进入放置。`qt-release-stop-02` 在松手阶段点击停止，返回 `user_stop` 并暂停现场；首轮停止本身成功，但原错误前缀造成自动状态核对失败，已在 Qt 工作进程统一取消状态并保留原始后端原因。未改动冻结的物理控制代码。
+
 ## 方法来源
 
 - [MuJoCo 官方计算文档](https://mujoco.readthedocs.io/en/2.1.2/computation.html)：接触法向是接触系第一轴，力由第一个几何体指向第二个几何体。这里用于桌面承重审计，不把夹持力当作承重。
@@ -66,4 +70,30 @@ bash scripts/137_tabletop_gpu.sh scripts/192_evaluate_navigation_task.py --place
 python3 scripts/193_check_navigation_qt.py --place --cases first second stop locked rejected --output /media/smgbro/shared/visual_grasp/tabletop-placement-v1/new-qt-check
 ```
 
-输出路径必须使用新目录，不覆盖已有证据。最终统计、截图和未解决问题将在验收完成后补充。
+输出路径必须使用新目录，不覆盖已有证据。
+
+## 最终冻结验收
+
+`heldout-6401` 已完成原先预声明的 6401-6420 共 20 个场景，**16/20 完整成功，达到 80% 样本门槛**。源码/配置 132 项哈希一致，使用原权重，未增加训练。79 次候选预演，16 次实际执行；成功任务第一抓法 6 次、第二抓法 10 次。四例预演拒绝均计为任务失败，不把实际执行条件成功率 16/16 冒充总体成功率。
+
+- 最大最终 XY 误差 5.63155 mm，最大任务穿透 0.907534 mm，最大返回中心误差 0.004522 mm，均在原门槛内。
+- 20 例记录的总耗时 4735.40 s，候选预演 2955.23 s；额外中断的未完成预演不包含在内，其目录独立保留。
+- 6409：抓取空间受阻，能搬运的旋转候选最终倾角超出纠姿范围。
+- 6413 / 6416：可进入放置的反向候选未在 8 s 内形成持续承重确认，未强行松手。
+- 6415：抓取或带杯起点净空阻碍，无法获得完整可行候选。
+- `qt-release-stop-02` 松手中取消延迟约 0.943 s，无残留进程。`hold-regression` 旧保持模式完整通过。
+- 完成断点恢复脚本后再次执行全量软件回归，300/300 通过；`git diff --check` 无问题。
+
+最终汇总与少量截图在 [放置返航答辩材料](../presentation/placement_return/README.md)。图片例使用真实执行种子 6402，原因是杯子比第一例更少遮挡，不影响全部 20 例统计。接触力曲线保留释放时短暂峰值，本轮未声明实物冲击安全。Qt 当前总览相机对桌外起点的手仍有部分裁切，运动完成依据中心位置和物理记录。
+
+冻结批次及恢复、归档命令：
+
+```bash
+bash scripts/137_tabletop_gpu.sh scripts/192_evaluate_navigation_task.py --place --config configs/tabletop-placement-v1.json --start-seed 6401 --count 20 --label heldout --output /media/smgbro/shared/visual_grasp/tabletop-placement-v1/heldout-6401
+# 仅适用于未完成且配置/代码/权重哈希未变化的批次；完成目录会拒绝恢复
+bash scripts/137_tabletop_gpu.sh scripts/199_resume_placement_evaluation.py --output /media/smgbro/shared/visual_grasp/tabletop-placement-v1/heldout-6401
+bash scripts/137_tabletop_gpu.sh scripts/198_build_placement_evidence.py --evaluation /media/smgbro/shared/visual_grasp/tabletop-placement-v1/heldout-6401 --qt /media/smgbro/shared/visual_grasp/tabletop-placement-v1/qt-complete-03 --example-seed 6402
+bash scripts/137_tabletop_gpu.sh -m unittest discover -s tests -q
+```
+
+以上目录已经存在，不能原样再次生成或覆盖；复现实验应另选新输出目录。后续可优化承重收敛、拥挤起点和预演成本，但不为本轮追加未经要求的训练或改变验收范围。

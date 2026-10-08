@@ -48,6 +48,8 @@ try:
             if a.place:layout['goal_world_m'][2]=.20
             result=task.run(layout,output/'task',preferred=plan['scene'],mode=a.mode,stop_skill=plan['goal'],
                 speed=a.speed,clearance=a.clearance,observer=observer,cancelled=controls.stop.is_set)
+        if result.get('reason','').endswith(':user_stop'):
+            result['backend_reason']=result['reason'];result['reason']='user_stop'
         emit('result',report=brief(result))
 except Exception as error:
     emit('error',message=str(error),error_type=type(error).__name__)

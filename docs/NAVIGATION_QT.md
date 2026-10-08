@@ -33,7 +33,7 @@ bash scripts/191_launch_navigation_qt.sh
 
 可复现的 Qt 开发示例：第一抓法优先，种子 4304、杂物 2、杯位 (160,40) mm、目标 (-200,80) mm；第二抓法优先，种子 6302、杂物 0、杯位 (-150,100) mm、目标 (-160,-120) mm。两例用于操作回归，不计独立 20 轮分母。
 
-设计与验收门槛见 [桌面放置任务书](TABLETOP_PLACEMENT_TASKBOOK.md)，实现和失败修复见 [运行记录](run_logs/2026-10-08-tabletop-placement.md)。旧 18/20 仅统计搬运保持，不能当作放置返航结果。
+新放置返航独立验收为 **16/20（80%）**，300 项软件测试与 Qt 检查通过。[完整统计、截图和答辩资料](presentation/placement_return/README.md)。设计与验收门槛见 [桌面放置任务书](TABLETOP_PLACEMENT_TASKBOOK.md)，实现和失败修复见 [运行记录](run_logs/2026-10-08-tabletop-placement.md)。旧 18/20 仅统计搬运保持，不能当作放置返航结果。
 
 ## 范围
 

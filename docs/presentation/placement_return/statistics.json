@@ -1,0 +1,22 @@
+{
+  "complete_successes": 16,
+  "total": 20,
+  "example_seed": 6402,
+  "selected_grasps": {
+    "first": 6,
+    "second": 10
+  },
+  "failures": {
+    "no_feasible_grasp_candidate": 4
+  },
+  "source_unchanged": true,
+  "total_wall_s": 4735.404263638999,
+  "max_final_xy_error_m": 0.005631548688602952,
+  "max_placement_penetration_m": 0.0009075341971643263,
+  "max_task_penetration_m": 0.0009075341971643263,
+  "max_return_error_m": 4.521716397610226e-06,
+  "actual_executions": 16,
+  "actual_placement_successes": 16,
+  "evaluation_source": "/media/smgbro/shared/visual_grasp/tabletop-placement-v1/heldout-6401",
+  "qt_source": "/media/smgbro/shared/visual_grasp/tabletop-placement-v1/qt-complete-03"
+}

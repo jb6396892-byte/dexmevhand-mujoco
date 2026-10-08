@@ -13,6 +13,7 @@ from hierarchy_common import ROOT,write
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--evaluation',type=Path,required=True)
 p.add_argument('--qt',type=Path,required=True)
+p.add_argument('--example-seed',type=int,help='Successful actual execution chosen for visible stage illustrations')
 p.add_argument('--output',type=Path,default=ROOT/'docs/presentation/placement_return')
 a=p.parse_args()
 summary=json.loads((a.evaluation/'summary.json').read_text())
@@ -23,13 +24,13 @@ write(a.output/'summary.json',summary);write(a.output/'manifest.json',manifest)
 quality=json.loads((a.qt/'quality.json').read_text());write(a.output/'qt-quality.json',quality)
 successful=[r for r in summary['cases'] if r['passed']]
 if successful:
-    example=successful[0]
+    example=next(r for r in successful if r['seed']==a.example_seed) if a.example_seed is not None else successful[0]
     source=a.evaluation/('seed-'+str(example['seed']))/'execution'
     receipt=json.loads((source/'placement.json').read_text())
     assert receipt['passed'] and receipt['placement_passed'] and receipt['return_home']['passed']
     write(a.output/'example-placement.json',receipt)
     for name in ('place-supported.png','place-released.png','place-retreated.png'):
-        shutil.copy2(source/name,a.output/name)
+        shutil.copyfile(source/name,a.output/name)
     trace=json.loads((source/'placement-trace.json').read_text())
     t0=trace[0]['time_s'];times=[r['time_s']-t0 for r in trace]
     fig,axes=plt.subplots(3,1,figsize=(10,7),sharex=True,constrained_layout=True)
@@ -52,16 +53,32 @@ if successful:
 for case in ('first','second'):
     path=a.qt/case/'summary.json'
     if path.exists() and json.loads(path.read_text()).get('task_passed'):
-        shutil.copy2(a.qt/case/'qt-result.png',a.output/'qt-result.png')
+        shutil.copyfile(a.qt/case/'qt-result.png',a.output/'qt-result.png')
         break
 selected=collections.Counter(r.get('selected') for r in successful)
 failures=collections.Counter(r['reason'] for r in summary['cases'] if not r['passed'])
+failure_details=[]
+for row in summary['cases']:
+    if row['passed']:continue
+    trials=[]
+    for path in sorted((a.evaluation/('seed-'+str(row['seed']))).glob('*/placement.json')):
+        result=json.loads(path.read_text())
+        trials.append(dict(candidate=path.parent.name,passed=result['passed'],reason=result['reason'],
+                           phase=result.get('failure_phase'),placed=result.get('placement_passed',False)))
+    failure_details.append(dict(seed=row['seed'],reason=row['reason'],placement_trials=trials,
+                                planning_attempts=row.get('attempts',[])))
+write(a.output/'failure-details.json',failure_details)
 statistics=dict(complete_successes=summary['passed'],total=20,
+    example_seed=example['seed'] if successful else None,
     selected_grasps=dict(selected),failures=dict(failures),source_unchanged=summary['source_unchanged'],
     total_wall_s=sum(r.get('total_wall_s',0) for r in summary['cases']),
     max_final_xy_error_m=max((r['placement']['after_return']['xy_error_m'] for r in successful),default=None),
     max_placement_penetration_m=max((r['placement']['max_penetration_m'] for r in successful),default=None),
+    max_task_penetration_m=max((max(r.get('local_penetration_m') or 0,
+        r.get('carry_penetration_m') or 0,r['placement']['max_penetration_m']) for r in successful),default=None),
     max_return_error_m=max((r['placement']['return_home']['endpoint_error_m'] for r in successful),default=None),
+    actual_executions=sum(r.get('actual_executions',0) for r in summary['cases']),
+    actual_placement_successes=sum(bool(r.get('placement',{}).get('placement_passed')) for r in summary['cases']),
     evaluation_source=str(a.evaluation),qt_source=str(a.qt))
 write(a.output/'statistics.json',statistics)
 print(json.dumps(statistics,indent=2))
