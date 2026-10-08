@@ -11,6 +11,7 @@ p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--output',type=Path,required=True)
 p.add_argument('--cases',nargs='+',default=['first','second','clutter','stop','locked','rejected'])
 p.add_argument('--protocol',type=Path,default=ROOT/'configs/tabletop-navigation-v5.json')
+p.add_argument('--place',action='store_true')
 a=p.parse_args();a.output.mkdir(parents=True,exist_ok=False)
 gui=Path('/media/smgbro/shared/lora/language/gui-runtime');env=dict(os.environ)
 for key in ('LD_PRELOAD','PYTHONHOME','QT_PLUGIN_PATH','QT_QPA_PLATFORM_PLUGIN_PATH'):env.pop(key,None)
@@ -23,11 +24,16 @@ cases=dict(first=first,
     second=['--scene','second','--seed','4301','--count','2','--cup-xy','-.2','-.04',
             '--target-world','.2','.08','.2','--speed','.8'],
     stop=first+['--cancel-step','50'],locked=['--locked'],rejected=['--instruction','将杯子放到我手上'])
+if a.place:
+    # Dedicated placement regression; the old second carry target has a blocked descent.
+    cases['second']=['--scene','second','--seed','6302','--count','0','--cup-xy','-.15','.1',
+                     '--target-world','-.16','-.12','.2','--speed','1.0']
 results={}
 for name in a.cases:
     command=[str(ROOT/'data/runtime/stage6-study-venv/bin/python'),str(ROOT/'scripts/148_check_tabletop_qt.py'),
         '--navigation-mode','--protocol',str(a.protocol),'--checkpoint','/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt',
         '--output',str(a.output/name)]+cases[name]
+    if a.place:command+=['--place']
     print('START '+name,flush=True)
     with (a.output/(name+'.log')).open('w') as log:
         code=subprocess.run(command,env=env,cwd=str(ROOT),stdout=log,stderr=subprocess.STDOUT,timeout=1200).returncode
@@ -40,6 +46,7 @@ quality={}
 for name,result in results.items():
     if name in ('first','second','clutter'):
         quality[name]=all(result.get(k,False) for k in ('task_passed','target_matches_ui','count_matches_ui','cup_matches_ui','speed_matches_ui','clearance_matches_ui')) and result['unique_frames']>20
+        if a.place:quality[name]=bool(quality[name] and result['report'].get('placement',{}).get('passed'))
     elif name=='stop':quality[name]=result['report']['reason']=='user_stop' and result['cancellation_latency_s']<3
     elif name=='locked':quality[name]=result['report']['status']=='locked'
     elif name=='rejected':quality[name]=result['report']['status']=='rejected'

@@ -4,6 +4,17 @@ def stream_context(sim):
     import glfw
     original = mujoco_py.cymj.GlfwContext
 
+    for context in sim.render_contexts:
+        if context.offscreen and isinstance(context.opengl_context,original):
+            context.opengl_context.make_context_current()
+            return context
+
+    class OwnedRenderContext(mujoco_py.MjRenderContext):
+        def __del__(self):
+            # The legacy Cython destructor frees GL buffers in whichever context is current.
+            if self.opengl_context is not None:
+                self.opengl_context.make_context_current()
+
     class HiddenDoubleBufferedContext(original):
         def _create_window(self, offscreen, quiet=False):
             glfw.default_window_hints()
@@ -17,7 +28,9 @@ def stream_context(sim):
 
     # Only the worker-local window factory changes; the frozen binary and physics do not.
     mujoco_py.cymj.GlfwContext = HiddenDoubleBufferedContext
+    warmstart=sim.data.qacc_warmstart.copy()
     try:
-        return mujoco_py.MjRenderContext(sim,offscreen=True,opengl_backend='glfw',quiet=True)
+        return OwnedRenderContext(sim,offscreen=True,opengl_backend='glfw',quiet=True)
     finally:
+        sim.data.qacc_warmstart[:]=warmstart
         mujoco_py.cymj.GlfwContext = original

@@ -22,6 +22,7 @@ p.add_argument('--locked',action='store_true')
 p.add_argument('--checkpoint',type=Path)
 p.add_argument('--random-mode',action='store_true')
 p.add_argument('--navigation-mode',action='store_true')
+p.add_argument('--place',action='store_true')
 p.add_argument('--selection',choices=['auto','fixed'],default='auto')
 p.add_argument('--speed',type=float,default=1.)
 p.add_argument('--clearance',type=float,default=25.)
@@ -51,7 +52,9 @@ if a.random_mode or a.navigation_mode:
         for spin,value in zip(w.cup_inputs,a.cup_xy): spin.setValue(value*1000)
 if a.navigation_mode:
     w.grasp_mode.setCurrentIndex(w.grasp_mode.findData(a.selection));w.speed.setValue(a.speed);w.clearance.setValue(a.clearance)
-w.instruction.setPlainText(a.instruction or dict(reach='接近杯子',grasp='握住杯子',lift='抓起杯子',transport='把杯子搬到目标位置')[a.goal])
+    if a.place:w.completion.setCurrentIndex(1)
+w.instruction.setPlainText(a.instruction or ('把杯子放到目标位置并返回起点' if a.place else
+    dict(reach='接近杯子',grasp='握住杯子',lift='抓起杯子',transport='把杯子搬到目标位置')[a.goal]))
 w.show(); state=dict(heartbeat=time.monotonic(),max_gap_s=0.,frames=set(),messages=[],cancelled_at=None,done=False)
 original=w.message
 

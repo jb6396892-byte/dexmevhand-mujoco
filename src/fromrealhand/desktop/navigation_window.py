@@ -15,7 +15,15 @@ class NavigationWindow(RandomTabletopWindow):
         self.speed.setSuffix(' x');self.speed.setToolTip('导航和搬运速度倍率')
         self.clearance=QDoubleSpinBox();self.clearance.setRange(25,40);self.clearance.setSingleStep(5);self.clearance.setValue(25)
         self.clearance.setSuffix(' mm');self.clearance.setToolTip('远距离规划净空；物理安全门槛不变')
+        self.completion=QComboBox();self.completion.addItem('搬运并保持','hold');self.completion.addItem('放置、松手并返回起点','place')
+        self.lower_speed=QDoubleSpinBox();self.lower_speed.setRange(3,10);self.lower_speed.setValue(8);self.lower_speed.setSuffix(' mm/s')
+        self.release_time=QDoubleSpinBox();self.release_time.setRange(4,8);self.release_time.setValue(5);self.release_time.setSuffix(' s')
+        self.retreat_distance=QDoubleSpinBox();self.retreat_distance.setRange(100,200);self.retreat_distance.setValue(120);self.retreat_distance.setSuffix(' mm')
+        form.addRow('完成动作',self.completion)
         form.addRow('抓法',self.grasp_mode);form.addRow('速度',self.speed);form.addRow('规划余量',self.clearance)
+        form.addRow('下降速度',self.lower_speed);form.addRow('释放时长',self.release_time);form.addRow('撤离距离',self.retreat_distance)
+        self.placement_state=QLabel('');self.placement_state.setWordWrap(True);form.addRow(self.placement_state)
+        self.completion.currentIndexChanged.connect(self.completion_changed)
         self.sidebar.layout().insertWidget(6,self.tuning)
         self.sidebar.layout().removeWidget(self.stop_button)
         self.camera.parentWidget().layout().itemAt(0).layout().insertWidget(1,self.stop_button)
@@ -26,6 +34,21 @@ class NavigationWindow(RandomTabletopWindow):
         self.setWindowTitle('抓杯实验台 · 整桌导航与抓取')
         self.joint.setWordWrap(True)
         self.seed.setValue(5301);self.count.setValue(2)
+        self.completion_changed()
+
+    def completion_changed(self):
+        active=self.completion.currentData()=='place'
+        for widget in (self.lower_speed,self.release_time,self.retreat_distance):widget.setEnabled(active and not self.busy)
+        self.targets[2].setEnabled(not active and self.target_mode.currentIndex()==1 and not self.busy)
+        self.targets[2].setToolTip('放置高度按杯底和桌面自动计算；此处为搬运悬停高度' if active else '目标 Z')
+        if active:
+            self.targets[2].setSpecialValueText('');self.targets[2].setValue(200)
+            self.instruction.setPlainText('把杯子放到目标位置并返回起点')
+            self.placement_state.setText('放置计划：规则控制；等待执行')
+        else:
+            self.placement_state.setText('')
+            from .placement_planning import INSTRUCTIONS
+            if self.instruction.toPlainText() in INSTRUCTIONS:self.instruction.setPlainText('把杯子搬到目标位置')
 
     def update_random_controls(self):
         if not hasattr(self,'targets'):return
@@ -42,6 +65,11 @@ class NavigationWindow(RandomTabletopWindow):
                 spin.setEnabled(active and manual and not self.busy)
         if hasattr(self,'tuning'):
             self.tuning.setVisible(self.workflow.currentData()=='navigation');self.tuning.setEnabled(not self.busy)
+            if hasattr(self,'completion'):
+                place=self.completion.currentData()=='place'
+                for widget in (self.lower_speed,self.release_time,self.retreat_distance):widget.setEnabled(place and not self.busy)
+                if place:
+                    self.targets[2].setSpecialValueText('');self.targets[2].setValue(200);self.targets[2].setEnabled(False)
 
     def mode_changed(self):
         super().mode_changed()
@@ -66,12 +94,21 @@ class NavigationWindow(RandomTabletopWindow):
         super().start(execute)
 
     def start_worker(self,kind,program,args,environment):
+        place=self.completion.currentData()=='place'
+        if kind=='plan' and place:
+            from .runtime import LEGACY_PYTHON,physics_environment
+            args=list(args);args[0]=str(ROOT/'scripts/196_plan_placement.py')
+            program=LEGACY_PYTHON;environment=physics_environment()
         if kind=='physics' and self.workflow.currentData()=='navigation':
             if not self.allow_candidate:raise RuntimeError('Navigation execution locked')
             args=[str(ROOT/'scripts/190_stream_navigation_task.py'),'--root',str(self.storage),'--output',str(self.output),
                 '--visual-root',str(self.visual_root),'--checkpoint',str(self.checkpoint),'--protocol',str(self.random_protocol),
                 '--seed',str(self.seed.value()),'--mode',self.grasp_mode.currentData(),
                 '--speed',str(self.speed.value()),'--clearance',str(self.clearance.value()/1000)]
+            if place:
+                args[args.index('--protocol')+1]=str(ROOT/'configs/tabletop-placement-v1.json')
+                args+=['--place','--lower-speed',str(self.lower_speed.value()/1000),
+                       '--release-seconds',str(self.release_time.value()),'--retreat',str(self.retreat_distance.value()/1000)]
             if self.count.value()>=0:args+=['--count',str(self.count.value())]
             if self.target_mode.currentIndex()==1:args+=['--target-world']+[str(v.value()/1000) for v in self.targets]
             if self.cup_mode.currentIndex()==1:args+=['--cup-xy']+[str(v.value()/1000) for v in self.cup_inputs]
@@ -89,10 +126,16 @@ class NavigationWindow(RandomTabletopWindow):
             return
         super().message(packet)
         if packet['type']=='frame' and self.workflow.currentData()=='navigation':
-            name=dict(navigate='导航',approach='低速接近',reach='接近杯子',grasp='闭合',lift='抬杯',transport='带杯搬运').get(packet['skill'],packet['skill'])
+            name=dict(navigate='导航',approach='低速接近',reach='接近杯子',grasp='闭合',lift='抬杯',transport='带杯搬运',
+                preplace='放置纠姿',lower='低速下降',settle='桌面承重',release='渐进松手',retreat='空手撤离',
+                verify='站稳确认',return_home='返回起点').get(packet['skill'],packet['skill'])
             self.view_state.setText('MuJoCo · '+name+' | 已知初始位置')
             if packet.get('control_kind')=='navigation_servo':self.action.setText('控制方式：位置伺服')
             metrics=packet['metrics']
+            if 'placement' in metrics:
+                q=metrics['placement']
+                self.placement_state.setText('%s | 倾角 %.1f° | 承重 %.2f N\n手杯力 %.2f N | 杯底间隙 %.2f mm'%
+                    (name,q['tilt_deg'],q['table_force_n'],q['hand_cup_force_n'],q['bottom_gap_m']*1000))
             if 'root_translation_violation_m' in metrics:
                 self.joint.setText('转动越限 %.5f rad\n平移越限 %.3f mm'%
                     (metrics['joint_violation_rad'],metrics['root_translation_violation_m']*1000))

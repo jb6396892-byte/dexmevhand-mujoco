@@ -122,8 +122,44 @@ class MotionBridge(HandScene):
             ctrl[:6]=old_equivalent*(1.-blend)+ctrl[:6]*blend
         if np.any(ctrl<m.actuator_ctrlrange[:,0]) or np.any(ctrl>m.actuator_ctrlrange[:,1]):
             raise ValueError('Navigation actuator authority exceeded')
-        self.target=center.copy();d.ctrl[:]=ctrl;self.sim.step();self.steps+=1
+        self.target=center.copy();d.ctrl[:]=ctrl
+        if self.config.get('command_acceleration_limit_m_s2'):
+            self.limit_translation_acceleration(self.config['command_acceleration_limit_m_s2'])
+        self.sim.step();self.steps+=1
         if not np.isfinite(d.qpos).all():raise RuntimeError('Nonfinite hand state')
+
+    def limit_translation_acceleration(self,limit):
+        """Linearize the contact-aware motor response; only actuator commands change."""
+        d=self.sim.data;m=self.sim.model
+        warmstart=getattr(d,'qacc_warmstart',None)
+        warmstart=None if warmstart is None else warmstart.copy()
+        def forward():
+            if warmstart is not None:d.qacc_warmstart[:]=warmstart
+            self.sim.forward()
+            # Finite differences and the real step must start from the same solver seed.
+            if warmstart is not None:d.qacc_warmstart[:]=warmstart
+        forward()
+        for iteration in range(12):
+            acceleration=self.acceleration().copy()
+            self.acceleration_limit_audit=dict(iterations=iteration,predicted_m_s2=acceleration.tolist())
+            if np.max(np.abs(acceleration))<=limit+1e-4:return
+            original=d.ctrl.copy();jac=[];epsilon=1e-4
+            for axis in self.tcols:
+                d.ctrl[:]=original;d.ctrl[axis]+=epsilon;forward()
+                jac.append((self.acceleration()-acceleration)/epsilon)
+            d.ctrl[:]=original
+            correction=np.linalg.lstsq(np.array(jac).T,np.clip(acceleration,-limit,limit)-acceleration,rcond=None)[0]
+            correction=np.clip(correction,-.002,.002)
+            best=float(np.max(np.abs(acceleration)));chosen=original.copy()
+            for fraction in (1.,.5,.25,.125,.0625):
+                d.ctrl[:]=original;d.ctrl[self.tcols]+=fraction*correction
+                if np.any(d.ctrl<m.actuator_ctrlrange[:,0]) or np.any(d.ctrl>m.actuator_ctrlrange[:,1]):continue
+                forward();value=float(np.max(np.abs(self.acceleration())))
+                if value<best:best=value;chosen=d.ctrl.copy()
+                if best<=limit+1e-4:break
+            d.ctrl[:]=chosen;forward()
+            if np.array_equal(chosen,original):break
+        self.acceleration_limit_audit=dict(iterations=iteration+1,predicted_m_s2=self.acceleration().tolist())
 
     def contacts(self):
         row=super().contacts()

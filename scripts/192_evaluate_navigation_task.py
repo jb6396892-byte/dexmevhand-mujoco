@@ -15,14 +15,16 @@ p.add_argument('--count',type=int,default=20)
 p.add_argument('--config',type=Path,default=ROOT/'configs/tabletop-navigation-v5.json')
 p.add_argument('--checkpoint',type=Path,default=Path('/media/smgbro/shared/visual_grasp/dual-learn-v4/structured-bc/candidate.pt'))
 p.add_argument('--label',default='heldout')
+p.add_argument('--place',action='store_true')
 a=p.parse_args();a.output.mkdir(parents=True,exist_ok=False)
 task=NavigationTask(ROOT,a.checkpoint,a.config);catalog=object_catalog()
 cases=[dict(seed=s,preferred='first' if i%2==0 else 'second',
             layout=make_layout(s,task.config,count=2+i%3,catalog=catalog))
        for i,s in enumerate(range(a.start_seed,a.start_seed+a.count))]
-sources=list((ROOT/'src/fromrealhand/whole_table').glob('*.py'))
-sources+=list((ROOT/'src/fromrealhand/tabletop').glob('*.py'))
-sources+=list((ROOT/'configs').glob('adroit-navigation-*.json'))+[a.config.resolve(),Path(__file__).resolve()]
+if a.place:
+    for case in cases:case['layout']['goal_world_m'][2]=.20
+sources=list((ROOT/'src/fromrealhand').rglob('*.py'))
+sources+=list((ROOT/'configs').glob('*.json'))+[a.config.resolve(),Path(__file__).resolve()]
 hashes={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources}
 write(a.output/'manifest.json',dict(cases=cases,label=a.label,created_before_execution=True,source_sha256=hashes,
     config=task.config,checkpoint_sha256=hashlib.sha256(a.checkpoint.read_bytes()).hexdigest(),
@@ -33,7 +35,8 @@ try:
     for case in cases:
         print('START '+str(case['seed']),flush=True)
         try:
-            result=task.run(case['layout'],a.output/('seed-'+str(case['seed'])),preferred=case['preferred'])
+            result=task.run(case['layout'],a.output/('seed-'+str(case['seed'])),preferred=case['preferred'],
+                            stop_skill='place' if a.place else 'transport')
             c=result.get('carry',{});adapter=result.get('adapter',{})
             row=dict(seed=case['seed'],preferred=case['preferred'],selected=result['selected_video'],
                 selected_entry_frame=result['selected_entry_frame'],selected_yaw_deg=result['selected_yaw_deg'],
@@ -46,6 +49,11 @@ try:
                 egress=bool(c.get('egress')),strict_passed=all(r.get('strict_passed',False) for r in
                     [c,adapter.get('navigation',{}),adapter.get('approach',{})]),
                 cup_xy=case['layout']['objects'][0]['xy'],goal=case['layout']['goal_world_m'])
+            if a.place:
+                placement=result.get('placement',{})
+                row['placement']=placement
+                row['passed']=bool(row['passed'] and placement.get('passed') and placement.get('placement_passed')
+                    and placement.get('return_home',{}).get('passed'))
         except Exception as error:
             row=dict(seed=case['seed'],passed=False,reason=type(error).__name__+': '+str(error))
         records.append(row);write(a.output/'partial.json',records);print(json.dumps(row),flush=True)

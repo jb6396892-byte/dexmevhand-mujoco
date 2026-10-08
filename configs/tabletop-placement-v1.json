@@ -1,0 +1,14 @@
+{
+  "base_config": "tabletop-navigation-v5.json",
+  "version": "tabletop-placement-v1-candidate",
+  "placement": {
+    "target_working_margin_m": 0.12,
+    "lower_speed_m_s": 0.008,
+    "release_seconds": 5.0,
+    "retreat_m": 0.12,
+    "lower_timeout_s": 40.0,
+    "settle_timeout_s": 8.0,
+    "verify_seconds": 2.0,
+    "diagnostic_only": false
+  }
+}

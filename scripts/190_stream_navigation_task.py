@@ -19,20 +19,33 @@ p.add_argument('--target-world',nargs=3,type=float);p.add_argument('--cup-xy',na
 p.add_argument('--protocol',type=Path,default=ROOT/'configs/tabletop-navigation-v5.json')
 p.add_argument('--mode',choices=['auto','fixed'],default='auto')
 p.add_argument('--speed',type=float,default=1.);p.add_argument('--clearance',type=float,default=.025)
+p.add_argument('--place',action='store_true')
+p.add_argument('--lower-speed',type=float,default=.008)
+p.add_argument('--release-seconds',type=float,default=5.)
+p.add_argument('--retreat',type=float,default=.12)
 a=p.parse_args();task=None
 def callback(kind,payload):
     with contextlib.redirect_stdout(sys.__stdout__):emit(kind,**payload)
 try:
-    plan=validated_plan(a.root,a.output)
+    if a.place:
+        from fromrealhand.desktop.placement_planning import validated_placement_plan
+        plan=validated_placement_plan(a.root,a.output)
+    else:plan=validated_plan(a.root,a.output)
     if plan['goal']=='stop':emit('result',report=dict(status='stopped',reason='user_stop',steps=0))
     else:
         controls=importlib.import_module('126_stream_simulation').Controls()
-        output=a.visual_root/'navigation-v4/qt-runs'/a.output.name
+        output=a.visual_root/('tabletop-placement-v1/qt-runs' if a.place else 'navigation-v4/qt-runs')/a.output.name
         output.mkdir(parents=True,exist_ok=False)
         observer=Observer(callback,output/'frames',a.checkpoint,dict(speed=a.speed,clearance_m=a.clearance,mode=a.mode))
         with contextlib.redirect_stdout(sys.stderr):
             task=NavigationTask(ROOT,a.checkpoint,a.protocol)
+            if a.place:
+                if not (.003<=a.lower_speed<=.01 and 4<=a.release_seconds<=8 and .1<=a.retreat<=.2):
+                    raise ValueError('Placement controls outside validated development limits')
+                task.config['placement'].update(lower_speed_m_s=a.lower_speed,
+                    release_seconds=a.release_seconds,retreat_m=a.retreat)
             layout=make_layout(a.seed,task.config,a.target_world,a.count,a.cup_xy)
+            if a.place:layout['goal_world_m'][2]=.20
             result=task.run(layout,output/'task',preferred=plan['scene'],mode=a.mode,stop_skill=plan['goal'],
                 speed=a.speed,clearance=a.clearance,observer=observer,cancelled=controls.stop.is_set)
         emit('result',report=brief(result))

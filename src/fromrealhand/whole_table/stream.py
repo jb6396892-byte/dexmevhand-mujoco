@@ -48,7 +48,8 @@ class Observer:
         m,d=env.sim.model,env.sim.data;bid=m.body_name2id('mug_0')
         q=dict(row) if row is not None else env.contacts()
         q.update(opposing_contacts(env.sim));q.pop('pairs',None)
-        navigation=phase in ('navigate','approach','transport')
+        placement=phase in ('preplace','lower','settle','release','retreat','verify','return_home')
+        navigation=phase in ('navigate','approach','transport') or placement
         travel=self.navigation_translation_ranges if navigation else m.jnt_range[:3]
         # Cleanup restores local limits; final telemetry still describes navigation mode.
         q.update(joint_limit_metrics(d.qpos,m.jnt_range,travel))
@@ -57,10 +58,17 @@ class Observer:
         q.update(bottom_m=float((self.mesh['vertices']@rotation.T+position)[:,2].min()),
             target_distance_m=float(np.linalg.norm(position-self.goal)),cup_position_m=position.tolist(),
             palm_position_m=d.geom_xpos[m.geom_name2id('C_palm0')].tolist(),phase=phase)
+        if placement:
+            from .placement_metrics import PlacementMetrics
+            if not hasattr(self,'placement_metrics'):self.placement_metrics=PlacementMetrics(env)
+            q['placement']=self.placement_metrics.read()
+            q['target_distance_m']=float(np.linalg.norm(position[:2]-self.goal[:2]))
         self.peak=max(self.peak,q['scene_penetration_m'])
         if row is not None:self.last_step=int(row['source_index'])+1
         m.site_pos[m.site_name2id('visual_goal')]=self.goal
-        env.sim.forward()
+        if placement:m.site_pos[m.site_name2id('visual_goal'),2]=q['placement']['rest_origin_z_m']
+        # mj_step updates the visual site next tick; telemetry must not rerun dynamics.
+        self.context.opengl_context.make_context_current()
         self.context.render(960,720)
         rgb=self.context.read_pixels(960,720,depth=False)[::-1].copy()
         if rgb.std()<5:raise RuntimeError('blank_frame')

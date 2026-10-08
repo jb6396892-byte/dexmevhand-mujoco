@@ -49,7 +49,7 @@ class LoadedMotion(MotionBridge):
         return row
 
 
-def carry(env,held_action,cup_goal,config,on_step=None,cancelled=None):
+def carry(env,held_action,cup_goal,config,on_step=None,cancelled=None,after_hold=None):
     # Let the local lift finish dynamically before handing control to the transit servo.
     settle=[]
     def audit():
@@ -104,6 +104,10 @@ def carry(env,held_action,cup_goal,config,on_step=None,cancelled=None):
             result['strict_passed']=bool(result['strict_passed'] and egress['strict_passed'])
         result['passed']=bool(result['passed'] and error<=.02 and all(hold))
         result['initial_margin_conflicts']=dict(start=start_conflicts,goal=goal_conflicts)
+        if result['passed'] and after_hold is not None:
+            result['placement'] = after_hold(bridge)
+            result['passed'] = bool(result['placement']['passed'])
+            if not result['passed']: result['reason'] = result['placement']['reason']
         return result
     except NavigationRejected as error:
         result=getattr(bridge,'last_navigation',{})

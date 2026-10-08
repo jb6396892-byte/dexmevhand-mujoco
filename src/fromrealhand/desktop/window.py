@@ -239,8 +239,8 @@ class GraspWindow(QMainWindow):
             self.pending_plan=message
             self.raw.setPlainText(json.dumps({k:v for k,v in message.items() if k!='type'},ensure_ascii=False,indent=2))
             if message['accepted']:
-                names=dict(SKILLS); plan=message['guard']['response']['plan']
-                text=' → '.join(names[s] for s in plan['skills']) or '停止'
+                names=dict(SKILLS,place='落桌松手',return_home='返回起点'); plan=message['guard']['response']['plan']
+                text=' → '.join(names.get(s,s) for s in plan['skills']) or '停止'
                 self.plan_label.setText('技能计划：'+text); self.note('计划通过：'+text)
             else: self.note('拒绝：'+message['guard']['reason'])
         elif kind=='ready':

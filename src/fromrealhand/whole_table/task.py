@@ -4,7 +4,7 @@ import json
 import time
 from pathlib import Path
 import numpy as np
-from .layout import sample
+from .layout import sample,rectangles_clear
 from .scene import object_catalog
 from .local_adapter import MotionBridge,translate_initial_scene,rotate_initial_grasp
 from .navigation_runner import navigate,capture
@@ -34,9 +34,32 @@ def make_layout(seed,config,goal=None,count=None,cup_xy=None,catalog=None):
     if count is None:count=int(rng.randint(*[config['distractor_count_range'][0],config['distractor_count_range'][1]+1]))
     result=sample(seed,object_catalog() if catalog is None else catalog,config,count,cup_xy)
     target=rng.uniform(config['goal_min_m'],config['goal_max_m']) if goal is None else np.asarray(goal)
+    if 'placement' in config:
+        for attempt in range(2000):
+            reason=placement_goal_error(result,target,config)
+            if not reason:break
+            if goal is not None:raise ValueError(reason)
+            target=rng.uniform(config['goal_min_m'],config['goal_max_m'])
+        else:raise ValueError('No unoccupied placement target on table')
+        result['goal_geometric_samples']=attempt+1
+        target=np.asarray(target,dtype=float).copy();target[2]=.20
     result.update(goal_world_m=target.tolist(),table_rgba=[.88,.90,.91,1.],
                   version=config['version'],cup_model='025_mug',object_scale=.8)
     return result
+
+
+def placement_goal_error(layout,goal,config):
+    """Cheap footprint-only rejection, independent of controller or rollout outcomes."""
+    cup=next(o for o in layout['objects'] if o['name']=='mug')
+    bounds=np.asarray(cup['bounds_xy'])-cup['xy']+np.asarray(goal)[:2]
+    half=np.asarray(config['table_size_xy_m'])/2
+    if np.any(bounds[0]<-half+.005) or np.any(bounds[1]>half-.005):
+        return 'Placement cup footprint extends outside table'
+    margin=config.get('placement',{}).get('target_working_margin_m',.005)
+    if any(not rectangles_clear(bounds,np.asarray(o['bounds_xy']),margin)
+           for o in layout['objects'] if o['name']!='mug'):
+        return 'Placement target occupied or release working area obstructed'
+    return None
 
 
 def brief(value):
@@ -97,11 +120,16 @@ class NavigationTask:
             scene['initial_hand_repositioned']=True
             env.sim.data.qpos[bridge.tcols]=bridge.to_joints(config['home_m'])
             env.sim.data.qvel[:30]=0.;env.sim.forward();bridge.target=np.asarray(config['home_m'])
+            # Create once before control starts in both previews and live Qt execution.
+            if stop_skill=='place':
+                from ..desktop.rendering import stream_context
+                stream_context(env.sim)
             bridge.hand_envelope=bridge.hand_shapes()-bridge.position()
             requested=target+config['approach_offset_m']
             try:
                 for _ in range(int(config['settling_s']/config['timestep_s'])):
                     check_stop();bridge.step(bridge.target)
+                receipt['recorded_home_m'] = bridge.position().tolist()
                 if observer:observer.attach(env,mesh,goal,layout,video,task.entry)
                 stage('navigate')
                 requested=target+config['approach_offset_m']
@@ -131,25 +159,31 @@ class NavigationTask:
             if observer:observer.frame(env,phase[0],row,action)
 
         def finish(env,controller,rows,initial,local_goal):
-            if stop_skill!='transport':return dict(passed=True,scope='partial skill request')
+            if stop_skill not in ('transport','place'):return dict(passed=True,scope='partial skill request')
             stage('transport')
-            result=carry(env,controller.last_action,goal,config,nav_frame,cancelled=cancelled)
+            def after_hold(bridge):
+                from .placement import place_and_return
+                return place_and_return(bridge,goal[:2],receipt['recorded_home_m'],config,output,
+                                        stage,nav_frame,cancelled)
+            result=carry(env,controller.last_action,goal,config,nav_frame,cancelled=cancelled,
+                         after_hold=after_hold if stop_skill=='place' else None)
             write(output/'carry.json',result)
             if observer:
-                observer.frame(env,'transport',force=True)
-                if result['passed']:
+                observer.frame(env,'return_home' if stop_skill=='place' else 'transport',force=True)
+                if result['passed'] and stop_skill=='transport':
                     view=MotionBridge(env,config,held_action=controller.last_action)
                     try:capture(view,output/'carry.png')
                     finally:view.restore()
             if not result['passed']:raise RuntimeError('carry_acceptance_failed:'+result.get('reason','gate_failed'))
             return result
 
-        report=task.run(layout['seed'],output/'local',stop_skill='lift' if stop_skill=='transport' else stop_skill,
+        report=task.run(layout['seed'],output/'local',stop_skill='lift' if stop_skill in ('transport','place') else stop_skill,
             scene_layout=local_layout,scene_adapter=setup,completion=finish,
             step_callback=local_frame,cancelled=cancelled,start_reference_step=entry_frame)
         report['layout']=copy.deepcopy(layout);report['adapter']=brief(receipt)
         report['continuation']=brief(report.get('continuation',{}))
         if (output/'carry.json').exists():report['carry']=brief(json.loads((output/'carry.json').read_text()))
+        if (output/'placement.json').exists():report['placement']=json.loads((output/'placement.json').read_text())
         write(output/'summary.json',brief(report))
         return report
 
@@ -158,7 +192,11 @@ class NavigationTask:
         from hierarchy_common import write
         output=Path(output);output.mkdir(parents=True,exist_ok=False)
         validate_settings(self.config,layout['goal_world_m'],speed,clearance)
-        if preferred not in ('first','second') or mode not in ('auto','fixed') or stop_skill not in ('reach','grasp','lift','transport'):
+        if stop_skill=='place':
+            if 'placement' not in self.config:raise ValueError('Placement requires a placement configuration')
+            error=placement_goal_error(layout,layout['goal_world_m'],self.config)
+            if error:raise ValueError(error)
+        if preferred not in ('first','second') or mode not in ('auto','fixed') or stop_skill not in ('reach','grasp','lift','transport','place'):
             raise ValueError('Invalid grasp selection or requested skill')
         cfg=dict(self.config,clearance_m=clearance,
                  max_velocity_m_s=(np.array(self.config['max_velocity_m_s'])*speed).tolist(),

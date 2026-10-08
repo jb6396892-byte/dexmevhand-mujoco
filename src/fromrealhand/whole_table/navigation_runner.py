@@ -61,6 +61,7 @@ def capture(scene,path,report=None):
     context.cam.lookat[:]=[0,0,.12]; context.cam.distance=1.65
     context.cam.azimuth=135; context.cam.elevation=-40
     context.vopt.geomgroup[2]=0; context.vopt.geomgroup[4]=0
+    context.opengl_context.make_context_current()
     context.render(1200,900)
     pixels=context.read_pixels(1200,900,depth=False)[::-1]
     if np.std(pixels)<5: raise RuntimeError('Blank frame')
